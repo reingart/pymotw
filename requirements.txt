@@ -1,0 +1,3 @@
+pavement==1.1.1
+#cogapp included in that version of pavement TODO: upgrade
+sphinxcontrib-paverutils

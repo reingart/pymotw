@@ -30,6 +30,6 @@ stream = codecs.getreader('zlib')(buffer)
 first_line = stream.readline()
 print 'Read first line :', repr(first_line)
 
-uncompressed_data = first_line + stream.read()
+uncompressed_data = first_line + stream.read(0)
 print 'Uncompressed    :', len(uncompressed_data)
 print 'Same            :', text == uncompressed_data

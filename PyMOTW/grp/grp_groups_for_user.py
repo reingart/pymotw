@@ -11,6 +11,6 @@ __version__ = "$Id$"
 
 import grp
 
-username = 'dhellmann'
+username = 'reingart'
 groups = [g.gr_name for g in grp.getgrall() if username in g.gr_mem]
 print username, 'belongs to:', ', '.join(groups)

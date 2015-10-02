@@ -11,7 +11,7 @@ __version__ = "$Id$"
 
 import grp
 
-name = 'admin'
+name = 'adm'
 info = grp.getgrnam(name)
 print 'Name    :', info.gr_name
 print 'GID     :', info.gr_gid

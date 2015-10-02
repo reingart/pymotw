@@ -18,7 +18,7 @@ parser.add_argument('-b', action="store", dest="b")
 parser.add_argument('-c', action="store", dest="c", type=int)
 
 config = ConfigParser()
-config.read('argparse_witH_shlex.ini')
+config.read('argparse_with_shlex.ini')
 config_value = config.get('cli', 'options')
 print 'Config  :', config_value
 

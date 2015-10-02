@@ -10,10 +10,10 @@
 import locale
 
 sample_locales = [ ('USA',      'en_US'),
-                   ('France',   'fr_FR'),
+                   ('Argentina','es_AR'),
                    ('Spain',    'es_ES'),
-                   ('Portugal', 'pt_PT'),
-                   ('Poland',   'pl_PL'),
+                   ('Brazil',   'pt_BR'),
+                   ('Mexico',   'es_MX'),
                    ]
 
 print '%20s %15s %20s' % ('Locale', 'Integer', 'Float')

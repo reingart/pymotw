@@ -10,10 +10,10 @@ import locale
 import time
 
 sample_locales = [ ('USA',      'en_US'),
-                   ('France',   'fr_FR'),
+                   ('Argentina','es_AR'),
                    ('Spain',    'es_ES'),
-                   ('Portugal', 'pt_PT'),
-                   ('Poland',   'pl_PL'),
+                   ('Brazil',   'pt_BR'),
+                   ('Mexico',   'es_MX'),
                    ]
 
 for name, loc in sample_locales:

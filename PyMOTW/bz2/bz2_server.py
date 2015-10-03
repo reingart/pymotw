@@ -35,7 +35,8 @@ class Bz2RequestHandler(SocketServer.BaseRequestHandler):
                 self.logger.debug('RAW "%s"', block)
                 compressed = compressor.compress(block)
                 if compressed:
-                    self.logger.debug('SENDING "%s"', binascii.hexlify(compressed))
+                    self.logger.debug('SENDING "%s"',
+                                      binascii.hexlify(compressed))
                     self.request.send(compressed)
                 else:
                     self.logger.debug('BUFFERING')
@@ -45,29 +46,32 @@ class Bz2RequestHandler(SocketServer.BaseRequestHandler):
         while remaining:
             to_send = remaining[:BLOCK_SIZE]
             remaining = remaining[BLOCK_SIZE:]
-            self.logger.debug('FLUSHING "%s"', binascii.hexlify(to_send))
+            self.logger.debug('FLUSHING "%s"',
+                              binascii.hexlify(to_send))
             self.request.send(to_send)
         return
 
 
 if __name__ == '__main__':
     import socket
-    import threading
+    import sys
     from cStringIO import StringIO
+    import threading
 
     logging.basicConfig(level=logging.DEBUG,
                         format='%(name)s: %(message)s',
                         )
-    logger = logging.getLogger('Client')
 
     # Set up a server, running in a separate thread
-    address = ('localhost', 0) # let the kernel give us a port
+    address = ('localhost', 0) # let the kernel assign a port
     server = SocketServer.TCPServer(address, Bz2RequestHandler)
-    ip, port = server.server_address # find out what port we were given
+    ip, port = server.server_address # what port was assigned?
 
     t = threading.Thread(target=server.serve_forever)
     t.setDaemon(True)
     t.start()
+
+    logger = logging.getLogger('Client')
 
     # Connect to the server
     logger.info('Contacting server on %s:%s', ip, port)
@@ -75,7 +79,9 @@ if __name__ == '__main__':
     s.connect((ip, port))
 
     # Ask for a file
-    requested_file = 'lorem.txt'
+    requested_file = (sys.argv[0]
+                      if len(sys.argv) > 1
+                      else 'lorem.txt')
     logger.debug('sending filename: "%s"', requested_file)
     len_sent = s.send(requested_file)
 
@@ -97,9 +103,11 @@ if __name__ == '__main__':
             logger.debug('BUFFERING')
 
     full_response = buffer.getvalue()
-    lorem = open('lorem.txt', 'rt').read()
-    logger.debug('response matches file contents: %s', full_response == lorem)
+    lorem = open(requested_file, 'rt').read()
+    logger.debug('response matches file contents: %s',
+                 full_response == lorem)
 
     # Clean up
-    s.close()
+    server.shutdown()
     server.socket.close()
+    s.close()

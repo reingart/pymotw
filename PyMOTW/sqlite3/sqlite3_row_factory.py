@@ -18,11 +18,13 @@ with sqlite3.connect(db_filename) as conn:
     cursor = conn.cursor()
 
     cursor.execute("""
-    select name, description, deadline from project where name = 'pymotw'
+    select name, description, deadline from project
+    where name = 'pymotw'
     """)
     name, description, deadline = cursor.fetchone()
 
-    print 'Project details for %s (%s) due %s' % (description, name, deadline)
+    print 'Project details for %s (%s) due %s' % (
+        description, name, deadline)
 
     cursor.execute("""
     select id, priority, status, deadline, details from task
@@ -30,8 +32,8 @@ with sqlite3.connect(db_filename) as conn:
     """)
 
     print '\nNext 5 tasks:'
-
     for row in cursor.fetchmany(5):
         print '%2d {%d} %-25s [%-8s] (%s)' % (
-            row['id'], row['priority'], row['details'], row['status'], row['deadline'],
+            row['id'], row['priority'], row['details'],
+            row['status'], row['deadline'],
             )

@@ -41,11 +41,11 @@ counter = 0
 
 def increment_counter(name):
     global counter
-    print 'EVENT:', time.time(), name
+    print 'EVENT:', time.ctime(time.time()), name
     counter += 1
     print 'NOW:', counter
 
-print 'START:', time.time()
+print 'START:', time.ctime(time.time())
 e1 = scheduler.enter(2, 1, increment_counter, ('E1',))
 e2 = scheduler.enter(3, 1, increment_counter, ('E2',))
 

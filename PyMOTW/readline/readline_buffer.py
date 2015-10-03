@@ -27,7 +27,8 @@ class BufferAwareCompleter(object):
     def complete(self, text, state):
         response = None
         if state == 0:
-            # This is the first time for this text, so build a match list.
+            # This is the first time for this text,
+            # so build a match list.
             
             origline = readline.get_line_buffer()
             begin = readline.get_begidx()
@@ -56,13 +57,16 @@ class BufferAwareCompleter(object):
                     if being_completed:
                         # match options with portion of input
                         # being completed
-                        self.current_candidates = [ w for w in candidates
-                                                    if w.startswith(being_completed) ]
+                        self.current_candidates = [
+                            w for w in candidates
+                            if w.startswith(being_completed)
+                            ]
                     else:
                         # matching empty string so use all candidates
                         self.current_candidates = candidates
 
-                    logging.debug('candidates=%s', self.current_candidates)
+                    logging.debug('candidates=%s',
+                                  self.current_candidates)
                     
                 except (KeyError, IndexError), err:
                     logging.error('completion error: %s', err)
@@ -72,7 +76,8 @@ class BufferAwareCompleter(object):
             response = self.current_candidates[state]
         except IndexError:
             response = None
-        logging.debug('complete(%s, %s) => %s', repr(text), state, response)
+        logging.debug('complete(%s, %s) => %s',
+                      repr(text), state, response)
         return response
             
 

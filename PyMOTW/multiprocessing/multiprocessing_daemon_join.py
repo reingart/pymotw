@@ -12,19 +12,23 @@ import time
 import sys
 
 def daemon():
-    print 'Starting:', multiprocessing.current_process().name
+    name = multiprocessing.current_process().name
+    print 'Starting:', name
     time.sleep(2)
-    print 'Exiting :', multiprocessing.current_process().name
+    print 'Exiting :', name
 
 def non_daemon():
-    print 'Starting:', multiprocessing.current_process().name
-    print 'Exiting :', multiprocessing.current_process().name
+    name = multiprocessing.current_process().name
+    print 'Starting:', name
+    print 'Exiting :', name
 
 if __name__ == '__main__':
-    d = multiprocessing.Process(name='daemon', target=daemon)
+    d = multiprocessing.Process(name='daemon',
+                                target=daemon)
     d.daemon = True
 
-    n = multiprocessing.Process(name='non-daemon', target=non_daemon)
+    n = multiprocessing.Process(name='non-daemon',
+                                target=non_daemon)
     n.daemon = False
 
     d.start()

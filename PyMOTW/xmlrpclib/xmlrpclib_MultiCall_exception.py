@@ -17,5 +17,8 @@ multicall.show_type(1)
 multicall.raises_exception('Next to last call stops execution')
 multicall.show_type('string')
 
-for i, r in enumerate(multicall()):
-    print i, r
+try:
+    for i, r in enumerate(multicall()):
+        print i, r
+except xmlrpclib.Fault as err:
+    print 'ERROR:', err

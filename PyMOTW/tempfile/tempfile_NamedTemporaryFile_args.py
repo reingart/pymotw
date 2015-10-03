@@ -11,12 +11,10 @@ __version__ = "$Id$"
 
 import tempfile
 
-temp = tempfile.NamedTemporaryFile(suffix='_suffix', 
-                                   prefix='prefix_', 
-                                   dir='/tmp',
-                                   )
-try:
-    print 'temp:', temp
-    print 'temp.name:', temp.name
-finally:
-    temp.close()
+with tempfile.NamedTemporaryFile(
+    suffix='_suffix', prefix='prefix_', dir='/tmp',
+    ) as temp:
+    print 'temp:'
+    print '  ', temp
+    print 'temp.name:'
+    print '  ', temp.name

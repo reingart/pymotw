@@ -14,7 +14,7 @@ import uuid
 def show(msg, l):
     print msg
     for v in l:
-        print '\t', v
+        print ' ', v
     print
 
 input_values = [ 

@@ -9,9 +9,14 @@
 
 import re
 
-text = 'Paragraph one\non two lines.\n\nParagraph two.\n\n\nParagraph three.'
+text = '''Paragraph one
+on two lines.
 
-print
+Paragraph two.
+
+
+Paragraph three.'''
+
 print 'With split:'
 for num, para in enumerate(re.split(r'(\n{2,})', text)):
     print num, repr(para)

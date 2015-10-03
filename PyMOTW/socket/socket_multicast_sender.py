@@ -41,7 +41,8 @@ try:
             print >>sys.stderr, 'timed out, no more responses'
             break
         else:
-            print >>sys.stderr, 'received "%s" from %s' % (data, server)
+            print >>sys.stderr, 'received "%s" from %s' % \
+                (data, server)
 
 finally:
     print >>sys.stderr, 'closing socket'

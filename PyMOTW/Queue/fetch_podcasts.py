@@ -1,42 +1,14 @@
 #!/usr/bin/env python
-#
-# $Id$
-#
-# Copyright 2007 Doug Hellmann.
-#
-#
-#                         All Rights Reserved
-#
-# Permission to use, copy, modify, and distribute this software and
-# its documentation for any purpose and without fee is hereby
-# granted, provided that the above copyright notice appear in all
-# copies and that both that copyright notice and this permission
-# notice appear in supporting documentation, and that the name of Doug
-# Hellmann not be used in advertising or publicity pertaining to
-# distribution of the software without specific, written prior
-# permission.
-#
-# DOUG HELLMANN DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
-# INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN
-# NO EVENT SHALL DOUG HELLMANN BE LIABLE FOR ANY SPECIAL, INDIRECT OR
-# CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
-# OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
-# NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
-# CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-#
-
 """Use several threads to download enclosures from RSS feeds.
-
-See http://blog.doughellmann.com/2007/04/pymotw-queue.html
 """
 #end_pymotw_header
 
-# System modules
 from Queue import Queue
 from threading import Thread
 import time
+import urllib
+import urlparse
 
-# Local modules
 import feedparser
 
 # Set up some global variables
@@ -44,7 +16,7 @@ num_fetch_threads = 2
 enclosure_queue = Queue()
 
 # A real app wouldn't use hard-coded data...
-feed_urls = [ 'http://www.castsampler.com/cast/feed/rss/guest',
+feed_urls = [ 'http://advocacy.python.org/podcasts/littlebit.rss',
              ]
 
 
@@ -58,16 +30,21 @@ def downloadEnclosures(i, q):
     while True:
         print '%s: Looking for the next enclosure' % i
         url = q.get()
-        print '%s: Downloading:' % i, url
-        # instead of really downloading the URL,
-        # we just pretend and sleep
-        time.sleep(i + 2)
+        parsed_url = urlparse.urlparse(url)
+        print '%s: Downloading:' % i, parsed_url.path
+        response = urllib.urlopen(url)
+        data = response.read()
+        # Save the downloaded file to the current directory
+        outfile_name = url.rpartition('/')[-1]
+        with open(outfile_name, 'wb') as outfile:
+            outfile.write(data)
         q.task_done()
 
 
 # Set up some threads to fetch the enclosures
 for i in range(num_fetch_threads):
-    worker = Thread(target=downloadEnclosures, args=(i, enclosure_queue,))
+    worker = Thread(target=downloadEnclosures,
+                    args=(i, enclosure_queue,))
     worker.setDaemon(True)
     worker.start()
 
@@ -75,9 +52,10 @@ for i in range(num_fetch_threads):
 # the queue.
 for url in feed_urls:
     response = feedparser.parse(url, agent='fetch_podcasts.py')
-    for entry in response['entries']:
+    for entry in response['entries'][-5:]:
         for enclosure in entry.get('enclosures', []):
-            print 'Queuing:', enclosure['url']
+            parsed_url = urlparse.urlparse(enclosure['url'])
+            print 'Queuing:', parsed_url.path
             enclosure_queue.put(enclosure['url'])
         
 # Now wait for the queue to be empty, indicating that we have

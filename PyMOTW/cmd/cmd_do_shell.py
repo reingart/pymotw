@@ -10,7 +10,7 @@ __version__ = "$Id$"
 #end_pymotw_header
 
 import cmd
-import os
+import subprocess
 
 class ShellEnabled(cmd.Cmd):
     
@@ -19,12 +19,17 @@ class ShellEnabled(cmd.Cmd):
     def do_shell(self, line):
         "Run a shell command"
         print "running shell command:", line
-        output = os.popen(line).read()
+        sub_cmd = subprocess.Popen(line,
+                                   shell=True,
+                                   stdout=subprocess.PIPE)
+        output = sub_cmd.communicate()[0]
         print output
         self.last_output = output
     
     def do_echo(self, line):
-        "Print the input, replacing '$out' with the output of the last shell command"
+        """Print the input, replacing '$out' with
+        the output of the last shell command.
+        """
         # Obviously not robust
         print line.replace('$out', self.last_output)
     

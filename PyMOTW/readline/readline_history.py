@@ -21,8 +21,9 @@ logging.basicConfig(filename=LOG_FILENAME,
                     )
 
 def get_history_items():
+    num_items = readline.get_current_history_length() + 1
     return [ readline.get_history_item(i)
-             for i in xrange(1, readline.get_current_history_length() + 1)
+             for i in xrange(1, num_items)
              ]
 
 class HistoryCompleter(object):

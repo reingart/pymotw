@@ -29,7 +29,12 @@ def reader(conn):
 
 if __name__ == '__main__':
 
-    with sqlite3.connect(db_filename, isolation_level=isolation_level) as conn:
-        t = threading.Thread(name='Reader 1', target=reader, args=(conn,))
+    with sqlite3.connect(db_filename,
+                         isolation_level=isolation_level,
+                         ) as conn:
+        t = threading.Thread(name='Reader 1',
+                             target=reader,
+                             args=(conn,),
+                             )
         t.start()
         t.join()

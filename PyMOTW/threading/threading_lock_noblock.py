@@ -39,10 +39,12 @@ def worker(lock):
         try:
             num_tries += 1
             if have_it:
-                logging.debug('Iteration %d: Acquired',  num_tries)
+                logging.debug('Iteration %d: Acquired',
+                              num_tries)
                 num_acquires += 1
             else:
-                logging.debug('Iteration %d: Not acquired', num_tries)
+                logging.debug('Iteration %d: Not acquired',
+                              num_tries)
         finally:
             if have_it:
                 lock.release()
@@ -51,9 +53,13 @@ def worker(lock):
 
 lock = threading.Lock()
 
-holder = threading.Thread(target=lock_holder, args=(lock,), name='LockHolder')
+holder = threading.Thread(target=lock_holder,
+                          args=(lock,),
+                          name='LockHolder')
 holder.setDaemon(True)
 holder.start()
 
-worker = threading.Thread(target=worker, args=(lock,), name='Worker')
+worker = threading.Thread(target=worker,
+                          args=(lock,),
+                          name='Worker')
 worker.start()

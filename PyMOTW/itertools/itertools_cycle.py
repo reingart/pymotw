@@ -32,9 +32,5 @@ __version__ = "$Id$"
 
 from itertools import *
 
-i = 0
-for item in cycle(['a', 'b', 'c']):
-    i += 1
-    if i == 10:
-        break
+for i, item in izip(xrange(7), cycle(['a', 'b', 'c'])):
     print (i, item)

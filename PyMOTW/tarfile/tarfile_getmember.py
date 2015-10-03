@@ -11,12 +11,13 @@ __version__ = "$Id$"
 
 import tarfile
 import time
+from contextlib import closing
 
-t = tarfile.open('example.tar', 'r')
-for filename in [ 'README.txt', 'notthere.txt' ]:
-    try:
-        info = t.getmember(filename)
-    except KeyError:
-        print 'ERROR: Did not find %s in tar archive' % filename
-    else:
-        print '%s is %d bytes' % (info.name, info.size)
+with closing(tarfile.open('example.tar', 'r')) as t:
+    for filename in [ 'README.txt', 'notthere.txt' ]:
+        try:
+            info = t.getmember(filename)
+        except KeyError:
+            print 'ERROR: Did not find %s in tar archive' % filename
+        else:
+            print '%s is %d bytes' % (info.name, info.size)

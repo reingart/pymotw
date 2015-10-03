@@ -28,6 +28,8 @@ with sqlite3.connect(db_filename) as conn:
     conn.create_aggregate('mode', 1, Mode)
     
     cursor = conn.cursor()
-    cursor.execute("select mode(deadline) from task where project = 'pymotw'")
+    cursor.execute("""
+    select mode(deadline) from task where project = 'pymotw'
+    """)
     row = cursor.fetchone()
     print 'mode(deadline) is:', row[0]

@@ -44,7 +44,6 @@ candidates = [
     ]
 
 for candidate in candidates:
-    print
     print 'Candidate:', candidate
     match = address.search(candidate)
     if match:

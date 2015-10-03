@@ -36,4 +36,4 @@ child_pid = os.fork()
 if child_pid:
     os.waitpid(child_pid, 0)
 else:
-    os.execlp('ls', 'ls', '-l', '/tmp/')
+    os.execlp('pwd', 'pwd', '-P')

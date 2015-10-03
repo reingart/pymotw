@@ -27,7 +27,9 @@ with sqlite3.connect(db_filename) as conn:
 
         # Insert
         cursor = conn.cursor()
-        cursor.execute("delete from project where name = 'virtualenvwrapper'")
+        cursor.execute("""delete from project
+                       where name = 'virtualenvwrapper'
+                       """)
 
         # Show the settings
         print '\nAfter delete:'

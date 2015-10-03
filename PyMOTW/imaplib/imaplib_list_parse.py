@@ -14,10 +14,13 @@ import re
 
 from imaplib_connect import open_connection
 
-list_response_pattern = re.compile(r'\((?P<flags>.*?)\) "(?P<delimiter>.*)" (?P<name>.*)')
+list_response_pattern = re.compile(
+    r'\((?P<flags>.*?)\) "(?P<delimiter>.*)" (?P<name>.*)'
+    )
 
 def parse_list_response(line):
-    flags, delimiter, mailbox_name = list_response_pattern.match(line).groups()
+    match = list_response_pattern.match(line)
+    flags, delimiter, mailbox_name = match.groups()
     mailbox_name = mailbox_name.strip('"')
     return (flags, delimiter, mailbox_name)
 

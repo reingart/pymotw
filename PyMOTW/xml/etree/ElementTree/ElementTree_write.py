@@ -8,7 +8,11 @@
 #end_pymotw_header
 
 import sys
-from xml.etree.ElementTree import Element, SubElement, Comment, ElementTree
+from xml.etree.ElementTree import ( Element,
+                                    SubElement,
+                                    Comment,
+                                    ElementTree,
+                                    )
 
 top = Element('top')
 

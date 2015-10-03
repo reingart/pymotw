@@ -19,7 +19,7 @@ print 'Text length :', len(text)
 print 'Repetitions :', repetitions
 print 'Expected len:', len(text) * repetitions
 
-# Encode the text several times build up a large amount of data
+# Encode the text several times to build up a large amount of data
 encoder = codecs.getincrementalencoder('bz2')()
 encoded = []
 

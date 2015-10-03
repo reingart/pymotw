@@ -20,9 +20,13 @@ word = 'consectetuer'
 reversed = word[::-1]
 
 with open('lorem_copy.txt', 'r+') as f:
-    with contextlib.closing(mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_COPY)) as m:
-        print 'Memory Before:', m.readline().rstrip()
-        print 'File Before  :', f.readline().rstrip()
+    with contextlib.closing(mmap.mmap(f.fileno(), 0,
+                                      access=mmap.ACCESS_COPY)
+                            ) as m:
+        print 'Memory Before:'
+        print m.readline().rstrip()
+        print 'File Before  :'
+        print f.readline().rstrip()
         print
 
         m.seek(0) # rewind
@@ -30,7 +34,9 @@ with open('lorem_copy.txt', 'r+') as f:
         m[loc:loc+len(word)] = reversed
 
         m.seek(0) # rewind
-        print 'Memory After :', m.readline().rstrip()
+        print 'Memory After :'
+        print m.readline().rstrip()
 
         f.seek(0)
-        print 'File After   :', f.readline().rstrip()
+        print 'File After   :'
+        print f.readline().rstrip()

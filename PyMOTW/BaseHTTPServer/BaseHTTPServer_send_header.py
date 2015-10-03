@@ -15,7 +15,8 @@ class GetHandler(BaseHTTPRequestHandler):
     
     def do_GET(self):
         self.send_response(200)
-        self.send_header('Last-Modified', self.date_time_string(time.time()))
+        self.send_header('Last-Modified',
+                         self.date_time_string(time.time()))
         self.end_headers()
         self.wfile.write('Response body\n')
         return

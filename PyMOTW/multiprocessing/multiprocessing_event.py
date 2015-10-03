@@ -30,7 +30,7 @@ if __name__ == '__main__':
                                  args=(e,))
     w1.start()
 
-    w2 = multiprocessing.Process(name='non-block', 
+    w2 = multiprocessing.Process(name='nonblock', 
                                  target=wait_for_event_timeout, 
                                  args=(e, 2))
     w2.start()

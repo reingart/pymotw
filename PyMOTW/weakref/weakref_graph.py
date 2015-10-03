@@ -16,7 +16,7 @@ class Graph(object):
         self.name = name
         self.other = None
     def set_next(self, other):
-        print '%s.set_next(%s (%s))' % (self.name, other, type(other))
+        print '%s.set_next(%r)' % (self.name, other)
         self.other = other
     def all_nodes(self):
         "Generate the nodes in the graph sequence."
@@ -29,22 +29,13 @@ class Graph(object):
             yield n
         return
     def __str__(self):
-        return '->'.join([n.name for n in self.all_nodes()])
+        return '->'.join(n.name for n in self.all_nodes())
     def __repr__(self):
-        return '%s(%s)' % (self.__class__.__name__, self.name)
+        return '<%s at 0x%x name=%s>' % (self.__class__.__name__,
+                                         id(self), self.name)
     def __del__(self):
         print '(Deleting %s)' % self.name
         self.set_next(None)
-
-class WeakGraph(Graph):
-    def set_next(self, other):
-        if other is not None:
-            # See if we should replace the reference
-            # to other with a weakref.
-            if self in other.all_nodes():
-                other = weakref.proxy(other)
-        super(WeakGraph, self).set_next(other)
-        return
 
 def collect_and_show_garbage():
     "Show what garbage is present."
@@ -64,10 +55,8 @@ def demo(graph_factory):
     three.set_next(one)
     
     print
-    print 'Graphs:'
+    print 'Graph:'
     print str(one)
-    print str(two)
-    print str(three)
     collect_and_show_garbage()
 
     print

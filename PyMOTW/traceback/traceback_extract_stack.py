@@ -9,7 +9,7 @@
 
 import traceback
 import sys
-from pprint import pprint
+import os
 
 from traceback_example import call_function
 
@@ -17,4 +17,6 @@ def f():
     return traceback.extract_stack()
 
 stack = call_function(f)
-pprint(stack)
+for filename, linenum, funcname, source in stack:
+    print '%-26s:%s "%s" in %s()' % \
+        (os.path.basename(filename), linenum, source, funcname)

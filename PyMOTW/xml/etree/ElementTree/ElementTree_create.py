@@ -7,7 +7,11 @@
 """
 #end_pymotw_header
 
-from xml.etree.ElementTree import Element, SubElement, Comment, tostring
+from xml.etree.ElementTree import ( Element,
+                                    SubElement,
+                                    Comment,
+                                    tostring,
+                                    )
 
 top = Element('top')
 

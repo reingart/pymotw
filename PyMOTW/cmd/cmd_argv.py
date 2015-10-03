@@ -12,7 +12,9 @@ __version__ = "$Id$"
 import cmd
 
 class InteractiveOrCommandLine(cmd.Cmd):
-    """Accepts commands via the normal interactive prompt or on the command line."""
+    """Accepts commands via the normal interactive
+    prompt or on the command line.
+    """
 
     def do_greet(self, line):
         print 'hello,', line

@@ -34,7 +34,9 @@ for line in fileinput.input(sys.argv[1:]):
     item = SubElement(rss, 'item')
     title = SubElement(item, 'title')
     title.text = mp3filename
-    encl = SubElement(item, 'enclosure', {'type':'audio/mpeg', 'url':mp3filename})
+    encl = SubElement(item, 'enclosure',
+                      {'type':'audio/mpeg',
+                       'url':mp3filename})
         
 rough_string = tostring(rss)
 reparsed = minidom.parseString(rough_string)

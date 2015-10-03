@@ -10,9 +10,17 @@ __version__ = "$Id$"
 #end_pymotw_header
 
 import filecmp
+import pprint
 
 dc = filecmp.dircmp('example/dir1', 'example/dir2')
-print 'Common     :', dc.common
-print 'Directories:', dc.common_dirs
-print 'Files      :', dc.common_files
-print 'Funny      :', dc.common_funny
+print 'Common:'
+pprint.pprint(dc.common)
+
+print '\nDirectories:'
+pprint.pprint(dc.common_dirs)
+
+print '\nFiles:'
+pprint.pprint(dc.common_files)
+
+print '\nFunny:'
+pprint.pprint(dc.common_funny)

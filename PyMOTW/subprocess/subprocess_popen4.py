@@ -11,13 +11,14 @@ __version__ = "$Id$"
 
 import subprocess
 
-print '\npopen4:'
+print 'popen4:'
 proc = subprocess.Popen('cat -; echo "to stderr" 1>&2',
                         shell=True,
                         stdin=subprocess.PIPE,
                         stdout=subprocess.PIPE,
                         stderr=subprocess.STDOUT,
                         )
-stdout_value, stderr_value = proc.communicate('through stdin to stdout\n')
+msg = 'through stdin to stdout\n'
+stdout_value, stderr_value = proc.communicate(msg)
 print '\tcombined output:', repr(stdout_value)
 print '\tstderr value   :', repr(stderr_value)

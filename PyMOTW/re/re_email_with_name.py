@@ -12,14 +12,15 @@ import re
 address = re.compile(
     '''
 
-    # A name is made up of letters, and may include "." for title
-    # abbreviations and middle initials.
+    # A name is made up of letters, and may include "."
+    # for title abbreviations and middle initials.
     ((?P<name>
        ([\w.,]+\s+)*[\w.,]+)
        \s*
-       # Email addresses are wrapped in angle brackets: < >
-       # but we only want one if we found a name, so keep
-       # the start bracket in this group.
+       # Email addresses are wrapped in angle
+       # brackets: < > but only if a name is
+       # found, so keep the start bracket in this
+       # group.
        <
     )? # the entire name is optional
 
@@ -49,11 +50,10 @@ candidates = [
     ]
 
 for candidate in candidates:
-    print
     print 'Candidate:', candidate
     match = address.search(candidate)
     if match:
-        print '  Match name :', match.groupdict()['name']
-        print '  Match email:', match.groupdict()['email']
+        print '  Name :', match.groupdict()['name']
+        print '  Email:', match.groupdict()['email']
     else:
         print '  No match'

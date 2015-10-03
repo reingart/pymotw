@@ -9,3 +9,7 @@ recursive-include PyMOTW *.rst *.html *.txt *.css *.js *.png
 include sphinx/conf.py
 recursive-include sphinx/templates *.py *.html
 prune utils
+include PyMOTW/tarfile/example.tar
+include PyMOTW/tarfile/bad_example.tar
+include PyMOTW/zipfile/example.zip
+include PyMOTW/zipfile/bad_example.zip

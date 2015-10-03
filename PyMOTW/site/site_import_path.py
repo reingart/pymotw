@@ -29,8 +29,10 @@ for p in site.PREFIXES:
 
 for prefix in sorted(set(site.PREFIXES)):
     print
+    print prefix
     for suffix in SUFFIXES:
+        print
+        print ' ', suffix
         path = os.path.join(prefix, suffix).rstrip(os.sep)
-        print path
-        print '   exists:', os.path.exists(path)
-        print '  in path:', path in sys.path
+        print '   exists :', os.path.exists(path)
+        print '   in path:', path in sys.path

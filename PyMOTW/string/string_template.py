@@ -14,17 +14,17 @@ import string
 values = { 'var':'foo' }
 
 t = string.Template("""
-$var
-$$
-${var}iable
+Variable        : $var
+Escape          : $$
+Variable in text: ${var}iable
 """)
 
 print 'TEMPLATE:', t.substitute(values)
 
 s = """
-%(var)s
-%%
-%(var)siable
+Variable        : %(var)s
+Escape          : %%
+Variable in text: %(var)siable
 """
 
-print 'INTERPLOATION:', s % values
+print 'INTERPOLATION:', s % values

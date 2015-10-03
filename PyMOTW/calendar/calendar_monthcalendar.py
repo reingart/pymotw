@@ -33,4 +33,4 @@ __module_id__ = "$Id$"
 import calendar
 import pprint
 
-pprint.pprint(calendar.monthcalendar(2007, 7))
+pprint.pprint(calendar.monthcalendar(2011, 7))

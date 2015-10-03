@@ -11,8 +11,9 @@ __version__ = "$Id$"
 
 import tarfile
 import os
+from contextlib import closing
 
 os.mkdir('outdir')
-t = tarfile.open('example.tar', 'r')
-t.extractall('outdir')
+with closing(tarfile.open('example.tar', 'r')) as t:
+    t.extractall('outdir')
 print os.listdir('outdir')

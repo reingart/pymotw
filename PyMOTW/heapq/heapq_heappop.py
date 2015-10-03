@@ -19,10 +19,7 @@ print 'heapified :'
 show_tree(data)
 print
 
-inorder = []
-while data:
+for i in xrange(2):
     smallest = heapq.heappop(data)
     print 'pop    %3d:' % smallest
     show_tree(data)
-    inorder.append(smallest)
-print 'inorder   :', inorder

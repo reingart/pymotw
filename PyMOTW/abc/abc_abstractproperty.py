@@ -15,14 +15,17 @@ class Base(object):
     @abc.abstractproperty
     def value(self):
         return 'Should never get here'
-
+    
+    @abc.abstractproperty
+    def constant(self):
+        return 'Should never get here'
 
 class Implementation(Base):
-    
     @property
     def value(self):
         return 'concrete property'
 
+    constant = 'set by a class attribute'
 
 try:
     b = Base()
@@ -31,4 +34,5 @@ except Exception, err:
     print 'ERROR:', str(err)
 
 i = Implementation()
-print 'Implementation.value:', i.value
+print 'Implementation.value   :', i.value
+print 'Implementation.constant:', i.constant

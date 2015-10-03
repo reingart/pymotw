@@ -41,9 +41,7 @@ class SimpleObject(object):
 
     def __init__(self, name):
         self.name = name
-        l = list(name)
-        l.reverse()
-        self.name_backwards = ''.join(l)
+        self.name_backwards = name[::-1]
         return
 
 data = []
@@ -56,7 +54,7 @@ out_s = StringIO()
 
 # Write to the stream
 for o in data:
-    print 'WRITING: %s (%s)' % (o.name, o.name_backwards)
+    print 'WRITING : %s (%s)' % (o.name, o.name_backwards)
     pickle.dump(o, out_s)
     out_s.flush()
 
@@ -70,4 +68,4 @@ while True:
     except EOFError:
         break
     else:
-        print 'READ: %s (%s)' % (o.name, o.name_backwards)
+        print 'READ    : %s (%s)' % (o.name, o.name_backwards)

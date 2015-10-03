@@ -30,8 +30,11 @@ message_queues = {}
 # Do not block forever (milliseconds)
 TIMEOUT = 1000
 
-# Commonly used flag setes
-READ_ONLY = select.POLLIN | select.POLLPRI | select.POLLHUP | select.POLLERR
+# Commonly used flag sets
+READ_ONLY = ( select.POLLIN |
+              select.POLLPRI |
+              select.POLLHUP |
+              select.POLLERR )
 READ_WRITE = READ_ONLY | select.POLLOUT
 
 # Set up the poller
@@ -45,7 +48,7 @@ fd_to_socket = { server.fileno(): server,
 while True:
 
     # Wait for at least one of the sockets to be ready for processing
-    print >>sys.stderr, '\nwaiting for the next event'
+    print >>sys.stderr, 'waiting for the next event'
     events = poller.poll(TIMEOUT)
 
     for fd, flag in events:
@@ -57,28 +60,29 @@ while True:
         if flag & (select.POLLIN | select.POLLPRI):
 
             if s is server:
-                # A "readable" server socket is ready to accept a connection
+                # A readable socket is ready to accept a connection
                 connection, client_address = s.accept()
-                print >>sys.stderr, 'new connection from', client_address
+                print >>sys.stderr, '  connection', client_address
                 connection.setblocking(0)
                 fd_to_socket[ connection.fileno() ] = connection
                 poller.register(connection, READ_ONLY)
 
-                # Give the connection a queue for data we want to send
+                # Give the connection a queue for data to send
                 message_queues[connection] = Queue.Queue()
 
             else:
                 data = s.recv(1024)
                 if data:
                     # A readable client socket has data
-                    print >>sys.stderr, 'received "%s" from %s' % (data, s.getpeername())
+                    print >>sys.stderr, '  received "%s" from %s' % \
+                        (data, s.getpeername())
                     message_queues[s].put(data)
                     # Add output channel for response
                     poller.modify(s, READ_WRITE)
 
                 else:
                     # Interpret empty result as closed connection
-                    print >>sys.stderr, 'closing', client_address, 'after reading no data'
+                    print >>sys.stderr, '  closing', client_address
                     # Stop listening for input on the connection
                     poller.unregister(s)
                     s.close()
@@ -88,7 +92,7 @@ while True:
 
         elif flag & select.POLLHUP:
             # Client hung up
-            print >>sys.stderr, 'closing', client_address, 'after receiving HUP'
+            print >>sys.stderr, '  closing', client_address, '(HUP)'
             # Stop listening for input on the connection
             poller.unregister(s)
             s.close()
@@ -98,15 +102,16 @@ while True:
             try:
                 next_msg = message_queues[s].get_nowait()
             except Queue.Empty:
-                # No messages waiting so stop checking for writability.
-                print >>sys.stderr, 'output queue for', s.getpeername(), 'is empty'
+                # No messages waiting so stop checking
+                print >>sys.stderr, s.getpeername(), 'queue empty'
                 poller.modify(s, READ_ONLY)
             else:
-                print >>sys.stderr, 'sending "%s" to %s' % (next_msg, s.getpeername())
+                print >>sys.stderr, '  sending "%s" to %s' % \
+                    (next_msg, s.getpeername())
                 s.send(next_msg)
 
         elif flag & select.POLLERR:
-            print >>sys.stderr, 'handling exceptional condition for', s.getpeername()
+            print >>sys.stderr, '  exception on', s.getpeername()
             # Stop listening for input on the connection
             poller.unregister(s)
             s.close()

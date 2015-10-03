@@ -10,10 +10,13 @@
 import random
 import itertools
 
+FACE_CARDS = ('J', 'Q', 'K', 'A')
+SUITS = ('H', 'D', 'C', 'S')
+
 def new_deck():
     return list(itertools.product(
-            itertools.chain(xrange(2, 11), ('J', 'Q', 'K', 'A')),
-            ('H', 'D', 'C', 'S'),
+            itertools.chain(xrange(2, 11), FACE_CARDS),
+            SUITS,
             ))
 
 def show_deck(deck):
@@ -25,7 +28,7 @@ def show_deck(deck):
             print '%2s%s' % j,
         print
 
-# Get a new deck, with the cards in order
+# Make a new deck, with the cards in order
 deck = new_deck()
 print 'Initial deck:'
 show_deck(deck)

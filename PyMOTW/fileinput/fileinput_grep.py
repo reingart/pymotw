@@ -18,7 +18,7 @@ for line in fileinput.input(sys.argv[2:]):
         if fileinput.isstdin():
             fmt = '{lineno}:{line}'
         else:
-            fmt = '{filename:<20}:{lineno}:{line}'
+            fmt = '{filename}:{lineno}:{line}'
         print fmt.format(filename=fileinput.filename(),
                          lineno=fileinput.filelineno(),
                          line=line.rstrip())

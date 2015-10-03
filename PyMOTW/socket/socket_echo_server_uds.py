@@ -23,7 +23,7 @@ except OSError:
 # Create a UDS socket
 sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
 
-# Bind the socket to the port
+# Bind the socket to the address
 print >>sys.stderr, 'starting up on %s' % server_address
 sock.bind(server_address)
 
@@ -45,7 +45,7 @@ while True:
                 print >>sys.stderr, 'sending data back to the client'
                 connection.sendall(data)
             else:
-                print >>sys.stderr, 'no more data from', client_address
+                print >>sys.stderr, 'no data from', client_address
                 break
             
     finally:

@@ -10,12 +10,10 @@ __version__ = "$Id$"
 #end_pymotw_header
 
 import bz2
+import contextlib
 import os
 
-output = bz2.BZ2File('example.txt.bz2', 'wb')
-try:
+with contextlib.closing(bz2.BZ2File('example.bz2', 'wb')) as output:
     output.write('Contents of the example file go here.\n')
-finally:
-    output.close()
 
-os.system('file example.txt.bz2')
+os.system('file example.bz2')

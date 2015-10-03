@@ -31,38 +31,42 @@ __version__ = "$Id$"
 #end_pymotw_header
 
 from itertools import *
+import operator
+import pprint
 
 class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
     def __repr__(self):
-        return 'Point(%s, %s)' % (self.x, self.y)
+        return '(%s, %s)' % (self.x, self.y)
     def __cmp__(self, other):
         return cmp((self.x, self.y), (other.x, other.y))
 
 # Create a dataset of Point instances
 data = list(imap(Point, 
                  cycle(islice(count(), 3)), 
-                 islice(count(), 10),
+                 islice(count(), 7),
                  )
             )
-print 'Data:', data
+print 'Data:'
+pprint.pprint(data, width=69)
 print
 
 # Try to group the unsorted data based on X values
 print 'Grouped, unsorted:'
-for k, g in groupby(data, lambda o:o.x):
+for k, g in groupby(data, operator.attrgetter('x')):
     print k, list(g)
 print
 
 # Sort the data
 data.sort()
-print 'Sorted:', data
+print 'Sorted:'
+pprint.pprint(data, width=69)
 print
 
 # Group the sorted data based on X values
 print 'Grouped, sorted:'
-for k, g in groupby(data, lambda o:o.x):
+for k, g in groupby(data, operator.attrgetter('x')):
     print k, list(g)
 print

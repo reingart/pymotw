@@ -14,23 +14,17 @@ def test_patterns(text, patterns=[]):
     matches for each pattern within the text and print
     them to stdout.
     """
-    # Show the character positions and input text
-    print
-    print ''.join(str(i/10 or ' ') for i in range(len(text)))
-    print ''.join(str(i%10) for i in range(len(text)))
-    print text
-
     # Look for each pattern in the text and print the results
-    for pattern in patterns:
-        print
-        print 'Matching "%s"' % pattern
+    for pattern, desc in patterns:
+        print 'Pattern %r (%s)\n' % (pattern, desc)
+        print '  %r' % text
         for match in re.finditer(pattern, text):
             s = match.start()
             e = match.end()
-            print '  %2d : %2d = "%s"' % \
-                (s, e-1, text[s:e])
-            print '    Groups:', match.groups()
+            prefix = ' ' * (s)
+            print '  %s%r%s ' % (prefix, text[s:e], ' '*(len(text)-e)),
+            print match.groups()
             if match.groupdict():
-                print '    Named groups:', match.groupdict()
-            print
+                print '%s%s' % (' ' * (len(text)-s), match.groupdict())
+        print
     return

@@ -12,7 +12,7 @@ import os
 import cPickle as pickle
 
 if os.path.exists('state.dat'):
-    # Restore the previously saved sate
+    # Restore the previously saved state
     print 'Found state.dat, initializing random module'
     with open('state.dat', 'rb') as f:
         state = pickle.load(f)
@@ -24,7 +24,8 @@ else:
 
 # Produce random values
 for i in xrange(3):
-    print '%04.3f' % random.random()
+    print '%04.3f' % random.random(),
+print
 
 # Save state for next time
 with open('state.dat', 'wb') as f:
@@ -33,4 +34,6 @@ with open('state.dat', 'wb') as f:
 # Produce more random values
 print '\nAfter saving state:'
 for i in xrange(3):
-    print '%04.3f' % random.random()
+    print '%04.3f' % random.random(),
+print
+

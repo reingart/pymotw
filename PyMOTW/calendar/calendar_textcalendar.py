@@ -33,4 +33,4 @@ __module_id__ = "$Id$"
 import calendar
 
 c = calendar.TextCalendar(calendar.SUNDAY)
-c.prmonth(2007, 7)
+c.prmonth(2011, 7)

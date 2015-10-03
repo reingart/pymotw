@@ -35,7 +35,8 @@ class ZlibRequestHandler(SocketServer.BaseRequestHandler):
                 self.logger.debug('RAW "%s"', block)
                 compressed = compressor.compress(block)
                 if compressed:
-                    self.logger.debug('SENDING "%s"', binascii.hexlify(compressed))
+                    self.logger.debug('SENDING "%s"',
+                                      binascii.hexlify(compressed))
                     self.request.send(compressed)
                 else:
                     self.logger.debug('BUFFERING')
@@ -45,7 +46,8 @@ class ZlibRequestHandler(SocketServer.BaseRequestHandler):
         while remaining:
             to_send = remaining[:BLOCK_SIZE]
             remaining = remaining[BLOCK_SIZE:]
-            self.logger.debug('FLUSHING "%s"', binascii.hexlify(to_send))
+            self.logger.debug('FLUSHING "%s"',
+                              binascii.hexlify(to_send))
             self.request.send(to_send)
         return
 
@@ -61,15 +63,15 @@ if __name__ == '__main__':
     logger = logging.getLogger('Client')
 
     # Set up a server, running in a separate thread
-    address = ('localhost', 0) # let the kernel give us a port
+    address = ('localhost', 0) # let the kernel assign a port
     server = SocketServer.TCPServer(address, ZlibRequestHandler)
-    ip, port = server.server_address # find out what port we were given
+    ip, port = server.server_address # what port was assigned?
 
     t = threading.Thread(target=server.serve_forever)
     t.setDaemon(True)
     t.start()
 
-    # Connect to the server
+    # Connect to the server as a client
     logger.info('Contacting server on %s:%s', ip, port)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((ip, port))
@@ -109,7 +111,8 @@ if __name__ == '__main__':
     
     full_response = buffer.getvalue()
     lorem = open('lorem.txt', 'rt').read()
-    logger.debug('response matches file contents: %s', full_response == lorem)
+    logger.debug('response matches file contents: %s',
+                 full_response == lorem)
 
     # Clean up
     s.close()

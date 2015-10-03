@@ -8,10 +8,10 @@ class MyObject(object):
     
     CLASS_ATTRIBUTE = 'some value'
     
-    def __init__(self, name):
-        self.name = name
-    
     def __str__(self):
         return 'MyObject(%s)' % self.name
+    
+    def __init__(self, name):
+        self.name = name
 
 dis.dis(MyObject)

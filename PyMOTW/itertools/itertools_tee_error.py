@@ -35,12 +35,13 @@ from itertools import *
 r = islice(count(), 5)
 i1, i2 = tee(r)
 
+print 'r:',
 for i in r:
-    print 'r:', i
+    print i,
     if i > 1:
         break
+print
 
-for i in i1:
-    print 'i1:', i
-for i in i2:
-    print 'i2:', i
+print 'i1:', list(i1)
+print 'i2:', list(i2)
+

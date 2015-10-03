@@ -39,4 +39,6 @@ logging.basicConfig(level=logging.DEBUG,
                     )
 
 logging.debug('Logging pformatted data')
-logging.debug(pformat(data))
+formatted = pformat(data)
+for line in formatted.splitlines():
+    logging.debug(line.rstrip())

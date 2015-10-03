@@ -27,7 +27,7 @@ c = Cookie.SimpleCookie()
 
 # A cookie with a value that has to be encoded to fit into the header
 c['encoded_value_cookie'] = '"cookie_value"'
-c['encoded_value_cookie']['comment'] = 'Notice that this cookie value has escaped quotes'
+c['encoded_value_cookie']['comment'] = 'Value has escaped quotes'
 
 # A cookie that only applies to part of a site
 c['restricted_cookie'] = 'cookie_value'
@@ -41,7 +41,11 @@ c['with_max_age']['max-age'] = 300 # seconds
 
 # A cookie that expires at a specific time
 c['expires_at_time'] = 'cookie_value'
-expires = datetime.datetime(2009, 2, 14, 18, 30, 14) + datetime.timedelta(hours=1)
-c['expires_at_time']['expires'] = expires.strftime('%a, %d %b %Y %H:%M:%S') # Wdy, DD-Mon-YY HH:MM:SS GMT
+time_to_live = datetime.timedelta(hours=1)
+expires = datetime.datetime(2009, 2, 14, 18, 30, 14) + time_to_live
+
+# Date format: Wdy, DD-Mon-YY HH:MM:SS GMT
+expires_at_time = expires.strftime('%a, %d %b %Y %H:%M:%S')
+c['expires_at_time']['expires'] = expires_at_time
 
 show_cookie(c)

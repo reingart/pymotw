@@ -19,8 +19,7 @@ logging.basicConfig(level=logging.DEBUG,
                     )
 
 clients = [
-    HttpClient('http://www.doughellmann.com/PyMOTW/contents.html'),
-    HttpClient('http://www.python.org/'),
+    HttpClient('http://www.doughellmann.com/'),
     ]
 
 loop_counter = 0

@@ -22,32 +22,20 @@ ROUNDING_MODES = [
     'ROUND_05UP',
     ]
 
-header_fmt = '{0:20} {1:^10} {2:^10} {3:^10}'
+header_fmt = '{:10} ' + ' '.join(['{:^8}'] * 6)
 
-print 'POSITIVES:'
-print
-
-print header_fmt.format(' ', '1/8 (1)', '1/8 (2)', '1/8 (3)')
-print header_fmt.format(' ', '-' * 10, '-' * 10, '-' * 10)
+print header_fmt.format(' ',
+                        '1/8 (1)', '-1/8 (1)',
+                        '1/8 (2)', '-1/8 (2)',
+                        '1/8 (3)', '-1/8 (3)',
+                        )
 for rounding_mode in ROUNDING_MODES:
-    print '{0:20}'.format(rounding_mode),
+    print '{0:10}'.format(rounding_mode.partition('_')[-1]),
     for precision in [ 1, 2, 3 ]:
         context.prec = precision
         context.rounding = getattr(decimal, rounding_mode)
         value = decimal.Decimal(1) / decimal.Decimal(8)
-        print '{0:<10}'.format(value),
-    print
-
-print
-print 'NEGATIVES:'
-
-print header_fmt.format(' ', '-1/8 (1)', '-1/8 (2)', '-1/8 (3)')
-print header_fmt.format(' ', '-' * 10, '-' * 10, '-' * 10)
-for rounding_mode in ROUNDING_MODES:
-    print '{0:20}'.format(rounding_mode),
-    for precision in [ 1, 2, 3 ]:
-        context.prec = precision
-        context.rounding = getattr(decimal, rounding_mode)
+        print '{0:^8}'.format(value),
         value = decimal.Decimal(-1) / decimal.Decimal(8)
-        print '{0:<10}'.format(value),
+        print '{0:^8}'.format(value),
     print

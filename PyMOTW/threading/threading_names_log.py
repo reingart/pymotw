@@ -11,9 +11,10 @@ import logging
 import threading
 import time
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='[%(levelname)s] (%(threadName)-10s) %(message)s',
-                    )
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='[%(levelname)s] (%(threadName)-10s) %(message)s',
+    )
 
 def worker():
     logging.debug('Starting')

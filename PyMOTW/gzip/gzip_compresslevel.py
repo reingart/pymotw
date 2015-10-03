@@ -25,11 +25,8 @@ print 'data   %10d  %s' % (len(data), cksum)
 
 for i in xrange(1, 10):
     filename = 'compress-level-%s.gz' % i
-    output = gzip.open(filename, 'wb', compresslevel=i)
-    try:
+    with gzip.open(filename, 'wb', compresslevel=i) as output:
         output.write(data)
-    finally:
-        output.close()
     size = os.stat(filename).st_size
     cksum = get_hash(open(filename, 'rb').read())
     print '%5d  %10d  %s' % (i, size, cksum)

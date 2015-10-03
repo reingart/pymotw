@@ -16,10 +16,10 @@ class EchoClient(asynchat.async_chat):
     """Sends messages to the server and receives responses.
     """
 
-    # Artificially reduce buffer sizes to illustrate
+    # Artificially reduce buffer sizes to show
     # sending and receiving partial messages.
-    ac_in_buffer_size = 64
-    ac_out_buffer_size = 64
+    ac_in_buffer_size = 128
+    ac_out_buffer_size = 128
     
     def __init__(self, host, port, message):
         self.message = message
@@ -36,14 +36,21 @@ class EchoClient(asynchat.async_chat):
         # Send the command
         self.push('ECHO %d\n' % len(self.message))
         # Send the data
-        self.push_with_producer(EchoProducer(self.message, buffer_size=self.ac_out_buffer_size))
+        self.push_with_producer(
+            EchoProducer(self.message,
+                         buffer_size=self.ac_out_buffer_size)
+            )
         # We expect the data to come back as-is, 
         # so set a length-based terminator
         self.set_terminator(len(self.message))
     
     def collect_incoming_data(self, data):
-        """Read an incoming message from the client and put it into our outgoing queue."""
-        self.logger.debug('collect_incoming_data() -> (%d)\n"""%s"""', len(data), data)
+        """Read an incoming message from the client
+        and add it to the outgoing queue.
+        """
+        self.logger.debug(
+            'collect_incoming_data() -> (%d) %r',
+            len(data), data)
         self.received_data.append(data)
 
     def found_terminator(self):
@@ -53,8 +60,8 @@ class EchoClient(asynchat.async_chat):
             self.logger.debug('RECEIVED COPY OF MESSAGE')
         else:
             self.logger.debug('ERROR IN TRANSMISSION')
-            self.logger.debug('EXPECTED "%s"', self.message)
-            self.logger.debug('RECEIVED "%s"', received_message)
+            self.logger.debug('EXPECTED %r', self.message)
+            self.logger.debug('RECEIVED %r', received_message)
         return
 
 class EchoProducer(asynchat.simple_producer):
@@ -63,5 +70,6 @@ class EchoProducer(asynchat.simple_producer):
 
     def more(self):
         response = asynchat.simple_producer.more(self)
-        self.logger.debug('more() -> (%s bytes)\n"""%s"""', len(response), response)
+        self.logger.debug('more() -> (%s bytes) %r',
+                          len(response), response)
         return response

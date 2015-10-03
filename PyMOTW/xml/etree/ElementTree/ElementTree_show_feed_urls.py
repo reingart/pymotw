@@ -16,6 +16,7 @@ for node in tree.iter('outline'):
     name = node.attrib.get('text')
     url = node.attrib.get('xmlUrl')
     if name and url:
-        print '  %s :: %s' % (name, url)
+        print '  %s' % name
+        print '    %s' % url
     else:
         print name

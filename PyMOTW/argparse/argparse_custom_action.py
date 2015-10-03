@@ -33,16 +33,16 @@ class CustomAction(argparse.Action):
                                  help=help,
                                  metavar=metavar,
                                  )
-        print
         print 'Initializing CustomAction'
         for name,value in sorted(locals().items()):
             if name == 'self' or value is None:
                 continue
             print '  %s = %r' % (name, value)
+        print
         return
 
-    def __call__(self, parser, namespace, values, option_string=None):
-        print
+    def __call__(self, parser, namespace, values,
+                 option_string=None):
         print 'Processing CustomAction for "%s"' % self.dest
         print '  parser = %s' % id(parser)
         print '  values = %r' % values
@@ -56,13 +56,14 @@ class CustomAction(argparse.Action):
         # Save the results in the namespace using the destination
         # variable given to our constructor.
         setattr(namespace, self.dest, values)
+        print
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-a', action=CustomAction)
 parser.add_argument('-m', nargs='*', action=CustomAction)
-parser.add_argument('positional', action=CustomAction)
 
-results = parser.parse_args(['-a', 'value', '-m' 'multi-value', 'positional-value'])
-print
+results = parser.parse_args(['-a', 'value',
+                             '-m', 'multivalue',
+                             'second'])
 print results

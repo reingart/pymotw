@@ -29,11 +29,11 @@ class EchoServer(asyncore.dispatcher):
         # Called when a client connects to our socket
         client_info = self.accept()
         EchoHandler(sock=client_info[0])
-        # We only want to deal with one client at a time,
-        # so close as soon as we set up the handler.
-        # Normally you would not do this and the server
-        # would run forever or until it received instructions
-        # to stop.
+        # Only deal with one client at a time,
+        # so close as soon as the handler is set up.
+        # Under normal conditions, the server
+        # would run forever or until it received
+        # instructions to stop.
         self.handle_close()
         return
     

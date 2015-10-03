@@ -10,24 +10,22 @@
 import pickle
 
 class Node(object):
-    """A simple digraph where each node knows about the other nodes
-    it leads to.
+    """A simple digraph
     """
     def __init__(self, name):
         self.name = name
         self.connections = []
-        return
 
     def add_edge(self, node):
         "Create an edge between this node and the other."
         self.connections.append(node)
-        return
 
     def __iter__(self):
         return iter(self.connections)
 
 def preorder_traversal(root, seen=None, parent=None):
-    """Generator function to yield the edges via a preorder traversal."""
+    """Generator function to yield the edges in a graph.
+    """
     if seen is None:
         seen = set()
     yield (parent, root)
@@ -35,16 +33,16 @@ def preorder_traversal(root, seen=None, parent=None):
         return
     seen.add(root)
     for node in root:
-        for (parent, subnode) in preorder_traversal(node, seen, root):
+        for parent, subnode in preorder_traversal(node, seen, root):
             yield (parent, subnode)
-    return
     
 def show_edges(root):
-    "Print all of the edges in the graph."
+    "Print all the edges in the graph."
     for parent, child in preorder_traversal(root):
         if not parent:
             continue
-        print '%5s -> %2s (%s)' % (parent.name, child.name, id(child))
+        print '%5s -> %2s (%s)' % \
+            (parent.name, child.name, id(child))
 
 # Set up the nodes.
 root = Node('root')
@@ -68,6 +66,5 @@ show_edges(root)
 dumped = pickle.dumps(root)
 reloaded = pickle.loads(dumped)
 
-print
-print 'RELOADED GRAPH:'
+print '\nRELOADED GRAPH:'
 show_edges(reloaded)

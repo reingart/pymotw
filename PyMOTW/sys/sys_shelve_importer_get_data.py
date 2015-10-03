@@ -20,11 +20,17 @@ import package
 
 readme_path = os.path.join(package.__path__[0], 'README')
 
-#readme = package.__loader__.get_data(readme_path)
 readme = pkgutil.get_data('package', 'README')
+# Equivalent to:
+#  readme = package.__loader__.get_data(readme_path)
 print readme
 
 foo_path = os.path.join(package.__path__[0], 'foo')
-#foo = package.__loader__.get_data(foo_path)
-foo = pkgutil.get_data('package', 'foo')
-print foo
+try:
+    foo = pkgutil.get_data('package', 'foo')
+    # Equivalent to:
+    #  foo = package.__loader__.get_data(foo_path)
+except IOError as err:
+    print 'ERROR: Could not load "foo"', err
+else:
+    print foo

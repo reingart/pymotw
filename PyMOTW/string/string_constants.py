@@ -11,10 +11,10 @@ __version__ = "$Id$"
 
 import string
 
-for n in dir(string):
-    if n.startswith('_'):
-        continue
-    v = getattr(string, n)
-    if isinstance(v, basestring):
-        print '%s=%s' % (n, repr(v))
-        print
+for name in (s
+             for s in dir(string)
+             if not s.startswith('_')):
+    value = getattr(string, name)
+    # Look for byte string and unicode values
+    if isinstance(value, basestring):
+        print '%s=%r\n' % (name, value)

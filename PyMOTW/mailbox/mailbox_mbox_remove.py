@@ -12,13 +12,13 @@ __version__ = "$Id$"
 import mailbox
 
 mbox = mailbox.mbox('example.mbox')
-to_remove = []
-for key, msg in mbox.iteritems():
-    if '2' in msg['subject']:
-        print 'Removing:', key
-        to_remove.append(key)
 mbox.lock()
 try:
+    to_remove = []
+    for key, msg in mbox.iteritems():
+        if '2' in msg['subject']:
+            print 'Removing:', key
+            to_remove.append(key)
     for key in to_remove:
         mbox.remove(key)
 finally:

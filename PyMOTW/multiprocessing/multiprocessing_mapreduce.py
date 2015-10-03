@@ -29,8 +29,8 @@ class SimpleMapReduce(object):
          
         num_workers
 
-          The number of workers to create in the pool. Defaults to the
-          number of CPUs available on the current host.
+          The number of workers to create in the pool. Defaults to
+          the number of CPUs available on the current host.
         """
         self.map_func = map_func
         self.reduce_func = reduce_func
@@ -38,7 +38,8 @@ class SimpleMapReduce(object):
     
     def partition(self, mapped_values):
         """Organize the mapped values by their key.
-        Returns an unsorted sequence of tuples with a key and a sequence of values.
+        Returns an unsorted sequence of tuples with a key
+        and a sequence of values.
         """
         partitioned_data = collections.defaultdict(list)
         for key, value in mapped_values:
@@ -46,7 +47,8 @@ class SimpleMapReduce(object):
         return partitioned_data.items()
     
     def __call__(self, inputs, chunksize=1):
-        """Process the inputs through the map and reduce functions given.
+        """Process the inputs through the map and reduce functions
+        given.
         
         inputs
           An iterable containing the input data to be processed.
@@ -55,7 +57,12 @@ class SimpleMapReduce(object):
           The portion of the input data to hand to each worker.  This
           can be used to tune performance during the mapping phase.
         """
-        map_responses = self.pool.map(self.map_func, inputs, chunksize=chunksize)
-        partitioned_data = self.partition(itertools.chain(*map_responses))
-        reduced_values = self.pool.map(self.reduce_func, partitioned_data)
+        map_responses = self.pool.map(self.map_func,
+                                      inputs,
+                                      chunksize=chunksize)
+        partitioned_data = self.partition(
+            itertools.chain(*map_responses)
+            )
+        reduced_values = self.pool.map(self.reduce_func,
+                                       partitioned_data)
         return reduced_values

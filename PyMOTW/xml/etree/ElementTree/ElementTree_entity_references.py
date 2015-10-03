@@ -15,4 +15,4 @@ with open('data.xml', 'rt') as f:
 node = tree.find('entity_expansion')
 print node.tag
 print '  in attribute:', node.attrib['attribute']
-print '  in text     :', node.text
+print '  in text     :', node.text.strip()

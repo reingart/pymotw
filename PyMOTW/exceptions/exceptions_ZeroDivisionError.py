@@ -9,4 +9,15 @@
 __version__ = "$Id$"
 #end_pymotw_header
 
-print 1/0
+print 'Division:',
+try:
+    print 1 / 0
+except ZeroDivisionError as err:
+    print err
+
+print 'Modulo  :',
+try:
+    print 1 % 0
+except ZeroDivisionError as err:
+    print err
+    

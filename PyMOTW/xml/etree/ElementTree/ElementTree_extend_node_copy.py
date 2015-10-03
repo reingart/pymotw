@@ -16,10 +16,12 @@ parent_a = SubElement(top, 'parent', id='A')
 parent_b = SubElement(top, 'parent', id='B')
 
 # Create children
-children = XML('''<root><child num="0" /><child num="1" /><child num="2" /></root> ''')
+children = XML(
+   '<root><child num="0" /><child num="1" /><child num="2" /></root>'
+   )
 
-# Set the id to the Python object id of the node to make duplicates
-# easier to spot.
+# Set the id to the Python object id of the node
+# to make duplicates easier to spot.
 for c in children:
     c.set('id', str(id(c)))
 

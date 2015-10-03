@@ -41,4 +41,4 @@ print 'DATA:',
 pprint.pprint(data)
 
 data_string = pickle.dumps(data)
-print 'PICKLE:', data_string
+print 'PICKLE: %r' % data_string

@@ -9,4 +9,10 @@
 __version__ = "$Id$"
 #end_pymotw_header
 
-f = open('/does/not/exist', 'r')
+try:
+    f = open('/does/not/exist', 'r')
+except IOError as err:
+    print 'Formatted   :', str(err)
+    print 'Filename    :', err.filename
+    print 'Errno       :', err.errno
+    print 'String error:', err.strerror

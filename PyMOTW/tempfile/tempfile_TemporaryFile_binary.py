@@ -12,11 +12,8 @@ __version__ = "$Id$"
 import os
 import tempfile
 
-temp = tempfile.TemporaryFile()
-try:
+with tempfile.TemporaryFile() as temp:
     temp.write('Some data')
     temp.seek(0)
     
     print temp.read()
-finally:
-    temp.close()

@@ -26,4 +26,7 @@ connection = imaplib.IMAP4_SSL(hostname)
 username = config.get('account', 'username')
 password = 'this_is_the_wrong_password'
 print 'Logging in as', username
-connection.login(username, password)
+try:
+    connection.login(username, password)
+except Exception as err:
+    print 'ERROR:', err

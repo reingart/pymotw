@@ -29,4 +29,5 @@ print 'Loading pkgwithdata from', pkgwithdata.__file__
 
 # Print the template body
 print '\nTemplate:'
-print pkgutil.get_data('pkgwithdata', 'templates/fromzip.html').encode('utf-8')
+data = pkgutil.get_data('pkgwithdata', 'templates/fromzip.html')
+print data.encode('utf-8')

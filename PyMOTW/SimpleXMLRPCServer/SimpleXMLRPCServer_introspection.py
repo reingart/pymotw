@@ -9,7 +9,9 @@
 __version__ = "$Id$"
 #end_pymotw_header
 
-from SimpleXMLRPCServer import SimpleXMLRPCServer, list_public_methods
+from SimpleXMLRPCServer import ( SimpleXMLRPCServer,
+                                 list_public_methods,
+                                 )
 import os
 import inspect
 
@@ -28,7 +30,8 @@ class DirectoryService:
     def list(self, dir_name):
         """list(dir_name) => [<filenames>]
         
-        Returns a list containing the contents of the named directory.
+        Returns a list containing the contents of
+        the named directory.
         """
         return os.listdir(dir_name)
 

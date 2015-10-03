@@ -20,8 +20,10 @@ if __name__ == '__main__':
     try:
         typ, data = c.list()
         for line in data:
-            flags, delimiter, mailbox_name = parse_list_response(line)
-            print c.status(mailbox_name, '(MESSAGES RECENT UIDNEXT UIDVALIDITY UNSEEN)')
+            flags, delimiter, mailbox = parse_list_response(line)
+            print c.status(
+                mailbox,
+                '(MESSAGES RECENT UIDNEXT UIDVALIDITY UNSEEN)')
     finally:
         c.logout()
         

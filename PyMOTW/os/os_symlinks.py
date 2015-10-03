@@ -30,9 +30,9 @@
 __module_id__ = "$Id$"
 #end_pymotw_header
 
-import os, tempfile
+import os
 
-link_name = tempfile.mktemp()
+link_name = '/tmp/' + os.path.basename(__file__)
 
 print 'Creating link %s -> %s' % (link_name, __file__)
 os.symlink(__file__, link_name)

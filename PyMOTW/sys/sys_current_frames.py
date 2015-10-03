@@ -38,7 +38,3 @@ with io_lock:
             continue
         print t.name, 'stopped in', frame.f_code.co_name, 
         print 'at line', frame.f_lineno, 'of', frame.f_code.co_filename
-
-# Let the threads finish
-# for t in threads:
-#     t.join()

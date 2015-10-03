@@ -24,7 +24,7 @@ script_file.write(script)
 script_file.flush()
 
 proc = subprocess.Popen(['sh', script_file.name], close_fds=True)
-print 'PARENT      : Pausing before sending signal to child %s...' % proc.pid
+print 'PARENT      : Pausing before signaling %s...' % proc.pid
 sys.stdout.flush()
 time.sleep(1)
 print 'PARENT      : Signaling child %s' % proc.pid

@@ -12,4 +12,11 @@ __version__ = "$Id$"
 import os
 
 for i in range(10):
-    print i, os.ttyname(i)
+    try:
+        print i, os.ttyname(i)
+    except OSError as err:
+        print
+        print '  Formatted   :', str(err)
+        print '  Errno       :', err.errno
+        print '  String error:', err.strerror
+        break

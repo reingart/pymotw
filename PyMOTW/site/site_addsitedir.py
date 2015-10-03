@@ -24,7 +24,7 @@ before_len = len(sys.path)
 site.addsitedir(module_directory)
 print 'New paths:'
 for p in sys.path[before_len:]:
-    print '  ', p
+    print p.replace(os.getcwd(), '.') # shorten dirname
 
 print
 import mymodule

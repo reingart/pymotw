@@ -13,8 +13,10 @@ import mailbox
 import email.utils
 import os
 
-from_addr = email.utils.formataddr(('Author', 'author@example.com'))
-to_addr = email.utils.formataddr(('Recipient', 'recipient@example.com'))
+from_addr = email.utils.formataddr(('Author',
+                                    'author@example.com'))
+to_addr = email.utils.formataddr(('Recipient',
+                                  'recipient@example.com'))
 
 mbox = mailbox.Maildir('Example')
 mbox.lock()
@@ -24,7 +26,10 @@ try:
     msg['From'] = from_addr
     msg['To'] = to_addr
     msg['Subject'] = 'Sample message 1'
-    msg.set_payload('This is the body.\nFrom (will not be escaped).\nThere are 3 lines.\n')
+    msg.set_payload('\n'.join(['This is the body.',
+                               'From (will not be escaped).',
+                               'There are 3 lines.\n',
+                               ]))
     mbox.add(msg)
     mbox.flush()
 

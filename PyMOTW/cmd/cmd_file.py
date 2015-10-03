@@ -28,8 +28,5 @@ class HelloWorld(cmd.Cmd):
 
 if __name__ == '__main__':
     import sys
-    input = open(sys.argv[1], 'rt')
-    try:
+    with open(sys.argv[1], 'rt') as input:
         HelloWorld(stdin=input).cmdloop()
-    finally:
-        input.close()

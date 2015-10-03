@@ -19,13 +19,13 @@ class ExpensiveObject(object):
     def __repr__(self):
         return 'ExpensiveObject(%s)' % self.name
     def __del__(self):
-        print '(Deleting %s)' % self
+        print '    (Deleting %s)' % self
         
 def demo(cache_factory):
     # hold objects so any weak references 
     # are not removed immediately
     all_refs = {}
-    # the cache using the factory we're given
+    # create the cache using the factory
     print 'CACHE TYPE:', cache_factory
     cache = cache_factory()
     for name in [ 'one', 'two', 'three' ]:
@@ -34,24 +34,25 @@ def demo(cache_factory):
         all_refs[name] = o
         del o # decref
 
-    print 'all_refs =',
+    print '  all_refs =',
     pprint(all_refs)
-    print 'Before, cache contains:', cache.keys()
+    print '\n  Before, cache contains:', cache.keys()
     for name, value in cache.items():
-        print '  %s = %s' % (name, value)
+        print '    %s = %s' % (name, value)
         del value # decref
         
-    # Remove all references to our objects except the cache
-    print 'Cleanup:'
+    # Remove all references to the objects except the cache
+    print '\n  Cleanup:'
     del all_refs
     gc.collect()
 
-    print 'After, cache contains:', cache.keys()
+    print '\n  After, cache contains:', cache.keys()
     for name, value in cache.items():
-        print '  %s = %s' % (name, value)
-    print 'demo returning'
+        print '    %s = %s' % (name, value)
+    print '  demo returning'
     return
 
 demo(dict)
 print
+
 demo(weakref.WeakValueDictionary)

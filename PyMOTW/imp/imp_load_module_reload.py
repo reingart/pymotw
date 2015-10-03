@@ -21,4 +21,5 @@ for i in range(2):
     else:
         print '(have in sys.modules)',
     f, filename, description = imp.find_module('example')
-    example_package = imp.load_module('example', f, filename, description)
+    example_package = imp.load_module('example', f, filename,
+                                      description)

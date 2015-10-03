@@ -11,7 +11,10 @@ __version__ = "$Id$"
 
 import Cookie
 
-HTTP_COOKIE = r'integer=5; string_with_quotes="He said, \"Hello, World!\""'
+HTTP_COOKIE = '; '.join([
+        r'integer=5',
+        r'string_with_quotes="He said, \"Hello, World!\""',
+        ])
 
 print 'From constructor:'
 c = Cookie.SimpleCookie(HTTP_COOKIE)

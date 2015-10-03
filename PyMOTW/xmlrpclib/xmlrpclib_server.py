@@ -11,14 +11,18 @@ from SimpleXMLRPCServer import SimpleXMLRPCServer
 from xmlrpclib import Binary
 import datetime
 
-server = SimpleXMLRPCServer(('localhost', 9000), logRequests=True, allow_none=True)
+server = SimpleXMLRPCServer(('localhost', 9000),
+                            logRequests=True,
+                            allow_none=True)
 server.register_introspection_functions()
 server.register_multicall_functions()
 
 class ExampleService:
     
     def ping(self):
-        """Simple function to respond when called to demonstrate connectivity."""
+        """Simple function to respond when called
+        to demonstrate connectivity.
+        """
         return True
         
     def now(self):
@@ -26,7 +30,8 @@ class ExampleService:
         return datetime.datetime.now()
 
     def show_type(self, arg):
-        """Illustrates how types are passed in and out of server methods.
+        """Illustrates how types are passed in and out of
+        server methods.
         
         Accepts one argument of any type.  
         Returns a tuple with string representation of the value, 
@@ -39,7 +44,8 @@ class ExampleService:
         raise RuntimeError(msg)
 
     def send_back_binary(self, bin):
-        "Accepts single Binary argument, unpacks and repacks it to return it"
+        """Accepts single Binary argument, and unpacks and
+        repacks it to return it."""
         data = bin.data
         response = Binary(data)
         return response

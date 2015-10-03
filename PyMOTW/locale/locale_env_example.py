@@ -36,7 +36,8 @@ Numeric formatting:
 Monetary formatting:
 
   International currency symbol             : "%(int_curr_symbol)r"
-  Local currency symbol                     : %(currency_symbol)r (%(currency_symbol_u)s)
+  Local currency symbol                     : %(currency_symbol)r
+    Unicode version                           %(currency_symbol_u)s
   Symbol precedes positive value            : %(p_cs_precedes)s
   Symbol precedes negative value            : %(n_cs_precedes)s
   Decimal point                             : "%(mon_decimal_point)s"

@@ -18,4 +18,5 @@ sample_locales = [ ('USA',      'en_US'),
 
 for name, loc in sample_locales:
     locale.setlocale(locale.LC_ALL, loc)
-    print '%20s: %s' % (name, time.strftime(locale.nl_langinfo(locale.D_T_FMT)))
+    format = locale.nl_langinfo(locale.D_T_FMT)
+    print '%20s: %s' % (name, time.strftime(format))

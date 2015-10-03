@@ -33,9 +33,8 @@ __version__ = "$Id$"
 from shutil import *
 from glob import glob
 
-f = open('example.txt', 'wt')
-f.write('contents')
-f.close()
+with open('example.txt', 'wt') as f:
+    f.write('contents')
 
 print 'BEFORE: ', glob('example*')
 move('example.txt', 'example.out')

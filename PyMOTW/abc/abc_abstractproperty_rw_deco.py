@@ -20,7 +20,6 @@ class Base(object):
     def value(self, newvalue):
         return
 
-
 class Implementation(Base):
     
     _value = 'Default value'
@@ -32,7 +31,6 @@ class Implementation(Base):
     @value.setter
     def value(self, newvalue):
         self._value = newvalue
-
 
 i = Implementation()
 print 'Implementation.value:', i.value

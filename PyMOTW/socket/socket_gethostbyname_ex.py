@@ -16,6 +16,6 @@ for host in [ 'homer', 'www', 'www.python.org', 'nosuchname' ]:
         print '  Hostname:', hostname
         print '  Aliases :', aliases
         print ' Addresses:', addresses
-    except socket.error, msg:
-        print '%15s : ERROR: %s' % (host, msg)
+    except socket.error as msg:
+        print 'ERROR:', msg
     print

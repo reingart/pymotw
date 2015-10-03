@@ -22,8 +22,8 @@ class HelloWorld(cmd.Cmd):
     
     def help_greet(self):
         print '\n'.join([ 'greet [person]',
-                           'Greet the named person',
-                           ])
+                          'Greet the named person',
+                          ])
     
     def do_EOF(self, line):
         return True

@@ -31,16 +31,22 @@ class MultiPartForm(object):
         self.form_fields.append((name, value))
         return
 
-    def add_file(self, fieldname, filename, fileHandle, mimetype=None):
+    def add_file(self, fieldname, filename, fileHandle,
+                 mimetype=None):
         """Add a file to be uploaded."""
         body = fileHandle.read()
         if mimetype is None:
-            mimetype = mimetypes.guess_type(filename)[0] or 'application/octet-stream'
+            mimetype = ( mimetypes.guess_type(filename)[0]
+                         or
+                         'application/octet-stream'
+                         )
         self.files.append((fieldname, filename, mimetype, body))
         return
     
     def __str__(self):
-        """Return a string representing the form data, including attached files."""
+        """Return a string representing the form data,
+        including attached files.
+        """
         # Build a list of lists, each containing "lines" of the
         # request.  Each part is separated by a boundary string.
         # Once the list is built, return a string where each
@@ -59,18 +65,18 @@ class MultiPartForm(object):
             )
         
         # Add the files to upload
-        parts.extend(
-            [ part_boundary,
-              'Content-Disposition: file; name="%s"; filename="%s"' % \
-                 (field_name, filename),
-              'Content-Type: %s' % content_type,
-              '',
-              body,
-            ]
-            for field_name, filename, content_type, body in self.files
-            )
+        parts.extend([
+            part_boundary,
+            'Content-Disposition: file; name="%s"; filename="%s"' % \
+               (field_name, filename),
+            'Content-Type: %s' % content_type,
+            '',
+            body,
+          ]
+          for field_name, filename, content_type, body in self.files
+          )
         
-        # Flatten the list and add closing boundary marker,
+        # Flatten the list and add closing boundary marker, and
         # then return CR+LF separated data
         flattened = list(itertools.chain(*parts))
         flattened.append('--' + self.boundary + '--')
@@ -84,12 +90,15 @@ if __name__ == '__main__':
     form.add_field('lastname', 'Hellmann')
     
     # Add a fake file
-    form.add_file('biography', 'bio.txt', 
-                  fileHandle=StringIO('Python developer and blogger.'))
+    form.add_file(
+        'biography', 'bio.txt', 
+        fileHandle=StringIO('Python developer and blogger.'))
 
     # Build the request
     request = urllib2.Request('http://localhost:8080/')
-    request.add_header('User-agent', 'PyMOTW (http://www.doughellmann.com/PyMOTW/)')
+    request.add_header(
+        'User-agent',
+        'PyMOTW (http://www.doughellmann.com/PyMOTW/)')
     body = str(form)
     request.add_header('Content-type', form.get_content_type())
     request.add_header('Content-length', len(body))

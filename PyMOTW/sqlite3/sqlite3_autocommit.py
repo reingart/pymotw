@@ -13,33 +13,33 @@ import sys
 import threading
 import time
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s (%(threadName)-10s) %(message)s',
-                    )
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s (%(threadName)-10s) %(message)s',
+    )
 
 db_filename = 'todo.db'
 isolation_level = None # autocommit mode
 
 def writer():
     my_name = threading.currentThread().name
-    logging.debug('connecting')
-    with sqlite3.connect(db_filename, isolation_level=isolation_level) as conn:
+    with sqlite3.connect(db_filename,
+                         isolation_level=isolation_level) as conn:
         cursor = conn.cursor()
-        logging.debug('connected')
         cursor.execute('update task set priority = priority + 1')
-        logging.debug('changes made')
         logging.debug('waiting to synchronize')
-        ready.wait() # synchronize
+        ready.wait() # synchronize threads
         logging.debug('PAUSING')
         time.sleep(1)
     return
 
 def reader():
     my_name = threading.currentThread().name
-    with sqlite3.connect(db_filename, isolation_level=isolation_level) as conn:
+    with sqlite3.connect(db_filename,
+                         isolation_level=isolation_level) as conn:
         cursor = conn.cursor()
         logging.debug('waiting to synchronize')
-        ready.wait() # synchronize
+        ready.wait() # synchronize threads
         logging.debug('wait over')
         cursor.execute('select * from task')
         logging.debug('SELECT EXECUTED')

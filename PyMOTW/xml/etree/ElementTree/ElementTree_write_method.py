@@ -13,7 +13,7 @@ from xml.etree.ElementTree import Element, SubElement, ElementTree
 top = Element('top')
 
 child = SubElement(top, 'child')
-child.text = 'This child contains text.'
+child.text = 'Contains text.'
 
 empty_child = SubElement(top, 'empty_child')
 

@@ -12,11 +12,10 @@ __version__ = "$Id$"
 import os
 import tempfile
 
-temp = tempfile.NamedTemporaryFile()
-try:
-    print 'temp:', temp
-    print 'temp.name:', temp.name
-finally:
-    # Automatically cleans up the file
-    temp.close()
+with tempfile.NamedTemporaryFile() as temp:
+    print 'temp:'
+    print '  ', temp
+    print 'temp.name:'
+    print '  ', temp.name
+
 print 'Exists after close:', os.path.exists(temp.name)

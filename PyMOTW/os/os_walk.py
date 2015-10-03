@@ -39,7 +39,7 @@ else:
     root = sys.argv[1]
 
 for dir_name, sub_dirs, files in os.walk(root):
-    print '\n', dir_name
+    print dir_name
     # Make the subdirectory names stand out with /
     sub_dirs = [ '%s/' % n for n in sub_dirs ]
     # Mix the directory contents together
@@ -48,3 +48,4 @@ for dir_name, sub_dirs, files in os.walk(root):
     # Show the contents
     for c in contents:
         print '\t%s' % c
+    print

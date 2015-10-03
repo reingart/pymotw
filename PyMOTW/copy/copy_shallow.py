@@ -39,12 +39,12 @@ class MyClass:
         return cmp(self.name, other.name)
 
 a = MyClass('a')
-l = [ a ]
-dup = copy.copy(l)
+my_list = [ a ]
+dup = copy.copy(my_list)
 
-print 'l  :', l
-print 'dup:', dup
-print 'dup is l:', (dup is l)
-print 'dup == l:', (dup == l)
-print 'dup[0] is l[0]:', (dup[0] is l[0])
-print 'dup[0] == l[0]:', (dup[0] == l[0])
+print '             my_list:', my_list
+print '                 dup:', dup
+print '      dup is my_list:', (dup is my_list)
+print '      dup == my_list:', (dup == my_list)
+print 'dup[0] is my_list[0]:', (dup[0] is my_list[0])
+print 'dup[0] == my_list[0]:', (dup[0] == my_list[0])

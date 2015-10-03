@@ -13,26 +13,20 @@ import os
 import shelve
 import sys
 
-
-@contextlib.contextmanager
-def shelve_context(filename, flag='r'):
-    """Context manager to make shelves work with 'with' statement."""
-    db = shelve.open(filename, flag)
-    try:
-        yield db
-    finally:
-        db.close()
-
     
 def _mk_init_name(fullname):
-    """Return the name of the __init__ module for a given package name."""
+    """Return the name of the __init__ module
+    for a given package name.
+    """
     if fullname.endswith('.__init__'):
         return fullname
     return fullname + '.__init__'
 
 
 def _get_key_name(fullname, db):
-    """Look in an open shelf for fullname or fullname.__init__, return the name found."""
+    """Look in an open shelf for fullname or
+    fullname.__init__, return the name found.
+    """
     if fullname in db:
         return fullname
     init_name = _mk_init_name(fullname)
@@ -49,27 +43,29 @@ class ShelveFinder(object):
             raise ImportError
         try:
             # Test the path_entry to see if it is a valid shelf
-            with shelve_context(path_entry):
+            with contextlib.closing(shelve.open(path_entry, 'r')):
                 pass
         except Exception, e:
             raise ImportError(str(e))
         else:
-            print 'new shelf added to import path:', path_entry
+            print 'shelf added to import path:', path_entry
             self.path_entry = path_entry
         return
         
     def __str__(self):
-        return '<%s for "%s">' % (self.__class__.__name__, self.path_entry)
+        return '<%s for "%s">' % (self.__class__.__name__,
+                                  self.path_entry)
         
     def find_module(self, fullname, path=None):
         path = path or self.path_entry
-        print 'looking for "%s" in %s ...' % (fullname, path),
-        with shelve_context(path) as db:
+        print '\nlooking for "%s"\n  in %s' % (fullname, path)
+        with contextlib.closing(shelve.open(self.path_entry, 'r')
+                                ) as db:
             key_name = _get_key_name(fullname, db)
             if key_name:
-                print 'found it as %s' % key_name
+                print '  found it as %s' % key_name
                 return ShelveLoader(path)
-        print 'not found'
+        print '  not found'
         return None
 
 
@@ -88,11 +84,13 @@ class ShelveLoader(object):
     def get_source(self, fullname):
         print 'loading source for "%s" from shelf' % fullname
         try:
-            with shelve_context(self.path_entry) as db:
+            with contextlib.closing(shelve.open(self.path_entry, 'r')
+                                    ) as db:
                 key_name = _get_key_name(fullname, db)
                 if key_name:
                     return db[key_name]
-                raise ImportError('could not find source for %s' % fullname)
+                raise ImportError('could not find source for %s' %
+                                  fullname)
         except Exception, e:
             print 'could not load source:', e
             raise ImportError(str(e))
@@ -100,16 +98,19 @@ class ShelveLoader(object):
     def get_code(self, fullname):
         source = self.get_source(fullname)
         print 'compiling code for "%s"' % fullname
-        return compile(source, self._get_filename(fullname), 'exec', dont_inherit=True)
+        return compile(source, self._get_filename(fullname),
+                       'exec', dont_inherit=True)
     
     def get_data(self, path):
-        print 'looking for data in %s for "%s"' % (self.path_entry, path)
+        print 'looking for data\n  in %s\n  for "%s"' % \
+            (self.path_entry, path)
         if not path.startswith(self.path_entry):
             raise IOError
         path = path[len(self.path_entry)+1:]
         key_name = 'data:' + path
         try:
-            with shelve_context(self.path_entry) as db:
+            with contextlib.closing(shelve.open(self.path_entry, 'r')
+                                    ) as db:
                 return db[key_name]
         except Exception, e:
             # Convert all errors to IOError
@@ -117,18 +118,21 @@ class ShelveLoader(object):
         
     def is_package(self, fullname):
         init_name = _mk_init_name(fullname)
-        with shelve_context(self.path_entry) as db:
+        with contextlib.closing(shelve.open(self.path_entry, 'r')
+                                ) as db:
             return init_name in db
 
     def load_module(self, fullname):
         source = self.get_source(fullname)
 
         if fullname in sys.modules:
-            print 'reusing existing module from previous import of "%s"' % fullname
+            print 'reusing existing module from import of "%s"' % \
+                fullname
             mod = sys.modules[fullname]
         else:
             print 'creating a new module object for "%s"' % fullname
-            mod = sys.modules.setdefault(fullname, imp.new_module(fullname))
+            mod = sys.modules.setdefault(fullname,
+                                         imp.new_module(fullname))
 
         # Set a few properties required by PEP 302
         mod.__file__ = self._get_filename(fullname)

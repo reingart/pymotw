@@ -10,13 +10,15 @@ __version__ = "$Id$"
 #end_pymotw_header
 
 import array
+import pprint
 
-a = array.array('i', xrange(5))
+a = array.array('i', xrange(3))
 print 'Initial :', a
 
-a.extend(xrange(5))
+a.extend(xrange(3))
 print 'Extended:', a
 
-print 'Slice   :', a[3:6]
+print 'Slice   :', a[2:5]
 
-print 'Iterator:', list(enumerate(a))
+print 'Iterator:'
+print list(enumerate(a))

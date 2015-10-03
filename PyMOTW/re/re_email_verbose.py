@@ -14,7 +14,7 @@ address = re.compile(
     [\w\d.+-]+       # username
     @
     ([\w\d.]+\.)+    # domain name prefix
-    (com|org|edu)    # we should support more top-level domains
+    (com|org|edu)    # TODO: support more top-level domains
     ''',
     re.UNICODE | re.VERBOSE)
 
@@ -26,11 +26,6 @@ candidates = [
     ]
 
 for candidate in candidates:
-    print
-    print 'Candidate:', candidate
     match = address.search(candidate)
-    if match:
-        print '  Matches'
-    else:
-        print '  No match'
+    print '%-30s  %s' % (candidate, 'Matches' if match else 'No match')
     

@@ -11,11 +11,12 @@ __version__ = "$Id$"
 
 import subprocess
 
-print '\npopen2:'
+print 'popen2:'
 
 proc = subprocess.Popen(['cat', '-'],
                         stdin=subprocess.PIPE,
                         stdout=subprocess.PIPE,
                         )
-stdout_value = proc.communicate('through stdin to stdout')[0]
+msg = 'through stdin to stdout'
+stdout_value = proc.communicate(msg)[0]
 print '\tpass through:', repr(stdout_value)

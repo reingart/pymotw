@@ -39,11 +39,8 @@ os.makedirs(dir_name)
 
 file_name = os.path.join(dir_name, 'example.txt')
 print 'Creating', file_name
-f = open(file_name, 'wt')
-try:
+with open(file_name, 'wt') as f:
     f.write('example file')
-finally:
-    f.close()
 
 print 'Listing', dir_name
 print os.listdir(dir_name)

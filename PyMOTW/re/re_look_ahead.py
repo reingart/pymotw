@@ -3,7 +3,7 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Positive look ahead assertion
+"""Positive look-ahead assertion
 """
 #end_pymotw_header
 
@@ -11,8 +11,8 @@ import re
 
 address = re.compile(
     '''
-    # A name is made up of letters, and may include "." for title
-    # abbreviations and middle initials.
+    # A name is made up of letters, and may include "."
+    # for title abbreviations and middle initials.
     ((?P<name>
        ([\w.,]+\s+)*[\w.,]+
      )
@@ -20,8 +20,8 @@ address = re.compile(
     ) # name is no longer optional
 
     # LOOKAHEAD
-    # Email addresses are wrapped in angle brackets, but we only want
-    # the brackets if they are both there, or neither are.
+    # Email addresses are wrapped in angle brackets, but only 
+    # if they are both present or neither is.
     (?= (<.*>$)       # remainder wrapped in angle brackets
         |
         ([^<].*[^>]$) # remainder *not* wrapped in angle brackets
@@ -49,11 +49,10 @@ candidates = [
     ]
 
 for candidate in candidates:
-    print
     print 'Candidate:', candidate
     match = address.search(candidate)
     if match:
-        print '  Match name :', match.groupdict()['name']
-        print '  Match email:', match.groupdict()['email']
+        print '  Name :', match.groupdict()['name']
+        print '  Email:', match.groupdict()['email']
     else:
         print '  No match'

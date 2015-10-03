@@ -11,11 +11,17 @@ __version__ = "$Id$"
 
 import fnmatch
 import os
+import pprint
 
 pattern = 'fnmatch_*.py'
 print 'Pattern :', pattern
 
 files = os.listdir('.')
-print 'Files   :', files
 
-print 'Matches :', fnmatch.filter(files, pattern)
+print
+print 'Files   :'
+pprint.pprint(files)
+
+print
+print 'Matches :'
+pprint.pprint(fnmatch.filter(files, pattern))

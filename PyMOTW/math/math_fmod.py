@@ -16,4 +16,9 @@ for x, y in [ (5, 2),
               (5, -2),
               (-5, 2),
               ]:
-    print '{:4.1f}  {:4.1f}  {:5.2f}  {:5.2f}'.format(x, y, x % y, math.fmod(x, y))
+    print '{:4.1f}  {:4.1f}  {:5.2f}  {:5.2f}'.format(
+        x,
+        y,
+        x % y,
+        math.fmod(x, y),
+        )

@@ -8,6 +8,7 @@
 #end_pymotw_header
 
 import multiprocessing
+import pprint
 
 def worker(d, key, value):
     d[key] = value
@@ -23,3 +24,4 @@ if __name__ == '__main__':
     for j in jobs:
         j.join()
     print 'Results:', d
+    

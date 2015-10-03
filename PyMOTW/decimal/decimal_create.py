@@ -9,9 +9,9 @@
 
 import decimal
 
-fmt = '{0:<20} {1:<20}'
+fmt = '{0:<25} {1:<25}'
 print fmt.format('Input', 'Output')
-print fmt.format('-' * 20, '-' * 20)
+print fmt.format('-' * 25, '-' * 25)
 
 # Integer
 print fmt.format(5, decimal.Decimal(5))
@@ -20,4 +20,7 @@ print fmt.format(5, decimal.Decimal(5))
 print fmt.format('3.14', decimal.Decimal('3.14'))
 
 # Float
-print fmt.format(repr(0.1), decimal.Decimal(str(0.1)))
+f = 0.1
+print fmt.format(repr(f), decimal.Decimal(str(f)))
+print fmt.format('%.23g' % f,
+                 str(decimal.Decimal.from_float(f))[:25])

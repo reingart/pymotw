@@ -39,7 +39,7 @@ t1 = threading.Thread(name='block',
                       args=(e,))
 t1.start()
 
-t2 = threading.Thread(name='non-block', 
+t2 = threading.Thread(name='nonblock', 
                       target=wait_for_event_timeout, 
                       args=(e, 2))
 t2.start()

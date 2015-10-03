@@ -11,19 +11,27 @@ import urllib
 import os
 
 def reporthook(blocks_read, block_size, total_size):
+    """total_size is reported in bytes.
+    block_size is the amount read each time.
+    blocks_read is the number of blocks successfully read.
+    """
     if not blocks_read:
         print 'Connection opened'
         return
     if total_size < 0:
         # Unknown size
-        print 'Read %d blocks' % blocks_read
+        print 'Read %d blocks (%d bytes)' % (blocks_read,
+                                             blocks_read * block_size)
     else:
         amount_read = blocks_read * block_size
-        print 'Read %d blocks, or %d/%d' % (blocks_read, amount_read, total_size)
+        print 'Read %d blocks, or %d/%d' % \
+            (blocks_read, amount_read, total_size)
     return
 
 try:
-    filename, msg = urllib.urlretrieve('http://blog.doughellmann.com/', reporthook=reporthook)
+    filename, msg = urllib.urlretrieve(
+        'http://blog.doughellmann.com/',
+        reporthook=reporthook)
     print
     print 'File:', filename
     print 'Headers:'

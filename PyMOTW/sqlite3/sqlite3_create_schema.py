@@ -24,24 +24,21 @@ with sqlite3.connect(db_filename) as conn:
 
         print 'Inserting initial data'
         
-        conn.execute("""
+        conn.executescript("""
         insert into project (name, description, deadline)
-        values ('pymotw', 'Python Module of the Week', '2010-11-01')
-        """)
+        values ('pymotw', 'Python Module of the Week', '2010-11-01');
         
-        conn.execute("""
         insert into task (details, status, deadline, project)
-        values ('write about select', 'done', '2010-10-03', 'pymotw')
-        """)
+        values ('write about select', 'done', '2010-10-03',
+                'pymotw');
         
-        conn.execute("""
         insert into task (details, status, deadline, project)
-        values ('write about random', 'waiting', '2010-10-10', 'pymotw')
-        """)
+        values ('write about random', 'waiting', '2010-10-10',
+                'pymotw');
         
-        conn.execute("""
         insert into task (details, status, deadline, project)
-        values ('write about sqlite3', 'active', '2010-10-17', 'pymotw')
+        values ('write about sqlite3', 'active', '2010-10-17',
+                'pymotw');
         """)
     else:
         print 'Database exists, assume schema does, too.'

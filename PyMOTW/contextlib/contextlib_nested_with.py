@@ -15,6 +15,6 @@ def make_context(name):
     yield name
     print 'exiting :', name
 
-with make_context('A') as A, make_context('B') as B, make_context('C') as C:
-    print 'inside with statement:', A, B, C
+with make_context('A') as A, make_context('B') as B:
+    print 'inside with statement:', A, B
 

@@ -20,7 +20,7 @@ class NoisyMetaImportFinder(object):
         return
     
     def find_module(self, fullname, path=None):
-        print 'NoisyMetaImportFinder looking for "%s" with path "%s"' % (fullname, path)
+        print 'looking for "%s" with path "%s"' % (fullname, path)
         name_parts = fullname.split('.')
         if name_parts and name_parts[0] == self.prefix:
             print ' ... found prefix, returning loader'
@@ -41,7 +41,8 @@ class NoisyMetaImportLoader(object):
         if fullname in sys.modules:
             mod = sys.modules[fullname]
         else:
-            mod = sys.modules.setdefault(fullname, imp.new_module(fullname))
+            mod = sys.modules.setdefault(fullname,
+                                         imp.new_module(fullname))
 
         # Set a few properties required by PEP 302
         mod.__file__ = fullname

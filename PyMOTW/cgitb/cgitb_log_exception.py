@@ -15,11 +15,7 @@ cgitb.enable(logdir=os.path.join(os.path.dirname(__file__), 'LOGS'),
              format='text',
              )
 
-def func2(a, divisor):
+def func(a, divisor):
     return a / divisor
 
-def func1(a, b):
-    c = b - 5
-    return func2(a, c)
-
-func1(1, 5)
+func(1, 0)

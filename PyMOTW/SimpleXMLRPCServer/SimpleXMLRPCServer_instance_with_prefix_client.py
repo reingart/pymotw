@@ -16,9 +16,9 @@ print 'public():', proxy.prefix.public()
 try:
     print 'private():', proxy.prefix.private()
 except Exception, err:
-    print 'ERROR:', err
+    print '\nERROR:', err
 try:
     print 'public() without prefix:', proxy.public()
 except Exception, err:
-    print 'ERROR:', err
+    print '\nERROR:', err
 

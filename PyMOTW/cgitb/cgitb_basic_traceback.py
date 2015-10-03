@@ -7,19 +7,11 @@
 """
 #end_pymotw_header
 
-def func1(arg1):
-    local_var = arg1 * 2
-    return func2(local_var)
+def func2(a, divisor):
+    return a / divisor
 
-def func2(arg2):
-    local_var = arg2 + 2
-    return func3(local_var)
+def func1(a, b):
+    c = b - 5
+    return func2(a, c)
 
-def func3(arg3):
-    local_var = arg2 / 2
-    return local_var
-
-func1(1)
-
-
-
+func1(1, 5)

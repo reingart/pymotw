@@ -24,11 +24,17 @@ class InvertCapsCodec(codecs.Codec):
 
 class InvertCapsIncrementalEncoder(codecs.IncrementalEncoder):
     def encode(self, input, final=False):
-        return codecs.charmap_encode(input, self.errors, encoding_map)[0]
+        data, nbytes = codecs.charmap_encode(input,
+                                             self.errors,
+                                             encoding_map)
+        return data
 
 class InvertCapsIncrementalDecoder(codecs.IncrementalDecoder):
     def decode(self, input, final=False):
-        return codecs.charmap_decode(input, self.errors, decoding_map)[0]
+        data, nbytes = codecs.charmap_decode(input,
+                                             self.errors,
+                                             decoding_map)
+        return data
 
 # Stream reader and writer
 
@@ -63,7 +69,7 @@ if __name__ == '__main__':
     encoder = codecs.getencoder('invertcaps')
     text = 'abc.DEF'
     encoded_text, consumed = encoder(text)
-    print 'Encoder converted "{}" to "{}", consuming {} characters'.format(
+    print 'Encoded "{}" to "{}", consuming {} characters'.format(
         text, encoded_text, consumed)
 
     # Stream writer

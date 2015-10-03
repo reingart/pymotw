@@ -6,7 +6,6 @@
 """Test an individual filename with a pattern.
 """
 
-__version__ = "$Id$"
 #end_pymotw_header
 
 import fnmatch
@@ -18,4 +17,5 @@ print
 
 files = os.listdir('.')
 for name in files:
-    print 'Filename: %-25s %s' % (name, fnmatch.fnmatch(name, pattern))
+    print 'Filename: %-25s %s' % \
+        (name, fnmatch.fnmatch(name, pattern))

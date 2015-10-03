@@ -19,8 +19,7 @@ print 'Normal Example:'
 with contextlib.closing(Door()) as door:
     print '  inside with statement'
 
-print
-print 'Error handling example:'
+print '\nError handling example:'
 try:
     with contextlib.closing(Door()) as door:
         print '  raising from inside with statement'

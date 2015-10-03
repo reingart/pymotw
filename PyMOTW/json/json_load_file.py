@@ -8,11 +8,7 @@
 #end_pymotw_header
 
 import json
-import tempfile
+from StringIO import StringIO
 
-f = tempfile.NamedTemporaryFile(mode='w+')
-f.write('[{"a": "A", "c": 3.0, "b": [2, 4]}]')
-f.flush()
-f.seek(0)
-
+f = StringIO('[{"a": "A", "c": 3.0, "b": [2, 4]}]')
 print json.load(f)

@@ -12,9 +12,17 @@ from ConfigParser import SafeConfigParser
 parser = SafeConfigParser()
 parser.read('multisection.ini')
 
-for section in [ 'wiki', 'none' ]:
-    print '%s section exists: %s' % (section, parser.has_section(section))
-    for candidate in [ 'username', 'password', 'url', 'description' ]:
-        print '%s.%-12s  : %s' % (section, candidate, parser.has_option(section, candidate))
+SECTIONS = [ 'wiki', 'none' ]
+OPTIONS = [ 'username', 'password', 'url', 'description' ]
+
+for section in SECTIONS:
+    has_section = parser.has_section(section)
+    print '%s section exists: %s' % (section, has_section)
+    for candidate in OPTIONS:
+        has_option = parser.has_option(section, candidate)
+        print '%s.%-12s  : %s' % (section,
+                                  candidate,
+                                  has_option,
+                                  )
     print
 

@@ -10,7 +10,10 @@
 import abc
 from abc_base import PluginBase
 
-class RegisteredImplementation(object):
+class LocalBaseClass(object):
+    pass
+
+class RegisteredImplementation(LocalBaseClass):
     
     def load(self, input):
         return input.read()
@@ -21,5 +24,7 @@ class RegisteredImplementation(object):
 PluginBase.register(RegisteredImplementation)
 
 if __name__ == '__main__':
-    print 'Subclass:', issubclass(RegisteredImplementation, PluginBase)
-    print 'Instance:', isinstance(RegisteredImplementation(), PluginBase)
+    print 'Subclass:', issubclass(RegisteredImplementation,
+                                  PluginBase)
+    print 'Instance:', isinstance(RegisteredImplementation(),
+                                  PluginBase)

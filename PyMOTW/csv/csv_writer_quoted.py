@@ -33,13 +33,10 @@ __module_id__ = "$Id$"
 import csv
 import sys
 
-f = open(sys.argv[1], 'wt')
-try:
+with open(sys.argv[1], 'wt') as f:
     writer = csv.writer(f, quoting=csv.QUOTE_NONNUMERIC)
     writer.writerow( ('Title 1', 'Title 2', 'Title 3') )
-    for i in range(10):
+    for i in range(3):
         writer.writerow( (i+1, chr(ord('a') + i), '08/%02d/07' % (i+1)) )
-finally:
-    f.close()
 
 print open(sys.argv[1], 'rt').read()

@@ -17,7 +17,7 @@ heapq.heapify(data)
 print 'start:'
 show_tree(data)
 
-for n in [0, 7, 13, 9, 5]:
+for n in [0, 13]:
     smallest = heapq.heapreplace(data, n)
     print 'replace %2d with %2d:' % (smallest, n)
     show_tree(data)

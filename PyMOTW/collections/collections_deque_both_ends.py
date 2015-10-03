@@ -13,7 +13,7 @@ import collections
 import threading
 import time
 
-candle = collections.deque(xrange(11))
+candle = collections.deque(xrange(5))
 
 def burn(direction, nextSource):
     while True:

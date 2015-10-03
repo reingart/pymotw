@@ -37,8 +37,8 @@ to_process = Queue.Queue()
 # Start with an empty object chain and Graph three.
 to_process.put( ([], three) )
 
-# Look for cycles, building the object chain for each object we find
-# in the queue so we can print the full cycle when we're done.
+# Look for cycles, building the object chain for each object found
+# in the queue so the full cycle can be printed at the end.
 while not to_process.empty():
     chain, next = to_process.get()
     chain = chain[:]

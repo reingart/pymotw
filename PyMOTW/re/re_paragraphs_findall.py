@@ -9,8 +9,17 @@
 
 import re
 
-text = 'Paragraph one\non two lines.\n\nParagraph two.\n\n\nParagraph three.'
+text = '''Paragraph one
+on two lines.
 
-for num, para in enumerate(re.findall(r'(.+?)\n{2,}', text, flags=re.DOTALL)):
+Paragraph two.
+
+
+Paragraph three.'''
+
+for num, para in enumerate(re.findall(r'(.+?)\n{2,}',
+                                      text,
+                                      flags=re.DOTALL)
+                           ):
     print num, repr(para)
     print

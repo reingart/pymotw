@@ -14,14 +14,16 @@ class NoisyImportFinder(object):
     PATH_TRIGGER = 'NoisyImportFinder_PATH_TRIGGER'
     
     def __init__(self, path_entry):
-        print 'Checking NoisyImportFinder support for %s' % path_entry
+        print 'Checking %s:' % path_entry,
         if path_entry != self.PATH_TRIGGER:
-            print 'NoisyImportFinder does not work for %s' % path_entry
+            print 'wrong finder'
             raise ImportError()
+        else:
+            print 'works'
         return
     
     def find_module(self, fullname, path=None):
-        print 'NoisyImportFinder looking for "%s"' % fullname
+        print 'Looking for "%s"' % fullname
         return None
 
 sys.path_hooks.append(NoisyImportFinder)

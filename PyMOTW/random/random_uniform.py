@@ -10,4 +10,6 @@
 import random
 
 for i in xrange(5):
-    print '%04.3f' % random.uniform(1, 100)
+    print '%04.3f' % random.uniform(1, 100),
+print
+

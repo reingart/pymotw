@@ -10,6 +10,7 @@ __version__ = "$Id$"
 #end_pymotw_header
 
 import tarfile
+from contextlib import closing
 
-t = tarfile.open('example.tar', 'r')
-print t.getnames()
+with closing(tarfile.open('example.tar', 'r')) as t:
+    print t.getnames()

@@ -10,23 +10,20 @@ __version__ = "$Id$"
 #end_pymotw_header
 
 import tarfile
+from contextlib import closing
 
 print 'creating archive'
-out = tarfile.open('tarfile_append.tar', mode='w')
-try:
+with closing(tarfile.open('tarfile_append.tar', mode='w')) as out:
     out.add('README.txt')
-finally:
-    out.close()
 
-print 'contents:', [m.name 
-                    for m in tarfile.open('tarfile_append.tar', 'r').getmembers()]
+print 'contents:',
+with closing(tarfile.open('tarfile_append.tar', mode='r')) as t:
+    print [m.name for m in t.getmembers()]
 
 print 'adding index.rst'
-out = tarfile.open('tarfile_append.tar', mode='a')
-try:
+with closing(tarfile.open('tarfile_append.tar', mode='a')) as out:
     out.add('index.rst')
-finally:
-    out.close()
 
-print 'contents:', [m.name 
-                    for m in tarfile.open('tarfile_append.tar', 'r').getmembers()]
+print 'contents:',
+with closing(tarfile.open('tarfile_append.tar', mode='r')) as t:
+    print [m.name for m in t.getmembers()]

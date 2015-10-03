@@ -9,7 +9,7 @@
 
 import ConfigParser
 
-# Requre values
+# Require values
 try:
     parser = ConfigParser.SafeConfigParser()
     parser.read('allow_no_value.ini')

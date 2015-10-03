@@ -33,4 +33,4 @@ __module_id__ = "$Id$"
 import os
 
 # Simple command
-os.system('ls -l')
+os.system('pwd')

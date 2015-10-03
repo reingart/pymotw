@@ -17,7 +17,8 @@ fmt = '%15s  %15s'
 print fmt % ('len(data)', 'len(compressed)')
 print fmt % ('-' * 15, '-' * 15)
 
-for i in xrange(20):
+for i in xrange(5):
     data = original_data * i
-    compressed = zlib.compress(data)    
-    print fmt % (len(data), len(compressed)), '*' if len(data) < len(compressed) else ''
+    compressed = zlib.compress(data)
+    highlight = '*' if len(data) < len(compressed) else ''
+    print fmt % (len(data), len(compressed)), highlight

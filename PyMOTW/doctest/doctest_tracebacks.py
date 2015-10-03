@@ -13,7 +13,8 @@ def this_raises():
     >>> this_raises()
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
-      File "/no/such/path/doctest_tracebacks.py", line 14, in this_raises
+      File "/no/such/path/doctest_tracebacks.py", line 14, in
+      this_raises
         raise RuntimeError('here is the error')
     RuntimeError: here is the error
     """

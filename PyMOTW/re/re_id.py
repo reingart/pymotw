@@ -3,7 +3,7 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Positive look ahead assertion
+"""ID-based conditional expressions
 """
 #end_pymotw_header
 
@@ -13,25 +13,26 @@ address = re.compile(
     '''
     ^
 
-    # A name is made up of letters, and may include "." for title
-    # abbreviations and middle initials.
+    # A name is made up of letters, and may include "."
+    # for title abbreviations and middle initials.
     (?P<name>
        ([\w.]+\s+)*[\w.]+
      )?
     \s*
 
-    # Email addresses are wrapped in angle brackets, but we only want
-    # the brackets if we found a name.
+    # Email addresses are wrapped in angle brackets, but
+    # only if a name is found.
     (?(name)
-      # remainder wrapped in angle brackets because we have a name
+      # remainder wrapped in angle brackets because
+      # there is a name
       (?P<brackets>(?=(<.*>$)))
       |
       # remainder does not include angle brackets without name
       (?=([^<].*[^>]$))
      )
 
-    # Only look for a bracket if our look ahead assertion found both
-    # of them.
+    # Only look for a bracket if the look-ahead assertion
+    # found both of them.
     (?(brackets)<|\s*)
 
     # The address itself: username@domain.tld
@@ -42,8 +43,8 @@ address = re.compile(
       (com|org|edu)    # limit the allowed top-level domains
      )
 
-    # Only look for a bracket if our look ahead assertion found both
-    # of them.
+    # Only look for a bracket if the look-ahead assertion
+    # found both of them.
     (?(brackets)>|\s*)
 
     $
@@ -59,7 +60,6 @@ candidates = [
     ]
 
 for candidate in candidates:
-    print
     print 'Candidate:', candidate
     match = address.search(candidate)
     if match:

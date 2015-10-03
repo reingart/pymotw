@@ -9,5 +9,5 @@
 
 import sys
 
-print 'Default encoding    :', sys.getdefaultencoding()
-print 'Filesystem encoding :', sys.getfilesystemencoding()
+print 'Default encoding     :', sys.getdefaultencoding()
+print 'File system encoding :', sys.getfilesystemencoding()

@@ -14,10 +14,10 @@ b = decimal.Decimal('3.14')
 c = 4
 d = 3.14
 
-print 'a     =', a
-print 'b     =', b
-print 'c     =', c
-print 'd     =', d
+print 'a     =', repr(a)
+print 'b     =', repr(b)
+print 'c     =', repr(c)
+print 'd     =', repr(d)
 print
 
 print 'a + b =', a + b

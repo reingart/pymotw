@@ -34,11 +34,9 @@ import base64
 import hmac
 import hashlib
 
-f = open('lorem.txt', 'rb')
-try:
+with open('lorem.txt', 'rb') as f:
     body = f.read()
-finally:
-    f.close()
 
-digest = hmac.new('secret-shared-key-goes-here', body, hashlib.sha1).digest()
+hash = hmac.new('secret-shared-key-goes-here', body, hashlib.sha1)
+digest = hash.digest()
 print base64.encodestring(digest)

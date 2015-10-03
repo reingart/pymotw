@@ -32,4 +32,4 @@ __module_id__ = "$Id$"
 
 import os
 
-os.spawnlp(os.P_WAIT, 'ls', 'ls', '-l', '/tmp/')
+os.spawnlp(os.P_WAIT, 'pwd', 'pwd', '-P')

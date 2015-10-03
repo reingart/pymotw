@@ -17,16 +17,18 @@ def consumer(ns, event):
     try:
         value = ns.value
     except Exception, err:
-        print 'Before event, consumer got:', str(err)
+        print 'Before event, error:', str(err)
     event.wait()
-    print 'After event, consumer got:', ns.value
+    print 'After event:', ns.value
 
 if __name__ == '__main__':
     mgr = multiprocessing.Manager()
     namespace = mgr.Namespace()
     event = multiprocessing.Event()
-    p = multiprocessing.Process(target=producer, args=(namespace, event))
-    c = multiprocessing.Process(target=consumer, args=(namespace, event))
+    p = multiprocessing.Process(target=producer,
+                                args=(namespace, event))
+    c = multiprocessing.Process(target=consumer,
+                                args=(namespace, event))
     
     c.start()
     p.start()

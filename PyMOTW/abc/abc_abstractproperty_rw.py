@@ -20,13 +20,10 @@ class Base(object):
 
     value = abc.abstractproperty(value_getter, value_setter)
 
-
 class PartialImplementation(Base):
-    
     @abc.abstractproperty
     def value(self):
         return 'Read-only'
-
 
 class Implementation(Base):
     
@@ -39,7 +36,6 @@ class Implementation(Base):
         self._value = newvalue
 
     value = property(value_getter, value_setter)
-
 
 try:
     b = Base()

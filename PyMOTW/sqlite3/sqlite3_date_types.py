@@ -20,17 +20,15 @@ def show_deadline(conn):
     cursor.execute(sql)
     row = cursor.fetchone()
     for col in ['id', 'details', 'deadline']:
-        print '  column:', col
-        print '    value :', row[col]
-        print '    type  :', type(row[col])
+        print '  %-8s  %-30r %s' % (col, row[col], type(row[col]))
     return
 
 print 'Without type detection:'
-
 with sqlite3.connect(db_filename) as conn:
     show_deadline(conn)
 
 print '\nWith type detection:'
-
-with sqlite3.connect(db_filename, detect_types=sqlite3.PARSE_DECLTYPES) as conn:
+with sqlite3.connect(db_filename,
+                     detect_types=sqlite3.PARSE_DECLTYPES,
+                     ) as conn:
     show_deadline(conn)

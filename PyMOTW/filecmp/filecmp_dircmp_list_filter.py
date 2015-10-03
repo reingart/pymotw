@@ -10,7 +10,13 @@ __version__ = "$Id$"
 #end_pymotw_header
 
 import filecmp
+import pprint
 
-dc = filecmp.dircmp('example/dir1', 'example/dir2', ignore=['common_file'])
-print 'Left :', dc.left_list
-print 'Right:', dc.right_list
+dc = filecmp.dircmp('example/dir1', 'example/dir2',
+                    ignore=['common_file'])
+
+print 'Left:'
+pprint.pprint(dc.left_list)
+
+print '\nRight:'
+pprint.pprint(dc.right_list)

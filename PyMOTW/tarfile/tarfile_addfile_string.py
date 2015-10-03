@@ -11,21 +11,18 @@ __version__ = "$Id$"
 
 import tarfile
 from cStringIO import StringIO
+from contextlib import closing
 
 data = 'This is the data to write to the archive.'
 
-out = tarfile.open('tarfile_addfile_string.tar', mode='w')
-try:
+with closing(tarfile.open('addfile_string.tar', mode='w')) as out:
     info = tarfile.TarInfo('made_up_file.txt')
     info.size = len(data)
     out.addfile(info, StringIO(data))
-finally:
-    out.close()
 
-print
 print 'Contents:'
-t = tarfile.open('tarfile_addfile_string.tar', 'r')
-for member_info in t.getmembers():
-    print member_info.name
-    f = t.extractfile(member_info)
-    print f.read()
+with closing(tarfile.open('addfile_string.tar', mode='r')) as t:
+    for member_info in t.getmembers():
+        print member_info.name
+        f = t.extractfile(member_info)
+        print f.read()

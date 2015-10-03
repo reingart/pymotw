@@ -44,7 +44,7 @@ for name in option_names:
 # Define some local overrides
 vars = {'from-vars':'value from vars'}
 
-# Show the values of all of the options
+# Show the values of all the options
 print '\nOption lookup:'
 for name in option_names:
     value = parser.get('sect', name, vars=vars)

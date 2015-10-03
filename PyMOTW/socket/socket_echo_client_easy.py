@@ -11,7 +11,9 @@ import socket
 import sys
 
 def get_constants(prefix):
-    """Create a dictionary mapping socket module constants to their names."""
+    """Create a dictionary mapping socket module
+    constants to their names.
+    """
     return dict( (getattr(socket, n), n)
                  for n in dir(socket)
                  if n.startswith(prefix)

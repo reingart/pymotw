@@ -34,8 +34,8 @@ import os
 import sys
 import time
 
-for i in range(3):
-    print 'PARENT: Forking %s' % i
+for i in range(2):
+    print 'PARENT %s: Forking %s' % (os.getpid(), i)
     worker_pid = os.fork()
     if not worker_pid:
         print 'WORKER %s: Starting' % i
@@ -43,8 +43,8 @@ for i in range(3):
         print 'WORKER %s: Finishing' % i
         sys.exit(i)
 
-for i in range(3):
+for i in range(2):
     print 'PARENT: Waiting for %s' % i
     done = os.wait()
-    print 'PARENT:', done
+    print 'PARENT: Child done:', done
 

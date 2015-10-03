@@ -38,13 +38,14 @@ class MyObj(object):
 sqlite3.register_adapter(MyObj, adapter_func)
 sqlite3.register_converter("MyObj", converter_func)
 
-# Create some objects to save.  Use a list of tuples so we can pass
-# this sequence directly to executemany().
+# Create some objects to save.  Use a list of tuples so
+# the sequence can be passed directly to executemany().
 to_save = [ (MyObj('this is a value to save'),),
             (MyObj(42),),
             ]
 
-with sqlite3.connect(db_filename, detect_types=sqlite3.PARSE_DECLTYPES) as conn:
+with sqlite3.connect(db_filename,
+                     detect_types=sqlite3.PARSE_DECLTYPES) as conn:
     # Create a table with column of type "MyObj"
     conn.execute("""
     create table if not exists obj (

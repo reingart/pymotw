@@ -42,7 +42,8 @@ with sqlite3.connect(':memory:') as conn:
     """)
     for row in cursor.fetchall():
         print '%2d {%d} %-25s [%-8s] (%s)' % (
-            row['id'], row['priority'], row['details'], row['status'], row['deadline'],
+            row['id'], row['priority'], row['details'],
+            row['status'], row['deadline'],
             )
 
 with sqlite3.connect(':memory:') as conn2:
@@ -54,5 +55,6 @@ with sqlite3.connect(':memory:') as conn2:
     """)
     for row in cursor.fetchall():
         print '%2d {%d} %-25s [%-8s] (%s)' % (
-            row['id'], row['priority'], row['details'], row['status'], row['deadline'],
+            row['id'], row['priority'], row['details'],
+            row['status'], row['deadline'],
             )

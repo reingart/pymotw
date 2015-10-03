@@ -18,5 +18,8 @@ combined = compressed + lorem
 decompressor = zlib.decompressobj()
 decompressed = decompressor.decompress(combined)
 
-print 'Decompressed matches lorem:', decompressed == lorem
-print 'Unused data matches lorem :', decompressor.unused_data == lorem
+decompressed_matches = decompressed == lorem
+print 'Decompressed matches lorem:', decompressed_matches
+
+unused_matches = decompressor.unused_data == lorem
+print 'Unused data matches lorem :', unused_matches

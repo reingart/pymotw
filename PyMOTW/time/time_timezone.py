@@ -11,17 +11,22 @@ import time
 import os
 
 def show_zone_info():
-    print '\tTZ    :', os.environ.get('TZ', '(not set)')
-    print '\ttzname:', time.tzname
-    print '\tZone  : %d (%d)' % (time.timezone, (time.timezone / 3600))
-    print '\tDST   :', time.daylight
-    print '\tTime  :', time.ctime()
+    print '  TZ    :', os.environ.get('TZ', '(not set)')
+    print '  tzname:', time.tzname
+    print '  Zone  : %d (%d)' % (time.timezone,
+                                 (time.timezone / 3600))
+    print '  DST   :', time.daylight
+    print '  Time  :', time.ctime()
     print
 
 print 'Default :'
 show_zone_info()
 
-for zone in [ 'US/Eastern', 'US/Pacific', 'GMT', 'Europe/Amsterdam' ]:
+ZONES = [ 'GMT',
+          'Europe/Amsterdam',
+          ]
+
+for zone in ZONES:
     os.environ['TZ'] = zone
     time.tzset()
     print zone, ':'

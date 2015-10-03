@@ -11,8 +11,7 @@ __version__ = "$Id$"
 
 import gzip
 
-input_file = gzip.open('example.txt.gz', 'rb')
-try:
+with gzip.open('example.txt.gz', 'rb') as input_file:
     print 'Entire file:'
     all_data = input_file.read()
     print all_data
@@ -30,5 +29,3 @@ try:
     
     print
     print expected == partial
-finally:
-    input_file.close()

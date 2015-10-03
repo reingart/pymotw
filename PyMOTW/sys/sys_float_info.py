@@ -22,7 +22,9 @@ print
 print 'Maximum exponent for radix (max_exp):', sys.float_info.max_exp
 print 'Minimum exponent for radix (min_exp):', sys.float_info.min_exp
 print
-print 'Maximum exponent for power of 10 (max_10_exp):', sys.float_info.max_10_exp
-print 'Minimum exponent for power of 10 (min_10_exp):', sys.float_info.min_10_exp
+print 'Max. exponent power of 10 (max_10_exp):', \
+    sys.float_info.max_10_exp
+print 'Min. exponent power of 10 (min_10_exp):', \
+    sys.float_info.min_10_exp
 print
 print 'Rounding for addition (rounds):', sys.float_info.rounds

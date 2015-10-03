@@ -27,7 +27,8 @@ with sqlite3.connect(db_filename) as conn1:
     cursor1 = conn1.cursor()
     cursor1.execute("""
     insert into project (name, description, deadline)
-    values ('virtualenvwrapper', 'Virtualenv Extensions', '2011-01-01')
+    values ('virtualenvwrapper', 'Virtualenv Extensions',
+            '2011-01-01')
     """)
 
     print '\nAfter changes in conn1:'

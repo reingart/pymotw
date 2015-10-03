@@ -14,8 +14,9 @@ import sys
 db_filename = 'todo.db'
 data_filename = sys.argv[1]
 
-SQL = """insert into task (details, priority, status, deadline, project)
-         values (:details, :priority, 'active', :deadline, :project)
+SQL = """
+      insert into task (details, priority, status, deadline, project)
+      values (:details, :priority, 'active', :deadline, :project)
       """
 
 with open(data_filename, 'rt') as csv_file:

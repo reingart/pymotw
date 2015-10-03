@@ -12,20 +12,23 @@ import string
 from multiprocessing_mapreduce import SimpleMapReduce
 
 def file_to_words(filename):
-    """Read a file and return a sequence of (word, occurances) values.
+    """Read a file and return a sequence of
+    (word, occurences) values.
     """
     STOP_WORDS = set([
-            'a', 'an', 'and', 'are', 'as', 'be', 'by', 'for', 'if', 'in', 
-            'is', 'it', 'of', 'or', 'py', 'rst', 'that', 'the', 'to', 'with',
+            'a', 'an', 'and', 'are', 'as', 'be', 'by', 'for', 'if',
+            'in', 'is', 'it', 'of', 'or', 'py', 'rst', 'that', 'the',
+            'to', 'with',
             ])
-    TR = string.maketrans(string.punctuation, ' ' * len(string.punctuation))
+    TR = string.maketrans(string.punctuation,
+                          ' ' * len(string.punctuation))
 
     print multiprocessing.current_process().name, 'reading', filename
     output = []
 
     with open(filename, 'rt') as f:
         for line in f:
-            if line.lstrip().startswith('..'): # Skip rst comment lines
+            if line.lstrip().startswith('..'): # Skip comment lines
                 continue
             line = line.translate(TR) # Strip punctuation
             for word in line.split():
@@ -37,10 +40,10 @@ def file_to_words(filename):
 
 def count_words(item):
     """Convert the partitioned data for a word to a
-    tuple containing the word and the number of occurances.
+    tuple containing the word and the number of occurences.
     """
-    word, occurances = item
-    return (word, sum(occurances))
+    word, occurences = item
+    return (word, sum(occurences))
 
 
 if __name__ == '__main__':

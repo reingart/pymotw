@@ -28,4 +28,6 @@ for filename, write_mode in [
         out.close()
 
     print fmt % (filename, os.stat(filename).st_size),
-    print [m.name for m in tarfile.open(filename, 'r:*').getmembers()]
+    print [m.name
+           for m in tarfile.open(filename, 'r:*').getmembers()
+           ]

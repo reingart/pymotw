@@ -38,7 +38,10 @@ if __name__ == '__main__':
     pool = ActivePool()
     s = multiprocessing.Semaphore(3)
     jobs = [
-        multiprocessing.Process(target=worker, name=str(i), args=(s, pool))
+        multiprocessing.Process(target=worker,
+                                name=str(i),
+                                args=(s, pool),
+                                )
         for i in range(10)
         ]
 

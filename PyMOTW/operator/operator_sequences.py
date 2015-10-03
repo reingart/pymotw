@@ -31,8 +31,10 @@ print '  indexOf(a, 5)   :', indexOf(a, 1)
 print '\nAccess Items:'
 print '  getitem(b, 1)            :', getitem(b, 1)
 print '  getslice(a, 1, 3)        :', getslice(a, 1, 3)
-print '  setitem(b, 1, "d")       :', setitem(b, 1, "d"), ', after b =', b
-print '  setslice(a, 1, 3, [4, 5]):', setslice(a, 1, 3, [4, 5]), ', after a =', a
+print '  setitem(b, 1, "d")       :', setitem(b, 1, "d"),
+print ', after b =', b
+print '  setslice(a, 1, 3, [4, 5]):', setslice(a, 1, 3, [4, 5]),
+print ', after a =', a
 
 print '\nDestructive:'
 print '  delitem(b, 1)    :', delitem(b, 1), ', after b =', b

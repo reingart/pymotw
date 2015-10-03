@@ -44,8 +44,9 @@ to_save = [ (MyObj('this is a value to save'),),
             (MyObj(42),),
             ]
 
-with sqlite3.connect(db_filename, detect_types=sqlite3.PARSE_COLNAMES) as conn:
-    # Create a table with column of type "MyObj"
+with sqlite3.connect(db_filename,
+                     detect_types=sqlite3.PARSE_COLNAMES) as conn:
+    # Create a table with column of type "text"
     conn.execute("""
     create table if not exists obj2 (
         id    integer primary key autoincrement not null,
@@ -57,7 +58,9 @@ with sqlite3.connect(db_filename, detect_types=sqlite3.PARSE_COLNAMES) as conn:
     # Insert the objects into the database
     cursor.executemany("insert into obj2 (data) values (?)", to_save)
 
-    # Query the database for the objects just saved
+    # Query the database for the objects just saved,
+    # using a type specifier to convert the text
+    # to objects.
     cursor.execute('select id, data as "pickle [MyObj]" from obj2')
     for obj_id, obj in cursor.fetchall():
         print 'Retrieved', obj_id, obj, type(obj)

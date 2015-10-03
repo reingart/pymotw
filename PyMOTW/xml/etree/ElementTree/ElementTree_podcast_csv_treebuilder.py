@@ -14,7 +14,8 @@ import sys
 class PodcastListToCSV(object):
 
     def __init__(self, outputFile):
-        self.writer = csv.writer(outputFile, quoting=csv.QUOTE_NONNUMERIC)
+        self.writer = csv.writer(outputFile,
+                                 quoting=csv.QUOTE_NONNUMERIC)
         self.group_name = ''
         return
 

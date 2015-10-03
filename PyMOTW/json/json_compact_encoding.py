@@ -11,7 +11,14 @@ import json
 
 data = [ { 'a':'A', 'b':(2, 4), 'c':3.0 } ]
 print 'DATA:', repr(data)
+
 print 'repr(data)             :', len(repr(data))
-print 'dumps(data)            :', len(json.dumps(data))
-print 'dumps(data, indent=2)  :', len(json.dumps(data, indent=2))
-print 'dumps(data, separators):', len(json.dumps(data, separators=(',',':')))
+
+plain_dump = json.dumps(data)
+print 'dumps(data)            :', len(plain_dump)
+
+small_indent = json.dumps(data, indent=2)
+print 'dumps(data, indent=2)  :', len(small_indent)
+
+with_separators = json.dumps(data, separators=(',',':'))
+print 'dumps(data, separators):', len(with_separators)

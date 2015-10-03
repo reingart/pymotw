@@ -23,12 +23,10 @@ print 'Normal:'
 with make_context() as value:
     print '  inside with statement:', value
 
-print
-print 'Handled error:'
+print '\nHandled error:'
 with make_context() as value:
     raise RuntimeError('showing example of handling an error')
 
-print
-print 'Unhandled error:'
+print '\nUnhandled error:'
 with make_context() as value:
     raise ValueError('this exception is not handled')

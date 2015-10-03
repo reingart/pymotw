@@ -9,7 +9,9 @@
 
 import math
 
-print '{:^6}  {:^6}  {:^6}  {:^6}'.format('X', 'sinh', 'cosh', 'tanh')
+print '{:^6}  {:^6}  {:^6}  {:^6}'.format(
+    'X', 'sinh', 'cosh', 'tanh',
+    )
 print '{:-^6}  {:-^6}  {:-^6}  {:-^6}'.format('', '', '', '')
 
 fmt = '  '.join(['{:6.4f}'] * 4)

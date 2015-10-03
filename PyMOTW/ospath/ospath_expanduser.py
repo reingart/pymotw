@@ -11,6 +11,6 @@ __version__ = "$Id$"
 
 import os.path
 
-for user in [ '', 'dhellmann', 'postgres' ]:
+for user in [ '', 'dhellmann', 'postgresql' ]:
     lookup = '~' + user
-    print lookup, ':', os.path.expanduser(lookup)
+    print '%12s : %s' % (lookup, os.path.expanduser(lookup))

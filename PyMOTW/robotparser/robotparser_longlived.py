@@ -25,12 +25,11 @@ PATHS = [
     '/downloads/PyMOTW-1.92.tar.gz',
     ]
 
-for n, path in enumerate(PATHS):
-    print
+for path in PATHS:
     age = int(time.time() - parser.mtime())
     print 'age:', age,
     if age > 1:
-        print 're-reading robots.txt'
+        print 'rereading robots.txt'
         parser.read()
         parser.modified()
     else:
@@ -38,3 +37,5 @@ for n, path in enumerate(PATHS):
     print '%6s : %s' % (parser.can_fetch(AGENT_NAME, path), path)
     # Simulate a delay in processing
     time.sleep(1)
+    print
+    

@@ -18,5 +18,7 @@ class IncompleteImplementation(PluginBase):
 PluginBase.register(IncompleteImplementation)
 
 if __name__ == '__main__':
-    print 'Subclass:', issubclass(IncompleteImplementation, PluginBase)
-    print 'Instance:', isinstance(IncompleteImplementation(), PluginBase)
+    print 'Subclass:', issubclass(IncompleteImplementation,
+                                  PluginBase)
+    print 'Instance:', isinstance(IncompleteImplementation(),
+                                  PluginBase)

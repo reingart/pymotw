@@ -36,7 +36,7 @@ while True:
                 print >>sys.stderr, 'sending data back to the client'
                 connection.sendall(data)
             else:
-                print >>sys.stderr, 'no more data from', client_address
+                print >>sys.stderr, 'no data from', client_address
                 break
             
     finally:

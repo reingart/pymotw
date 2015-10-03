@@ -38,7 +38,7 @@ proc = subprocess.Popen('python repeater.py',
                         stdin=subprocess.PIPE,
                         stdout=subprocess.PIPE,
                         )
-for i in range(10):
+for i in range(5):
     proc.stdin.write('%d\n' % i)
     output = proc.stdout.readline()
     print output.rstrip()
@@ -52,7 +52,7 @@ proc = subprocess.Popen('python repeater.py',
                         stdin=subprocess.PIPE,
                         stdout=subprocess.PIPE,
                         )
-for i in range(10):
+for i in range(5):
     proc.stdin.write('%d\n' % i)
 
 output = proc.communicate()[0]

@@ -16,4 +16,4 @@ for path in [ '/one/two/three',
               '/',
               '.',
               '']:
-    print '"%s" : "%s"' % (path, os.path.split(path))
+    print '%15s : %s' % (path, os.path.split(path))

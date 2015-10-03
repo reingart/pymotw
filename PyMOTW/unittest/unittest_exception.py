@@ -31,7 +31,6 @@
 import unittest
 
 def raises_error(*args, **kwds):
-    print args, kwds
     raise ValueError('Invalid value: ' + str(args) + str(kwds))
 
 class ExceptionTest(unittest.TestCase):

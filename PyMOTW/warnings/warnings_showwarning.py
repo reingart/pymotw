@@ -21,4 +21,4 @@ def send_warnings_to_log(message, category, filename, lineno, file=None):
 old_showwarning = warnings.showwarning
 warnings.showwarning = send_warnings_to_log
 
-warnings.warn('This is a warning message')
+warnings.warn('message')

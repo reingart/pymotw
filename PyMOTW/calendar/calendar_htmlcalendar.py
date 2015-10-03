@@ -33,4 +33,4 @@ __module_id__ = "$Id$"
 import calendar
 
 c = calendar.HTMLCalendar(calendar.SUNDAY)
-print c.formatmonth(2007, 7)
+print c.formatmonth(2011, 7)

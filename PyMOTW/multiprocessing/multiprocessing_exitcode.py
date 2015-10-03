@@ -38,4 +38,4 @@ if __name__ == '__main__':
 
     for j in jobs:
         j.join()
-        print '%s.exitcode = %s' % (j.name, j.exitcode)
+        print '%15s.exitcode = %s' % (j.name, j.exitcode)

@@ -21,10 +21,12 @@ def show_thread(q, extraByteCodes):
     return
 
 def run_threads(prefix, interval, extraByteCodes):
-    print '%(prefix)s interval = %(interval)s with %(extraByteCodes)s extra operations' % locals()
+    print '%s interval = %s with %s extra operations' % \
+        (prefix, interval, extraByteCodes)
     sys.setcheckinterval(interval)
     q = Queue()
-    threads = [ threading.Thread(target=show_thread, name='%s T%s' % (prefix, i), 
+    threads = [ threading.Thread(target=show_thread,
+                                 name='%s T%s' % (prefix, i), 
                                  args=(q, extraByteCodes)
                                  )
                 for i in range(3)

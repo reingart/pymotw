@@ -20,7 +20,14 @@ class MyObj(object):
         return 'MyObj(%s)' % self.arg
 
 l = [ MyObj(i) for i in xrange(5) ]
-print l
+print 'objects   :', l
+
+# Extract the 'arg' value from each object
 g = attrgetter('arg')
 vals = [ g(i) for i in l ]
-print vals
+print 'arg values:', vals
+
+# Sort using arg
+l.reverse()
+print 'reversed  :', l
+print 'sorted    :', sorted(l, key=g)

@@ -35,13 +35,13 @@ warnings.filterwarnings('ignore', 'os.popen.* is deprecated.*',)
 import os
 
 print 'popen2:'
-pipe_stdin, pipe_stdout = os.popen2('cat -')
+stdin, stdout = os.popen2('cat -')
 try:
-    pipe_stdin.write('through stdin to stdout')
+    stdin.write('through stdin to stdout')
 finally:
-    pipe_stdin.close()
+    stdin.close()
 try:
-    stdout_value = pipe_stdout.read()
+    stdout_value = stdout.read()
 finally:
-    pipe_stdout.close()
+    stdout.close()
 print '\tpass through:', repr(stdout_value)

@@ -11,13 +11,20 @@ __version__ = "$Id$"
 
 import string
 
-class MyTemplate(string.Template):
-    delimiter = '%'
-    idpattern = '[a-z]+_[a-z]+'
+template_text = '''
+  Delimiter : %%
+  Replaced  : %with_underscore
+  Ignored   : %notunderscored
+'''
 
-t = MyTemplate('%% %with_underscore %notunderscored')
 d = { 'with_underscore':'replaced', 
       'notunderscored':'not replaced',
       }
 
+class MyTemplate(string.Template):
+    delimiter = '%'
+    idpattern = '[a-z]+_[a-z]+'
+
+t = MyTemplate(template_text)
+print 'Modified ID pattern:'
 print t.safe_substitute(d)

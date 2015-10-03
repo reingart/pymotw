@@ -23,5 +23,6 @@ print 'Yesterday:', yesterday
 tomorrow = today + one_day
 print 'Tomorrow :', tomorrow
 
+print
 print 'tomorrow - yesterday:', tomorrow - yesterday
 print 'yesterday - tomorrow:', yesterday - tomorrow

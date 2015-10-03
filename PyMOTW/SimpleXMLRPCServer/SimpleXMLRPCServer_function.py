@@ -24,6 +24,7 @@ def list_contents(dir_name):
     return os.listdir(dir_name)
 server.register_function(list_contents)
 
+# Start the server
 try:
     print 'Use Control-C to exit'
     server.serve_forever()

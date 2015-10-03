@@ -3,14 +3,14 @@
 #
 # Copyright (c) 2010 Doug Hellmann.  All rights reserved.
 #
-"""Create a file with non-native BOM.
+"""Create a file with nonnative BOM.
 """
 #end_pymotw_header
 
 import codecs
 from codecs_to_hex import to_hex
 
-# Pick the non-native version of UTF-16 encoding
+# Pick the nonnative version of UTF-16 encoding
 if codecs.BOM_UTF16 == codecs.BOM_UTF16_BE:
     bom = codecs.BOM_UTF16_LE
     encoding = 'utf_16_le'
@@ -25,10 +25,10 @@ print 'Selected order:', to_hex(bom, 2)
 encoded_text = u'pi: \u03c0'.encode(encoding)
 print '{:14}: {}'.format(encoding, to_hex(encoded_text, 2))
 
-with open('non-native-encoded.txt', mode='wb') as f:
-    # Write the selected byte-order marker.  It is not included in the
-    # encoded text because we were explicit about the byte order when
-    # selecting the encoding.
+with open('nonnative-encoded.txt', mode='wb') as f:
+    # Write the selected byte-order marker.  It is not included
+    # in the encoded text because the byte order was given
+    # explicitly when selecting the encoding.
     f.write(bom)
     # Write the byte string for the encoded text.
     f.write(encoded_text)

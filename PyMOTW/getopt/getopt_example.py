@@ -39,10 +39,18 @@ output_filename = 'default.out'
 
 print 'ARGV      :', sys.argv[1:]
 
-options, remainder = getopt.getopt(sys.argv[1:], 'o:v', ['output=', 
-                                                         'verbose',
-                                                         'version=',
-                                                         ])
+try:
+    options, remainder = getopt.getopt(
+        sys.argv[1:],
+        'o:v',
+        ['output=', 
+         'verbose',
+         'version=',
+         ])
+except getopt.GetoptError as err:
+    print 'ERROR:', err
+    sys.exit(1)
+    
 print 'OPTIONS   :', options
 
 for opt, arg in options:

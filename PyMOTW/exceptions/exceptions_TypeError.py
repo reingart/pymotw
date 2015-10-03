@@ -9,4 +9,4 @@
 __version__ = "$Id$"
 #end_pymotw_header
 
-result = ('tuple',) + 'string'
+result = 5 + 'string'

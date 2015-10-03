@@ -8,7 +8,8 @@
 #end_pymotw_header
 
 import sys
+import textwrap
 
-for name in sys.builtin_module_names:
-    print name
+name_text = ', '.join(sorted(sys.builtin_module_names))
 
+print textwrap.fill(name_text, width=65)

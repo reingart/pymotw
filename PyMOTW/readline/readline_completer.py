@@ -26,15 +26,18 @@ class SimpleCompleter(object):
     def complete(self, text, state):
         response = None
         if state == 0:
-            # This is the first time for this text, so build a match list.
+            # This is the first time for this text,
+            # so build a match list.
             if text:
                 self.matches = [s 
                                 for s in self.options
                                 if s and s.startswith(text)]
-                logging.debug('%s matches: %s', repr(text), self.matches)
+                logging.debug('%s matches: %s',
+                              repr(text), self.matches)
             else:
                 self.matches = self.options[:]
-                logging.debug('(empty input) matches: %s', self.matches)
+                logging.debug('(empty input) matches: %s',
+                              self.matches)
         
         # Return the state'th item from the match list,
         # if we have that many.
@@ -52,8 +55,9 @@ def input_loop():
         line = raw_input('Prompt ("stop" to quit): ')
         print 'Dispatch %s' % line
 
-# Register our completer function
-readline.set_completer(SimpleCompleter(['start', 'stop', 'list', 'print']).complete)
+# Register the completer function
+OPTIONS = ['start', 'stop', 'list', 'print']
+readline.set_completer(SimpleCompleter(OPTIONS).complete)
 
 # Use the tab key for completion
 readline.parse_and_bind('tab: complete')

@@ -11,7 +11,7 @@ __version__ = "$Id$"
 
 import subprocess
 
-print '\nread:'
+print 'read:'
 proc = subprocess.Popen(['echo', '"to stdout"'], 
                         stdout=subprocess.PIPE,
                         )

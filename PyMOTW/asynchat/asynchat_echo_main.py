@@ -15,7 +15,7 @@ from asynchat_echo_server import EchoServer
 from asynchat_echo_client import EchoClient
 
 logging.basicConfig(level=logging.DEBUG,
-                    format='%(name)s: %(message)s',
+                    format='%(name)-11s: %(message)s',
                     )
 
 address = ('localhost', 0) # let the kernel give us a port

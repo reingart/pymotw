@@ -14,7 +14,9 @@ top = Element('top')
 
 parent = SubElement(top, 'parent')
 
-children = XML('''<root><child num="0" /><child num="1" /><child num="2" /></root> ''')
+children = XML(
+   '<root><child num="0" /><child num="1" /><child num="2" /></root>'
+   )
 parent.extend(children)
 
 print prettify(top)

@@ -11,9 +11,10 @@ import random
 import threading
 import time
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s (%(threadName)-2s) %(message)s',
-                    )
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s (%(threadName)-2s) %(message)s',
+    )
 
 class ActivePool(object):
     def __init__(self):
@@ -40,5 +41,7 @@ def worker(s, pool):
 pool = ActivePool()
 s = threading.Semaphore(2)
 for i in range(4):
-    t = threading.Thread(target=worker, name=str(i), args=(s, pool))
+    t = threading.Thread(target=worker,
+                         name=str(i),
+                         args=(s, pool))
     t.start()

@@ -25,8 +25,11 @@ print new_message
 
 c = imaplib_connect.open_connection()
 try:
-    c.append('INBOX', '', imaplib.Time2Internaldate(time.time()), str(new_message))
-    
+    c.append('INBOX', '',
+             imaplib.Time2Internaldate(time.time()),
+             str(new_message))
+
+    # Show the headers for all messages in the mailbox
     c.select('INBOX')
     typ, [msg_ids] = c.search(None, 'ALL')
     for num in msg_ids.split():

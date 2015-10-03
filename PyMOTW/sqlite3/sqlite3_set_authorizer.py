@@ -11,18 +11,18 @@ import sqlite3
 
 db_filename = 'todo.db'
 
-def authorizer_func(action_code, table, column, sql_location, ignore):
+def authorizer_func(action, table, column, sql_location, ignore):
     print '\nauthorizer_func(%s, %s, %s, %s, %s)' % \
-        (action_code, table, column, sql_location, ignore)
+        (action, table, column, sql_location, ignore)
 
     response = sqlite3.SQLITE_OK # be permissive by default
 
-    if action_code == sqlite3.SQLITE_SELECT:
+    if action == sqlite3.SQLITE_SELECT:
         print 'requesting permission to run a select statement'
         response = sqlite3.SQLITE_OK
     
-    elif action_code == sqlite3.SQLITE_READ:
-        print 'requesting permission to access the column %s.%s from %s' % \
+    elif action == sqlite3.SQLITE_READ:
+        print 'requesting access to column %s.%s from %s' % \
             (table, column, sql_location)
         if column == 'details':
             print '  ignoring details column'
@@ -39,12 +39,16 @@ with sqlite3.connect(db_filename) as conn:
 
     print 'Using SQLITE_IGNORE to mask a column value:'
     cursor = conn.cursor()
-    cursor.execute("select id, details from task where project = 'pymotw'")
+    cursor.execute("""
+    select id, details from task where project = 'pymotw'
+    """)
     for row in cursor.fetchall():
         print row['id'], row['details']
 
     print '\nUsing SQLITE_DENY to deny access to a column:'
-    cursor.execute("select id, priority from task where project = 'pymotw'")
+    cursor.execute("""
+    select id, priority from task where project = 'pymotw'
+    """)
     for row in cursor.fetchall():
         print row['id'], row['details']
 

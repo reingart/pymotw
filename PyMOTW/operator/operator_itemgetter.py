@@ -11,17 +11,17 @@ __version__ = "$Id$"
 
 from operator import *
 
-print 'Dictionaries:'
-l = [ dict(val=i) for i in xrange(5) ]
-print l
+l = [ dict(val=-1 * i) for i in xrange(4) ]
+print 'Dictionaries:', l
 g = itemgetter('val')
 vals = [ g(i) for i in l ]
-print vals
+print '      values:', vals
+print '      sorted:', sorted(l, key=g)
 
 print
-print 'Tuples:'
-l = [ (i, i*2) for i in xrange(5) ]
-print l
+l = [ (i, i*-2) for i in xrange(4) ]
+print 'Tuples      :', l
 g = itemgetter(1)
 vals = [ g(i) for i in l ]
-print vals
+print '      values:', vals
+print '      sorted:', sorted(l, key=g)

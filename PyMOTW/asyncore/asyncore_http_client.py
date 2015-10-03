@@ -48,7 +48,8 @@ class HttpClient(asyncore.dispatcher):
 
     def handle_write(self):
         sent = self.send(self.write_buffer)
-        self.logger.debug('handle_write() -> "%s"', self.write_buffer[:sent])
+        self.logger.debug('handle_write() -> "%s"',
+                          self.write_buffer[:sent])
         self.write_buffer = self.write_buffer[sent:]
 
     def handle_read(self):
@@ -62,8 +63,8 @@ if __name__ == '__main__':
                         )
 
     clients = [
-        HttpClient('http://www.python.org/'),
-        HttpClient('http://www.doughellmann.com/PyMOTW/contents.html'),
+        HttpClient('http://www.doughellmann.com/'),
+        HttpClient('http://www.doughellmann.com/PyMOTW/about/'),
         ]
 
     logging.debug('LOOP STARTING')

@@ -11,4 +11,4 @@ __version__ = "$Id$"
 
 # This data was generated with the random module.
 
-data = [19, 9, 4, 10, 11, 8, 2]
+data = [19, 9, 4, 10, 11]

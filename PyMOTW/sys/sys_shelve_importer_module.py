@@ -22,7 +22,6 @@ filename = '/tmp/pymotw_import_example.shelve'
 sys.path_hooks.append(sys_shelve_importer.ShelveFinder)
 sys.path.insert(0, filename)
 
-print
 print 'Import of "package.module1":'
 import package.module1
 

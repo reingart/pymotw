@@ -33,10 +33,7 @@ __module_id__ = "$Id$"
 import csv
 import sys
 
-f = open(sys.argv[1], 'rt')
-try:
+with open(sys.argv[1], 'rt') as f:
     reader = csv.DictReader(f)
     for row in reader:
         print row
-finally:
-    f.close()

@@ -19,7 +19,8 @@ class Graph(object):
     def __init__(self, name):
         self.name = name
         self.next = None
-        print 'Creating %s 0x%x (%s)' % (self.__class__.__name__, id(self), name)
+        print 'Creating %s 0x%x (%s)' % \
+            (self.__class__.__name__, id(self), name)
     def set_next(self, next):
         print 'Linking nodes %s.next = %s' % (self, next)
         self.next = next

@@ -9,17 +9,18 @@
 
 import re
 
-# Pre-compile the patterns
-regexes = [ re.compile(p) for p in [ 'this',
-                                     'that',
-                                     ]
+# Precompile the patterns
+regexes = [ re.compile(p)
+            for p in [ 'this', 'that' ]
             ]
 text = 'Does this text match the pattern?'
 
+print 'Text: %r\n' % text
+
 for regex in regexes:
-    print 'Looking for "%s" in "%s" ->' % (regex.pattern, text),
+    print 'Seeking "%s" ->' % regex.pattern,
 
     if regex.search(text):
-        print 'found a match!'
+        print 'match!'
     else:
         print 'no match'

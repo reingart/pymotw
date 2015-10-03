@@ -3,15 +3,12 @@
 #
 # Copyright (c) 2008 Doug Hellmann All rights reserved.
 #
-"""
-"""
-
-__version__ = "$Id$"
 #end_pymotw_header
 
 import profile
 
 class memoize:
+    # from Avinash Vora's memoize decorator
     # from http://avinashv.net/2008/04/python-decorators-syntactic-sugar/
     def __init__(self, function):
         self.function = function

@@ -30,14 +30,8 @@
 __version__ = "$Id$"
 #end_pymotw_header
 
-data = [ (i, { 'a':'A',
-               'b':'B',
-               'c':'C',
-               'd':'D',
-               'e':'E',
-               'f':'F',
-               'g':'G',
-               'h':'H',
-               })
-         for i in xrange(3)
+data = [ (1, { 'a':'A', 'b':'B', 'c':'C', 'd':'D' }),
+         (2, { 'e':'E', 'f':'F', 'g':'G', 'h':'H',
+               'i':'I', 'j':'J', 'k':'K', 'l':'L',
+               }),
          ]

@@ -9,7 +9,7 @@
 
 import decimal
 import threading
-from Queue import Queue
+from Queue import PriorityQueue
 
 class Multiplier(threading.Thread):
     def __init__(self, a, b, prec, q):
@@ -27,7 +27,9 @@ class Multiplier(threading.Thread):
 
 a = decimal.Decimal('3.14')
 b = decimal.Decimal('1.234')
-q = Queue()
+# A PriorityQueue will return values sorted by precision, no matter
+# what order the threads finish.
+q = PriorityQueue() 
 threads = [ Multiplier(a, b, i, q) for i in range(1, 6) ]
 for t in threads:
     t.start()

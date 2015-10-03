@@ -12,15 +12,15 @@ __version__ = "$Id$"
 import collections
 
 # Add to the right
-d = collections.deque()
-d.extend('abcdefg')
-print 'extend    :', d
-d.append('h')
-print 'append    :', d
+d1 = collections.deque()
+d1.extend('abcdefg')
+print 'extend    :', d1
+d1.append('h')
+print 'append    :', d1
 
 # Add to the left
-d = collections.deque()
-d.extendleft('abcdefg')
-print 'extendleft:', d
-d.appendleft('h')
-print 'appendleft:', d
+d2 = collections.deque()
+d2.extendleft(xrange(6))
+print 'extendleft:', d2
+d2.appendleft(6)
+print 'appendleft:', d2

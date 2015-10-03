@@ -9,7 +9,8 @@
 
 import re
 
-address = re.compile('[\w\d.+-]+@([\w\d.]+\.)+(com|org|edu)', re.UNICODE)
+address = re.compile('[\w\d.+-]+@([\w\d.]+\.)+(com|org|edu)',
+                     re.UNICODE)
 
 candidates = [
     u'first.last@example.com',
@@ -19,11 +20,6 @@ candidates = [
     ]
 
 for candidate in candidates:
-    print
-    print 'Candidate:', candidate
     match = address.search(candidate)
-    if match:
-        print '  Matches'
-    else:
-        print '  No match'
+    print '%-30s  %s' % (candidate, 'Matches' if match else 'No match')
     

@@ -39,7 +39,9 @@ def collation_func(a, b):
     print 'collation_func(%s, %s)' % (a_obj, b_obj)
     return cmp(a_obj, b_obj)
 
-with sqlite3.connect(db_filename, detect_types=sqlite3.PARSE_DECLTYPES) as conn:
+with sqlite3.connect(db_filename,
+                     detect_types=sqlite3.PARSE_DECLTYPES,
+                     ) as conn:
     # Define the collation
     conn.create_collation('unpickle', collation_func)
 
@@ -50,9 +52,10 @@ with sqlite3.connect(db_filename, detect_types=sqlite3.PARSE_DECLTYPES) as conn:
                      )
 
     # Query the database for the objects just saved
-    print '\nQuerying:'
+    print 'Querying:'
     cursor = conn.cursor()
-    cursor.execute("select id, data from obj order by data collate unpickle")
+    cursor.execute("""
+    select id, data from obj order by data collate unpickle
+    """)
     for obj_id, obj in cursor.fetchall():
         print obj_id, obj
-        print

@@ -12,10 +12,12 @@ import re
 patterns = [ 'this', 'that' ]
 text = 'Does this text match the pattern?'
 
-for pattern in patterns:
-    print 'Looking for "%s" in "%s" ->' % (pattern, text),
+print 'Text: %r\n' % text
 
-    if re.search(pattern,  text):
-        print 'found a match!'
-    else:
+for pattern in patterns:
+    print 'Seeking "%s" ->' % pattern, 
+
+    if re.search(pattern,  text) is None:
         print 'no match'
+    else:
+        print 'match!'

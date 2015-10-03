@@ -31,4 +31,5 @@ show_module_details(package)
 
 print
 print 'Global settings:'
-print 'sys.modules entry:', sys.modules['package']
+print 'sys.modules entry:'
+print sys.modules['package']

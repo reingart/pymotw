@@ -41,4 +41,4 @@ def recurse(limit):
     return
 
 if __name__ == '__main__':
-    recurse(3)
+    recurse(2)

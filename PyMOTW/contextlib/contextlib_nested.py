@@ -15,6 +15,7 @@ def make_context(name):
     yield name
     print 'exiting :', name
 
-with contextlib.nested(make_context('A'), make_context('B'), make_context('C')) as (A, B, C):
-    print 'inside with statement:', A, B, C
+with contextlib.nested(make_context('A'),
+                       make_context('B')) as (A, B):
+    print 'inside with statement:', A, B
 

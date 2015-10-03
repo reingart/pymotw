@@ -17,7 +17,10 @@ print 'Request method before data:', request.get_method()
 
 request.add_data(urllib.urlencode(query_args))
 print 'Request method after data :', request.get_method()
-request.add_header('User-agent', 'PyMOTW (http://www.doughellmann.com/PyMOTW/)')
+request.add_header(
+    'User-agent',
+    'PyMOTW (http://www.doughellmann.com/PyMOTW/)',
+    )
 
 print
 print 'OUTGOING DATA:'

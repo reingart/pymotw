@@ -8,13 +8,12 @@
 #end_pymotw_header
 
 import json
-import tempfile
+from StringIO import StringIO
 
 data = [ { 'a':'A', 'b':(2, 4), 'c':3.0 } ]
 
-f = tempfile.NamedTemporaryFile(mode='w+')
+f = StringIO()
 json.dump(data, f)
-f.flush()
 
-print open(f.name, 'r').read()
+print f.getvalue()
 

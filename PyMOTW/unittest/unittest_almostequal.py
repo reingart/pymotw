@@ -32,8 +32,8 @@ import unittest
 
 class AlmostEqualTest(unittest.TestCase):
 
-    def testEqual(self):
-        self.failUnlessEqual(1.1, 3.3-2.2)
+##    def testEqual(self):
+##        self.failUnlessEqual(1.1, 3.3-2.2)
 
     def testAlmostEqual(self):
         self.failUnlessAlmostEqual(1.1, 3.3-2.2, places=1)

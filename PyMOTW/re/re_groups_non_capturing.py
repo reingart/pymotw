@@ -10,6 +10,6 @@
 from re_test_patterns_groups import test_patterns
 
 test_patterns('abbaaabbbbaaaaa',
-              [r'a((a+)|(b+))',     # capturing form
-               r'a((?:a+)|(?:b+))', # non-capturing
+              [(r'a((a+)|(b+))',     "capturing form"),
+               (r'a((?:a+)|(?:b+))', "non-capturing"),
                ])

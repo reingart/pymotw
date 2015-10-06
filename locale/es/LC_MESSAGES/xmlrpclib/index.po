@@ -1,0 +1,219 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/xmlrpclib/index.rst:3
+msgid "xmlrpclib -- Client-side library for XML-RPC communication"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:8
+msgid "Client-side library for XML-RPC communication."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:9
+msgid "2.2 and later"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:11
+msgid ""
+"We have already looked at :mod:`SimpleXMLRPCServer`, the library for "
+"creating an XML-RPC server. The :mod:`xmlrpclib` module lets you communicate"
+" from Python with any XML-RPC server written in any language."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:18
+msgid ""
+"All of the examples below use the server defined in ``xmlrpclib_server.py``,"
+" available in the source distribution and repeated here for reference:"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:28
+msgid "Connecting to a Server"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:30
+msgid ""
+"The simplest way to connect a client to a server is to instantiate a "
+":class:`ServerProxy` object, giving it the URI of the server. For example, "
+"the demo server runs on port 9000 of localhost:"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:38
+msgid ""
+"In this case, the :func:`ping()` method of the service takes no arguments "
+"and returns a single boolean value."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:47
+msgid ""
+"Other options are available to support alternate transport. Both HTTP and "
+"HTTPS are supported out of the box, as are basic authentication. You would "
+"only need to provide a transport class if your communication channel was not"
+" one of the supported types. It would be an interesting exercise, for "
+"example, to implement XML-RPC over SMTP. Not terribly useful, but "
+"interesting."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:54
+msgid ""
+"The verbose option gives you debugging information useful for working out "
+"where communication errors might be happening."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:79
+msgid ""
+"You can change the default encoding from UTF-8 if you need to use an "
+"alternate system."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:86
+msgid "The server should automatically detect the correct encoding."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:94
+msgid ""
+"The *allow_none* option controls whether Python's ``None`` value is "
+"automatically translated to a nil value or if it causes an error."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:101
+msgid ""
+"The error is raised locally if the client does not allow ``None``, but can "
+"also be raised from within the server if it is not configured to allow "
+"``None``."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:128
+msgid ""
+"The *use_datetime* option lets you pass :mod:`datetime` and related objects "
+"in to the proxy or receive them from the server. If *use_datetime* is False,"
+" the internal :class:`DateTime` class is used to represent dates instead."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:134
+msgid "Data Types"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:136
+msgid ""
+"The XML-RPC protocol recognizes a limited set of common data types. The "
+"types can be passed as arguments or return values and combined to create "
+"more complex data structures."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:145
+msgid "The simple types::"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:158
+msgid "And they can be nested to create values of arbitrary complexity:"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:215
+msgid "Passing Objects"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:217
+msgid ""
+"Instances of Python classes are treated as structures and passed as a "
+"dictionary, with the attributes of the object as values in the dictionary."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:226
+msgid ""
+"Round-tripping the value gives a dictionary on the client, since there is "
+"nothing encoded in the values to tell the server (or client) that it should "
+"be instantiated as part of a class."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:240
+msgid "Binary Data"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:242
+msgid ""
+"All values passed to the server are encoded and escaped automatically. "
+"However, some data types may contain characters that are not valid XML. For "
+"example, binary image data may include byte values in the ASCII control "
+"range 0 to 31.  If you need to pass binary data, it is best to use the "
+":class:`Binary` class to encode it for transport."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:253
+msgid ""
+"If we pass the string containing a NULL byte to :func:`show_type()`, an "
+"exception is raised in the XML parser:"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:278
+msgid ""
+":class:`Binary` objects can also be used to send objects using "
+":mod:`pickle`. The normal security issues related to sending what amounts to"
+" executable code over the wire apply here (i.e., don't do this unless you're"
+" sure your communication channel is secure)."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:288
+msgid ""
+"Remember, the data attribute of the :class:`Binary` instance contains the "
+"pickled version of the object, so it has to be unpickled before it can be "
+"used. That results in a different object (with a new id value)."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:301
+msgid "Exception Handling"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:303
+msgid ""
+"Since the XML-RPC server might be written in any language, exception classes"
+" cannot be transmitted directly. Instead, exceptions raised in the server "
+"are converted to :class:`Fault` objects and raised as exceptions locally in "
+"the client."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:321
+msgid "MultiCall"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:323
+msgid ""
+"Multicall is an extension to the XML-RPC protocol to allow more than one "
+"call to be sent at the same time, with the responses collected and returned "
+"to the caller. The :class:`MultiCall` class was added to :mod:`xmlrpclib` in"
+" Python 2.4. To use a :class:`MultiCall` instance, invoke the methods on it "
+"as with a :class:`ServerProxy`, then call the object with no arguments. The "
+"result is an iterator with the results."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:342
+msgid ""
+"If one of the calls causes a :class:`Fault` or otherwise raises an "
+"exception, the exception is raised when the result is produced from the "
+"iterator and no more results are available."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:365
+msgid "`xmlrpclib <http://docs.python.org/lib/module-xmlrpclib.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:365
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:367
+msgid ":mod:`SimpleXMLRPCServer`"
+msgstr ""
+
+#: ../../PyMOTW/xmlrpclib/index.rst:368
+msgid "An XML-RPC server implementation."
+msgstr ""

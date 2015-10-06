@@ -1,0 +1,82 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/collections/namedtuple.rst:5
+msgid "namedtuple"
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:7
+msgid ""
+"The standard :class:`tuple` uses numerical indexes to access its members."
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:14
+msgid "This makes :class:`tuples` convenient containers for simple uses."
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:34
+msgid ""
+"On the other hand, remembering which index should be used for each value can"
+" lead to errors, especially if the :class:`tuple` has a lot of fields and is"
+" constructed far from where it is used.  A :class:`namedtuple` assigns "
+"names, as well as the numerical index, to each member."
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:41
+msgid "Defining"
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:43
+msgid ""
+":class:`namedtuple` instances are just as memory efficient as regular tuples"
+" because they do not have per-instance dictionaries.  Each kind of "
+":class:`namedtuple` is represented by its own class, created by using the "
+":func:`namedtuple` factory function.  The arguments are the name of the new "
+"class and a string containing the names of the elements."
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:54
+msgid ""
+"As the example illustrates, it is possible to access the fields of the "
+":class:`namedtuple` by name using dotted notation (``obj.attr``) as well as "
+"using the positional indexes of standard tuples."
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:79
+msgid "Invalid Field Names"
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:81
+msgid ""
+"As the field names are parsed, invalid values cause :ref:`ValueError "
+"<exceptions-ValueError>` exceptions."
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:88
+msgid ""
+"Names are invalid if they are repeated or conflict with Python keywords."
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:104
+msgid ""
+"In situations where a :class:`namedtuple` is being created based on values "
+"outside of the control of the programm (such as to represent the rows "
+"returned by a database query, where the schema is not known in advance), set"
+" the *rename* option to ``True`` so the fields are renamed."
+msgstr ""
+
+#: ../../PyMOTW/collections/namedtuple.rst:114
+msgid ""
+"The field with name ``class`` becomes ``_1`` and the duplicate ``age`` field"
+" is changed to ``_3``."
+msgstr ""

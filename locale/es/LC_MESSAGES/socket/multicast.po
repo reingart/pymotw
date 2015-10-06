@@ -1,0 +1,138 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/socket/multicast.rst:3
+msgid "Multicast"
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:5
+msgid ""
+"Point-to-point connections handle a lot of communication needs, but passing "
+"the same information between many peers becomes challenging as the number of"
+" direct connections grows.  Sending messages separately to each recipient "
+"consumes additional processing time and bandwidth, which can be a problem "
+"for applications such as streaming video or audio.  Using *multicast* to "
+"deliver messages to more than one endpoint at a time achieves better "
+"efficiency because the network infrastructure ensures that the packets are "
+"delivered to all recipients."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:15
+msgid ""
+"Multicast messages are always sent using UDP, since TCP requires an end-to-"
+"end communication channel.  The addresses for multicast, called *multicast "
+"groups*, are a subset of regular IPv4 address range (224.0.0.0 through "
+"230.255.255.255) reserved for multicast traffic. These addresses are treated"
+" specially by network routers and switches, so messages sent to the group "
+"can be distributed over the Internet to all recipients that have joined the "
+"group."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:25
+msgid ""
+"Some managed switches and routers have multicast traffic disabled by "
+"default.  If you have trouble with the example programs, check your network "
+"hardware settings."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:30
+msgid "Sending Multicast Messages"
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:32
+msgid ""
+"This modified echo client will send a message to a multicast group, then "
+"report all of the responses it receives.  Since it has no way of knowing how"
+" many responses to expect, it uses a timeout value on the socket to avoid "
+"blocking indefinitely waiting for an answer."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:40
+msgid ""
+"The socket also needs to be configured with a *time-to-live* value (TTL) for"
+" the messages.  The TTL controls how many networks will receive the packet."
+"  Set the TTL with the :const:`IP_MULTICAST_TTL` option and "
+":func:`setsockopt`.  The default, ``1``, means that the packets are not "
+"forwarded by the router beyond the current network segment.  The value can "
+"range up to 255, and should be packed into a single byte."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:51
+msgid ""
+"The rest of the sender looks like the UDP echo client, except that it "
+"expects multiple responses so uses a loop to call :func:`recvfrom` until it "
+"times out."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:59
+msgid "Receiving Multicast Messages"
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:61
+msgid ""
+"The first step to establishing a multicast receiver is to create the UDP "
+"socket."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:67
+msgid ""
+"After the regular socket is created and bound to a port, it can be added to "
+"the multicast group by using :func:`setsockopt` to change the "
+":const:`IP_ADD_MEMBERSHIP` option.  The option value is the 8-byte packed "
+"representation of the multicast group address followed by the network "
+"interface on which the server should listen for the traffic, identified by "
+"its IP address.  In this case, the receiver listens on all interfaces using "
+":const:`INADDR_ANY`."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:78
+msgid ""
+"The main loop for the receiver is just like the regular UDP echo server."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:85
+msgid "Example Output"
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:87
+msgid ""
+"This example shows the multicast receiver running on two different hosts, "
+"``A`` has address ``192.168.1.17`` and ``B`` has address ``192.168.1.8``."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:109
+msgid "The sender is running on host ``A``."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:124
+msgid ""
+"The message is sent one time, and two acknowledgements of the outgoing "
+"message are received, one from each of host ``A`` and ``B``."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:130
+msgid "`Wikipedia: Multicast <http://en.wikipedia.org/wiki/Multicast>`__"
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:130
+msgid "Article describing technical details of multicasting."
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:132
+msgid ""
+"`Wikipedia: IP Multicast <http://en.wikipedia.org/wiki/IP_multicast>`__"
+msgstr ""
+
+#: ../../PyMOTW/socket/multicast.rst:133
+msgid "Article about IP multicasting, with information about addressing."
+msgstr ""

@@ -1,0 +1,96 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/socket/index.rst:3
+msgid "socket -- Network Communication"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:8
+msgid "Provides access to network communication"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:11
+msgid ""
+"The :mod:`socket` module exposes the low-level C API for communicating over "
+"a network using the BSD socket interface.  It includes the :class:`socket` "
+"class, for handling the actual data channel, and functions for network-"
+"related tasks such as converting a server's name to an address and "
+"formatting data to be sent across the network."
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:31
+msgid "`socket <http://docs.python.org/library/socket.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:31
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:35
+msgid ""
+"`Socket Programming HOWOTO <http://docs.python.org/howto/sockets.html>`__"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:34
+msgid ""
+"An instructional guide by Gordon McMillan, included in the standard library "
+"documentation."
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:38
+msgid ":mod:`select`"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:38
+msgid "Testing a socket to see if it is ready for reading or writing."
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:41
+msgid ":mod:`SocketServer`"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:41
+msgid "Framework for creating network servers."
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:44
+msgid ":mod:`asyncore` and :mod:`asynchat`"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:44
+msgid "Frameworks for asynchronous communication."
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:48
+msgid ":mod:`urllib` and :mod:`urllib2`"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:47
+msgid ""
+"Most network clients should use the more convenient libraries for accessing "
+"remote resoruces through a URL."
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:52
+msgid "*Unix Network Programming, Volume 1: The Sockets Networking API, 3/E*"
+msgstr ""
+
+#: ../../PyMOTW/socket/index.rst:51
+msgid ""
+"By W. Richard Stevens, Bill Fenner, and Andrew M. Rudoff. Published by "
+"Addison-Wesley Professional, 2004. ISBN-10: 0131411551"
+msgstr ""

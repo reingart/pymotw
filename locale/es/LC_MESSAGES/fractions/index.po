@@ -1,0 +1,120 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/fractions/index.rst:3
+msgid "fractions -- Rational Numbers"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:8
+msgid "Implements a class for working with rational numbers."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:9
+msgid "2.6 and later"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:11
+msgid ""
+"The Fraction class implements numerical operations for rational numbers "
+"based on the API defined by :class:`Rational` in :mod:`numbers`."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:14
+msgid "Creating Fraction Instances"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:16
+msgid ""
+"As with :mod:`decimal`, new values can be created in several ways.  One easy"
+" way is to create them from separate numerator and denominator values:"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:22
+msgid ""
+"The lowest common denominator is maintained as new values are computed."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:38
+msgid ""
+"Another way to create a Fraction is using a string representation of "
+"``<numerator> / <denominator>``:"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:58
+msgid ""
+"Strings can also use the more usual decimal or floating point notation of "
+"``[<digits>].[<digits>]``."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:78
+msgid ""
+"There are class methods for creating Fraction instances directly from other "
+"representations of rational values such as float or :mod:`decimal`."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:84
+msgid ""
+"Notice that for floating point values that cannot be expressed exactly the "
+"rational representation may yield unexpected results."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:101
+msgid ""
+"Using :mod:`decimal` representations of the values gives the expected "
+"results."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:125
+msgid "Arithmetic"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:127
+msgid ""
+"Once the fractions are instantiated, they can be used in mathematical "
+"expressions as you would expect."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:149
+msgid "Approximating Values"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:151
+msgid ""
+"A useful feature of Fraction is the ability to convert a floating point "
+"number to an approximate rational value by limiting the size of the "
+"denominator."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:181
+msgid "`fractions <http://docs.python.org/library/fractions.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:181
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:184
+msgid ":mod:`decimal`"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:184
+msgid "The decimal module provides an API for fixed and floating point math."
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:186
+msgid ":mod:`numbers`"
+msgstr ""
+
+#: ../../PyMOTW/fractions/index.rst:187
+msgid "Numeric abstract base classes."
+msgstr ""

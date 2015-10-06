@@ -1,0 +1,46 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/collections/ordereddict.rst:3
+msgid "OrderedDict"
+msgstr ""
+
+#: ../../PyMOTW/collections/ordereddict.rst:5
+msgid ""
+"An :class:`OrderedDict` is a dictionary subclass that remembers the order in"
+" which its contents are added."
+msgstr ""
+
+#: ../../PyMOTW/collections/ordereddict.rst:12
+msgid ""
+"A regular :class:`dict` does not track the insertion order, and iterating "
+"over it produces the values in an arbitrary order.  In an "
+":class:`OrderedDict`, by contrast, the order the items are inserted is "
+"remembered and used when creating an iterator."
+msgstr ""
+
+#: ../../PyMOTW/collections/ordereddict.rst:38
+msgid "Equality"
+msgstr ""
+
+#: ../../PyMOTW/collections/ordereddict.rst:40
+msgid ""
+"A regular :class:`dict` looks at its contents when testing for equality.  An"
+" :class:`OrderedDict` also considers the order the items were added."
+msgstr ""
+
+#: ../../PyMOTW/collections/ordereddict.rst:48
+msgid ""
+"In this case, since the two ordered dictionaries are created from values in "
+"a different order, they are considered to be different."
+msgstr ""

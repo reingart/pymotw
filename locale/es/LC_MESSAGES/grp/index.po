@@ -1,0 +1,171 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/grp/index.rst:3
+msgid "grp -- Unix Group Database"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:8
+msgid "Read group data from Unix group database."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:11
+msgid ""
+"The grp module can be used to read information about Unix groups from the "
+"group database (usually ``/etc/group``).  The read-only interface returns "
+"tuple-like objects with named attributes for the standard fields of a group "
+"record."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:17
+msgid "Index"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:17
+msgid "Attribute"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:17
+msgid "Meaning"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:19
+msgid "0"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:19
+msgid "gr_name"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:19
+msgid "Name"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:20
+msgid "1"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:20
+msgid "gr_passwd"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:20
+msgid "Password, if any (encrypted)"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:21
+msgid "2"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:21
+msgid "gr_gid"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:21
+msgid "Numerical id (integer)"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:22
+msgid "3"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:22
+msgid "gr_mem"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:22
+msgid "Names of group members"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:25
+msgid ""
+"The name and password values are both strings, the GID is an integer, and "
+"the members are reported as a list of strings."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:29
+msgid "Querying All Groups"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:31
+msgid ""
+"Suppose you need to print a report of all of the \"real\" groups on a "
+"system, including their members (for our purposes, \"real\" is defined as "
+"having a name not starting with \"``_``\").  To load the entire password "
+"database, you would use ``getgrall()``.  The return value is a list with an "
+"undefined order, so you probably want to sort it before printing the report."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:124
+msgid "Group Memberships for a User"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:126
+msgid ""
+"Another common task might be to print a list of all the groups for a given "
+"user:"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:146
+msgid "Finding a Group By Name"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:148
+msgid ""
+"As with :mod:`pwd`, it is also possible to query for information about a "
+"specific group, either by name or numeric id."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:171
+msgid "Finding a Group by ID"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:173
+msgid ""
+"To identify the group running the current process, combine ``getgrgid()`` "
+"with ``os.getgid()``."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:192
+msgid ""
+"And to get the group name based on the permissions on a file, look up the "
+"group returned by ``os.stat()``."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:215
+msgid "`grp <http://docs.python.org/library/grp.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:215
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:218
+msgid ":mod:`pwd`"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:218
+msgid "Read user data from the password database."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:220
+msgid ":mod:`spwd`"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:221
+msgid "Read user data from the shadow password database."
+msgstr ""

@@ -1,0 +1,52 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/mhlib/index.rst:3
+msgid "mhlib -- Work with MH mailboxes"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:8
+msgid "Manipulate the contents of MH mailboxes."
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:12
+msgid "This module is superseded by :mod:`mailbox`."
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:17
+msgid "`mhlib <http://docs.python.org/lib/module-mhlib.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:17
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:20
+msgid ":mod:`email`"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:20
+msgid "The email module."
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:22
+msgid ":mod:`mailbox`"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:23
+msgid "The mailbox module."
+msgstr ""

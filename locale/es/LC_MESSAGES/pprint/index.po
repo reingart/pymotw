@@ -1,0 +1,119 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pprint/index.rst:3
+msgid "pprint -- Pretty-print data structures"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:8
+msgid "Pretty-print data structures"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:9
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:11
+msgid ""
+":mod:`pprint` contains a \"pretty printer\" for producing aesthetically "
+"pleasing representations of your data structures.  The formatter produces "
+"representations of data structures that can be parsed correctly by the "
+"interpreter, and are also easy for a human to read. The output is kept on a "
+"single line, if possible, and indented when split across multiple lines."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:18
+msgid "The examples below all depend on ``pprint_data.py``, which contains:"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:25
+msgid "Printing"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:27
+msgid ""
+"The simplest way to use the module is through the ``pprint()`` function. It "
+"formats your object and writes it to the data stream passed as argument (or "
+":ref:`sys.stdout <sys-input-output>` by default)."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:62
+msgid "Formatting"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:64
+msgid ""
+"If you need to format a data structure, but do not want to write it directly"
+" to a stream (for logging purposes, for example) you can use ``pformat()`` "
+"to build a string representation that can then be passed to another "
+"function."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:96
+msgid "Arbitrary Classes"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:98
+msgid ""
+"The ``PrettyPrinter`` class used by ``pprint()`` can also work with your own"
+" classes, if they define a ``__repr__()`` method."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:121
+msgid "Recursion"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:123
+msgid ""
+"Recursive data structures are represented with a reference to the original "
+"source of the data, with the form ``<Recursion on typename with "
+"id=number>``. For example:"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:146
+msgid "Limiting Nested Output"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:148
+msgid ""
+"For very deep data structures, you may not want the output to include all of"
+" the details. It might be impossible to format the data properly, the "
+"formatted text might be too large to manage, or you may need all of it. In "
+"that case, the depth argument can control how far down into the nested data "
+"structure the pretty printer goes."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:172
+msgid "Controlling Output Width"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:174
+msgid ""
+"The default output width for the formatted text is 80 columns. To adjust "
+"that width, use the width argument to ``pprint()``."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:182
+msgid ""
+"Notice that when the width is too low to accommodate the formatted data "
+"structure, the lines are not truncated or wrapped if that would introduce "
+"invalid syntax."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:227
+msgid "`pprint <http://docs.python.org/lib/module-pprint.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:228
+msgid "Standard library documentation for this module."
+msgstr ""

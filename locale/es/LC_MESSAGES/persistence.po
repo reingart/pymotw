@@ -1,0 +1,37 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/persistence.rst:5
+msgid "Data Persistence"
+msgstr ""
+
+#: ../../PyMOTW/persistence.rst:7
+msgid ""
+"The standard library includes a variety of modules for persisting data.  The"
+" most common pattern for storing data from Python objects for reuse is to "
+"serialize them with :mod:`pickle` and then either write them directly to a "
+"file or store them using one of the many key-value pair database formats "
+"available with the *dbm* API.  If you don't care about the underlying dbm "
+"format, the best persistence interface is provided by :mod:`shelve`.  If you"
+" do care, you can use one of the other dbm-based modules directly."
+msgstr ""
+
+#: ../../PyMOTW/persistence.rst:22
+msgid ""
+"For serializing over the web, the :mod:`json` module may be a better choice "
+"since its format is more portable."
+msgstr ""
+
+#: ../../PyMOTW/persistence.rst:26
+msgid ":ref:`article-data-persistence`"
+msgstr ""

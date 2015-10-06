@@ -1,0 +1,171 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/imp/index.rst:3
+msgid "imp -- Interface to module import mechanism."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:9
+msgid ""
+"The imp module exposes the implementation of Python's import statement."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:10
+msgid "At least 2.2.1"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:12
+msgid ""
+"The imp module includes functions that expose part of the underlying "
+"implementation of Python's import mechanism for loading code in packages and"
+" modules. It is one access point to importing modules dynamically, and "
+"useful in some cases where you don't know the name of the module you need to"
+" import when you write your code (e.g., for plugins or extensions to an "
+"application)."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:19
+msgid "Example Package"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:21
+msgid "The examples below use a package called \"example\" with ``__init__.py``:"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:27
+msgid "and module called submodule containing:"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:33
+msgid ""
+"Watch for the text from the print statements in the sample output when the "
+"package or module are imported."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:37
+msgid "Module Types"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:39
+msgid ""
+"Python supports several styles of modules. Each requires its own handling "
+"when opening the module and adding it to the namespace. Some of the "
+"supported types and those parameters can be listed by the ``get_suffixes()``"
+" function."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:47
+msgid ""
+"``get_suffixes()`` returns a sequence of tuples containing the file "
+"extension, mode to use for opening the file, and a type code from a constant"
+" defined in the module. This table is incomplete, because some of the "
+"importable module or package types do not correspond to single files."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:72
+msgid "Finding Modules"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:74
+msgid ""
+"The first step to loading a module is finding it. ``find_module()`` scans "
+"the import search path looking for a package or module with the given name. "
+"It returns an open file handle (if appropriate for the type), filename where"
+" the module was found, and \"description\" (a tuple such as those returned "
+"by ``get_suffixes()``)."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:84
+msgid ""
+"``find_module()`` does not pay attention to dotted package names "
+"(\"example.submodule\"), so the caller has to take care to pass the correct "
+"path for any nested modules. That means that when importing the submodule "
+"from the package, you need to give a path that points to the package "
+"directory for ``find_module()`` to locate the module you're looking for."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:107
+msgid ""
+"If ``find_module()`` cannot locate the module, it raises an "
+":ref:`ImportError <exceptions-ImportError>`."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:127
+msgid "Loading Modules"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:129
+msgid ""
+"Once you have found the module, use ``load_module()`` to actually import it."
+"  ``load_module()`` takes the full dotted path module name and the values "
+"returned by ``find_module()`` (the open file handle, filename, and "
+"description tuple)."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:138
+msgid ""
+"``load_module()`` creates a new module object with the name given, loads the"
+" code for it, and adds it to :ref:`sys.modules <sys-modules>`."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:152
+msgid ""
+"If you call ``load_module()`` for a module which has already been imported, "
+"the effect is like calling ``reload()`` on the existing module object."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:160
+msgid ""
+"Instead of a creating a new module, the contents of the existing module are "
+"simply replaced."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:179
+msgid "`imp <http://docs.python.org/library/imp.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:179
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:182
+msgid ":ref:`sys-imports`"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:182
+msgid "Import hooks, the module search path, and other related machinery."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:185
+msgid ":mod:`inspect`"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:185
+msgid "Load information from a module programmatically."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:188
+msgid ":pep:`302`"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:188
+msgid "New import hooks."
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:190
+msgid ":pep:`369`"
+msgstr ""
+
+#: ../../PyMOTW/imp/index.rst:191
+msgid "Post import hooks."
+msgstr ""

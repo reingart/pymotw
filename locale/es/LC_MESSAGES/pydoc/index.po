@@ -1,0 +1,102 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pydoc/index.rst:3
+msgid "pydoc -- Online help for Python modules"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:8
+msgid "Generates help for Python modules and classes from the code."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:9
+msgid "2.1 and later"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:11
+msgid ""
+"The :mod:`pydoc` module imports a Python module and uses the contents to "
+"generate help text at runtime. The output includes docstrings for any "
+"objects that have them, and all of the documentable contents of the module "
+"are described."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:17
+msgid "Plain Text Help"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:19
+msgid "Running::"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:23
+msgid ""
+"Produces plaintext help on the console, using your pager if one is "
+"configured."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:27
+msgid "HTML Help"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:29
+msgid ""
+"You can also cause :mod:`pydoc` to generate HTML output, either writing a "
+"static file to a local directory or starting a web server to browse "
+"documentation online."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:37
+msgid "Creates ``atexit.html`` in the current directory."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:43
+msgid ""
+"Starts a web server listening at http://localhost:5000/. The server "
+"generates documentation as you browse through the available modules."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:47
+msgid "Interactive Help"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:49
+msgid ""
+"pydoc also adds a function ``help()`` to the ``__builtins__`` so you can "
+"access the same information from the Python interpreter prompt."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:71
+msgid "`pydoc <http://docs.python.org/library/pydoc.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:71
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:74
+msgid ":ref:`motw-cli`"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:74
+msgid "Accessing the Module of the Week articles from the command line."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:76
+msgid ":ref:`motw-interactive`"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:77
+msgid ""
+"Accessing the Module of the Week articles from the interactive interpreter."
+msgstr ""

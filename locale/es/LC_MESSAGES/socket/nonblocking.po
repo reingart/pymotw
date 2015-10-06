@@ -1,0 +1,59 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/socket/nonblocking.rst:3
+msgid "Non-blocking Communication and Timeouts"
+msgstr ""
+
+#: ../../PyMOTW/socket/nonblocking.rst:5
+msgid ""
+"By default a :class:`socket` is configured so that sending or receiving data"
+" *blocks*, stopping program execution until the socket is ready.  Calls to "
+":func:`send` wait for buffer space to be available for the outgoing data, "
+"and calls to :func:`recv` wait for the other program to send data that can "
+"be read.  This form of I/O operation is easy to understand, but can lead to "
+"inefficient operation and even deadlocks, if both programs end up waiting "
+"for the other to send or receive data."
+msgstr ""
+
+#: ../../PyMOTW/socket/nonblocking.rst:14
+msgid ""
+"There are a few ways to work around this situation.  One is to use a "
+"separate thread for communicating with each socket.  This can introduce "
+"other complexities, though, with communication between the threads."
+msgstr ""
+
+#: ../../PyMOTW/socket/nonblocking.rst:19
+msgid ""
+"Another option is to change the socket to not block at all, and return "
+"immediately if it is not ready to handle the operation.  Use the "
+":func:`setblocking` method to change the blocking flag for a socket. The "
+"default value is ``1``, which means to block.  Passing a value of ``0`` "
+"turns off blocking.  If the socket is has blocking turned off and it is not "
+"ready for the operation, then :class:`socket.error` is raised."
+msgstr ""
+
+#: ../../PyMOTW/socket/nonblocking.rst:27
+msgid ""
+"A compromise solution is to set a timeout value for socket operations. Use "
+":func:`settimeout` to change the timeout of a :class:`socket` to a floating "
+"point value representing the number of seconds to block before deciding the "
+"socket is not ready for the operation.  When the timeout expires, a "
+":class:`timeout` exception is raised."
+msgstr ""
+
+#: ../../PyMOTW/socket/nonblocking.rst:35
+msgid ""
+"Non-blocking I/O is covered in more detail in the examples for "
+":mod:`select`."
+msgstr ""

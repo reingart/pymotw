@@ -1,0 +1,327 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/json/index.rst:3
+msgid "json -- JavaScript Object Notation Serializer"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:8
+msgid ""
+"Encode Python objects as JSON strings, and decode JSON strings into Python "
+"objects."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:9
+msgid "2.6"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:11
+msgid ""
+"The :mod:`json` module provides an API similar to :mod:`pickle` for "
+"converting in-memory Python objects to a serialized representation known as "
+"`JavaScript Object Notation`_ (JSON).  Unlike pickle, JSON has the benefit "
+"of having implementations in many languages (especially JavaScript), making "
+"it suitable for inter-application communication.  JSON is probably most "
+"widely used for communicating between the web server and client in an AJAX "
+"application, but is not limited to that problem domain."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:21
+msgid "Encoding and Decoding Simple Data Types"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:23
+msgid ""
+"The encoder understands Python's native types by default (string, unicode, "
+"int, float, list, tuple, dict)."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:30
+msgid ""
+"Values are encoded in a manner very similar to Python's ``repr()`` output."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:46
+msgid ""
+"Encoding, then re-decoding may not give exactly the same type of object."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:53
+msgid ""
+"In particular, strings are converted to unicode and tuples become lists."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:73
+msgid "Human-consumable vs. Compact Output"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:75
+msgid ""
+"Another benefit of JSON over pickle is that the results are human-readable."
+"  The ``dumps()`` function accepts several arguments to make the output even"
+" nicer.  For example, ``sort_keys`` tells the encoder to output the keys of "
+"a dictionary in sorted, instead of random, order."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:85
+msgid ""
+"Sorting makes it easier to scan the results by eye, and also makes it "
+"possible to compare JSON output in tests."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:104
+msgid ""
+"For highly-nested data structures, you will want to specify a value for "
+"``indent``, so the output is formatted nicely as well."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:111
+msgid ""
+"When indent is a non-negative integer, the output more closely resembles "
+"that of :mod:`pprint`, with leading spaces for each level of the data "
+"structure matching the indent level."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:138
+msgid ""
+"Verbose output like this increases the number of bytes needed to transmit "
+"the same amount of data, however, so it isn't the sort of thing you "
+"necessarily want to use in a production environment.  In fact, you may want "
+"to adjust the settings for separating data in the encoded output to make it "
+"even more compact than the default."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:148
+msgid ""
+"The ``separators`` argument to ``dumps()`` should be a tuple containing the "
+"strings to separate items in a list and keys from values in a dictionary.  "
+"The default is ``(', ', ': ')``. By removing the whitespace, we can produce "
+"a more compact output."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:170
+msgid "Encoding Dictionaries"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:172
+msgid ""
+"The JSON format expects the keys to a dictionary to be strings.  If you have"
+" other types as keys in your dictionary, trying to encode the object will "
+"produce a :ref:`ValueError <exceptions-ValueError>`.  One way to work around"
+" that limitation is to skip over non-string keys using the ``skipkeys`` "
+"argument:"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:182
+msgid ""
+"Rather than raising an exception, the non-string key is simply ignored."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:202
+msgid "Working with Your Own Types"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:204
+msgid ""
+"All of the examples so far have used Pythons built-in types because those "
+"are supported by :mod:`json` natively.  It isn't uncommon, of course, to "
+"have your own types that you want to be able to encode as well.  There are "
+"two ways to do that."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:209
+msgid "First, we'll need a class to encode:"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:215
+msgid ""
+"The simple way of encoding a ``MyObj`` instance is to define a function to "
+"convert an unknown type to a known type.  You don't have to do the encoding "
+"yourself, just convert one object to another."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:223
+msgid ""
+"In ``convert_to_builtin_type()``, instances of classes not recognized by "
+":mod:`json` are converted to dictionaries with enough information to re-"
+"create the object if a program has access to the Python modules necessary."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:245
+msgid ""
+"To decode the results and create a ``MyObj`` instance, we need to tie in to "
+"the decoder so we can import the class from the module and create the "
+"instance.  For that, we use the ``object_hook`` argument to ``loads()``."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:250
+msgid ""
+"The ``object_hook`` is called for each dictionary decoded from the incoming "
+"data stream, giving us a chance to convert the dictionary to another type of"
+" object.  The hook function should return the object it wants the calling "
+"application to receive instead of the dictionary."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:259
+msgid ""
+"Since :mod:`json` converts string values to unicode objects, we need to re-"
+"encode them as ASCII strings before using them as keyword arguments to the "
+"class constructor."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:278
+msgid ""
+"Similar hooks are available for the built-in types integers (``parse_int``),"
+" floating point numbers (``parse_float``), and constants "
+"(``parse_constant``)."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:283
+msgid "Encoder and Decoder Classes"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:285
+msgid ""
+"Besides the convenience functions we have already examined, the :mod:`json` "
+"module provides classes for encoding and decoding.  When using the classes "
+"directly, you have access to extra APIs and can create subclasses to "
+"customize their behavior."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:290
+msgid ""
+"The JSONEncoder provides an iterable interface for producing \"chunks\" of "
+"encoded data, making it easier for you to write to files or network sockets "
+"without having to represent an entire data structure in memory."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:299
+msgid ""
+"As you can see, the output is generated in logical units, rather than being "
+"based on any size value."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:330
+msgid ""
+"The ``encode()`` method is basically equivalent to "
+"``''.join(encoder.iterencode())``, with some extra error checking up front."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:334
+msgid ""
+"To encode arbitrary objects, we can override the ``default()`` method with "
+"an implementation similar to what we used above in "
+"``convert_to_builtin_type()``."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:342
+msgid "The output is the same as the previous implementation."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:358
+msgid ""
+"Decoding text, then converting the dictionary into an object takes a little "
+"more work to set up than our previous implementation, but not much."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:366
+msgid "And the output is the same as the earlier example."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:384
+msgid "Working with Streams and Files"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:386
+msgid ""
+"In all of the examples so far, we have assumed that we could (and should) "
+"hold the encoded version of the entire data structure in memory at one time."
+"  With large data structures it may be preferable to write the encoding "
+"directly to a file-like object.  The convenience functions ``load()`` and "
+"``dump()`` accept references to a file-like object to use for reading or "
+"writing."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:397
+msgid ""
+"A socket would work in much the same way as the normal file handle used "
+"here."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:412
+msgid ""
+"Although it isn't optimized to read only part of the data at a time, the "
+"``load()`` function still offers the benefit of encapsulating the logic of "
+"generating objects from stream input."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:434
+msgid "Mixed Data Streams"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:436
+msgid ""
+"The JSONDecoder includes the ``raw_decode()`` method for decoding a data "
+"structure followed by more data, such as JSON data with trailing text.  The "
+"return value is the object created by decoding the input data, and an index "
+"into that data indicating where decoding left off."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:445
+msgid ""
+"Unfortunately, this only works if the object appears at the beginning of the"
+" input."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:470
+msgid "`json <http://docs.python.org/library/json.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:470
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:473
+msgid "`JavaScript Object Notation`_"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:473
+msgid "JSON home, with documentation and implementations in other languages."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:479
+msgid "http://code.google.com/p/simplejson/"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:476
+msgid ""
+"simplejson, from Bob Ippolito, et al, is the externally maintained "
+"development version of the json library included with Python 2.6 and Python "
+"3.0. It maintains backwards compatibility with Python 2.4 and Python 2.5."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:482
+msgid "`jsonpickle <http://code.google.com/p/jsonpickle/>`_"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:482
+msgid "jsonpickle allows for any Python object to be serialized into JSON."
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:484
+msgid ":ref:`article-data-persistence`"
+msgstr ""
+
+#: ../../PyMOTW/json/index.rst:485
+msgid "Other examples of storing data from Python programs."
+msgstr ""

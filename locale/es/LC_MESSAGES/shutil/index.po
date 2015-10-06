@@ -1,0 +1,154 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/shutil/index.rst:3
+msgid "shutil -- High-level file operations."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:8
+msgid "High-level file operations."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:11
+msgid ""
+"The :mod:`shutil` module includes high-level file operations such as "
+"copying, setting permissions, etc."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:15
+msgid "Copying Files"
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:17
+msgid ""
+":func:`copyfile()` copies the contents of the source to the destination. "
+"Raises :ref:`IOError <exceptions-IOError>` if you do not have permission to "
+"write to the destination file.  Because the function opens the input file "
+"for reading, regardless of its type, special files cannot be copied as new "
+"special files with :func:`copyfile()`."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:43
+msgid ""
+":func:`copyfile()` is written using the lower-level function "
+":func:`copyfileobj()`. While the arguments to :func:`copyfile()` are file "
+"names, the arguments to :func:`copyfileobj()` are open file handles. The "
+"optional third argument is a buffer length to use for reading in chunks (by "
+"default, the entire file is read at one time)."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:53
+msgid ""
+"The default behavior is to read using large blocks.  Use ``-1`` to read all "
+"of the input at one time or another positive integer to set your own block "
+"size."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:80
+msgid ""
+"The :func:`copy()` function interprets the output name like the Unix command"
+" line tool ``cp``. If the named destination refers to a directory instead of"
+" a file, a new file is created in the directory using the base name of the "
+"source. The permissions of the file are copied along with the contents."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:105
+msgid ""
+":func:`copy2()` works like :func:`copy()`, but includes the access and "
+"modification times in the meta-data copied to the new file."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:136
+msgid "Copying File Meta-data"
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:138
+msgid ""
+"By default when a new file is created under Unix, it receives permissions "
+"based on the umask of the current user. To copy the permissions from one "
+"file to another, use :func:`copymode()`."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:146
+msgid "First, create a file to be modified:"
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:151
+msgid "Then run the example script to change the permissions."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:169
+msgid ""
+"To copy other meta-data about the file (permissions, last access time, and "
+"last modified time), use :func:`copystat()`."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:199
+msgid "Working With Directory Trees"
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:201
+msgid ""
+":mod:`shutil` includes 3 functions for working with directory trees. To copy"
+" a directory from one place to another, use :func:`copytree()`. It recurses "
+"through the source directory tree, copying files to the destination. The "
+"destination directory must not exist in advance. The *symlinks* argument "
+"controls whether symbolic links are copied as links or as files. The default"
+" is to copy the contents to new files. If the option is true, new symlinks "
+"are created within the destination tree."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:212
+msgid ""
+"The documentation for :func:`copytree()` says it should be considered a "
+"sample implementation, rather than a tool. You may want to copy the "
+"implementation and make it more robust, or add features like a progress "
+"meter."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:256
+msgid ""
+"To remove a directory and its contents, use :func:`rmtree()`. Errors are "
+"raised as exceptions by default, but can be ignored if the second argument "
+"is true, and a special error handler function can be provided in the third "
+"argument."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:299
+msgid ""
+"To move a file or directory from one place to another, use :func:`move()`. "
+"The semantics are similar to those of the Unix command ``mv``. If the source"
+" and destination are within the same filesystem, the source is simply "
+"renamed.  Otherwise the source is copied to the destination and then the "
+"source is removed."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:328
+msgid "`shutil <http://docs.python.org/lib/module-shutil.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:328
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:330
+msgid ":ref:`article-file-access`"
+msgstr ""
+
+#: ../../PyMOTW/shutil/index.rst:331
+msgid "Other utilities for working with files."
+msgstr ""

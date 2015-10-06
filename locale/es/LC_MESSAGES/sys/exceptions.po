@@ -1,0 +1,108 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sys/exceptions.rst:5
+msgid "Exception Handling"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:7
+msgid ":mod:`sys` includes features for trapping and working with exceptions."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:10
+msgid "Unhandled Exceptions"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:12
+msgid ""
+"Many applications are structured with a main loop that wraps execution in a "
+"global exception handler to trap errors not handled at a lower level.  "
+"Another way to achieve the same thing is by setting the "
+":data:`sys.excepthook` to a function that takes three arguments (error type,"
+" error value, and traceback) and let it deal with unhandled errors."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:23
+msgid ""
+"Since there is no :command:`try:except` block around the line where the "
+"exception is raised the following :command:`print` statement is not run, "
+"even though the except hook is set."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:41
+msgid "Current Exception"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:43
+msgid ""
+"There are times when an explicit exception handler is preferred, either for "
+"code clarity or to avoid conflicts with libraries that try to install their "
+"own excepthook.  In these cases you may want to write a common handler "
+"function, but avoid passing the exception object to it explicitly.  You can "
+"get the current exception for a thread by calling :func:`exc_info`."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:50
+msgid ""
+"The return value of :func:`exc_info` is a three member tuple containing the "
+"exception class, an exception instance, and a traceback.  Using "
+":func:`exc_info` is preferred over the old form (with :const:`exc_type`, "
+":const:`exc_value`, and :const:`exc_traceback`) because it is thread-safe."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:60
+msgid ""
+"This example avoids introducing a circular reference between the traceback "
+"object and a local variable in the current frame by ignoring that part of "
+"the return value from :func:`exc_info`.  If the traceback is needed (e.g., "
+"so it can be logged), explicitly delete the local variable (using "
+":command:`del`) to avoid cycles."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:80
+msgid "Previous Interactive Exception"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:82
+msgid ""
+"In the interactive interpreter, there is only one thread of interaction.  "
+"Unhandled exceptions in that thread are saved to three variables in "
+":mod:`sys` (:const:`last_type`, :const:`last_value`, and "
+":const:`last_traceback`) to make it easy to retrieve them for debugging.  "
+"Using the post-mortem debugger in :mod:`pdb` avoids any need to use the "
+"values directly."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:115
+msgid ":mod:`exceptions`"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:115
+msgid "Built-in errors"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:118
+msgid ":mod:`pdb`"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:118
+msgid "Python debugger"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:120
+msgid ":mod:`traceback`"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:121
+msgid "Module for working with tracebacks."
+msgstr ""

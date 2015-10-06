@@ -1,0 +1,39 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sys/index.rst:3
+msgid "sys -- System-specific Configuration"
+msgstr ""
+
+#: ../../PyMOTW/sys/index.rst:8
+msgid "Provides system-specific configuration and operations."
+msgstr ""
+
+#: ../../PyMOTW/sys/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/sys/index.rst:11
+msgid ""
+"The :mod:`sys` module includes a collection of services for probing or "
+"changing the configuration of the interpreter at runtime and resources for "
+"interacting with the operating environment outside of the current program."
+msgstr ""
+
+#: ../../PyMOTW/sys/index.rst:30
+msgid "`sys <http://docs.python.org/library/sys.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/sys/index.rst:31
+msgid "The standard library documentation for this module."
+msgstr ""

@@ -1,0 +1,91 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sys/runtime.rst:5
+msgid "Runtime Environment"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:7
+msgid ""
+":mod:`sys` provides low-level APIs for interacting with the system outside "
+"of an application, by accepting command line arguments, accessing user "
+"input, and passing messages and status values to the user."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:15
+msgid "Command Line Arguments"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:17
+msgid ""
+"The arguments captured by the interpreter are processed there and not passed"
+" along to the program directly.  Any remaining options and arguments, "
+"including the name of the script itself, are saved to :const:`sys.argv` in "
+"case the program does need to use them."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:26
+msgid ""
+"In the third example below, the ``-u`` option is understood by the "
+"interpreter, and is not passed directly to the program being run."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:53
+msgid ":mod:`getopt`, :mod:`optparse`, :mod:`argparse`"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:54
+msgid "Modules for parsing command line arguments."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:59
+msgid "Input and Output Steams"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:61
+msgid ""
+"Following the Unix paradigm, Python programs can access three file "
+"descriptors by default."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:68
+msgid ""
+":const:`stdin` is the standard way to read input, usually from a console but"
+" also from other programs via a pipeline.  :const:`stdout` is the standard "
+"way to write output for a user (to the console) or to be sent to the next "
+"program in a pipeline.  :const:`stderr` is intended for use with warning or "
+"error messages."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:112
+msgid ":mod:`subprocess`, :mod:`pipes`"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:113
+msgid ""
+"Both subprocess and pipes have features for pipelining programs together."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:116
+msgid "Returning Status"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:118
+msgid ""
+"To return an exit code from your program, pass an integer value to "
+":func:`sys.exit`."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:125
+msgid "A non-zero value means the program exited with an error."
+msgstr ""

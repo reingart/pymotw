@@ -1,0 +1,52 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/dumbdbm/index.rst:3
+msgid "dumbdbm -- Portable DBM Implementation"
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:8
+msgid "Last-resort backend implementation for :mod:`anydbm`."
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:11
+msgid ""
+"The :mod:`dumbdbm` module is a portable fallback implementation of the DBM "
+"API when no other implementations are available.  No external dependencies "
+"are required to use :mod:`dumbdbm`, but it is slower than most other "
+"implementations."
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:13
+msgid "It follows the semantics of the :mod:`anydbm` module."
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:18
+msgid "`dumbdbm <http://docs.python.org/library/dumbdbm.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:18
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:20
+msgid ":mod:`anydbm`"
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:21
+msgid "The :mod:`anydbm` module."
+msgstr ""

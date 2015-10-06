@@ -1,0 +1,396 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pkgutil/index.rst:3
+msgid "pkgutil -- Package Utilities"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:8
+msgid ""
+"Add to the module search path for a specific package and work with resources"
+" included in a package."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:9
+msgid "2.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:11
+msgid ""
+"The :mod:`pkgutil` module includes functions for working with Python "
+"packages.  :func:`extend_path` changes the import path for sub-modules of "
+"the package, and :func:`get_data` provides access to file resources "
+"distributed with the package."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:17
+msgid "Package Import Paths"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:19
+msgid ""
+"The :func:`extend_path` function is used to modify the search path for "
+"modules in a given package to include other directories in :ref:`sys.path "
+"<sys-path>`. This can be used to override installed versions of packages "
+"with development versions, or to combine platform-specific and shared "
+"modules into a single package namespace."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:25
+msgid ""
+"The most common way to call :func:`extend_path` is by adding these two lines"
+" to the ``__init__.py`` inside the packag:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:28
+msgid "e::"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:33
+msgid ""
+":func:`extend_path` scans ``sys.path`` for directories that include a "
+"subdirectory named for the package given as the second argument.  The list "
+"of directories is combined with the path value passed as the first argument "
+"and returned as a single list, suitable for use as the package import path."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:39
+msgid "An example package called :mod:`demopkg` includes these files:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:47
+msgid "``demopkg1/__init__.py`` contains:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:53
+msgid ""
+"The :command:`print` statements shows the search path before and after it is"
+" modified, to highlight the difference."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:56
+msgid ""
+"And an ``extension`` directory, with add-on features for :mod:`demopkg`, "
+"contains"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:66
+msgid "A simple test program imports the :mod:`demopkg1` package:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:72
+msgid ""
+"When this test program is run directly from the command line, the "
+":mod:`not_shared` module is not found."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:77
+msgid ""
+"The full filesystem paths in these examples have been shortened to emphasize"
+" the parts that change."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:94
+msgid ""
+"However, if the ``extension`` directory is added to the :data:`PYTHONPATH` "
+"and the program is run again, different results are produced."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:113
+msgid ""
+"The version of :mod:`demopkg1` inside the ``extension`` directory has been "
+"added to the search path, so the :mod:`not_shared` module is found there."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:117
+msgid ""
+"Extending the path in this manner is useful for combining platform-specific "
+"versions of packages with common packages, especially if the platform-"
+"specific versions include C extension modules."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:123
+msgid "Development Versions of Packages"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:125
+msgid ""
+"While develop enhancements to a project, it is common to need to test "
+"changes to an installed package. Replacing the installed copy with a "
+"development version may be a bad idea, since it is not necessarily correct "
+"and other tools on the system are likely to depend on the installed package."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:131
+msgid ""
+"A completely separate copy of the package could be configured in a "
+"development environment using `virtualenv`_, but for small modifications the"
+" overhead of setting up a virtual environment with all of the dependencies "
+"may be excessive."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:136
+msgid ""
+"Another option is to use :mod:`pkgutil` to modify the module search path for"
+" modules that belong to the package under development. In this case, "
+"however, the path must be reversed so development version overrides the "
+"installed version."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:141
+msgid "Given a package :mod:`demopkg2` like this:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:149
+msgid ""
+"With the function under development located in ``demopkg2/overloaded.py``. "
+"The installed version contains"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:156
+msgid "and ``demopkg2/__init__.py`` contains"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:162
+msgid ""
+":func:`reverse` is used to ensure that any directories added to the search "
+"path by :mod:`pkgutil` are scanned for imports *before* the default "
+"location."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:166
+msgid ""
+"This program imports :mod:`demopkg2.overloaded` and calls :func:`func`:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:172
+msgid ""
+"Running it without any special path treatment produces output from the "
+"installed version of :func:`func`."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:181
+msgid "A development directory containing"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:189
+msgid "and a modified version of :mod:`overloaded`"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:195
+msgid ""
+"will be loaded when the test program is run with the ``develop`` directory "
+"in the search path."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:208
+msgid "Managing Paths with PKG Files"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:210
+msgid ""
+"The first example above illustrated how to extend the search path using "
+"extra directories included in the :data:`PYTHONPATH`. It is also possible to"
+" add to the search path using ``*.pkg`` files containing directory names. "
+"PKG files are similar to the PTH files used by the :mod:`site` module. They "
+"can contain directory names, one per line, to be added to the search path "
+"for the package."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:217
+msgid ""
+"Another way to structure the platform-specific portions of the application "
+"from the first example is to use a separate directory for each operating "
+"system, and include a ``.pkg`` file to extend the search path."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:222
+msgid ""
+"This example uses the same :mod:`demopkg1` files, and also includes the "
+"following files:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:235
+msgid ""
+"The PKG files are named ``demopkg1.pkg`` to match the package being "
+"extended.  They both contain::"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:240
+msgid "This demo program shows the version of the module being imported:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:246
+msgid "A simple run script can be used to switch between the two packages:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:252
+msgid ""
+"And when run with ``\"one\"`` or ``\"two\"`` as the arguments, the path is "
+"adjusted appropriately:"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:289
+msgid ""
+"PKG files can appear anywhere in the normal search path, so a single PKG "
+"file in the current working directory could also be used to include a "
+"development tree."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:294
+msgid "Nested Packages"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:296
+msgid ""
+"For nested packages, it is only necessary to modify the path of the top-"
+"level package. For example, with this directory structure"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:307
+msgid "Where ``nested/__init__.py`` contains"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:313
+msgid "and a development tree like"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:323
+msgid ""
+"Both the :mod:`shallow` and :mod:`deep` modules contain a simple function to"
+" print out a message indicating whether or not they come from the installed "
+"or development version."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:327
+msgid "This test program exercises the new packages."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:333
+msgid ""
+"When ``pkgutil_nested.py`` is run without any path manipulation, the "
+"installed version of both modules are used."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:345
+msgid ""
+"When the ``develop`` directory is added to the path, the development version"
+" of both functions override the installed versions."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:358
+msgid "Package Data"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:360
+msgid ""
+"In addition to code, Python packages can contain data files such as "
+"templates, default configuration files, images, and other supporting files "
+"used by the code in the package.  The :func:`get_data` function gives access"
+" to the data in the files in a format-agnostic way, so it does not matter if"
+" the package is distributed as an EGG, part of a frozen binary, or regular "
+"files on the filesystem."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:367
+msgid "With a package :mod:`pkgwithdata` containing a ``templates`` directory"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:376
+msgid "and ``pkgwithdata/templates/base.html`` containing"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:380
+msgid ""
+"This program uses :func:`get_data` to retrieve the template contents and "
+"print them out."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:387
+msgid ""
+"The arguments to :func:`get_data` are the dotted name of the package, and a "
+"filename relative to the top of the package.  The return value is a byte "
+"sequence, so it is encoded as UTF-8 before being printed."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:414
+msgid ""
+":func:`get_data` is distribution format-agnostic because it uses the import "
+"hooks defined in :pep:`302` to access the package contents. Any loader that "
+"provides the hooks can be used, including the ZIP archive importer in "
+":mod:`zipfile`."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:423
+msgid ""
+"This example creates a ZIP archive with a copy of the :mod:`pkgwithdata` "
+"package, including a renamed version of the template file.  It then adds the"
+" ZIP archive to the import path before using :mod:`pkgutil` to load the "
+"template and print it."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:458
+msgid "`pkgutil <http://docs.python.org/lib/module-pkgutil.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:458
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:461
+msgid "`virtualenv`_"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:461
+msgid "Ian Bicking's virtual environment script."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:464
+msgid ":mod:`distutils`"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:464
+msgid "Packaging tools from Python standard library."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:467
+msgid "`Distribute`_"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:467
+msgid "Next-generation packaging tools."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:470
+msgid ":pep:`302`"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:470
+msgid "Import Hooks"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:473
+msgid ":mod:`zipfile`"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:473
+msgid "Create importable ZIP archives."
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:475
+msgid ":mod:`zipimport`"
+msgstr ""
+
+#: ../../PyMOTW/pkgutil/index.rst:476
+msgid "Importer for packages in ZIP archives."
+msgstr ""

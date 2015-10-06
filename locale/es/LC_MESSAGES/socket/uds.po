@@ -1,0 +1,98 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/socket/uds.rst:3
+msgid "Unix Domain Sockets"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:5
+msgid ""
+"From the programmer's perspective there are two essential differences "
+"between using a Unix domain socket and an TCP/IP socket.  First, the address"
+" of the socket is a path on the filesystem, rather than a tuple containing "
+"servername and port.  Second, the node created in the filesystem to "
+"represent the socket persists after the socket is closed, and needs to be "
+"removed each time the server starts up.  The echo server example from "
+"earlier can be updated to use UDS by making a few changes in the setup "
+"section."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:17
+msgid ""
+"The :class:`socket` needs to be created with address family "
+":const:`AF_UNIX`."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:23
+msgid ""
+"Binding the socket and managing the incomming connections works the same as "
+"with TCP/IP sockets."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:29
+msgid ""
+"The client setup also needs to be modified to work with UDS.  It should "
+"assume the filesystem node for the socket exists, since the server creates "
+"it by binding to the address."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:36
+msgid ""
+"Sending and receiving data works the same way in the UDS client as the "
+"TCP/IP client from before."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:42
+msgid ""
+"The program output is mostly the same, with appropriate updates for the "
+"address information.  From the server:"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:62
+msgid "and from the client:"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:76
+msgid "Permissions"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:78
+msgid ""
+"Since the UDS socket is represented by a node on the filesystem, standard "
+"filesystem permissions can be used to control access to the server."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:92
+msgid ""
+"Running the client as a user other than ``root`` now results in an error "
+"because the process does not have permission to open the socket."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:103
+msgid "Communication Between Parent and Child Processes"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:105
+msgid ""
+"The :func:`socketpair` function is useful for setting up UDS sockets for "
+"interprocess communication under Unix.  It creates a pair of connected "
+"sockets that can be used to communicate between a parent process and a child"
+" process after the child is forked."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:114
+msgid ""
+"By default, a UDS socket is created, but the caller can also pass address "
+"family, socket type, and even protocol options to control how the sockets "
+"are created."
+msgstr ""

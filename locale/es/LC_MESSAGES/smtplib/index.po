@@ -1,0 +1,165 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/smtplib/index.rst:3
+msgid "smtplib -- Simple Mail Transfer Protocol client"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:8
+msgid "Interact with SMTP servers, including sending email."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:9
+msgid "1.5.2 and later"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:11
+msgid ""
+":mod:`smtplib` includes the class :class:`SMTP`, which is useful for "
+"communicating with mail servers to send mail."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:15
+msgid ""
+"The email addresses, host names, and IP addresses in the following examples "
+"have been obscured, but otherwise the transcripts illustrate the sequence of"
+" commands and responses accurately."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:21
+msgid "Sending an Email Message"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:23
+msgid ""
+"The most common use of :class:`SMTP` is to connect to a mail server and send"
+" a message.  The mail server host name and port can be passed to the "
+"constructor, or you can use ``connect()`` explicitly.  Once connected, just "
+"call ``sendmail()`` with the envelope parameters and body of the message.  "
+"The message text should be a fully formed :rfc:`2882`-compliant message, "
+"since smtplib does not modify the contents or headers at all.  That means "
+"you need to add the ``From`` and ``To`` headers yourself."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:29
+msgid ""
+"In this example, debugging is also turned on to show the communication "
+"between client and server.  Otherwise the example would produce no output at"
+" all."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:73
+msgid ""
+"Notice that the second argument to ``sendmail()``, the recipients, is passed"
+" as a list.  You can include any number of addresses in the list to have the"
+" message delivered to each of them in turn.  Since the envelope information "
+"is separate from the message headers, you can even BCC someone by including "
+"them in the method argument but not in the message header."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:77
+msgid "Authentication and Encryption"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:79
+msgid ""
+"The SMTP class also handles authentication and TLS (transport layer "
+"security) encryption, when the server supports them.  To determine if the "
+"server supports TLS, call ``ehlo()`` directly to identify your computer to "
+"the server and ask it what extensions are available.  Then call "
+"``has_extn()`` to check the results.  Once TLS is started, you must call "
+"``ehlo()`` again before authenticating."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:85
+msgid ""
+"Notice that ``STARTTLS`` does not appear in the list of extensions (in the "
+"reply to ``EHLO``) once TLS is enabled."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:147
+msgid "Verifying an Email Address"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:149
+msgid ""
+"The SMTP protocol includes a command to ask a server whether an address is "
+"valid.  Usually ``VRFY`` is disabled to prevent spammers from finding "
+"legitimate email addresses, but if it is enabled you can ask the server "
+"about an address and receive a status code indicating validity along with "
+"the user's full name, if it is available."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:155
+msgid ""
+"As the last 2 lines of output here show, the address ``dhellmann`` is valid "
+"but ``notthere`` is not."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:175
+msgid "`smtplib <http://docs.python.org/lib/module-smtplib.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:175
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:178
+msgid ":rfc:`821`"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:178
+msgid "The Simple Mail Transfer Protocol (SMTP) specification."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:181
+msgid ":rfc:`1869`"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:181
+msgid "SMTP Service Extensions to the base protocol."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:185
+msgid ":rfc:`822`"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:184
+msgid ""
+"\"Standard for the Format of ARPA Internet Text Messages\", the original "
+"email message format specification."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:188
+msgid ":rfc:`2822`"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:188
+msgid "\"Internet Message Format\", updates to the email message format."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:191
+msgid ":mod:`email`"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:191
+msgid "Standard library module for parsing email messages."
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:193
+msgid ":mod:`smtpd`"
+msgstr ""
+
+#: ../../PyMOTW/smtplib/index.rst:194
+msgid "Implements a simple SMTP server."
+msgstr ""

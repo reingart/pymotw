@@ -1,0 +1,404 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/random/index.rst:3
+msgid "random -- Pseudorandom number generators"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:8
+msgid "Implements several types of pseudorandom number generators."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:11
+msgid ""
+"The :mod:`random` module provides a fast pseudorandom number generator based"
+" on the *Mersenne Twister* algorithm.  Originally developed to produce "
+"inputs for Monte Carlo simulations, Mersenne Twister generates numbers with "
+"nearly uniform distribution and a large period, making it suited for a wide "
+"range of applications."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:18
+msgid "Generating Random Numbers"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:20
+msgid ""
+"The :func:`random` function returns the next random floating point value "
+"from the generated sequence.  All of the return values fall within the range"
+" ``0 <= n < 1.0``."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:28
+msgid ""
+"Running the program repeatedly produces different sequences of numbers."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:48
+msgid ""
+"To generate numbers in a specific numerical range, use :func:`uniform` "
+"instead."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:55
+msgid ""
+"Pass minimum and maximum values, and :func:`uniform` adjusts the return "
+"values from :func:`random` using the formula ``min + (max - min) * "
+"random()``."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:73
+msgid "Seeding"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:75
+msgid ""
+":func:`random` produces different values each time it is called, and has a "
+"very large period before it repeats any numbers.  This is useful for "
+"producing unique values or variations, but there are times when having the "
+"same dataset available to be processed in different ways is useful.  One "
+"technique is to use a program to generate random values and save them to be "
+"processed by a separate step.  That may not be practical for large amounts "
+"of data, though, so :mod:`random` includes the :func:`seed` function for "
+"initializing the pseudorandom generator so that it produces an expected set "
+"of values."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:89
+msgid ""
+"The seed value controls the first value produced by the formula used to "
+"produce pseudorandom numbers, and since the formula is deterministic it also"
+" sets the full sequence produced after the seed is changed.  The argument to"
+" :func:`seed` can be any hashable object. The default is to use a platform-"
+"specific source of randomness, if one is available.  Otherwise the current "
+"time is used."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:115
+msgid "Saving State"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:117
+msgid ""
+"Another technique useful for controlling the number sequence is to save the "
+"internal state of the generator between test runs.  Restoring the previous "
+"state before continuing reduces the likelyhood of repeating values or "
+"sequences of values from the earlier input.  The :func:`getstate` function "
+"returns data that can be used to re-initialize the random number generator "
+"later with :func:`setstate`."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:128
+msgid ""
+"The data returned by :func:`getstate` is an implementation detail, so this "
+"example saves the data to a file with :mod:`pickle` but otherwise treats it "
+"as a black box.  If the file exists when the program starts, it loads the "
+"old state and continues.  Each run produces a few numbers before and after "
+"saving the state, to show that restoring the state causes the generator to "
+"produce the same values again."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:163
+msgid "Random Integers"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:165
+msgid ""
+":func:`random` generates floating point numbers.  It is possible to convert "
+"the results to integers, but using :func:`randint` to generate integers "
+"directly is more convenient."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:173
+msgid ""
+"The arguments to :func:`randint` are the ends of the inclusive range for the"
+" values.  The numbers can be positive or negative, but the first value "
+"should be less than the second."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:190
+msgid ""
+":func:`randrange` is a more general form of selecting values from a range."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:197
+msgid ""
+":func:`randrange` supports a *step* argument, in addition to start and stop "
+"values, so it is fully equivalent to selecting a random value from "
+"``range(start, stop, step)``.  It is more efficient, because the range is "
+"not actually constructed."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:216
+msgid "Picking Random Items"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:218
+msgid ""
+"One common use for random number generators is to select a random item from "
+"a sequence of enumerated values, even if those values are not numbers.  "
+":mod:`random` includes the :func:`choice` function for making a random "
+"selection from a sequence.  This example simulates flipping a coin 10,000 "
+"times to count how many times it comes up heads and how many times tails."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:229
+msgid ""
+"There are only two outcomes allowed, so rather than use numbers and convert "
+"them the words \"heads\" and \"tails\" are used with :func:`choice`.  The "
+"results are tabulated in a dictionary using the outcome names as keys."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:249
+msgid "Permutations"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:251
+msgid ""
+"A simulation of a card game needs to mix up the deck of cards and then "
+"\"deal\" them to the players, without using the same card more than once.  "
+"Using :func:`choice` could result in the same card being dealt twice, so "
+"instead the deck can be mixed up with :func:`shuffle` and then individual "
+"cards removed as they are dealt."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:261
+msgid ""
+"The cards are represented as tuples with the face value and a letter "
+"indicating the suit.  The dealt \"hands\" are created by adding one card at "
+"a time to each of four lists, and removing it from the deck so it cannot be "
+"dealt again."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:299
+msgid ""
+"Many simulations need random samples from a population of input values.  The"
+" :func:`sample` function generates samples without repeating values and "
+"without modifying the input sequence.  This example prints a random sample "
+"of words from the system dictionary."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:308
+msgid ""
+"The algorithm for producing the result set takes into account the sizes of "
+"the input and the sample requested to produce the result as efficiently as "
+"possible."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:332
+msgid "Multiple Simultaneous Generators"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:334
+msgid ""
+"In addition to module-level functions, :mod:`random` includes a "
+":class:`Random` class to manage the internal state for several random number"
+" generators.  All of the functions described above are available as methods "
+"of the :class:`Random` instances, and each instance can be initialized and "
+"used separately, without interfering with the values returned by other "
+"instances."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:345
+msgid ""
+"On a system with good native random value seeding, the instances start out "
+"in unique states.  However, if there is no good platform random value "
+"generator, the instances are likely to have been seeded with the current "
+"time, and therefore produce the same values."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:372
+msgid ""
+"To ensure that the generators produce values from different parts of the "
+"random period, use :func:`jumpahead` to shift one of them away from its "
+"initial state."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:380
+msgid ""
+"The argument to :func:`jumpahead` should be a non-negative integer based the"
+" number of values needed from each generator.  The internal state of the "
+"generator is scrambled based on the input value, but not simply by "
+"incrementing it by the number of steps given."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:400
+msgid "SystemRandom"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:402
+msgid ""
+"Some operating systems provide a random number generator that has access to "
+"more sources of entropy that can be introduced into the generator.  "
+":mod:`random` exposes this feature through the :class:`SystemRandom` class, "
+"which has the same API as :class:`Random` but uses :func:`os.urandom` to "
+"generate the values that form the basis of all of the other algorithms."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:413
+msgid ""
+"Sequences produced by :class:`SystemRandom` are not reproducable because the"
+" randomness is coming from the system, rather than software state (in fact, "
+":func:`seed` and :func:`setstate` have no effect at all)."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:442
+msgid "Non-uniform Distributions"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:444
+msgid ""
+"While the uniform distribution of the values produced by :func:`random` is "
+"useful for a lot of purposes, other distributions more accurately model "
+"specific situations.  The :mod:`random` module includes functions to produce"
+" values in those distributions, too. They are listed here, but not covered "
+"in detail because their uses tend to be specialized and require more complex"
+" examples."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:452
+msgid "Normal"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:454
+msgid ""
+"The *normal* distribution is commonly used for non-uniform continuous values"
+" such as grades, heights, weights, etc.  The curve produced by the "
+"distribution has a distinctive shape which has lead to it being nicknamed a "
+"\"bell curve.\"  :mod:`random` includes two functions for generating values "
+"with a normal distribution, :func:`normalvariate` and the slightly faster "
+":func:`gauss` (the normal distribution is also called the Gaussian "
+"distribution)."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:462
+msgid ""
+"The related function, :func:`lognormvariate` produces pseudorandom values "
+"where the logarithm of the values is distributed normally. Log-normal "
+"distributions are useful for values that are the product of several random "
+"variables which do not interact."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:468
+msgid "Approximation"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:470
+msgid ""
+"The *triangular* distribution is used as an approximate distribution for "
+"small sample sizes.  The \"curve\" of a triangular distribution has low "
+"points at known minimum and maximum values, and a high point at and the "
+"mode, which is estimated based on a \"most likely\" outcome (reflected by "
+"the mode argument to :func:`triangular`)."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:477
+msgid "Exponential"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:479
+msgid ""
+":func:`expovariate` produces an exponential distribution useful for "
+"simulating arrival or interval time values for in homogeneous Poisson "
+"processes such as the rate of radioactive decay or requests coming into a "
+"web server."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:484
+msgid ""
+"The Pareto, or power law, distribution matches many observable phenomena and"
+" was popularized by Chris Anderon's book, *The Long Tail*.  The "
+":func:`paretovariate` function is useful for simulating allocation of "
+"resources to individuals (wealth to people, demand for musicians, attention "
+"to blogs, etc.)."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:491
+msgid "Angular"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:493
+msgid ""
+"The von Mises, or circular normal, distribution (produced by "
+":func:`vonmisesvariate`) is used for computing probabilities of cyclic "
+"values such as angles, calendar days, and times."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:498
+msgid "Sizes"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:500
+msgid ""
+":func:`betavariate` generates values with the Beta distribution, which is "
+"commonly used in Bayesian statistics and applications such as task duration "
+"modeling."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:504
+msgid ""
+"The Gamma distribution produced by :func:`gammavariate` is used for modeling"
+" the sizes of things such as waiting times, rainfall, and computational "
+"errors."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:508
+msgid ""
+"The Weibull distribution computed by :func:`weibullvariate` is used in "
+"failure analysis, industrial engineering, and weather forecasting.  It "
+"describes the distribution of sizes of particles or other discrete objects."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:517
+msgid "`random <http://docs.python.org/library/random.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:517
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:522
+msgid ""
+"Mersenne Twister: A 623-dimensionally equidistributed uniform pseudorandom "
+"number generator"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:520
+msgid ""
+"Article by M. Matsumoto and T. Nishimura from *ACM Transactions on Modeling "
+"and Computer Simulation* Vol. 8, No. 1, January pp.3-30 1998."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:525
+msgid ""
+"`Wikipedia: Mersenne Twister "
+"<http://en.wikipedia.org/wiki/Mersenne_twister>`_"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:525
+msgid "Article about the pseudorandom generator algorithm used by Python."
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:527
+msgid ""
+"`Wikipedia: Uniform distribution "
+"<http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)>`_"
+msgstr ""
+
+#: ../../PyMOTW/random/index.rst:528
+msgid "Article about continuous uniform distributions in statistics."
+msgstr ""

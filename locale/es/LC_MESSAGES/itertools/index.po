@@ -1,0 +1,233 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/itertools/index.rst:3
+msgid "itertools -- Iterator functions for efficient looping"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:9
+msgid ""
+"The itertools module includes a set of functions for working with iterable "
+"(sequence-like) data sets."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:11
+msgid "2.3"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:13
+msgid ""
+"The functions provided are inspired by similar features of the \"lazy "
+"functional programming language\" Haskell and SML. They are intended to be "
+"fast and use memory efficiently, but also to be hooked together to express "
+"more complicated iteration-based algorithms."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:18
+msgid ""
+"Iterator-based code may be preferred over code which uses lists for several "
+"reasons. Since data is not produced from the iterator until it is needed, "
+"all of the data is not stored in memory at the same time. Reducing memory "
+"usage can reduce swapping and other side-effects of large data sets, "
+"increasing performance."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:25
+msgid "Merging and Splitting Iterators"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:27
+msgid ""
+"The ``chain()`` function takes several iterators as arguments and returns a "
+"single iterator that produces the contents of all of them as though they "
+"came from a single sequence."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:47
+msgid ""
+"``izip()`` returns an iterator that combines the elements of several "
+"iterators into tuples. It works like the built-in function ``zip()``, except"
+" that it returns an iterator instead of a list."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:69
+msgid ""
+"The ``islice()`` function returns an iterator which returns selected items "
+"from the input iterator, by index. It takes the same arguments as the slice "
+"operator for lists: start, stop, and step. The start and step arguments are "
+"optional."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:98
+msgid ""
+"The ``tee()`` function returns several independent iterators (defaults to 2)"
+" based on a single original input. It has semantics similar to the Unix `tee"
+" <http://unixhelp.ed.ac.uk/CGI/man-cgi?tee>`__ utility, which repeats the "
+"values it reads from its input and writes them to a named file and standard "
+"output."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:121
+msgid ""
+"Since the new iterators created by ``tee()`` share the input, you should not"
+" use the original iterator any more. If you do consume values from the "
+"original input, the new iterators will not produce those values:"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:145
+msgid "Converting Inputs"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:147
+msgid ""
+"The ``imap()`` function returns an iterator that calls a function on the "
+"values in the input iterators, and returns the results. It works like the "
+"built-in ``map()``, except that it stops when any input iterator is "
+"exhausted (instead of inserting ``None`` values to completely consume all of"
+" the inputs)."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:153
+msgid ""
+"In the first example, the lambda function multiplies the input values by 2. "
+"In a second example, the lambda function multiplies 2 arguments, taken from "
+"separate iterators, and returns a tuple with the original arguments and the "
+"computed value."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:186
+msgid ""
+"The ``starmap()`` function is similar to ``imap()``, but instead of "
+"constructing a tuple from multiple iterators it splits up the items in a "
+"single iterator as arguments to the mapping function using the ``*`` syntax."
+" Where the mapping function to imap() is called f(i1, i2), the mapping "
+"function to starmap() is called ``f(*i)``."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:213
+msgid "Producing New Values"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:215
+msgid ""
+"The ``count()`` function returns an interator that produces consecutive "
+"integers, indefinitely. The first number can be passed as an argument, the "
+"default is zero. There is no upper bound argument (see the built-in "
+"``xrange()`` for more control over the result set). In this example, the "
+"iteration stops because the list argument is consumed."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:240
+msgid ""
+"The ``cycle()`` function returns an iterator that repeats the contents of "
+"the arguments it is given indefinitely. Since it has to remember the entire "
+"contents of the input iterator, it may consume quite a bit of memory if the "
+"iterator is long. In this example, a counter variable is used to break out "
+"of the loop after a few cycles."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:268
+msgid ""
+"The ``repeat()`` function returns an iterator that produces the same value "
+"each time it is accessed. It keeps going forever, unless the optional times "
+"argument is provided to limit it."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:292
+msgid ""
+"It is useful to combine ``repeat()`` with ``izip()`` or ``imap()`` when "
+"invariant values need to be included with the values from the other "
+"iterators."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:338
+msgid "Filtering"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:340
+msgid ""
+"The ``dropwhile()`` function returns an iterator that returns elements of "
+"the input iterator after a condition becomes false for the first time. It "
+"does not filter every item of the input; after the condition is false the "
+"first time, all of the remaining items in the input are returned."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:368
+msgid ""
+"The opposite of ``dropwhile()``, ``takewhile()`` returns an iterator that "
+"returns items from the input iterator as long as the test function returns "
+"true."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:395
+msgid ""
+"``ifilter()`` returns an iterator that works like the built-in ``filter()`` "
+"does for lists, including only items for which the test function returns "
+"true. It is different from ``dropwhile()`` in that every item is tested "
+"before it is returned."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:424
+msgid ""
+"The opposite of ``ifilter()``, ``ifilterfalse()`` returns an iterator that "
+"includes only items where the test function returns false."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:452
+msgid "Grouping Data"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:454
+msgid ""
+"The ``groupby()`` function returns an iterator that produces sets of values "
+"grouped by a common key."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:457
+msgid ""
+"This example from the standard library documentation shows how to group keys"
+" in a dictionary which have the same value:"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:479
+msgid ""
+"This more complicated example illustrates grouping related values based on "
+"some attribute. Notice that the input sequence needs to be sorted on the key"
+" in order for the groupings to work out as expected."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:523
+msgid "`itertools <http://docs.python.org/library/itertools.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:523
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:526
+msgid "`The Standard ML Basis Library <http://www.standardml.org/Basis/>`_"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:526
+msgid "The library for SML."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:528
+msgid ""
+"`Definition of Haskell and the Standard Libraries "
+"<http://www.haskell.org/definition/>`_"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:529
+msgid "Standard library specification for the functional language Haskell."
+msgstr ""

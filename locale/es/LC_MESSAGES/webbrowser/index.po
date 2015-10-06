@@ -1,0 +1,124 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/webbrowser/index.rst:3
+msgid "webbrowser -- Displays web pages"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:8
+msgid "Use the `webbrowser` module to display web pages to your users."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:9
+msgid "2.1.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:11
+msgid ""
+"The :mod:`webbrowser` module includes functions to open URLs in interactive "
+"browser applications. The module includes a registry of available browsers, "
+"in case multiple options are available on the system. It can also be "
+"controlled with the ``BROWSER`` environment variable."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:17
+msgid "Simple Example"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:19
+msgid "To open a page in the browser, use the :func:`open()` function."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:25
+msgid ""
+"The URL is opened in a browser window, and that window is raised to the top "
+"of the window stack. The documentation says that an existing window will be "
+"reused, if possible, but the actual behavior may depend on your browser's "
+"settings. Using Firefox on my Mac, a new window was always created."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:32
+msgid "Windows vs. Tabs"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:34
+msgid "If you always want a new window used, use :func:`open_new()`."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:40
+msgid ""
+"If you would rather create a new tab, use :func:`open_new_tab()` instead."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:44
+msgid "Using a specific browser"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:46
+msgid ""
+"If for some reason your application needs to use a specific browser, you can"
+" access the set of registered browser controllers using the :func:`get()` "
+"function. The browser controller has methods to :func:`open()`, "
+":func:`open_new()`, and :func:`open_new_tab()`. This example forces the use "
+"of the lynx browser:"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:57
+msgid ""
+"Refer to the module documentation for a list of available browser types."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:62
+msgid "``BROWSER`` variable"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:64
+msgid ""
+"Users can control the module from outside your application by setting the "
+"environment variable ``BROWSER`` to the browser names or commands to try. "
+"The value should consist of a series of browser names separated by "
+"``os.pathsep``. If the name includes ``%s``, the name is interpreted as a "
+"literal command and executed directly with the ``%s`` replaced by the URL. "
+"Otherwise, the name is passed to :func:`get()` to obtain a controller object"
+" from the registry."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:72
+msgid ""
+"For example, this command opens the web page in lynx, assuming it is "
+"available, no matter what other browsers are registered."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:79
+msgid ""
+"If none of the names in ``BROWSER`` work, :mod:`webbrowser` falls back to "
+"its default behavior."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:84
+msgid "Command Line Interface"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:86
+msgid ""
+"All of the features of the :mod:`webbrowser` module are available via the "
+"command line as well as from within your Python program."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:99
+msgid "`webbrowser <http://docs.python.org/lib/module-webbrowser.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:100
+msgid "Standard library documentation for this module."
+msgstr ""

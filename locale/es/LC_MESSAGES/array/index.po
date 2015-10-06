@@ -1,0 +1,221 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/array/index.rst:3
+msgid "array -- Sequence of fixed-type data"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:8
+msgid "Manage sequences of fixed-type numerical data efficiently."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:11
+msgid ""
+"The :mod:`array` module defines a sequence data structure that looks very "
+"much like a :class:`list` except that all of the members have to be of the "
+"same type.  The types supported are all numeric or other fixed-size "
+"primitive types such as bytes."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:17
+msgid "Code"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:17
+msgid "Type"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:17
+msgid "Minimum size (bytes)"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:19
+msgid "``c``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:19
+msgid "character"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:19 ../../PyMOTW/array/index.rst:21
+#: ../../PyMOTW/array/index.rst:23
+msgid "1"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:21
+msgid "``b``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:21 ../../PyMOTW/array/index.rst:23
+#: ../../PyMOTW/array/index.rst:27 ../../PyMOTW/array/index.rst:29
+#: ../../PyMOTW/array/index.rst:31 ../../PyMOTW/array/index.rst:35
+msgid "int"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:23
+msgid "``B``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:25
+msgid "``u``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:25
+msgid "Unicode character"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:25
+msgid "2 or 4 (build-dependent)"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:27
+msgid "``h``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:27 ../../PyMOTW/array/index.rst:29
+#: ../../PyMOTW/array/index.rst:31 ../../PyMOTW/array/index.rst:33
+msgid "2"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:29
+msgid "``H``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:31
+msgid "``i``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:33
+msgid "``I``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:33 ../../PyMOTW/array/index.rst:37
+msgid "long"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:35
+msgid "``l``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:35 ../../PyMOTW/array/index.rst:37
+#: ../../PyMOTW/array/index.rst:39
+msgid "4"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:37
+msgid "``L``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:39
+msgid "``f``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:39 ../../PyMOTW/array/index.rst:41
+msgid "float"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:41
+msgid "``d``"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:41
+msgid "8"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:46
+msgid "array Initialization"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:48
+msgid ""
+"An :class:`array` is instantiated with an argument describing the type of "
+"data to be allowed, and possibly an initial sequence of data to store in the"
+" array."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:56
+msgid ""
+"In this example, the array is configured to hold a sequence of bytes and is "
+"initialized with a simple string."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:75
+msgid "Manipulating Arrays"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:77
+msgid ""
+"An :class:`array` can be extended and otherwise manipulated in the same ways"
+" as other Python sequences."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:102
+msgid "Arrays and Files"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:104
+msgid ""
+"The contents of an array can be written to and read from files using built-"
+"in methods coded efficiently for that purpose."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:111
+msgid ""
+"This example illustrates reading the data \"raw\", directly from the binary "
+"file, versus reading it into a new array and converting the bytes to the "
+"appropriate types."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:131
+msgid "Alternate Byte Ordering"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:133
+msgid ""
+"If the data in the array is not in the native byte order, or needs to be "
+"swapped before being written to a file intended for a system with a "
+"different byte order, it is easy to convert the entire array without "
+"iterating over the elements from Python."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:164
+msgid "`array <http://docs.python.org/library/array.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:164
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:167
+msgid ":mod:`struct`"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:167
+msgid "The struct module."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:170
+msgid "`Numerical Python <http://www.scipy.org>`_"
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:170
+msgid "NumPy is a Python library for working with large datasets efficiently."
+msgstr ""
+
+#: ../../PyMOTW/array/index.rst:172
+msgid ":ref:`article-data-structures`"
+msgstr ""

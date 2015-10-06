@@ -1,0 +1,210 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/string/index.rst:3
+msgid "string -- Working with text"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:8
+msgid "Contains constants and classes for working with text."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:9
+msgid "2.5"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:11
+msgid ""
+"The :mod:`string` module dates from the earliest versions of Python. In "
+"version 2.0, many of the functions previously implemented only in the module"
+" were moved to methods of :class:`str` and :class:`unicode` objects. Legacy "
+"versions of those functions are still available, but their use is deprecated"
+" and they will be dropped in Python 3.0. The :mod:`string` module still "
+"contains several useful constants and classes for working with string and "
+"unicode objects, and this discussion will concentrate on them."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:21
+msgid "Constants"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:23
+msgid ""
+"The constants in the string module can be used to specify categories of "
+"characters such as ``ascii_letters`` and ``digits``. Some of the constants, "
+"such as ``lowercase``, are locale-dependent so the value changes to reflect "
+"the language settings of the user. Others, such as ``hexdigits``, do not "
+"change when the locale changes."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:33
+msgid "Most of the names for the constants are self-explanatory."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:72
+msgid "Functions"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:74
+msgid ""
+"There are two functions not moving from the string module. "
+":func:`capwords()` capitalizes all of the words in a string."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:81
+msgid ""
+"The results are the same as if you called :func:`split()`, capitalized the "
+"words in the resulting list, then called :func:`join()` to combine the "
+"results."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:98
+msgid ""
+"The other function creates translation tables that can be used with the "
+":func:`translate()` method to change one set of characters to another."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:106
+msgid ""
+"In this example, some letters are replaced by their `l33t "
+"<http://en.wikipedia.org/wiki/Leet>`_ number alternatives."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:123
+msgid "Templates"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:125
+msgid ""
+"String templates were added in Python 2.4 as part of :pep:`292` and are "
+"intended as an alternative to the built-in interpolation syntax. With "
+":class:`string.Template` interpolation, variables are identified by name "
+"prefixed with ``$`` (e.g., ``$var``) or, if necessary to set them off from "
+"surrounding text, they can also be wrapped with curly braces (e.g., "
+"``${var}``)."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:132
+msgid ""
+"This example compares a simple template with a similar string interpolation "
+"setup."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:139
+msgid ""
+"As you see, in both cases the trigger character (``$`` or ``%``) is escaped "
+"by repeating it twice."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:163
+msgid ""
+"One key difference between templates and standard string interpolation is "
+"that the type of the arguments is not taken into account. The values are "
+"converted to strings, and the strings are inserted into the result. No "
+"formatting options are available. For example, there is no way to control "
+"the number of digits used to represent a floating point value."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:170
+msgid ""
+"A benefit, though, is that by using the :func:`safe_substitute()` method, it"
+" is possible to avoid exceptions if not all of the values needed by the "
+"template are provided as arguments."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:178
+msgid ""
+"Since there is no value for missing in the values dictionary, a "
+":ref:`KeyError <exceptions-KeyError>` is raised by :func:`substitute()`. "
+"Instead of raising the error, :func:`safe_substitute()` catches it and "
+"leaves the variable expression alone in the text."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:198
+msgid "Advanced Templates"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:200
+msgid ""
+"If the default syntax for :class:`string.Template` is not to your liking, "
+"you can change the behavior by adjusting the regular expression patterns it "
+"uses to find the variable names in the template body. A simple way to do "
+"that is to change the *delimiter* and *idpattern* class attributes."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:210
+msgid ""
+"In this example, variable ids must include an underscore somewhere in the "
+"middle, so ``%notunderscored`` is not replaced by anything."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:230
+msgid ""
+"For more complex changes, you can override the *pattern* attribute and "
+"define an entirely new regular expression. The pattern provided must contain"
+" four named groups for capturing the escaped delimiter, the named variable, "
+"a braced version of the variable name, and invalid delimiter patterns."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:236
+msgid "Let's look at the default pattern:"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:242
+msgid ""
+"Since ``t.pattern`` is a compiled regular expression, we have to access its "
+"pattern attribute to see the actual string."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:264
+msgid ""
+"If we wanted to create a new type of template using, for example, "
+"``{{var}}`` as the variable syntax, we could use a pattern like this:"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:271
+msgid ""
+"We still have to provide both the named and braced patterns, even though "
+"they are the same. Here's the output:"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:291
+msgid "Deprecated Functions"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:293
+msgid ""
+"For information on the deprecated functions moved to the string and unicode "
+"classes, refer to `String Methods <http://docs.python.org/lib/string-"
+"methods.html#string-methods>`_ in the manual."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:301
+msgid "`string <http://docs.python.org/lib/module-string.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:301
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:304
+msgid ":pep:`292`"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:304
+msgid "Simpler String Substitutions"
+msgstr ""
+
+#: ../../PyMOTW/string/index.rst:306
+msgid ":ref:`article-text-processing`"
+msgstr ""

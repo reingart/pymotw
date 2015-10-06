@@ -1,0 +1,191 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sys/interpreter.rst:5
+msgid "Interpreter Settings"
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:7
+msgid ""
+":mod:`sys` contains attributes and functions for accessing compile-time or "
+"runtime configuration settings for the interpreter."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:13
+msgid "Build-time Version Information"
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:15
+msgid ""
+"The version used to build the C interpreter is available in a few forms.  "
+":const:`sys.version` is a human-readable string that usually includes the "
+"full version number as well as information about the build date, compiler, "
+"and platform.  :const:`sys.hexversion` is easier to use for checking the "
+"interpreter version since it is a simple integer.  When formatted using "
+":func:`hex`, it is clear that parts of :const:`sys.hexversion` come from the"
+" version information also visible in the more readable "
+":const:`sys.version_info` (a 5-part tuple representing just the version "
+"number)."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:25
+msgid ""
+"More specific information about the source that went into the build can be "
+"found in the :const:`sys.subversion` tuple, which includes the actual branch"
+" and subversion revision that was checked out and built. The separate C API "
+"version used by the current interpreter is saved in "
+":const:`sys.api_version`."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:35
+msgid ""
+"All of the values depend on the actual interpreter used to run the sample "
+"program, of course."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:70
+msgid ""
+"The operating system platform used to build the interpreter is saved as "
+":const:`sys.platform`."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:77
+msgid ""
+"For most Unix systems, the value comes from combining the output of ``uname "
+"-s`` with the first part of the version in ``uname -r``. For other operating"
+" systems there is a `hard-coded table of values "
+"<http://docs.python.org/library/sys.html#sys.platform>`_."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:97
+msgid "Install Location"
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:99
+msgid ""
+"The path to the actual interpreter program is available in "
+":const:`sys.executable` on all systems for which having a path to the "
+"interpreter makes sense.  This can be useful for ensuring that the *correct*"
+" interpreter is being used, and also gives clues about paths that might be "
+"set based on the interpreter location."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:105
+msgid ""
+":const:`sys.prefix` refers to the parent directory of the interpreter "
+"installation.  It usually includes ``bin`` and ``lib`` directories for "
+"executables and installed modules, respectively."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:115
+msgid ""
+"This example output was produced on a Mac running a framework build "
+"installed from python.org.  Other versions may produce different path "
+"information, even on a Mac."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:134
+msgid "Command Line Options"
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:136
+msgid ""
+"The CPython interpreter accepts several command line options to control its "
+"behavior."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:194
+msgid ""
+"Some of these are available for programs to check through "
+":const:`sys.flags`."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:201
+msgid ""
+"Experiment with ``sys_flags.py`` to learn how the command line options map "
+"to the flags settings."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:224
+msgid "Unicode Defaults"
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:226
+msgid ""
+"To get the name of the default Unicode encoding being used by the "
+"interpreter, use :func:`getdefaultencoding`.  The value is set during "
+"startup by :mod:`site`, which calls :func:`sys.setdefaultencoding` and then "
+"removes it from the namespace in :mod:`sys` to avoid having it called again."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:232
+msgid ""
+"The internal encoding default and the filesystem encoding may be different "
+"for some operating systems, so there is a separate way to retrieve the "
+"filesystem setting.  :func:`getfilesystemencoding` returns an OS-specific "
+"(*not* filesystem-specific) value."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:241
+msgid ""
+"Rather than changing the global default encoding, most Unicode experts "
+"recommend making an application explicitly Unicode-aware. This provides two "
+"benefits: Different Unicode encodings for different data sources can be "
+"handled more cleanly, and the number of assumptions about encodings in the "
+"application code is reduced."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:262
+msgid "Interactive Prompts"
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:264
+msgid ""
+"The interactive interpreter uses two separate prompts for indicating the "
+"default input level (:data:`ps1`) and the \"continuation\" of a multi-line "
+"statement (:data:`ps2`).  The values are only used by the interactive "
+"interpreter."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:278
+msgid "Either or both prompt can be changed to a different string"
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:292
+msgid ""
+"Alternately, any object that can be converted to a string (via ``__str__``) "
+"can be used for the prompt."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:299
+msgid ""
+"The :class:`LineCounter` keeps track of how many times it has been used, so "
+"the number in the prompt increases each time."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:316
+msgid "Display Hook"
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:318
+msgid ""
+":data:`sys.displayhook` is invoked by the interactive interpreter each time "
+"the user enters an expression.  The *result* of the expression is passed as "
+"the only argument to the function."
+msgstr ""
+
+#: ../../PyMOTW/sys/interpreter.rst:326
+msgid ""
+"The default value (saved in :data:`sys.__displayhook__`) prints the result "
+"to stdout and saves it in :data:`__builtin__._` for easy reference later."
+msgstr ""

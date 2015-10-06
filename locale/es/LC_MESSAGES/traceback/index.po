@@ -1,0 +1,155 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/traceback/index.rst:3
+msgid "traceback -- Extract, format, and print exceptions and stack traces."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:8
+msgid "Extract, format, and print exceptions and stack traces."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:9
+msgid "1.4 and later, with modifications over time"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:11
+msgid ""
+"The :mod:`traceback` module works with the call stack to produce error "
+"messages. A traceback is a stack trace from the point of an exception "
+"handler down the call chain to the point where the exception was raised. You"
+" can also work with the current call stack up from the point of a call (and "
+"without the context of an error), which is useful for finding out the paths "
+"being followed into a function."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:18
+msgid ""
+"The functions in :mod:`traceback` fall into several common categories. There"
+" are functions for extracting raw tracebacks from the current runtime "
+"environment (either an exception handler for a traceback, or the regular "
+"stack). The extracted stack trace is a sequence of tuples containing the "
+"filename, line number, function name, and text of the source line."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:25
+msgid ""
+"Once extracted, the stack trace can be formatted using functions like "
+":func:`format_exception()`, :func:`format_stack()`, etc. The format "
+"functions return a list of strings with messages formatted to be printed. "
+"There are shorthand functions for printing the formatted values, as well."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:31
+msgid ""
+"Although the functions in :mod:`traceback` mimic the behavior of the "
+"interactive interpreter by default, they also are useful for handling "
+"exceptions in situations where dumping the full stack trace to stderr is not"
+" desirable. For example, a web application may need to format the traceback "
+"so it looks good in HTML. An IDE may convert the elements of the stack trace"
+" into a clickable list that lets the user browse the source."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:40
+msgid "Supporting Functions"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:42
+msgid ""
+"The examples below use the module traceback_example.py (provided in the "
+"source package for PyMOTW). The contents are:"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:51
+msgid "Working With Exceptions"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:53
+msgid ""
+"The simplest way to handle exception reporting is with :func:`print_exc()`. "
+"It uses :func:`sys.exc_info()` to obtain the exception information for the "
+"current thread, formats the results, and prints the text to a file handle "
+"(``sys.stderr``, by default)."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:63
+msgid ""
+"In this example, the file handle for ``sys.stdout`` is substituted so the "
+"informational and traceback messages are mingled correctly:"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:97
+msgid ""
+"``print_exc()`` is just a shortcut for :func:`print_exception()`, which "
+"requires explicit arguments:"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:127
+msgid "And :func:`print_exception()` uses :func:`format_exception()`:"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:153
+msgid "Working With the Stack"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:155
+msgid ""
+"There are a similar set of functions for performing the same operations with"
+" the current call stack instead of a traceback."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:159
+msgid "print_stack()"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:194
+msgid "format_stack()"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:217
+msgid "extract_stack()"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:242
+msgid "`traceback <http://docs.python.org/lib/module-traceback.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:242
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:245
+msgid ":mod:`sys`"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:245
+msgid "The sys module includes singletons that hold the current exception."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:248
+msgid ":mod:`inspect`"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:248
+msgid ""
+"The inspect module includes other functions for probing the frames on the "
+"stack."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:250
+msgid ":mod:`cgitb`"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:251
+msgid "Another module for formatting tracebacks nicely."
+msgstr ""

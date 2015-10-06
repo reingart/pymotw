@@ -1,0 +1,550 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/imaplib/index.rst:5
+msgid "imaplib - IMAP4 client library"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:10
+msgid "Client library for IMAP4 communication."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:11
+msgid "1.5.2 and later"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:13
+msgid ""
+":mod:`imaplib` implements a client for communicating with Internet Message "
+"Access Protocol (IMAP) version 4 servers.  The IMAP protocol defines a set "
+"of *commands* sent to the server and the responses delivered back to the "
+"client.  Most of the commands are available as methods of the :class:`IMAP4`"
+" object used to communicate with the server."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:20
+msgid ""
+"These examples discuss part of the IMAP protocol, but are by no means "
+"complete.  Refer to :rfc:`3501` for complete details."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:25
+msgid "Variations"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:27
+msgid ""
+"There are 3 client classes for communicating with servers using various "
+"mechanisms.  The first, :class:`IMAP4`, uses clear text sockets; "
+":class:`IMAP4_SSL` uses encrypted communication over SSL sockets; and "
+":class:`IMAP4_stream` uses the standard input and standard output of an "
+"external command.  All of the examples below will use :class:`IMAP4_SSL`."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:36
+msgid "Connecting to a Server"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:38
+msgid ""
+"There are two steps for establishing a connection with an IMAP server. "
+"First, set up the socket connection itself.  Second, authenticate as a user "
+"with an account on the server.  The following example code will read server "
+"and user information from a configuration file."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:44
+msgid ""
+"You probably do not want to store email passwords in clear text, but "
+"handling encryption will distract from the rest of the examples."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:51
+msgid ""
+"When run, :func:`open_connection()` reads the configuration information from"
+" a file in your home directory, then opens the :class:`IMAP4_SSL` connection"
+" and authenticates."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:63
+msgid ""
+"The other examples below will reuse this module, to avoid duplicating the "
+"code."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:66
+msgid "Authentication Failure"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:68
+msgid ""
+"If the connection is established but authentication fails, an exception is "
+"raised."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:89
+msgid "Example Configuration"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:91
+msgid ""
+"The example account has 4 mailboxes, ``INBOX``, ``Apple Mail To Do``, "
+"``Archive``, and ``2008`` (a sub-folder of ``Archive``).  The mailbox "
+"hierarchy looks like:"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:95
+msgid "INBOX"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:96
+msgid "Apple Mail To Do"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:97
+msgid "Archive"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:99
+msgid "2008"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:101
+msgid ""
+"There is one unread message in the ``INBOX`` folder, and one read message in"
+" ``Archive/2008``."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:106
+msgid "Listing Mailboxes"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:108
+msgid ""
+"To retrieve the mailboxes available for an account, use the :meth:`list()` "
+"method."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:115
+msgid ""
+"The return value is a tuple with a response code and the data returned by "
+"the server.  The response code is ``OK``, unless there has been an error.  "
+"The data for :meth:`list()` is a sequence of strings containing *flags*, the"
+" *hierarchy delimiter*, and *mailbox name* for each mailbox."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:131
+msgid ""
+"Each response string can be split into 3 parts using :mod:`re` or :mod:`csv`"
+" (see `IMAP Backup Script`_ for an example using :mod:`csv`)."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:139
+msgid ""
+"Notice that the server quotes the mailbox name if it includes spaces, but we"
+" need to strip those quotes to use the mailbox name in other calls back to "
+"the server later."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:156
+msgid ""
+":meth:`list()` takes arguments to let you ask for mailboxes in part of the "
+"hierarchy.  For example, to list sub-folders of ``Archive``, you can pass a "
+"value as the *directory* argument:"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:164
+msgid "Only the single subfolder is returned:"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:172
+msgid ""
+"Alternately, to list folders matching a pattern you can pass the *pattern* "
+"argument:"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:179
+msgid ""
+"In this case, both ``Archive`` and ``Archive.2008`` are included in the "
+"response."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:191
+msgid "Mailbox Status"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:193
+msgid ""
+"Use :meth:`status()` to ask for aggregated information about the contents.  "
+"The standard defines these *status conditions*:"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:197
+msgid "MESSAGES"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:197
+msgid "The number of messages in the mailbox."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:200
+msgid "RECENT"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:200
+msgid "The number of messages with the \\Recent flag set."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:203
+msgid "UIDNEXT"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:203
+msgid "The next unique identifier value of the mailbox."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:206
+msgid "UIDVALIDITY"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:206
+msgid "The unique identifier validity value of the mailbox."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:209
+msgid "UNSEEN"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:209
+msgid "The number of messages which do not have the \\Seen flag set."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:211
+msgid ""
+"The status conditions must be formatted as a space separated string enclosed"
+" in parentheses, the encoding for a \"list\" in the IMAP4 specification."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:219
+msgid ""
+"The return value is the usual tuple containing a response code and a list of"
+" information from the server.  In this case, the list contains a single "
+"string formatted with the name of the mailbox in quotes, then the status "
+"conditions and values in parentheses."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:234
+msgid "Selecting a Mailbox"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:236
+msgid ""
+"The basic mode of operation, once the client is authenticated, is to "
+"*select* a mailbox and then interrogate the server regarding messages in the"
+" mailbox.  The connection is stateful, so once a mailbox is selected all "
+"commands operate on messages in that mailbox until a new mailbox is "
+"selected."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:246
+msgid ""
+"The response data contains the total number of messages in the mailbox."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:255
+msgid "If an invalid mailbox is specified, the response code is ``NO``."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:261
+msgid "The data contains an error message describing the problem."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:270
+msgid "Searching for Messages"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:272
+msgid ""
+"Once the mailbox is selected, use :meth:`search()` to retrieve the ids of "
+"messages in the mailbox."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:279
+msgid ""
+"Message ids are assigned by the server, and are implementation dependent.  "
+"The IMAP4 protocol makes a distinction between sequential ids for messages "
+"at a given point in time during a transaction and UID identifiers for "
+"messages, but not all servers seem to bother."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:292
+msgid ""
+"In this case, ``INBOX`` and ``Archive.2008`` each have a diffrerent message "
+"with id ``1``.  The other mailboxes are empty."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:297
+msgid "Search Criteria"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:299
+msgid ""
+"A variety of other search criteria can be used, including looking at dates "
+"for the message, flags, and other headers.  Refer to section 6.4.4. of "
+":rfc:`3501` for complete details."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:303
+msgid ""
+"As one example, to look for messages with ``'test message 2'`` in the "
+"subject, the search criteria could be constructed as::"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:308
+msgid ""
+"This example finds all messages with the title \"test message 2\" in all "
+"mailboxes:"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:315
+msgid ""
+"There is only one such message in the account, and it is in the ``INBOX``."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:326
+msgid "Search criteria can also be combined."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:332
+msgid "The combination is treated as a logical *and* operation."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:344
+msgid "Fetching Messages"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:346
+msgid ""
+"The identifiers returned by :meth:`search()` are used to retrieve the "
+"contents, or partial contents, of messages for further processing via "
+":meth:`fetch()`.  :meth:`fetch()` takes 2 arguments, the message ids to "
+"fetch and the portion(s) of the message to retrieve."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:351
+msgid ""
+"The *message_ids* argument is a comma separated list of ids (``\"1\"``, "
+"``\"1,2\"``) or id ranges (``1:2``).  The *message_parts* argument is an "
+"IMAP list of message segment names.  As with search criteria for "
+":meth:`search()`, the IMAP protocol specifies named message segments so "
+"clients can efficiently retrieve only the parts of the message they actually"
+" need.  For example, to print the headers of the messages in a mailbox, we "
+"could :meth:`fetch()` the headers using ``BODY.PEEK[HEADER]``."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:362
+msgid ""
+"Another way to fetch the headers would be simply ``BODY[HEADERS]``, but that"
+" form implicitly marks the message as read, which is undesirable in many "
+"cases."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:370
+msgid ""
+"The return value of :meth:`fetch()` has been partially parsed so it is "
+"somewhat harder to work with than the return value of :meth:`list()`. If we "
+"turn on debugging, we can see the complete interaction between the client "
+"and server to understand why this is so."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:411
+msgid ""
+"The response from the ``FETCH`` command starts with the flags, then "
+"indicates that there are 595 bytes of header data.  The client contructs a "
+"tuple with the response for the message, and then closes the sequence with a"
+" single string containing the ``)`` the server sends at the end of the fetch"
+" response.  Because of this formatting, it may be easier to fetch different "
+"pieces of information separately, or to recombine the response and parse it "
+"yourself."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:423
+msgid ""
+"Fetching values separately has the added benefit of making it easy to use "
+":func:`ParseFlags()` to parse the flags from the response."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:454
+msgid "Whole Messages"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:456
+msgid ""
+"As illustrated above, the client can ask the server for individual parts of "
+"the message separately.  It is also possible to retrieve the entire message "
+"as an :rfc:`2822` formatted mail message and parse it with classes from the "
+":mod:`email` module."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:465
+msgid ""
+"The parser in the :mod:`email` module make it very easy to access and "
+"manipulate messages.  This example prints just a few of the headers for each"
+" message."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:478
+msgid "Uploading Messages"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:480
+msgid ""
+"To add a new message to a mailbox, pass it to the :meth:`append()` method."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:535
+msgid "Moving and Copying Messages"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:537
+msgid ""
+"Once a message is on the server, it can be moved or copied without "
+"downloading it using :meth:`move()` or :meth:`copy()`.  These methods "
+"operate on message id ranges, just as :meth:`fetch()` does."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:541
+msgid ""
+"This example script creates a new mailbox under ``Archive`` and copies the "
+"read messages from ``INBOX`` into it."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:556
+msgid ""
+"Running the same script again shows the importance to checking return codes."
+"  Instead of raising an exception, the call to :meth:`create()` to make the "
+"new mailbox reports that the mailbox already exists."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:569
+msgid "Deleting Messages"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:571
+msgid ""
+"Although most modern mail clients use a \"Trash folder\" model for working "
+"with deleted messages, the messages are not usually moved into an actual "
+"folder.  Instead, their flags are updated to add ``\\Deleted``.  *Emptying "
+"the trash* is implemented through an ``EXPUNGE`` command.  This example "
+"script finds the archived messages with \"Lorem ipsum\" in the subject, sets"
+" the deleted flag, then shows that the messages are still present in the "
+"folder by querying the server again."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:584
+msgid ""
+"This example explicitly calls :meth:`expunge()` to remove the messages, but "
+"calling :meth:`close()` has the same effect.  The difference is the client "
+"is not notified about the deletions when you call :meth:`close()`."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:605
+msgid "`imaplib <http://docs.python.org/library/imaplib.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:605
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:608
+msgid "`What is IMAP? <http://www.imap.org/about/whatisIMAP.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:608
+msgid "imap.org description of the IMAP protocol"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:611
+msgid ""
+"`University of Washington IMAP Information Center "
+"<http://www.washington.edu/imap/>`_"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:611
+msgid "Good resource for IMAP information, along with source code."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:614
+msgid ":rfc:`3501`"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:614
+msgid "Internet Message Access Protocol"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:617
+msgid ":rfc:`2822`"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:617
+msgid "Internet Message Format"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:622
+msgid "`IMAP Backup Script`_"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:620
+msgid "A script to backup email from an IMAP server."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:625
+msgid ":mod:`rfc822`"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:625
+msgid "The :mod:`rfc822` module includes an :rfc:`822` / :rfc:`2822` parser"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:628
+msgid ":mod:`email`"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:628
+msgid "The :mod:`email` module for parsing email messages."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:631
+msgid ":mod:`mailbox`"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:631
+msgid "Local mailbox parser."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:634
+msgid ":mod:`ConfigParser`"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:634
+msgid "Read and write configuration files."
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:636
+msgid "`IMAPClient <http://freshfoo.com/wiki/CodeIndex>`_"
+msgstr ""
+
+#: ../../PyMOTW/imaplib/index.rst:637
+msgid ""
+"A higher-level client for talking to IMAP servers, written by Menno Smits."
+msgstr ""

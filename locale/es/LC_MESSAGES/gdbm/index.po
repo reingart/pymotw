@@ -1,0 +1,78 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/gdbm/index.rst:3
+msgid "gdbm -- GNU's version of the dbm library"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:8
+msgid "GNU's version of the dbm library"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:11
+msgid ""
+":mod:`gdbm` is GNU's updated version of the :mod:`dbm` library.  It follows "
+"the same semantics as the other DBM implementations described under "
+":mod:`anydbm`, with a few changes to the *flags* supported by ``open()``."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:13
+msgid ""
+"Besides the standard ``'r'``, ``'w'``, ``'c'``, and ``'n'`` flags, "
+"``gdbm.open()`` supports:"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:15
+msgid ""
+"``'f'`` to open the database in *fast* mode. In fast mode, writes to the "
+"database are not synchronized."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:16
+msgid ""
+"``'s'`` to open the database in *synchronized* mode. Changes to the database"
+" are written to the file as they are made, rather than being delayed until "
+"the database is closed or synced explicitly."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:17
+msgid "``'u'`` to open the database unlocked."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:23
+msgid "`gdbm <http://docs.python.org/library/gdbm.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:23
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:26
+msgid ":mod:`dbm`"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:26
+msgid "The :mod:`dbm` module."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:28
+msgid ":mod:`anydbm`"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:29
+msgid "The :mod:`anydbm` module."
+msgstr ""

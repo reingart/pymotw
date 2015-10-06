@@ -1,0 +1,372 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/readline/index.rst:3
+msgid "readline -- Interface to the GNU readline library"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:8
+msgid ""
+"Provides an interface to the GNU readline library for interacting with the "
+"user at a command prompt."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:11
+msgid ""
+"The :mod:`readline` module can be used to enhance interactive command line "
+"programs to make them easier to use.  It is primarily used to provide "
+"command line text completion, or \"tab completion\"."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:17
+msgid ""
+"Because :mod:`readline` interacts with the console content, printing debug "
+"messages makes it difficult to see what it happening in the sample code "
+"versus what readline is doing for free.  The examples below use the "
+":mod:`logging` module to write debug information to a separate file.  The "
+"log output is shown with each example."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:26
+msgid "Configuring"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:28
+msgid ""
+"There are two ways to configure the underlying readline library, using a "
+"configuration file or the ``parse_and_bind()`` function. Configuration "
+"options include the keybinding to invoke completion, editing modes (vi or "
+"emacs), and many other values.  Refer to the `GNU readline library "
+"documentation "
+"<http://tiswww.case.edu/php/chet/readline/readline.html#SEC10>`_ for "
+"details."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:36
+msgid ""
+"The easiest way to enable tab-completion is through a call to "
+"``parse_and_bind()``.  Other options can be set at the same time. This "
+"example changes the editing controls to use \"vi\" mode instead of the "
+"default of \"emacs\".  To edit the current input line, press ``ESC`` then "
+"use normal vi navigation keys such as ``j``, ``k``, ``l``, and ``h``."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:47
+msgid ""
+"The same configuration can be stored as instructions in a file read by the "
+"library with a single call.  If ``myreadline.rc`` contains:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:53
+msgid "the file can be read with ``read_init_file()``:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:62
+msgid "Completing Text"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:64
+msgid ""
+"As an example of how to build command line completion, we can look at a "
+"program that has a built-in set of possible commands and uses tab-completion"
+" when the user is entering instructions."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:72
+msgid ""
+"The ``input_loop()`` function simply reads one line after another until the "
+"input value is ``\"stop\"``.  A more sophisticated program could actually "
+"parse the input line and run the command."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:76
+msgid ""
+"The ``SimpleCompleter`` class keeps a list of \"options\" that are "
+"candidates for auto-completion.  The ``complete()`` method for an instance "
+"is designed to be registered with :mod:`readline` as the source of "
+"completions.  The arguments are a \"text\" string to complete and a "
+"\"state\" value, indicating how many times the function has been called with"
+" the same text.  The function is called repeatedly with the state "
+"incremented each time.  It should return a string if there is a candidate "
+"for that state value or ``None`` if there are no more candidates.  The "
+"implementation of ``complete()`` here looks for a set of matches when state "
+"is ``0``, and then returns all of the candidate matches one at a time on "
+"subsequent calls."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:88
+msgid "When run, the initial output looks something like this:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:95
+msgid "If you press ``TAB`` twice, a list of options are printed."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:104
+msgid ""
+"The log file shows that ``complete()`` was called with two separate "
+"sequences of state values."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:123
+msgid ""
+"The first sequence is from the first TAB key-press.  The completion "
+"algorithm asks for all candidates but does not expand the empty input line."
+"  Then on the second TAB, the list of candidates is recalculated so it can "
+"be printed for the user."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:128
+msgid "If next we type \"``l``\" and press TAB again, the screen shows:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:134
+msgid "and the log reflects the different arguments to ``complete()``:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:142
+msgid ""
+"Pressing RETURN now causes ``raw_input()`` to return the value, and the "
+"``while`` loop cycles."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:150
+msgid ""
+"There are two possible completions for a command beginning with \"``s``\".  "
+"Typing \"``s``\", then pressing TAB finds that \"``start``\" and "
+"\"``stop``\" are candidates, but only partially completes the text on the "
+"screen by adding a \"``t``\"."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:155
+msgid "The log file shows:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:164
+msgid "and the screen:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:173
+msgid ""
+"If your completer function raises an exception, it is ignored silently and "
+":mod:`readline` assumes there are no matching completions."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:179
+msgid "Accessing the Completion Buffer"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:181
+msgid ""
+"The completion algorithm above is simplistic because it only looks the text "
+"argument passed to the function, but does not use any more of readline's "
+"internal state.  It is also possible to use :mod:`readline` functions to "
+"manipulate the text of the input buffer."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:190
+msgid ""
+"In this example, commands with sub-options are are being completed. The "
+"``complete()`` method needs to look at the position of the completion within"
+" the input buffer to determine whether it is part of the first word or a "
+"later word.  If the target is the first word, the keys of the options "
+"dictionary are used as candidates.  If it is not the first word, then the "
+"first word is used to find candidates from the options dictionary."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:198
+msgid "There are three top-level commands, two of which have subcommands:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:200
+msgid "list"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:202
+msgid "files"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:203
+msgid "directories"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:205
+msgid "print"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:207
+msgid "byname"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:208
+msgid "bysize"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:210
+msgid "stop"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:213
+msgid ""
+"Following the same sequence of actions as before, pressing TAB twice gives "
+"us the three top-level commands:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:223
+msgid "and in the log:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:246
+msgid ""
+"If the first word is ``\"list \"`` (with a space after the word), the "
+"candidates for completion are different:"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:254
+msgid ""
+"The log shows that the text being completed is *not* the full line, but the "
+"portion after"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:281
+msgid "Input History"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:283
+msgid ""
+":mod:`readline` tracks the input history automatically.  There are two "
+"different sets of functions for working with the history.  The history for "
+"the current session can be accessed with ``get_current_history_length()`` "
+"and ``get_history_item()``.  That same history can be saved to a file to be "
+"reloaded later using ``write_history_file()`` and ``read_history_file()``.  "
+"By default the entire history is saved but the maximum length of the file "
+"can be set with ``set_history_length()``.  A length of -1 means no limit."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:296
+msgid ""
+"The **HistoryCompleter** remembers everything you type and uses those values"
+" when completing subsequent inputs."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:316
+msgid "The log shows this output when the \"``b``\" is followed by two TABs."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:331
+msgid ""
+"When the script is run the second time, all of the history is read from the "
+"file."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:341
+msgid ""
+"There are functions for removing individual history items and clearing the "
+"entire history, as well."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:346
+msgid "Hooks"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:348
+msgid ""
+"There are several hooks available for triggering actions as part of the "
+"interaction sequence.  The *startup* hook is invoked immediately before "
+"printing the prompt, and the *pre-input* hook is run after the prompt, but "
+"before reading text from the user."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:357
+msgid ""
+"Either hook is a potentially good place to use ``insert_text()`` to modify "
+"the input buffer."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:365
+msgid ""
+"If the buffer is modified inside the pre-input hook, you need to call "
+"``redisplay()`` to update the screen."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:372
+msgid "`readline <http://docs.python.org/library/readline.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:372
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:375
+msgid ""
+"`GNU readline <http://tiswww.case.edu/php/chet/readline/readline.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:375
+msgid "Documentation for the GNU readline library."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:378
+msgid ""
+"`readline init file format "
+"<http://tiswww.case.edu/php/chet/readline/readline.html#SEC10>`_"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:378
+msgid "The initialization and configuration file format."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:381
+msgid ""
+"`effbot: The readline module "
+"<http://sandbox.effbot.org/librarybook/readline.htm>`_"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:381
+msgid "Effbot's guide to the readline module."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:385
+msgid "`pyreadline <https://launchpad.net/pyreadline>`_"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:384
+msgid ""
+"pyreadline, developed as a Python-based replacement for readline to be used "
+"in `iPython <http://ipython.scipy.org/>`_."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:390
+msgid ":mod:`cmd`"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:388
+msgid ""
+"The :mod:`cmd` module uses :mod:`readline` extensively to implement tab-"
+"completion in the command interface.  Some of the examples here were adapted"
+" from the code in :mod:`cmd`."
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:393
+msgid ":mod:`rlcompleter`"
+msgstr ""
+
+#: ../../PyMOTW/readline/index.rst:393
+msgid ""
+":mod:`rlcompleter` uses :mod:`readline` to add tab-completion to the "
+"interactive Python interpreter."
+msgstr ""

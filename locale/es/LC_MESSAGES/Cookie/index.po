@@ -1,0 +1,206 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/Cookie/index.rst:3
+msgid "Cookie -- HTTP Cookies"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:8
+msgid ""
+"The Cookie module defines classes for parsing and creating HTTP cookie "
+"headers."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:9
+msgid "2.1 and later"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:11
+msgid ""
+"Cookies have been a part of the HTTP protocol for a long time. All of the "
+"modern web development frameworks provide easy access to cookies so a "
+"programmer almost never has to worry about how to format them or make sure "
+"the headers are sent properly. It can be instructive to understand how "
+"cookies work, though, and the options they support."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:17
+msgid ""
+"The Cookie module implements a parser for cookies that is mostly :rfc:`2109`"
+" compliant. It is a little less strict than the standard because MSIE 3.0x "
+"does not support the entire standard."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:22
+msgid "Creating and Setting a Cookie"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:24
+msgid ""
+"Cookies are used as state management, and as such as usually set by the "
+"server to be stored and returned by the client. The most trivial example of "
+"creating a cookie looks something like:"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:32
+msgid ""
+"The output is a valid Set-Cookie header ready to be passed to the client as "
+"part of the HTTP response:"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:49
+msgid "Morsels"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:51
+msgid ""
+"It is also possible to control the other aspects of a cookie, such as the "
+"expiration, path, and domain. In fact, all of the RFC attributes for cookies"
+" can be managed through the Morsel object representing the cookie value."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:59
+msgid ""
+"The above example includes two different methods for setting stored cookies "
+"that expire. You can set max-age to a number of seconds, or expires to a "
+"date and time when the cookie should be discarded."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:101
+msgid ""
+"Both the Cookie and Morsel objects act like dictionaries. The Morsel "
+"responds to a fixed set of keys:"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:104
+msgid "expires"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:105
+msgid "path"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:106
+msgid "comment"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:107
+msgid "domain"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:108
+msgid "max-age"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:109
+msgid "secure"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:110
+msgid "version"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:112
+msgid ""
+"The keys for the Cookie instance are the names of the individual cookies "
+"being stored. That information is also available from the key attribute of "
+"the Morsel."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:117
+msgid "Encoded Values"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:119
+msgid ""
+"The cookie header may require values to be encoded so they can be parsed "
+"properly."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:126
+msgid ""
+"The Morsel.value is always the decoded value of the cookie, while "
+"Morsel.coded_value is always the representation to be used for transmitting "
+"the value to the client. Both values are always strings. Values saved to a "
+"cookie that are not strings are converted automatically."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:153
+msgid "Receiving and Parsing Cookie Headers"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:155
+msgid ""
+"Once the Set-Cookie headers are received by the client, it will return those"
+" cookies to the server on subsequent requests using the Cookie header. The "
+"incoming header will look like::"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:161
+msgid ""
+"Depending on your web server and framework, the cookies are either available"
+" directly from the headers or the ``HTTP_COOKIE`` environment variable. To "
+"decode them, pass the string without the header prefix to the SimpleCookie "
+"when instantiating it, or use the load() method."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:189
+msgid "Alternative Output Formats"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:191
+msgid ""
+"Besides using the Set-Cookie header, it is possible to use JavaScript to add"
+" cookies to a client. SimpleCookie and Morsel provide JavaScript output via "
+"the js_output() method."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:225
+msgid "Deprecated Classes"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:227
+msgid ""
+"All of these examples have used SimpleCookie. The Cookie module also "
+"provides 2 other classes, SerialCookie and SmartCookie. SerialCookie can "
+"handle any values that can be pickled. SmartCookie figures out whether a "
+"value needs to be unpickled or if it is a simple value. Since both of these "
+"classes use pickles, they are potential security holes in your application "
+"and you should not use them. It is safer to store state on the server, and "
+"give the client a session key instead."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:238
+msgid "`Cookie <http://docs.python.org/library/cookie.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:238
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:241
+msgid ":mod:`cookielib`"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:241
+msgid ""
+"The :mod:`cookielib` module, for working with cookies on the client-side."
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:243
+msgid ":rfc:`2109`"
+msgstr ""
+
+#: ../../PyMOTW/Cookie/index.rst:244
+msgid "HTTP State Management Mechanism"
+msgstr ""

@@ -1,0 +1,210 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/Queue/index.rst:3
+msgid "Queue -- A thread-safe FIFO implementation"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:8
+msgid "Provides a thread-safe FIFO implementation"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:9
+msgid "at least 1.4"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:11
+msgid ""
+"The :mod:`Queue` module provides a FIFO implementation suitable for multi-"
+"threaded programming. It can be used to pass messages or other data between "
+"producer and consumer threads safely. Locking is handled for the caller, so "
+"it is simple to have as many threads as you want working with the same Queue"
+" instance. A Queue's size (number of elements) may be restricted to throttle"
+" memory usage or processing."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:20
+msgid ""
+"This discussion assumes you already understand the general nature of a "
+"queue. If you don't, you may want to read some of the references before "
+"continuing."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:25
+msgid "Basic FIFO Queue"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:27
+msgid ""
+"The ``Queue`` class implements a basic first-in, first-out container. "
+"Elements are added to one \"end\" of the sequence using ``put()``, and "
+"removed from the other end using ``get()``."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:35
+msgid ""
+"This example uses a single thread to illustrate that elements are removed "
+"from the queue in the same order they are inserted."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:51
+msgid "LIFO Queue"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:53
+msgid ""
+"In contrast to the standard FIFO implementation of ``Queue``, the "
+"``LifoQueue`` uses last-in, first-out ordering (normally associated with a "
+"stack data structure)."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:61
+msgid ""
+"The item most recently ``put()`` into the queue is removed by ``get()``."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:79
+msgid "Priority Queue"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:81
+msgid ""
+"Sometimes the processing order of the items in a queue needs to be based on "
+"characteristics of those items, rather than just the order they are created "
+"or added to the queue.  For example, print jobs from the payroll department "
+"may take precedence over a code listing printed by a developer.  "
+"``PriorityQueue`` uses the sort order of the contents of the queue to decide"
+" which to retrieve."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:92
+msgid ""
+"In this single-threaded example, the jobs are pulled out of the queue in "
+"strictly priority order.  If there were multiple threads consuming the jobs,"
+" they would be processed based on the priority of items in the queue at the "
+"time ``get()`` was called."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:117
+msgid "Using Queues with Threads"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:119
+msgid ""
+"As an example of how to use the Queue class with multiple threads, we can "
+"create a very simplistic podcasting client. This client reads one or more "
+"RSS feeds, queues up the enclosures for download, and processes several "
+"downloads in parallel using threads. It is simplistic and unsuitable for "
+"actual use, but the skeleton implementation gives us enough code to work "
+"with to provide an example of using the Queue module."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:131
+msgid ""
+"First, we establish some operating parameters. Normally these would come "
+"from user inputs (preferences, a database, whatever). For our example we "
+"hard code the number of threads to use and the list of URLs to fetch."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:136
+msgid ""
+"Next, we need to define the function ``downloadEnclosures()`` that will run "
+"in the worker thread, processing the downloads. Again, for illustration "
+"purposes this only simulates the download. To actually download the "
+"enclosure, you might use :mod:`urllib` or :mod:`urllib2`. In this example, "
+"we simulate a download delay by sleeping a variable amount of time, "
+"depending on the thread id."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:143
+msgid ""
+"Once the threads' target function is defined, we can start the worker "
+"threads. Notice that downloadEnclosures() will block on the statement ``url "
+"= q.get()`` until the queue has something to return, so it is safe to start "
+"the threads before there is anything in the queue."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:148
+msgid ""
+"The next step is to retrieve the feed contents (using Mark Pilgrim's "
+"`feedparser`_ module) and enqueue the URLs of the enclosures. As soon as the"
+" first URL is added to the queue, one of the worker threads should pick it "
+"up and start downloading it. The loop below will continue to add items until"
+" the feed is exhausted, and the worker threads will take turns dequeuing "
+"URLs to download them."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:155
+msgid ""
+"And the only thing left to do is wait for the queue to empty out again, "
+"using ``join()``."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:158
+msgid ""
+"If you run the sample script, you should see output something like this:"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:189
+msgid ""
+"The actual output will depend on whether anyone modifies the subscriptions "
+"in the guest account on http://www.CastSampler.com."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:196
+msgid "`Queue <http://docs.python.org/lib/module-Queue.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:196
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:199
+msgid ":ref:`deque` from :mod:`collections`"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:199
+msgid "collections includes a deque (double-ended queue) class"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:202
+msgid "*Wikipedia: Queue data structures*"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:202
+msgid "http://en.wikipedia.org/wiki/Queue_(data_structure)"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:205
+msgid "*Wikipedia: FIFO*"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:205
+msgid "http://en.wikipedia.org/wiki/FIFO"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:208
+msgid "`feedparser`_"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:208
+msgid "Mark Pilgrim's feedparser module (http://www.feedparser.org/)."
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:210
+msgid ":ref:`article-data-structures`"
+msgstr ""
+
+#: ../../PyMOTW/Queue/index.rst:211
+msgid "Other complex data structures in the standard library."
+msgstr ""

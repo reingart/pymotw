@@ -1,0 +1,66 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/dbm/index.rst:3
+msgid "dbm -- Simple database interface"
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:8
+msgid "Provides an interface to the Unix (n)dbm library."
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:11
+msgid ""
+"The :mod:`dbm` module provides an interface to one of the dbm libraries, "
+"depending on how the module was configured during compilation."
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:16
+msgid "Examples"
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:18
+msgid "The ``library`` attribute identifies the library being used, by name."
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:24
+msgid ""
+"Your results will depend on what library ``configure`` was able to find when"
+" the interpreter was built."
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:39
+msgid ""
+"The :func:`open()` function follows the same semantics as the :mod:`anydbm` "
+"module."
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:45
+msgid "`dbm <http://docs.python.org/library/dbm.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:45
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:47
+msgid ":mod:`anydbm`"
+msgstr ""
+
+#: ../../PyMOTW/dbm/index.rst:48
+msgid "The :mod:`anydbm` module."
+msgstr ""

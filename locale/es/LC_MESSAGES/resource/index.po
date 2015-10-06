@@ -1,0 +1,109 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/resource/index.rst:3
+msgid "resource -- System resource management"
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:8
+msgid "Manage the system resource limits for a Unix program."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:9
+msgid "1.5.2"
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:11
+msgid ""
+"The functions in :mod:`resource` probe the current system resources consumed"
+" by a process, and place limits on them to control how much load a program "
+"can impose on a system."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:16
+msgid "Current Usage"
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:18
+msgid ""
+"Use :func:`getrusage()` to probe the resources used by the current process "
+"and/or its children.  The return value is a data structure containing "
+"several resource metrics based on the current state of the system."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:25
+msgid ""
+"Not all of the resource values gathered are displayed here.  Refer to the "
+"`stdlib docs "
+"<http://docs.python.org/library/resource.html#resource.getrusage>`_ for a "
+"more complete list."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:34
+msgid ""
+"Because the test program is extremely simple, it does not use very many "
+"resources:"
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:57
+msgid "Resource Limits"
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:59
+msgid ""
+"Separate from the current actual usage, it is possible to check the *limits*"
+" imposed on the application, and then change them."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:66
+msgid ""
+"The return value for each limit is a tuple containing the *soft* limit "
+"imposed by the current configuration and the *hard* limit imposed by the "
+"operating system."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:91
+msgid ""
+"The limits can be changed with :func:`setrlimit()`.  For example, to control"
+" the number of files a process can open the :const:`RLIMIT_NOFILE` value can"
+" be set to use a smaller soft limit value."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:114
+msgid ""
+"It can also be useful to limit the amount of CPU time a process should "
+"consume, to avoid eating up too much time.  When the process runs past the "
+"allotted amount of time, it it sent a :const:`SIGXCPU` signal."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:122
+msgid ""
+"Normally the signal handler should flush all open files and close them, but "
+"in this case it just prints a message and exits."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:146
+msgid "`resource <http://docs.python.org/library/resource.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:146
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:148
+msgid ":mod:`signal`"
+msgstr ""
+
+#: ../../PyMOTW/resource/index.rst:149
+msgid "For details on registering signal handlers."
+msgstr ""

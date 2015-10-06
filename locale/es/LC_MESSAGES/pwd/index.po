@@ -1,0 +1,205 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pwd/index.rst:3
+msgid "pwd -- Unix Password Database"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:8
+msgid "Read user data from Unix password database."
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:11
+msgid ""
+"The pwd module can be used to read user information from the Unix password "
+"database (usually ``/etc/passwd``).  The read-only interface returns tuple-"
+"like objects with named attributes for the standard fields of a password "
+"record."
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:17
+msgid "Index"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:17
+msgid "Attribute"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:17
+msgid "Meaning"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:19
+msgid "0"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:19
+msgid "pw_name"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:19
+msgid "The user's login name"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:20
+msgid "1"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:20
+msgid "pw_passwd"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:20
+msgid "Encrypted password (optional)"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:21
+msgid "2"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:21
+msgid "pw_uid"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:21
+msgid "User id (integer)"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:22
+msgid "3"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:22
+msgid "pw_gid"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:22
+msgid "Group id (integer)"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:23
+msgid "4"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:23
+msgid "pw_gecos"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:23
+msgid "Comment/full name"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:24
+msgid "5"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:24
+msgid "pw_dir"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:24
+msgid "Home directory"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:25
+msgid "6"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:25
+msgid "pw_shell"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:25
+msgid "Application started on login, usually a command interpreter"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:29
+msgid "Querying All Users"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:31
+msgid ""
+"Suppose you need to print a report of all of the \"real\" users on a system,"
+" including their home directories (for our purposes, \"real\" is defined as "
+"having a name not starting with \"``_``\").  To load the entire password "
+"database, you would use ``getpwall()``.  The return value is a list with an "
+"undefined order, so you will need to sort it before printing the report."
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:42
+msgid ""
+"Most of the example code above deals with formatting the results nicely.  "
+"The ``for`` loop at the end shows how to access fields from the records by "
+"name."
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:100
+msgid "Querying User By Name"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:102
+msgid ""
+"If you need information about one user, it is not necessary to read the "
+"entire password database.  Using ``getpwnam()``, you can retrieve the "
+"information about a user by name."
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:110
+msgid ""
+"The passwords on my system are stored outside of the main user database in a"
+" shadow file, so the password field, when set, is reported as all ``*``."
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:143
+msgid "Querying User By UID"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:145
+msgid ""
+"It is also possible to look up a user by their numerical user id. This is "
+"useful to find the owner of a file:"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:165
+msgid ""
+"The numeric user id is can also be used to find information about the user "
+"currently running a process:"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:188
+msgid "`pwd <http://docs.python.org/library/pwd.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:188
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:191
+msgid ":mod:`spwd`"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:191
+msgid "Secure password database access for systems using shadow passwords."
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:193
+msgid ":mod:`grp`"
+msgstr ""
+
+#: ../../PyMOTW/pwd/index.rst:194
+msgid "The :mod:`grp` module reads Unix group information."
+msgstr ""

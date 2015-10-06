@@ -1,0 +1,303 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sysconfig/index.rst:3
+msgid "sysconfig -- Interpreter Compile-time Configuration"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:8
+msgid "Access the configuration settings used to build Python."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:9
+msgid "2.7 and later"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:11
+msgid ""
+"In Python 2.7 :mod:`sysconfig` has been extracted from :mod:`distutils` to "
+"become a stand-alone module.  It includes functions for determining the "
+"settings used to compile and install the current interpreter."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:17
+msgid "Configuration Variables"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:19
+msgid ""
+"You can access the build-time configuration settings through two functions."
+"  :func:`get_config_vars` returns a dictionary mapping the configuration "
+"variable names to values."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:27
+msgid ""
+"The level of detail available through the :mod:`sysconfig` API depends on "
+"the platform where your program is running.  On POSIX systems such as Linux "
+"and OS X, the ``Makefile`` used to build the interpreter and ``config.h`` "
+"header file generated for the build are parsed and all of the variables "
+"found within are available.  On non-POSIX-compliant systems such as Windows,"
+" the settings are limited to a few paths, filename extensions, and version "
+"details."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:69
+msgid ""
+"If you pass variable names to :func:`get_config_vars`, the return value is a"
+" :class:`list` created by appending all of the values for those variables "
+"together."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:77
+msgid ""
+"This example builds a list of all of the installation base directories where"
+" modules can be found on the current system."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:95
+msgid ""
+"When you only need a single configuration value, use :func:`get_config_var` "
+"to retrieve it."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:102
+msgid ""
+"If the variable is not found, :func:`get_config_var` returns ``None`` "
+"instead of raising an exception."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:120
+msgid "Installation Paths"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:122
+msgid ""
+":mod:`sysconfig` is primarily meant to be used by installation and packaging"
+" tools.  As a result, while it provides access to general configuration "
+"settings such as the interpreter version, it is primarily focused on the "
+"information needed to locate parts of the Python distribution currently "
+"installed on a system.  The locations used by for installing a package "
+"depend on the *scheme* used."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:129
+msgid ""
+"A scheme is a set of platform-specific default directories organized based "
+"on the platform's packaging standards and guidelines.  There are different "
+"schemes for installing into a site-wide location or a private directory "
+"owned by the user.  The full set of schemes can be accessed with "
+":func:`get_scheme_names`."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:139
+msgid ""
+"There is no concept of a \"current scheme\" per se.  The default scheme "
+"depends on the platform, and the actual scheme used depends on options given"
+" to the installation program.  If the current system is running a POSIX-"
+"compliant operating system, the default is ``posix_prefix``. Otherwise the "
+"default is ``os.name``."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:166
+msgid ""
+"Each scheme defines a set of paths used for installing packages.  For a list"
+" of the path names, use :func:`get_path_names`."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:173
+msgid ""
+"Some of the paths may be the same for a given scheme, but installers should "
+"not make any assumptions about what the actual paths are.  Each name has a "
+"particular semantic meaning, so the correct name should be used to find the "
+"path for a given file during installation."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:179
+msgid "Name"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:179
+msgid "Description"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:181
+msgid "stdlib"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:181
+msgid "Standard Python library files, not platform-specific"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:182
+msgid "platstdlib"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:182
+msgid "Standard Python library files, platform-specific"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:183
+msgid "platlib"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:183
+msgid "Site-specific, platform-specific files"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:184
+msgid "purelib"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:184
+msgid "Site-specific, non-platform-specific files"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:185
+msgid "include"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:185
+msgid "Header files, not platform-specific"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:186
+msgid "platinclude"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:186
+msgid "Header files, platform-specific"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:187
+msgid "scripts"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:187
+msgid "Executable script files"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:188
+msgid "data"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:188
+msgid "Data files"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:209
+msgid ""
+"Use :func:`get_paths` to retrieve the actual directories associated with a "
+"scheme."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:216
+msgid ""
+"This example shows the difference between the system-wide paths uses for "
+"``posix_prefix`` and the user-specific values for ``posix_user``."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:270
+msgid "For an individual path, call :func:`get_path`."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:276
+msgid ""
+"Using :func:`get_path` is equivalent to saving the value of "
+":func:`get_paths` and looking up the individual key in the dictionary. If "
+"you need several paths, :func:`get_paths` is more efficient because it does "
+"not recompute all of the paths each time."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:301
+msgid "Python Version and Platform"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:303
+msgid ""
+"While :mod:`sys` includes some basic platform identification (see :ref:`sys-"
+"build-time-info`), it is not specific enough to be used for installing "
+"binary packages because ``sys.platform`` does not always include information"
+" about hardware architecture, bit-ness, or other values that effect the "
+"compatibility of binary libraries.  For a more precise platform specifier, "
+"use :func:`get_platform`."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:314
+msgid ""
+"Although this sample output was prepared on an OS X 10.6 system, the "
+"interpreter is compiled for 10.5 compatibility, so that is the version "
+"number included in the platform string."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:330
+msgid ""
+"As a convenience, the interpreter version from ``sys.version_info`` is also "
+"available through :func:`get_python_version` in :mod:`sysconfig`."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:337
+msgid ""
+":func:`get_python_version` returns a string suitable for use when building a"
+" version-specific path."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:362
+msgid "`sysconfig <http://docs.python.org/library/sysconfig.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:362
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:365
+msgid ":mod:`distutils`"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:365
+msgid ":mod:`sysconfig` used to be part of the :mod:`distutils` package."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:368
+msgid "`distutils2 <http://hg.python.org/distutils2/>`_"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:368
+msgid "Updates to :mod:`distutils`, managed by Tarek Ziadé."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:372
+msgid ":mod:`site`"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:371
+msgid ""
+"The :mod:`site` module describes the paths searched when importing in more "
+"detail."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:375
+msgid ":mod:`os`"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:375
+msgid "Includes ``os.name``, the name of the current operating system."
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:377
+msgid ":mod:`sys`"
+msgstr ""
+
+#: ../../PyMOTW/sysconfig/index.rst:378
+msgid "Includes other build-time information such as the platform."
+msgstr ""

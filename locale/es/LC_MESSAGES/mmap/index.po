@@ -1,0 +1,190 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/mmap/index.rst:3
+msgid "mmap -- Memory-map files"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:8
+msgid "Memory-map files instead of reading the contents directly."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:9
+msgid "2.1 and later"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:11
+msgid ""
+"Memory-mapping a file uses the operating system virtual memory system to "
+"access the data on the filesystem directly, instead of using normal I/O "
+"functions.  Memory-mapping typically improves I/O performance because it "
+"does not involve a separate system call for each access and it does not "
+"require copying data between buffers -- the memory is accessed directly."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:18
+msgid ""
+"Memory-mapped files can be treated as mutable strings or file-like objects, "
+"depending on your need. A mapped file supports the expected file API "
+"methods, such as :func:`close`, :func:`flush`, :func:`read`, "
+":func:`readline`, :func:`seek`, :func:`tell`, and :func:`write`. It also "
+"supports the string API, with features such as slicing and methods like "
+":func:`find`."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:25
+msgid ""
+"All of the examples use the text file ``lorem.txt``, containing a bit of "
+"Lorem Ipsum. For reference, the text of the file is:"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:33
+msgid ""
+"There are differences in the arguments and behaviors for :func:`mmap` "
+"between Unix and Windows, which are not discussed below. For more details, "
+"refer to the standard library documentation."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:39
+msgid "Reading"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:41
+msgid ""
+"Use the :func:`mmap` function to create a memory-mapped file.  The first "
+"argument is a file descriptor, either from the :func:`fileno` method of a "
+":class:`file` object or from :func:`os.open`. The caller is responsible for "
+"opening the file before invoking :func:`mmap`, and closing it after it is no"
+" longer needed."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:47
+msgid ""
+"The second argument to :func:`mmap` is a size in bytes for the portion of "
+"the file to map. If the value is ``0``, the entire file is mapped. If the "
+"size is larger than the current size of the file, the file is extended."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:54
+msgid "You cannot create a zero-length mapping under Windows."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:56
+msgid ""
+"An optional keyword argument, *access*, is supported by both platforms. Use "
+":const:`ACCESS_READ` for read-only access, :const:`ACCESS_WRITE` for write-"
+"through (assignments to the memory go directly to the file), or "
+":const:`ACCESS_COPY` for copy-on-write (assignments to memory are not "
+"written to the file)."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:66
+msgid ""
+"The file pointer tracks the last byte accessed through a slice operation.  "
+"In this example, the pointer moves ahead 10 bytes after the first read.  It "
+"is then reset to the beginning of the file by the slice operation, and moved"
+" ahead 10 bytes again by the slice.  After the slice operation, calling "
+":func:`read` again gives the bytes 11-20 in the file."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:88
+msgid "Writing"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:90
+msgid ""
+"To set up the memory mapped file to receive updates, start by opening it for"
+" appending with mode ``'r+'`` (not ``'w'``) before mapping it. Then use any "
+"of the API method that change the data (:func:`write`, assignment to a "
+"slice, etc.)."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:95
+msgid ""
+"Here's an example using the default access mode of :const:`ACCESS_WRITE` and"
+" assigning to a slice to modify part of a line in place:"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:103
+msgid "The word \"consectetuer\" is replaced in the middle of the first line:"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:125
+msgid "ACCESS_COPY Mode"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:127
+msgid ""
+"Using the access setting :const:`ACCESS_COPY` does not write changes to the "
+"file on disk."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:134
+msgid ""
+"It is necessary to rewind the file handle in this example separately from "
+"the mmap handle because the internal state of the two objects is maintained "
+"separately."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:159
+msgid "Regular Expressions"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:161
+msgid ""
+"Since a memory mapped file can act like a string, it can be used with other "
+"modules that operate on strings, such as regular expressions. This example "
+"finds all of the sentences with \"nulla\" in them."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:170
+msgid ""
+"Because the pattern includes two groups, the return value from "
+":func:`findall` is a sequence of tuples. The :command:`print` statement "
+"pulls out the sentence match and replaces newlines with spaces so the result"
+" prints on a single line."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:192
+msgid "`mmap <http://docs.python.org/lib/module-mmap.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:192
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:195
+msgid ":mod:`os`"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:195
+msgid "The os module."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:199
+msgid ":mod:`contextlib`"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:198
+msgid ""
+"Use the :func:`closing` function to create a context manager for a memory "
+"mapped file."
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:201
+msgid ":mod:`re`"
+msgstr ""
+
+#: ../../PyMOTW/mmap/index.rst:202
+msgid "Regular expressions."
+msgstr ""

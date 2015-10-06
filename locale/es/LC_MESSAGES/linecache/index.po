@@ -1,0 +1,119 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/linecache/index.rst:3
+msgid "linecache -- Read text files efficiently"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:8
+msgid ""
+"Retrieve lines of text from files or imported python modules, holding a "
+"cache of the results to make reading many lines from the same file more "
+"efficient."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:9
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:11
+msgid ""
+"The linecache module is used extensively throughout the Python standard "
+"library when dealing with Python source files. The implementation of the "
+"cache simply holds the contents of files, parsed into separate lines, in a "
+"dictionary in memory. The API returns the requested line(s) by indexing into"
+" a list. The time savings is from (repeatedly) reading the file and parsing "
+"lines to find the one desired. This is especially useful when looking for "
+"multiple lines from the same file, such as when producing a traceback for an"
+" error report."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:21
+msgid "Test Data"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:23
+msgid ""
+"We will use some text produced by the Lorem Ipsum generator as sample input."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:30
+msgid "Reading Specific Lines"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:32
+msgid ""
+"Reading the 5th line from the file is a simple one-liner. Notice that the "
+"line numbers in the linecache module start with 1, but if we split the "
+"string ourselves we start indexing the array from 0. We also need to strip "
+"the trailing newline from the value returned from the cache."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:58
+msgid "Handling Blank Lines"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:60
+msgid "Next let's see what happens if the line we want is empty:"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:79
+msgid "Error Handling"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:81
+msgid ""
+"If the requested line number falls out of the range of valid lines in the "
+"file, linecache returns an empty string."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:101
+msgid "The module never raises an exception, even if the file does not exist:"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:120
+msgid "Python Source"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:122
+msgid ""
+"Since :mod:`linecache` is used so heavily when producing tracebacks, one of "
+"the key features is the ability to find Python source modules in the "
+":ref:`import path <sys-path>` by specifying the base name of the module. The"
+" cache population code in :mod:`linecache` searches ``sys.path`` for the "
+"module if it cannot find the file directly."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:151
+msgid "`linecache <http://docs.python.org/library/linecache.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:151
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:154
+msgid "http://www.ipsum.com/"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:154
+msgid "Lorem Ipsum generator."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:156
+msgid ":ref:`article-file-access`"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:157
+msgid "Other tools for working with files."
+msgstr ""

@@ -1,0 +1,177 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sys/limits.rst:5
+msgid "Memory Management and Limits"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:7
+msgid ""
+":mod:`sys` includes several functions for understanding and controlling "
+"memory usage."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:11
+msgid "Reference Counts"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:13
+msgid ""
+"Python uses *reference counting* and *garbage collection* for automatic "
+"memory management.  An object is automatically marked to be collected when "
+"its reference count drops to zero.  To examine the reference count of an "
+"existing object, use :func:`getrefcount`."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:22
+msgid ""
+"The count is actually one higher than expected because there is a temporary "
+"reference to the object held by :func:`getrefcount` itself."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:41
+msgid ":mod:`gc`"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:42
+msgid "Control the garbage collector via the functions exposed in :mod:`gc`."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:45
+msgid "Object Size"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:47
+msgid ""
+"Knowing how many references an object has may help find cycles or a memory "
+"leak, but it isn't enough to determine what objects are consuming the *most*"
+" memory.  That requires knowledge about how big objects are."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:56
+msgid ":func:`getsizeof` reports the size in bytes."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:80
+msgid ""
+"The reported size for a custom class does not include the size of the "
+"attribute values."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:87
+msgid ""
+"This can give a false impression of the amount of memory being consumed."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:104
+msgid ""
+"For a more complete estimate of the space used by a class, provide a "
+":func:`__sizeof__` method to compute the value by aggregating the sizes of "
+"attributes of an object."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:112
+msgid ""
+"This version adds the base size of the object to the sizes of all of the "
+"attributes stored in the internal :data:`__dict__`."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:128
+msgid "Recursion"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:130
+msgid ""
+"Allowing infinite recursion in a Python application may introduce a stack "
+"overflow in the interpreter itself, leading to a crash. To eliminate this "
+"situation, the interpreter provides a way to control the maximum recursion "
+"depth using :func:`setrecursionlimit` and :func:`getrecursionlimit`."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:140
+msgid ""
+"Once the recursion limit is reached, the interpreter raises a "
+":ref:`RuntimeError <exceptions-RuntimeError>` exception so the program has "
+"an opportunity to handle the situation."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:168
+msgid "Maximum Values"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:170
+msgid ""
+"Along with the runtime configurable values, :mod:`sys` includes variables "
+"defining the maximum values for types that vary from system to system."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:178
+msgid ""
+":const:`maxint` is the largest representable regular integer. "
+":const:`maxsize` is the maximum size of a list, dictionary, string, or other"
+" data structure dictated by the C interpreter's size type. "
+":const:`maxunicode` is the largest integer Unicode point supported by the "
+"interpreter as currently configured."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:199
+msgid "Floating Point Values"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:201
+msgid ""
+"The structure :data:`float_info` contains information about the floating "
+"point type representation used by the interpreter, based on the underlying "
+"system's float implementation."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:211
+msgid ""
+"These values depend on the compiler and underlying system.  These examples "
+"were produced on OS X 10.6.4."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:244
+msgid ""
+"The ``float.h`` C header file for the local compiler contains more details "
+"about these settings."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:248
+msgid "Byte Ordering"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:250
+msgid ":const:`byteorder` is set to the native byte order."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:256
+msgid ""
+"The value is either ``big`` for big-endian or ``little`` for little-endian."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:274
+msgid "`Wikipedia: Endianness <http://en.wikipedia.org/wiki/Byte_order>`__"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:274
+msgid "Description of big and little endian memory systems."
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:276
+msgid ":mod:`array`, :mod:`struct`"
+msgstr ""
+
+#: ../../PyMOTW/sys/limits.rst:277
+msgid "Other modules that depend on the byte order."
+msgstr ""

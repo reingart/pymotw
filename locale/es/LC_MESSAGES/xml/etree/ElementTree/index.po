@@ -1,0 +1,79 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:3
+msgid "xml.etree.ElementTree -- XML Manipulation API"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:8
+msgid "Generate and parse XML documents"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:9
+msgid "2.5 and later"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:11
+msgid ""
+"The ElementTree library was contributed to the standard library by Fredrick "
+"Lundh.  It includes tools for parsing XML using event-based and document-"
+"based APIs, searching parsed documents with XPath expressions, and creating "
+"new or modifying existing documents."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:18
+msgid ""
+"All of the examples in this section use the Python implementation of "
+"ElementTree for simplicity, but there is also a C implementation in "
+":mod:`xml.etree.cElementTree`."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:31
+msgid ""
+"`xml.etree.ElementTree "
+"<http://docs.python.org/library/xml.etree.elementtree.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:31
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:35
+msgid "`ElementTree Overview <http://effbot.org/zone/element-index.htm>`_"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:34
+msgid ""
+"Fredrick Lundh's original documentation and links to the development "
+"versions of the ElementTree library."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:38
+msgid ""
+"`Process XML in Python with ElementTree "
+"<http://www.ibm.com/developerworks/library/x-matters28/>`_"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:38
+msgid "IBM DeveloperWorks article by David Mertz."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:40
+msgid "`lxml.etree <http://codespeak.net/lxml/>`_"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:41
+msgid ""
+"A separate implementation of the ElementTree API based on libxml2 with more "
+"complete XPath support."
+msgstr ""

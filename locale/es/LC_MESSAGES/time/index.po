@@ -1,0 +1,214 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/time/index.rst:3
+msgid "time -- Functions for manipulating clock time"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:8
+msgid "Functions for manipulating clock time."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:9
+msgid "1.4 or earlier"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:11
+msgid ""
+"The :mod:`time` module exposes C library functions for manipulating dates "
+"and times.  Since it is tied to the underlying C implementation, some "
+"details (such as the start of the epoch and maximum date value supported) "
+"are platform-specific.  Refer to the library documentation for complete "
+"details."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:18
+msgid "Wall Clock Time"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:20
+msgid ""
+"One of the core functions of the :mod:`time` module is :func:`time()`, which"
+" returns the number of seconds since the start of the epoch as a floating "
+"point value."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:28
+msgid ""
+"Although the value is always a float, actual precision is platform-"
+"dependent."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:36
+msgid ""
+"The float representation is useful when storing or comparing dates, but not "
+"as useful for producing human readable representations. For logging or "
+"printing time :func:`ctime()` can be more useful."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:44
+msgid ""
+"Here the second output line shows how to use :func:`ctime()` to format a "
+"time value other than the current time."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:54
+msgid "Processor Clock Time"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:56
+msgid ""
+"While :func:`time()` returns a wall clock time, :func:`clock()` returns "
+"processor clock time.  The values returned from :func:`clock()` should be "
+"used for performance testing, benchmarking, etc. since they reflect the "
+"actual time used by the program, and can be more precise than the values "
+"from :func:`time()`."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:67
+msgid ""
+"In this example, the formatted :func:`ctime()` is printed along with the "
+"floating point values from :func:`time()`, and :func:`clock()` for each "
+"iteration through the loop. If you want to run the example on your system, "
+"you may have to add more cycles to the inner loop or work with a larger "
+"amount of data to actually see a difference."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:82
+msgid ""
+"Typically, the processor clock doesn't tick if your program isn't doing "
+"anything."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:89
+msgid ""
+"In this example, the loop does very little work by going to sleep after each"
+" iteration. The :func:`time()` value increases even while the app is asleep,"
+" but the :func:`clock()` value does not."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:107
+msgid ""
+"Calling :func:`sleep()` yields control from the current thread and asks it "
+"to wait for the system to wake it back up. If your program has only one "
+"thread, this effectively blocks the app and it does no work."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:112
+msgid "struct_time"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:114
+msgid ""
+"Storing times as elapsed seconds is useful in some situations, but there are"
+" times when you need to have access to the individual fields of a date "
+"(year, month, etc.). The :mod:`time` module defines :class:`struct_time` for"
+" holding date and time values with components broken out so they are easy to"
+" access. There are several functions that work with :class:`struct_time` "
+"values instead of floats."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:125
+msgid ""
+":func:`gmtime()` returns the current time in UTC. :func:`localtime()` "
+"returns the current time with the current time zone applied. "
+":func:`mktime()` takes a :class:`struct_time` and converts it to the "
+"floating point representation."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:143
+msgid "Parsing and Formatting Times"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:145
+msgid ""
+"The two functions :func:`strptime()` and :func:`strftime()` convert between "
+"struct_time and string representations of time values. There is a long list "
+"of formatting instructions available to support input and output in "
+"different styles. The complete list is documented in the library "
+"documentation for the time module."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:151
+msgid ""
+"This example converts the current time from a string, to a "
+":class:`struct_time` instance, and back to a string."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:158
+msgid ""
+"The output string is not exactly like the input, since the day of the month "
+"is prefixed with a zero."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:169
+msgid "Working with Time Zones"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:171
+msgid ""
+"The functions for determining the current time depend on having the time "
+"zone set, either by your program or by using a default time zone set for the"
+" system. Changing the time zone does not change the actual time, just the "
+"way it is represented."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:176
+msgid ""
+"To change the time zone, set the environment variable ``TZ``, then call "
+":func:`tzset()`.  Using TZ, you can specify the time zone with a lot of "
+"detail, right down to the start and stop times for daylight savings time. It"
+" is usually easier to use the time zone name and let the underlying "
+"libraries derive the other information, though."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:182
+msgid ""
+"This example program changes the time zone to a few different values and "
+"shows how the changes affect other settings in the time module."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:189
+msgid ""
+"My default time zone is US/Eastern, so setting TZ to that has no effect. The"
+" other zones used change the tzname, daylight flag, and timezone offset "
+"value."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:234
+msgid "`time <http://docs.python.org/lib/module-time.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:234
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:237
+msgid ":mod:`datetime`"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:237
+msgid ""
+"The datetime module includes other classes for doing calculations with dates"
+" and times."
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:240
+msgid ":mod:`calendar`"
+msgstr ""
+
+#: ../../PyMOTW/time/index.rst:240
+msgid ""
+"Work with higher-level date functions to produce calendars or calculate "
+"recurring events."
+msgstr ""

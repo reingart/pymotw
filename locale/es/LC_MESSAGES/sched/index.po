@@ -1,0 +1,167 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sched/index.rst:3
+msgid "sched -- Generic event scheduler."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:8
+msgid "Generic event scheduler."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:9
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:11
+msgid ""
+"The :mod:`sched` module implements a generic event scheduler for running "
+"tasks at specific times. The scheduler class uses a *time* function to learn"
+" the current time, and a *delay* function to wait for a specific period of "
+"time. The actual units of time are not important, which makes the interface "
+"flexible enough to be used for many purposes."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:18
+msgid ""
+"The *time* function is called without any arguments, and should return a "
+"number representing the current time. The *delay* function is called with a "
+"single integer argument, using the same scale as the time function, and "
+"should wait that many time units before returning. For example, the "
+"``time.time()`` and ``time.sleep()`` functions meet these requirements."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:25
+msgid ""
+"To support multi-threaded applications, the delay function is called with "
+"argument 0 after each event is generated, to ensure that other threads also "
+"have a chance to run."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:30
+msgid "Running Events With a Delay"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:32
+msgid ""
+"Events can be scheduled to run after a delay, or at a specific time. To "
+"schedule them with a delay, use the ``enter()`` method, which takes 4 "
+"arguments:"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:36
+msgid "A number representing the delay"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:37
+msgid "A priority value"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:38
+msgid "The function to call"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:39
+msgid "A tuple of arguments for the function"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:41
+msgid ""
+"This example schedules 2 different events to run after 2 and 3 seconds "
+"respectively. When the event's time comes up, ``print_event()`` is called "
+"and prints the current time and the name argument passed to the event."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:50
+msgid "The output will look something like this:"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:66
+msgid ""
+"The time printed for the first event is 2 seconds after start, and the time "
+"for the second event is 3 seconds after start."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:70
+msgid "Overlapping Events"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:72
+msgid ""
+"The call to ``run()`` blocks until all of the events have been processed. "
+"Each event is run in the same thread, so if an event takes longer to run "
+"than the delay between events, there will be overlap. The overlap is "
+"resolved by postponing the later event. No events are lost, but some events "
+"may be called later than they were scheduled. In the next example, "
+"``long_event()`` sleeps but it could just as easily delay by performing a "
+"long calculation or by blocking on I/O."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:85
+msgid ""
+"The result is the second event is run immediately after the first finishes, "
+"since the first event took long enough to push the clock past the desired "
+"start time of the second event."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:107
+msgid "Event Priorities"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:109
+msgid ""
+"If more than one event is scheduled for the same time their priority values "
+"are used to determine the order they are run."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:116
+msgid ""
+"This example needs to ensure that they are scheduled for the exact same "
+"time, so the ``enterabs()`` method is used instead of ``enter()``. The first"
+" argument to ``enterabs()`` is the time to run the event, instead of the "
+"amount of time to delay."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:137
+msgid "Canceling Events"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:139
+msgid ""
+"Both ``enter()`` and ``enterabs()`` return a reference to the event which "
+"can be used to cancel it later. Since ``run()`` blocks, the event has to be "
+"canceled in a different thread. For this example, a thread is started to run"
+" the scheduler and the main processing thread is used to cancel the event."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:149
+msgid ""
+"Two events were scheduled, but the first was later canceled. Only the second"
+" event runs, so the counter variable is only incremented one time."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:172
+msgid "`sched <http://docs.python.org/lib/module-sched.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:172
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:174
+msgid ":mod:`time`"
+msgstr ""
+
+#: ../../PyMOTW/sched/index.rst:175
+msgid "The time module."
+msgstr ""

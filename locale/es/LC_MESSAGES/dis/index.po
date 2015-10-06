@@ -1,0 +1,307 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/dis/index.rst:3
+msgid "dis -- Python Bytecode Disassembler"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:8
+msgid ""
+"Convert code objects to a human-readable representation of the bytecodes for"
+" analysis."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:11
+msgid ""
+"The :mod:`dis` module includes functions for working with Python bytecode by"
+" \"disassembling\" it into a more human-readable form. Reviewing the "
+"bytecodes being executed by the interpreter is a good way to hand-tune tight"
+" loops and perform other kinds of optimizations. It is also useful for "
+"finding race conditions in multi-threaded applications, since you can "
+"estimate the point in your code where thread control may switch."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:20
+msgid "Basic Disassembly"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:22
+msgid ""
+"The function ``dis.dis()`` prints the disassembled representation of a "
+"Python code source (module, class, method, function, or code object). We can"
+" disassemble a module such as:"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:29
+msgid ""
+"by running :mod:`dis` from the command line.  The output is organized into "
+"columns with the original source line number, the instruction \"address\" "
+"within the code object, the opcode name, and any arguments passed to the "
+"opcode."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:52
+msgid ""
+"In this case, the source translates to 5 different operations to create and "
+"populate the dictionary, then save the results to a local variable.  Since "
+"the Python interpreter is stack-based, the first steps are to put the "
+"constants onto the stack in the correct order with LOAD_CONST, and then use "
+"STORE_MAP to pop off the new key and value to be added to the dictionary.  "
+"The resulting object is bound to the name \"my_dict\" with STORE_NAME."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:62
+msgid "Disassembling Functions"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:64
+msgid ""
+"Unfortunately, disassembling the entire module does not recurse into "
+"functions automatically.  For example, if we start with this module:"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:70
+msgid ""
+"the results show loading the code object onto the stack and then turning it "
+"into a function (LOAD_CONST, MAKE_FUNCTION), but *not* the body of the "
+"function."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:107
+msgid "To see inside the function, we need to pass it to ``dis.dis()``."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:134
+msgid "Classes"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:136
+msgid ""
+"You can also pass classes to ``dis``, in which case all of the methods are "
+"disassembled in turn."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:169
+msgid "Using Disassembly to Debug"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:171
+msgid ""
+"Sometimes when debugging an exception it can be useful to see which bytecode"
+" caused a problem.  There are a couple of ways to disassemble the code "
+"around an error."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:175
+msgid ""
+"The first is by using ``dis.dis()`` in the interactive interpreter to report"
+" about the last exception.  If no argument is passed to ``dis``, then it "
+"looks for an exception and shows the disassembly of the top of the stack "
+"that caused it."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:201
+msgid ""
+"Notice the ``-->`` indicating the opcode that caused the error.  There is no"
+" ``i`` variable defined, so the value associated with the name can't be "
+"loaded onto the stack."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:205
+msgid ""
+"Within your code you can also print the information about an active "
+"traceback by passing it to ``dis.distb()`` directly.  In this example, there"
+" is a DivideByZero exception, but since the formula has two divisions it "
+"isn't clear which part is zero."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:213
+msgid ""
+"The bad value is easy to spot when it is loaded onto the stack in the "
+"disassembled version.  The bad operation is highlighted with the ``-->``, "
+"and we just need to look up a few lines higher to find where ``i``'s ``0`` "
+"value was pushed onto the stack."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:286
+msgid "Performance Analysis of Loops"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:288
+msgid ""
+"Aside from debugging errors, :mod:`dis` can also help you identify "
+"performance issues in your code. Examining the disassembled code is "
+"especially useful with tight loops where the number of exposed Python "
+"instructions is low but they translate to an inefficient set of bytecodes.  "
+"We can see how the disassembly is helpful by examining a few different "
+"implementations of a class, ``Dictionary``, that reads a list of words and "
+"groups them by their first letter."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:296
+msgid "First, the test driver application:"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:302
+msgid ""
+"We can use ``dis_test_loop.py`` to run each incarnation of the "
+"``Dictionary`` class."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:305
+msgid ""
+"A straightforward implementation of ``Dictionary`` might look something "
+"like:"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:311
+msgid ""
+"The output shows this version taking 0.1074 seconds to load the 234936 words"
+" in my copy of ``/usr/share/dict/words`` on OS X.  That's not too bad, but "
+"as you can see from the disassembly below, the loop is doing more work than "
+"it needs to.  As it enters the loop in opcode 13, it sets up an exception "
+"context (``SETUP_EXCEPT``).  Then it takes 6 opcodes to find "
+"``self.by_letter[word[0]]`` before appending ``word`` to the list.  If there"
+" is an exception because ``word[0]`` isn't in the dictionary yet, the "
+"exception handler does all of the same work to determine ``word[0]`` (3 "
+"opcodes) and sets ``self.by_letter[word[0]]`` to a new list containing the "
+"word."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:375
+msgid ""
+"One technique to eliminate the exception setup is to pre-populate "
+"``self.by_letter`` with one list for each letter of the alphabet. That means"
+" we should always find the list we want for the new word, and can just do "
+"the lookup and save the value."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:384
+msgid ""
+"The change cuts the number of opcodes in half, but only shaves the time down"
+" to 0.0984 seconds.  Obviously the exception handling had some overhead, but"
+" not a huge amount."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:416
+msgid ""
+"We can further improve the performance by moving the lookup for "
+"``self.by_letter`` outside of the loop (the value doesn't change, after "
+"all)."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:423
+msgid ""
+"Opcodes 0-6 now find the value of ``self.by_letter`` and save it as a local "
+"variable ``by_letter``.  Using a local variable only takes a single opcode, "
+"instead of 2 (statement 22 uses ``LOAD_FAST`` to place the dictionary onto "
+"the stack).  After this change, the run time is down to 0.0842 seconds."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:460
+msgid ""
+"A further optimization, suggested by Brandon Rhodes, is to eliminate the "
+"Python version of the ``for`` loop entirely. If we use "
+":ref:`itertools.groupby() <itertools-groupby>` to arrange the input, the "
+"iteration is moved to C.  We can do this safely because we know the inputs "
+"are already sorted.  If you didn't know they were sorted you would need to "
+"sort them first."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:470
+msgid ""
+"The :mod:`itertools` version takes only 0.0543 seconds to run, just over "
+"half of the original time."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:505
+msgid "Compiler Optimizations"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:507
+msgid ""
+"Disassembling compiled source also exposes some of the optimizations made by"
+" the compiler.  For example, literal expressions are folded during "
+"compilation, when possible."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:514
+msgid ""
+"The expressions on lines 5-7 can be computed at compilation time and "
+"collapsed into single LOAD_CONST instructions because nothing in the "
+"expression can change the way the operation is performed.  That isn't true "
+"about lines 10-12. Because a variable is involved in those expressions, and "
+"the variable might refer to an object that overloads the operator involved, "
+"the evaluation has to be delayed to runtime."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:569
+msgid "`dis <http://docs.python.org/library/dis.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:567
+msgid ""
+"The standard library documentation for this module, including the list of "
+"`bytecode instructions <http://docs.python.org/library/dis.html#python-"
+"bytecode-instructions>`_."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:572
+msgid "*Python Essential Reference*, 4th Edition, David M. Beazley"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:572
+msgid "http://www.informit.com/store/product.aspx?isbn=0672329786"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:576
+msgid ""
+"`thomas.apestaart.org \"Python Disassembly\" "
+"<http://thomas.apestaart.org/log/?p=927>`_"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:575
+msgid ""
+"A short discussion of the difference between storing values in a dictionary "
+"between Python 2.5 and 2.6."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:580
+msgid ""
+"`Why is looping over range() in Python faster than using a while loop? "
+"<http://stackoverflow.com/questions/869229/why-is-looping-over-range-in-"
+"python-faster-than-using-a-while-loop>`_"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:579
+msgid ""
+"A discussion on StackOverflow.com comparing 2 looping examples via their "
+"disassembled bytecodes."
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:585
+msgid ""
+"`Decorator for binding constants at compile time "
+"<http://code.activestate.com/recipes/277940/>`_"
+msgstr ""
+
+#: ../../PyMOTW/dis/index.rst:583
+msgid ""
+"Python Cookbook recipe by Raymond Hettinger and Skip Montanaro with a "
+"function decorator that re-writes the bytecodes for a function to insert "
+"global constants to avoid runtime name lookups."
+msgstr ""

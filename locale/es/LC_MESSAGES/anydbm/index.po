@@ -1,0 +1,148 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/anydbm/index.rst:3
+msgid "anydbm -- Access to DBM-style databases"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:8
+msgid ""
+"anydbm provides a generic dictionary-like interface to DBM-style, string-"
+"keyed databases"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:11
+msgid ""
+"anydbm is a front-end for DBM-style databases that use simple string values "
+"as keys to access records containing strings.  It uses the :mod:`whichdb` "
+"module to identify :mod:`dbhash`, :mod:`gdbm`, and :mod:`dbm` databases, "
+"then opens them with the appropriate module.  It is used as a backend for "
+":mod:`shelve`, which knows how to store objects using :mod:`pickle`."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:19
+msgid "Creating a New Database"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:21
+msgid ""
+"The storage format for new databases is selected by looking for each of "
+"these modules in order:"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:24
+msgid ":mod:`dbhash`"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:25
+msgid ":mod:`gdbm`"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:26
+msgid ":mod:`dbm`"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:27
+msgid ":mod:`dumbdbm`"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:29
+msgid ""
+"The :func:`open` function takes *flags* to control how the database file is "
+"managed.  To create a new database when necessary, use ``'c'``.  To always "
+"create a new database, use ``'n'``."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:51
+msgid ""
+"In this example, the file is always re-initialized.  To see what type of "
+"database was created, we can use :mod:`whichdb`."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:58
+msgid ""
+"Your results may vary, depending on what modules are installed on your "
+"system."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:75
+msgid "Opening an Existing Database"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:77
+msgid ""
+"To open an existing database, use *flags* of either ``'r'`` (for read-only) "
+"or ``'w'`` (for read-write).  You don't need to worry about the format, "
+"because existing databases are automatically given to :mod:`whichdb` to "
+"identify.  If a file can be identified, the appropriate module is used to "
+"open it."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:87
+msgid ""
+"Once open, ``db`` is a dictionary-like object, with support for the usual "
+"methods:"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:107
+msgid "Error Cases"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:109
+msgid "The keys of the database need to be strings."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:115
+msgid ""
+"Passing another type results in a :ref:`TypeError <exceptions-TypeError>`."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:130
+msgid "Values must be strings or ``None``."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:136
+msgid ""
+"A similar :ref:`TypeError <exceptions-TypeError>` is raised if a value is "
+"not a string."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:154
+msgid "Module :mod:`shelve`"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:154
+msgid ""
+"Examples for the :mod:`shelve` module, which uses :mod:`anydbm` to store "
+"data."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:157
+msgid "`anydbm <http://docs.python.org/library/anydbm.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:157
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:159
+msgid ":ref:`article-data-persistence`"
+msgstr ""
+
+#: ../../PyMOTW/anydbm/index.rst:160
+msgid "Descriptions of other modules for storing data."
+msgstr ""

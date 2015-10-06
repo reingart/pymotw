@@ -1,0 +1,299 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/site/index.rst:3
+msgid "site -- Site-wide configuration"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:8
+msgid ""
+"The :mod:`site` module handles site-specific configuration, especially the "
+":ref:`import path <sys-path>`."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:12
+msgid "Import Path"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:14
+msgid ""
+":mod:`site` is automatically imported each time the interpreter starts up.  "
+"On import, it extends :ref:`sys.path <sys-path>` with site-specific names "
+"constructed by combining the prefix values :ref:`sys.prefix <sys-prefix>` "
+"and :ref:`sys.exec_prefix <sys-prefix>` with several suffixes.  The prefix "
+"values used are saved in the module-level variable ``PREFIXES`` for "
+"reference later.  Under Windows, the suffixes are an empty string and ``lib"
+"/site-packages``. For Unix-like platforms, the values are "
+"``lib/python$version/site-packages`` and ``lib/site-python``."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:28
+msgid ""
+"Each of the paths resulting from the combinations is tested, and those that "
+"exist are added to :ref:`sys.path <sys-path>`."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:46
+msgid "User Directories"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:48
+msgid ""
+"In addition to the global site-packages paths, :mod:`site` is responsible "
+"for adding the user-specific locations to the import path. The user-specific"
+" paths are all based on the ``USER_BASE`` directory, which usually located "
+"in a part of the filesystem owned (and writable) by the current user.  "
+"Inside the ``USER_BASE`` is a site-packages directory, with the path "
+"accessible as ``USER_SITE``."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:59
+msgid ""
+"The ``USER_SITE`` path name is created using the same platform-specific "
+"values described above."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:75
+msgid ""
+"The user base directory can be set through the ``PYTHONUSERBASE`` "
+"environment variable, and has platform-specific defaults (``~/Python$version"
+"/site-packages`` for Windows and ``~/.local`` for non-Windows)."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:80
+msgid ""
+"You can check the ``USER_BASE`` value from outside of your Python program by"
+" running :mod:`site` from the command line.  :mod:`site` will give you the "
+"name of the directory whether or not it exists, but it is only added to the "
+"import path when it does."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:112
+msgid ""
+"The user directory is disabled under some circumstances that would pose "
+"security issues.  For example, if the process is running with a different "
+"effective user or group id than the actual user that started it.  Your "
+"application can check the setting by examining ``ENABLE_USER_SITE``."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:122
+msgid ""
+"The user directory can also be explicitly disabled on the command line with "
+":option:`-s`."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:145
+msgid "Path Configuration Files"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:147
+msgid ""
+"As paths are added to the import path, they are also scanned for *path "
+"configuration files*.  A path configuration file is a plain text file with "
+"the extension ``.pth``.  Each line in the file can take one of four forms:"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:152
+msgid ""
+"A full or relative path to another location that should be added to the "
+"import path."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:154
+msgid ""
+"A Python statement to be executed.  All such lines must begin with an "
+"``import`` statement."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:156
+msgid "Blank lines are ignored."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:157
+msgid "A line starting with ``#`` is treated as a comment and ignored."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:159
+msgid ""
+"Path configuration files can be used to extend the import path to look in "
+"locations that would not have been added automatically.  For example, "
+"Distribute_ adds a path to ``easy-install.pth`` when it installs a package "
+"in \"develop\" mode using ``python setup.py develop``."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:165
+msgid ""
+"The function for extending ``sys.path`` is public, so we can use it in "
+"example programs to show how the path configuration files work.  Given a "
+"directory ``with_modules`` containing the file ``mymodule.py`` with this "
+"``print`` statement showing how the module was imported:"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:174
+msgid ""
+"This script shows how :func:`addsitedir()` extends the import path so the "
+"interpreter can find the desired module."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:181
+msgid ""
+"After the directory containing the module is added to ``sys.path``, the "
+"script can import :mod:`mymodule` without issue."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:202
+msgid ""
+"If the directory given to :func:`addsitedir()` includes any files matching "
+"the pattern ``*.pth``, they are loaded as path configuration files.  For "
+"example, if we create ``with_pth/pymotw.pth`` containing:"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:208
+msgid ""
+"and copy ``mymodule.py`` to ``with_pth/subdir/mymodule.py``, then we can "
+"import it by adding ``with_pth`` as a site directory, even though the module"
+" is not in that directory."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:231
+msgid ""
+"If a site directory contains multiple ``.pth`` files, they are processed in "
+"alphabetical order."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:259
+msgid ""
+"In this case, the module is found in ``with_multiple_pth/from_a`` because "
+"``a.pth`` is read before ``b.pth``."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:287
+msgid "sitecustomize"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:289
+msgid ""
+"The :mod:`site` module is also responsible for loading site-wide "
+"customization defined by the local site owner in a :mod:`sitecustomize` "
+"module.  Uses for :mod:`sitecustomize` include extending the import path and"
+" `enabling coverage "
+"<http://nedbatchelder.com/blog/201001/running_code_at_python_startup.html>`__,"
+" profiling, or other development tools."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:296
+msgid ""
+"For example, this ``sitecustomize.py`` script extends the import path with a"
+" directory based on the current platform.  The platform-specific path in "
+"``/opt/python`` is added to the import path, so any packages installed there"
+" can be imported.  A system like this is useful for sharing packages "
+"containing compiled extension modules between hosts on a network via a "
+"shared filesystem.  Only the ``sitecustomize.py`` script needs to be "
+"installed on each host, and the other packages can be accessed from the file"
+" server."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:309
+msgid ""
+"A simple script can be used to show that ``sitecustomize.py`` is imported "
+"before Python starts running your own code."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:316
+msgid ""
+"Since :mod:`sitecustomize` is meant for system-wide configuration, it should"
+" be installed somewere in the default path (usally in the ``site-packages`` "
+"directory).  This example sets ``PYTHONPATH`` explicitly to ensure the "
+"module is picked up."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:341
+msgid "usercustomize"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:343
+msgid ""
+"Similar to :mod:`sitecustomize`, the :mod:`usercustomize` module can be used"
+" to set up user-specific settings each time the interpreter starts up.  "
+":mod:`usercustomize` is loaded after :mod:`sitecustomize`, so site-wide "
+"customizations can be overridden."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:348
+msgid ""
+"In environments where a user's home directory is shared on several servers "
+"running different operating systems or versions, the standard user directory"
+" mechanism may not work for user-specific installations of packages.  In "
+"these cases, platform-specific directory tree can be used instead."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:358
+msgid ""
+"Another simple script, similar to the one used for :mod:`sitecustomize`, can"
+" be used to show that ``usercustomize.py`` is imported before Python starts "
+"running your own code."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:366
+msgid ""
+"Since :mod:`usercustomize` is meant for user-specific configuration for a "
+"user, it should be installed somewhere in the user's default path, but not "
+"on the site-wide path. The default ``USER_BASE`` directory is a good "
+"location.  This example sets ``PYTHONPATH`` explicitly to ensure the module "
+"is picked up."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:388
+msgid ""
+"When the user site directory feature is disabled, :mod:`usercustomize` is "
+"not imported, whether it is located in the user site directory or elsewhere."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:408
+msgid "Disabling site"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:410
+msgid ""
+"To maintain backwards-compatibility with versions of Python from before the "
+"automatic import was added, the interpreter accepts an :option:`-S` option."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:431
+msgid "`site <http://docs.python.org/library/site.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:431
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:434
+msgid ":ref:`sys-imports`"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:434
+msgid "Description of how the import path defined in :mod:`sys` works."
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:438
+msgid ""
+"`Running code at Python startup "
+"<http://nedbatchelder.com/blog/201001/running_code_at_python_startup.html>`__"
+msgstr ""
+
+#: ../../PyMOTW/site/index.rst:437
+msgid ""
+"Post from Ned Batchelder discussing ways to cause the Python interpreter to "
+"run your custom initialization code before starting the main program "
+"execution."
+msgstr ""

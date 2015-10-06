@@ -1,0 +1,209 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/weakref/index.rst:3
+msgid "weakref -- Garbage-collectable references to objects"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:8
+msgid ""
+"Refer to an \"expensive\" object, but allow it to be garbage collected if "
+"there are no other non-weak references."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:9
+msgid "Since 2.1"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:11
+msgid ""
+"The :mod:`weakref` module supports weak references to objects. A normal "
+"reference increments the reference count on the object and prevents it from "
+"being garbage collected. This is not always desirable, either when a "
+"circular reference might be present or when building a cache of objects that"
+" should be deleted when memory is needed."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:19
+msgid "References"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:21
+msgid ""
+"Weak references to your objects are managed through the :class:`ref` class. "
+"To retrieve the original object, call the reference object."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:28
+msgid ""
+"In this case, since ``obj`` is deleted before the second call to the "
+"reference, the :class:`ref` returns ``None``."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:49
+msgid "Reference Callbacks"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:51
+msgid ""
+"The :class:`ref` constructor takes an optional second argument that should "
+"be a callback function to invoke when the referenced object is deleted."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:59
+msgid ""
+"The callback receives the reference object as an argument, after the "
+"reference is \"dead\" and no longer refers to the original object. This lets"
+" you remove the weak reference object from a cache, for example."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:82
+msgid "Proxies"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:84
+msgid ""
+"Instead of using :class:`ref` directly, it can be more convenient to use a "
+"proxy.  Proxies can be used as though they were the original object, so you "
+"do not need to call the :class:`ref` first to access the object."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:93
+msgid ""
+"If the proxy is access after the referent object is removed, a "
+":class:`ReferenceError` exception is raised."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:117
+msgid "Cyclic References"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:119
+msgid ""
+"One use for weak references is to allow cyclic references without preventing"
+" garbage collection. This example illustrates the difference between using "
+"regular objects and proxies when a graph includes a cycle."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:123
+msgid ""
+"First, we need a :class:`Graph` class that accepts any object given to it as"
+" the \"next\" node in the sequence. For the sake of brevity, this "
+":class:`Graph` supports a single outgoing reference from each node, which "
+"results in boring graphs but makes it easy to create cycles. The function "
+":func:`demo()` is a utility function to exercise the graph class by creating"
+" a cycle and then removing various references."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:134
+msgid ""
+"Now we can set up a test program using the :mod:`gc` module to help us debug"
+" the leak. The ``DEBUG_LEAK`` flag causes :mod:`gc` to print information "
+"about objects that cannot be seen other than through the reference the "
+"garbage collector has to them."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:143
+msgid ""
+"Even after deleting the local references to the :class:`Graph` instances in "
+":func:`demo()`, the graphs all show up in the garbage list and cannot be "
+"collected.  The dictionaries in the garbage list hold the attributes of the "
+":class:`Graph` instances. We can forcibly delete the graphs, since we know "
+"what they are:"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:209
+msgid ""
+"And now let's define a more intelligent :class:`WeakGraph` class that knows "
+"not to create cycles using regular references, but to use a :class:`ref` "
+"when a cycle is detected."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:217
+msgid ""
+"Since the :class:`WeakGraph` instances use proxies to refer to objects that "
+"have already been seen, as :func:`demo()` removes all local references to "
+"the objects, the cycle is broken and the garbage collector can delete the "
+"objects for us."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:262
+msgid "Caching Objects"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:264
+msgid ""
+"The :class:`ref` and :class:`proxy` classes are considered \"low level\". "
+"While they are useful for maintaining weak references to individual objects "
+"and allowing cycles to be garbage collected, if you need to create a cache "
+"of several objects the :class:`WeakKeyDictionary` and "
+":class:`WeakValueDictionary` provide a more appropriate API."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:271
+msgid ""
+"As you might expect, the :class:`WeakValueDictionary` uses weak references "
+"to the values it holds, allowing them to be garbage collected when other "
+"code is not actually using them."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:275
+msgid ""
+"To illustrate the difference between memory handling with a regular "
+"dictionary and :class:`WeakValueDictionary`, let's go experiment with "
+"explicitly calling the garbage collector again:"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:283
+msgid ""
+"Notice that any loop variables that refer to the values we are caching must "
+"be cleared explicitly to decrement the reference count on the object. "
+"Otherwise the garbage collector would not remove the objects and they would "
+"remain in the cache. Similarly, the all_refs variable is used to hold "
+"references to prevent them from being garbage collected prematurely."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:338
+msgid ""
+"The WeakKeyDictionary works similarly but uses weak references for the keys "
+"instead of the values in the dictionary."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:341
+msgid "The library documentation for weakref contains this warning:"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:345
+msgid ""
+"Caution: Because a WeakValueDictionary is built on top of a Python "
+"dictionary, it must not change size when iterating over it. This can be "
+"difficult to ensure for a WeakValueDictionary because actions performed by "
+"the program during iteration may cause items in the dictionary to vanish "
+"\"by magic\" (as a side effect of garbage collection)."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:354
+msgid "`weakref <http://docs.python.org/lib/module-weakref.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:354
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:356
+msgid ":mod:`gc`"
+msgstr ""
+
+#: ../../PyMOTW/weakref/index.rst:357
+msgid "The gc module is the interface to the interpreter's garbage collector."
+msgstr ""

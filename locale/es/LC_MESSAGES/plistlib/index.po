@@ -1,0 +1,156 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/plistlib/index.rst:3
+msgid "plistlib -- Manipulate OS X property list files"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:8
+msgid "Read and write OS X property list files"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:9
+msgid "2.6"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:11
+msgid ""
+":mod:`plistlib` provides an interface for working with property list files "
+"used under OS X.  plist files are typically XML, sometimes compressed.  They"
+" are used by the operating system and applications to store preferences or "
+"other configuration settings.  The contents are usually structured as a "
+"dictionary containing key value pairs of basic built-in types (unicode "
+"strings, integers, dates, etc.).  Values can also be nested data structures "
+"such as other dictionaries or lists. Binary data, or strings with control "
+"characters, can be encoded using the ``data`` type."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:22
+msgid "Reading plist Files"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:24
+msgid ""
+"OS X applications such as iCal use plist files to store meta-data about "
+"objects they manage.  For example, iCal stores the definitions of all of "
+"your calendars as a series of plist files in the Library directory."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:32
+msgid ""
+"This sample script finds the calendar defintions, reads them, and prints the"
+" titles of any calendars being displayed by iCal (having the property "
+"``Checked`` set to a true value)."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:40
+msgid ""
+"The type of the ``Checked`` property is defined by the plist file, so our "
+"script does not need to convert the string to an integer."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:59
+msgid "Writing plist Files"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:61
+msgid ""
+"If you want to use plist files to save your own settings, use "
+"``writePlist()`` to serialize the data and write it to the filesystem."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:68
+msgid ""
+"The first argument is the data structure to write out, and the second is an "
+"open file handle or the name of a file."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:114
+msgid "Binary Property Data"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:116
+msgid ""
+"Serializing binary data or strings that may include control characters using"
+" a plist is not immune to the typical challenges for an XML format.  To work"
+" around the issues, plist files can store binary data in :mod:`base64` "
+"format if the object is wrapped with a ``Data`` instance."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:126
+msgid ""
+"This example uses the ``writePlistToString()`` to create an in-memory "
+"string, instead of writing to a file."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:151
+msgid ""
+"Binary data is automatically converted to a ``Data`` instance when read."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:158
+msgid "The ``data`` attribute of the object contains the decoded data."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:177
+msgid "`plistlib <http://docs.python.org/library/plistlib.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:177
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:180
+msgid ""
+"`plist manual page "
+"<http://developer.apple.com/documentation/Darwin/Reference/ManPages/man5/plist.5.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:180
+msgid "Documentation of the plist file format."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:183
+msgid "`Weather Underground <http://www.wunderground.com/>`_"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:183
+msgid "Free weather information, including ICS and RSS feeds."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:190
+msgid ""
+"`Convert plist between XML and Binary formats "
+"<http://www.macosxhints.com/article.php?story=20050430105126392>`_"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:186
+msgid ""
+"Some plist files are stored in a binary format instead of XML because the "
+"binary format is faster to parse using Apple's libraries.  Python's plistlib"
+" module does not handle the binary format, so you may need to convert binary"
+" files to XML using ``plutil`` before reading them."
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:195
+msgid ""
+"`Using Python for System Administration "
+"<http://docs.google.com/present/view?id=0AW0cyKASCypUZGczODJ6YjdfMjRobW16dG5mNQ&hl=en>`_"
+msgstr ""
+
+#: ../../PyMOTW/plistlib/index.rst:193
+msgid ""
+"Presentation from Nigel Kersten and Chris Adams, including details of using "
+"PyObjC to load plists using the native Cocoa API, which transparently "
+"handles both the XML and binary formats.  See slice 27, especially."
+msgstr ""

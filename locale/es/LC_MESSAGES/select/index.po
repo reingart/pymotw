@@ -1,0 +1,430 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/select/index.rst:3
+msgid "select -- Wait for I/O Efficiently"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:8
+msgid "Wait for notification that an input or output channel is ready."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:9
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:11
+msgid ""
+"The :mod:`select` module provides access to platform-specific I/O monitoring"
+" functions.  The most portable interface is the POSIX function "
+":func:`select`, which is available on Unix and Windows.  The module also "
+"includes :func:`poll`, a Unix-only API, and several options that only work "
+"with specific variants of Unix."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:18
+msgid "select()"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:20
+msgid ""
+"Python's :func:`select` function is a direct interface to the underlying "
+"operating system implementation.  It monitors sockets, open files, and pipes"
+" (anything with a :func:`fileno` method that returns a valid file "
+"descriptor) until they become readable or writable, or a communication error"
+" occurs.  :func:`select` makes it easier to monitor multiple connections at "
+"the same time, and is more efficient than writing a polling loop in Python "
+"using socket timeouts, because the monitoring happens in the operating "
+"system network layer, instead of the interpreter."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:32
+msgid ""
+"Using Python's file objects with :func:`select` works for Unix, but is not "
+"supported under Windows."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:35
+msgid ""
+"The echo server example from the :mod:`socket` section can be extended to "
+"watch for more than one connection at a time by using :func:`select`.  The "
+"new version starts out by creating a non-blocking TCP/IP socket and "
+"configuring it to listen on an address."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:43
+msgid ""
+"The arguments to :func:`select` are three lists containing communication "
+"channels to monitor.  The first is a list of the objects to be checked for "
+"incoming data to be read, the second contains objects that will receive "
+"outgoing data when there is room in their buffer, and the third those that "
+"may have an error (usually a combination of the input and output channel "
+"objects).  The next step in the server is to set up the lists containing "
+"input sources and output destinations to be passed to :func:`select`."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:55
+msgid ""
+"Connections are added to and removed from these lists by the server main "
+"loop.  Since this version of the server is going to wait for a socket to "
+"become writable before sending any data (instead of immediately sending the "
+"reply), each output connection needs a queue to act as a buffer for the data"
+" to be sent through it."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:64
+msgid ""
+"The main portion of the server program loops, calling :func:`select` to "
+"block and wait for network activity."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:70
+msgid ""
+":func:`select` returns three new lists, containing subsets of the contents "
+"of the lists passed in.  All of the sockets in the :data:`readable` list "
+"have incoming data buffered and available to be read.  All of the sockets in"
+" the :data:`writable` list have free space in their buffer and can be "
+"written to.  The sockets returned in :data:`exceptional` have had an error "
+"(the actual definition of \"exceptional condition\" depends on the "
+"platform)."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:78
+msgid ""
+"The \"readable\" sockets represent three possible cases.  If the socket is "
+"the main \"server\" socket, the one being used to listen for connections, "
+"then the \"readable\" condition means it is ready to accept another incoming"
+" connection.  In addition to adding the new connection to the list of inputs"
+" to monitor, this section sets the client socket to not block."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:88
+msgid ""
+"The next case is an established connection with a client that has sent data."
+"  The data is read with :func:`recv`, then placed on the queue so it can be "
+"sent through the socket and back to the client."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:95
+msgid ""
+"A readable socket *without* data available is from a client that has "
+"disconnected, and the stream is ready to be closed."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:101
+msgid ""
+"There are fewer cases for the writable connections.  If there is data in the"
+" queue for a connection, the next message is sent.  Otherwise, the "
+"connection is removed from the list of output connections so that the next "
+"time through the loop :func:`select` does not indicate that the socket is "
+"ready to send data."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:110
+msgid "Finally, if there is an error with a socket, it is closed."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:115
+msgid ""
+"The example client program uses two sockets to demonstrate how the server "
+"with :func:`select` manages multiple connections at the same time.  The "
+"client starts by connecting each TCP/IP socket to the server."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:123
+msgid ""
+"Then it sends one pieces of the message at a time via each socket, and reads"
+" all responses available after writing new data."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:129
+msgid ""
+"Run the server in one window and the client in another.  The output will "
+"look like this, with different port numbers."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:189
+msgid ""
+"The client output shows the data being sent and received using both sockets."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:210
+msgid "Timeouts"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:212
+msgid ""
+":func:`select` also takes an optional fourth parameter which is the number "
+"of seconds to wait before breaking off monitoring if no channels have become"
+" active.  Using a timeout value lets a main program call :func:`select` as "
+"part of a larger processing loop, taking other actions in between checking "
+"for network input."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:218
+msgid ""
+"When the timeout expires, :func:`select` returns three empty lists. Updating"
+" the server example to use a timeout requires adding the extra argument to "
+"the :func:`select` call and handling the empty lists after :func:`select` "
+"returns."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:226
+msgid ""
+"This \"slow\" version of the client program pauses after sending each "
+"message, to simulate latency or other delay in transmission."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:232
+msgid "Running the new server with the slow client produces:"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:280
+msgid "And the client output is:"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:295
+msgid "poll()"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:297
+msgid ""
+"The :func:`poll` function provides similar features to :func:`select`, but "
+"the underlying implementation is more efficient.  The trade-off is that "
+":func:`poll` is not supported under Windows, so programs using :func:`poll` "
+"are less portable."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:302
+msgid ""
+"An echo server built on :func:`poll` starts with the same socket "
+"configuration code used in the other examples."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:308
+msgid ""
+"The timeout value passed to :func:`poll` is represented in milliseconds, "
+"instead of seconds, so in order to pause for a full second the timeout must "
+"be set to ``1000``."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:315
+msgid ""
+"Python implements :func:`poll` with a class that manages the registered data"
+" channels being monitored.  Channels are added by calling :func:`register` "
+"with flags indicating which events are interesting for that channel.  The "
+"full set of flags is:"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:321
+msgid "Event"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:321
+msgid "Description"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:323
+msgid ":const:`POLLIN`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:323
+msgid "Input ready"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:324
+msgid ":const:`POLLPRI`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:324
+msgid "Priority input ready"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:325
+msgid ":const:`POLLOUT`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:325
+msgid "Able to receive output"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:326
+msgid ":const:`POLLERR`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:326
+msgid "Error"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:327
+msgid ":const:`POLLHUP`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:327
+msgid "Channel closed"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:328
+msgid ":const:`POLLNVAL`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:328
+msgid "Channel not open"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:331
+msgid ""
+"The echo server will be setting up some sockets just for reading, and others"
+" to be read from or written to.  The appropriate combinations of flags are "
+"saved to the local variables :data:`READ_ONLY` and :data:`READ_WRITE`."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:339
+msgid ""
+"The :data:`server` socket is registered so that any incoming connections or "
+"data triggers an event."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:345
+msgid ""
+"Since :func:`poll` returns a list of tuples containing the file descriptor "
+"for the socket and the event flag, a mapping from file descriptor numbers to"
+" objects is needed to retrieve the :class:`socket` to read or write from it."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:353
+msgid ""
+"The server's loop calls :func:`poll`, then processes the \"events\" returned"
+" by looking up the socket and taking action based on the flag in the event."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:360
+msgid ""
+"As with :func:`select`, when the main server socket is \"readable,\" that "
+"really means there is a pending connection from a client.  The new "
+"connection is registered with the :data:`READ_ONLY` flags to watch for new "
+"data to come through it."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:368
+msgid ""
+"Sockets other than the server are existing clients, and :func:`recv` is used"
+" to access the data waiting to be read."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:374
+msgid ""
+"If :func:`recv` returns any data, it is placed into the outgoing queue for "
+"the socket and the flags for that socket are changed using :func:`modify` so"
+" :func:`poll` will watch for the socket to be ready to receive data."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:382
+msgid ""
+"An empty string returned by :func:`recv` means the client disconnected, so "
+":func:`unregister` is used to tell the :class:`poll` object to ignore the "
+"socket."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:389
+msgid ""
+"The :const:`POLLHUP` flag indicates a client that \"hung up\" the connection"
+" without closing it cleanly.  The server stops polling clients that "
+"disappear."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:396
+msgid ""
+"The handling for writable sockets looks like the version used in the example"
+" for :func:`select`, except that :func:`modify` is used to change the flags "
+"for the socket in the poller, instead of removing it from the output list."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:404
+msgid ""
+"And finally, any events with :const:`POLLERR` cause the server to close the "
+"socket."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:410
+msgid ""
+"When the poll-based server is run together with "
+"``select_echo_multiclient.py`` (the client program that uses multiple "
+"sockets), the output is:"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:475
+msgid "Platform-specific Options"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:477
+msgid ""
+"Less portable options provided by :mod:`select` are :class:`epoll`, the "
+"*edge polling* API supported by Linux; :class:`kqueue`, which uses BSD's "
+"*kernel queue*; and :class:`kevent`, BSD's *kernel event* interface.  Refer "
+"to the operating system library documentation for more detail about how they"
+" work."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:486
+msgid "`select <http://docs.python.org/library/select.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:486
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:490
+msgid ""
+"`Socket Programming HOWOTO <http://docs.python.org/howto/sockets.html>`__"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:489
+msgid ""
+"An instructional guide by Gordon McMillan, included in the standard library "
+"documentation."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:493
+msgid ":mod:`socket`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:493
+msgid "Low-level network communication."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:496
+msgid ":mod:`SocketServer`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:496
+msgid "Framework for creating network server applications."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:499
+msgid ":mod:`asyncore` and :mod:`asynchat`"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:499
+msgid "Asynchronous I/O framework."
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:503
+msgid "*Unix Network Programming, Volume 1: The Sockets Networking API, 3/E*"
+msgstr ""
+
+#: ../../PyMOTW/select/index.rst:502
+msgid ""
+"By W. Richard Stevens, Bill Fenner, and Andrew M. Rudoff. Published by "
+"Addison-Wesley Professional, 2004. ISBN-10: 0131411551"
+msgstr ""

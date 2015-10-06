@@ -1,0 +1,236 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pickle/index.rst:3
+msgid "pickle and cPickle -- Python object serialization"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:11
+msgid "Python object serialization"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:12
+msgid "pickle at least 1.4, cPickle 1.5"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:14
+msgid ""
+"The :mod:`pickle` module implements an algorithm for turning an arbitrary "
+"Python object into a series of bytes.  This process is also called "
+"*serializing*\" the object. The byte stream representing the object can then"
+" be transmitted or stored, and later reconstructed to create a new object "
+"with the same characteristics."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:20
+msgid ""
+"The :mod:`cPickle` module implements the same algorithm, in C instead of "
+"Python. It is many times faster than the Python implementation, but does not"
+" allow the user to subclass from Pickle. If subclassing is not important for"
+" your use, you probably want to use cPickle."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:27
+msgid ""
+"The documentation for pickle makes clear that it offers no security "
+"guarantees. Be careful if you use pickle for inter-process communication or "
+"data storage.  Do not trust data you cannot verify as secure."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:32
+msgid "Importing"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:34
+msgid ""
+"It is common to first try to import cPickle, giving an alias of \"pickle\". "
+"If that import fails for any reason, you can then fall back on the native "
+"Python implementation in the pickle module. This gives you the faster "
+"implementation, if it is available, and the portable implementation "
+"otherwise."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:48
+msgid "Encoding and Decoding Data in Strings"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:50
+msgid ""
+"This first example encodes a data structure as a string, then prints the "
+"string to the console. It uses a data structure made up of entirely native "
+"types. Instances of any class can be pickled, as will be illustrated in a "
+"later example.  Use ``pickle.dumps()`` to create a string representation of "
+"the value of the object."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:60
+msgid ""
+"By default, the pickle will contain only ASCII characters. A more efficient "
+"binary format is also available, but all of the examples here use the ASCII "
+"output because it is easier to understand in print."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:77
+msgid ""
+"Once the data is serialized, you can write it to a file, socket, pipe, etc. "
+"Then later you can read the file and unpickle the data to construct a new "
+"object with the same values."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:85
+msgid ""
+"As you see, the newly constructed object is the equal to but not the same "
+"object as the original. No surprise there."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:105
+msgid "Working with Streams"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:107
+msgid ""
+"In addition to ``dumps()`` and ``loads()``, pickle provides a couple of "
+"convenience functions for working with file-like streams. It is possible to "
+"write multiple objects to a stream, and then read them from the stream "
+"without knowing in advance how many objects are written or how big they are."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:118
+msgid ""
+"The example simulates streams using StringIO buffers, so we have to play a "
+"little trickery to establish the readable stream. A simple database format "
+"could use pickles to store objects, too, though :mod:`shelve` would be "
+"easier to work with."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:140
+msgid ""
+"Besides storing data, pickles are very handy for inter-process "
+"communication. For example, using ``os.fork()`` and ``os.pipe()``, one can "
+"establish worker processes that read job instructions from one pipe and "
+"write the results to another pipe. The core code for managing the worker "
+"pool and sending jobs in and receiving responses can be reused, since the "
+"job and response objects don't have to be of a particular class. If you are "
+"using pipes or sockets, do not forget to flush after dumping each object, to"
+" push the data through the connection to the other end.  See "
+":mod:`multiprocessing` if you don't want to write your own worker pool "
+"manager."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:153
+msgid "Problems Reconstructing Objects"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:155
+msgid ""
+"When working with your own classes, you must ensure that the class being "
+"pickled appears in the namespace of the process reading the pickle. Only the"
+" data for the instance is pickled, not the class definition. The class name "
+"is used to find the constructor to create the new object when unpickling. "
+"Take this example, which writes instances of a class to a file:"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:166
+msgid ""
+"When run, the script creates a file based on the name given as argument on "
+"the command line:"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:183
+msgid "A simplistic attempt to load the resulting pickled objects fails:"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:189
+msgid "This version fails because there is no SimpleObject class available:"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:206
+msgid ""
+"The corrected version, which imports SimpleObject from the original script, "
+"succeeds."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:209
+msgid "Add:"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:215
+msgid "to the end of the import list, then re-run the script:"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:231
+msgid ""
+"There are some special considerations when pickling data types with values "
+"that cannot be pickled (sockets, file handles, database connections, etc.). "
+"Classes that use values which cannot be pickled can define "
+"``__getstate__()`` and ``__setstate__()`` to return a subset of the state of"
+" the instance to be pickled. New-style classes can also define "
+"``__getnewargs__()``, which should return arguments to be passed to the "
+"class memory allocator (``C.__new__()``).  Use of these features is covered "
+"in more detail in the standard library documentation."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:242
+msgid "Circular References"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:244
+msgid ""
+"The pickle protocol automatically handles circular references between "
+"objects, so you don't need to do anything special with complex data "
+"structures.  Consider the digraph:"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:258
+msgid ""
+"Even though the graph includes several cycles, the correct structure can be "
+"pickled and then reloaded."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:265
+msgid ""
+"The reloaded nodes are not the same object, but the relationship between the"
+" nodes is maintained and only one copy of the object with multiple reference"
+" is reloaded. Both of these statements can be verified by examining the "
+"``id()`` values for the nodes before and after being passed through pickle."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:301
+msgid "`pickle <http://docs.python.org/lib/module-pickle.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:301
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:304
+msgid ":mod:`shelve`"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:304
+msgid "The shelve module."
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:307
+msgid ""
+"`Pickle: An interesting stack language. <http://peadrop.com/blog/2007/06/18"
+"/pickle-an-interesting-stack-language/>`__"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:307
+msgid "by Alexandre Vassalotti"
+msgstr ""
+
+#: ../../PyMOTW/pickle/index.rst:309
+msgid ":ref:`article-data-persistence`"
+msgstr ""

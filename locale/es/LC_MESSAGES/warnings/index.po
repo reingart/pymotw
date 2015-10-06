@@ -1,0 +1,295 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/warnings/index.rst:3
+msgid "warnings -- Non-fatal alerts"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:8
+msgid ""
+"Deliver non-fatal alerts to the user about issues encountered when running a"
+" program."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:9
+msgid "2.1 and later"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:11
+msgid ""
+"The :mod:`warnings` module was introduced in :pep:`230` as a way to warn "
+"programmers about changes in language or library features in anticipation of"
+" backwards incompatible changes coming with Python 3.0. Since warnings are "
+"not fatal, a program may encounter the same warn-able situation many times "
+"in the course of running. The :mod:`warnings` module suppresses repeated "
+"warnings from the same source to cut down on the annoyance of seeing the "
+"same message over and over.  You can control the messages printed on a case-"
+"by-case basis using the :option:`-W` option to the interpreter or by calling"
+" functions found in :mod:`warnings` from your code."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:23
+msgid "Categories and Filtering"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:25
+msgid ""
+"Warnings are categorized using subclasses of the built-in exception class "
+":class:`Warning`. Several standard values are :ref:`described in the "
+"documentation <exceptions-warning>`, and you can add your own by subclassing"
+" from :class:`Warning` to create a new class."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:30
+msgid ""
+"Messages are filtered using settings controlled through the :option:`-W` "
+"option to the interpreter. A filter consists of 5 parts, the *action*, "
+"*message*, *category*, *module*, and *line number*. When a warning is "
+"generated, it is compared against all of the registered filters. The first "
+"filter that matches controls the action taken for the warning. If no filter "
+"matches, the default action is taken."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:37
+msgid "The actions understood by the filtering mechanism are:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:39
+msgid "error: Turn the warning into an exception."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:40
+msgid "ignore: Discard the warning."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:41
+msgid "always: Always emit a warning."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:42
+msgid ""
+"default: Print the warning the first time it is generated from each "
+"location."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:43
+msgid ""
+"module: Print the warning the first time it is generated from each module."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:44
+msgid "once: Print the warning the first time it is generated."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:46
+msgid ""
+"The *message* portion of the filter is a regular expression that is used to "
+"match the warning text."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:49
+msgid "The *category* is a name of an exception class, as described above."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:51
+msgid ""
+"The *module* contains a regular expression to be matched against the module "
+"name generating the warning."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:54
+msgid ""
+"And the *line number* can be used to change the handling on specific "
+"occurrences of a warning. Use ``0`` to have the filter apply to all "
+"occurrences."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:59
+msgid "Generating Warnings"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:61
+msgid ""
+"The simplest way to emit a warning from your own code is to just call "
+":func:`warn()` with the message as an argument:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:68
+msgid "Then when your program runs, the message is printed:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:85
+msgid ""
+"Even though the warning is printed, the default behavior is to continue past"
+" the warning and run the rest of the program. We can change that behavior "
+"with a filter:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:93
+msgid ""
+"This filter tells the warnings module to raise an exception when the warning"
+" is issued."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:113
+msgid ""
+"We can also control the filter behavior from the command line. For example, "
+"if we go back to ``warnings_warn.py`` and set the filter to raise an error "
+"on :class:`UserWarning`, we see the exception:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:133
+msgid ""
+"Since I left the fields for *message* and *module* blank, they were "
+"interpreted as matching anything."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:137
+msgid "Filtering with Patterns"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:139
+msgid ""
+"To filter on more complex rules programmatically, use "
+":func:`filterwarnings()`. For example, to filter based on the content of the"
+" message text:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:147
+msgid ""
+"The pattern contains \"``do not``\", but the actual message uses \"``Do "
+"not``\". The pattern matches because the regular expression is always "
+"compiled to look for case insensitive matches."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:164
+msgid "Running this source from the command line:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:170
+msgid "yields:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:186
+msgid ""
+"The same pattern matching rules apply to the name of the source module "
+"containing the warning call. To suppress all warnings from the "
+"``warnings_filtering`` module:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:194
+msgid ""
+"Since the filter is in place, no warnings are emitted when "
+"``warnings_filtering`` is imported:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:208
+msgid "To suppress only the warning on line 14 of ``warnings_filtering``:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:229
+msgid "Repeated Warnings"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:231
+msgid ""
+"By default, most types of warnings are only printed the first time they "
+"occur in a given location, where location is defined as the combination of "
+"module and line number."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:253
+msgid ""
+"The \"once\" action can be used to suppress instances of the same message "
+"from different locations."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:273
+msgid ""
+"Similarly, \"module\" will suppress repeated messages from the same module, "
+"no matter what line number."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:277
+msgid "Alternate Message Delivery Functions"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:279
+msgid ""
+"Normally warnings are printed to :ref:`sys.stderr <sys-input-output>`. You "
+"can change that behavior by replacing the :func:`showwarning()` function "
+"inside the :mod:`warnings` module. For example, if you wanted warnings to go"
+" to a log file instead of stderr, you could replace :func:`showwarning()` "
+"with a function like this:"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:289
+msgid ""
+"So that when :func:`warn()` is called, the warnings are emitted with the "
+"rest of the log messages."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:305
+msgid "Formatting"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:307
+msgid ""
+"If it is OK for warnings to go to stderr, but you don't like the formatting,"
+" you can replace :func:`formatwarning()` instead."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:329
+msgid "Stack Level in Warnings"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:331
+msgid ""
+"You'll notice that by default the warning message includes the source line "
+"that generated it, when available. It's not all that useful to see the line "
+"of code with the actual warning message, though. Instead, you can tell "
+":func:`warn()` how far up the stack it has to go to find the line the called"
+" the function containing the warning. That way users of a deprecated "
+"function see where the function is called, instead of the implementation of "
+"the function."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:344
+msgid ""
+"Notice that in this example :func:`warn()` needs to go up the stack 2 "
+"levels, one for itself and one for :func:`old_function()`."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:363
+msgid "`warnings <http://docs.python.org/lib/module-warnings.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:363
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:366
+msgid ":pep:`230`"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:366
+msgid "Warning Framework"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:368
+msgid ":mod:`exceptions`"
+msgstr ""
+
+#: ../../PyMOTW/warnings/index.rst:369
+msgid "Base classes for exceptions and warnings."
+msgstr ""

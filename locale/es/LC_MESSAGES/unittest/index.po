@@ -1,0 +1,272 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/unittest/index.rst:3
+msgid "unittest -- Automated testing framework"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:8
+msgid "Automated testing framework"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:9
+msgid "2.1"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:11
+msgid ""
+"Python's :mod:`unittest` module, sometimes referred to as PyUnit, is based "
+"on the XUnit framework design by Kent Beck and Erich Gamma. The same pattern"
+" is repeated in many other languages, including C, perl, Java, and "
+"Smalltalk. The framework implemented by :mod:`unittest` supports fixtures, "
+"test suites, and a test runner to enable automated testing for your code."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:19
+msgid "Basic Test Structure"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:21
+msgid ""
+"Tests, as defined by :mod:`unittest`, have two parts: code to manage test "
+"\"fixtures\", and the test itself. Individual tests are created by "
+"subclassing :class:`TestCase` and overriding or adding appropriate methods. "
+"For example,"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:30
+msgid ""
+"In this case, the :class:`SimplisticTest` has a single :func:`test()` "
+"method, which would fail if True is ever False."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:34
+msgid "Running Tests"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:36
+msgid "The easiest way to run unittest tests is to include:"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:43
+msgid ""
+"at the bottom of each test file, then simply run the script directly from "
+"the command line:"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:62
+msgid ""
+"This abbreviated output includes the amount of time the tests took, along "
+"with a status indicator for each test (the \".\" on the first line of output"
+" means that a test passed). For more detailed test results, include the -v "
+"option:"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:84
+msgid "Test Outcomes"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:86
+msgid "Tests have 3 possible outcomes:"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:89
+msgid "ok"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:89
+msgid "The test passes."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:92
+msgid "FAIL"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:92
+msgid "The test does not pass, and raises an AssertionError exception."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:95
+msgid "ERROR"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:95
+msgid "The test raises an exception other than AssertionError."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:97
+msgid ""
+"There is no explicit way to cause a test to \"pass\", so a test's status "
+"depends on the presence (or absence) of an exception."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:104
+msgid ""
+"When a test fails or generates an error, the traceback is included in the "
+"output."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:140
+msgid ""
+"In the example above, :func:`testFail()` fails and the traceback shows the "
+"line with the failure code. It is up to the person reading the test output "
+"to look at the code to figure out the semantic meaning of the failed test, "
+"though. To make it easier to understand the nature of a test failure, the "
+":func:`fail*()` and :func:`assert*()` methods all accept an argument *msg*, "
+"which can be used to produce a more detailed error message."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:179
+msgid "Asserting Truth"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:181
+msgid ""
+"Most tests assert the truth of some condition. There are a few different "
+"ways to write truth-checking tests, depending on the perspective of the test"
+" author and the desired outcome of the code being tested. If the code "
+"produces a value which can be evaluated as true, the methods "
+":func:`failUnless()` and :func:`assertTrue()` should be used. If the code "
+"produces a false value, the methods :func:`failIf()` and "
+":func:`assertFalse()` make more sense."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:215
+msgid "Testing Equality"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:217
+msgid ""
+"As a special case, :mod:`unittest` includes methods for testing the equality"
+" of two values."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:243
+msgid ""
+"These special tests are handy, since the values being compared appear in the"
+" failure message when a test fails."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:251
+msgid "And when these tests are run:"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:289
+msgid "Almost Equal?"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:291
+msgid ""
+"In addition to strict equality, it is possible to test for near equality of "
+"floating point numbers using :func:`failIfAlmostEqual()` and "
+":func:`failUnlessAlmostEqual()`."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:299
+msgid ""
+"The arguments are the values to be compared, and the number of decimal "
+"places to use for the test."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:319
+msgid "Testing for Exceptions"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:321
+msgid ""
+"As previously mentioned, if a test raises an exception other than "
+":ref:`AssertionError <exceptions-AssertionError>` it is treated as an error."
+" This is very useful for uncovering mistakes while you are modifying code "
+"which has existing test coverage. There are circumstances, however, in which"
+" you want the test to verify that some code does produce an exception. For "
+"example, if an invalid value is given to an attribute of an object. In such "
+"cases, :func:`failUnlessRaises()` makes the code more clear than trapping "
+"the exception yourself. Compare these two tests:"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:335
+msgid ""
+"The results for both are the same, but the second test using "
+":func:`failUnlessRaises()` is more succinct."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:358
+msgid "Test Fixtures"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:360
+msgid ""
+"Fixtures are resources needed by a test. For example, if you are writing "
+"several tests for the same class, those tests all need an instance of that "
+"class to use for testing. Other test fixtures include database connections "
+"and temporary files (many people would argue that using external resources "
+"makes such tests not \"unit\" tests, but they are still tests and still "
+"useful).  :class:`TestCase` includes a special hook to configure and clean "
+"up any fixtures needed by your tests. To configure the fixtures, override "
+":func:`setUp()`. To clean up, override :func:`tearDown()`."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:374
+msgid ""
+"When this sample test is run, you can see the order of execution of the "
+"fixture and test methods:"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:398
+msgid "Test Suites"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:400
+msgid ""
+"The standard library documentation describes how to organize test suites "
+"manually. I generally do not use test suites directly, because I prefer to "
+"build the suites automatically (these are automated tests, after all).  "
+"Automating the construction of test suites is especially useful for large "
+"code bases, in which related tests are not all in the same place. Tools such"
+" as nose make it easier to manage tests when they are spread over multiple "
+"files and directories."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:411
+msgid "`unittest <http://docs.python.org/lib/module-unittest.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:411
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:415
+msgid ":mod:`doctest`"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:414
+msgid ""
+"An alternate means of running tests embedded in docstrings or external "
+"documentation files."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:418
+msgid "`nose <http://somethingaboutorange.com/mrl/projects/nose/>`_"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:418
+msgid "A more sophisticated test manager."
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:420
+msgid "`unittest2 <http://pypi.python.org/pypi/unittest2>`_"
+msgstr ""
+
+#: ../../PyMOTW/unittest/index.rst:421
+msgid "Ongoing improvements to :mod:`unittest`"
+msgstr ""

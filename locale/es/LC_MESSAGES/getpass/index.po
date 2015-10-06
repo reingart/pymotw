@@ -1,0 +1,117 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/getpass/index.rst:5
+msgid "getpass -- Prompt the user for a password without echoing."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:10
+msgid ""
+"Prompt the user for a value, usually a password, without echoing what they "
+"type to the console."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:11
+msgid "1.5.2"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:13
+msgid ""
+"Many programs that interact with the user via the terminal need to ask the "
+"user for password values without showing what the user types on the screen."
+"  The :mod:`getpass` module provides a portable way to handle such password "
+"prompts securely."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:19
+msgid "Example"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:21
+msgid ""
+"The :func:`getpass()` function prints a prompt then reads input from the "
+"user until they press return. The input is passed back as a string to the "
+"caller."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:29
+msgid ""
+"The default prompt, if none is specified by the caller, is "
+"\"``Password:``\"."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:38
+msgid "The prompt can be changed to any value your program needs."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:44
+msgid ""
+"I don't recommend such an insecure authentication scheme, but it illustrates"
+" the point."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:56
+msgid ""
+"By default, :func:`getpass()` uses stdout to print the prompt string. For a "
+"program which may produce useful output on :ref:`sys.stdout <sys-input-"
+"output>`, it is frequently better to send the prompt to another stream such "
+"as :ref:`sys.stderr <sys-input-output>`."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:66
+msgid ""
+"This way standard output can be redirected (to a pipe or file) without "
+"seeing the password prompt. The value entered by the user is still not "
+"echoed back to the screen."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:76
+msgid "Using getpass Without a Terminal"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:78
+msgid ""
+"Under Unix, :func:`getpass()` always requires a tty it can control via "
+"termios, so echo can be disabled. This means values will not be read from a "
+"non-terminal stream redirected to standard input."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:92
+msgid ""
+"It is up to the caller to detect when the input stream is not a tty and use "
+"an alternate method for reading in that case."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:99
+msgid "With a tty:"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:107
+msgid "Without a tty:"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:118
+msgid "`getpass <http://docs.python.org/library/getpass.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:118
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:120
+msgid ":mod:`readline`"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:121
+msgid "Interactive prompt library."
+msgstr ""

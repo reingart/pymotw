@@ -1,0 +1,89 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:3
+msgid "Implementing MapReduce with multiprocessing"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:5
+msgid ""
+"The :class:`Pool` class can be used to create a simple single-server "
+"MapReduce implementation.  Although it does not give the full benefits of "
+"distributed processing, it does illustrate how easy it is to break some "
+"problems down into distributable units of work."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:11
+msgid "SimpleMapReduce"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:13
+msgid ""
+"In a MapReduce-based system, input data is broken down into chunks for "
+"processing by different worker instances.  Each chunk of input data is "
+"*mapped* to an intermediate state using a simple transformation.  The "
+"intermediate data is then collected together and partitioned based on a key "
+"value so that all of the related values are together.  Finally, the "
+"partitioned data is *reduced* to a result set."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:25
+msgid "Counting Words in Files"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:27
+msgid ""
+"The following example script uses SimpleMapReduce to counts the \"words\" in"
+" the reStructuredText source for this article, ignoring some of the markup."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:35
+msgid ""
+"The :func:`file_to_words` function converts each input file to a sequence of"
+" tuples containing the word and the number 1 (representing a single "
+"occurrence) .The data is partitioned by :func:`partition` using the word as "
+"the key, so the partitioned data consists of a key and a sequence of 1 "
+"values representing each occurrence of the word. The partioned data is "
+"converted to a set of suples containing a word and the count for that word "
+"by :func:`count_words` during the reduction phase."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:85
+msgid "`MapReduce - Wikipedia <http://en.wikipedia.org/wiki/MapReduce>`_"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:85
+msgid "Overview of MapReduce on Wikipedia."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:88
+msgid ""
+"`MapReduce: Simplified Data Processing on Large Clusters "
+"<http://labs.google.com/papers/mapreduce.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:88
+msgid "Google Labs presentation and paper on MapReduce."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:90
+msgid ":mod:`operator`"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:91
+msgid "Operator tools such as ``itemgetter()``."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/mapreduce.rst:95
+msgid "*Special thanks to Jesse Noller for helping review this information.*"
+msgstr ""

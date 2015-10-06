@@ -1,0 +1,458 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 13:35-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/subprocess/index.rst:3
+msgid "subprocess -- Work with additional processes"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:8
+msgid "Spawn and communicate with additional processes."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:9
+msgid "2.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:11
+msgid ""
+"The :mod:`subprocess` module provides a consistent interface to creating and"
+" working with additional processes. It offers a higher-level interface than "
+"some of the other available modules, and is intended to replace functions "
+"such as :func:`os.system`, :func:`os.spawn*`, :func:`os.popen*`, "
+":func:`popen2.*` and :func:`commands.*`. To make it easier to compare "
+":mod:`subprocess` with those other modules, many of the examples here re-"
+"create the ones used for :mod:`os` and :mod:`popen`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:20
+msgid ""
+"The :mod:`subprocess` module defines one class, :class:`Popen` and a few "
+"wrapper functions that use that class. The constructor for :class:`Popen` "
+"takes arguments to set up the new process so the parent can communicate with"
+" it via pipes.  It provides all of the functionality of the other modules "
+"and functions it replaces, and more. The API is consistent for all uses, and"
+" many of the extra steps of overhead needed (such as closing extra file "
+"descriptors and ensuring the pipes are closed) are \"built in\" instead of "
+"being handled by the application code separately."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:32
+msgid ""
+"The API is roughly the same, but the underlying implementation is slightly "
+"different between Unix and Windows. All of the examples shown here were "
+"tested on Mac OS X. Behavior on a non-Unix OS will vary."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:38
+msgid "Running External Command"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:40
+msgid ""
+"To run an external command without interacting with it, such as one would do"
+" with :ref:`os.system() <os-system>`, Use the :func:`call()` function."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:48
+msgid ""
+"The command line arguments are passed as a list of strings, which avoids the"
+" need for escaping quotes or other special characters that might be "
+"interpreted by the shell."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:85
+msgid ""
+"Setting the *shell* argument to a true value causes :mod:`subprocess` to "
+"spawn an intermediate shell process, and tell it to run the command.  The "
+"default is to run the command directly."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:93
+msgid ""
+"Using an intermediate shell means that variables, glob patterns, and other "
+"special shell features in the command string are processed before the "
+"command is run."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:110
+msgid "Error Handling"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:112
+msgid ""
+"The return value from :func:`call` is the exit code of the program. The "
+"caller is responsible for interpreting it to detect errors.  The "
+":func:`check_call` function works like :func:`call` except that the exit "
+"code is checked, and if it indicates an error happened then a "
+":class:`CalledProcessError` exception is raised."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:122
+msgid ""
+"The :command:`false` command always exits with a non-zero status code, which"
+" :func:`check_call` interprets as an error."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:138
+msgid "Capturing Output"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:140
+msgid ""
+"The standard input and output channels for the process started by "
+":func:`call` are bound to the parent's input and output.  That means the "
+"calling programm cannot capture the output of the command.  Use "
+":func:`check_output` to capture the output for later processing."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:149
+msgid ""
+"The ``ls -1`` command runs successfully, so the text it prints to standard "
+"output is captured and returned."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:187
+msgid ""
+"This script runs a series of commands in a subshell.  Messages are sent to "
+"standard output and standard error before the commands exit with an error "
+"code."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:195
+msgid ""
+"The message to standard error is printed to the console, but the message to "
+"standard output is hidden."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:212
+msgid ""
+"To prevent error messages from commands run through :func:`check_output` "
+"from being written to the console, set the *stderr* parameter to the "
+"constant :const:`STDOUT`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:220
+msgid ""
+"Now the error and standard output channels are merged together so if the "
+"command prints error messages, they are captured and not sent to the "
+"console."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:241
+msgid "Working with Pipes Directly"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:243
+msgid ""
+"By passing different arguments for *stdin*, *stdout*, and *stderr* it is "
+"possible to mimic the variations of :func:`os.popen()`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:247
+msgid "popen"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:249
+msgid ""
+"To run a process and read all of its output, set the *stdout* value to "
+":const:`PIPE` and call :func:`communicate`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:256
+msgid ""
+"This is similar to the way :func:`popen` works, except that the reading is "
+"managed internally by the :class:`Popen` instance."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:272
+msgid ""
+"To set up a pipe to allow the calling program to write data to it, set "
+"*stdin* to :const:`PIPE`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:279
+msgid ""
+"To send data to the standard input channel of the process one time, pass the"
+" data to :func:`communicate`.  This is similar to using :func:`popen` with "
+"mode ``'w'``."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:297
+msgid "popen2"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:299
+msgid ""
+"To set up the :class:`Popen` instance for reading and writing, use a "
+"combination of the previous techniques."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:306
+msgid "This sets up the pipe to mimic :func:`popen2`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:322
+msgid "popen3"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:324
+msgid ""
+"It is also possible watch both of the streams for stdout and stderr, as with"
+" :func:`popen3`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:331
+msgid ""
+"Reading from stderr works the same as with stdout.  Passing :const:`PIPE` "
+"tells :class:`Popen` to attach to the channel, and :func:`communicate` reads"
+" all of the data from it before returning."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:350
+msgid "popen4"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:352
+msgid ""
+"To direct the error output from the process to its standard output channel, "
+"use :const:`STDOUT` for *stderr* instead of :const:`PIPE`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:359
+msgid ""
+"Combining the output in this way is similar to how :func:`popen4` works."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:377
+msgid "Connecting Segments of a Pipe"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:379
+msgid ""
+"Multiple commands can be connected into a *pipeline*, similar to the way the"
+" Unix shell works, by creating separate :class:`Popen` instances and "
+"chaining their inputs and outputs together.  The :attr:`stdout` attribute of"
+" one :class:`Popen` instance is used as the *stdin* argument for the next in"
+" the pipeline, instead of the constant :const:`PIPE`.  The output is read "
+"from the :attr:`stdout` handle for the final command in the pipeline."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:391
+msgid ""
+"This example reproduces the command line ``cat index.rst | grep \".. "
+"include\" | cut -f 3 -d:``, which reads the reStructuredText source file for"
+" this section and finds all of the lines that include other files, then "
+"prints only the filenames."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:428
+msgid "Interacting with Another Command"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:430
+msgid ""
+"All of the above examples assume a limited amount of interaction. The "
+":func:`communicate()` method reads all of the output and waits for child "
+"process to exit before returning. It is also possible to write to and read "
+"from the individual pipe handles used by the :class:`Popen` instance. A "
+"simple echo program that reads from standard input and writes to standard "
+"output illustrates this:"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:441
+msgid ""
+"The script, ``repeater.py``, writes to stderr when it starts and stops. That"
+" information can be used to show the lifetime of the child process."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:445
+msgid ""
+"The next interaction example uses the stdin and stdout file handles owned by"
+" the :class:`Popen` instance in different ways. In the first example, a "
+"sequence of 10 numbers are written to stdin of the process, and after each "
+"write the next line of output is read back. In the second example, the same "
+"10 numbers are written but the output is read all at once using "
+":func:`communicate()`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:456
+msgid ""
+"The ``\"repeater.py: exiting\"`` lines come at different points in the "
+"output for each loop style."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:491
+msgid "Signaling Between Processes"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:493
+msgid ""
+"The :mod:`os` examples include a demonstration of :ref:`signaling between "
+"processes using os.fork() and os.kill() <creating-processes-with-os-fork>`. "
+"Since each :class:`Popen` instance provides a *pid* attribute with the "
+"process id of the child process, it is possible to do something similar with"
+" :mod:`subprocess`. For example, using this script for the child process to "
+"be executed by the parent process"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:505
+msgid "combined with this parent process"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:511
+msgid "the output is:"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:532
+msgid "Process Groups / Sessions"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:534
+msgid ""
+"Because of the way the process tree works under Unix, if the process created"
+" by :mod:`Popen` spawns sub-processes, those children will not receive any "
+"signals sent to the parent.  That means, for example, it will be difficult "
+"to cause them to terminate by sending :const:`SIGINT` or :const:`SIGTERM`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:544
+msgid ""
+"The pid used to send the signal does not match the pid of the child of the "
+"shell script waiting for the signal because in this example, there are three"
+" separate processes interacting:"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:548
+msgid "``subprocess_signal_parent_shell.py``"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:549
+msgid ""
+"The Unix shell process running the script created by the main python "
+"program."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:551
+msgid "``signal_child.py``"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:571
+msgid ""
+"The solution to this problem is to use a *process group* to associate the "
+"children so they can be signaled together.  The process group is created "
+"with :func:`os.setsid`, setting the \"session id\" to the process id of the "
+"current process.  All child processes inherit the session id, and since it "
+"should only be set set in the shell created by :class:`Popen` and its "
+"descendants, :func:`os.setsid` should not be called in the parent process.  "
+"Instead, the function is passed to :class:`Popen` as the *preexec_fn* "
+"argument so it is run after the :func:`fork` inside the new process, before "
+"it uses :func:`exec` to run the shell."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:586
+msgid "The sequence of events is:"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:588
+msgid "The parent program instantiates :class:`Popen`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:589
+msgid "The :class:`Popen` instance forks a new process."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:590
+msgid "The new process runs :func:`os.setsid`."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:591
+msgid "The new process runs :func:`exec` to start the shell."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:592
+msgid "The shell runs the shell script."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:593
+msgid "The shell script forks again and that process execs Python."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:594
+msgid "Python runs ``signal_child.py``."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:595
+msgid ""
+"The parent program signals the process group using the pid of the shell."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:596
+msgid ""
+"The shell and Python processes receive the signal.  The shell ignores it.  "
+"Python invokes the signal handler."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:599
+msgid ""
+"To signal the entire process group, use :func:`os.killpg` with the pid value"
+" from the :class:`Popen` instance."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:625
+msgid "`subprocess <http://docs.python.org/lib/module-subprocess.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:625
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:629
+msgid ":mod:`os`"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:628
+msgid ""
+"Although many are deprecated, the functions for working with processes found"
+" in the os module are still widely used in existing code."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:633
+msgid ""
+"`UNIX SIgnals and Process Groups "
+"<http://www.frostbytes.com/~jimf/papers/signals/signals.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:632
+msgid "A good description of UNIX signaling and how process groups work."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:637
+msgid ""
+"`Advanced Programming in the UNIX(R) Environment <http://www.amazon.com"
+"/Programming-Environment-Addison-Wesley-Professional-"
+"Computing/dp/0201433079/ref=pd_bbs_3/002-2842372-4768037?ie=UTF8&s=books&amp;qid=1182098757&sr=8-3>`_"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:636
+msgid ""
+"Covers working with multiple processes, such as handling signals, closing "
+"duplicated file descriptors, etc."
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:639
+msgid ":mod:`pipes`"
+msgstr ""
+
+#: ../../PyMOTW/subprocess/index.rst:640
+msgid "Unix shell command pipeline templates in the standard library."
+msgstr ""

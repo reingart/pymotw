@@ -13,7 +13,7 @@ msgstr ""
 
 #: ../../PyMOTW/about.rst:3
 msgid "About Python Module of the Week"
-msgstr ""
+msgstr "Acerca del Módulo de la semana de Python"
 
 #: ../../PyMOTW/about.rst:5
 msgid ""
@@ -23,6 +23,11 @@ msgid ""
 "building a set of example code for the modules in the `Python "
 "<http://www.python.org/>`_ standard library."
 msgstr ""
+"PyMOTW es una serie de artículos escritos originalmente por `Doug Hellmann "
+"<http://www.doughellmann.com/>`_.  Fue iniciado como una manera de crear un "
+"habito de escribir algo con una frecuencia regular.  El foco de la serie "
+"es construir un conjunto de ejemplos de código para los módulos de la "
+"Biblioteca estándard de `Python <http://www.python.org/>`_."
 
 #: ../../PyMOTW/about.rst:11
 msgid ""

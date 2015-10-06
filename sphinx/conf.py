@@ -119,4 +119,5 @@ unused_docs = [ 'copyright', 'doctest/doctest_in_help' ]
 # Sphinx internationalization details:
 locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = False     # optional.
+language = "es"             # target translation
 

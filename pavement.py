@@ -327,7 +327,12 @@ def gettext(options):
     set_templates(options.gettext.templates)
     if paverutils is None:
         raise RuntimeError('Could not find sphinxcontrib.paverutils, will not be able to build text output.')
-    paverutils.run_sphinx(options, "gettext")
+    # Extract messages (POT)
+    paverutils.run_sphinx(options, "gettext")    
+    # Update translations PO: TODO: read conf["locale_dirs"][0] & language (es)
+    sh('sphinx-intl update -p "%s" --locale-dir locale -l es' % (options.gettext.build_dir, ))
+    # Remember to build the MO files once translated:
+    sh('sphinx-intl build -p "%s" --locale-dir locale' % (options.gettext.build_dir, ))
     return
 
 

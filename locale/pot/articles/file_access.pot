@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/articles/file_access.rst:5
+# 0bf149fbe2154f088998f6208aace399
+msgid "File Access"
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:7
+# cec0abb488c34339b8e0c9614f397fbe
+msgid "Python's standard library includes a large range of tools for working with files, filenames, and file contents."
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:10
+# bedd9b9e2185458aba0bfe7a34c4e53c
+msgid "Filenames"
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:12
+# 25066f8bb18e4c4aaf29acadace66c94
+msgid "The first step in working with files is to get the name of the file so you can operate on it.  Python represents filenames as simple strings, but provides tools for building them from standard, platform-independent, components in :mod:`os.path`.  List the contents of a directory with ``listdir()`` from :mod:`os`, or use :mod:`glob` to build a list of filenames from a pattern.  Finer grained filtering of filenames is possible with :mod:`fnmatch`."
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:15
+# 2d1e647401804b02a2a57a5fc469a205
+msgid "Meta-data"
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:17
+# ae61b3b8e2e0401f9b9599517a52d22c
+msgid "Once you know the name of the file, you may want to check other characteristics such as permissions or the file size using ``os.stat()`` and the constants in :mod:`stat`."
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:20
+# e1a20387045149c89558a34ca3ae2dd2
+msgid "Reading Files"
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:22
+# c328a766211a490383c73ac8aa250d62
+msgid "If you're writing a filter application that processes text input line-by-line, :mod:`fileinput` provides an easy framework to get started.  The fileinput API calls for you to iterate over the ``input()`` generator, processing each line as it is yielded.  The generator handles parsing command line arguments for file names, or falling back to reading directly from ``sys.stdin``.  The result is a flexible tool your users can run directly on a file or as part of a pipeline."
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:24
+# 22a56fa866c7410b8cdb357958e6a830
+msgid "If your app needs random access to files, :mod:`linecache` makes it easy to read lines by their line number.  The contents of the file are maintained in a cache, so be careful of memory consumption."
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:27
+# 66ddf82303f44ff4852506cdca8429ab
+msgid "Temporary Files"
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:29
+# d207ea4badb143d1bb93448ed3640826
+msgid "For cases where you need to create scratch files to hold data temporarily, or before moving it to a permanent location, :mod:`tempfile` will be very useful.  It provides classes to create temporary files and directories safely and securely.  Names are guaranteed not to collide, and include random components so they are not easily guessable."
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:32
+# a5e027cc8c3e4e4b8776c5a16ebd6e3b
+msgid "Files and Directories"
+msgstr ""
+
+#: ../../PyMOTW/articles/file_access.rst:34
+# ef26c1e6756b4762b944ce702ac26bd4
+msgid "Frequently you need to work on a file as a whole, without worrying about what is in it.  The :mod:`shutil` module includes high-level file operations such as copying files and directories, setting permissions, etc."
+msgstr ""
+

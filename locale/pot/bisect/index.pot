@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/bisect/index.rst:3
+# 878711b036eb4b0b9f33aa661ce9512e
+msgid "bisect -- Maintain lists in sorted order"
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:8
+# d2e3a4f2fffe4b5da4dd2c69fa110140
+msgid "Maintains a list in sorted order without having to call sort each time an item is added to the list."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:9
+# ce71eb52280947aa9a93066501e722c2
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:11
+# 4109bf16a5ed4371a21a8a41fc531671
+msgid "The bisect module implements an algorithm for inserting elements into a list while maintaining the list in sorted order. This can be much more efficient than repeatedly sorting a list, or explicitly sorting a large list after it is constructed."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:17
+# 5a515e65f19c4c42b3fd0c27a670e348
+msgid "Example"
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:19
+# 02b7a880ff2947198acf19f40b973ccb
+msgid "Let's look at a simple example using bisect.insort(), which inserts items into a list in sorted order."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:26
+# dbc57eb527d940ed94f961648f61cfd0
+msgid "The output for that script is:"
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:55
+# 3ba2e7c799344020bdf96eb23766ca6f
+msgid "The first column shows the new random number. The second column shows the position where the number will be inserted into the list. The remainder of each line is the current sorted list."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:59
+# 73cf23a5e30f40ec9080815e78469061
+msgid "This is a simple example, and for the amount of data we are manipulating it might be faster to simply build the list and then sort it once. But for long lists, significant time and memory savings can be achieved using an insertion sort algorithm such as this."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:64
+# dde4c661b75440e38a67fb854a27ded4
+msgid "You probably noticed that the result set above includes a few repeated values (45 and 77). The bisect module provides 2 ways to handle repeats. New values can be inserted to the left of existing values, or to the right. The insort() function is actually an alias for insort_right(), which inserts after the existing value. The corresponding function insort_left() inserts before the existing value."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:71
+# f01b97c72f45485ba225b4ef1f98a61f
+msgid "If we manipulate the same data using bisect_left() and insort_left(), we end up with the same sorted list but notice that the insert positions are different for the duplicate values."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:107
+# ddcb2d21e75c454580fc6528fd5f798a
+msgid "In addition to the Python implementation, there is a faster C implementation available. If the C version is present, that implementation overrides the pure Python implementation automatically when you import the bisect module."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:115
+# 640986fb3a784406a7de4194bc688f88
+msgid "`bisect <http://docs.python.org/library/bisect.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:115
+# b15564b3c1494593a436c2ae9d0a5984
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:118
+# 9bf50213ca2b4aeeb7c04b6f210d7522
+msgid "`WikiPedia: Insertion Sort <http://en.wikipedia.org/wiki/Insertion_sort>`_"
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:118
+# 84d1ceea4be94bd4a14104d691099ef9
+msgid "A description of the insertion sort algorithm."
+msgstr ""
+
+#: ../../PyMOTW/bisect/index.rst:120
+# 81d624d0ae8249ce9500245a2a58446b
+msgid ":ref:`article-data-structures`"
+msgstr ""
+

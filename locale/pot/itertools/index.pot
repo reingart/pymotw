@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/itertools/index.rst:3
+# 1f1ff70c953346a3bd60ae6db5a72456
+msgid "itertools -- Iterator functions for efficient looping"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:9
+# 4811eadfe07948369b9be93bdd261ab1
+msgid "The itertools module includes a set of functions for working with iterable (sequence-like) data sets."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:11
+# 5c19cae526924b34a44ff74d16fe8f3a
+msgid "2.3"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:13
+# 1fb62f84bccd48bcb2affb1987d8377a
+msgid "The functions provided are inspired by similar features of the \"lazy functional programming language\" Haskell and SML. They are intended to be fast and use memory efficiently, but also to be hooked together to express more complicated iteration-based algorithms."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:18
+# 38fed992ec364b3a9b5233e0465df5f1
+msgid "Iterator-based code may be preferred over code which uses lists for several reasons. Since data is not produced from the iterator until it is needed, all of the data is not stored in memory at the same time. Reducing memory usage can reduce swapping and other side-effects of large data sets, increasing performance."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:25
+# 56eb311522274c9ba4b564df0b8ae0b6
+msgid "Merging and Splitting Iterators"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:27
+# 391ef48332584786a1a816d13fef1a16
+msgid "The ``chain()`` function takes several iterators as arguments and returns a single iterator that produces the contents of all of them as though they came from a single sequence."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:47
+# 64027bee8e6c4d6086e169e2b5100616
+msgid "``izip()`` returns an iterator that combines the elements of several iterators into tuples. It works like the built-in function ``zip()``, except that it returns an iterator instead of a list."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:69
+# af498441573441f0bb8cec6b2ea491bd
+msgid "The ``islice()`` function returns an iterator which returns selected items from the input iterator, by index. It takes the same arguments as the slice operator for lists: start, stop, and step. The start and step arguments are optional."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:98
+# b42648aefec94f2c959a0b068eb5e726
+msgid "The ``tee()`` function returns several independent iterators (defaults to 2) based on a single original input. It has semantics similar to the Unix `tee <http://unixhelp.ed.ac.uk/CGI/man-cgi?tee>`__ utility, which repeats the values it reads from its input and writes them to a named file and standard output."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:121
+# 38671ec0359e465c97e45ebf408d6329
+msgid "Since the new iterators created by ``tee()`` share the input, you should not use the original iterator any more. If you do consume values from the original input, the new iterators will not produce those values:"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:145
+# efa667d15e99417184072cee8f8e52af
+msgid "Converting Inputs"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:147
+# dc1bb5e9100d479a93f33d299ab9c83c
+msgid "The ``imap()`` function returns an iterator that calls a function on the values in the input iterators, and returns the results. It works like the built-in ``map()``, except that it stops when any input iterator is exhausted (instead of inserting ``None`` values to completely consume all of the inputs)."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:153
+# ca445bdd8652451b9a06f39bedc4a39d
+msgid "In the first example, the lambda function multiplies the input values by 2. In a second example, the lambda function multiplies 2 arguments, taken from separate iterators, and returns a tuple with the original arguments and the computed value."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:186
+# 33f9b413923a44419cf4a99efc0433cc
+msgid "The ``starmap()`` function is similar to ``imap()``, but instead of constructing a tuple from multiple iterators it splits up the items in a single iterator as arguments to the mapping function using the ``*`` syntax. Where the mapping function to imap() is called f(i1, i2), the mapping function to starmap() is called ``f(*i)``."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:213
+# a75fb66baf734900aae98b7308d75fa0
+msgid "Producing New Values"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:215
+# 54a9d16cdc8a406abe6bd0c4b3e6270a
+msgid "The ``count()`` function returns an interator that produces consecutive integers, indefinitely. The first number can be passed as an argument, the default is zero. There is no upper bound argument (see the built-in ``xrange()`` for more control over the result set). In this example, the iteration stops because the list argument is consumed."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:240
+# 2bac045984664711aaed1a76a909e82e
+msgid "The ``cycle()`` function returns an iterator that repeats the contents of the arguments it is given indefinitely. Since it has to remember the entire contents of the input iterator, it may consume quite a bit of memory if the iterator is long. In this example, a counter variable is used to break out of the loop after a few cycles."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:268
+# f729dfbcccde49f991ad61b154fc40a3
+msgid "The ``repeat()`` function returns an iterator that produces the same value each time it is accessed. It keeps going forever, unless the optional times argument is provided to limit it."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:292
+# 1aa3489553fb44b2b37e2499bbadc62c
+msgid "It is useful to combine ``repeat()`` with ``izip()`` or ``imap()`` when invariant values need to be included with the values from the other iterators."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:338
+# 674287717301486a8e7f538343dbaf56
+msgid "Filtering"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:340
+# b67de930ef0a4be2b6e1ce58bc5c2959
+msgid "The ``dropwhile()`` function returns an iterator that returns elements of the input iterator after a condition becomes false for the first time. It does not filter every item of the input; after the condition is false the first time, all of the remaining items in the input are returned."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:368
+# c90c4ccda97d4f5f9218e17d994c7cb0
+msgid "The opposite of ``dropwhile()``, ``takewhile()`` returns an iterator that returns items from the input iterator as long as the test function returns true."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:395
+# f9803b838798425487bd5e220b827b28
+msgid "``ifilter()`` returns an iterator that works like the built-in ``filter()`` does for lists, including only items for which the test function returns true. It is different from ``dropwhile()`` in that every item is tested before it is returned."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:424
+# 339e25c360384045bb199a09fcedf0a6
+msgid "The opposite of ``ifilter()``, ``ifilterfalse()`` returns an iterator that includes only items where the test function returns false."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:452
+# f6de9d65d2534795908fabe97ce0d0cf
+msgid "Grouping Data"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:454
+# 2cb5cb128b144b77a8ff97c9a63e3844
+msgid "The ``groupby()`` function returns an iterator that produces sets of values grouped by a common key."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:457
+# 770186fa87de4ea2a9c2a67216424ff4
+msgid "This example from the standard library documentation shows how to group keys in a dictionary which have the same value:"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:479
+# a73cb4be4c414f19b77a42aa334dd29a
+msgid "This more complicated example illustrates grouping related values based on some attribute. Notice that the input sequence needs to be sorted on the key in order for the groupings to work out as expected."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:523
+# 25c4dba715094464a614ae2f550206e1
+msgid "`itertools <http://docs.python.org/library/itertools.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:523
+# 8df126de0e8c471ebf348afdb558b64c
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:526
+# d3f68e0ab7ed49dd9eec14e6c3a5734b
+msgid "`The Standard ML Basis Library <http://www.standardml.org/Basis/>`_"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:526
+# f29530254af84592922cb4818646c5c5
+msgid "The library for SML."
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:528
+# 1ea959b0b0d145979c74d346e9492577
+msgid "`Definition of Haskell and the Standard Libraries <http://www.haskell.org/definition/>`_"
+msgstr ""
+
+#: ../../PyMOTW/itertools/index.rst:529
+# 13c7beed7214414b89ee0eaa56f537ae
+msgid "Standard library specification for the functional language Haskell."
+msgstr ""
+

@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/collections/defaultdict.rst:3
+# a070056580ee4655bfd7570dc63dbcc0
+msgid "defaultdict"
+msgstr ""
+
+#: ../../PyMOTW/collections/defaultdict.rst:5
+# 8f63dbb74e3d44acb1e3cb7750738cf0
+msgid "The standard dictionary includes the method :func:`setdefault` for retrieving a value and establishing a default if the value does not exist. By contrast, :class:`defaultdict` lets the caller specify the default up front when the container is initialized."
+msgstr ""
+
+#: ../../PyMOTW/collections/defaultdict.rst:14
+# ab9aef7ce481482f9fe55802b9bca500
+msgid "This works well as long as it is appropriate for all keys to have the same default. It can be especially useful if the default is a type used for aggregating or accumulating values, such as a :class:`list`, :class:`set`, or even :class:`int`. The standard library documentation includes several examples of using :class:`defaultdict` this way."
+msgstr ""
+
+#: ../../PyMOTW/collections/defaultdict.rst:37
+# 0456d7caeecb4dd3954a419ab81bce8a
+msgid "`defaultdict examples <http://docs.python.org/lib/defaultdict-examples.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/collections/defaultdict.rst:37
+# 8df73fd3197141fd91857a5639c3d05b
+msgid "Examples of using defaultdict from the standard library documentation."
+msgstr ""
+
+#: ../../PyMOTW/collections/defaultdict.rst:39
+# 96302e89cb2143d383a9848081bf3639
+msgid "`James Tauber: Evolution of Default Dictionaries in Python <http://jtauber.com/blog/2008/02/27/evolution_of_default_dictionaries_in_python/>`_"
+msgstr ""
+
+#: ../../PyMOTW/collections/defaultdict.rst:40
+# 925480d2411b4c628fd733540bf75cd8
+msgid "Discussion of how defaultdict relates to other means of initializing dictionaries."
+msgstr ""
+

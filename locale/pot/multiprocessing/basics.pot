@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/multiprocessing/basics.rst:3
+# b076270a6f8943c68c1667699c61f812
+msgid "multiprocessing Basics"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:5
+# c84c9f518ab547b1814b520dbb7e7278
+msgid "The simplest way to spawn a second is to instantiate a :class:`Process` object with a target function and call :func:`start` to let it begin working."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:13
+# 6699e1b7b1e0473d8d80e56e5ffc4711
+msgid "The output includes the word \"Worker\" printed five times, although it may not be entirely clean depending on the order of execution."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:33
+# d0dd0d6066fb4a7ba127ff3434f43cd8
+msgid "It usually more useful to be able to spawn a process with arguments to tell it what work to do.  Unlike with :mod:`threading`, to pass arguments to a :mod:`multiprocessing` :class:`Process` the argument must be able to be serialized using :mod:`pickle`.  This example passes each worker a number so the output is a little more interesting."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:43
+# da3eb2b8b51f4e94aae2b3c0bceeeea5
+msgid "The integer argument is now included in the message printed by each worker:"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:62
+# 22757554ae794b4a8479b047e30b176d
+msgid "Importable Target Functions"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:64
+# 3d1f9b1aec7f44979e7cfc3824e34ad6
+msgid "One difference between the :mod:`threading` and :mod:`multiprocessing` examples is the extra protection for ``__main__`` used in the :mod:`multiprocessing` examples.  Due to the way the new processes are started, the child process needs to be able to import the script containing the target function.  Wrapping the main part of the application in a check for ``__main__`` ensures that it is not run recursively in each child as the module is imported.  Another approach is to import the target function from a separate script."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:73
+# b03017c16b3840f1b82968d6047814dd
+msgid "For example, this main program:"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:79
+# d4da302d57d44cf08b51ffa2bf72544a
+msgid "uses this worker function, defined in a separate module:"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:85
+# 024c542e594043b493fe09e8e89b74a3
+msgid "and produces output like the first example above:"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:104
+# 65563a0b7c824921a9a88ed70d61a326
+msgid "Determining the Current Process"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:106
+# ac608a274d68414ca3a8c54e8bb3fb1b
+msgid "Passing arguments to identify or name the process is cumbersome, and unnecessary.  Each :class:`Process` instance has a name with a default value that can be changed as the process is created. Naming processes is useful for keeping track of them, especially in applications with multiple types of processes running simultaneously."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:116
+# 5b65d07641424859bfe8f5420df8f472
+msgid "The debug output includes the name of the current process on each line. The lines with ``Process-3`` in the name column correspond to the unnamed process ``worker_1``."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:139
+# 5a86e43401354b38ae768261c76bcffa
+msgid "Daemon Processes"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:141
+# d378e8e4f46d4f3280b119c71e70763f
+msgid "By default the main program will not exit until all of the children have exited. There are times when starting a background process that runs without blocking the main program from exiting is useful, such as in services where there may not be an easy way to interrupt the worker, or where letting it die in the middle of its work does not lose or corrupt data (for example, a task that generates \"heart beats\" for a service monitoring tool)."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:149
+# a5c6013a934c4cff9b12c871a644ce90
+msgid "To mark a process as a daemon, set its :attr:`daemon` attribute with a boolean value. The default is for processes to not be daemons, so passing True turns the daemon mode on."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:157
+# 900a5afb01334ad5a8150ec7d0aa9db6
+msgid "The output does not include the \"Exiting\" message from the daemon process, since all of the non-daemon processes (including the main program) exit before the daemon process wakes up from its 2 second sleep."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:176
+# e68cc993c3d445b5a59116abfc0e0c03
+msgid "The daemon process is terminated automatically before the main program exits, to avoid leaving orphaned processes running.  You can verify this by looking for the process id value printed when you run the program, and then checking for that process with a command like ``ps``."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:183
+# 86eee48ade434d329f2c6ba382d4a780
+msgid "Waiting for Processes"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:185
+# 239e9738ed8743c3845609e94ca59fb5
+msgid "To wait until a process has completed its work and exited, use the :func:`join` method."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:192
+# 634770660b594fc0b5ac0a8cb93657b6
+msgid "Since the main process waits for the daemon to exit using :func:`join`, the \"Exiting\" message is printed this time."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:210
+# 49fa7c04adc64647b57363ae25083541
+msgid "By default, :func:`join` blocks indefinitely. It is also possible to pass a timeout argument (a float representing the number of seconds to wait for the process to become inactive). If the process does not complete within the timeout period, :func:`join` returns anyway."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:219
+# 6369551c6b2d425a992a47930a0020bf
+msgid "Since the timeout passed is less than the amount of time the daemon sleeps, the process is still \"alive\" after :func:`join` returns."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:237
+# 8b612151a8034092ad1fcf9d57efb2c4
+msgid "Terminating Processes"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:239
+# 2217fe550bd840eab243709649792ff0
+msgid "Although it is better to use the *poison pill* method of signaling to a process that it should exit (see :ref:`multiprocessing-queues`), if a process appears hung or deadlocked it can be useful to be able to kill it forcibly.  Calling :func:`terminate` on a process object kills the child process."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:251
+# addd4189c3984b3b81a2708dfe6353c2
+msgid "It is important to :func:`join` the process after terminating it in order to give the background machinery time to update the status of the object to reflect the termination."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:272
+# d6a748dd1b844149937154027fdc4e94
+msgid "Process Exit Status"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:274
+# 8f8ed9200bcc4841ac8e4a5b96beb5cf
+msgid "The status code produced when the process exits can be accessed via the :attr:`exitcode` attribute."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:277
+# bd3b23ec86d24ff88a15de50f594d25a
+msgid "For :attr:`exitcode` values"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:279
+# 7f12b2aa431c4ccb8fb999c19e08b13c
+msgid "``== 0`` -- no error was produced"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:280
+# 93cd98658cfa4f5d97c02228ac095970
+msgid "``> 0`` -- the process had an error, and exited with that code"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:281
+# 4fcd0ff77e2c45b4aaac9240274ab7c2
+msgid "``< 0`` -- the process was killed with a signal of ``-1 * exitcode``"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:287
+# c98aad5acb24434882f8074e0faf2a8b
+msgid "Processes that raise an exception automatically get an :attr:`exitcode` of 1."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:324
+# 3dad5ea4b2464572a429db9754048227
+msgid "Logging"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:326
+# 5934a3d1f7b84e42872d5b9a90812ddc
+msgid "When debugging concurrency issues, it can be useful to have access to the internals of the objects provided by :mod:`multiprocessing`. There is a convenient module-level function to enable logging called :func:`log_to_stderr`.  It sets up a logger object using :mod:`logging` and adds a handler so that log messages are sent to the standard error channel."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:337
+# 460e96fffd2f411cbca29095ba440d95
+msgid "By default the logging level is set to ``NOTSET`` so no messages are produced.  Pass a different level to initialize the logger to the level of detail you want."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:361
+# 83c909f2031443049d0bbdc5182600da
+msgid "To manipulate the logger directly (change its level setting or add handlers), use :func:`get_logger`."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:368
+# 87c59d9afec743cebe55e7c2a4ce725a
+msgid "The logger can also be configured through the :mod:`logging` configuration file API, using the name ``multiprocessing``."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:389
+# 5f6e7d571fa946aebebe86d457959eb8
+msgid "Subclassing Process"
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:391
+# 460cc5541ba844c3be0b6493d198b127
+msgid "Although the simplest way to start a job in a separate process is to use :class:`Process` and pass a target function, it is also possible to use a custom subclass."
+msgstr ""
+
+#: ../../PyMOTW/multiprocessing/basics.rst:399
+# b3dc077f1ddf4c65887ff1c63341d73d
+msgid "The derived class should override :meth:`run` to do its work."
+msgstr ""
+

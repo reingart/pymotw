@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/webbrowser/index.rst:3
+# 1796cfad2a714887b815c88b4fb426f8
+msgid "webbrowser -- Displays web pages"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:8
+# ad88057a61dd4549a6d895765deeee84
+msgid "Use the `webbrowser` module to display web pages to your users."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:9
+# f194573e0bcc4ecea2d8d2adaa4142a8
+msgid "2.1.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:11
+# 439f3188fec0442fa15b7dcc46aa6a23
+msgid "The :mod:`webbrowser` module includes functions to open URLs in interactive browser applications. The module includes a registry of available browsers, in case multiple options are available on the system. It can also be controlled with the ``BROWSER`` environment variable."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:17
+# f46a4812d0d6489a84eea238c62ac293
+msgid "Simple Example"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:19
+# e905e83b34be43cb9a992faf67b2ab62
+msgid "To open a page in the browser, use the :func:`open()` function."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:25
+# 680d7893debf43748998a6d745a61cce
+msgid "The URL is opened in a browser window, and that window is raised to the top of the window stack. The documentation says that an existing window will be reused, if possible, but the actual behavior may depend on your browser's settings. Using Firefox on my Mac, a new window was always created."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:32
+# 87c50734ed724c55a17ae118c5a254c6
+msgid "Windows vs. Tabs"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:34
+# d0d6dd74728a42abbe65e1ca36fb5393
+msgid "If you always want a new window used, use :func:`open_new()`."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:40
+# 022ad5ccb66c4049b4d8e7cd3c3bd54d
+msgid "If you would rather create a new tab, use :func:`open_new_tab()` instead."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:44
+# 5448bddfc31c459aa9f7893999790d87
+msgid "Using a specific browser"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:46
+# 5d050b2439cb42b989a92622e3942140
+msgid "If for some reason your application needs to use a specific browser, you can access the set of registered browser controllers using the :func:`get()` function. The browser controller has methods to :func:`open()`, :func:`open_new()`, and :func:`open_new_tab()`. This example forces the use of the lynx browser:"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:57
+# 48ffa5b42b774e67b1edca114ea4713d
+msgid "Refer to the module documentation for a list of available browser types."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:62
+# a3e94f27277b425bb4e7dfa853a914f3
+msgid "``BROWSER`` variable"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:64
+# 79940f98c1104b499d08eb1e5c0aa0ad
+msgid "Users can control the module from outside your application by setting the environment variable ``BROWSER`` to the browser names or commands to try. The value should consist of a series of browser names separated by ``os.pathsep``. If the name includes ``%s``, the name is interpreted as a literal command and executed directly with the ``%s`` replaced by the URL. Otherwise, the name is passed to :func:`get()` to obtain a controller object from the registry."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:72
+# 4c58ba7996444f968eb8ada58ca2a658
+msgid "For example, this command opens the web page in lynx, assuming it is available, no matter what other browsers are registered."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:79
+# 38e5bdf2dd1b4075b6b0b6fd9f602043
+msgid "If none of the names in ``BROWSER`` work, :mod:`webbrowser` falls back to its default behavior."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:84
+# cb52576453334e8cb606c3b397ce98b3
+msgid "Command Line Interface"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:86
+# 02024b6635694de683c2e5560b4d8d2c
+msgid "All of the features of the :mod:`webbrowser` module are available via the command line as well as from within your Python program."
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:99
+# beae08409cfa4863a14a080af2d115c4
+msgid "`webbrowser <http://docs.python.org/lib/module-webbrowser.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/webbrowser/index.rst:100
+# 017780983e0f48b7b393d0d23d60bf42
+msgid "Standard library documentation for this module."
+msgstr ""
+

@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/socket/tcp.rst:3
+# 283850b1b5754f6cbbbb95617a7289a2
+msgid "TCP/IP Client and Server"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:5
+# b32b1930090a4c00b5ba70970e7fe52a
+msgid "Sockets can be configured to act as a *server* and listen for incoming messages, or connect to other applications as a *client*.  After both ends of a TCP/IP socket are connected, communication is bi-directional."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:11
+# 974111e8472e41e1a782a523a06591e7
+msgid "Echo Server"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:13
+# 4c656ade368a4db6951b6edf5a1a5f6b
+msgid "This sample program, based on the one in the standard library documentation, receives incoming messages and echos them back to the sender.  It starts by creating a TCP/IP socket."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:20
+# 180203c807a24b2faeeb7a3c7c4a2eec
+msgid "Then :func:`bind` is used to associate the socket with the server address.  In this case, the address is ``localhost``, referring to the current server, and the port number is 10000."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:27
+# 7ce987bd10ee4c55801618d9beab5ef2
+msgid "Calling :func:`listen` puts the socket into server mode, and :func:`accept` waits for an incoming connection."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:33
+# 7145e6f6152e4d64bfbfdcf0d3113842
+msgid ":func:`accept` returns an open connection between the server and client, along with the address of the client.  The connection is actually a different socket on another port (assigned by the kernel). Data is read from the connection with :func:`recv` and transmitted with :func:`sendall`."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:42
+# 67f71ba5175e4d51b3a96c19f3837f20
+msgid "When communication with a client is finished, the connection needs to be cleaned up using :func:`close`.  This example uses a ``try:finally`` block to ensure that :func:`close` is always called, even in the event of an error."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:48
+# d753464d0d3d46e8b44faf03a85d90e4
+msgid "Echo Client"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:50
+# e9865d7a673742978ddb661cec7c9104
+msgid "The client program sets up its :class:`socket` differently from the way a server does.  Instead of binding to a port and listening, it uses :func:`connect` to attach the socket directly to the remote address."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:58
+# c3e05dfbeb894d39892223b883ceafd5
+msgid "After the connection is established, data can be sent through the :class:`socket` with :func:`sendall` and received with :func:`recv`, just as in the server."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:65
+# e61886655c3442ad9be2def0f5859bc9
+msgid "When the entire message is sent and a copy received, the socket is closed to free up the port."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:69
+# 789d6dda18ee4aeca640173e77623928
+msgid "Client and Server Together"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:71
+# 4dd6bb3aff834317b55d4c308c21ceac
+msgid "The client and server should be run in separate terminal windows, so they can communicate with each other.  The server output is:"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:91
+# 352b8d1b1ce949b3a3501562e01356d2
+msgid "The client output is:"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:108
+# 874334221ad94010ae6fce37b5601727
+msgid "Easy Client Connections"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:110
+# 8f03991829484177b1790c57a2adb7fe
+msgid "TCP/IP clients can save a few steps by using the convenience function :func:`create_connection` to connect to a server.  The function takes one argument, a two-value tuple containing the address of the server, and derives the best address to use for the connection."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:119
+# 70c8d2e0426a4b38afdb437dcc367249
+msgid ":func:`create_connection` uses :func:`getaddrinfo` to find candidate connection parameters, and returns a :class:`socket` opened with the first configuration that creates a successful connection.  The :attr:`family`, :attr:`type`, and :attr:`proto` attributes can be examined to determine the type of :class:`socket` being returned."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:140
+# b84491a72bdb491d8add654b06a5649e
+msgid "Choosing an Address for Listening"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:142
+# 0151d14df0364215851337391c990710
+msgid "It is important to bind a server to the correct address, so that clients can communicate with it.  The previous examples all used ``'localhost'`` as the IP address, which limits connections to clients running on the same server.  Use a public address of the server, such as the value returned by :func:`gethostname`, to allow other hosts to connect.  This example modifies the echo server to listen on an address specified via a command line argument."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:154
+# fc19bee95b01436985dd33adef0b98a0
+msgid "A similar modification to the client program is needed before the server can be tested."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:161
+# d3538e7da03b4850929f4a957c79b26a
+msgid "After starting the server with the argument ``farnsworth.hellfly.net``, the :command:`netstat` command shows it listening on the address for the named host."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:180
+# fbc2704330824c048d1dcab10c4ad706
+msgid "Running the the client on another host, passing ``farnsworth.hellfly.net`` as the host where the server is running, produces:"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:198
+# fa7909c00be147148d81955a1d1c2da4
+msgid "And the server output is:"
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:213
+# c7487998211a4726a0aad5319db54b88
+msgid "Many servers have more than one network interface, and therefore more than one IP address.  Rather than running separate copies of a service bound to each IP address, use the special address :const:`INADDR_ANY` to listen on all addresses at the same time.  Although :mod:`socket` defines a constant for :const:`INADDR_ANY`, it is an integer value and must be converted to a dotted-notation string address before it can be passed to :func:`bind`.  As a shortcut, use the empty string ``''`` instead of doing the conversion."
+msgstr ""
+
+#: ../../PyMOTW/socket/tcp.rst:226
+# 6402c8e591a8478e94be9b172e49c4fc
+msgid "To see the actual address being used by a socket, call its :func:`getsockname` method.  After starting the service, running :command:`netstat` again shows it listening for incoming connections on any address."
+msgstr ""
+

@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/platform/index.rst:3
+# a36f84ae31714527a0a4ee6a79c4f444
+msgid "platform -- Access system version information"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:8
+# 70e6140bde404269a2b3ec806a8d5ddc
+msgid "Probe the underlying platform's hardware, operating system, and interpreter version information."
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:9
+# 6abf7e97b60a481ca5042ebef8b47def
+msgid "2.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:11
+# f30c2523f9604f30aa4cb8014147fcbd
+msgid "Although Python is often used as a cross-platform language, it is occasionally necessary to know what sort of system a program is running on. Build tools need that information, but an application might also know that some of the libraries or external commands it uses have different interfaces on different operating systems. For example, a tool to manage the network configuration of an operating system can define a portable representation of network interfaces, aliases, IP addresses, etc. But once it actually needs to edit the configuration files, it must know more about the host so it can use the correct operating system configuration commands and files.  The :mod:`platform` module includes the tools for learning about the interpreter, operating system, and hardware platform where a program is running."
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:27
+# 944faf651b1a47b289a1fa4d398f0df8
+msgid "The example output below was generated on a MacBook Pro3,1 running OS X 10.6.4, a VMware Fusion VM running CentOS 5.5, and a Dell PC running Microsoft Windows 2008.  Python was installed on the OS X and Windows systems using the pre-compiled installer from python.org.  The Linux system is running an interpreter built from source locally."
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:35
+# 04d5920aeb3e47cbabcde86bbdbfbb35
+msgid "Interpreter"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:37
+# 6c314fff39984b14a69c8038f4216af8
+msgid "There are four functions for getting information about the current Python interpreter. :func:`python_version` and :func:`python_version_tuple` return different forms of the interpreter version with major, minor, and patchlevel components. :func:`python_compiler` reports on the compiler used to build the interpreter. And :func:`python_build` gives a version string for the build of the interpreter."
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:50
+#: ../../PyMOTW/platform/index.rst:96
+#: ../../PyMOTW/platform/index.rst:155
+#: ../../PyMOTW/platform/index.rst:217
+# 406d07a69b2f4754b164892dbabeea5f
+# 5725c4bc146048ba9ca4cfe718c2d12e
+# 46c221438bff449a872a735352d0b09a
+# 4f1f05e797114e848a501774a9e47dce
+msgid "OS X:"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:67
+#: ../../PyMOTW/platform/index.rst:112
+#: ../../PyMOTW/platform/index.rst:176
+#: ../../PyMOTW/platform/index.rst:232
+# c366ab6a844c49faaba4cc0009d6b72b
+# 27e2508d80e249ec99af627c0825a9e0
+# de36a7db1dff4cfc8c1b091f7c3d13ce
+# 7cbee7a8c83c466d8b4630ef4118a963
+msgid "Linux::"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:75
+#: ../../PyMOTW/platform/index.rst:119
+#: ../../PyMOTW/platform/index.rst:189
+#: ../../PyMOTW/platform/index.rst:238
+# 214def1a5fdd41b8b50092757d12806c
+# ed7d17f9abbf40f9a930e3256c8de224
+# d425e2d91aae4fdd8f879f77916bd8de
+# 10aefc699647497abddcf4c81961f3db
+msgid "Windows::"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:84
+# 50baaab3837c4ef885bb5f9aa14583a3
+msgid "Platform"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:86
+# cb08ce43e5194c2b9c553aacc6da759a
+msgid ":func:`platform` returns string containing a general purpose platform identifier.  The function accepts two optional boolean arguments. If *aliased* is True, the names in the return value are converted from a formal name to their more common form. When *terse* is true, returns a minimal value with some parts dropped."
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:128
+# 53f5cf6fa4804d9fa17f1109c9360d16
+msgid "Operating System and Hardware Info"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:130
+# 1f3aa7585c154ec0b9fb35ce2877cba8
+msgid "More detailed information about the operating system and hardware the interpreter is running under can be retrieved as well. ``uname()`` returns a tuple containing the system, node, release, version, machine, and processor values.  Individual values can be accessed through functions of the same names:"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:136
+# e68c804362ab4ccdbae5ec526d26aa93
+msgid ":func:`system`"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:137
+# 130f6f0e0b414e19b2311b73bceeebc5
+msgid "returns the operating system name"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:138
+# 3c2e72adbf4e4b9b9d817b5c4d52eee2
+msgid ":func:`node`"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:139
+# 9e6e3403093342759c3fcd4d1caf4476
+msgid "returns the hostname of the server, not fully qualified"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:140
+# 6ee34a5e534b4468abb1f7303c97d547
+msgid ":func:`release`"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:141
+# 9a05185d148249f9ae99742aace56a37
+msgid "returns the operating system release number"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:142
+# 7cf0f5a0d916494aa597d9307eca167d
+msgid ":func:`version`"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:143
+# 63475ab207b1400f9ad68ec2107df706
+msgid "returns the more detailed system version"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:144
+# ceaacf326cc449f09799fb49d5efed84
+msgid ":func:`machine`"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:145
+# 752f10069206464d838dd0bbd374012f
+msgid "gives a hardware-type identifier such as ``'i386'``"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:148
+# e96b0d2c9e2b47248ddd32615d78c75d
+msgid ":func:`processor`"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:147
+# 52e75637da26438085b1ce4fdd6824a8
+msgid "returns a real identifier for the processor, or the same value as machine() in many cases"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:204
+# ddffd2f0be6342af802985fc0954e288
+msgid "Executable Architecture"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:206
+# 8626424ba38347ef9b688cc7fbf359ea
+msgid "Individual program architecture information can be probed using the :func:`architecture` function. The first argument is the path to an executable program (defaulting to ``sys.executable``, the Python interpreter). The return value is a tuple containing the bit architecture and the linkage format used."
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:246
+# c617e51047b74f82806960c713f46fdd
+msgid "`platform <http://docs.python.org/lib/module-platform.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/platform/index.rst:247
+# d5927fd566f84c3cb597b29e107a6d4c
+msgid "Standard library documentation for this module."
+msgstr ""
+

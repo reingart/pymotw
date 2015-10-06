@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/urlparse/index.rst:3
+# a58b1845f54549bcbbb7d57c84cf6508
+msgid "urlparse -- Split URL into component pieces."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:8
+# 162c0cb2e2fb43eeafdaf12e1d24b618
+msgid "Split URL into component pieces."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:9
+# 20808d1569f94207986b288ec55e01a3
+msgid "since 1.4"
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:11
+# 4a85b822475b4213ba51ffdfe94ebdeb
+msgid "The :mod:`urlparse` module provides functions for breaking URLs down into their component parts, as defined by the relevant RFCs."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:15
+# 3a7fa44f074d4812a43fb7f3c5c131a6
+msgid "Parsing"
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:17
+# e65d81f8edcd4a7a89356a79618c7d1c
+msgid "The return value from the :func:`urlparse()` function is an object which acts like a tuple with 6 elements."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:24
+# ae2f7cb33bab49e2a8920d9b8eaec8e1
+msgid "The parts of the URL available through the tuple interface are the scheme, network location, path, parameters, query, and fragment."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:40
+# c0569b385b3c46da90a1cb5e3914d3be
+msgid "Although the return value acts like a tuple, it is really based on a :ref:`namedtuple <collections-namedtuple>`, a subclass of tuple that supports accessing the parts of the URL via named attributes instead of indexes. That's especially useful if, like me, you can't remember the index order. In addition to being easier to use for the programmer, the attribute API also offers access to several values not available in the tuple API."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:52
+# fae3778f48e749f3a37241c7bccc3e35
+msgid "The *username* and *password* are available when present in the input URL and ``None`` when not. The *hostname* is the same value as *netloc*, in all lower case.  And the *port* is converted to an integer when present and ``None`` when not."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:78
+# ec43485fa2af4ac599dcd6b6136bc680
+msgid "The :func:`urlsplit()` function is an alternative to :func:`urlparse()`. It behaves a little different, because it does not split the parameters from the URL. This is useful for URLs following :rfc:`2396`, which supports parameters for each segment of the path."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:87
+# 709b6c96baaa4ffd8bbc5e54f44d4526
+msgid "Since the parameters are not split out, the tuple API will show 5 elements instead of 6, and there is no *params* attribute."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:111
+# 287ad6318d4c4eccaaa9043f50875359
+msgid "To simply strip the fragment identifier from a URL, as you might need to do to find a base page name from a URL, use :func:`urldefrag()`."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:118
+# 57191668d9e040cfa67a38727790ae31
+msgid "The return value is a tuple containing the base URL and the fragment."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:135
+# 232221acd2ed4f49ae5a770afa593f18
+msgid "Unparsing"
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:137
+# 2307022b09df4f55b35418aba5d940f8
+msgid "There are several ways to assemble a split URL back together into a single string. The parsed URL object has a :func:`geturl()` method."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:144
+# d6ccd56d349a4e408f9e29cb3490e5a6
+msgid ":func:`geturl()` only works on the object returned by :func:`urlparse()` or :func:`urlsplit()`."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:160
+# 71e209b5f99e4bb9ad1466a33173dbdc
+msgid "If you have a regular tuple of values, you can use :func:`urlunparse()` to combine them into a URL."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:167
+# 326d74a018bb407ca6d707f9dfe9d6b4
+msgid "While the :class:`ParseResult` returned by :func:`urlparse()` can be used as a tuple, in this example I explicitly create a new tuple to show that :func:`urlunparse()` works with normal tuples, too."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:186
+# b18f49d65dc14126bdf8ba364a0d4cf7
+msgid "If the input URL included superfluous parts, those may be dropped from the unparsed version of the URL."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:193
+# b8a7a058041a43849ef9177a60286393
+msgid "In this case, the *parameters*, *query*, and *fragment* are all missing in the original URL. The new URL does not look the same as the original, but is equivalent according to the standard."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:213
+# cc48db0393334d23a14f05773e48fd9a
+msgid "Joining"
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:215
+# c5ce36594c154c9da7324023693f8a92
+msgid "In addition to parsing URLs, :mod:`urlparse` includes :func:`urljoin()` for constructing absolute URLs from relative fragments."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:223
+# a4e43cffa2ad4a7a88f59abab57cfe4b
+msgid "In the example, the relative portion of the path (``\"../\"``) is taken into account when the second URL is computed."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:242
+# 4979350177b3471d963943f401e57dd9
+msgid "`urlparse <http://docs.python.org/lib/module-urlparse.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:242
+# 2d63845c4f5f49dca71d52a97f7d1973
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:245
+# 2c68202ada6c4215a41224ba0ed5a1ae
+msgid ":mod:`urllib`"
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:245
+# fc062b2c34874d5cba9321fdb7ef9bfc
+msgid "Retrieve the contents of a resource identified by a URL."
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:247
+# ae42d35d1fad4b8bbfa15fc946f33150
+msgid ":mod:`urllib2`"
+msgstr ""
+
+#: ../../PyMOTW/urlparse/index.rst:248
+# b44d99fa4ae04b198ac158fe5b7afd9b
+msgid "Alternative API for accessing remote URLs."
+msgstr ""
+

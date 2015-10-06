@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/cmd/index.rst:5
+# 7e77ed0fa1184e559a2d8428ef4d2076
+msgid "cmd -- Create line-oriented command processors"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:10
+# 9dffd37d0e8a44a3b6a8d073d77c633a
+msgid "Create line-oriented command processors."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:11
+# 34cabb0584a14713b4f7c62c09947ea6
+msgid "1.4 and later, with some additions in 2.3"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:13
+# 7fd6763b4a1246d18bccf24aec542ea7
+msgid "The :mod:`cmd` module contains one public class, :class:`Cmd`, designed to be used as a base class for command processors such as interactive shells and other command interpreters. By default it uses :mod:`readline` for interactive prompt handling, command line editing, and command completion."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:20
+# 680b9eca9ef149dbb99b71643d5b6f83
+msgid "Processing Commands"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:22
+# 11ce3c5d1ad84184ab1b10943a04c913
+msgid "The interpreter uses a loop to read all lines from its input, parse them, and then dispatch the command to an appropriate command handler. Input lines are parsed into two parts. The command, and any other text on the line. If the user enters a command ``foo bar``, and your class includes a method named :func:`do_foo()`, it is called with ``\"bar\"`` as the only argument."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:29
+# 70c2e9bc3a8c41618d216430ccecf5e3
+msgid "The end-of-file marker is dispatched to :func:`do_EOF()`. If a command handler returns a true value, the program will exit cleanly. So to give a clean way to exit your interpreter, make sure to implement :func:`do_EOF()` and have it return True."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:34
+# 691ae161cfdc4aeca4f2e158a22db0a8
+msgid "This simple example program supports the \"greet\" command:"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:40
+# 5797dc1121504b95bc163fdfaa1dc8e0
+msgid "By running it interactively, we can demonstrate how commands are dispatched as well as show of some of the features included in :class:`Cmd` for free."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:48
+# b5579d595ba749b68725e708b9762d83
+msgid "The first thing to notice is the command prompt, ``(Cmd)``. The prompt can be configured through the attribute prompt. If the prompt changes as the result of a command processor, the new value is used to query for the next command."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:61
+# b665a526f2f34d3eab957127551285eb
+msgid "The ``help`` command is built into :class:`Cmd`. With no arguments, it shows the list of commands available. If you include a command you want help on, the output is more verbose and restricted to details of that command, when available."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:66
+# 2164770842524c26a1ccb89acfcf6213
+msgid "If we use the greet command, :func:`do_greet()` is invoked to handle it:"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:73
+# 1bc3c255f2a340dfaf12422e6668f1eb
+msgid "If your class does not include a specific command processor for a command, the method :func:`default()` is called with the entire input line as an argument. The built-in implementation of :func:`default()` reports an error."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:82
+# 9c2741be3a6e464cabc8edf38f73f2e4
+msgid "Since :func:`do_EOF()` returns True, typing Ctrl-D will drop us out of the interpreter."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:89
+# 95307be1650048ce87190fb63b94dc0c
+msgid "Notice that no newline is printed, so the results are a little messy."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:92
+# 618065dda2154989ae64a80a3cb74d87
+msgid "Command Arguments"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:94
+# 449760e2869d47eeaad42c2fee3bbb25
+msgid "This version of the example includes a few enhancements to eliminate some of the annoyances and add help for the greet command."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:101
+# 0c032d17a40f49748e854943a3860477
+msgid "First, let's look at the help. The docstring added to :func:`do_greet()` becomes the help text for the command:"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:121
+# 37670489fed343fe92bd3dd1e2d31690
+msgid "The output shows one optional argument to the greet command, *person*. Although the argument is optional to the command, there is a distinction between the command and the callback method. The method always takes the argument, but sometimes the value is an empty string. It is left up to the command processor to determine if an empty argument is valid, or do any further parsing and processing of the command. In this example, if a person's name is provided then the greeting is personalized."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:137
+# cd7250171a414c35938c260696789145
+msgid "Whether an argument is given by the user or not, the value passed to the command processor does not include the command itself. That simplifies parsing in the command processor, if multiple arguments are needed."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:142
+# 7460b0c57f2c4d6c8edd918609a71b01
+msgid "Live Help"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:144
+# da7e98f876344d0e8453758125cec7d6
+msgid "In the previous example, the formatting of the help text leaves something to be desired. Since it comes from the docstring, it retains the indentation from our source. We could edit the source to remove the extra white-space, but that would leave our application looking poorly formatted. An alternative solution is to implement a help handler for the greet command, named :func:`help_greet()`. When present, the help handler is called on to produce help text for the named command."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:157
+# 21fb540c73b244bd8f019cf4545bf491
+msgid "In this simple example, the text is static but formatted more nicely. It would also be possible to use previous command state to tailor the contents of the help text to the current context."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:168
+# ee440a6866b148a5940348ae293e9b18
+msgid "It is up to the help handler to actually output the help message, and not simply return the help text for handling elsewhere."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:172
+# 08e56c5d28fc49ff9fb2f1f10147bd91
+msgid "Auto-Completion"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:174
+# 9acc65676065463585c02459b8209141
+msgid ":class:`Cmd` includes support for command completion based on the names of the commands with processor methods. The user triggers completion by hitting the tab key at an input prompt. When multiple completions are possible, pressing tab twice prints a list of the options."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:188
+# 96a0ce8f2c804cf18810cbc3f8148268
+msgid "Once the command is known, argument completion is handled by methods with the prefix ``complete_``. This allows you to assemble a list of possible completions using your own criteria (query a database, look at at a file or directory on the filesystem, etc.). In this case, the program has a hard-coded set of \"friends\" who receive a less formal greeting than named or anonymous strangers. A real program would probably save the list somewhere, and either read it once and cache the contents to be scanned as needed."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:200
+# 751672102f434ffa8f5b82d627231936
+msgid "When there is input text, :func:`complete_greet()` returns a list of friends that match. Otherwise, the full list of friends is returned."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:214
+# c9036e08838340cf83f089f985d5933e
+msgid "If the name given is not in the list of friends, the formal greeting is given."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:222
+# d8753e7f02ff4fa690c615aaf77f3dbc
+msgid "Overriding Base Class Methods"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:224
+# 109634fcc1214fda83b7d4ba6ec91228
+msgid "Cmd includes several methods that can be overridden as hooks for taking actions or altering the base class behavior. This example is not exhaustive, but contains many of the methods commonly useful."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:232
+# 1e8032c079b847ec80e2a27706e86072
+msgid ":func:`cmdloop()` is the main processing loop of the interpreter. You can override it, but it is usually not necessary, since the :func:`preloop()` and :func:`postloop()` hooks are available."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:236
+# 2f568c332fbe4e9d82798542594031d2
+msgid "Each iteration through :func:`cmdloop()` calls :func:`onecmd()` to dispatch the command to its processor. The actual input line is parsed with :func:`parseline()` to create a tuple containing the command, and the remaining portion of the line."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:241
+# 62a2efe142fa44a78712841f826c594a
+msgid "If the line is empty, :func:`emptyline()` is called. The default implementation runs the previous command again. If the line contains a command, first :func:`precmd()` is called then the processor is looked up and invoked. If none is found, :func:`default()` is called instead. Finally postcmd() is called."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:247
+# 6d97ef49f2b54d87b38f720ceded40f7
+msgid "Here's an example session with ``print`` statements added:"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:269
+# fa4b951f1fe646b2b4d8ba3e55fe895b
+msgid "Configuring Cmd Through Attributes"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:271
+# 2ec40ffc05bf4fb3b6be53cf1cb9e164
+msgid "In addition to the methods described above, there are several attributes for controlling command interpreters."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:274
+# 2face7af8dfd4c919000f84995ce81c9
+msgid "``prompt`` can be set to a string to be printed each time the user is asked for a new command."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:277
+# 52af58ab0fd54da39276171e62bca2aa
+msgid "``intro`` is the \"welcome\" message printed at the start of the program. cmdloop() takes an argument for this value, or you can set it on the class directly."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:280
+# 4e44679e0499408ebf9b6f88f18a6b99
+msgid "When printing help, the ``doc_header``, ``misc_header``, ``undoc_header``, and ``ruler`` attributes are used to format the output."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:284
+# 7e0d7731e9414adba698baba5fb94363
+msgid "This example class shows a command processor to let the user control the prompt for the interactive session."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:310
+# 324904807e174ff2840d66be1b706225
+msgid "Shelling Out"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:312
+# 88abf1f7c69e4ecf82d7bad2faf83133
+msgid "To supplement the standard command processing, :class:`Cmd` includes 2 special command prefixes. A question mark (``?``) is equivalent to the built-in help command, and can be used in the same way. An exclamation point (``!``) maps to :func:`do_shell()`, and is intended for shelling out to run other commands, as in this example."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:354
+# 56bdd3de537f4a03a88b5dd4f3f324b5
+msgid "Alternative Inputs"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:356
+# 92a25df470684f85b565adae76766ee6
+msgid "While the default mode for :func:`Cmd` is to interact with the user through the :mod:`readline` library, it is also possible to pass a series of commands in to standard input using standard Unix shell redirection."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:375
+# 25d06dd4fb6e4904869a9646598824f0
+msgid "If you would rather have your program read the script file directly, a few other changes may be needed. Since :mod:`readline` interacts with the terminal/tty device, rather than the standard input stream, you should disable it if you know your script is going to be reading from a file. Also, to avoid printing superfluous prompts, you can set the prompt to an empty string. This example shows how to open a file and pass it as input to a modified version of the HelloWorld example."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:387
+# d93f27d8de46401195be6c8f723daf4b
+msgid "With *use_rawinput* set to False and *prompt* set to an empty string, we can call the script on this input file:"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:393
+# 2e4fdc03610f45539253bfcd413a1743
+msgid "to produce output like:"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:402
+# 86aeac5146994c6b80ded10add36ca1f
+msgid "Commands from sys.argv"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:404
+# 5e0c473677624edb92fdbfec63dfb2cb
+msgid "You can also process command line arguments to the program as a command for your interpreter class, instead of reading commands from stdin or a file.  To use the command line arguments, you can call :func:`onecmd()` directly, as in this example."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:413
+# 4ca0cbbe5f6a425e869c2b9dbeb07b4e
+msgid "Since :func:`onecmd()` takes a single string as input, the arguments to the program need to be joined together before being passed in."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:428
+# b20229d271104aa8b91a0664f8873c05
+msgid "`cmd <http://docs.python.org/library/cmd.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:428
+# c724f2273408499c8526048d5ab09ae9
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:431
+# 29c7c5df520d441cb778eb3754179d79
+msgid "`cmd2 <http://pypi.python.org/pypi/cmd2>`__"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:431
+# 9f4f71f3ee9e4a4291ac7dbc7691f026
+msgid "Drop-in replacement for cmd with additional features."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:435
+# bf21290499b84df4a8d6aa9ee41bbdc1
+msgid "`GNU readline`_"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:434
+# e64f806dc2e046e785f9c800e09f51d2
+msgid "The GNU Readline library provides functions that allow users to edit input lines as they are typed."
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:437
+# 3ed4050db1c745e2aa618d3077798167
+msgid ":mod:`readline`"
+msgstr ""
+
+#: ../../PyMOTW/cmd/index.rst:438
+# 90be5e9d44f64db981a7c82f86c9c5c4
+msgid "The Python standard library interface to readline."
+msgstr ""
+

@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/gzip/index.rst:3
+# 12154b7056b64498ba09fff8b291dcfe
+msgid "gzip -- Read and write GNU zip files"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:8
+# 1afc15397daa4c729d39e41710037ff4
+msgid "Read and write gzip files."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:9
+# 4a9fb6a6bdf040e4acb42776268ea5e7
+msgid "1.5.2 and later"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:11
+# b79c39a7034742bc8552fbb3942e32c3
+msgid "The gzip module provides a file-like interface to GNU zip files, using :mod:`zlib` to compress and uncompress the data."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:15
+# deb096b2bc71464a96e45f09a944ba9c
+msgid "Writing Compressed Files"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:17
+# 8e2feef4eeff459fb9caeb74a14a2d25
+msgid "The module-level function ``open()`` creates an instance of the file-like class GzipFile.  The usual methods for writing and reading data are provided.  To write data into a compressed file, open the file with mode ``'w'``."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:39
+# a6d1390391b24bf583bcd4a86390907a
+msgid "Different amounts of compression can be used by passing a *compresslevel* argument.  Valid values range from 1 to 9, inclusive. Lower values are faster and result in less compression.  Higher values are slower and compress more, up to a point."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:48
+# bafdce450142404abefadbc4b94a41b4
+msgid "The center column of numbers in the output of the script is the size in bytes of the files produced.  As you see, for this input data, the higher compression values do not necessarily pay off in decreased storage space.  Results will vary, depending on the input data."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:77
+# 61af64580c3d4e90b2421ed7de856538
+msgid "A GzipFile instance also includes a ``writelines()`` method that can be used to write a sequence of strings."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:98
+# b720cb23fd3d458f9c795674f5dc6286
+msgid "Reading Compressed Data"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:100
+# 092c30b147074f528cafeb7367c2204d
+msgid "To read data back from previously compressed files, simply open the file with mode ``'r'``."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:107
+# f6b51b3b783e40febc13962c423cdc7d
+msgid "This example reads  the file  written by  ``gzip_write.py``  from the previous section."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:123
+# f68377ac9fbc4306a61bba612209380e
+msgid "While reading a file, it is also possible to seek and read only part of the data."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:130
+# 8cbc81c1453e4a119440415737e93c44
+msgid "The ``seek()`` position is relative to the *uncompressed* data, so the caller does not even need to know that the data file is compressed."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:153
+# e8f7debc55ca445d8a56d7c983c5ffe2
+msgid "Working with Streams"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:155
+# 95d4087218674bba9b0b3591f39ffda0
+msgid "When working with a data stream instead of a file, use the GzipFile class directly to compress or uncompress it.  This is useful when the data is being transmitted over a socket or from read an existing (already open) file handle.  A StringIO buffer can also be used."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:166
+# fa09c6ca3f9849b9b31788795281e177
+msgid "When re-reading the previously compressed data, I pass an explicit length to ``read()``.  Leaving the length off resulted in a CRC error, possibly because StringIO returned an empty string before reporting EOF.  If you are working with streams of compressed data, you may want to prefix the data with an integer representing the actual amount of data to be read."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:214
+# 0a3d36256f1648458b381825acc01517
+msgid "`gzip <http://docs.python.org/library/gzip.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:214
+# 93b5566a2fd64167a53171ede7825f6d
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:217
+# f94eb0e9301147779ad6fe278c2bcc9a
+msgid ":mod:`zlib`"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:217
+# 7c0fe1c1b74246bf92c87afd0a992024
+msgid "The zlib module is a lower-level interface to gzip compression."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:220
+# 19e7027578004d2fa18bb2c096b75735
+msgid ":mod:`zipfile`"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:220
+# 41ba9f0bce4044c18b25841476b30266
+msgid "The zipfile module gives access to ZIP archives."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:223
+# d6e8569ffb1b46db9ba9db346c3f0b7a
+msgid ":mod:`bz2`"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:223
+# 40d8391512354e45995ebfe9cfa6fd31
+msgid "The bz2 module uses the bzip2 compression format."
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:225
+# bb65bfe51108427db6501eed46b92400
+msgid ":mod:`tarfile`"
+msgstr ""
+
+#: ../../PyMOTW/gzip/index.rst:226
+# 79efc398c4944bfb9df247244b4c16a2
+msgid "The tarfile module includes built-in support for reading compressed tar archives."
+msgstr ""
+

@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/profile/index.rst:3
+# 1177c39b20e04eb5b8ca68934103ce65
+msgid "profile, cProfile, and pstats -- Performance analysis of Python programs."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:11
+# 114ede89ca3446c9a12b975d2ef230f1
+msgid "Performance analysis of Python programs."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:12
+# 3a841d04497a44f2a53c9f97eb59987a
+msgid "1.4 and later, these examples are for Python 2.5"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:14
+# 2a1bd350d7f9444bb4e1a64599649067
+msgid "The :mod:`profile` and :mod:`cProfile` modules provide APIs for collecting and analyzing statistics about how Python source consumes processor resources."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:19
+# 0f8d753f09014e3e910167ef062cabbf
+msgid "run()"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:21
+# 212382d3bb684d1c84d418f1e7721cf4
+msgid "The most basic starting point in the profile module is ``run()``.  It takes a string statement as argument, and creates a report of the time spent executing different lines of code while running the statement."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:29
+# 7e2a3cc57be14cf1ba8f920a3e97bc5a
+msgid "This recursive version of a fibonacci sequence calculator [#fibonacci]_ is especially useful for demonstrating the profile because we can improve the performance so much.  The standard report format shows a summary and then details for each function executed."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:55
+# 00243459578c43ba8eb17e10cabd4ac8
+msgid "As you can see, it takes 57356 separate function calls and 3/4 of a second to run.  Since there are only 66 *primitive* calls, we know that the vast majority of those 57k calls were recursive.  The details about where time was spent are broken out by function in the listing showing the number of calls, total time spent in the function, time per call (tottime/ncalls), cumulative time spent in a function, and the ratio of cumulative time to primitive calls."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:63
+# 7448224c3ff54a90bc3b755d0170736a
+msgid "Not surprisingly, most of the time here is spent calling ``fib()`` repeatedly.  We can add a memoize decorator [#memoize]_ to reduce the number of recursive calls and have a big impact on the performance of this function."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:72
+# ec3598e40cf8454489ef230ce5286289
+msgid "By remembering the Fibonacci value at each level we can avoid most of the recursion and drop down to 145 calls that only take 0.003 seconds. Also notice that the ncalls count for ``fib()`` shows that it *never* recurses."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:100
+# 03d810e681e14fcc8febdbbd80c41b0c
+msgid "runctx()"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:102
+# cee704eb9f6a4bafab1b34510dd74f26
+msgid "Sometimes, instead of constructing a complex expression for ``run()``, it is easier to build a simple expression and pass it parameters through a context, using ``runctx()``."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:110
+# 582937a6260249598e51f63d4406584e
+msgid "In this example, the value of \"n\" is passed through the local variable context instead of being embedded directly in the statement passed to ``runctx()``."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:135
+# 133969483d4f426baf44f4830cc70f4b
+msgid "pstats: Saving and Working With Statistics"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:140
+# ff8cb09d595343ec8d41d04e91e5a090
+msgid "The standard report created by the :mod:`profile` functions is not very flexible.  If it doesn't meet your needs, you can produce your own reports by saving the raw profiling data from ``run()`` and ``runctx()`` and processing it separately with the **Stats** class from :mod:`pstats`."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:146
+# 95b872ec3b7c48768e4665cef556f3eb
+msgid "For example, to run several iterations of the same test and combine the results, you could do something like this:"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:153
+# 511b2f9fd1ba4b0d8e430ec41bd68b52
+msgid "The output report is sorted in descending order of cumulative time spent in the function and the directory names are removed from the printed filenames to conserve horizontal space."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:191
+# 5dbbb09342ee4f67aa86d21063072cea
+msgid "Limiting Report Contents"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:193
+# 8691b3d2b850480dbed46b93c37d3d4e
+msgid "Since we are studying the performance of ``fib()`` and ``fib_seq()``, we can also restrict the output report to only include those functions using a regular expression to match the ``filename:lineno(function)`` values we want."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:202
+# f555d18ce78a4efeb1ab641190245dcf
+msgid "The regular expression includes a literal left paren (``(``) to match against the function name portion of the location value."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:225
+# b5194038e4c6473b987510e62bbd5ee6
+msgid "Caller / Callee Graphs"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:227
+# 31d74f529192429aa1d722a7c78672cc
+msgid "**Stats** also includes methods for printing the callers and callees of functions."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:234
+# fe9ec10177ec4cf28b94c2e214536a92
+msgid "The arguments to ``print_callers()`` and ``print_callees()`` work the same as the restriction arguments to ``print_stats()``.  The output shows the caller, callee, and cumulative time."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:266
+# 388f3dd122344893a9175ad514a43835
+msgid "`profile and cProfile <https://docs.python.org/2.7/library/profile.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:266
+# 221ae53f7fb1434899fc8acff5781fe3
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:269
+# cbe93035f66044d797b433fd69a95a2c
+msgid "`pstats <https://docs.python.org/2.7/library/profile.html#the-stats-class>`_"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:269
+# 16cb1446a07040ceb7d97275b51b77c0
+msgid "Standard library documentation for pstats."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:272
+# f66373c3a84a480281b89cc1f9aa13d1
+msgid "`Gprof2Dot <http://code.google.com/p/jrfonseca/wiki/Gprof2Dot>`_"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:272
+# 86a36e0cf02c4d70b961e5ea848b64e3
+msgid "Visualization tool for profile output data."
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:274
+# 0f8b0607570e417abfba09397ce8eca3
+msgid "`Fibonacci numbers (Python) - LiteratePrograms <http://en.literateprograms.org/Fibonacci_numbers_(Python)>`_"
+msgstr ""
+
+#: ../../PyMOTW/profile/index.rst:276
+# 54127d55872a4837b9b525027d6a7a35
+msgid "`Python Decorators: Syntactic Sugar | avinash.vora <http://avinashv.net/2008/04/python-decorators-syntactic-sugar/>`_"
+msgstr ""
+

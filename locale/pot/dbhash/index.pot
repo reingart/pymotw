@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/dbhash/index.rst:3
+# 1b21b6877b5a4986841da0274eafeaed
+msgid "dbhash -- DBM-style API for the BSD database library"
+msgstr ""
+
+#: ../../PyMOTW/dbhash/index.rst:8
+# 5500ef8b19d644cf97691217509be35b
+msgid "Provides a dictionary-like API for accessing BSD ``db`` files."
+msgstr ""
+
+#: ../../PyMOTW/dbhash/index.rst:9
+# c7c77140515f4c8faee1e51bab010521
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/dbhash/index.rst:11
+# 2b9cc6cdc4834817aa3f208f8fb974a5
+msgid "The :mod:`dbhash` module is the primary backend for :mod:`anydbm`.  It uses the :mod:`bsddb` library to manage database files.  The semantics are the same as :mod:`anydbm`, so refer to the examples on that page for details."
+msgstr ""
+
+#: ../../PyMOTW/dbhash/index.rst:16
+# a2dd9a2f52034b30bb92e34dcdca4a11
+msgid "`dbhash <http://docs.python.org/library/dbhash.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/dbhash/index.rst:16
+# d111f225a44749ac8b83a17901312b75
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/dbhash/index.rst:18
+# 877eee22b73443f2983bbc83d2aa6118
+msgid ":mod:`anydbm`"
+msgstr ""
+
+#: ../../PyMOTW/dbhash/index.rst:19
+# 49eacde1b046420f9e01b3780789d10e
+msgid "The :mod:`anydbm` module."
+msgstr ""
+

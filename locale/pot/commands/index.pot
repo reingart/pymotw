@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/commands/index.rst:3
+# b76a88e92c8f4dc2838f0af206ff8055
+msgid "commands -- Run external shell commands"
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:8
+# 103d663b8d004305a91fa8f16dff352e
+msgid "The commands module contains utility functions for working with shell command output under Unix."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:9
+# d528bb21d3194355b6c4d85e26c4bf55
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:13
+# bb63d84d4185448cb33c438003e2ba1d
+msgid "This module is made obsolete by the :mod:`subprocess` module."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:15
+# f8a58f1fae424986a061e7188196bfdc
+msgid "There are 3 functions in the commands module for working with external commands. The functions are shell-aware and return the output or status code from the command."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:20
+# 00e5156592eb4b84bb9c52f8c59336ce
+msgid "getstatusoutput()"
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:22
+# 4f7420d7ecc747269a6c10d4c5f46c49
+msgid "The function getstatusoutput() runs a command via the shell and returns the exit code and the text output (stdout and stderr combined). The exit codes are the same as for the C function wait() or os.wait(). The code is a 16-bit number. The low byte contains the signal number that killed the process. When the signal is zero, the high byte is the exit status of the program. If a core file was produced, the high bit of the low byte is set."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:33
+# aa6001bea4f5402186bd7e1f48c0d535
+msgid "This example runs two commands that exit normally, a third meant to generate a core dump, and a fourth that blocks waiting to be killed from another shell. (Don't simply use Ctrl-C as the interpreter will intercept that signal. Use ps and grep in another window to find the read process and send it a signal with kill.)"
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:75
+# 8afc3c38130d403dad89d4438fddec88
+msgid "In this example, I used ``kill -HUP $PID`` to kill the reading process from a separate shell window, so the signal is reported as ``1``."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:79
+# 91f795793e9649789e5acaa2853e1662
+msgid "getoutput()"
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:81
+# 98423d594ac64ba5aab3801d9f0da83f
+msgid "If the exit code is not useful for your application, you can use getoutput() to receive only the text output from the command."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:102
+# 00f7617013014e6fa2d05faa16d9155d
+msgid "getstatus()"
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:104
+# e8015267d55b4bcb9f8b6c7d1d8b5299
+msgid "Contrary to what you might expect, getstatus() does not run a command and return the status code. Instead, it's argument is a filename which is combined with \"ls -ld\" to build a command to be run by getoutput(). The text output of the command is returned."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:113
+# 36e95e7adc5444c7ae67b51e9b7e801e
+msgid "As you notice from the output, the $ character in the argument to the last call is escaped so the environment variable name is not expanded."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:126
+# 8b6ba91ce11d47868a9cf65b113a8c7a
+msgid "`commands <http://docs.python.org/library/commands.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:126
+# bd652d8d6dae47b5a7ad2a24794c6a98
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:128
+# 05b4f4f20fda45fea263fca39183706a
+msgid ":mod:`signal`"
+msgstr ""
+
+#: ../../PyMOTW/commands/index.rst:129
+# a118c3ab5f2546db995e9c1c9ff1f569
+msgid "Defines constants for signals such as HUP (``1``)."
+msgstr ""
+

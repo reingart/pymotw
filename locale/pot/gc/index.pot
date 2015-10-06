@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/gc/index.rst:3
+# f0f34f85a2594a4c993607f11402b736
+msgid "gc -- Garbage Collector"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:8
+# 2677e0622de140a0a13d505dedf9aa7b
+msgid "Manages memory used by Python objects"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:9
+# a825d1da10b746ce95d846e7fbc3fb0f
+msgid "2.1+"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:11
+# 95ca624ed4a345b290ca776c37314d2e
+msgid ":mod:`gc` exposes the underlying memory management mechanism of Python, the automatic garbage collector.  The module includes functions for controlling how the collector operates and to examine the objects known to the system, either pending collection or stuck in reference cycles and unable to be freed."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:18
+# e08b1d181704464db3d34b89e56318e1
+msgid "Tracing References"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:20
+# 747e60fe80854a8095fae26a4b0a3849
+msgid "With :mod:`gc` you can use the incoming and outgoing references between objects to find cycles in complex data structures.  If you know the data structure with the cycle, you can construct custom code to examine its properties.  If not, you can the :func:`get_referents()` and :func:`get_referrers()` functions to build generic debugging tools."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:27
+# 25065cd8c9e5495f8928c1a2030e55f1
+msgid "For example, :func:`get_referents()` shows the objects *referred to* by the input arguments."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:34
+# 15173f87e97e443aa898b4d56b7e0b8a
+msgid "In this case, the :class:`Graph` instance ``three`` holds references to its instance dictionary (in the ``__dict__`` attribute) and its class."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:56
+# 3f48b71b54864566ae0f84f6cbff59eb
+msgid "This example uses a :mod:`Queue` to perform a breadth-first traversal of all of the object references looking for cycles.  The items inserted into the queue are tuples containing the reference chain so far and the next object to examine.  It starts with ``three``, and look at everything it refers to.  Skipping classes lets us avoid looking at methods, modules, etc."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:67
+# 2be4c8ad4793473688f26dd60f145f49
+msgid "The cycle in the nodes is easily found by watching for objects that have already been processed.  To avoid holding references to those objects, their :func:`id()` values are cached in a set.  The dictionary objects found in the cycle are the ``__dict__`` values for the :class:`Graph` instances, and hold their instance attributes."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:104
+# 647a49fb400945709caebcbc53e6d584
+msgid "Forcing Garbage Collection"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:106
+# 3b06dd626fe84f9ab4cf054367ce867e
+msgid "Although the garbage collector runs automatically as the interpreter executes your program, you may want to trigger collection to run at a specific time when you know there are a lot of objects to free or there is not much work happening in your application.  Trigger collection using :func:`collect()`."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:116
+# c1376a560d784860b61ab6dece368b00
+msgid "In this example, the cycle is cleared as soon as collection runs the first time, since nothing refers to the :class:`Graph` nodes except themselves.  :func:`collect()` returns the number of \"unreachable\" objects it found.  In this case, the value is ``6`` because there are 3 objects with their instance attribute dictionaries."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:145
+# 1f0e33b9900b4def87326a62735a8784
+msgid "If :class:`Graph` has a :func:`__del__()` method, however, the garbage collector cannot break the cycle."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:152
+# 4623b8da90b241cc964155a08f8fcec3
+msgid "Because more than one object in the cycle has a finalizer method, the order in which the objects need to be finalized and then garbage collected cannot be determined, so the garbage collector plays it safe and keeps the objects."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:174
+# 8f925dbfeba04546b49acbd3b88dbb90
+msgid "When the cycle is broken, the :class:`Graph` instances can be collected."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:181
+# 6d59ebfce9da4419bc5f700d2aeaf97c
+msgid "Because ``gc.garbage`` holds a reference to the objects from the previous garbage collection run, it needs to be cleared out after the cycle is broken to reduce the reference counts so they can be finalized and freed."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:217
+# 4783109a72524344b4492742f1c87b92
+msgid "Finding References to Objects that Can't be Collected"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:219
+# a9c61dae58ed44839bcfd2aa38e599c1
+msgid "Looking for the object holding a reference to something in the garbage is a little trickier than seeing what an object references.  Because the code asking about the reference needs to hold a reference itself, some of the referrers need to be ignored.  This example creates a graph cycle, then works through the :class:`Graph` instances in the garbage and removes the reference in the \"parent\" node."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:230
+# 1f7bca6567a24a78b19086de6943eebe
+msgid "This sort of logic is overkill if you understand why the cycles are being created in the first place, but if you have an unexplained cycle in your data using :func:`get_referrers()` can expose the unexpected relationship."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:275
+# d672f5d12f084b88a21f4cf71805a643
+msgid "Collection Thresholds and Generations"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:277
+# 277ba762b480409191ba958c05d0bd95
+msgid "The garbage collector maintains three lists of objects it sees as it runs, one for each \"generation\" tracked by the collector.  As objects are examined in each generation, they are either collected or they age into subsequent generations until they finally reach the stage where they are kept permanently."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:283
+# 9ffe768de8d140f4bb309812189fa62e
+msgid "The collector routines can be tuned to occur at different frequencies based on the difference between the number of object allocations and deallocations between runs.  When the number of allocations minus the number of deallocations is greater than the threshold for the generation, the garbage collector is run.  The current thresholds can be examined with :func:`get_threshold()`."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:294
+# 8740fc43baaf40a0b015d2fa4ee4d134
+msgid "The return value is a tuple with the threshold for each generation."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:308
+# 381ea151f95d41a8827ef3e3a573350d
+msgid "The thresholds can be changed with :func:`set_threshold()`.  This example program reads the threshold for generation ``0`` from the command line, adjusts the :mod:`gc` settings, then allocates a series of objects."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:317
+# 0bf89db61f524db68ce1686aa182c811
+msgid "Different threshold values introduce the garbage collection sweeps at different times, shown here because debugging is enabled."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:357
+# 350b60f64d35405391268fb085288550
+msgid "A smaller threshold causes the sweeps to run more frequently."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:408
+# 7c42dcff05d040299811c80ad0d28989
+msgid "Debugging"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:410
+# 7cfdf9a0633548759a91f5c8962afcb8
+msgid "Debugging memory leaks can be challenging.  :mod:`gc` includes several options to expose the inner workings to make the job easier.  The options are bit-flags meant to be combined and passed to :func:`set_debug()` to configure the garbage collector while your program is running.  Debugging information is printed to :ref:`stderr <sys-input-output>`."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:417
+# 2e0b4ebd5d704f9cb84bb9184a4e2c5d
+msgid "The :const:`DEBUG_STATS` flag turns on statistics reporting, causing the garbage collector to report when it is running, the number of objects tracked for each generation, and the amount of time it took to perform the sweep."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:426
+# 0991b28725ea49239d96bed45675d666
+msgid "This example output shows two separate runs of the collector because it runs once when it is invoked explicitly, and a second time when the interpreter exits."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:447
+# 97df136e47fb40d796ffa0707ba0b59a
+msgid "Enabling :const:`DEBUG_COLLECTABLE` and :const:`DEBUG_UNCOLLECTABLE` causes the collector to report on whether each object it examines can or cannot be collected.  You need to combine these flags need with :const:`DEBUG_OBJECTS` so :mod:`gc` will print information about the objects being held."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:457
+# 45f73724c2c0486981808642baaebb8c
+msgid "The two classes :class:`Graph` and :class:`CleanupGraph` are constructed so it is possible to create structures that are automatically collectable and structures where cycles need to be explicitly broken by the user."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:462
+# d739212d48b2492c9d920b15429cda53
+msgid "The output shows that the :class:`Graph` instances :obj:`one` and :obj:`two` create a cycle, but are still collectable because they do not have a finalizer and their only incoming references are from other objects that can be collected.  Although :class:`CleanupGraph` has a finalizer, :obj:`three` is reclaimed as soon as its reference count goes to zero. In contrast, :obj:`four` and :obj:`five` create a cycle and cannot be freed."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:502
+# 88bb64b2d6bf47a0bcf16d21460c94e9
+msgid "The flag :const:`DEBUG_INSTANCES` works much the same way for instances of old-style classes (not derived from :class:`object`."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:509
+# 50a2c5f02423478bb9a0ee967e627c78
+msgid "In this case, however, the :class:`dict` objects holding the instance attributes are not included in the output."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:540
+# ff405d2954cc4d4e8a2135565c82a1c3
+msgid "If seeing the uncollectable objects is not enough information to understand where data is being retained, you can enable :const:`DEBUG_SAVEALL` to cause :mod:`gc` to preserve all objects it finds without any references in the :obj:`garbage` list, so you can examine them.  This is helpful if, for example, you don't have access to the constructor to print the object id when each object is created."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:577
+# 941ffa25039d4212ad4fef1b187970e5
+msgid "For simplicity, :const:`DEBUG_LEAK` is defined as a combination of all of the other options."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:584
+# e94dba5b12c24ce18fb7470f90fe6c23
+msgid "Keep in mind that because :const:`DEBUG_SAVEALL` is enabled by :const:`DEBUG_LEAK`, even the unreferenced objects that would normally have been collected and deleted are retained."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:618
+# d017687553734159bd6c474a951015f6
+msgid "`gc <http://docs.python.org/library/gc.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:618
+# abb8f2c9703f4d4484ad9243b10b1a03
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:623
+# 28932b7f5b674122830abd7b9420a62c
+msgid ":mod:`weakref`"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:621
+# 1bb5905f194e4419bcad2cf6f4e22d34
+msgid "The :mod:`weakref` module gives you references to objects without increasing their reference count, so they can still be garbage collected."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:626
+# f036d0eabc7c4b05be9c31f879ed81cc
+msgid "`Supporting Cyclic Garbage Collection <http://docs.python.org/c-api/gcsupport.html>`__"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:626
+# 9313a0d2dd3844839b88283f50d793f2
+msgid "Background material from Python's C API documentation."
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:628
+# 3a174621e04340f8aaa18667eb251cdc
+msgid "`How does Python manage memory? <http://effbot.org/pyfaq/how-does-python-manage-memory.htm>`__"
+msgstr ""
+
+#: ../../PyMOTW/gc/index.rst:629
+# e1c95150240e48bdbcc3e2247dac73e0
+msgid "An article on Python memory management by Fredrik Lundh."
+msgstr ""
+

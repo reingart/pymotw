@@ -1,0 +1,308 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:5
+# 75e692edc0c741eb8ada767597232328
+msgid "Parsing XML Documents"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:7
+# 99ac9a3a783e4394bfad9171a8cf7b88
+msgid "Parsed XML documents are represented in memory by :class:`ElementTree` and :class:`Element` objects connected into a tree structure based on the way the nodes in the XML document are nested."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:12
+# cb7eb50aa0144b41a8fa2f10cb9b3d63
+msgid "Parsing an Entire Document"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:14
+# 4e6dddd179d04a519aa3a305b48db42f
+msgid "Parsing an entire document with :func:`parse()` returns an :class:`ElementTree` instance.  The tree knows about all of the data in the input document, and the nodes of the tree can be searched or manipulated in place.  While this flexibility can make working with the parsed document a little easier, it typically takes more memory than an event-based parsing approach since the entire document must be loaded at one time."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:22
+# d7c46e1fd693479a8558e072658bb72a
+msgid "The memory footprint of small, simple documents such as this list of podcasts represented as an OPML_ outline is not significant:"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:28
+# a85e29201b7840b39b13087f0da24a25
+msgid "To parse the file, pass an open file handle to :func:`parse()`."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:34
+# 190dc5dddc784b17947c81b0500373f4
+msgid "It will read the data, parse the XML, and return an :class:`ElementTree` object."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:50
+# b67b6740bf3a40339bed644d59f52cfc
+msgid "Traversing the Parsed Tree"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:52
+# 0b444d4da9c041dc851e5b1d417c012b
+msgid "To visit all of the children in order, use :func:`iter` to create a generator that iterates over the :class:`ElementTree` instance."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:59
+# 3331441a83474ec9afd9711ee10fe693
+msgid "This example prints the entire tree, one tag at a time."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:96
+# 3566c9b202a5482988b5a9e893f01a92
+msgid "To print only the groups of names and feed URLs for the podcasts, leaving out of all of the data in the header section by iterating over only the ``outline`` nodes and print the *text* and *xmlUrl* attributes."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:105
+# 44cbffce96b8433899c9d7c959bd748d
+msgid "The ``'outline'`` argument to :func:`iter` means processing is limited to only nodes with the tag ``'outline'``."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:151
+# 3f695adceefe4c8a82ffd00d6e37726e
+msgid "Finding Nodes in a Document"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:153
+# 8833c92149894ab9ac91c5154bced93e
+msgid "Walking the entire tree like this searching for relevant nodes can be error prone.  The example above had to look at each outline node to determine if it was a group (nodes with only a :attr:`text` attribute) or podcast (with both :attr:`text` and :attr:`xmlUrl`).  To produce a simple list of the podcast feed URLs, without names or groups, for a podcast downloader application, the logic could be simplified using :func:`findall()` to look for nodes with more descriptive search characteristics."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:162
+# 7bad234a55af44eea689902d2c5d4abb
+msgid "As a first pass at converting the above example, we can construct an XPath_ argument to look for all outline nodes."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:169
+# 0d93757f3c0b4448a24c60094705c03a
+msgid "The logic in this version is not substantially different than the version using :func:`getiterator()`.  It still has to check for the presence of the URL, except that it does not print the group name when the URL is not found."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:198
+# 36519002a4b647e9a456da55c817f7d2
+msgid "Another version can take advantage of the fact that the outline nodes are only nested two levels deep.  Changing the search path to ``.//outline/outline`` mean the loop will process only the second level of outline nodes."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:207
+# e17e06b8435d4688b9f2b19d6c170078
+msgid "All of those outline nodes nested two levels deep in the input are expected to have the *xmlURL* attribute refering to the podcast feed, so the loop can skip checking for for the attribute before using it."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:235
+# efa2e23e94e44d1bacf15f107175e1ab
+msgid "This version is limited to the existing structure, though, so if the outline nodes are ever rearranged into a deeper tree it will stop working."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:240
+# a38b999f5d7646599a396c75c5391fb6
+msgid "Parsed Node Attributes"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:242
+# c63d3554938944be81f396811bf7a782
+msgid "The items returned by :func:`findall()` and :func:`iter()` are :class:`Element` objects, each representing a node in the XML parse tree.  Each :class:`Element` has attributes for accessing data pulled out of the XML.  This can be illustrated with a somewhat more contrived example input file, ``data.xml``:"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:252
+# b28b3eaa577d497fa1627e6bcac0a98c
+msgid "The \"attributes\" of a node are available in the :attr:`attrib` property, which acts like a dictionary."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:259
+# da0efb9e180f46df8b46400e223ca9b0
+msgid "The node on line five of the input file has two attributes, :attr:`name` and :attr:`foo`."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:276
+# 134b12f41da442a2b0acea5c79e891ee
+msgid "The text content of the nodes is available, along with the \"tail\" text that comes after the end of a close tag."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:283
+# 9af1d4b996d541f893ca61da17751643
+msgid "The ``child`` node on line three contains embedded text, and the node on line four has text with a tail (including any whitespace)."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:305
+# d58d8fc412f944aab245d2cee5b8958d
+msgid "XML entity references embedded in the document are conveniently converted to the appropriate characters before values are returned."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:312
+# 96cb31b8bc574338b010afb07f92d557
+msgid "The automatic conversion mean the implementation detail of representing certain characters in an XML document can be ignored."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:331
+# a03bd70308f7400a9277621640cb6c71
+msgid "Watching Events While Parsing"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:333
+# 4d584fd85f1447589f05622c9994904a
+msgid "The other API useful for processing XML documents is event-based.  The parser generates ``start`` events for opening tags and ``end`` events for closing tags.  Data can be extracted from the document during the parsing phase by iterating over the event stream, which is convenient if it is not necessary to manipulate the entire document afterwards and there is no need to hold the entire parsed document in memory."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:340
+# 89e33f2d16cb4ce2bb7a2955357269d4
+msgid ":func:`iterparse()` returns an iterable that produces tuples containing the name of the event and the node triggering the event. Events can be one of:"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:345
+# 727138c6d0ba4c5a908457e1e6930100
+msgid "``start``"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:345
+# 7e0c354b0aa64c989e04a47edec45d4c
+msgid "A new tag has been encountered.  The closing angle bracket of the tag was processed, but not the contents."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:348
+# 60b2b9136a41413daf2c9a79c738c8c4
+msgid "``end``"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:348
+# b8958f7eeecf4c66bec41f408c3ed2e0
+msgid "The closing angle bracket of a closing tag has been processed.  All of the children were already processed."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:350
+# a4fdeeeb29d64fa79fb2ef38112c21bd
+msgid "``start-ns``"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:351
+# 81d659f7ea8647f597d33c4d61d91daf
+msgid "Start a namespace declaration."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:353
+# a728ebf9650a41a497498f375378178c
+msgid "``end-ns``"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:353
+# 20e71ade53e34da2894650d9816743a8
+msgid "End a namespace declaration."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:359
+# 955a9fcc434b4922b8c107ee3e3a1491
+msgid "By default, only ``end`` events are generated.  To see other events, pass the list of desired event names to :func:`iterparse()`, as in this example:"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:422
+# 132f9172c50f45749e1fd7b35a4bb45b
+msgid "The event-style of processing is more natural for some operations, such as converting XML input to some other format.  This technique can be used to convert list of podcasts from the earlier examples from an XML file to a CSV file, so they can be loaded into a spreadsheet or database application."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:432
+# 1ccfab26610f4371aeea9505b31de7e6
+msgid "This conversion program does not need to hold the entire parsed input file in memory, and processing each node as it is encountered in the input is more efficient."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:462
+# d1c9db4387f7481ba390db1f4ead79b0
+msgid "Creating a Custom Tree Builder"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:464
+# 3cc2fbc8ae48461d89659771e36c3eb3
+msgid "A potentially more efficient means of handling parse events is to replace the standard tree builder behavior with a custom version.  The :class:`ElementTree` parser uses an :class:`XMLTreeBuilder` to process the XML and call methods on a target class to save the results.  The usual output is an :class:`ElementTree` instance created by the default :class:`TreeBuilder` class.  Replacing :class:`TreeBuilder` with another class allows it to receive the events before the :class:`Element` nodes are instantiated, saving that portion of the overhead."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:474
+# 21f41d225fed43b0afaac0c974611d14
+msgid "The XML-to-CSV converter from the previous section can be translated to a tree builder."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:481
+# 9f2afda03a0c4e5db11f99b4c7f4589b
+msgid ":class:`PodcastListToCSV` implements the :class:`TreeBuilder` protocol.  Each time a new XML tag is encountered, :func:`start()` is called with the tag name and attributes.  When a closing tag is seen :func:`end()` is called with the name.  In between, :func:`data()` is called when a node has content (the tree builder is expected to keep up with the \"current\" node).  When all of the input is processed, :func:`close()` is called.  It can return a value, which will be returned to the user of the :class:`XMLTreeBuilder`."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:517
+# 34d309ee0e6444db878d4e16185b9f54
+msgid "Parsing Strings"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:519
+# 08c04fd3ad99482785c5417ca3538e89
+msgid "To work with smaller bits of XML text, especially string literals as might be embedded in the source of a program, use :func:`XML()` and the string containing the XML to be parsed as the only argument."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:527
+# 1a2f5f9955a147a7ada7d09657be5e29
+msgid "Notice that unlike with :func:`parse()`, the return value is an :class:`Element` instance instead of an :class:`ElementTree`.  An :class:`Element` supports the iterator protocol directly, so there is no need to call :func:`getiterator`."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:555
+# 5de9e0dd772f4aa295a677d916ac4835
+msgid "For structured XML that uses the :attr:`id` attribute to identify unique nodes of interest, :func:`XMLID()` is a convenient way to access the parse results."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:563
+# a43e2907128440df8c5dd6b70d89e1d1
+msgid ":func:`XMLID()` returns the parsed tree as an :class:`Element` object, along with a dictionary mapping the :attr:`id` attribute strings to the individual nodes in the tree."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:585
+# b27eae84ca2847e88534639526a3d1df
+msgid "Outline Processor Markup Language, OPML_"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:585
+# 8e585607f5c1445a99cfb2e3a4704837
+msgid "Dave Winer's OPML specification and documentation."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:588
+# 7eff7850a4774e01bff3a5eb89ade96b
+msgid "XML Path Language, XPath_"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:588
+# da658996bf97486a97761873f6db9242
+msgid "A syntax for identifying parts of an XML document."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:591
+# 28ed38a43bdc4e95ae4bb8164b098da6
+msgid "`XPath Support in ElementTree <http://effbot.org/zone/element-xpath.htm>`_"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:591
+# 84b3392cfdec48f683b86c1c45e65397
+msgid "Part of Fredrick Lundh's original documentation for ElementTree."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:593
+# 6daf05af490547798d5d7d2967ab0571
+msgid ":mod:`csv`"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/parse.rst:594
+# 4a4538fbf08146f8ba4f7b7dfe8bc132
+msgid "Read and write comma-separated-value files"
+msgstr ""
+

@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/traceback/index.rst:3
+# 296a01c061bd4c53b3d465648b3dd144
+msgid "traceback -- Extract, format, and print exceptions and stack traces."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:8
+# 6ff08146d9404051921df513c8f97bbd
+msgid "Extract, format, and print exceptions and stack traces."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:9
+# a1d0b125911e41df9d85251a93e7a3a9
+msgid "1.4 and later, with modifications over time"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:11
+# efa20aa428c34e65a12eaf6dc596795c
+msgid "The :mod:`traceback` module works with the call stack to produce error messages. A traceback is a stack trace from the point of an exception handler down the call chain to the point where the exception was raised. You can also work with the current call stack up from the point of a call (and without the context of an error), which is useful for finding out the paths being followed into a function."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:18
+# e832cfe9f56d4c23bbad15b505aa87d6
+msgid "The functions in :mod:`traceback` fall into several common categories. There are functions for extracting raw tracebacks from the current runtime environment (either an exception handler for a traceback, or the regular stack). The extracted stack trace is a sequence of tuples containing the filename, line number, function name, and text of the source line."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:25
+# f0d498176177459599fae9d43c0f16a4
+msgid "Once extracted, the stack trace can be formatted using functions like :func:`format_exception()`, :func:`format_stack()`, etc. The format functions return a list of strings with messages formatted to be printed. There are shorthand functions for printing the formatted values, as well."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:31
+# b9614c227905458a8038f4329de885b2
+msgid "Although the functions in :mod:`traceback` mimic the behavior of the interactive interpreter by default, they also are useful for handling exceptions in situations where dumping the full stack trace to stderr is not desirable. For example, a web application may need to format the traceback so it looks good in HTML. An IDE may convert the elements of the stack trace into a clickable list that lets the user browse the source."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:40
+# 5a2de0050e764b5c858bcab1073aef5a
+msgid "Supporting Functions"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:42
+# 2fcadbb2809346bc8c208186cd919830
+msgid "The examples below use the module traceback_example.py (provided in the source package for PyMOTW). The contents are:"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:51
+# 0c91145c178e4cd3b3da840c6d95a6c8
+msgid "Working With Exceptions"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:53
+# cb623c8b5b3a42c18b95aebb0fa0cfd3
+msgid "The simplest way to handle exception reporting is with :func:`print_exc()`. It uses :func:`sys.exc_info()` to obtain the exception information for the current thread, formats the results, and prints the text to a file handle (``sys.stderr``, by default)."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:63
+# 597a7fb626874cd3997926983023ecc9
+msgid "In this example, the file handle for ``sys.stdout`` is substituted so the informational and traceback messages are mingled correctly:"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:97
+# be196ac916154c538d0a486a28667a7c
+msgid "``print_exc()`` is just a shortcut for :func:`print_exception()`, which requires explicit arguments:"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:127
+# a59a123941ce4251b83d2f5bacdf9daa
+msgid "And :func:`print_exception()` uses :func:`format_exception()`:"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:153
+# 00e4d9be8470425d90f8980d10a03764
+msgid "Working With the Stack"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:155
+# 1f815521fa294da5ba3d4ba0cba00265
+msgid "There are a similar set of functions for performing the same operations with the current call stack instead of a traceback."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:159
+# 07f3525181f14c0291cc5fc3aad673f7
+msgid "print_stack()"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:194
+# ab5eac4f6c2747f7b7f0b59a1795f27a
+msgid "format_stack()"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:217
+# 3ec1103678434d0cb7945fb64b8f8035
+msgid "extract_stack()"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:242
+# 1dbd27da87ca45d5aabe0b390094fd60
+msgid "`traceback <http://docs.python.org/lib/module-traceback.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:242
+# a528782c720f40f3bc36bfbc8daeceec
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:245
+# e3ee5bcc26904542b2257bfbb87a7797
+msgid ":mod:`sys`"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:245
+# 95ebb3ac57e74e61a7b3511451239378
+msgid "The sys module includes singletons that hold the current exception."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:248
+# 508d65d26be641dca6cd7271fa4e5a78
+msgid ":mod:`inspect`"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:248
+# 72a3337e297a4a82bd8c617a88092391
+msgid "The inspect module includes other functions for probing the frames on the stack."
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:250
+# c30d36b063554154b93f05998a733749
+msgid ":mod:`cgitb`"
+msgstr ""
+
+#: ../../PyMOTW/traceback/index.rst:251
+# 2466f20dc752465fb85308f683943a17
+msgid "Another module for formatting tracebacks nicely."
+msgstr ""
+

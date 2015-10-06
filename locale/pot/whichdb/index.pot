@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/whichdb/index.rst:3
+# db8cf77f9277422e8dd6196d1f0861ef
+msgid "whichdb -- Identify DBM-style database formats"
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:8
+# 0a46c0a585244646a3b710b4fc6bbb44
+msgid "Examine existing DBM-style database file to determine what library should be used to open it."
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:9
+# 26d621ed2bfe4ec2b91de963780646cb
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:11
+# c254b09ca8b94fb8933a8906f6f93b9f
+msgid "The :mod:`whichdb` module contains one function, ``whichdb()``.  It can be used to examine an existing database file to determine which dbm library should be used to open it.  It returns ``None`` if there is a problem opening the file, or the string name of the module to use to open the file.  If it can open the file but cannot determine the library to use, it returns the empty string."
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:17
+# df330e194d8d46ddaa830ad13c1dd99c
+msgid "Your results will vary, depending on what modules are available in your PYTHONPATH."
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:35
+# 8f3cd716d43849a199ddb621a8d3f412
+msgid "`whichdb <http://docs.python.org/lib/module-whichdb.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:35
+# 4c760ef9e0be47e9a485bbce052de553
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:38
+# 95b75e1baf0c4f17946f8c3790e6efb7
+msgid ":mod:`anydbm`"
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:38
+# b72bbe11cfcf49b9b65323b8de00a5b0
+msgid "The anydbm module uses the best available DBM implementation when creating new databases."
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:40
+# d6ba8c92279745de862319e41dc32e50
+msgid ":mod:`shelve`"
+msgstr ""
+
+#: ../../PyMOTW/whichdb/index.rst:41
+# e971075c4c5048809038137c7dd81bdd
+msgid "The shelve module provides a mapping-style API for DBM databases."
+msgstr ""
+

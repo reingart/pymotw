@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/hmac/index.rst:3
+# acd8641d67b74fe58e1a61be1aaaa579
+msgid "hmac -- Cryptographic signature and verification of messages."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:9
+# 217f5a9c90354d1d8f4c9c8977b7eac3
+msgid "The hmac module implements keyed-hashing for message authentication, as described in :rfc:`2104`."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:11
+# f834720d52074cc0a0b51e5508b1fd92
+msgid "2.2"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:13
+# f67dfca4d71e4035b7d9bca2ded557c9
+msgid "The HMAC algorithm can be used to verify the integrity of information passed between applications or stored in a potentially vulnerable location. The basic idea is to generate a cryptographic hash of the actual data combined with a shared secret key. The resulting hash can then be used to check the transmitted or stored message to determine a level of trust, without transmitting the secret key."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:20
+# 563588e680d34784a80897e4bd0fc2dc
+msgid "Disclaimer: I'm not a security expert. For the full details on HMAC, check out :rfc:`2104`."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:24
+# bb61d6c1fc2341f1a81bbcedfce56701
+msgid "Example"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:26
+# 4879997b40ef4c80bc74915e42731941
+msgid "Creating the hash is not complex. Here's a simple example which uses the default MD5 hash algorithm:"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:33
+# 83cb2e93f775484a984f3d0e2387556a
+msgid "When run, the code reads its source file and computes an HMAC signature for it:"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:50
+# c1a8ce8abf364bd2a625f038dd5cc56c
+msgid "If I haven't changed the file by the time I release the example source for this week, the copy you download should produce the same hash."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:55
+# bfda4f6b3aa14c7c8ab0903252ab8fad
+msgid "SHA vs. MD5"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:57
+# 761bd3df79e24bfc801efcc217e76c03
+msgid "Although the default cryptographic algorithm for :mod:`hmac` is MD5, that is not the most secure method to use. MD5 hashes have some weaknesses, such as collisions (where two different messages produce the same hash). The SHA-1 algorithm is considered to be stronger, and should be used instead."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:67
+# d03887a687e540ab8d2198460aaf2003
+msgid "``hmac.new()`` takes 3 arguments. The first is the secret key, which should be shared between the two endpoints which are communicating so both ends can use the same value. The second value is an initial message. If the message content that needs to be authenticated is small, such as a timestamp or HTTP POST, the entire body of the message can be passed to ``new()`` instead of using the update() method. The last argument is the digest module to be used. The default is ``hashlib.md5``. The previous example substitutes ``hashlib.sha1``."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:89
+# 8d1447a3ac1b4478be104866e6b27ade
+msgid "Binary Digests"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:91
+# 09e6f76dffc447efa53711905edfdfe6
+msgid "The first few examples used the ``hexdigest()`` method to produce printable digests. The hexdigest is is a different representation of the value calculated by the ``digest()`` method, which is a binary value that may include unprintable or non-ASCII characters, including NULs. Some web services (Google checkout, Amazon S3) use the ``base64`` encoded version of the binary digest instead of the hexdigest."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:103
+# 2e09b82856274b61803238fa1d20b220
+msgid "The base64 encoded string ends in a newline, which frequently needs to be stripped off when embedding the string in HTTP headers or other formatting-sensitive contexts."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:122
+# 9a1a9aec55974b63ba111c7bb4323605
+msgid "Applications"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:124
+# e58972ea897d4e1ba874abc438abaeae
+msgid "HMAC authentication should be used for any public network service, and any time data is stored where security is important. For example, when sending data through a pipe or socket, that data should be signed and then the signature should be tested before the data is used. The extended example below is available in the ``hmac_pickle.py`` file as part of the PyMOTW source package."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:131
+# 438dce4b62c742efb6135156e1fed1d4
+msgid "First, let's establish a function to calculate a digest for a string, and a simple class to be instantiated and passed through a communication channel."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:159
+# 5d1d09e43f6542398b340964cc4c38f5
+msgid "Next, create a :mod:`StringIO` buffer to represent the socket or pipe. We will using a naive, but easy to parse, format for the data stream. The digest and length of the data are written, followed by a new line. The serialized representation of the object, generated by :mod:`pickle`, follows. In a real system, we would not want to depend on a length value, since if the digest is wrong the length is probably wrong as well. Some sort of terminator sequence not likely to appear in the real data would be more appropriate."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:168
+# 77b060e231714113ac35779fed2b9aa6
+msgid "For this example, we will write two objects to the stream. The first is written using the correct digest value."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:186
+# 44c29071d56d43f09549bfac4a853941
+msgid "The second object is written to the stream with an invalid digest, produced by calculating the digest for some other data instead of the pickle."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:203
+# 1afde98629fd46d7b706aa10f3b18721
+msgid "Now that the data is in the :mod:`StringIO` buffer, we can read it back out again.  The first step is to read the line of data with the digest and data length.  Then the remaining data is read (using the length value). We could use ``pickle.load()`` to read directly from the stream, but that assumes a trusted data stream and we do not yet trust the data enough to unpickle it. Reading the pickle as a string collect the data from the stream, without actually unpickling the object."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:227
+# 808c7dcc29fc409ebd74603a2e34985c
+msgid "Once we have the pickled data, we can recalculate the digest value and compare it against what we read. If the digests match, we know it is safe to trust the data and unpickle it."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:242
+# 145cf258bb8e4381b94a75d0193a0be8
+msgid "The output shows that the first object is verified and the second is deemed \"corrupted\", as expected:"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:271
+# da55b0927ff64eddac91826dfeba75fd
+msgid "`hmac <http://docs.python.org/library/hmac.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:271
+# 7438a318f200434993cdd196cbe9159f
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:274
+# 4ca725d8bdf24a108828f94cf79a8df3
+msgid ":rfc:`2104`"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:274
+# 0589a605ff7c4ece9a3a941887f12c6b
+msgid "HMAC: Keyed-Hashing for Message Authentication"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:277
+# a2c6b8d8e67945e2bc69c3c8efc471c9
+msgid ":mod:`hashlib`"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:277
+# 50bc86c75e7047cea58b876c36c9e7fb
+msgid "The :mod:`hashlib` module."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:280
+# 7ea690202ffa47ccbdf42b5b399fd77e
+msgid ":mod:`pickle`"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:280
+# 45c253150d274033b772983b3e7ad031
+msgid "Serialization library."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:283
+# 9f22f4f1835b45c3b7d0d341cf2e2522
+msgid "`WikiPedia: MD5 <http://en.wikipedia.org/wiki/MD5>`_"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:283
+# 3f4c1d100a034e6a94e6b5eac23fb58f
+msgid "Description of the MD5 hashing algorithm."
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:285
+# 3746c0c648c14f999da7375aa8b29206
+msgid "`Authenticating to Amazon S3 Web Service <http://docs.amazonwebservices.com/AmazonS3/2006-03-01/index.html?S3_Authentication.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/hmac/index.rst:286
+# ce5ea38a30144ebba422773b62bb5bc0
+msgid "Instructions for authenticating to S3 using HMAC-SHA1 signed credentials."
+msgstr ""
+

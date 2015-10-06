@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/timeit/index.rst:3
+# 60f0e5d4a5b946f1b774a01a754857e7
+msgid "timeit -- Time the execution of small bits of Python code."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:8
+# 9ab9db9ec4164bb4b8afdd9745821b48
+msgid "Time the execution of small bits of Python code."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:9
+# 3e3e7f6b797445fd8aea760a1f83cc37
+msgid "2.3"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:11
+# e97e308681204e93a204e7e170d0cf6b
+msgid "The :mod:`timeit` module provides a simple interface for determining the execution time of small bits of Python code. It uses a platform-specific time function to provide the most accurate time calculation possible. It reduces the impact of startup or shutdown costs on the time calculation by executing the code repeatedly."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:18
+# 768abfa70bfe4d4095a11b6cce0ed0e8
+msgid "Module Contents"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:20
+# acb476a924e74f9c9114adf3bb360352
+msgid ":mod:`timeit` defines a single public class, :class:`Timer`. The constructor for :class:`Timer` takes a statement to be timed, and a setup statement (to initialize variables, for example). The Python statements should be strings and can include embedded newlines."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:25
+# 10388abe99a94a5c94ae9966ba3c0bb8
+msgid "The :func:`timeit()` method runs the setup statement one time, then executes the primary statement repeatedly and returns the amount of time which passes. The argument to timeit() controls how many times to run the statement; the default is 1,000,000."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:31
+# d97f5054de184a78b9810789fcd24652
+msgid "Basic Example"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:33
+# 8c1bae17d83049beac251bc2da799353
+msgid "To illustrate how the various arguments to :class:`Timer` are used, here is a simple example which prints an identifying value when each statement is executed:"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:41
+# 66aecb33e5d3468c8cf8f71b157bfc96
+msgid "When run, the output is:"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:70
+# 21266f9dfdb14ca5829342b08b3b8e93
+msgid "When called, :func:`timeit()` runs the setup statement one time, then calls the main statement count times. It returns a single floating point value representing the amount of time it took to run the main statement count times."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:75
+# 14fdabe331bf42febd4b36e1797887ab
+msgid "When :func:`repeat()` is used, it calls :func:`timeit()` severeal times (3 in this case) and all of the responses are returned in a list."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:80
+# 96acd96deae7449c8682950acbef543d
+msgid "Storing Values in a Dictionary"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:82
+# a2137919a95d43d7842b7189e00c0f14
+msgid "For a more complex example, let's compare the amount of time it takes to populate a dictionary with a large number of values using a variety of methods. First, a few constants are needed to configure the :class:`Timer`. We'll be using a list of tuples containing strings and integers. The :class:`Timer` will be storing the integers in a dictionary using the strings as keys."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:101
+# b3d3a16eb46c42efad7428fdabbc79d4
+msgid "Next, we can define a short utility function to print the results in a useful format. The :func:`timeit()` method returns the amount of time it takes to execute the statement repeatedly. The output of :func:`show_results()` converts that into the amount of time it takes per iteration, and then further reduces the value to the amount of time it takes to store one item in the dictionary (as averages, of course)."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:125
+# 86e8d02b31414f5996229321193b63dd
+msgid "To establish a baseline, the first configuration tested will use :func:`__setitem__`.  All of the other variations avoid overwriting values already in the dictionary, so this simple version should be the fastest."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:130
+# 6c8aeb09359a4ce98b50cacc4ddfb224
+msgid "Notice that the first argument to :class:`Timer` is a multi-line string, with indention preserved to ensure that it parses correctly when run. The second argument is a constant established above to initialize the list of values and the dictionary."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:150
+# 826526192d1540edaead5839f89c8e14
+msgid "The next variation uses :func:`setdefault()` to ensure that values already in the dictionary are not overwritten."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:167
+# 60ae2bf2aab74983a70d5ced06d87abb
+msgid "Another way to avoid overwriting existing values is to use :func:`has_key()` to check the contents of the dictionary explicitly."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:186
+# e7bb50a31cff4d23813337a871718ae1
+msgid "Or by adding the value only if we receive a :ref:`KeyError <exceptions-KeyError>` exception when looking for the existing value."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:207
+# 4aa4c7cbc6c642788445f9f7c2cd9bbf
+msgid "And the last method we will test is the (relatively) new form using \"``in``\" to determine if a dictionary has a particular key."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:227
+# cfd8251fce52406f8c8eb69c55c0d86c
+msgid "When run, the script produces output similar to this:"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:248
+# 2fd51eef06f34e3b8c2c51c264823c8b
+msgid "Those times are for a MacBook Pro running Python 2.6. Your times will be different. Experiment with the *range_size* and *count* variables, since different combinations will produce different results."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:253
+# a084b39e2dfa4cfe90fb19c6f68d06a5
+msgid "From the Command Line"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:255
+# cae8a99061ed40638f7d59ee04c08159
+msgid "In addition to the programmatic interface, timeit provides a command line interface for testing modules without instrumentation."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:258
+# b31fbe27c7a14258ad9f61cc71702a3d
+msgid "To run the module, use the new :option:`-m` option to find the module and treat it as the main program:"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:265
+# ca1d98b32e534b6884e48f9ccc6e732d
+msgid "For example, to get help:"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:328
+# c257e965481843d9a9a0af677ed38ec3
+msgid "The statement argument works a little differently than the argument to :class:`Timer`.  Instead of one long string, you pass each line of the instructions as a separate command line argument. To indent lines (such as inside a loop), embed spaces in the string by enclosing the whole thing in quotes. For example:"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:347
+# 74270b20aaa840c1b23788eaace3c255
+msgid "It is also possible to define a function with more complex code, then import the module and call the function from the command line:"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:354
+# ef5632d325c841af8fa43b0b226d7352
+msgid "Then to run the test:"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:373
+# 4c15102436534f40a6e48fc76fa3a024
+msgid "`timeit <http://docs.python.org/lib/module-timeit.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:373
+# 411e77a3581c43b48560265b56492953
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:375
+# 0a936aa6820747aba735449aa2f1e346
+msgid ":mod:`profile`"
+msgstr ""
+
+#: ../../PyMOTW/timeit/index.rst:376
+# 3186b0d3561b467b9b2024d1fbf71bed
+msgid "The profile module is also useful for performance analysis."
+msgstr ""
+

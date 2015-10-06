@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/socket/udp.rst:3
+# 89a31e7cf92e445fab00da8b47c40965
+msgid "User Datagram Client and Server"
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:5
+# ab86550c0b654bf085740f79f51ccef7
+msgid "The user datagram protocol (UDP) works differently from TCP/IP.  Where TCP is a *stream oriented* protocol, ensuring that all of the data is transmitted in the right order, UDP is a *message oriented* protocol. UDP does not require a long-lived connection, so setting up a UDP socket is a little simpler.  On the other hand, UDP messages must fit within a single packet (for IPv4, that means they can only hold 65,507 bytes because the 65,535 byte packet also includes header information) and delivery is not guaranteed as it is with TCP."
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:15
+# e6af9066df1146dab132ceaa15bf8f6a
+msgid "Echo Server"
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:17
+# f3232e719d4c4cf48a29941e31cc23bf
+msgid "Since there is no connection, per se, the server does not need to listen for and accept connections.  It only needs to use :func:`bind` to associate its socket with a port, and then wait for individual messages."
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:25
+# 8301a8c8bb8243b491da528bc834fc11
+msgid "Messages are read from the socket using :func:`recvfrom`, which returns the data as well as the address of the client from which it was sent."
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:33
+# 0375285d50e74658bb35fbc21090c3ef
+msgid "Echo Client"
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:35
+# f56c4c7945f64ed78f0648676d9f3dce
+msgid "The UDP echo client is similar the server, but does not use :func:`bind` to attach its socket to an address.  It uses :func:`sendto` to deliver its message directly to the server, and :func:`recvfrom` to receive the response."
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:45
+# ac5e5fb9c4ae413e92ee3db9d3d87f30
+msgid "Client and Server Together"
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:47
+# 3fce4c76203f4690a4fc83633748c116
+msgid "Running the server produces:"
+msgstr ""
+
+#: ../../PyMOTW/socket/udp.rst:62
+# 9d38599d7c1243c6afb345487e330d11
+msgid "and the client output is:"
+msgstr ""
+

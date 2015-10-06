@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/socket/uds.rst:3
+# 242555ddc4ae476e973accd367a1a28c
+msgid "Unix Domain Sockets"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:5
+# 9575b790b56241f687cf838e4a89609a
+msgid "From the programmer's perspective there are two essential differences between using a Unix domain socket and an TCP/IP socket.  First, the address of the socket is a path on the filesystem, rather than a tuple containing servername and port.  Second, the node created in the filesystem to represent the socket persists after the socket is closed, and needs to be removed each time the server starts up.  The echo server example from earlier can be updated to use UDS by making a few changes in the setup section."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:17
+# f3683d19b2c543788695192c00cedae4
+msgid "The :class:`socket` needs to be created with address family :const:`AF_UNIX`."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:23
+# c90dc09a65ef459bbb4cc75aa1472d14
+msgid "Binding the socket and managing the incomming connections works the same as with TCP/IP sockets."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:29
+# f5cd9d7067d8431c805cfc98c0d903b0
+msgid "The client setup also needs to be modified to work with UDS.  It should assume the filesystem node for the socket exists, since the server creates it by binding to the address."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:36
+# e420ab420cb54a188d4616f1152c8e35
+msgid "Sending and receiving data works the same way in the UDS client as the TCP/IP client from before."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:42
+# 01b19d71cc4647c39803812fbb20a73d
+msgid "The program output is mostly the same, with appropriate updates for the address information.  From the server:"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:62
+# de93e1893b794e4e956ba75af8f09268
+msgid "and from the client:"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:76
+# 9b02036ff09143159cf2393a75f349dc
+msgid "Permissions"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:78
+# 8fdc7b53a73f49c294407ea4c01189a4
+msgid "Since the UDS socket is represented by a node on the filesystem, standard filesystem permissions can be used to control access to the server."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:92
+# f71cd6d6c8b1435b9c00915bcbd9cf28
+msgid "Running the client as a user other than ``root`` now results in an error because the process does not have permission to open the socket."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:103
+# c6f751e36b4f4334913e43cfb718d5ad
+msgid "Communication Between Parent and Child Processes"
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:105
+# bf1abee1ba474035ab67bff675fee4e8
+msgid "The :func:`socketpair` function is useful for setting up UDS sockets for interprocess communication under Unix.  It creates a pair of connected sockets that can be used to communicate between a parent process and a child process after the child is forked."
+msgstr ""
+
+#: ../../PyMOTW/socket/uds.rst:114
+# b1540cb4539945408dc245792c1f9dbd
+msgid "By default, a UDS socket is created, but the caller can also pass address family, socket type, and even protocol options to control how the sockets are created."
+msgstr ""
+

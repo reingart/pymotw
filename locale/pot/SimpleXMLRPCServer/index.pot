@@ -1,0 +1,268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:3
+# 6cd1afaf0f2140a49329ccc2690570fd
+msgid "SimpleXMLRPCServer -- Implements an XML-RPC server."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:8
+# 550e97ab4e8f41e6a94ebe46ad1055b1
+msgid "Implements an XML-RPC server."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:9
+# 91f33e4ac7964f70b70f251263f2a31d
+msgid "2.2 and later"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:11
+# 064e4ff5182f440aa42874f65a079344
+msgid "The :mod:`SimpleXMLRPCServer` module contains classes for creating your own cross-platform, language-independent server using the XML-RPC protocol. Client libraries exist for many other languages, making XML-RPC an easy choice for building RPC-style services."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:18
+# a1a9d94cf69f4503b27533e3977c90d2
+msgid "All of the examples provided here include a client module as well to interact with the demonstration server. If you want to download the code and run the examples, you will want to use 2 separate shell windows, one for the server and one for the client."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:24
+# b4e199c2bc524de99192a795b4c1c576
+msgid "A Simple Server"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:26
+# 9432e8a08eb943cbbae088e4ed12f53c
+msgid "This simple server example exposes a single function that takes the name of a directory and returns the contents. The first step is to create the :class:`SimpleXMLRPCServer` instance and tell it where to listen for incoming requests ('localhost' port 9000 in this case). Then we define a function to be part of the service, and register the function so the server knows how to call it. The final step is to put the server into an infinite loop receiving and responding to requests."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:39
+# 0cf68e311e004a528554e90cf2fcc956
+msgid "The server can be accessed at the URL http://localhost:9000 using :mod:`xmlrpclib`.  This client code illustrates how to call the :func:`list_contents()` service from Python."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:47
+# 3ba1f27cbe724d2dab31e8ec49d00ce4
+msgid "Notice that we simply connect the :class:`ServerProxy` to the server using its base URL, and then call methods directly on the proxy. Each method invoked on the proxy is translated into a request to the server. The arguments are formatted using XML, and then POSTed to the server. The server unpacks the XML and figures out what function to call based on the method name invoked from the client. The arguments are passed to the function, and the return value is translated back to XML to be returned to the client."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:56
+# 6fb2a52092ac48fca9019eb2a3c0c437
+msgid "Starting the server gives::"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:61
+# b05ec095b26e442ba6ef2258e24b3902
+msgid "Running the client in a second window shows the contents of my ``/tmp`` directory::"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:70
+# 168eddf5f5c740e48161bd79184bf256
+msgid "and after the request is finished, log output appears in the server window::"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:78
+# 52478825692843ee89235628d4abecbb
+msgid "The first line of output is from the ``logging.debug()`` call inside :func:`list_contents()`. The second line is from the server logging the request because *logRequests* is ``True``."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:83
+# fc93674fd28a473c840a4abe0e9f60bb
+msgid "Alternate Names"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:85
+# 469119f12ace4b6886c01c99e1a10220
+msgid "Sometimes the function names you use inside your modules or libraries are not the names you want to use in your external API. You might need to load a platform-specific implementation, build the service API dynamically based on a configuration file, or replace real functions with stubs for testing. If you want to register a function with an alternate name, pass the name as the second argument to :func:`register_function()`, like this:"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:97
+# 77d49c7404ca43129bfc2a3a2c9067cb
+msgid "The client should now use the name ``dir()`` instead of ``list_contents()``:"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:104
+# 332ff04bb7814af48065f8d55bd17c24
+msgid "Calling ``list_contents()`` results in an error, since the server no longer has a handler registered by that name."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:129
+# 3b142b6a902a4c069060c52b52fb1663
+msgid "Dotted Names"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:131
+# 1561bb75d43142c7970d3ad2bf93e4ab
+msgid "Individual functions can be registered with names that are not normally legal for Python identifiers. For example, you can include '.' in your names to separate the namespace in the service. This example extends our \"directory\" service to add \"create\" and \"remove\" calls. All of the functions are registered using the prefix \"``dir.``\" so that the same server can provide other services using a different prefix. One other difference in this example is that some of the functions return ``None``, so we have to tell the server to translate the ``None`` values to a nil value (see `XML-RPC Extensions`_)."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:146
+# 5862ed98ad384b17add0599df6527ee5
+msgid "To call the service functions in the client, simply refer to them with the dotted name, like so:"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:153
+# b4b472788b9546e9abca644a38b410c0
+msgid "and (assuming you don't have a ``/tmp/EXAMPLE`` file on your system) the output for the sample client script looks like::"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:165
+# 1a62827c16574482bc0fe0176e48c073
+msgid "Arbitrary Names"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:167
+# 5b8f9112dffc4e3080cd906117f9a69b
+msgid "A less useful, but potentially interesting feature is the ability to register functions with names that are otherwise invalid attribute names. This example service registers a function with the name \"``multiply args``\"."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:175
+# 23ba1426b94044beac661d15e0ea090e
+msgid "Since the registered name contains a space, we can't use dot notation to access it directly from the proxy. We can, however, use ``getattr()``."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:183
+# 286d69edb6ff403b8a4026134a1e5a13
+msgid "You should avoid creating services with names like this, though.  This example is provided not necessarily because it is a good idea, but because you may encounter existing services with arbitrary names and need to be able to call them."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:195
+# 55fc5b0e09364c52b1e515fc8b672813
+msgid "Exposing Methods of Objects"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:197
+# 5dfd733c2890488d91a342d67f5dd43c
+msgid "The earlier sections talked about techniques for establishing APIs using good naming conventions and namespacing. Another way to incorporate namespacing into your API is to use instances of classes and expose their methods. We can recreate the first example using an instance with a single method."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:207
+# 022036b92e1d4979bdbfa76d8e05eb30
+msgid "A client can call the method directly:"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:213
+# a2211b9559664c7693424b808d0c8829
+msgid "and receive output like::"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:221
+# 37e73e98d9214c559f34205f9635b1c1
+msgid "We've lost the \"``dir.``\" prefix for the service, though, so let's define a class to let us set up a service tree that can be invoked from clients."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:229
+# 768959cd72404666924ab66674ada6e5
+msgid "By registering the instance of :class:`ServiceRoot` with *allow_dotted_names* enabled, we give the server permission to walk the tree of objects when a request comes in to find the named method using ``getattr()``."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:245
+# 573111297c044f2cbefeba5000780f66
+msgid "Dispatching Calls Yourself"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:247
+# 034304d25ef94fdcb8c8466ffd0ffb83
+msgid "By default, :func:`register_instance()` finds all callable attributes of the instance with names not starting with '``_``' and registers them with their name. If you want to be more careful about the exposed methods, you could provide your own dispatching logic. For example:"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:256
+# e717f361187f44d99c05a01ab5f76e50
+msgid "The :func:`public()` method of :class:`MyService` is marked as exposed to the XML-RPC service while :func:`private()` is not. The :func:`_dispatch()` method is invoked when the client tries to access a function that is part of :class:`MyService`. It first enforces the use of a prefix (\"``prefix.``\" in this case, but you can use any string).  Then it requires the function to have an attribute called *exposed* with a true value. The exposed flag is set on a function using a decorator for convenience."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:265
+# 96949c8a0ab1486e831ab1953a4df304
+msgid "Here are a few sample client calls:"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:271
+# 98646c75cc20445dbc7fd7ea9edd353d
+msgid "and the resulting output, with the expected error messages trapped and reported::"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:279
+# 57c5e460a11145a9a8f0ff72c47ed7bf
+msgid "There are several other ways to override the dispatching mechanism, including subclassing directly from SimpleXMLRPCServer. Check out the docstrings in the module for more details."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:285
+# 6117f1e71e4b443f8ff4cace001510de
+msgid "Introspection API"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:287
+# ab03438829f74a7298bdab6c53dcef4c
+msgid "As with many network services, it is possible to query an XML-RPC server to ask it what methods it supports and learn how to use them. :class:`SimpleXMLRPCServer` includes a set of public methods for performing this introspection. By default they are turned off, but can be enabled with :func:`register_introspection_functions()`. You can add explicit support for :func:`system.listMethods()` and :func:`system.methodHelp()` by defining :func:`_listMethods()` and :func:`_methodHelp()` on your service class. For example,"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:300
+# 4e055e8501334072a11df7defa588836
+msgid "In this case, the convenience function :func:`list_public_methods()` scans an instance to return the names of callable attributes that do not start with '``_``'. You can redefine :func:`_listMethods()` to apply whatever rules you like.  Similarly, for this basic example :func:`_methodHelp()` returns the docstring of the function, but could be written to build a help string from another source."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:307
+# 31ce6448172c4f65b3de7d47dcd99347
+msgid "This client queries the server and reports on all of the publicly callable methods."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:314
+# 713dba2e3c034b65bb46fe8e90064fc7
+msgid "Notice that the system methods are included in the results."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:355
+# 4cb930a773694f09811ab5d9b8b91955
+msgid "`SimpleXMLRPCServer <http://docs.python.org/lib/module-SimpleXMLRPCServer.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:355
+# 3b9a8c3f9f4d48eb84fa607065a6fda0
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:359
+# a8cc1ebbf886457aabfab8e45c6a0050
+msgid "`XML-RPC How To <http://www.tldp.org/HOWTO/XML-RPC-HOWTO/index.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:358
+# ff7da27752544b939774024f90979e57
+msgid "Describes how to use XML-RPC to implement clients and servers in a variety of languages."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:362
+# 956ab71f714d49fda1273cf314709ea3
+msgid "`XML-RPC Extensions`_"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:362
+# 9925525b5046450a80093e287a8bcbac
+msgid "Specifies an extension to the XML-RPC protocol."
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:364
+# 25394350e71d48359fbcd673e2eb47d2
+msgid ":mod:`xmlrpclib`"
+msgstr ""
+
+#: ../../PyMOTW/SimpleXMLRPCServer/index.rst:365
+# c984caffd3194674aa02f0172f8abaf1
+msgid "XML-RPC client library"
+msgstr ""
+

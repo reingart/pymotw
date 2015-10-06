@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sys/runtime.rst:5
+# 9d240c6e2c3940b69cfc68c54d3f6ede
+msgid "Runtime Environment"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:7
+# bb622e1dafb54ad28649cd089194b1fb
+msgid ":mod:`sys` provides low-level APIs for interacting with the system outside of an application, by accepting command line arguments, accessing user input, and passing messages and status values to the user."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:15
+# 226c4470c74048c8b8c19fac41aa437c
+msgid "Command Line Arguments"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:17
+# a3e4cf16703f4333a3f7974b593cbf88
+msgid "The arguments captured by the interpreter are processed there and not passed along to the program directly.  Any remaining options and arguments, including the name of the script itself, are saved to :const:`sys.argv` in case the program does need to use them."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:26
+# 61fe9763daec468387d934394a6a8477
+msgid "In the third example below, the ``-u`` option is understood by the interpreter, and is not passed directly to the program being run."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:53
+# 012a4c09aca844f395ff3fd489112c6f
+msgid ":mod:`getopt`, :mod:`optparse`, :mod:`argparse`"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:54
+# ddd261a80da649a68911eee061cf7c38
+msgid "Modules for parsing command line arguments."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:59
+# 37f794296ac54aa9a38990e63afd281d
+msgid "Input and Output Steams"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:61
+# 6d4606e94bd64190ba114415dd32837b
+msgid "Following the Unix paradigm, Python programs can access three file descriptors by default."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:68
+# ec5964b41c66458fb9de0d936e3c431b
+msgid ":const:`stdin` is the standard way to read input, usually from a console but also from other programs via a pipeline.  :const:`stdout` is the standard way to write output for a user (to the console) or to be sent to the next program in a pipeline.  :const:`stderr` is intended for use with warning or error messages."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:112
+# d3d36847a1e14434b87185f2e11e0b93
+msgid ":mod:`subprocess`, :mod:`pipes`"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:113
+# aba5de68b5144163870d0a320e9cbc98
+msgid "Both subprocess and pipes have features for pipelining programs together."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:116
+# 73cccb2d9822433aba957f74895a61c3
+msgid "Returning Status"
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:118
+# 3314251672ed48b0aa42f750255fdd51
+msgid "To return an exit code from your program, pass an integer value to :func:`sys.exit`."
+msgstr ""
+
+#: ../../PyMOTW/sys/runtime.rst:125
+# 7d1a30afe60d42e384116814d4261af3
+msgid "A non-zero value means the program exited with an error."
+msgstr ""
+

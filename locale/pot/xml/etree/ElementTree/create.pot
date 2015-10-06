@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:5
+# 0d72d00a72f142c18728483a24b5f371
+msgid "Creating XML Documents"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:7
+# e8bb1df4e2f344499f12ef133f7cedd1
+msgid "In addition to its parsing capabilities, :mod:`xml.etree.ElementTree` also supports creating well-formed XML documents from :class:`Element` objects constructed in an application.  The :class:`Element` class used when a document is parsed also knows how to generate a serialized form of its contents, which can then be written to a file or other data stream."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:15
+# 10b4b34efef74fecb4659bf6b4cef9e6
+msgid "Building Element Nodes"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:17
+# 91c0b3c17d924b719cf662150f799e0b
+msgid "There are three helper functions useful for creating a hierarchy of :class:`Element` nodes.  :func:`Element()` creates a standard node, :func:`SubElement()` attaches a new node to a parent, and :func:`Comment()` creates a node that serializes using XML's comment syntax."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:27
+# a30ba68e351f4db08252661eae27abcd
+msgid "The output contains only the XML nodes in the tree, not the XML declaration with version and encoding."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:45
+# b8916884f72a4a8bb30d8bb06618fcf3
+msgid "The ``&`` character in the text of ``child_with_entity_ref`` is converted to the entity reference ``&amp;`` automatically."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:49
+# 3f598cbf35ea416383122e175e5c7f4a
+msgid "Pretty-Printing XML"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:51
+# 165023dacfe74ca0bba47a5f9aea7636
+msgid ":class:`ElementTree` makes no effort to \"pretty print\" the output produced by :func:`tostring()`, since adding extra whitespace changes the contents of the document.  To make the output easier to follow for human readers, the rest of the examples below will use `a tip I found online <http://renesd.blogspot.com/2007/05/pretty-print-xml-with-python.html>`_ and re-parse the XML with :mod:`xml.dom.minidom` then use its :func:`toprettyxml()` method."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:64
+# 907116205eb74499a666ca6138e021ec
+msgid "The updated example now looks like:"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:70
+# 047b4ebdfc8c47fcaa70fd6784446569
+msgid "and the output is easier to read:"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:92
+# fee1a1a87b084ad8a5a84b47a6b47db4
+msgid "In addition to the extra whitespace for formatting, the :mod:`xml.dom.minidom` pretty-printer also adds an XML declaration to the output."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:98
+# c202acfcaa5f4e2783bdeaabde5d3d35
+msgid "Setting Element Properties"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:100
+# e1337f345e4147e8a585373e364029e7
+msgid "The previous example created nodes with tags and text content, but did not set any attributes of the nodes.  Many of the examples from :ref:`xml.etree.ElementTree.parsing` worked with an OPML_ file listing podcasts and their feeds.  The ``outline`` nodes in the tree used attributes for the group names and podcast properties. :class:`ElementTree` can be used to construct a similar XML file from a CSV input file, setting all of the element attributes as the tree is constructed."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:113
+# e72b166dbc674940a878d3011aa72c04
+msgid "The attribute values can be configured one at a time with :func:`set()` (as with the ``root`` node), or all at once by passing a dictionary to the node factory (as with each group and podcast node)."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:201
+# 968a652267f5463fbb6e9e2405b58c1b
+msgid "Building Trees from Lists of Nodes"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:203
+# faa597e36f1b484ba2f6d609b1a69768
+msgid "Multiple children can be added to an :class:`Element` instance with the :func:`extend` method.  The argument to :func:`extend` is any iterable, including a :class:`list` or another :class:`Element` instance."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:212
+# 1c5252a4b28e4c54978b0e31c399870c
+msgid "When a :class:`list` is given, the nodes in the list are added directly to the new parent."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:233
+# f4f57a39f1a94662919fffefc24cdf69
+msgid "When another :class:`Element` instance is given, the children of that node are added to the new parent."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:240
+# 1d7a19d22f064a7297ef00457af5a4d4
+msgid "In this case, the node with tag ``root`` created by parsing the XML string has three children, which are added to the ``parent`` node. The ``root`` node is not part of the output tree."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:264
+# 55280fdcff194dada3a3516badd7584c
+msgid "It is important to understand that :func:`extend` does not modify any existing parent-child relationships with the nodes.  If the values passed to extend exist somewhere in the tree already, they will still be there, and will be repeated in the output."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:273
+# 977c8c2ee4124a8694c22fb7d4fc4d38
+msgid "Setting the :attr:`id` attribute of these children to the Python unique object identifier exposes the fact that the same node objects appear in the output tree more than once."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:318
+# caba2267afee472a9d6655861bc939f3
+msgid "Serializing XML to a Stream"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:320
+# 76c51c3a615843fe9820ecd2aa9d68d5
+msgid ":func:`tostring()` is implemented to write to an in-memory file-like object and then return a string representing the entire element tree. When working with large amounts of data, it will take less memory and make more efficient use of the I/O libraries to write directly to a file handle using the :func:`write()` method of :class:`ElementTree`."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:330
+# 13132db61f2241bb99005437cccdaee2
+msgid "The example uses :ref:`sys.stdout <sys-input-output>` to write to the console, but it could also write to an open file or socket."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:348
+# 38631774151643e5b2c704f5aca63282
+msgid "The last node in the tree contains no text or sub-nodes, so it is written as an empty tag, ``<empty_child />``.  :func:`write` takes a *method* argument to control the handling for empty nodes."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:356
+# dcaeecea87304cf9bbedb83ccaac164d
+msgid "Three methods are supported:"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:358
+# 9862456a2c9040e7a8442fbebab03a55
+msgid "``xml``"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:359
+# 6f7d7f3078d64ee982066b8138e8958b
+msgid "The default method, produces ``<empty_child />``."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:361
+# d138714711c24a1aacec2c08c2b53b7a
+msgid "``html``"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:361
+# 7b8458dbef784b0d974308f2e846ec7f
+msgid "Produce the tag pair, as is required in HTML documents (``<empty_child></empty_child>``)."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:364
+# 5974ceb7f93c46829ad74148464f7b90
+msgid "``text``"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:364
+# 662cc3892d414d1b963ffbd01bb657c2
+msgid "Prints only the text of nodes, and skips empty tags entirely."
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:390
+# 802d596942df4be080a6feeb035c8edb
+msgid "Outline Processor Markup Language, OPML_"
+msgstr ""
+
+#: ../../PyMOTW/xml/etree/ElementTree/create.rst:391
+# 79566d29f2a34a96860486978e273f67
+msgid "Dave Winer's OPML specification and documentation."
+msgstr ""
+

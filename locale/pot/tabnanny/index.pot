@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/tabnanny/index.rst:3
+# a91b571e890947dda68f89d3f47fac37
+msgid "tabnanny -- Indentation validator"
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:8
+# c23b6758572e4854b85244c36f0e862c
+msgid "Scan Python source code looking for suspicious indentation."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:9
+# 99dc821db013473eb8fa564a3cf5b658
+msgid "2.1.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:11
+# 102f301f20434435bb17719f47c75588
+msgid "Consistent use of indentation is important in a langauge like Python, where white-space is significant.  The :mod:`tabnanny` module provides a scanner to report on \"ambiguous\" use of indentation."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:16
+# aa7f4124d2514f309347237b8711e8f0
+msgid "Running from the Command Line"
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:18
+# 3ff589be5900409eb40917b4bff76ee0
+msgid "The simplest way to use :mod:`tabnanny` is to run it from the command line, passing the names of files to check.  If you pass directory names, the directories are scanned recursively to find `.py` files to check."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:23
+# ea606cd49ca7425694d53596639c0913
+msgid "When I ran tabnanny across the PyMOTW source code, I found one old module with tabs instead of spaces::"
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:29
+# 1b290e7a6fdf4e348b9c06772a5944cf
+msgid "Sure enough, line 78 of `fetch_podcasts.py` had two tabs instead of 8 spaces.  I didn't see this by looking at it in my editor because I have my tabstops set to 4 spaces, so visually there was no difference."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:39
+# 010311cd3fea4958a361be4ec4bde1ff
+msgid "Correcting line 78 and running tabnanny again showed another error on line 79.  One last problem showed up on line 80."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:42
+# 41a3618e64a8463d84b2cdfd13808dae
+msgid "If you want to scan files, but not see the details about the error, you can use the `-q` option to suppress all information except the filename."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:51
+# c1f8ee0130ed4bb8ab3263121106295c
+msgid "To see more information about the files being scanned, use the `-v` option."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:65
+# e43b15d311494848a87b2a68c6d4507e
+msgid "Using within Your Program"
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:67
+# 579b98b72f0a4942ac7e107cd73a1a26
+msgid "As soon as I discovered the mistake in my Queue example, I decided I needed to add an automatic check to my PyMOTW build process.  I created a ``tabcheck`` task in my ``pavement.py`` build script so I could run `paver tabcheck` and scan the code I'm working on for PyMOTW.  This is possible because tabnanny exposes its `check()` function as a public API."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:74
+# f5f0fcfe779f46b588d845b27be802d6
+msgid "Here's an example of using tabnanny that doesn't require understanding Paver's task definition decorators."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:81
+# 8c3d7f90931547b999b7084808709f30
+msgid "And in action:"
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:95
+# c8cf172907d84985b44dcc07a1f576e8
+msgid "If you run these examples against the PyMOTW code it won't report the same errors, since I have fixed my code in this release."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:101
+# 7ff4f19f242c44779c1a7af6e54b68d1
+msgid "`tabnanny <http://docs.python.org/library/tabnanny.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:101
+# 573a94383fae4f9a90c4ab10edc0f342
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:103
+# db6ec9ecdee34da28cb5118328954f51
+msgid ":mod:`tokenize`"
+msgstr ""
+
+#: ../../PyMOTW/tabnanny/index.rst:104
+# adf7ec0035a24abcbc6b3555fd3433cf
+msgid "Lexical scanner for Python source code."
+msgstr ""
+

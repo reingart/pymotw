@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/zlib/index.rst:3
+# d09185978ba749488d510c44fcb186cd
+msgid "zlib -- Low-level access to GNU zlib compression library"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:8
+# 8da35521f69646f1b3acbf9b47a17de5
+msgid "Low-level access to GNU zlib compression library"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:9
+# 50978db8a3da439f851c06a3d9e2a83f
+msgid "2.5 and later"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:11
+# ae7a1e8f178546c19291132afc38e539
+msgid "The :mod:`zlib` module provides a lower-level interface to many of the functions in the :mod:`zlib` compression library from GNU."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:15
+# 04b5cf9f9872417189e041279843cc06
+msgid "Working with Data in Memory"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:17
+# 091444305b084868bef15522439f226f
+msgid "The simplest way to work with :mod:`zlib` requires holding all of the data to be compressed or decompressed in memory, and then using :func:`compress()` and :func:`decompress()`."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:39
+# 55c63b7ee6f74cf9bb4cf794d79c719e
+msgid "Notice that for short text, the compressed version can be longer. While the actual results depend on the input data, for short bits of text it is interesting to observe the compression overhead."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:66
+# f00936277e1d45f1ba0bd4227588cebf
+msgid "Working with Streams"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:68
+# 4ebcbc8b5785490c98d67250515e4337
+msgid "The in-memory approach has obvious drawbacks that make it impractical for real-world use cases.  The alternative is to use :class:`Compress` and :class:`Decompress` objects to manipulate streams of data, so that the entire data set does not have to fit into memory."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:73
+# 26b1191a1863478cb4eb83f9ca31b0be
+msgid "The simple server below responds to requests consisting of filenames by writing a compressed version of the file to the socket used to communicate with the client.  It has some artificial chunking in place to illustrate the buffering behavior that happens when the data passed to :func:`compress()` or :func:`decompress()` doesn't result in a complete block of compressed or uncompressed output."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:82
+# 17b50d85de8f43d999c53c9b2a989d80
+msgid "This server has obvious security implications.  Do not run it on a system on the open internet or in any environment where security might be an issue."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:144
+# 4a1131c16d0c4bb199b5dc8d49bb89a7
+msgid "Mixed Content Streams"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:146
+# c27fdf0c0be94b2e88f4f528e3404cc3
+msgid "The :class:`Decompress` class returned by :func:`decompressobj()` can also be used in situations where compressed and uncompressed data is mixed together.  After decompressing all of the data, the *unused_data* attribute contains any data not used."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:170
+# c2c6bd9a4f0a4ac0a5aa30580506aeb7
+msgid "Checksums"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:172
+# 7e139aa8b7f04a78864d5226ddd0f8a7
+msgid "In addition to compression and decompression functions, :mod:`zlib` includes two functions for computing checksums of data, :func:`adler32()` and :func:`crc32()`.  Neither checksum is billed as cryptographically secure, and they are only intended for use for data integrity verification."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:178
+# 168c2b15646d4446800a5fec495ba8b6
+msgid "Both functions take the same arguments, a string of data and an optional value to be used as a starting point for the checksum.  They return a 32-bit signed integer value which can also be passed back on subsequent calls as a new starting point argument to produce a *running* checksum."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:204
+# d761750359bb400fa595556cdc69fa95
+msgid "The Adler32 algorithm is said to be faster than a standard CRC, but I found it to be slower in my own tests."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:229
+# 62af57a414404322bb02edeeaf80ca31
+msgid "`zlib <http://docs.python.org/library/zlib.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:229
+# 3f7af0114ebf4765afd6224a9c53063d
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:232
+# a861a357cae24ba292ba8ca0bb33a007
+msgid ":mod:`gzip`"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:232
+# 423e99eda5774f4dbdcc70a2f88b039e
+msgid "The gzip module includes a higher level (file-based) interface to the zlib library."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:235
+# b30c93c5ebd24420bf8ad0bded336803
+msgid "http://www.zlib.net/"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:235
+# 534adf9f58a043c1835f9a00db074c3d
+msgid "Home page for zlib library."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:238
+# d7fd565cc5c64cdb91a7ca55aad6a598
+msgid "http://www.zlib.net/manual.html"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:238
+# 6d4ed69fcb6f4fdeae39ee7550cd4560
+msgid "Complete zlib documentation."
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:240
+# d4dc581a4d074f55b8cf39ea0616c001
+msgid ":mod:`bz2`"
+msgstr ""
+
+#: ../../PyMOTW/zlib/index.rst:241
+# 8608ac0a4d304268a9badd265cc88be7
+msgid "The bz2 module provides a similar interface to the bzip2 compression library."
+msgstr ""
+

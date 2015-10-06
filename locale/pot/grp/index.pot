@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/grp/index.rst:3
+# 05684802453d44d4a1241641d426596c
+msgid "grp -- Unix Group Database"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:8
+# b68973b93aaf4aafb8467e0840207e07
+msgid "Read group data from Unix group database."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:9
+# e83cab367b2841e4a66f4b03f45ef23d
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:11
+# 40c2b82a6dae410fbc3003562c5a67f3
+msgid "The grp module can be used to read information about Unix groups from the group database (usually ``/etc/group``).  The read-only interface returns tuple-like objects with named attributes for the standard fields of a group record."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:17
+# eccb87799498464ca83e704fcddc8a11
+msgid "Index"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:17
+# 4b3798097aac4ffe881692d6b510f178
+msgid "Attribute"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:17
+# 815e20860c4b4a73a76a83107337006a
+msgid "Meaning"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:19
+# 0f313a76a5204fc6bc733c3778b1c7f2
+msgid "0"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:19
+# 65b508e45b394b2e8cc88c8c951d8858
+msgid "gr_name"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:19
+# a11af5205b494c99ba0927a7f37fe613
+msgid "Name"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:20
+# d345871c75c54faaae3321e55c7c44e6
+msgid "1"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:20
+# f61d8daba22f422e8a9c787ac7c61f00
+msgid "gr_passwd"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:20
+# 1e65366294ad48b5a32b9278d35e4f3b
+msgid "Password, if any (encrypted)"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:21
+# e5cf25d26f9946b8ba46b64af776485d
+msgid "2"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:21
+# e213987af4cc45a083349dbff5a5365e
+msgid "gr_gid"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:21
+# 5f557acbdf854302be97d76790a37544
+msgid "Numerical id (integer)"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:22
+# 797046cc3696475e8005ba314e9031b2
+msgid "3"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:22
+# c28ec008bc4b4312b8cca5800d87983c
+msgid "gr_mem"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:22
+# 3414e63a892541ff9515eb0f4c2076d4
+msgid "Names of group members"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:25
+# 2722f53e56854a6e8aee138528df3bef
+msgid "The name and password values are both strings, the GID is an integer, and the members are reported as a list of strings."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:29
+# 1df30e620747475f9f05e1341d7322fe
+msgid "Querying All Groups"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:31
+# c266c37e4c9749c08c36a381d6d67e94
+msgid "Suppose you need to print a report of all of the \"real\" groups on a system, including their members (for our purposes, \"real\" is defined as having a name not starting with \"``_``\").  To load the entire password database, you would use ``getgrall()``.  The return value is a list with an undefined order, so you probably want to sort it before printing the report."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:124
+# 5716980cad1c4e7294b558d99c582444
+msgid "Group Memberships for a User"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:126
+# 54b2df79978d4f4aaf7686b4ea02f6ba
+msgid "Another common task might be to print a list of all the groups for a given user:"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:146
+# 0a952fe23e5a4f1584a27456a078e980
+msgid "Finding a Group By Name"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:148
+# 958ee55c72454cad9d5dfb77653fb806
+msgid "As with :mod:`pwd`, it is also possible to query for information about a specific group, either by name or numeric id."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:171
+# 2d0cec18691441fdbb9a39b0b93559d6
+msgid "Finding a Group by ID"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:173
+# b38125ac82cf493b8da379171daf20ea
+msgid "To identify the group running the current process, combine ``getgrgid()`` with ``os.getgid()``."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:192
+# fc3d4cd86b114fd89a174dd37758abfd
+msgid "And to get the group name based on the permissions on a file, look up the group returned by ``os.stat()``."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:215
+# 01783068b27b49c4b4fb3c8c6c99451a
+msgid "`grp <http://docs.python.org/library/grp.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:215
+# 201ad1825668466f988308878f1b00d1
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:218
+# 3458197014a64b7f82c5c28619304554
+msgid ":mod:`pwd`"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:218
+# 21bc8835696e4d8c82d1198e555c016d
+msgid "Read user data from the password database."
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:220
+# 5c41535638f54418954648e0325ce604
+msgid ":mod:`spwd`"
+msgstr ""
+
+#: ../../PyMOTW/grp/index.rst:221
+# 7c8fcaf944a844d598429e136d30c6df
+msgid "Read user data from the shadow password database."
+msgstr ""
+

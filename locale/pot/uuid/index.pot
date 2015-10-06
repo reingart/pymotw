@@ -1,0 +1,163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/uuid/index.rst:3
+# 33ab65817cfd4b1a98680d40d7ef80cb
+msgid "uuid -- Universally unique identifiers"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:8
+# 00d797e32fc94051ad21cec2f1ee83de
+msgid "The :mod:`uuid` module implements Universally Unique Identifiers as described in :rfc:`4122`."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:9
+# 9a18b2dcdaf446759149c37d7e1a0ed9
+msgid "2.5 and later"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:11
+# 7f3890b6e73648cdbb335ab24e2feefa
+msgid ":rfc:`4122` defines a system for creating universally unique identifiers for resources in a way that does not require a central registrar. UUID values are 128 bits long and \"can guarantee uniqueness across space and time\". They are useful for identifiers for documents, hosts, application clients, and other situations where a unique value is necessary. The RFC is specifically geared toward creating a Uniform Resource Name namespace."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:19
+# 3f512d45b3794035b0294e566ec06170
+msgid "Three main algorithms are covered by the spec:"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:21
+# 9e70b64583ba482ca70540c4aee7f2e8
+msgid "Using IEEE 802 MAC addresses as a source of uniqueness"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:22
+# bcbfe2be59c0417da3871f3cf559265d
+msgid "Using pseudo-random numbers"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:23
+# 3e02983cf1f64d5b85c2f6667e9b62da
+msgid "Using well-known strings combined with cryptographic hashing"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:25
+# 97f1e7d9e9d748878277285130a7c4b6
+msgid "In all cases the seed value is combined with the system clock and a clock sequence value (to maintain uniqueness in case the clock was set backwards)."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:30
+# 1e334d831dce40c98f3df9e23eef2c8f
+msgid "UUID 1 - IEEE 802 MAC Address"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:32
+# 74044ccbfdbb4b5993b1bdcfb1285783
+msgid "UUID version 1 values are computed using the MAC address of the host. The :mod:`uuid` module uses :func:`getnode()` to retrieve the MAC value on a given system:"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:53
+# bd1a527e01054e86bb6994fdb22ef658
+msgid "If a system has more than one network card, and so more than one MAC, any one of the values may be returned."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:56
+# cd2cc4742e1f48da9983559ca6ae496e
+msgid "To generate a UUID for a given host, identified by its MAC address, use the :func:`uuid1()` function. You can pass a node identifier, or leave the field blank to use the value returned by :func:`getnode()`."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:66
+# b05729c6287542a5acbd4f0312d5b661
+msgid "The components of the UUID object returned can be accessed through read-only instance attributes. Some attributes, such as *hex*, *int*, and *urn*, are different representations of the UUID value."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:98
+# 96f1925edabd4d2eaa2fa6d85f0cf301
+msgid "Because of the time component, each time :func:`uuid1()` is called a new value is returned."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:106
+# 2e5a72e4b2fd4ec1b6c8b09b01f82002
+msgid "Notice in this output that only the time component (at the beginning of the string) changes."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:123
+# b9247667d15f4611b0f5d7d8817f2158
+msgid "Because your computer has a different MAC address than mine, you will see entirely different values if you run the examples, because the node identifier at the end of the UUID will change, too."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:146
+# 1cfa3ffc5a194321bdf4bb95373ef856
+msgid "UUID 3 and 5 - Name-Based Values"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:148
+# df38c67a2d5a4683841795ca9a68df32
+msgid "It is also useful in some contexts to create UUID values from names instead of random or time-based values. Versions 3 and 5 of the UUID specification use cryptographic hash values (MD5 or SHA-1) to combine namespace-specific seed values with \"names\" (DNS hostnames, URLs, object ids, etc.). There are several well-known namespaces, identified by pre-defined UUID values, for working with DNS, URLs, ISO OIDs, and X.500 Distinguished Names. You can also define your own application- specific namespaces by generating and saving UUID values."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:157
+# 2067b82dddf4401abf7c55d1075916b8
+msgid "To create a UUID from a DNS name, pass ``uuid.NAMESPACE_DNS`` as the namespace argument to :func:`uuid3()` or :func:`uuid5()`:"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:183
+# 3a58ae888b4b4925af6682618f15d086
+msgid "The UUID value for a given name in a namespace is always the same, no matter when or where it is calculated. Values for the same name in different namespaces are different."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:220
+# 32acf815674e477fa89a9cb327d1471d
+msgid "UUID 4 - Random Values"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:222
+# 85fce83f92bf48fe9973d665eef2ba7d
+msgid "Sometimes host-based and namespace-based UUID values are not \"different enough\". For example, in cases where you want to use the UUID as a lookup key, a more random sequence of values with more differentiation is desirable to avoid collisions in a hash table. Having values with fewer common digits also makes it easier to find them in log files. To add greater differentiation in your UUIDs, use :func:`uuid4()` to generate them using random input values."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:250
+# 4709f924af2f452ab6ff59f549f3f21e
+msgid "Working with UUID Objects"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:252
+# 011a38cf4dcc40caacc773f82a7fa491
+msgid "In addition to generating new UUID values, you can parse strings in various formats to create UUID objects. This makes it easier to compare them, sort them, etc."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:289
+# 26a330d618c34727b0081b0ac3bf8883
+msgid "`uuid <http://docs.python.org/lib/module-uuid.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:289
+# 026d6929a9eb401ba6a32857961b548f
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:291
+# 2385d969a01649749574f98a36fec3d9
+msgid ":rfc:`4122`"
+msgstr ""
+
+#: ../../PyMOTW/uuid/index.rst:292
+# 0185606ddd25487a8cc4eeb9336afcc1
+msgid "A Universally Unique IDentifier (UUID) URN Namespace"
+msgstr ""
+

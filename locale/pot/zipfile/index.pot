@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/zipfile/index.rst:3
+# 5d054e56028945638f4f1e3c3425c135
+msgid "zipfile -- Read and write ZIP archive files"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:8
+# 4e351816437b4331878fd842f2d69d23
+msgid "Read and write ZIP archive files."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:9
+# a9b6be3eb8014ba2af965ac555831320
+msgid "1.6 and later"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:11
+# 5ff06365169e48aea6472c1b48474c35
+msgid "The :mod:`zipfile` module can be used to manipulate ZIP archive files."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:14
+# 866908d28d94409d965943de33abe02c
+msgid "Limitations"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:16
+# c7772aa866434d81a136d4438f343972
+msgid "The :mod:`zipfile` module does not support ZIP files with appended comments, or multi-disk ZIP files. It does support ZIP files larger than 4 GB that use the ZIP64 extensions."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:21
+# f45d0af8ae6645c49200740af34fa3b7
+msgid "Testing ZIP Files"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:23
+# 4fd89ee85c4f4ffdacf892f06b435e6e
+msgid "The :func:`is_zipfile()` function returns a boolean indicating whether or not the filename passed as an argument refers to a valid ZIP file."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:30
+# 925a76c6f7b9486c810586a607f005e2
+msgid "Notice that if the file does not exist at all, :func:`is_zipfile()` returns False."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:49
+# 16868c777cc040c7a05e41dc49c505e0
+msgid "Reading Meta-data from a ZIP Archive"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:51
+# 16b66072c53c4d4da2794b5dbd77446f
+msgid "Use the :class:`ZipFile` class to work directly with a ZIP archive. It supports methods for reading data about existing archives as well as modifying the archives by adding additional files."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:55
+# adb9f39d6d6144b8826d0b2a5680e6ef
+msgid "To read the names of the files in an existing archive, use :func:`namelist()`:"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:62
+# 4903316dfd694db3bc4a03049224b78c
+msgid "The return value is a list of strings with the names of the archive contents:"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:77
+# 8170e8933de14abf99dfc2a2f5305e16
+msgid "The list of names is only part of the information available from the archive, though. To access all of the meta-data about the ZIP contents, use the :func:`infolist()` or :func:`getinfo()` methods."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:85
+# a848a85ce9d8474cad13a16c78b71966
+msgid "There are additional fields other than those printed here, but deciphering the values into anything useful requires careful reading of the `PKZIP Application Note`_ with the ZIP file specification."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:108
+# 34a2c7f3730142e18485430d4f75f096
+msgid "If you know in advance the name of the archive member, you can retrieve its :class:`ZipInfo` object with :func:`getinfo()`."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:115
+# dfa419c49b0c45ad828199446b09eecd
+msgid "If the archive member is not present, :func:`getinfo()` raises a :ref:`KeyError <exceptions-KeyError>`."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:132
+# d1090fd406064421bbb5811e6f7114f9
+msgid "Extracting Archived Files From a ZIP Archive"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:134
+# f642c899e52a46ba9b4e042efbdcba14
+msgid "To access the data from an archive member, use the :func:`read()` method, passing the member's name."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:141
+# 8e8911815e7f4c4b8fbfb7e42bbaed53
+msgid "The data is automatically decompressed for you, if necessary."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:162
+# 97232d1db83c463c9610601ff96e3f49
+msgid "Creating New Archives"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:164
+# 4841a5fd7f8049188d66332a571207f3
+msgid "To create a new archive, simple instantiate the :class:`ZipFile` with a mode of ``'w'``.  Any existing file is truncated and a new archive is started. To add files, use the :func:`write()` method."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:172
+# b8f669d6e9cc45cd922f5f060680b659
+msgid "By default, the contents of the archive are not compressed:"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:189
+# 486a9e9050cd4e32ad483db28ab54176
+msgid "To add compression, the :mod:`zlib` module is required. If :mod:`zlib` is available, you can set the compression mode for individual files or for the archive as a whole using ``zipfile.ZIP_DEFLATED``. The default compression mode is ``zipfile.ZIP_STORED``."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:198
+# a7ba8236c90741938629bdeca324a712
+msgid "This time the archive member is compressed:"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:217
+# 4671aecdff3247e093e3f95213d7323b
+msgid "Using Alternate Archive Member Names"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:219
+# 41ccd04addf14049aa2153684b108c40
+msgid "It is easy to add a file to an archive using a name other than the original file name, by passing the arcname argument to :func:`write()`."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:226
+# 7156ba40bc5b4495900c18cc26c02c9e
+msgid "There is no sign of the original filename in the archive:"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:240
+# ca5641d965164538b647a52346d0315f
+msgid "Writing Data from Sources Other Than Files"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:242
+# a890503d6908492889253dd46a559767
+msgid "Sometimes it is necessary to write to a ZIP archive using data that did not come from an existing file. Rather than writing the data to a file, then adding that file to the ZIP archive, you can use the :func:`writestr()` method to add a string of bytes to the archive directly."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:253
+# 08b2d3cc8cb946ca8beb80f0a9f06230
+msgid "In this case, I used the compress argument to :class:`ZipFile` to compress the data, since :func:`writestr()` does not take compress as an argument."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:268
+# a54058475b304c569e78e61d415e39d7
+msgid "This data did not exist in a file before being added to the ZIP file"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:271
+# 763603200aeb430f9f6cd0bf1f58ec44
+msgid "Writing with a ZipInfo Instance"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:273
+# 6fda74bf76c641818113e862b91f6943
+msgid "Normally, the modification date is computed for you when you add a file or string to the archive. When using :func:`writestr()`, you can also pass a :class:`ZipInfo` instance to define the modification date and other meta-data yourself."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:282
+# 18326296fb2640c799de38c631e51344
+msgid "In this example, I set the modified time to the current time, compress the data, provide a false value for ``create_system``, and add a comment."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:297
+# fe5beedc839e4dabaa050410486b5eed
+msgid "Appending to Files"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:299
+# 1245caa78ea3418a814814aa7e9af352
+msgid "In addition to creating new archives, it is possible to append to an existing archive or add an archive at the end of an existing file (such as a .exe file for a self-extracting archive). To open a file to append to it, use mode ``'a'``."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:308
+# 101dcbc9f9ed4872886f638531ae25eb
+msgid "The resulting archive ends up with 2 members:"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:342
+# c1635a44f16f481e9ca3c3ad49d87bde
+msgid "Python ZIP Archives"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:344
+# d3b065e842f3411087e8b5f90c43830d
+msgid "Since version 2.3 Python has had the ability to :ref:`import modules from inside ZIP archives <zipimport-ref>` if those archives appear in :ref:`sys.path <sys-path>`. The :class:`PyZipFile` class can be used to construct a module suitable for use in this way. When you use the extra method :func:`writepy()`, :class:`PyZipFile` scans a directory for ``.py`` files and adds the corresponding ``.pyo`` or ``.pyc`` file to the archive. If neither compiled form exists, a ``.pyc`` file is created and added."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:357
+# a893074e8c3745ec8e8e709faef04b90
+msgid "With the debug attribute of the :class:`PyZipFile` set to 3, verbose debugging is enabled and you can observe as it compiles each ``.py`` file it finds."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:414
+# 3e72eb549a6a46c2a8b2f4930aa1c740
+msgid "`zipfile <http://docs.python.org/library/zipfile.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:414
+# b2b94fe83e8a441ea7ae814e909f5365
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:417
+# be6703f7951d43b6986ec6e3673b0bf4
+msgid ":mod:`zlib`"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:417
+# 97937af17abd463b97b6bbe6fcb50fc2
+msgid "ZIP compression library"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:420
+# 01995f034e5845ab9d0af4a8a3b9df6a
+msgid ":mod:`tarfile`"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:420
+# f97785ada37942e7b9fca6c5b7066eeb
+msgid "Read and write tar archives"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:423
+# 21bd921bb28b4edba38d5eb7642eb0fd
+msgid ":mod:`zipimport`"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:423
+# caefa849510d4861abb0bbdfb7e50dcf
+msgid "Import Python modules from ZIP archive."
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:425
+# 54a283907c354003944375c284d2a421
+msgid "`PKZIP Application Note`_"
+msgstr ""
+
+#: ../../PyMOTW/zipfile/index.rst:426
+# f2dc1bc7470d4a2a933f19b5f3eac4fd
+msgid "Official specification for the ZIP archive format."
+msgstr ""
+

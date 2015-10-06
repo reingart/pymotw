@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/fnmatch/index.rst:3
+# 34cbcc8809d24e209ede7f341b29e973
+msgid "fnmatch -- Compare filenames against Unix-style glob patterns."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:8
+# 470e964bc8cb419394bfc6ef6b108b4e
+msgid "Handle Unix-style filename comparison with the fnmatch module."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:9
+# 358ebe4d2a1046d598cc994e9c16662c
+msgid "1.4 and later."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:11
+# eb628a8c7ab04c569d4a328439a8e1cc
+msgid "The fnmatch module is used to compare filenames against glob-style patterns such as used by Unix shells."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:15
+# 9a2f347f79dd47f39b06f7f202620152
+msgid "Simple Matching"
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:17
+# 62d8763f1a9d481ca4e94434c31b28e5
+msgid "``fnmatch()`` compares a single filename against a pattern and returns a boolean indicating whether or not they match. The comparison is case-sensitive when the operating system uses a case-sensitive filesystem."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:27
+# d4634e72eb1e457ab9131ddfa04407bc
+msgid "In this example, the pattern matches all files starting with 'fnmatch_' and ending in '.py'."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:50
+# 2702c067c1ba44e5bc15334657e9c922
+msgid "To force a case-sensitive comparison, regardless of the filesystem and operating system settings, use ``fnmatchcase()``."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:57
+# 5d1d6c3bef91476dbd99ad718f1537ac
+msgid "Since my laptop uses a case-sensitive filesystem, no files match the modified pattern."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:81
+# a828b8d564044c6f892ab26a4646208e
+msgid "Filtering"
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:83
+# 0522ae8e3fb042f79bb8de77dd3d86d8
+msgid "To test a sequence of filenames, you can use ``filter()``. It returns a list of the names that match the pattern argument."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:90
+# dd39cc2434b146b3bf315251fc3daa9d
+msgid "In this example, ``filter()`` returns the list of names of the example source files associated with this post."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:121
+# 3f21b344b8984c588e948fd7ba67ef25
+msgid "Translating Patterns"
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:123
+# 9fea0c76b5e64d77ab1001b8a39621ea
+msgid "Internally, fnmatch converts the glob pattern to a regular expression and uses the :mod:`re` module to compare the name and pattern. The ``translate()`` function is the public API for converting glob patterns to regular expressions."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:132
+# fdd372aa2978452fa6fb69dd1cc0d88a
+msgid "Notice that some of the characters are escaped to make a valid expression."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:150
+# f63f15859b794725980abe8f7924b59a
+msgid "`fnmatch <http://docs.python.org/library/fnmatch.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:150
+# d5878e5830cc494aa18823ec37779bc9
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:155
+# b1e73472889f40eeb67e67438de70a30
+msgid ":mod:`glob`"
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:153
+# 3151c78696d240fbab6a95a036a9a1cf
+msgid "The glob module combines :mod:`fnmatch` matching with ``os.listdir()`` to produce lists of files and directories matching patterns."
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:157
+# 62ef79794f0247b89d4fde11212e14c8
+msgid ":ref:`article-file-access`"
+msgstr ""
+
+#: ../../PyMOTW/fnmatch/index.rst:158
+# 74867339438446ec8c2e34c0551faaf9
+msgid "More modules for working with files."
+msgstr ""
+

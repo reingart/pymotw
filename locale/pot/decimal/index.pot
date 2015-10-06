@@ -1,0 +1,268 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/decimal/index.rst:3
+# 3d397bf09bfd4ebbb72bc3683420b6a7
+msgid "decimal -- Fixed and floating point math"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:8
+# f44b25fa46414d8fab808b2612763cb9
+msgid "Decimal arithmetic using fixed and floating point numbers"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:9
+# 23b1366a43cd4e2d99d2ba350572495c
+msgid "2.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:11
+# 3937a664b209470b9ff49881cbba7c98
+msgid "The :mod:`decimal` module implements fixed and floating point arithmetic using the model familiar to most people, rather than the IEEE floating point version implemented by most computer hardware.  A Decimal instance can represent any number exactly, round up or down, and apply a limit to the number of significant digits."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:18
+# ef7e1187e45242839f72bbd8e546b750
+msgid "Decimal"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:20
+# 3ae48367dbfa417b981bb7191285f5a1
+msgid "Decimal values are represented as instances of the :class:`Decimal` class.  The constructor takes as argument an integer, or a string. Floating point numbers must be converted to a string before being used to create a :class:`Decimal`, letting the caller explicitly deal with the number of digits for values that cannot be expressed exactly using hardware floating point representations."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:31
+# b12e91468c494087b80595a15f084d65
+msgid "Notice that the floating point value of ``0.1`` is not represented as an exact value, so the representation as a float is different from the Decimal value."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:52
+# f80965ccfa964110a087c91f5cad4ad4
+msgid "Less conveniently, Decimals can also be created from tuples containing a sign flag (``0`` for positive, ``1`` for negative), a tuple of digits, and an integer exponent."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:75
+# 1ee804f8f93447ab87f9043efedebd91
+msgid "Arithmetic"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:77
+# 0a086e99c3ca479d8d54e3229bcc2d64
+msgid "Decimal overloads the simple arithmetic operators so once you have a value you can manipulate it in much the same way as the built-in numeric types."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:85
+# 37c6b71ba0704a83a72bed80323b1b94
+msgid "Decimal operators also accept integer arguments, but floating point values must be converted to Decimal instances."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:117
+# 1132d80853614d5baa330bc31c1b2302
+msgid "Logarithms"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:119
+# 686566561bf740c890b0544b84bea8bc
+msgid "Beyond basic arithmetic, Decimal includes methods to find the base 10 and natural logarithms."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:143
+# d45d26bbb2ea4597855680fdb35ebadc
+msgid "Special Values"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:145
+# 90080704b5a2449890a8e62aa6b425b1
+msgid "In addition to the expected numerical values, :class:`Decimal` can represent several special values, including positive and negative values for infinity, \"not a number\", and zero."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:153
+# d55e25c692d64ace95b0f0a03f1d42d0
+msgid "Adding to infinite values returns another infinite value.  Comparing for equality with NaN always returns False and comparing for inequality always returns true.  Comparing for sort order against NaN is undefined and results in an error."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:179
+# fd182aac5c254d62b44757d199310fb7
+msgid "Context"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:181
+# ff9951d3fa1e482e82443bff404a5bc4
+msgid "So far all of the examples have used the default behaviors of the decimal module. It is possible to override settings such as the precision maintained, how rounding is performed, error handling, etc. All of these settings are maintained via a *context*.  Contexts can be applied for all Decimal instances in a thread or locally within a small code region."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:189
+# 2d475a4d4e9c436dba6ae600d150f04c
+msgid "Current Context"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:191
+# b1290e97ddc74a19884eb2227831e075
+msgid "To retrieve the current global context, use ``getcontext()``."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:233
+# a565d3d4d86344b5aeb7365d95cbeac9
+msgid "Precision"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:235
+# 3ef7e3eb82a74c35af34da20e275a45e
+msgid "The *prec* attribute of the context controls the precision maintained for new values created as a result of arithmetic.  Literal values are maintained as described."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:260
+# 3843d528ce4a4772a4c1da17d7935d22
+msgid "Rounding"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:262
+# fb64197110da4d05a79f1feb21a9af25
+msgid "There are several options for rounding to keep values within the desired precision."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:266
+# fb3f64a4481749b6a51633076a754226
+msgid "ROUND_CEILING"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:266
+# 462aff3d8a1447d18ab2680051035c8c
+msgid "Always round upwards towards infinity."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:269
+# d8f7517eae37405bb7ce85301ce232a9
+msgid "ROUND_DOWN"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:269
+# 4383b999a11b489ea66b898a77a61e59
+msgid "Always round toward zero."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:272
+# 985a0ef09f79464c893d85d4bf233ef8
+msgid "ROUND_FLOOR"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:272
+# 1d273195dd1f4465924bf7b4c869be54
+msgid "Always round down towards negative infinity."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:276
+# d590890df4514b588553abbfa68af3c5
+msgid "ROUND_HALF_DOWN"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:275
+# 92d3378238244d2a936f250b07e09b30
+msgid "Rounds away from zero if the last significant digit is greater than or equal to 5, otherwise toward zero."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:281
+# 5c31a9be25984bd4a1eff3979afb3944
+msgid "ROUND_HALF_EVEN"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:279
+# 47acf982f0b44522b59129855be30102
+msgid "Like ROUND_HALF_DOWN except that if the value is 5 then the preceding digit is examined.  Even values cause the result to be rounded down and odd digits cause the result to be rounded up."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:285
+# 04e86a1ef6e847f4a8bcbdc7360c1001
+msgid "ROUND_HALF_UP"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:284
+# a5e768e9bef94087b47d73ce401266e1
+msgid "Like ROUND_HALF_DOWN except if the last significant digit is 5 the value is rounded away from zero."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:288
+# e5ad9815382e42008095deb61888af37
+msgid "ROUND_UP"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:288
+# e67407128fc54c7890c2ffb730c54485
+msgid "Round away from zero."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:292
+# c73244303d5046278e3a3982b399a6c5
+msgid "ROUND_05UP"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:291
+# 188e2a142c5d4d14b3c80c2660df1764
+msgid "Round away from zero if the last digit is ``0`` or ``5``, otherwise towards zero."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:319
+# 616e5c344f714091a3ce08b332b91dc9
+msgid "Local Context"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:321
+# f5eaabc0262a43c6a10ad78f27067f9b
+msgid "Using Python 2.5 or later you can also apply the context to a subset of your code using the ``with`` statement and a context manager."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:345
+# 85ce2f94aa0a448eab19d7871db8268b
+msgid "Per-Instance Context"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:347
+# 853ce459c98d4bc7a8865c71250f62da
+msgid "Contexts can be used to construct Decimal instances, applying the precision and rounding arguments to the conversion from the input type.  This lets your application select the precision of constant values separately from the precision of user data."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:368
+# c5ae25064ba44c1eb1f70dc29f63cc21
+msgid "Threads"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:370
+# 5715d2f626a04d1f9112e147cd54c7a5
+msgid "The \"global\" context is actually thread-local, so each thread can potentially be configured using different values."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:396
+# 65fb28b949064b628cd094b4b6a0446f
+msgid "`decimal <http://docs.python.org/library/decimal.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:396
+# c0d6605b824142d1b7f514a38f2eea8f
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:398
+# bcb8140db8f94d15ac1ab6911cb21e01
+msgid "`Wikipedia: Floating Point <http://en.wikipedia.org/wiki/Floating_point>`_"
+msgstr ""
+
+#: ../../PyMOTW/decimal/index.rst:399
+# 7e09ed011a2a4633a6aa92371a0f86b7
+msgid "Article on floating point representations and arithmetic."
+msgstr ""
+

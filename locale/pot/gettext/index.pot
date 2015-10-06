@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/gettext/index.rst:3
+# a5826aa1036c45bf9d04248c6b883e4f
+msgid "gettext -- Message Catalogs"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:8
+# 353fec6a81c2445d969395e474eed6a7
+msgid "Message catalog API for internationalization."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:9
+# d9fa7a711a9847389e55e156784ccfde
+msgid "2.1.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:11
+# 2a2ab17bdc204d75b3b560e442156a8d
+msgid "The :mod:`gettext` module provides a pure-Python implementation compatible with the `GNU gettext`_ library for message translation and catalog management.  The tools available with the Python source distribution enable you to extract messages from your source, build a message catalog containing translations, and use that message catalog to print an appropriate message for the user at runtime."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:18
+# 646ac77442474fcfa499ea6f2a7685db
+msgid "Message catalogs can be used to provide internationalized interfaces for your program, showing messages in a language appropriate to the user.  They can also be used for other message customizations, including \"skinning\" an interface for different wrappers or partners."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:25
+# eca553ee9b92401aa082f1d28642caf9
+msgid "Although the standard library documentation says everything you need is included with Python, I found that ``pygettext.py`` refused to extract messages wrapped in the ``ungettext`` call, even when I used what seemed to be the appropriate command line options. I ended up installing the `GNU gettext`_ tools from source and using ``xgettext`` instead."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:33
+# cc05d1669d0f486dab50df63b2b9a29e
+msgid "Translation Workflow Overview"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:35
+# 584a2f386bbd4240b632591201a7ee5a
+msgid "The process for setting up and using translations includes five steps:"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:37
+# 7ca8ee7091714fb8990fcbdc07e9c156
+msgid "Mark up literal strings in your code that contain messages to translate."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:39
+# 03ad54a45bb74fadb3a15e4078a33571
+msgid "Start by identifying the messages within your program source that need to be translated, and marking the literal strings so the extraction program can find them."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:43
+# ea9019efe03d4f45b9630e4a6a684914
+msgid "Extract the messages."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:45
+# eb462904dcb74b26b1842b6b3c944afe
+msgid "After you have identified the translatable strings in your program source, use ``xgettext`` to pull the strings out and create a ``.pot`` file, or translation template. The template is a text file with copies of all of the strings you identified and placeholders for their translations."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:51
+# 926ab6ba9521400488be4cd2d7aa169c
+msgid "Translate the messages."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:53
+# bbb7989fc192429daa17c831368fd216
+msgid "Give a copy of the ``.pot`` file to the translator, changing the extension to ``.po``. The ``.po`` file is an editable source file used as input for the compilation step. The translator should update the header text in the file and provide translations for all of the strings."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:59
+# 73f91617eb254eefa942f21d6fbe925d
+msgid "\"Compile\" the message catalog from the translation."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:61
+# b3ac7b381c934e5887f85e78ddfc7a3b
+msgid "When the translator gives you back the completed ``.po`` file, compile the text file to the binary catalog format using ``msgfmt``. The binary format is used by the runtime catalog lookup code."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:66
+# 91728e343a524eefb255e03484304d72
+msgid "Load and activate the appropriate message catalog at runtime."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:68
+# df6fb18a571847948b76ecaacba57d3a
+msgid "The final step is to add a few lines to your application to configure and load the message catalog and install the translation function. There are a couple of ways to do that, with associated trade-offs, and each is covered below."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:73
+# a677901e55804549897352854f943de0
+msgid "Let's go through those steps in a little more detail, starting with the modifications you need to make to your code."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:77
+# ab910eb8b68d4b969a9d267e27f3f841
+msgid "Creating Message Catalogs from Source Code"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:79
+# bc4642adbb764fb9997ee2fee99a53c0
+msgid ":mod:`gettext` works by finding literal strings embedded in your program in a database of translations, and pulling out the appropriate translated string.  There are several variations of the functions for accessing the catalog, depending on whether you are working with Unicode strings or not.  The usual pattern is to bind the lookup function you want to use to the name ``_`` so that your code is not cluttered with lots of calls to functions with longer names."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:87
+# af6303947edd43a3af03ac1837c1201f
+msgid "The message extraction program, ``xgettext``, looks for messages embedded in calls to the catalog lookup functions.  It understands different source languages, and uses an appropriate parser for each. If you use aliases for the lookup functions or need to add extra functions, you can give ``xgettext`` the names of additional symbols to consider when extracting messages."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:94
+# 24499e2827464ac996f2bbb51823d686
+msgid "Here's a simple script with a single message ready to be translated:"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:100
+# caddd1a391844eb4a346d89780897d44
+msgid "In this case I am using the Unicode version of the lookup function, ``ugettext()``.  The text ``\"This message is in the script.\"`` is the message to be substituted from the catalog.  I've enabled fallback mode, so if we run the script without a message catalog, the in-lined message is printed:"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:119
+# 30ac85b24d5344ad8c18a88d86af6bb1
+msgid "The next step is to extract the message(s) and create the ``.pot`` file, using ``pygettext.py``."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:133
+# 2eada4f026a04358b2eb52b9313fdc95
+msgid "The output file produced looks like:"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:138
+# e5f201d9482f4a598167fa03c8d7c457
+msgid "Message catalogs are installed into directories organized by *domain* and *language*.  The domain is usually a unique value like your application name.  In this case, I used ``gettext_example``.  The language value is provided by the user's environment at runtime, through one of the environment variables ``LANGUAGE``, ``LC_ALL``, ``LC_MESSAGES``, or ``LANG``, depending on their configuration and platform.  My language is set to ``en_US`` so that's what I'll be using in all of the examples below."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:147
+# cec63a1a629340fca7e53d5a6a3fca4c
+msgid "Now that we have the template, the next step is to create the required directory structure and copy the template in to the right spot.  I'm going to use the ``locale`` directory inside the PyMOTW source tree as the root of my message catalog directory, but you would typically want to use a directory accessible system-wide.  The full path to the catalog input source is ``$localedir/$language/LC_MESSAGES/$domain.po``, and the actual catalog has the filename extension ``.mo``."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:156
+# 974952646f3544119e96319d57dd097e
+msgid "For my configuration, I need to copy ``gettext_example.pot`` to ``locale/en_US/LC_MESSAGES/gettext_example.po`` and edit it to change the values in the header and add my alternate messages.  The result looks like:"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:164
+# 61213084d10147fb9bb69a218fa3be5e
+msgid "The catalog is built from the ``.po`` file using ``msgformat``:"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:178
+# e3470e2cade0475c9cab9ad1d26b1ed2
+msgid "And now when we run the script, the message from the catalog is printed instead of the in-line string:"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:195
+# f4d618f7a0274988ad9d7cebcfce2409
+msgid "Finding Message Catalogs at Runtime"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:197
+# 6f8c41a32f6e4531b477c688532167c2
+msgid "As described above, the *locale directory* containing the message catalogs is organized based on the language with catalogs named for the *domain* of the program.  Different operating systems define their own default value, but :mod:`gettext` does not know all of these defaults.  Iut uses a default locale directory of ``sys.prefix + '/share/locale'``, but most of the time it is safer for you to always explicitly give a ``localedir`` value than to depend on this default being valid."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:206
+# 3c0b6ebc25b74f2984f9be02ccc6d563
+msgid "The language portion of the path is taken from one of several environment variables that can be used to configure localization features (``LANGUAGE``, ``LC_ALL``, ``LC_MESSAGES``, and ``LANG``). The first variable found to be set is used.  Multiple languages can be selected by separating the values with a colon (``:``).  We can illustrate how that works by creating a second message catalog and running a few experiments."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:241
+# d2bca82c74fb414db9bf1f61d7200485
+msgid "Although ``find()`` shows the complete list of catalogs, only the first one in the sequence is actually loaded for message lookups."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:270
+# 569edb66d01049349cf0efcb7c32f71c
+msgid "Plural Values"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:272
+# 30d317f5f8ac433e9b167cf2035ec65f
+msgid "While simple message substitution will handle most of your translation needs, :mod:`gettext` treats pluralization as a special case. Depending on the language, the difference between the singular and plural forms of a message may vary only by the ending of a single word, or the entire sentence structure may be different.  There may also be `different forms depending on the level of plurality <http://www.gnu.org/software/gettext/manual/gettext.html#Plural-forms>`_. To make managing plurals easier (and possible), there is a separate set of functions for asking for the plural form of a message."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:298
+# 475c676902d14e518a528daa6dfa8a5b
+msgid "Since there are alternate forms to be translated, the replacements are listed in an array.  Using an array allows translations for languages with multiple plural forms (Polish, `for example <http://www.gnu.org/software/gettext/manual/gettext.html#Plural-forms>`_, has different forms indicating the relative quantity)."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:307
+# 60f6e37c879d46939534fd29d6820152
+msgid "In addition to filling in the translation strings, you will also need to describe the way plurals are formed so the library knows how to index into the array for any given count value.  The line ``\"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\\n\"`` includes two values to replace manually.  ``nplurals`` is an integer indicating the size of the array (the number of translations used) and ``plural`` is a C language expression for converting the incoming quantity to an index in the array when looking up the translation.  The literal string ``n`` is replaced with the quantity passed to ``ungettext()``."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:317
+# a317cca2674d4468a1123c55c8598df8
+msgid "For example, English includes two plural forms.  A quantity of ``0`` is treated as plural (\"0 bananas\").  The Plural-Forms entry should look like::"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:323
+# 9f7035005d514f898d68adf402682263
+msgid "The singular translation would then go in position 0, and the plural translation in position 1."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:329
+# 39ae61e7d40f4698b098e4abc4979422
+msgid "If we run the test script a few times after the catalog is compiled, you can see how different values of N are converted to indexes for the translation strings."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:357
+# 7684a33f6454494f8374223c195eb9a9
+msgid "Application vs. Module Localization"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:359
+# 09216902c4f045ddaf6324b936e681f6
+msgid "The scope of your translation effort defines how you install and use the :mod:`gettext` functions in your code."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:363
+# d68b53726ff749dc8e95a7913c6c6ffa
+msgid "Application Localization"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:365
+# ddc6f42ae81a40789f52105c3a0c4fcd
+msgid "For application-wide translations, it would be acceptable to install a function like ``ungettext()`` globally using the ``__builtins__`` namespace because you have control over the top-level of the application's code."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:374
+# dc7f43eb5e7e40229911606bf0ff305c
+msgid "The ``install()`` function binds ``gettext()`` to the name ``_()`` in the ``__builtins__`` namespace.  It also adds ``ngettext()`` and other functions listed in *names*.  If *unicode* is true, the Unicode versions of the functions are used instead of the default ASCII versions."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:381
+# 45214db8d1594ae0ae26d00d66061e9b
+msgid "Module Localization"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:383
+# f4ddcee8b4f94f15a3d0b7ce9cb88ce1
+msgid "For a library, or individual module, modifying ``__builtins__`` is not a good idea because you don't know what conflicts you might introduce with an application global value.  You can import or re-bind the names of translation functions by hand at the top of your module."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:396
+# 813a0b420a114ccdb3afff264d895174
+msgid "`gettext <http://docs.python.org/library/gettext.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:396
+# 0ff35634b36e4866b0e0c2cb1fa03046
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:399
+# 66f4bcacdb4541fea06e3512207a3370
+msgid ":mod:`locale`"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:399
+# 0885d574cbc64b96af34baaf4313a96d
+msgid "Other localization tools."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:408
+# 6d03b46db6c94b4d99809c90959c3540
+msgid "`GNU gettext`_"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:402
+# 1807de64ab4d45be9d1e392f60c4036c
+msgid "The message catalog formats, API, etc. for this module are all based on the original gettext package from GNU.  The catalog file formats are compatible, and the command line scripts have similar options (if not identical).  The `GNU gettext manual <http://www.gnu.org/software/gettext/manual/gettext.html>`_ has a detailed description of the file formats and describes GNU versions of the tools for working with them."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:412
+# ee30ed4386a94b4eacae2609c24a544d
+msgid "`Internationalizing Python <http://www.python.org/workshops/1997-10/proceedings/loewis.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:411
+# cfb6824ac297447286d02b98dd86e63b
+msgid "A paper by Martin von Löwis about techniques for internationalization of Python applications."
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:415
+# d12d19652eb948b783103823bf0f78af
+msgid "`Django Internationalization <http://docs.djangoproject.com/en/dev/topics/i18n/>`_"
+msgstr ""
+
+#: ../../PyMOTW/gettext/index.rst:415
+# ad077f0682854c199f972730e7abf4db
+msgid "Another good source of information on using gettext, including real-life examples."
+msgstr ""
+

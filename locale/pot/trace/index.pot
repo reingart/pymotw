@@ -1,0 +1,288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/trace/index.rst:3
+# 7991ea472c16492785f091a65b8ae85d
+msgid "trace -- Follow Python statements as they are executed"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:8
+# 815b4a60fbd145868f9067130637183e
+msgid "Monitor which statements and functions are executed as a program runs to produce coverage and call-graph information."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:9
+# f3060abe61ba44778d57f9377a375a95
+msgid "2.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:11
+# cd7d30c4776344a6985e5f8deb7812f0
+msgid "The :mod:`trace` module helps you understand the way your program runs.  You can trace the statements executed, produce coverage reports, and investigate the relationships between functions that call each other."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:17
+# c7533991260a4d38b930cddc02a2960d
+msgid "Command Line Interface"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:19
+# b720baf7567b464ebf6d6d5cbfbecbd6
+msgid "It is easy use :mod:`trace` directly from the command line.  Given the following Python scripts as input:"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:31
+# 1a32bb3594bd4747b6a8ba8fd89b33b4
+msgid "Tracing Execution"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:33
+# f7cd7a9003c44fc798186b08dd3ccd3b
+msgid "We can see which statements are being executed as the program runs using the :option:`--trace` option."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:81
+# a913164c233c44d4a03bc133f6aa896e
+msgid "The first part of the output shows some setup operations performed by :mod:`trace`.  The rest of the output shows the entry into each function, including the module where the function is located, and then the lines of the source file as they are executed.  You can see that :func:`recurse()` is entered three times, as you would expect from the way it is called in :func:`main()`."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:89
+# 5d08842bfed941b09c45069460be503c
+msgid "Code Coverage"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:91
+# cc3b612f548a42d19b0274b07f31eb77
+msgid "Running :mod:`trace` from the command line with the :option:`--count` option will produce code coverage report information, so you can see which lines are run and which are skipped.  Since your program is usually made up of multiple files, a separate coverage report is produced for each.  By default the coverage report files are written to the same directory as the module, named after the module but with a ``.cover`` extension instead of ``.py``."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:115
+# 462138634d234ccea1ee15da7107e48b
+msgid "And two output files, ``trace_example/main.cover``:"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:121
+# 33febd39244f46c5bfb43e0b3fa4b6e1
+msgid "and ``trace_example/recurse.cover``:"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:129
+# 570975d840704a5fb3dc62b7bf49ca1c
+msgid "Although the line ``def recurse(level):`` has a count of ``1``, that does not mean the function was only run once.  It means the function *definition* was only executed once."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:133
+# 3df59e2eec684521b22039b368e650ed
+msgid "It is also possible to run the program several times, perhaps with different options, to save the coverage data and produce a combined report."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:174
+# 5e7f171380ea40789c93467c77a058a9
+msgid "Once the coverage information is recorded to the ``.cover`` files, you can produce reports with the :option:`--report` option."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:193
+# 093d6124371b4035932db01cb3ee7c62
+msgid "Since the program ran three times, the coverage report shows values three times higher than the first report.  The :option:`--summary` option adds the percent covered information to the output above.  The ``recurse`` module is only 87% covered.  A quick look at the cover file for recurse shows that the body of ``not_called()`` is indeed never run, indicated by the ``>>>>>>`` prefix."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:205
+# 63f808ca0e72404ea8abd31e70095e43
+msgid "Calling Relationships"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:207
+# 655904a781e64e98a08ff55c978e08a2
+msgid "In addition to coverage information, :mod:`trace` will collect and report on the relationships between functions that call each other."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:210
+# 87d393f1e65842d880c714bd26b3e007
+msgid "For a simple list of the functions called, use :option:`--listfuncs`:"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:234
+# 34d7425052f14cc2abeac21ebbafa8e0
+msgid "For more details about who is doing the calling, use :option:`--trackcalls`."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:270
+# a714c5f3eb12476cb38e504f06335542
+msgid "Programming Interface"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:272
+# 1977344fc5384cc1b7db24c4da7b2f32
+msgid "For a little more control over the trace interface, you can invoke it from within your program using a :class:`Trace` object. :class:`Trace` lets you set up fixtures and other dependencies before running a single function or execing a Python command to be traced."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:281
+# b53a170c09654189b4ffa85784256724
+msgid "Since the example only traces into the :func:`recurse()` function, no information from ``main.py`` is included in the output."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:315
+# 93747a0d749946fc9492ab8f6f603d0b
+msgid "That same output could have been produced with the :func:`runfunc()` method, too.  :func:`runfunc()` accepts arbitrary positional and keyword arguments, which are passed to the function when it is called by the tracer."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:353
+# 365beb1912c24b78b8104504f5d76ec8
+msgid "Saving Result Data"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:355
+# fcabb9e338a24b12845438790929f6ed
+msgid "Counts and coverage information can be recorded as well, just as with the command line interface.  The data must be saved explicitly, using the :class:`CoverageResults` instance from the :class:`Trace` object."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:383
+# 63d31cd2a42b4cdd9d2022c2a5518bbc
+msgid "And the contents of ``coverdir2/trace_example.recurse.cover``:"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:388
+# 09ab240c07694f73a5835a75458622d1
+msgid "To save the counts data for generating reports, use the *infile* and *outfile* argument to :class:`Trace`."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:395
+# b6a02c63a20149af9f422fbe257cb897
+msgid "Pass a filename to *infile* to read previously stored data, and a filename to *outfile* to write new results after tracing.  If *infile* and *outfile* are the same, it has the effect of updating the file with cummulative data."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:417
+# 543aae5a8fe1491390f91d3ee3c0e16c
+msgid "Trace Options"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:419
+# 631eae4ea1004cf5877df9cf3dc1a7af
+msgid "The constructor for :class:`Trace` takes several optional parameters to control runtime behavior."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:422
+# f364029934f14f6795e5e3cf4f0d60d1
+msgid "*count*"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:423
+# e4ec1da81357489aa665b713ab5e5cb8
+msgid "Boolean.  Turns on line number counting.  Defaults to True."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:425
+# e49cf18def8f4aab93af8ba91bfe2670
+msgid "*countfuncs*"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:425
+# a639604bd4fd4871b1c284b069f460dc
+msgid "Boolean.  Turns on list of functions called during the run. Defaults to False."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:428
+# f400d212eebb48079611f28559adfde0
+msgid "*countcallers*"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:428
+# 326ce40bfb4b41529a0b0ebbaeb4ec52
+msgid "Boolean.  Turns on tracking for callers and callees.  Defaults to False."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:431
+# b7b7e63a109a441c8b0098e3976edf21
+msgid "*ignoremods*"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:431
+# a9062f376d134da19cf7e2e597c9cd63
+msgid "Sequence.  List of modules or packages to ignore when tracking coverage.  Defaults to an empty tuple."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:434
+# 090f893a1a7945d18fb9969b3106e3cf
+msgid "*ignoredirs*"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:434
+# b25e97f1c605415684f3f76a275bea82
+msgid "Sequence.  List of directories containing modules or packages to be ignored.  Defaults to an empty tuple."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:436
+# 01efff1d28e848beabb8aa740662a37d
+msgid "*infile*"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:437
+# 42ea0fa6bf8e427d9df251c63f05779e
+msgid "Name of the file containing cached count values.  Defaults to None."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:440
+# 0aa8629085654dcc9e415baeeae7171b
+msgid "*outfile*"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:439
+# a7ea4ebd09bc406289917a40b2af2f5e
+msgid "Name of the file to use for storing cached count files.  Defaults to None, and data is not stored."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:445
+# 767ce76325de47b39bfddc2ecc4f6acb
+msgid "`trace <http://docs.python.org/lib/module-trace.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:445
+# 076cbc6124cd4049984635e02e304505
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:449
+# 14a0074cd3864d2092113466f48105aa
+msgid ":ref:`sys-tracing`"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:448
+# 62d8812977594da3858c9a3b86f791fb
+msgid "The :mod:`sys` module includes facilities for adding your own tracing function to the interpreter at run-time."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:452
+# bad448894bc94fb4a5d9e192a2a1658a
+msgid "`coverage.py <http://nedbatchelder.com/code/modules/coverage.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:452
+# f7b4af15b3b649c68683a866e9e1e0fa
+msgid "Ned Batchelder's coverage module."
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:454
+# 139aa8e15d4a49068a466e0b53c0f504
+msgid "`figleaf <http://darcs.idyll.org/~t/projects/figleaf/doc/>`_"
+msgstr ""
+
+#: ../../PyMOTW/trace/index.rst:455
+# 6c0ef30fd99841c3a16b4cbf2a7df4b6
+msgid "Titus Brown's coverage app."
+msgstr ""
+

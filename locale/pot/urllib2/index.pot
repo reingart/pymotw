@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/urllib2/index.rst:3
+# d22c09085d8a4e258e8ce3d84e406e59
+msgid "urllib2 -- Library for opening URLs."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:8
+# f09e22d549ff4ce8ab9907cc250bde34
+msgid "A library for opening URLs that can be extended by defining custom protocol handlers."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:9
+# 325578722e7f4677a75634b8824a0f7b
+msgid "2.1"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:11
+# 5c7d96fd1fbd4820b185fe0b1c7a1c99
+msgid "The :mod:`urllib2` module provides an updated API for using internet resources identified by URLs.  It is designed to be extended by individual applications to support new protocols or add variations to existing protocols (such as handling HTTP basic authentication)."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:17
+# eab24d3f939549f6a791064d5db6cbd9
+msgid "HTTP GET"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:21
+# e32a38e253a045368e94cbc8b1dd2f00
+msgid "The test server for these examples is in BaseHTTPServer_GET.py, from the PyMOTW examples for :mod:`BaseHTTPServer`. Start the server in one terminal window, then run these examples in another."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:25
+# 55a89bde68964a43b147d313417e94ac
+msgid "As with :mod:`urllib`, an HTTP GET operation is the simplest use of :mod:`urllib2`. Pass the URL to :func:`urlopen()` to get a \"file-like\" handle to the remote data."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:33
+# 7e311b5303c440aabcd68a319b303eb2
+msgid "The example server accepts the incoming values and formats a plain text response to send back. The return value from :func:`urlopen()` gives access to the headers from the HTTP server through the :func:`info()` method, and the data for the remote resource via methods like :func:`read()` and :func:`readlines()`."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:73
+# 395336d0304f48b8883da6f68a6c2b40
+msgid "The file-like object returned by :func:`urlopen()` is iterable:"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:79
+# 05539d9cd2a04a178b04c785f49b66f0
+msgid "This example strips the trailing newlines and carriage returns before printing the output."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:105
+# 917a2e2bbe0643deace7eab442c797f2
+msgid "Encoding Arguments"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:107
+# 672e22e03ea74b8b899f6571e363c5bf
+msgid "Arguments can be passed to the server by encoding them with :ref:`urllib.urlencode() <urllib-urlencode>` and appending them to the URL."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:115
+# dec98387c6c94a83ba47202434e50668
+msgid "The list of client values returned in the example output contains the encoded query arguments."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:143
+# 0a8349c212224bbfa2ba009fe1385c5e
+msgid "HTTP POST"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:147
+# f7b8bfe1d6954571aede3af3bda59a01
+msgid "The test server for these examples is in BaseHTTPServer_POST.py, from the PyMOTW examples for the :mod:`BaseHTTPServer`. Start the server in one terminal window, then run these examples in another."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:151
+# e7a648c794794515aeff1d8badb23a0f
+msgid "To POST form-encoded data to the remote server, instead of using GET, pass the encoded query arguments as data to :func:`urlopen()`."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:158
+# e88b085181dd451e9995283311aed188
+msgid "The server can decode the form data and access the individual values by name."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:173
+# c1ebebc0db55415ba2f75b970bac643d
+msgid "Working with Requests Directly"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:175
+# 186214fb136a4240a423b51fac478f85
+msgid ":func:`urlopen()` is a convenience function that hides some of the details of how the request is made and handled for you. For more precise control, you may want to instantiate and use a :class:`Request` object directly."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:181
+# 2c868592cd5648e7b7a80bc44d1d9aa1
+msgid "Adding Outgoing Headers"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:183
+# 1c664525bdde465b8625213d2c86d87b
+msgid "As the examples above illustrate, the default *User-agent* header value is made up of the constant ``Python-urllib``, followed by the Python interpreter version. If you are creating an application that will access other people's web resources, it is courteous to include real user agent information in your requests, so they can identify the source of the hits more easily. Using a custom agent also allows them to control crawlers using a ``robots.txt`` file (see :mod:`robotparser`)."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:196
+# b88bc3867cf4451a8c8a6adddf39a3d4
+msgid "After creating a :class:`Request` object, use :func:`add_header()` to set the user agent value before opening the request.  The last line of the output shows our custom value."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:224
+# 47384ce9e36146b7bc3a6ac68aae9630
+msgid "Posting Form Data"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:226
+# 25f044db1ccb49b58283cb441c8a6567
+msgid "You can set the outgoing data on the :class:`Request` to post it to the server."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:233
+# bb1e26ae7ff24be7ac213ca1d754fdc2
+msgid "The HTTP method used by the :class:`Request` changes from GET to POST automatically after the data is added."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:255
+# 202fcb809ac94cfda1b5a86f64c848a6
+msgid "Although the method is :func:`add_data()`, its effect is *not* cumulative.  Each call replaces the previous data."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:260
+# 8dd9b54aa607414ca9b6fe0eefb5cd5d
+msgid "Uploading Files"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:262
+# 8e1b9a61ae7a42e0b0eb8fe60a7560a2
+msgid "Encoding files for upload requires a little more work than simple forms.  A complete MIME message needs to be constructed in the body of the request, so that the server can distinguish incoming form fields from uploaded files."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:270
+# 5eeef5a2214749298ec873b378b9b3b3
+msgid "The :class:`MultiPartForm` class can represent an arbitrary form as a multi-part MIME message with attached files."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:306
+# e391568c049d45d3ab2950696b142423
+msgid "Custom Protocol Handlers"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:308
+# 4cd092d282574c5aa89f74d4805d9be2
+msgid ":mod:`urllib2` has built-in support for HTTP(S), FTP, and local file access. If you need to add support for other URL types, you can register your own protocol handler to be invoked as needed. For example, if you want to support URLs pointing to arbitrary files on remote NFS servers, without requiring your users to mount the path manually, would create a class derived from :class:`BaseHandler` and with a method :func:`nfs_open()`."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:316
+# 4baca079f23848b181a532bde39387ee
+msgid "The protocol :func:`open()` method takes a single argument, the :class:`Request` instance, and it should return an object with a :func:`read()` method that can be used to read the data, an :func:`info()` method to return the response headers, and :func:`geturl()` to return the actual URL of the file being read. A simple way to achieve that is to create an instance of :class:`urllib.addurlinfo`, passing the headers, URL, and open file handle in to the constructor."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:329
+# 441de488e716468394b826a141505464
+msgid "The :class:`FauxNFSHandler` and :class:`NFSFile` classes print messages to illustrate where a real implementation would add mount and unmount calls. Since this is just a simulation, :class:`FauxNFSHandler` is primed with the name of a temporary directory where it should look for all of its files."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:359
+# 9a5812c1afd74e09b3c74e9406301be7
+msgid "`urllib2 <http://docs.python.org/library/urllib2.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:359
+# 4abdbf37d1a8455c928b3a4748bbcfef
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:362
+# f9faed737857471f87ca442c81a63b21
+msgid ":mod:`urllib`"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:362
+# 3a379c6d7db649859c81cf5b15dab69d
+msgid "Original URL handling library."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:365
+# a63250160d3e43289bf0981ce02438ef
+msgid ":mod:`urlparse`"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:365
+# d6fee53bfd5e46a2a62684915f639461
+msgid "Work with the URL string itself."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:368
+# bdba0d8f51ad43a291e10d542defbaa0
+msgid "`urllib2 -- The Missing Manual <http://www.voidspace.org.uk/python/articles/urllib2.shtml>`_"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:368
+# c75f8c399a5c4b1e995f12dcd63d858d
+msgid "Michael Foord's write-up on using urllib2."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:372
+# 7c24e0ffc0da4d388dc4a0064151fe74
+msgid "`Upload Scripts <http://www.voidspace.org.uk/python/cgi.shtml#upload>`_"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:371
+# 98c5a0edf51d426aab3dd9e8b50b9271
+msgid "Example scripts from Michael Foord that illustrate how to upload a file using HTTP and then receive the data on the server."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:376
+# 8a4c75b9eb874d93b6915be94d0c70d3
+msgid "`HTTP client to POST using multipart/form-data <http://code.activestate.com/recipes/146306/>`_"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:375
+# b210a8dcbbdb4d56b6d5fda4aae194b1
+msgid "Python cookbook recipe showing how to encode and post data, including files, over HTTP."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:379
+# e8b938274a7a4d359a6777837bb54b63
+msgid "`Form content types <http://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13.4>`_"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:379
+# 0a93da13158449c3b7d60a595bb8e2b4
+msgid "W3C specification for posting files or large amounts of data via HTTP forms."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:382
+# 2339f480f1d34289ae8c7eaa46cb49d2
+msgid ":mod:`mimetypes`"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:382
+# 62feff6ba46e431b95dc2dc08dd708ed
+msgid "Map filenames to mimetype."
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:384
+# 9b032163df8f45a2968fcbb6950eae7b
+msgid ":mod:`mimetools`"
+msgstr ""
+
+#: ../../PyMOTW/urllib2/index.rst:385
+# e04ec0845404467b8efccfc01fdc791a
+msgid "Tools for parsing MIME messages."
+msgstr ""
+

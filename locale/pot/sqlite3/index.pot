@@ -1,0 +1,713 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sqlite3/index.rst:3
+# bda246f3086544469846c14ff9fce018
+msgid "sqlite3 -- Embedded Relational Database"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:8
+# 03a06625f55248d583e8f2a8454529a3
+msgid "Implements an embedded relational database with SQL support."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:9
+# 4141110284b845d5b69c5d73b9873dea
+msgid "2.5 and later"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:12
+# f0d2990f02254e3983a1e594e1344d24
+msgid "The :mod:`sqlite3` module provides a DB-API 2.0 compliant interface to the SQLite_ relational database.  SQLite is an in-process database, designed to be embedded in applications, instead of using a separate database server program such as MySQL, PostgreSQL, or Oracle.  SQLite is fast, rigorously tested, and flexible, making it suitable for prototyping and production deployment for some applications."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:20
+# 7501e8c89c874e7ab4f675d450ae284e
+msgid "Creating a Database"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:22
+# 673a353fb33c4d839e22930a8a987a8a
+msgid "An SQLite database is stored as a single file on the filesystem.  The library manages access to the file, including locking it to prevent corruption when multiple writers use it.  The database is created the first time the file is accessed, but the application is responsible for managing the table definitions, or *schema*, within the database."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:28
+# 10f9668ac2a24c1abae03fffaaf80c0d
+msgid "This example looks for the database file before opening it with :func:`connect` so it knows when to create the schema for new databases."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:36
+# c1c0319814c349468990bba9a7a257ea
+msgid "Running the script twice shows that it creates the empty file if it does not exist."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:67
+# 1f57129f370744c08ba0e6cc443e5ce4
+msgid "After creating the new database file, the next step is to create the schema to define the tables within the database.  The remaining examples in this section all use the same database schema with tables for managing tasks.  The tables are:"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:72
+# 77fe23b4680c48d9be876039654bdd4a
+msgid "**project**"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:75
+#: ../../PyMOTW/sqlite3/index.rst:85
+# 2a4426f8f31b461199e6489744665ca5
+# a92ba9b3b3d247dca4ef9cbdd09b1d62
+msgid "Column"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:75
+#: ../../PyMOTW/sqlite3/index.rst:85
+# acfe2713a5aa40d0b73754bbac559faa
+# d0bc9d3b5eb24c35b007fb5d65a68961
+msgid "Type"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:75
+#: ../../PyMOTW/sqlite3/index.rst:85
+# 9e06ba5aaf794ed8abe2d78dab44f469
+# 4bc37431690d4650873a50a1763becd4
+msgid "Description"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:77
+# a7755e5a7f3a48058ea782dda66030ba
+msgid "name"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:77
+#: ../../PyMOTW/sqlite3/index.rst:78
+#: ../../PyMOTW/sqlite3/index.rst:89
+#: ../../PyMOTW/sqlite3/index.rst:90
+#: ../../PyMOTW/sqlite3/index.rst:93
+# 15601f80fe994f95954437cc4597eba7
+# 9ac1f4e334af4fdda86c5807fa664010
+# 9c6412bf76f941e2835ed24258a5e668
+# 08ae6ae701324a838fe59e2caa058b70
+# fe4ef19fd92f4dbba1dfbd5c747be425
+msgid "text"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:77
+# 98eae346bcf044598f907608cb4f53c0
+msgid "Project name"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:78
+# ccd7086ed60a4972ad9d43df1676d554
+msgid "description"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:78
+# 32a982e1e149495d814cf061180ab8b4
+msgid "Long project description"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:79
+#: ../../PyMOTW/sqlite3/index.rst:91
+# 6295c4299db24ada9c4c14ffd57ebae5
+# 5fe840c6e46842f59575a2453da569e0
+msgid "deadline"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:79
+#: ../../PyMOTW/sqlite3/index.rst:91
+#: ../../PyMOTW/sqlite3/index.rst:92
+# ee50b39b31e34d7f8416c44d40fea564
+# 0d3deae5cec643e99b74c9b3200a01d4
+# 80d7ab71f22f4d69954948652b74fada
+msgid "date"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:79
+# 80acab73bae64d70a46d6a047d1a27c4
+msgid "Due date for the entire project"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:82
+# 14997e973cea44beb70a3ef233029985
+msgid "**task**"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:87
+# 430f5663022845bf9790d7a7aaf4167e
+msgid "id"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:87
+# d48acfbd35c64e02bef8efda17938bcf
+msgid "number"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:87
+# d49551420c4c483aa29b8a85bbab37ff
+msgid "Unique task identifier"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:88
+# 95755cd28ed542858af97f64f6825c5b
+msgid "priority"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:88
+# a4e0a3b075cb493289c5c07744a9c2e4
+msgid "integer"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:88
+# c60aa507c71d435b93e48957161ecdf9
+msgid "Numerical priority, lower is more important"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:89
+# 5e1e3733daad427e8ace12ed25f097ee
+msgid "details"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:89
+# d69ab164b7444fa1945c55fc6068a327
+msgid "Full task details"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:90
+# 7fce49970c1949768785a0978c612489
+msgid "status"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:90
+# d698f0c7ad43491a8d5ee844c9fab3d7
+msgid "Task status (one of 'new', 'pending', 'done', or 'canceled')."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:91
+# 6afb1c8a1d814992908dc82cbcc73aee
+msgid "Due date for this task"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:92
+# 2d67cd99324a4e07b7d3e4f8d609b8a3
+msgid "completed_on"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:92
+# 2e1257ed04c74e7bb7bd13ae77267d27
+msgid "When the task was completed."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:93
+# e65f92209de540cabc1f3d41b58c76a2
+msgid "project"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:93
+# d6568cff41c34901ab71fa2fe2eba969
+msgid "The name of the project for this task."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:96
+# 6997d6790726498894f65cbbb54264a0
+msgid "The *data definition language* (DDL) statements to create the tables are:"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:102
+# 6a098feaef1648a181b652d642915e30
+msgid "The :func:`executescript` method of the :class:`Connection` can be used to run the DDL instructions to create the schema."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:109
+# 522e648a3d23493aa9e6787ecd00a727
+msgid "After the tables are created, a few :command:`insert` statements create a sample project and related tasks.  The :command:`sqlite3` command line program can be used to examine the contents of the database."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:138
+# fe157c418e4c494798de1e73ce90e4cd
+msgid "Retrieving Data"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:140
+# b13c46cffb7b4f3e860bc2df684d7e7d
+msgid "To retrieve the values saved in the :data:`task` table from within a Python program, create a :class:`Cursor` from a database connection using the :func:`cursor` method.  A cursor produces a consistent view of the data, and is the primary means of interacting with a transactional database system like SQLite."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:150
+# 99a386a24cb440a1a2e6976da48357da
+msgid "Querying is a two step process.  First, run the query with the cursor's :func:`execute` method to tell the database engine what data to collect.  Then, use :func:`fetchall` to retrieve the results.  The return value is a sequence of tuples containing the values for the columns included in the :command:`select` clause of the query."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:170
+# 0cc16ffce2964bfda13b2f59d3e5480d
+msgid "The results can be retrieved one at a time with :func:`fetchone`, or in fixed-size batches with :func:`fetchmany`."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:177
+# 3292cddf8914499fb1d1763ab5f7fa01
+msgid "The value passed to :func:`fetchmany` is the maximum number of items to return.  If fewer items are available, the sequence returned will be smaller than the maximum value."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:199
+# 6cd5a004da0546bfb64ccee7b96d5852
+msgid "Query Metadata"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:201
+# ec14185b2fc545a39d97771b4cdd2961
+msgid "The DB-API 2.0 specification says that after :func:`execute` has been called, the :class:`Cursor` should set its :attr:`description` attribute to hold information about the data that will be returned by the fetch methods.  The API specification say that the description value is a sequence of tuples containing the column name, type, display size, internal size, precision, scale, and a flag that says whether null values are accepted."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:213
+# e7d969ec77e14c45a84bee69560fd4fe
+msgid "Because :mod:`sqlite3` does not enforce type or size constraints on data inserted into a database, only the column name value is filled in."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:237
+# e85a3343c32c4ff0af88d9044942cd2e
+msgid "Row Objects"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:239
+# 3e09f5bba6bd469b840a66759c7f44b7
+msgid "By default, the values returned by the fetch methods as \"rows\" from the database are tuples.  The caller is responsible for knowing the order of the columns in the query and extracting individual values from the tuple.  When the number of values in a query grows, or the code working with the data is spread out in a library, it is usually easier to work with an object and access the column values using their column names, since that way the number and order of the tuple elements can change over time as the query is edited, and code depending on the query results is less likely to break."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:249
+# afdb2c67f2ad4bdcb9172fe1ecb21538
+msgid ":class:`Connection` objects have a :data:`row_factory` property that allows the calling code to control the type of object created to represent each row in the query result set.  :mod:`sqlite3` also includes a :class:`Row` class intended to be used as a row factory. :class:`Row` instances can be accessed by column index and name."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:259
+# 362ca6eb2be14e4e9d651d6368435495
+msgid "This version of the ``sqlite3_select_variations.py`` example has been re-written using :class:`Row` instances instead of tuples.  The project row is still printed by accessing the column values through position, but the :command:`print` statement for tasks uses keyword lookup instead, so it does not matter that the order of the columns in the query has been changed."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:284
+# 65f16cd367c8475083a13df17ff0038d
+msgid "Using Variables with Queries"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:286
+# a9cf45709c3b434e9ccb9dbdb5dda078
+msgid "Using queries defined as literal strings embedded in a program is inflexible.  For example, when another project is added to the database the query to show the top five tasks should be updated to work with either project.  One way to add more flexibility is to build an SQL statement with the desired query by combining values in Python. However, building a query string in this way is dangerous, and should be avoided.  Failing to correctly escape special characters in the variable parts of the query can result in SQL parsing errors, or worse, a class of security vulnerabilities known as *SQL-injection attacks*."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:297
+# fc41f35efa294068baff0c8c5f37fb17
+msgid "The proper way to use dynamic values with queries is through *host variables* passed to :func:`execute` along with the SQL instruction. A placeholder value in the SQL is replaced with the value of the host variable when the statement is executed.  Using host variables instead of inserting arbitrary values into the SQL before it is parsed avoids injection attacks because there is no chance that the untrusted values will affect how the SQL is parsed.  SQLite supports two forms for queries with placeholders, positional and named."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:307
+# eb9a9ef6b7474e5ba33fe5db3e297d10
+msgid "Positional Parameters"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:309
+# fe4deb12fa304695a15b5208ed2d1fcf
+msgid "A question mark (``?``) denotes a positional argument, passed to :func:`execute` as a member of a tuple."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:316
+# da8e1a718a13470cbbfcebe8e70272f9
+msgid "The command line argument is passed safely to the query as a positional argument, and there is no chance for bad data to corrupt the database."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:335
+# 41ba636c8a8c4837b8e63b98154bd0af
+msgid "Named Parameters"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:337
+# 7d6d1fd608d84251b6f57d953d37e957
+msgid "Use named parameters for more complex queries with a lot of parameters or where some parameters are repeated multiple times within the query. Named parameters are prefixed with a colon, like ``:param_name``."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:345
+# a42188e854b249cbbc41561baccde575
+msgid "Neither positional nor named parameters need to be quoted or escaped, since they are given special treatment by the query parser."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:362
+# fcd004dbe82a4ef7a07d56622019ea2a
+msgid "Query parameters can be used with :command:`select`, :command:`insert`, and :command:`update` statements.  They can appear in any part of the query where a literal value is legal."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:370
+# 4537c063920a4f8a85442bbe8fb31f7c
+msgid "This :command:`update` statement uses two named parameters.  The :data:`id` value is used to find the right row to modify, and the :data:`status` value is written to the table."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:391
+# 49659e43bb524123bd36fde2eafe78a0
+msgid "Bulk Loading"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:393
+# b55a52f4001743ecbc8de1ea0b081c8b
+msgid "To apply the same SQL instruction to a lot of data use :func:`executemany`.  This is useful for loading data, since it avoids looping over the inputs in Python and lets the underlying library apply loop optimizations.  This example program reads a list of tasks from a comma-separated value file using the :mod:`csv` module and loads them into the database."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:404
+# ede13527c5ec4ff3affb220d9b1910ea
+msgid "The sample data file ``tasks.csv`` contains:"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:408
+# 5d4466c40dd84402b2e91561213566b9
+msgid "Running the program produces:"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:431
+# a0b6bcccf4084b6ab7da7bfbc2310d1e
+msgid "Column Types"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:433
+# 657a4abdbbbf4e1fb4297ce1f63a4fd7
+msgid "SQLite has native support for integer, floating point, and text columns.  Data of these types is converted automatically by :mod:`sqlite3` from Python's representation to a value that can be stored in the database, and back again, as needed.  Integer values are loaded from the database into :class:`int` or :class:`long` variables, depending on the size of the value.  Text is saved and retrieved as :class:`unicode`, unless the :class:`Connection` :attr:`text_factory` has been changed."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:442
+# cb41fa4c7fc54ec4bdd0d9f2c921108f
+msgid "Although SQLite only supports a few data types internally, :mod:`sqlite3` includes facilities for defining custom types to allow a Python application to store any type of data in a column. Conversion for types beyond those supported by default is enabled in the database connection using the :data:`detect_types` flag.  Use :const:`PARSE_DECLTYPES` is the column was declared using the desired type when the table was defined."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:454
+# 1f3a4e7d3bf94b70a0e9a4f7c0c3d4d1
+msgid ":mod:`sqlite3` provides converters for date and timestamp columns, using :class:`date` and :class:`datetime` from the :mod:`datetime` module to represent the values in Python.  Both date-related converters are enabled automatically when type-detection is turned on."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:480
+# 4bc1dbaa18c54ab8bbcd6232f82df45b
+msgid "Custom Types"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:482
+# fac990990e4e4f9c90c183e6be258107
+msgid "Two functions need to be registered to define a new type.  The *adapter* takes the Python object as input and returns a byte string that can be stored in the database.  The *converter* receives the string from the database and returns a Python object.  Use :func:`register_adapter` to define an adapter function, and :func:`register_converter` for a converter function."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:493
+# 99459bdb64eb471cb8c8f2233fd12050
+msgid "This example uses :mod:`pickle` to save an object to a string that can be stored in the database.  This technique is useful for storing arbitrary objects, but does not allow querying based on object attributes.  A real *object-relational mapper* such as SQLAlchemy that stores attribute values in their own columns will be more useful for large amounts of data."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:527
+# a6b55648e9624189b18e4313340b2a06
+msgid "Deriving Types from Column Names"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:529
+# 9b7c1aa2e7c5418887b6836858e84fa5
+msgid "There are two sources for types information about the data for a query.  The original table declaration can be used to identify the type of a real column, as shown above.  A type specifier can also be included in the :command:`select` clause of the query itself using the form ``as \"name [type]\"``."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:539
+# 44a25bf2745d4738bd2ff2d43c18cb8e
+msgid "Use the :data:`detect_types` flag :const:`PARSE_COLNAMES` when type is part of the query instead of the original table definition."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:570
+# 19f45c3875dd4cca86ceb7ec86eebe06
+msgid "Transactions"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:572
+# b129a4853b5e49e0bb3a1f622c5c6bc1
+msgid "One of the key features of relational databases is the use of *transactions* to maintain a consistent internal state.  With transactions enabled, several changes can be made through one connection without effecting any other users until the results are *committed* and flushed to the actual database."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:580
+# a4e95de753ca4978aff37a2b258d091c
+msgid "Preserving Changes"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:582
+# 7aa5f4b40abb4d1189e05e5bce19b31c
+msgid "Changes to the database, either through :command:`insert` or :command:`update` statements, need to be saved by explicitly calling :func:`commit`.  This requirement gives an application an opportinity to make several related changes together, and have them stored *atomically* instead of incrementally, and avoids a situation where partial updates are seen by different clients connecting to the database."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:590
+# e21eaaba31354a8d878853f55bd2571e
+msgid "The effect of calling :func:`commit` can be seen with a program that uses several connections to the database.  A new row is inserted with the first connection, and then two attempts are made to read it back using separate connections."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:599
+# 90f3a34980d544cd9afde3bad47bfbce
+msgid "When :func:`show_projects` is called before :data:`conn1` has been committed, the results depend on which connection is used.  Since the change was made through :data:`conn1`, it sees the altered data. However, :data:`conn2` does not.  After committing, the new connection :data:`conn3` sees the inserted row."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:631
+# 0f11d2d94fd44eb699ccbca2d2371430
+msgid "Discarding Changes"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:633
+# 45ac6601de2140469571c987bca53d8c
+msgid "Uncommitted changes can also be discarded entirely using :func:`rollback`.  The :func:`commit` and :func:`rollback` methods are usually called from different parts of the same ``try:except`` block, with errors triggering a rollback."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:642
+# 354525d387604a8c82c441a1efd1cf4f
+msgid "After calling :func:`rollback`, the changes to the database are no longer present."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:668
+# c994d6b7632747e5b503d8614e40f513
+msgid "Isolation Levels"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:670
+# 7204722e45d1401089d8106590aba386
+msgid ":mod:`sqlite3` supports three locking modes, called *isolation levels*, that control the locks used to prevent incompatible changes between connections.  The isolation level is set by passing a string as the *isolation_level* argument when a connection is opened, so different connections can use different values."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:676
+# 583e5c2caf4e43209da9cd6fda78ef65
+msgid "This program demonstrates the effect of different isolation levels on the order of events in threads using separate connections to the same database.  Four threads are created.  Two threads write changes to the database by updating existing rows.  The other two threads attempt to read all of the rows from the ``task`` table."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:686
+# c5262c9845164c03a99026a32b21c50b
+msgid "The threads are synchronized using a :class:`Event` from the :mod:`threading` module.  The :func:`writer` function connects and make changes to the database, but does not commit before the event fires.  The :func:`reader` function connects, then waits to query the database until after the synchronization event occurs."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:693
+# 32ab328ba3a941859064e7212a0eede4
+msgid "Deferred"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:695
+# c1e3ce8a94604c3e9db407ca51c92ca2
+msgid "The default isolation level is ``DEFERRED``.  Using deferred mode locks the database, but only once a change is begun.  All of the previous examples use deferred mode."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:727
+# d771526afd694940a3646c5358ec124e
+msgid "Immediate"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:729
+# 4ded6c5946b14a4484b06848fb21fcce
+msgid "Immediate mode locks the database as soon as a change starts and prevents other cursors from making changes until the transaction is committed.  It is suitable for a database with complicated writes but more readers than writers, since the readers are not blocked while the transaction is ongoing."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:763
+# f44ea2915d0e4984b3ef457223c88297
+msgid "Exclusive"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:765
+# a7e84410b8af4fbd9281e7c824be791b
+msgid "Exclusive mode locks the database to all readers and writers.  Its use should be limited in situations where database performance is important, since each exclusive connection blocks all other users."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:795
+# 0982e5f826584967bc1f52e543b8f631
+msgid "Because the first writer has started making changes, the readers and second writer block until it commits.  The :func:`sleep` call introduces an artificial delay in the writer thread to highlight the fact that the other connections are blocking."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:803
+# 3dc47b73fbdb41d68ad8d171ded21c4b
+msgid "Autocommit"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:805
+# b4af3ea7e6474021b3ef9e23791d7470
+msgid "The *isolation_level* parameter for the connection can also be set to ``None`` to enable autocommit mode.  With autocommit enabled, each :func:`execute` call is committed immediately when the statement finishes.  Autocommit mode is suited for short transactions, such as those that insert a small amount of data into a single table.  The database is locked for as little time as possible, so there is less chance of contention between threads."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:817
+# 97906697ff3c4ebfb41f12cf839299de
+msgid "The explicit call to :func:`commit` has been removed, but otherwise ``sqlite3_autocommit.py`` is the same as ``sqlite3_isolation_levels.py``.  The output is different, however, since both writer threads finish their work before either reader starts querying."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:849
+# 67b5d15067b74353b3edd0b304bc72f8
+msgid "User-defined Behaviors"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:851
+# d23a86d4f00342198c27c2750a168fc2
+msgid ":mod:`sqlite3` supports several extension mechanisms, with support for extending the database features with functions and classes implemented in Python."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:856
+# 22f00cdfc7c6433d89313163baaa7dd3
+msgid "Using Python Functions in SQL"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:858
+# 254a30c2b853400aa3f1fbc03ee8ad0a
+msgid "SQL syntax supports calling functions with during queries, either in the column list or :command:`where` clause of the :command:`select` statement.  This feature makes it possible to process data before returning it from the query, and can be used to convert between different formats, perform calculations that would be clumsy in pure SQL, and reuse application code."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:869
+# dc5d610930b8426884243f6ac17968cc
+msgid "Functions are exposed using the :func:`create_function` method of the :class:`Connection`.  The parameters are the name of the function (as it should be used from within SQL), the number of arguments the function takes, and the Python function to expose."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:923
+# 8dd661873f5945ff9da6de57e02bf09d
+msgid "Custom Aggregation"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:925
+# f8ea61a87753453fa2ad54c4027cd59a
+msgid "An aggregation function collects many pieces of individual data and summarizes it in some way.  Examples of built-in aggregation functions are :func:`avg` (average), :func:`min`, :func:`max`, and :func:`count`."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:930
+# de084e92d8da4ea28206dd1dbc260718
+msgid "The API for aggregators used by :mod:`sqlite3` is defined in terms of a class with two methods.  The :func:`step` method is called once for each data value as the query is processed.  The :func:`finalize` method is called one time at the end of the query and should return the aggregate value.  This example implements an aggregator for the arithmetic *mode*.  It returns the value that appears most frequently in the input."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:942
+# b7669187863d40d0a52320ddde095f72
+msgid "The aggregator class is registered with the :func:`create_aggregate` method of the :class:`Connection`.  The parameters are the name of the function (as it should be used from within SQL), the number of arguments the :func:`step` method takes, and the class to use."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:967
+# 9112bb78cdff488db5583b5ad4ff5a0b
+msgid "Custom Sorting"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:969
+# ee3dfbfc295c4557902760f475ade9c0
+msgid "A *collation* is a comparison function used in the :command:`order by` section of an SQL query.  Custom collations can be used to compare data types that could not otherwise be sorted by SQLite internally. For example, a custom collation would be needed to sort the pickled objects saved in ``sqlite3_custom_type.py`` above."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:979
+# d36ea6d5219c4277b27877da332d1489
+msgid "The arguments to the collation function are byte strings, so they must be unpickled and converted to :class:`MyObj` instances before the comparison can be performed."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1010
+# 596d4a0050574b97b884762e087d8a8f
+msgid "Restricting Access to Data"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1012
+# 8a1cf7b53c634982891ee5149f3d5a71
+msgid "Although SQLite does not have user access controls found in other, larger, relational databases, it does have a mechanism for limiting access to columns.  Each connection can install an *authorizer function* to grant or deny access to columns at runtime based on any desired criteria.  The authorizer function is invoked during the parsing of SQL statements, and is passed five arguments.  The first is an action code indicating the type of operation being performed (reading, writing, deleting, etc.).  The rest of the arguments depend on the action code.  For :const:`SQLITE_READ` operations, the arguments are the name of the table, the name of the column, the location in the SQL where the access is occuring (main query, trigger, etc.), and ``None``."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1029
+# 8a62ec7bdebb448c97854b4177bfa69f
+msgid "This example uses :const:`SQLITE_IGNORE` to cause the strings from the ``task.details`` column to be replaced with null values in the query results.  It also prevents all access to the ``task.priority`` column by returning :const:`SQLITE_DENY`, which in turn causes SQLite to raise an exception."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1082
+# 551a27238e5b44ca990419832bcb6332
+msgid "The possible action codes are available as constants in :mod:`sqlite3`, with names prefixed ``SQLITE_``.  Each type of SQL statement can be flagged, and access to individual columns can be controlled as well."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1098
+# 773a326ba612430cae7c9beb613d66d1
+msgid "In-Memory Databases"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1100
+# 5d5c2bfcd5be4b8e88ce2d3a31aa1443
+msgid "SQLite supports managing an entire database in RAM, instead of relying on a disk file.  In-memory databases are useful for automated testing, where the database does not need to be preserved between test runs, or when experimenting with a schema or other database features.  To open an in-memory database, use the string ``':memory:'`` instead of a filename when creating the :class:`Connection`."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1111
+# b7085c044f4b46bebc46cc46727e2085
+msgid "The second query attempt in this example fails with an error because the table does not exist.  Each connection creates a separate database, so changes made by a cursor in one do not effect other connections."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1140
+# 24105b815ca8405ea594af0c03c0e39e
+msgid "Exporting the Contents of a Database"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1142
+# 6a14b93a45ce41d19db4fd9fe8b88f0b
+msgid "The contents of an in-memory database can be saved using the :func:`iterdump` method of the :class:`Connection`.  The iterator returned by :func:`iterdump` produces a series of strings which together build SQL instructions to recreate the state of the database."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1151
+# c15983730435421597d0457a33b4ba84
+msgid ":func:`iterdump` can also be used with databases saved to files, but it is most useful for preserving a database that would not otherwise be saved."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1193
+# 2f82db4428504302b6dd9faa7471e8eb
+msgid "Threading and Connection Sharing"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1195
+# e6ecc7fa007946bc9d80f248b37e41bf
+msgid "For historical reasons having to do with old versions of SQLite, :class:`Connection` objects cannot be shared between threads.  Each thread must create its own connection to the database."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1203
+# ae96bfd21c9546f5bd401a71df69f769
+msgid "Attempts to share a connection between threads result in an exception."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1221
+# 3963b08b48524bf9965f40b67207d0b9
+msgid "`sqlite3 <http://docs.python.org/library/sqlite3.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1221
+# 97badf64e6914cf3a026f8f4e7c9f5e3
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1225
+# 4c34302258684ac69eff42816e53aa89
+msgid ":pep:`249` -- DB API 2.0 Specificiation"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1224
+# 2ffe5a634363429ab47c22f32cac9091
+msgid "A standard interface for modules that provide access to relational databases."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1228
+# e3d123e1a7d54774af4c8e516e9f3e91
+msgid "`SQLite`_"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1228
+# 5ee41beb32c843969fa8b3d44ef4049d
+msgid "The official site of the SQLite library."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1231
+# 59c0dd73db964f1b8143d4a22d995157
+msgid ":mod:`shelve`"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1231
+# ce4937122a104d03a0f15c6bb6ad5d06
+msgid "Key-value store for saving arbitrary Python objects."
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1234
+# f5bb3f5362f145c784b06cf3249164ce
+msgid "`SQLAlchemy <http://sqlalchemy.org/>`_"
+msgstr ""
+
+#: ../../PyMOTW/sqlite3/index.rst:1234
+# 628fdcdc2e37481988ad0a1fdaf8e1b4
+msgid "A popular object-relational mapper that supports SQLite among many other relational databases."
+msgstr ""
+

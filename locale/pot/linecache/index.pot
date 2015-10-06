@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/linecache/index.rst:3
+# 536ad21a763a4b26937f073036e96b56
+msgid "linecache -- Read text files efficiently"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:8
+# 988af39d5591494c99e573e331463b23
+msgid "Retrieve lines of text from files or imported python modules, holding a cache of the results to make reading many lines from the same file more efficient."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:9
+# 0239bb4702a64cc382796aa6869756f0
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:11
+# 3c36b6ed9ef44fb3b7e597607d90fa74
+msgid "The linecache module is used extensively throughout the Python standard library when dealing with Python source files. The implementation of the cache simply holds the contents of files, parsed into separate lines, in a dictionary in memory. The API returns the requested line(s) by indexing into a list. The time savings is from (repeatedly) reading the file and parsing lines to find the one desired. This is especially useful when looking for multiple lines from the same file, such as when producing a traceback for an error report."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:21
+# f8571ff5b6d94c52aa07205a3df473df
+msgid "Test Data"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:23
+# f26c13b34ad446f49431cdf21cf9555d
+msgid "We will use some text produced by the Lorem Ipsum generator as sample input."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:30
+# f556dbb9f0674088a33325c88c5e9841
+msgid "Reading Specific Lines"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:32
+# fdf5f57fb3544a329ce36a08b1968ded
+msgid "Reading the 5th line from the file is a simple one-liner. Notice that the line numbers in the linecache module start with 1, but if we split the string ourselves we start indexing the array from 0. We also need to strip the trailing newline from the value returned from the cache."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:58
+# 4b762511c84c4b749df25e012bd832ca
+msgid "Handling Blank Lines"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:60
+# 2972c6c3e34f444897d49a07d4653c33
+msgid "Next let's see what happens if the line we want is empty:"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:79
+# df3500bd731d47ec89fe0380eb3cf759
+msgid "Error Handling"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:81
+# 4b9b036584d14c1ba96c97a113867e29
+msgid "If the requested line number falls out of the range of valid lines in the file, linecache returns an empty string."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:101
+# 8019f919a79d4c5ca349d9c4f58a2052
+msgid "The module never raises an exception, even if the file does not exist:"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:120
+# ed2f1d70777643afa11724858e9b4cb8
+msgid "Python Source"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:122
+# f9c38f9f180341a38b382dab8740c845
+msgid "Since :mod:`linecache` is used so heavily when producing tracebacks, one of the key features is the ability to find Python source modules in the :ref:`import path <sys-path>` by specifying the base name of the module. The cache population code in :mod:`linecache` searches ``sys.path`` for the module if it cannot find the file directly."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:151
+# efe4c86e557d4ac295a94f88c29d5071
+msgid "`linecache <http://docs.python.org/library/linecache.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:151
+# d43e254dc35d4cc68d6e84d1d721289e
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:154
+# e2f8deec101e4620b975feee97bd9187
+msgid "http://www.ipsum.com/"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:154
+# 2bd0f7e9170f4aefa194be1d1d632721
+msgid "Lorem Ipsum generator."
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:156
+# c661c1a069364c698b65c949ec487c68
+msgid ":ref:`article-file-access`"
+msgstr ""
+
+#: ../../PyMOTW/linecache/index.rst:157
+# 8925f216907d4507ade82c0bde6345c0
+msgid "Other tools for working with files."
+msgstr ""
+

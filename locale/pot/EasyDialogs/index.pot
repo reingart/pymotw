@@ -1,0 +1,243 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/EasyDialogs/index.rst:3
+# e4e8670dda66497799c730e47a452aae
+msgid "EasyDialogs -- Carbon dialogs for Mac OS X"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:8
+# 7e444234c1ee42e49309dc425a325fb5
+msgid "Provides simple interfaces to Carbon dialogs from Python."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:9
+# 5b9da4c0a0eb4074b090f051e71ecab8
+msgid "At least 2.0, Macintosh-only (see References below for a Windows implementation)"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:11
+# 1182e41a253344f3993b3355112c795d
+msgid "The EasyDialogs module includes classes and functions for working with simple message and prompt dialogs, as well as stock dialogs for querying the user for file or directory names. The dialogs use the Carbon API. See Apple's `Navigation Services Reference`_ for more details about some of the options not covered in detail here."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:18
+# 66c7e2501d744053b8b40b8084fe00d4
+msgid "Messages"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:20
+# 199e139c08a544d18b71d380bc1aeae6
+msgid "A simple Message function displays modal dialog containing a text message for the user."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:29
+# 0dc9043d9af547359d2e7f0bf4953d4d
+msgid "It is easy to change the label of the \"OK\" button using the ``ok`` argument."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:39
+# 7a72322d97d347e9ab72a9d93937a7b3
+msgid "ProgressBar"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:41
+# 1c4e5c8f1b494860b1fd9d57a167ba8c
+msgid "The ProgressBar class manages a modeless dialog with a progress meter. It can operate in determinate (when you know how much work there is to be done) or indeterminate (when you want to show that your app is working, but do not know how much work needs to be done) modes. The constructor takes arguments for the dialog title, the maximum value, and a label to describe the current phase of operation."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:48
+# ec440dc6d4e441cab676763d8dd537d8
+msgid "In determinate mode, set the maxval argument to the number of steps, amount of data to download, etc. Then use the incr() method to step the progress from 0 to maxval."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:80
+# 25fce5edeaac44e288448424cedea85c
+msgid "Explicitly deleting the ProgressBar instance using ``del`` removes it from the screen."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:83
+# b0e6b2cc228847c99055b79a979f3a5c
+msgid "If you are measuring progress in uneven steps, use ``set()`` to change the progress meter instead of ``incr()``."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:94
+# 9ca180c4c78e43909bb71ba415191e6e
+msgid "Simple Prompts"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:96
+# e083be9e43cb4399b418e8ccaaa58b24
+msgid "EasyDialogs also lets you ask the user for information. Use AskString to display a modal dialog to prompt the user for a simple string."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:105
+# 478041b28f50455692b79c46631b8b3c
+msgid "The return value depends on the user's response. It is either the text they enter:"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:113
+# 461f097a5c7d427bbb7afc99d884d3df
+msgid "or None if they press the Cancel button."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:121
+# 33b60b6e3c6f4262bc68445ab9565256
+msgid "The string response has a length limit of 254 characters. If the value entered is longer than that, it is truncated."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:138
+# 914872f5fce2460a8e101bcd750abde0
+msgid "Passwords"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:140
+# 712fa281c2874b9ca5a2f79b9c4ae7e8
+msgid "Use AskPassword to prompt the user for secret values that should not be echoed back to the screen in clear-text."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:154
+# 8a074ec2e6ab4b4c9932d5564d79e01d
+msgid "The Ok/Cancel behavior for AskPassword is the same as AskString."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:157
+# 7ab0bd55140d4d8f962e1181ae914027
+msgid "Files and Directories"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:159
+# 5d82d27c2c5a4d7baee99467c545a8eb
+msgid "There are special functions for requesting file or directory names. These use the native file selector dialogs, so the user does not have to type in the paths. For example, to ask the user which file to open, use AskFileForOpen."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:167
+# 9d3a0235722b4e6fbc83273c9ba3ba69
+msgid "The wanted=unicode argument tells AskFileForOpen to return the name of the file as a unicode string. The other possible return types include ASCII string, and some Apple data structures for working with file references."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:171
+# 7df5a73236d5499e8a1b41f048704b5f
+msgid "By specifing defaultLocation, this example initializes the dialog to the current working directory. The user is still free to navigate around the filesystem."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:175
+# 90767653287d4d1ab4953b7f07934ad2
+msgid "Other options to AskFileForOpen let you filter the values displayed, control the type codes of files visible to the user, and interact with the dialog through callbacks. Refer to the module documentation and Apple's reference guide for more details."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:187
+# b4230a3036e7458391db30b496cebd4a
+msgid "To prompt the user to provide a new filename when saving a file, use AskFileForSave."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:201
+# a8020bc396df402bafe224fefe76b0c8
+msgid "If you need the user to select a directory, existing or new, use AskFolder. The dialog includes a button to let them create a new folder."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:216
+# 6af02c95db8f4b5e861f4b274dbd2d6f
+msgid "GetArgv"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:218
+# 92170a4fc5a24f08977e514976e885fc
+msgid "An unusually complex dialog, GetArgv lets the user build a command line string by selecting options from menus. It uses a variation of the getopt syntax to describe the valid options, and returns a list of strings that can be parsed by getopt. In my research this week, I found some scripts that use GetArgv if the user does not specify arguments on the command line."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:224
+# b1341faecbf448aebee2a5d149dc4063
+msgid "Let's look at an example that builds a command using the options supported by the Python interpreter."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:233
+# 07eed1665d7d41838d125f70a06da591
+msgid "The first argument is a list of tuples containing the option specifier and a text description. The specifier can contain a single letter for simple boolean switches; a letter followed by colon (\":\") or equals sign (\"=\") for single letter options that take an argument; several letters for long-form switches (\"opt\" translates to \"--opt\"); or several letters followed by colon or equal sign for long options taking an argument. The option description is a string displayed in the dialog."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:243
+# 20d7d6c0799c4a66993b6fd2d72bbcbd
+msgid "The dialog is divided into 4 sections. At the top is the list of options you specified. The user can select an option from the list. If the option takes an argument, a text field is displayed so the user can provide a value. The Add button inserts the selected option into the command line field at the bottom of the dialog."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:251
+# a011e93983334ccdba722a0ee5c6e832
+msgid "The second argument to GetArgv is a list of commands and descriptions. The user can select a command to be included in the argument list from the menu in the middle of the dialog."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:257
+# 2deef60a8b81424185e98aeffb31e4cb
+msgid "The arguments addoldfile, addnewfile, and addfolder control the sensitivity of the buttons in the third section of the dialog. In this example, only the Add file... button is enabled because the Python interpreter does not take directories or missing files as arguments."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:262
+# a7903dcf0e144d8781895284959def88
+msgid "At the bottom of the dialog is the command line being constructed by the user. When they press OK, GetArgv returns a list of all of the options that looks like sys.argv."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:274
+# aba0e2d106a9495fa14f8cf848fcacb1
+msgid "`EasyDialogs <http://docs.python.org/library/easydialogs.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:274
+# 864d5974d82a4f9582dd1e9a9ac1209b
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:277
+# 1dd8e11cb9b44189bb98efd670c381c7
+msgid "`Navigation Services Reference`_"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:277
+# 0fa922977d7c4f77bd4e60fe507b1f9e
+msgid "Documentation for Apple's API for working with file objects under Mac OS X."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:280
+# f7e84a64a1d04082bc0c06b909a4cf4d
+msgid "`EasyDialogs for Windows <http://www.averdevelopment.com/python/EasyDialogs.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:280
+# 8544706fdbe14f16bbcf6c484a00f6ba
+msgid "A version of this module that runs under Windows."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:283
+# 4d0f87d3d9644a17aa6c07717edb29e7
+msgid "`optparse-gui <http://code.google.com/p/optparse-gui/>`_"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:283
+# 1d092d0c9795449fba985294b50d07b4
+msgid "A replacement for GetArgv that works with :mod:`optparse` instead."
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:285
+# ec82f0c9bad04dc8b71fa45be6ab7d39
+msgid "`EasyGui <http://easygui.sourceforge.net/>`_"
+msgstr ""
+
+#: ../../PyMOTW/EasyDialogs/index.rst:286
+# 3a6700b5b2424eef96f1503f244fe2a8
+msgid "A similar portable library for creating simple graphical user interfaces."
+msgstr ""
+

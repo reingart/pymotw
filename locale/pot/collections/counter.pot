@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/collections/counter.rst:3
+# 13616f3f5cbb4d2497dcfc31d04cac94
+msgid "Counter"
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:5
+# a2f30b9ce596413e887d5e256e04b0de
+msgid "A :class:`Counter` is a container that keeps track of how many times equivalent values are added.  It can be used to implement the same algorithms for which bag or multiset data structures are commonly used in other languages."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:11
+# 92c63fd4312c4f8bbe847973edca4a94
+msgid "Initializing"
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:13
+# 21a83949711b42aabad022dcb5c1a554
+msgid ":class:`Counter` supports three forms of initialization.  Its constructor can be called with a sequence of items, a dictionary containing keys and counts, or using keyword arguments mapping string names to counts."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:22
+# 9ba5473a5d39458caaf0fb6272bc450d
+msgid "The results of all three forms of initialization are the same."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:38
+# 0ffe29a4bd5d440793bba08870c16a2c
+msgid "An empty :class:`Counter` can be constructed with no arguments and populated via the :func:`update` method."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:45
+# 20ae8fc3e5304488b6a007def1128f33
+msgid "The count values are increased based on the new data, rather than replaced.  In this example, the count for ``a`` goes from ``3`` to ``4``."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:64
+# 43bbd4dbee1d46c5b59442066a92abd0
+msgid "Accessing Counts"
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:66
+# c33cabc6a876461fb422a4438a348a21
+msgid "Once a :class:`Counter` is populated, its values can be retrieved using the dictionary API."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:73
+# 3c07cf1e8e3c459c992d356283ea8be7
+msgid ":class:`Counter` does not raise :ref:`KeyError <exceptions-KeyError>` for unknown items.  If a value has not been seen in the input (as with ``e`` in this example), its count is ``0``."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:93
+# f8d43cd8692c4054b5bd01f1907a0508
+msgid "The :func:`elements` method returns an iterator that produces all of the items known to the :class:`Counter`."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:100
+# 2e23c462159844d99cc1498401a3bb35
+msgid "The order of elements is not guaranteed, and items with counts less than zero are not included."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:116
+# 284bafc173f54412b58f14c5661301f9
+msgid "Use :func:`most_common` to produce a sequence of the *n* most frequently encountered input values and their respective counts."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:123
+# d3f2a649fb1e4e768b21f3e7427f6f73
+msgid "This example counts the letters appearing in all of the words in the system dictionary to produce a frequency distribution, then prints the three most common letters.  Leaving out the argument to :func:`most_common` produces a list of all the items, in order of frequency."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:145
+# b78c009e7a1c49d681aa07703c3c4b55
+msgid "Arithmetic"
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:147
+# 9100da393cbc463490dfd80f0aad0ac6
+msgid ":class:`Counter` instances support arithmetic and set operations for aggregating results."
+msgstr ""
+
+#: ../../PyMOTW/collections/counter.rst:154
+# 047c7c85a3054e98a388686e653bf167
+msgid "Each time a new :class:`Counter` is produced through an operation, any items with zero or negative counts are discarded.  The count for ``a`` is the same in :data:`c1` and :data:`c2`, so subtraction leaves it at zero."
+msgstr ""
+

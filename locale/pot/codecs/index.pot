@@ -1,0 +1,628 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/codecs/index.rst:3
+# 4f1f4950eebe45f79b96e1ca8560c56f
+msgid "codecs -- String encoding and decoding"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:8
+# 4bfaad0efc4f407784c6d68fcdcde042
+msgid "Encoders and decoders for converting text between different representations."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:9
+# a297751868c944979cc5bae413e9c451
+msgid "2.1 and later"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:11
+# 4b4eca363813487f9ecbe9b5edc2acd3
+msgid "The :mod:`codecs` module provides stream and file interfaces for transcoding data in your program.  It is most commonly used to work with Unicode text, but other encodings are also available for other purposes."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:17
+# aef1e7243fb841d281fd3d0f09e3ca35
+msgid "Unicode Primer"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:19
+# a33ba07effb2429caf38cb397732627b
+msgid "CPython 2.x supports two types of strings for working with text data. Old-style :class:`str` instances use a single 8-bit byte to represent each character of the string using its ASCII code.  In contrast, :class:`unicode` strings are managed internally as a sequence of Unicode *code points*.  The code point values are saved as a sequence of 2 or 4 bytes each, depending on the options given when Python was compiled.  Both :class:`unicode` and :class:`str` are derived from a common base class, and support a similar API."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:28
+# ebd2d6d54d9e43a4a5cf2c147ef4f3f8
+msgid "When :class:`unicode` strings are output, they are encoded using one of several standard schemes so that the sequence of bytes can be reconstructed as the same string later.  The bytes of the encoded value are not necessarily the same as the code point values, and the encoding defines a way to translate between the two sets of values. Reading Unicode data also requires knowing the encoding so that the incoming bytes can be converted to the internal representation used by the :class:`unicode` class."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:37
+# 6f12ac6fec7b4d77ac7c51ca0476e64e
+msgid "The most common encodings for Western languages are ``UTF-8`` and ``UTF-16``, which use sequences of one and two byte values respectively to represent each character.  Other encodings can be more efficient for storing languages where most of the characters are represented by code points that do not fit into two bytes."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:45
+# 1e2cf14a2a4c4544a5a8675c9224831f
+msgid "For more introductory information about Unicode, refer to the list of references at the end of this section.  The Python `Unicode HOWTO`_ is especially helpful."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:50
+# 6abad978042148f1b5d97730c8e5747b
+msgid "Encodings"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:52
+# 9aca976dd61d4f4b990d50eb374f0d22
+msgid "The best way to understand encodings is to look at the different series of bytes produced by encoding the same string in different ways.  The examples below use this function to format the byte string to make it easier to read."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:61
+# dfa2df3b9c134a0ea22026f483f372d9
+msgid "The function uses :mod:`binascii` to get a hexadecimal representation of the input byte string, then insert a space between every *nbytes* bytes before returning the value."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:78
+# b1d09be74eba4534b9756148d7317b9c
+msgid "The first encoding example begins by printing the text ``'pi: π'`` using the raw representation of the :class:`unicode` class.  The ``π`` character is replaced with the expression for the Unicode code point, ``\\u03c0``.  The next two lines encode the string as UTF-8 and UTF-16 respectively, and show the hexadecimal values resulting from the encoding."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:89
+# 7e8bce3d01db4b1484857ddab6b8fd53
+msgid "The result of encoding a :class:`unicode` string is a :class:`str` object."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:106
+# b74dfd1c6a154c1790c0b0aeeedca640
+msgid "Given a sequence of encoded bytes as a :class:`str` instance, the :func:`decode` method translates them to code points and returns the sequence as a :class:`unicode` instance."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:114
+# 2ba4227f4c814907b8e4db2fc3f6ca64
+msgid "The choice of encoding used does not change the output type."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:132
+# c8274d36ad2e42d48ecc2bca97d2a563
+msgid "The default encoding is set during the interpreter start-up process, when :mod:`site` is loaded.  Refer to :ref:`sys-unicode-defaults` for a description of the default encoding settings accessible via :mod:`sys`."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:138
+# 7e495631b74b40a9909df1534fac88c1
+msgid "Working with Files"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:140
+# f00c4ca9b35a45fcb54f0eb94c0df1c3
+msgid "Encoding and decoding strings is especially important when dealing with I/O operations.  Whether you are writing to a file, socket, or other stream, you will want to ensure that the data is using the proper encoding.  In general, all text data needs to be decoded from its byte representation as it is read, and encoded from the internal values to a specific representation as it is written.  Your program can explicitly encode and decode data, but depending on the encoding used it can be non-trivial to determine whether you have read enough bytes in order to fully decode the data.  :mod:`codecs` provides classes that manage the data encoding and decoding for you, so you don't have to create your own."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:152
+# 0b5c289013cf4a0883d8e79324b5a6e8
+msgid "The simplest interface provided by :mod:`codecs` is a replacement for the built-in :func:`open` function.  The new version works just like the built-in, but adds two new arguments to specify the encoding and desired error handling technique."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:161
+# d361adb29b734b42a45f840cd78c9102
+msgid "Starting with a :class:`unicode` string with the code point for π, this example saves the text to a file using an encoding specified on the command line."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:193
+# 9bbe0e20ee79465186dea2a6297421aa
+msgid "Reading the data with :func:`open` is straightforward, with one catch: you must know the encoding in advance, in order to set up the decoder correctly.  Some data formats, such as XML, let you specify the encoding as part of the file, but usually it is up to the application to manage.  :mod:`codecs` simply takes the encoding as an argument and assumes it is correct."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:204
+# 27e4e76b4a964dfc96e2aed03ecff12b
+msgid "This example reads the files created by the previous program, and prints the representation of the resulting :class:`unicode` object to the console."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:234
+# fdc43a36721b4b2b9fc37cd90b71e407
+msgid "Byte Order"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:236
+# ebe771e6b7b94f7d8cedbdbaa1c4cc2c
+msgid "Multi-byte encodings such as UTF-16 and UTF-32 pose a problem when transferring the data between different computer systems, either by copying the file directly or with network communication.  Different systems use different ordering of the high and low order bytes.  This characteristic of the data, known as its *endianness*, depends on factors such as the hardware architecture and choices made by the operating system and application developer.  There isn't always a way to know in advance what byte order to use for a given set of data, so the multi-byte encodings include a *byte-order marker* (BOM) as the first few bytes of encoded output.  For example, UTF-16 is defined in such a way that 0xFFFE and 0xFEFF are not valid characters, and can be used to indicate the byte order.  :mod:`codecs` defines constants for the byte order markers used by UTF-16 and UTF-32."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:254
+# 775e0559587147c7afcf94a8a8628bde
+msgid "``BOM``, ``BOM_UTF16``, and ``BOM_UTF32`` are automatically set to the appropriate big-endian or little-endian values depending on the current system's native byte order."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:279
+# 51903ecf3af44f49a5155904e3f28571
+msgid "Byte ordering is detected and handled automatically by the decoders in :mod:`codecs`, but you can also choose an explicit ordering for the encoding."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:287
+# 94d912255655463e8cb126cddfb3c567
+msgid "``codecs_bom_create_file.py`` figures out the native byte ordering, then uses the alternate form explicitly so the next example can demonstrate auto-detection while reading."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:305
+# 6d2da06432b94118b4d45c14871e755f
+msgid "``codecs_bom_detection.py`` does not specify a byte order when opening the file, so the decoder uses the BOM value in the first two bytes of the file to determine it."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:313
+# 115d16f40dc142408307b4fde2c08684
+msgid "Since the first two bytes of the file are used for byte order detection, they are not included in the data returned by :func:`read`."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:330
+# 15e97c2f15384b39932ffe2773352846
+msgid "Error Handling"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:332
+# 41074f1e2a854bd1a5756e9fdb3898a1
+msgid "The previous sections pointed out the need to know the encoding being used when reading and writing Unicode files.  Setting the encoding correctly is important for two reasons.  If the encoding is configured incorrectly while reading from a file, the data will be interpreted wrong and may be corrupted or simply fail to decode.  Not all Unicode characters can be represented in all encodings, so if the wrong encoding is used while writing an error will be generated and data may be lost."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:341
+# 5abbdbedf073453bad0c736279b93ef0
+msgid ":mod:`codecs` uses the same five error handling options that are provided by the :func:`encode` method of :class:`unicode` and the :func:`decode` method of :class:`str`."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:346
+# daa86bd98dc5495886b9b0f95bfd0eaa
+msgid "Error Mode"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:346
+# f70518ab781b479ab11b4a15a8431828
+msgid "Description"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:348
+# 50c2ead6b0924e45b9e9d34d63d12d47
+msgid "``strict``"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:348
+# bee7474347c64d27b476a086415b16a1
+msgid "Raises an exception if the data cannot be converted."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:349
+# f6d98a6ae74a476f9553883dd7727ff6
+msgid "``replace``"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:349
+# 7eca14b9f65647fa8f4f08e817e4e8d4
+msgid "Substitutes a special marker character for data that cannot be encoded."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:350
+# f851e6cbbd2a4135a97ea33a1f41a9f0
+msgid "``ignore``"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:350
+# ce777452a420421c9f0989d6e92e9b04
+msgid "Skips the data."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:351
+# 657c9e004bf44abe955eabb62f72a753
+msgid "``xmlcharrefreplace``"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:351
+# 7f23d46dba744443b90f99e168cafbb9
+msgid "XML character (encoding only)"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:352
+# dfb69e3c59a84497a557887ad44c4717
+msgid "``backslashreplace``"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:352
+# a3ec3dae72d84338a316bda5f34d9c82
+msgid "escape sequence (encoding only)"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:356
+# 28cfe64d5bac41fba3acbd857d988336
+msgid "Encoding Errors"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:358
+# 97801d59b63b49adb01683daca0c786a
+msgid "The most common error condition is receiving a :ref:`UnicodeEncodeError <exceptions-UnicodeError>` when writing Unicode data to an ASCII output stream, such as a regular file or :ref:`sys.stdout <sys-input-output>`.  This sample program can be used to experiment with the different error handling modes."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:368
+# 3dbec86098b440ab8fcd80ef0dfb0727
+msgid "While ``strict`` mode is safest for ensuring your application explicitly sets the correct encoding for all I/O operations, it can lead to program crashes when an exception is raised."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:384
+# 1436454f1a1e484ba752fa58f498b74c
+msgid "Some of the other error modes are more flexible.  For example, ``replace`` ensures that no error is raised, at the expense of possibly losing data that cannot be converted to the requested encoding.  The Unicode character for pi still cannot be encoded in ASCII, but instead of raising an exception the character is replaced with ``?`` in the output."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:403
+# 720d0534c3034861ad239c608fd7abb7
+msgid "To skip over problem data entirely, use ``ignore``.  Any data that cannot be encoded is simply discarded."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:418
+# abf5cc3b09c04719986a8d8600549af8
+msgid "There are two lossless error handling options, both of which replace the character with an alternate representation defined by a standard separate from the encoding.  ``xmlcharrefreplace`` uses an XML character reference as a substitute (the list of character references is specified in the W3C `XML Entity Definitions for Characters <http://www.w3.org/TR/xml-entity-names/>`__)."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:437
+# f626c58dd97c4e019a40be2346740a18
+msgid "The other lossless error handling scheme is ``backslashreplace`` which produces an output format like the value you get when you print the :func:`repr` of a :class:`unicode` object.  Unicode characters are replaced with ``\\u`` followed by the hexadecimal value of the code point."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:457
+# a94771c77dc34b668cec117e78547f8d
+msgid "Decoding Errors"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:459
+# 59f7462b425d46408417254b48ef29ec
+msgid "It is also possible to see errors when decoding data, especially if the wrong encoding is used."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:466
+# 17ae55c2afb4460fa06be4d3332ab08d
+msgid "As with encoding, ``strict`` error handling mode raises an exception if the byte stream cannot be properly decoded.  In this case, a :ref:`UnicodeDecodeError <exceptions-UnicodeError>` results from trying to convert part of the UTF-16 BOM to a character using the UTF-8 decoder."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:486
+# 658d37768b12422297a949fe1a228ddb
+msgid "Switching to ``ignore`` causes the decoder to skip over the invalid bytes.  The result is still not quite what is expected, though, since it includes embedded null bytes."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:504
+# cb45a176a0ec4ab7976a5472f05229e6
+msgid "In ``replace`` mode invalid bytes are replaced with ``\\uFFFD``, the official Unicode replacement character, which looks like a diamond with a black background containing a white question mark (|?|)."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:525
+# adf78f95d50b42ad95e115fec62de44c
+msgid "Standard Input and Output Streams"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:527
+# 10186d304af9424ca16a3240807f087d
+msgid "The most common cause of :ref:`UnicodeEncodeError <exceptions-UnicodeError>` exceptions is code that tries to print :class:`unicode` data to the console or a Unix pipeline when :ref:`sys.stdout <sys-input-output>` is not configured with an encoding."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:537
+# 5d3233e0aadb48beaa004a19a5255ff8
+msgid "Problems with the default encoding of the standard I/O channels can be difficult to debug because the program works as expected when the output goes to the console, but cause encoding errors when it is used as part of a pipeline and the output includes Unicode characters above the ASCII range.  This difference in behavior is caused by Python's initialization code, which sets the default encoding for each standard I/O channel *only if* the channel is connected to a terminal (:func:`isatty` returns ``True``).  If there is no terminal, Python assumes the program will configure the encoding explicitly, and leaves the I/O channel alone."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:566
+# fde3065b784842c796c61a964e528bca
+msgid "To explicitly set the encoding on the standard output channel, use :func:`getwriter` to get a stream encoder class for a specific encoding.  Instantiate the class, passing ``sys.stdout`` as the only argument."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:575
+# ce11315e526048f99e5b1d1ba517bf6a
+msgid "Writing to the wrapped version of ``sys.stdout`` passes the Unicode text through an encoder before sending the encoded bytes to stdout. Replacing ``sys.stdout`` means that any code used by your application that prints to standard output will be able to take advantage of the encoding writer."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:594
+# 3fea7eabe951499397016caa616e23b8
+msgid "The next problem to solve is how to know which encoding should be used.  The proper encoding varies based on location, language, and user or system configuration, so hard-coding a fixed value is not a good idea.  It would also be annoying for a user to need to pass explicit arguments to every program setting the input and output encodings.  Fortunately, there is a global way to get a reasonable default encoding, using :mod:`locale`."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:606
+# df5be5c980b7488598860e6eab8981c1
+msgid ":func:`getdefaultlocale` returns the language and preferred encoding based on the system and user configuration settings in a form that can be used with :func:`getwriter`."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:623
+# f5c32a2f03b242378de1141ad47818eb
+msgid "The encoding also needs to be set up when working with :ref:`sys.stdin <sys-input-output>`.  Use :func:`getreader` to get a reader capable of decoding the input bytes."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:631
+# efca82b7f4954b9b87636fad1b489bb5
+msgid "Reading from the wrapped handle returns :class:`unicode` objects instead of :class:`str` instances."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:648
+# 181b98648c8641b69dd85f3e397e4697
+msgid "Network Communication"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:650
+# 403d634bb19846cdbacabc72e3a37647
+msgid "Network sockets are also byte-streams, and so Unicode data must be encoded into bytes before it is written to a socket."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:657
+# 0f26c67595784b37b0c0a6899bd363e9
+msgid "You could encode the data explicitly, before sending it, but miss one call to :func:`send` and your program would fail with an encoding error."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:676
+# ec9d7769ff0743e0b245c74c00c3b851
+msgid "By using :func:`makefile` to get a file-like handle for the socket, and then wrapping that with a stream-based reader or writer, you will be able to pass Unicode strings and know they are encoded on the way in to and out of the socket."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:685
+# 38c10e3511974513aaae69acee36356b
+msgid "This example uses :class:`PassThrough` to show that the data is encoded before being sent, and the response is decoded after it is received in the client."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:704
+# 081e1f4ed0a041dda5eaebbe19c9e0b0
+msgid "Encoding Translation"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:706
+# 33be82ec84c74ab581aeda695c8ba97e
+msgid "Although most applications will work with :class:`unicode` data internally, decoding or encoding it as part of an I/O operation, there are times when changing a file's encoding without holding on to that intermediate data format is useful.  :func:`EncodedFile` takes an open file handle using one encoding and wraps it with a class that translates the data to another encoding as the I/O occurs."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:717
+# ac3eb58c486549af8ba2423c6f2d6679
+msgid "This example shows reading from and writing to separate handles returned by :func:`EncodedFile`.  No matter whether the handle is used for reading or writing, the *file_encoding* always refers to the encoding in use by the open file handle passed as the first argument, and *data_encoding* value refers to the encoding in use by the data passing through the :func:`read` and :func:`write` calls."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:740
+# f494bddc7776419b90fe26e78e1613b1
+msgid "Non-Unicode Encodings"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:742
+# 2930700c91f04369aafc589d4bf338da
+msgid "Although most of the earlier examples use Unicode encodings, :mod:`codecs` can be used for many other data translations.  For example, Python includes codecs for working with base-64, bzip2, ROT-13, ZIP, and other data formats."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:751
+# d0f2c50099214f0f8b72059335bb2da5
+msgid "Any transformation that can be expressed as a function taking a single input argument and returning a byte or Unicode string can be registered as a codec."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:768
+# 5845e3a28dc9429caac486f590072b4f
+msgid "Using :mod:`codecs` to wrap a data stream provides a simpler interface than working directly with :mod:`zlib`."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:775
+# 66880cadd38d433c9f8d35ddbfc24797
+msgid "Not all of the compression or encoding systems support reading a portion of the data through the stream interface using :func:`readline` or :func:`read` because they need to find the end of a compressed segment to expand it.  If your program cannot hold the entire uncompressed data set in memory, use the incremental access features of the compression library instead of :mod:`codecs`."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:799
+# b613763057284906b5ff27d1d696f638
+msgid "Incremental Encoding"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:801
+# dc3b239dbdf54581a16301a7eca32aa8
+msgid "Some of the encodings provided, especially ``bz2`` and ``zlib``, may dramatically change the length of the data stream as they work on it. For large data sets, these encodings operate better incrementally, working on one small chunk of data at a time.  The :class:`IncrementalEncoder` and :class:`IncrementalDecoder` API is designed for this purpose."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:812
+# 86be9cc76332468794edf606ef68fcac
+msgid "Each time data is passed to the encoder or decoder its internal state is updated.  When the state is consistent (as defined by the codec), data is returned and the state resets.  Until that point, calls to :func:`encode` or :func:`decode` will not return any data.  When the last bit of data is passed in, the argument *final* should be set to ``True`` so the codec knows to flush any remaining buffered data."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:847
+# d4be0259539f441a993dc65b993127ba
+msgid "Defining Your Own Encoding"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:849
+# 445b42a94fdd45adab950b4924785151
+msgid "Since Python comes with a large number of standard codecs already, it is unlikely that you will need to define your own.  If you do, there are several base classes in :mod:`codecs` to make the process easier."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:853
+# 6509c6f6e24340bb8c6b599eff49bcca
+msgid "The first step is to understand the nature of the transformation described by the encoding.  For example, an \"invertcaps\" encoding converts uppercase letters to lowercase, and lowercase letters to uppercase.  Here is a simple definition of an encoding function that performs this transformation on an input string:"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:863
+# f1d8d9ebf6d54158b1fd205619630478
+msgid "In this case, the encoder and decoder are the same function (as with ``ROT-13``)."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:879
+# ffde99a44a9a4271b234abef82232d05
+msgid "Although it is easy to understand, this implementation is not efficient, especially for very large text strings.  Fortunately, :mod:`codecs` includes some helper functions for creating *character map* based codecs such as invertcaps.  A character map encoding is made up of two dictionaries.  The *encoding map* converts character values from the input string to byte values in the output and the *decoding map* goes the other way.  Create your decoding map first, and then use :func:`make_encoding_map` to convert it to an encoding map.  The C functions :func:`charmap_encode` and :func:`charmap_decode` use the maps to convert their input data efficiently."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:895
+# 1403a4b5d22d4c058e35c042019de563
+msgid "Although the encoding and decoding maps for invertcaps are the same, that may not always be the case.  :func:`make_encoding_map` detects situations where more than one input character is encoded to the same output byte and replaces the encoding value with ``None`` to mark the encoding as undefined."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:915
+# 435d6dd5d8934599b58499c2261fbbff
+msgid "The character map encoder and decoder support all of the standard error handling methods described earlier, so you do not need to do any extra work to comply with that part of the API."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:923
+# a5e4151ab3d1421bbb3516c435cb00ed
+msgid "Because the Unicode code point for ``π`` is not in the encoding map, the strict error handling mode raises an exception."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:941
+# e076943d0e95445da2927e715553ca8b
+msgid "After that the encoding and decoding maps are defined, you need to set up a few additional classes and register the encoding. :func:`register` adds a search function to the registry so that when a user wants to use your encoding :mod:`codecs` can locate it.  The search function must take a single string argument with the name of the encoding, and return a :class:`CodecInfo` object if it knows the encoding, or ``None`` if it does not."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:953
+# 508e4a7d51304e3fad7233850d0e071c
+msgid "You can register multiple search functions, and each will be called in turn until one returns a :class:`CodecInfo` or the list is exhausted. The internal search function registered by :mod:`codecs` knows how to load the standard codecs such as UTF-8 from :mod:`encodings`, so those names will never be passed to your search function."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:974
+# aec11bda37bc4052a8fea274f55eacfb
+msgid "The :class:`CodecInfo` instance returned by the search function tells :mod:`codecs` how to encode and decode using all of the different mechanisms supported: stateless, incremental, and stream. :mod:`codecs` includes base classes that make setting up a character map encoding easy.  This example puts all of the pieces together to register a search function that returns a :class:`CodecInfo` instance configured for the invertcaps codec."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:986
+# c012ce70519943a6bfccccb3744ae751
+msgid "The stateless encoder/decoder base class is :class:`Codec`.  Override :func:`encode` and :func:`decode` with your implementation (in this case, calling :func:`charmap_encode` and :func:`charmap_decode` respectively).  Each method must return a tuple containing the transformed data and the number of the input bytes or characters consumed.  Conveniently, :func:`charmap_encode` and :func:`charmap_decode` already return that information."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:994
+# b81f0ba5970b460b87f6743bff434d06
+msgid ":class:`IncrementalEncoder` and :class:`IncrementalDecoder` serve as base classes for the incremental interfaces.  The :func:`encode` and :func:`decode` methods of the incremental classes are defined in such a way that they only return the actual transformed data.  Any information about buffering is maintained as internal state.  The invertcaps encoding does not need to buffer data (it uses a one-to-one mapping).  For encodings that produce a different amount of output depending on the data being processed, such as compression algorithms, :class:`BufferedIncrementalEncoder` and :class:`BufferedIncrementalDecoder` are more appropriate base classes, since they manage the unprocessed portion of the input for you."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1006
+# dcf564599d034165849c2b0282fdfa73
+msgid ":class:`StreamReader` and :class:`StreamWriter` need :func:`encode` and :func:`decode` methods, too, and since they are expected to return the same value as the version from :class:`Codec` you can use multiple inheritance for the implementation."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1029
+# de109db51f354de4bd087b42c2f5a57e
+msgid "`codecs <http://docs.python.org/library/codecs.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1029
+# 36ae3de7c9484ef5aa6269f915c718b0
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1033
+# 8092b4192bb4498c9159f125aae6593f
+msgid ":mod:`locale`"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1032
+# c7bbfbd4fc9844d982bc5c80300fdf4f
+msgid "Accessing and managing the localization-based configuration settings and behaviors."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1037
+# 8232756b76534207b608155e126f5b20
+msgid ":mod:`io`"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1036
+# 3d65ba7cd07d4b9ea6bdbf383e22d0cf
+msgid "The :mod:`io` module includes file and stream wrappers that handle encoding and decoding, too."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1041
+# cdaef9d6ce8c49559604ad7cc7b22c34
+msgid ":mod:`SocketServer`"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1040
+# ac7525e8db554c66b55a315b0d5e827a
+msgid "For a more detailed example of an echo server, see the :mod:`SocketServer` module."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1045
+# 47ebbbf5f06748fa95ff2853840070ac
+msgid ":mod:`encodings`"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1044
+# dde7a270caac460b97a01c89456843e2
+msgid "Package in the standard library containing the encoder/decoder implementations provided by Python.."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1048
+# f55009b871f946d5a6f6bf1ee93e5dde
+msgid "`Unicode HOWTO`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1048
+# 94d7955898d04adb9d10af38c72dfc39
+msgid "The official guide for using Unicode with Python 2.x."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1052
+# 8aec002708684cd4b4f984a4142a86c5
+msgid "`Python Unicode Objects <http://effbot.org/zone/unicode-objects.htm>`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1051
+# bc6c09694fa442e5a0bac1b340c7fe52
+msgid "Fredrik Lundh's article about using non-ASCII character sets in Python 2.0."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1056
+# 9b5a6fca787b4d8da113d9a330bb46ab
+msgid "`How to Use UTF-8 with Python <http://evanjones.ca/python-utf8.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1055
+# e1ed759749d944149ac5bdff62dfe575
+msgid "Evan Jones' quick guide to working with Unicode, including XML data and the Byte-Order Marker."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1059
+# 30197416ae2840458f44e8bd9072b070
+msgid "`On the Goodness of Unicode <http://www.tbray.org/ongoing/When/200x/2003/04/06/Unicode>`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1059
+# 553375626660485ab7bb19be36e69935
+msgid "Introduction to internationalization and Unicode by Tim Bray."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1063
+# 522354b3c2034af68a754c5858db9f39
+msgid "`On Character Strings <http://www.tbray.org/ongoing/When/200x/2003/04/13/Strings>`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1062
+# 670b60fdeb574104a3f4f9503263e1f4
+msgid "A look at the history of string processing in programming languages, by Tim Bray."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1069
+# b1fa82d187f64eb78d2360acb0436362
+msgid "`Characters vs. Bytes <http://www.tbray.org/ongoing/When/200x/2003/04/26/UTF>`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1066
+# 3b4c45ac0ac44aec8df4f27fca5310bb
+msgid "Part one of Tim Bray's \"essay on modern character string processing for computer programmers.\"  This installment covers in-memory representation of text in formats other than ASCII bytes."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1072
+# de2a9250be34401a92e7b456d6e4918d
+msgid "`The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!) <http://www.joelonsoftware.com/articles/Unicode.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1072
+# f708a36094dc40e7893e55ebb2ddfb29
+msgid "An introduction to Unicode by Joel Spolsky."
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1074
+# 9600ad1e378840959721a6c45fe11684
+msgid "`Endianness <http://en.wikipedia.org/wiki/Endianness>`_"
+msgstr ""
+
+#: ../../PyMOTW/codecs/index.rst:1075
+# 7a71d03fca1e4df092db0dc25461bba0
+msgid "Explanation of endianness in Wikipedia."
+msgstr ""
+

@@ -1,0 +1,410 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/doctest/index.rst:3
+# c9c88f97643548b699425591cf4a98ac
+msgid "doctest -- Testing through documentation"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:8
+# 3ef6bbb88b87475ea5c03a48136dad72
+msgid "Write automated tests as part of the documentation for a module."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:9
+# a37b119781974dda8832b3032d7dd293
+msgid "2.1"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:11
+# be1ffa445dcb4b7681ff1709723f3f45
+msgid ":mod:`doctest` lets you test your code by running examples embedded in the documentation and verifying that they produce the expected results.  It works by parsing the help text to find examples, running them, then comparing the output text against the expected value.  Many developers find :mod:`doctest` easier than :mod:`unittest` because in its simplest form, there is no API to learn before using it.  However, as the examples become more complex the lack of fixture management can make writing :mod:`doctest` tests more cumbersome than using :mod:`unittest`."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:22
+# e397cf7a89b04d9fbcd46522a3ef0ff7
+msgid "Getting Started"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:24
+# 5b947101342743caa475440adf2534e4
+msgid "The first step to setting up doctests is to use the interactive interpreter to create examples and then copy and paste them into the docstrings in your module.  Here, :func:`my_function` has two examples given:"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:33
+# 0424f0b7b28143aea42720b4cab4427b
+msgid "To run the tests, use :mod:`doctest` as the main program via the ``-m`` option to the interpreter.  Usually no output is produced while the tests are running, so the example below includes the ``-v`` option to make the output more verbose."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:66
+# 1ce5f9a223484054a652c64839fd32bf
+msgid "Examples cannot usually stand on their own as explanations of a function, so :mod:`doctest` also lets you keep the surrounding text you would normally include in the documentation.  It looks for lines beginning with the interpreter prompt, ``>>>``, to find the beginning of a test case.  The case is ended by a blank line, or by the next interpreter prompt.  Intervening text is ignored, and can have any format as long as it does not look like a test case."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:78
+# 7b727f8068ae4123933821abbe604cae
+msgid "The surrounding text in the updated docstring makes it more useful to a human reader, and is ignored by :mod:`doctest`, and the results are the same."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:111
+# a86e1163ddc040da8dc561350faea322
+msgid "Handling Unpredictable Output"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:113
+# 9d8c416ca8fd4b42b04aa5296be34bdc
+msgid "There are other cases where the exact output may not be predictable, but should still be testable.  Local date and time values and object ids change on every test run.  The default precision used in the representation of floating point values depend on compiler options. Object string representations may not be deterministic.  Although these conditions are outside of your control, there are techniques for dealing with them."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:121
+# ac95ff9890544986bef002cab52aa625
+msgid "For example, in CPython, object identifiers are based on the memory address of the data structure holding the object."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:128
+# 73100dfb42ea4c0491fa5c4863c7256e
+msgid "These id values change each time a program runs, because it is loaded into a different part of memory."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:163
+# 976c0c96ceec4fa28fb934a0e9ef5657
+msgid "When the tests include values that are likely to change in unpredictable ways, and where the actual value is not important to the test results, you can use the ``ELLIPSIS`` option to tell :mod:`doctest` to ignore portions of the verification value."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:172
+# dea5469891eb4a93b2c5eca639ca3d28
+msgid "The comment after the call to :func:`unpredictable` (``#doctest: +ELLIPSIS``) tells :mod:`doctest` to turn on the ``ELLIPSIS`` option for that test.  The ``...`` replaces the memory address in the object id, so that portion of the expected value is ignored and the actual output matches and the test passes."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:202
+# 7f452ce20fb04a558bee3ac06bb5b3ec
+msgid "There are cases where you cannot ignore the unpredictable value, because that would obviate the test.  For example, simple tests quickly become more complex when dealing with data types whose string representations are inconsistent.  The string form of a dictionary, for example, may change based on the order the keys are added."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:212
+# 7bd026c48da14a07b8a8a0ba751cd680
+msgid "Because of cache collision, the internal key list order is different for the two dictionaries, even though they contain the same values and are considered to be equal.  Sets use the same hashing algorithm, and exhibit the same behavior."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:235
+# 01a4bd2abc52441ea6b9d04b61a440e6
+msgid "The best way to deal with these potential discrepancies is to create tests that produce values that are not likely to change.  In the case of dictionaries and sets, that might mean looking for specific keys individually, generating a sorted list of the contents of the data structure, or comparing against a literal value for equality instead of depending on the string representation."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:246
+# 16f182e5773d4e66be6dec0babac9faf
+msgid "Notice that the single example is actually interpreted as two separate tests, with the first expecting no console output and the second expecting the boolean result of the comparison operation."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:283
+# 51b9359ebbb24b2bab24b1b7cb99ffaf
+msgid "Tracebacks"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:285
+# 43227012e2474bb283f6bbae12e7b948
+msgid "Tracebacks are a special case of changing data.  Since the paths in a traceback depend on the location where a module is installed on the filesystem on a given system, it would be impossible to write portable tests if they were treated the same as other output."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:294
+# d739bab28fcf4b03bab9f4e1bf4055da
+msgid ":mod:`doctest` makes a special effort to recognize tracebacks, and ignore the parts that might change from system to system."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:325
+# 060422e2be9247c69030cb21d18340b1
+msgid "In fact, the entire body of the traceback is ignored and can be omitted."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:332
+# 78a133a398f44fff84ead4cabca211bc
+msgid "When :mod:`doctest` sees a traceback header line (either ``Traceback (most recent call last):`` or ``Traceback (innermost last):``, depending on the version of Python you are running), it skips ahead to find the exception type and message, ignoring the intervening lines entirely."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:363
+# 24578cc25b1b4aae8c71102bf55add03
+msgid "Working Around Whitespace"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:365
+# 1a4d87fc6cc1415eb3a62cc78bbc3708
+msgid "In real world applications, output usually includes whitespace such as blank lines, tabs, and extra spacing to make it more readable.  Blank lines, in particular, cause issues with :mod:`doctest` because they are used to delimit tests."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:374
+# c25b14a69a114af1a438208e8200dd53
+msgid ":func:`double_space` takes a list of input lines, and prints them double-spaced with blank lines between."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:403
+# 02b055159a1f4a5295b4002076e59142
+msgid "The test fails, because it interprets the blank line after ``Line one.`` in the docstring as the end of the sample output.  To match the blank lines, replace them in the sample input with the string ``<BLANKLINE>``."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:412
+# 66aa2dd8d9264e9bb3984b10b98f43ba
+msgid ":mod:`doctest` replaces actual blank lines with the same literal before performing the comparison, so now the actual and expected values match and the test passes."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:442
+# 8d7d2e2f842742648f0275af543a4921
+msgid "Another pitfall of using text comparisons for tests is that embedded whitespace can also cause tricky problems with tests.  This example has a single extra space after the ``6``."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:450
+# d085babb56c8492c865949506d62d404
+msgid "Extra spaces can find their way into your code via copy-and-paste errors, but since they come at the end of the line, they can go unnoticed in the source file and be invisible in the test failure report as well."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:491
+# 9757208f7d8f4a3b9f82f440ccac927a
+msgid "Using one of the diff-based reporting options, such as ``REPORT_NDIFF``, shows the difference between the actual and expected values with more detail, and the extra space becomes visible."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:499
+# c3c724d0665f4c29afe9fd2d642ae469
+msgid "Unified (``REPORT_UDIFF``) and context (``REPORT_CDIFF``) diffs are also available, for output where those formats are more readable."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:538
+# f621adfb0b0647dbad83ca202ad0182a
+msgid "There are cases where it is beneficial to add extra whitespace in the sample output for the test, and have :mod:`doctest` ignore it.  For example, data structures can be easier to read when spread across several lines, even if their representation would fit on a single line."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:548
+# 570dadd1e2c943a1b19f708b987f3035
+msgid "When ``NORMALIZE_WHITESPACE`` is turned on, any whitespace in the actual and expected values is considered a match.  You cannot add whitespace to the expected value where none exists in the output, but the length of the whitespace sequence and actual whitespace characters do not need to match.  The first test example gets this rule correct, and passes, even though there are extra spaces and newlines.  The second has extra whitespace after ``[`` and before ``]``, so it fails."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:606
+# 5ca91d5e904648d09a7254c1282e661b
+msgid "Test Locations"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:608
+# 02d7399cb720443fa91cfc92c8f4ad40
+msgid "All of the tests in the examples so far have been written in the docstrings of the functions they are testing.  That is convenient for users who examine the docstrings for help using the funcion (especially with :mod:`pydoc`), but :mod:`doctest` looks for tests in other places, too.  The obvious location for additional tests is in the docstrings elsewhere in the module."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:618
+# 645d4cc960be4a72bdf0a2d271212646
+msgid "Every docstring can contain tests at the module, class and function level."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:662
+# 33fad8c45a054d2e9553e154f48c0bb3
+msgid "In cases where you have tests that you want to include with your source code, but do not want to have appear in the help for your module, you need to put them somewhere other than the docstrings. :mod:`doctest` also looks for a module-level variable called ``__test__`` and uses it to locate other tests.  ``__test__`` should be a dictionary mapping test set names (as strings) to strings, modules, classes, or functions."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:674
+# c3f8a71e101747e6bc38f1010b9b5ad7
+msgid "If the value associated with a key is a string, it is treated as a docstring and scanned for tests.  If the value is a class or function, :mod:`doctest` searchs them recursivesly for docstrings, which are then scanned for tests.  In this example, the module :mod:`doctest_private_tests_external` has a single test in its docstring."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:684
+# ef543dab105b4d9898bca4227e403bc5
+msgid ":mod:`doctest` finds a total of five tests to run."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:733
+# 45a1d66cb1e24f17b350054b3b021594
+msgid "External Documentation"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:735
+# 539ca9ea9ea143ddb727784a95965721
+msgid "Mixing tests in with your code isn't the only way to use :mod:`doctest`.  Examples embedded in external project documentation files, such as reStructuredText files, can be used as well."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:743
+# a889ccfeb0c846f78beef9f56ebf8f19
+msgid "The help for :mod:`doctest_in_help` is saved to a separate file, ``doctest_in_help.rst``.  The examples illustrating how to use the module are included with the help text, and :mod:`doctest` can be used to find and run them."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:751
+# 6c576296a7184892b9a3932975ed527a
+msgid "The tests in the text file can be run from the command line, just as with the Python source modules."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:794
+# 0f24e8d70ade4c5f89b8e1c7809a03e6
+msgid "Normally :mod:`doctest` sets up the test execution environment to include the members of the module being tested, so your tests don't need to import the module explicitly.  In this case, however, the tests aren't defined in a Python module, :mod:`doctest` does not know how to set up the global namespace, so the examples need to do the import work themselves.  All of the tests in a given file share the same execution context, so importing the module once at the top of the file is enough."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:804
+# 58f9c76b2b0148f1b80390779d681d36
+msgid "Running Tests"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:806
+# b750c81c66734ce59425565afc7f3c2d
+msgid "The previous examples all use the command line test runner built into :mod:`doctest`.  It is easy and convenient for a single module, but will quickly become tedious as your package spreads out into multiple files.  There are several alternative approaches."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:812
+# b7e6a787a7d44d72a0bd8314a97c74f3
+msgid "By Module"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:814
+# d2233a8a21cd4119b6b07216f39116ff
+msgid "You can include instructions to run :mod:`doctest` against your source at the bottom of your modules.  Use :func:`testmod` without any arguments to test the current module."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:822
+# 85dd135fe2d64d0ebe5449d2cd9d9f50
+msgid "Ensure the tests are only run when the module is called as a main program by invoking :func:`testmod` only if the current module name is ``__main__``."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:854
+# 5166a3a81d5e4b08adaa4aec833e520b
+msgid "The first argument to :func:`testmod` is a module containing code to be scanned for tests.  This feature lets you create a separate test script that imports your real code and runs the tests in each module one after another."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:863
+# 5aab9498b3084600a15eea7f713a57e7
+msgid "You can build a test suite for your project by importing each module and running its tests."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:895
+# 34b6af30cf7149ef8fc514cbc0ae73c0
+msgid "By File"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:897
+# 1c5c83a26fbf46fb8fcb2f09df16307f
+msgid ":func:`testfile` works in a way similar to :func:`testmod`, allowing you to explicitly invoke the tests in an external file from within your test program."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:945
+# e29ac7f104b04a60ba4f6bc516542ee4
+msgid "Both :func:`testmod` and :func:`testfile` include optional parameters to let you control the behavior of the tests through the :mod:`doctest` options, global namespace for the tests, etc.  Refer to the standard library documentation for more details if you need those features -- most of the time you won't need them."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:952
+# bb334cd8701b41ceab4ee33d767a132b
+msgid "Unittest Suite"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:954
+# a757e92d01c34b42873902cc81eaff10
+msgid "If you use both :mod:`unittest` and :mod:`doctest` for testing the same code in different situations, you may find the :mod:`unittest` integration in :mod:`doctest` useful for running the tests together. Two classes, :class:`DocTestSuite` and :class:`DocFileSuite` create test suites compatible with the test-runner API of :mod:`unittest`."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:964
+# 31e10fc8bcc647f5be57b1a0522266ec
+msgid "The tests from each source are collapsed into a single outcome, instead of being reported individually."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:989
+# 24d50b2e14a04d1eb31e4e58570c505a
+msgid "Test Context"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:991
+# de3083940a2a46b3b9fd9e52a117da0a
+msgid "The execution context created by :mod:`doctest` as it runs tests contains a copy of the module-level globals for the module containing your code.  This isolates the tests from each other somewhat, so they are less likely to interfere with one another.  Each test source (function, class, module) has its own set of global values."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1001
+# dd90ef8405aa4254b56ad194202d7bdc
+msgid ":class:`TestGlobals` has two methods, :func:`one` and :func:`two`. The tests in the docstring for :func:`one` set a global variable, and the test for :func:`two` looks for it (expecting not to find it)."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1039
+# 329398497c004c758e08d129971e043d
+msgid "That does not mean the tests *cannot* interfere with each other, though, if they change the contents of mutable variables defined in the module."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1047
+# eb1667205a9e4a6a8371987397600bea
+msgid "The module varabile ``_module_data`` is changed by the tests for :func:`one`, causing the test for :func:`two` to fail."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1093
+# 7da29f73f0634e5399d01471530c22ac
+msgid "If you need to set global values for the tests, to parameterize them for an environment for example, you can pass values to :func:`testmod` and :func:`testfile` and have the context set up using data you control."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1101
+# cc4b5e6773764f7dbc2cd1314012f3fa
+msgid "`doctest <http://docs.python.org/library/doctest.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1101
+# 0243ecf453a7448f9a101fd2dc962663
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1105
+# 2d5fd67500854a88b5e1406f89432747
+msgid "`The Mighty Dictionary <http://blip.tv/file/3332763>`__"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1104
+# db0049e3fd4946b39e8ae2a80feef33b
+msgid "Presentation by Brandon Rhodes at PyCon 2010 about the internal operations of the :class:`dict`."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1109
+# 8eb35332b2014f8c867943c9ac54fc6e
+msgid ":mod:`difflib`"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1108
+# b37594f17cae4f71ad199d8a0627117a
+msgid "Python's sequence difference computation library, used to produce the ndiff output."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1118
+# 2244d8a0417247c2a4fb05fc3993f08f
+msgid "`Sphinx <http://sphinx.pocoo.org/>`_"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1112
+# 9d32b35827f44670a6d618b5d8d60962
+msgid "As well as being the documentation processing tool for Python's standard library, Sphinx has been adopted by many third-party projects because it is easy to use and produces clean output in several digital and print formats.  Sphinx includes an extension for running doctests as is processes your documentation, so you know your examples are always accurate."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1121
+# 9ba1348aac674bad80eb1d534e3030a2
+msgid "`nose <http://somethingaboutorange.com/mrl/projects/nose/>`_"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1121
+#: ../../PyMOTW/doctest/index.rst:1124
+# 5ec862258e1b4e9aa8d97c9d559f6cfb
+# 5501b40a565442a79d6d09e878b3096f
+msgid "Third-party test runner with :mod:`doctest` support."
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1124
+# 6759a9f52f6f491d9e8e268966cb3bf5
+msgid "`py.test <http://codespeak.net/py/dist/test/>`_"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1127
+# 449f925d83a949828cbc918b7d645d51
+msgid "`Manuel <http://packages.python.org/manuel/>`_"
+msgstr ""
+
+#: ../../PyMOTW/doctest/index.rst:1127
+# 5cadef9271bc424ead46e9f15bdc67a8
+msgid "Third-party documentation-based test runner with more advanced test case extraction and integration with Sphinx."
+msgstr ""
+

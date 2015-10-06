@@ -1,0 +1,1792 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/history.rst:2
+# dad3e38654e84fe187ec9f91d2404adc
+msgid "History"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:4
+# 8dc101a7e1ac4565b07c54badd7a0198
+msgid "Development"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:6
+# 2cd5560ddc484f42a9cd95d8a98a3120
+msgid "Merge in fixes to the :mod:`select` module examples from Michael Schurter."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:9
+# 6fc94ee2f7d042839244c0dc5827e2ab
+msgid "1.132"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:11
+# 5212aac66c9f4a5dacdee6f3ac25f8ed
+msgid "24 Oct 2010, rewrite :mod:`ConfigParser`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:13
+# 4d320b5160c3423f9465fb8120412c79
+msgid "1.131"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:15
+# 4ca4c814e2a84b54a38cc296f08e04f3
+msgid "17 Oct 2010, :mod:`sqlite3`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:16
+# cd683ba354e441c4ba43700de377e9e0
+msgid "Updates to :mod:`xml.etree.ElementTree`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:17
+# 63a189b04d4048e8b39a05566ebed8aa
+msgid "Updates to :mod:`resource`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:18
+# 823869301144475d899d92fcfc1fe4c3
+msgid "Updates to :mod:`subprocess`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:19
+# 662262cc94f9495b8bfa48afca088141
+msgid "Updates to :mod:`sys`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:20
+# 0f21574ce76347c1872e659578c92508
+msgid "Re-generate :mod:`platform` example output on more modern systems."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:21
+# 81d6060a11cf47d0bf43dfeae9dec4f0
+msgid "Updates to :mod:`threading`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:22
+# aec59757e1f841da8455bc2b5de4f422
+msgid "Updates to :mod:`dircache`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:24
+# a41579c8dad8455d98988127979289e4
+msgid "1.130"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:26
+# 871a863851104ef2ab3def5ee5cd520b
+msgid "10 Oct 2010, :mod:`random`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:27
+# ccc1f6713cbb4250bcc84305817593c1
+msgid "Updates to :mod:`contextlib`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:28
+# 145091f839764435af478f8815268aa3
+msgid "Updates to :mod:`logging`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:29
+# 149b0ba89d684ed68b59b97c75073351
+msgid "Updates to :mod:`mmap`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:30
+# 39ef5069345948388699aac60d94f836
+msgid "Added more details about dialects to :mod:`csv`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:31
+# 80c69425c7b5469589b1e6f0777b10e8
+msgid "Updates to :mod:`difflib`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:32
+# 41e427983fc64e95a2b06f42e8e188cd
+msgid "Updates to :mod:`multiprocessing`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:33
+# 0b9c84419258452da3197dd2e6751978
+msgid "Updates to :mod:`optparse`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:34
+# 8099308b5895455f88d541a8756afdbc
+msgid "Updates to :mod:`pkgutil`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:36
+# 5b44df131e72419387c8afd1d8234269
+msgid "1.129"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:38
+# b37d953ea14c4e3c98b7db6aac5b51de
+msgid "3 Oct 2010, :mod:`select`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:40
+# 43b9320037a5445cbea578e52eb1ef23
+msgid "1.128.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:42
+# d7a3b07f21ce4abdb3a6bff8d96c27ad
+msgid "29 Sept 2010, Corrected the :class:`OrderedDict` equality example."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:44
+# 1fe8305f675f4aedbeb7dbb8e5a8a2c8
+msgid "1.128"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:46
+# ce4c41f7c58a4532a849d989e450d8ec
+msgid "28 Sept 2010, Updated :mod:`collections` to add :class:`OrderedDict` and :class:`Counter`, as well as the *rename* argument to :class:`namedtuple`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:50
+# 34cc6983bbf2439e97954a77267c9ab4
+msgid "1.127"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:52
+# 9ed43806ada84aee9e7c01d053603721
+msgid "26 Sept 2010, :mod:`socket`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:54
+# 1b89a34cfe5e4a25ae2b6828830cd590
+msgid "1.126"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:56
+# 94529926acce400f8fdad9dce3747f6a
+msgid "19 Sept 2010, :mod:`sysconfig`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:58
+# 328ad9d8a8e741a193f3b0876b0118e9
+msgid "1.125"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:60
+# e0008f4a4e974aaf805634c05d0c7e04
+msgid "12 Sept 2010, :mod:`pdb`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:62
+# 4022f2e8fd024491a2e8a2bb1dc2cd1c
+msgid "1.124.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:64
+# 25ca4d6b7c4a471a811c13e8f9302f2f
+msgid "9 Sept 2010, Updated packaging to fix installation errors."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:66
+# df3c3b5a1be34e9580cbf22bf2e3ae61
+msgid "1.124"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:68
+# 346c0dd178b041e2b7e7882841f9c799
+msgid "5 Sept 2010, :mod:`re`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:70
+# 9eac4f28250f4a9ca6427c76a89e66a0
+msgid "1.123"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:72
+# f6d554a385554258996bf295844a91b0
+msgid "29 Aug 2010, :mod:`codecs`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:74
+# 3dc0e76d4cf44bbf8d26c456b2db69b8
+msgid "1.122"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:76
+# c4e8103ef2274c188e20007ba4e3e692
+msgid "22 Aug 2010, :mod:`math`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:78
+# eebff6a900274e4d9d208af2ec54ee91
+msgid "1.121"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:80
+# 15898c76da0742249d39caa75987a2c8
+msgid "15 Aug 2010, :mod:`doctest`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:82
+# cbda6bc58acf463587225b220e7eb521
+msgid "1.120"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:84
+# d8ca66b8ee334418888afb4844bf4069
+msgid "8 Aug 2010, :mod:`argparse`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:86
+# 08bfa5191a8242d198aab055b5709387
+msgid "1.119"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:88
+# 346c47c381ba41629d58a37016df347d
+msgid "11 July 2010, :mod:`gc`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:90
+# a05f610ecef14457b24569675a08c138
+msgid "1.118.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:92
+# 1cbb720760ec4246844067a0d564b874
+msgid "Updates to :mod:`locale`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:94
+# 6aff9aabc0d546ffa0bfeb67e3b044e0
+msgid "1.118"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:96
+# 26fc1bc0c3454becb0f850b4ebe701b0
+msgid "Roberto Pauletto's Italian translation has moved to http://robyp.x10hosting.com/"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:98
+# 80b3013c1d4a4a1cac96540a05ff870e
+msgid "27 June 2010, :mod:`site`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:100
+# ee84f9b9ac4c4efc8845c12fa5aadba4
+msgid "1.117a"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:102
+# f7f3a490af3d490b802fce71bbeb6042
+msgid "Added LifoQueue and PriorityQueue examples to :mod:`Queue`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:103
+# 26fe88fb9e0548d8a42d8cb75b780f90
+msgid "Completed an editing pass of the entire document, tweaking wording and formatting."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:109
+# 0317d74171e74b1d8a8fb044246a26d6
+msgid "1.117"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:107
+# 90b108e753f6408499b2df9cea2559d9
+msgid "Updated :mod:`fileinput` example to use :mod:`xml.etree.ElementTree`.  Added an example to show how to get the filename and line number being processed."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:115
+# ac4aa769ed43423e8b1897070fdf021e
+msgid "1.116"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:112
+# 5da0393757b84d10b5af945077ebd0ba
+msgid "21 Mar 2010, :ref:`xml.etree.ElementTree.creating`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:113
+# 8c1e9c827c784a2d98f7bb62c9017517
+msgid "Fixed example in :ref:`abc-abstract-properties` so both the setter and getter work.  Thanks to Rune Hansen for pointing out the error in the original version."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:118
+# 3af72c097233483197c06277b4a0fb5b
+msgid "1.115"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:118
+# 079158fb82eb4e6eae7329ffb5949eed
+msgid "14 Mar 2010, :ref:`xml.etree.ElementTree.parsing`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:121
+# 18a5e1aaf7f3414d877b4b35a0eaadb3
+msgid "1.114"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:121
+# 72020a3fc40941d08a8f5bdaa41cf710
+msgid "7 Mar 2010, :mod:`tabnanny`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:126
+# 6aa23443e369418ea57c9f008c636ed2
+msgid "1.113"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:124
+# a0ae6250038d4596ba457264a994f43b
+msgid "30 Jan 2010, :mod:`cgitb`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:125
+# 054ef5e88ad04ca9bbbc2475db34008d
+msgid "Added reference to presentation about using PyObjC to read/write binary plist files to :mod:`plist`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:129
+# f9aa859763a349ae94c47a371514b72a
+msgid "1.112"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:129
+# 8d39b125c2a848449d69990dd2abf3f0
+msgid "29 Nov 2009, :mod:`plistlib`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:134
+# 0988da981ef24ee9826fef456e690a3d
+msgid "1.111.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:132
+# bef62abf41494620b053e5e1d8a4edee
+msgid "Clarify memory example based on comment from tartley."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:133
+# 77676eca2d764afea74bc963038a8438
+msgid "Fix core dump detection in commands_getstatusoutput.py. Thanks to Felix Labrecque for pointing out that it was wrong."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:137
+# 653eef63cedd4575bb72f817b66c2f47
+msgid "1.111"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:137
+# b91708b4f9904c0fa042d66c8930c720
+msgid "23 Nov 2009, :mod:`sys`, continued with :ref:`sys-imports`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:140
+# 45c4f88f35e74aceadc64b334a89dede
+msgid "1.110"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:140
+# 895ef89e8eaf4265ade938686ca2189b
+msgid "15 Nov 2009, :mod:`sys`, continued with :ref:`sys-threads`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:143
+# 6e028bbff6e64cac8d5806f7b55cbef0
+msgid "1.109"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:143
+# 18ac69caa0744428809a8a23d93efee8
+msgid "8 Nov 2009, :mod:`sys`, continued with :ref:`sys-tracing`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:146
+# 296f80d20e554221953c91f77c16d862
+msgid "1.108"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:146
+# 7235f7847d324d06868f3eb30298bc81
+msgid "1 Nov 2009, :mod:`sys`, continued with :ref:`sys-exceptions`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:149
+# 9576016b2e5143ab9c74f56e08e9ef8b
+msgid "1.107"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:149
+# a7d1540b6769481d85e64422df947faf
+msgid "25 Oct 2009, :mod:`sys`, continued with :ref:`sys-limits`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:152
+# 9e7fc313b4514f648d992a912d09bcf5
+msgid "1.106"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:152
+# 8d3b5f47d6dc4d4b84e6aea6f8701601
+msgid "18 Oct 2009, :mod:`sys`, continued with :ref:`sys-runtime`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:155
+# 477cf3a6794742ecba601bdfe2ef51b8
+msgid "1.105"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:155
+# 014412f3771d495b971866718dae9710
+msgid "12 Oct 2009, :mod:`sys` started with :ref:`sys-interpreter`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:158
+# d0eed04404ab4e36932d760c6f8f45ca
+msgid "1.104"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:158
+# 40a734ce817b47fcbf9bc6a72039b3d4
+msgid "20 Sept 2009, :mod:`resource`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:161
+# b42a6b730a6d4dc4a4f059dc2973286f
+msgid "1.103"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:161
+# 9200637fd8e54692b37b0e99822dfccd
+msgid "5 Sept 2009, :mod:`fractions`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:164
+# f35bcfe097f944f599e81ae25b6fea46
+msgid "1.102"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:164
+# deaa0029ada946fb955ca0c1cf080e3d
+msgid "30 Aug 2009, :mod:`decimal`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:167
+# 196fda73d46a439a917d39efea37966c
+msgid "1.101"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:167
+# 36078586d2604ef8995fd4ed8ff04b14
+msgid "23 Aug 2009, :mod:`dis`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:175
+# f56fa47f97fe4d33b84336a1bc30aff7
+msgid "1.100"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:170
+# a261565795194b1b8f9d428625ac770c
+msgid "9 Aug 2009, :mod:`pydoc`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:171
+# 3387a74e697d4f7d9e080e9e172b882f
+msgid "Add pipes example to :mod:`subprocess`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:172
+# 5cfa9c6bbffc4611a5d4caa90a81df9a
+msgid "Add circular reference example to :mod:`pickle`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:173
+# 8dc7949a0b3741648cf586bb3de7c4ae
+msgid "Use the Sphinx text builder to create clean plaintext files for use with motw command line app."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:174
+# b5cb818a83354975b11e635d8aca818d
+msgid "Use :mod:`pydoc` ``pager()`` to show plaintext help from :ref:`motw-cli`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:175
+# 68ef9b03ca2347308b75559198c159a6
+msgid "Add built-in function ``motw()`` so that importing PyMOTW into your interactive session makes it easy to get to the examples interactively.  See :ref:`motw-interactive`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:178
+# 329f827cc95f43139ab53a19e2f6cd53
+msgid "1.99"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:178
+# e2d78f4ae9d04009a73102b31293341c
+msgid "2 Aug 2009, Add :ref:`article-data-structures` article."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:182
+# 8fc1067f7bdf4783b166b7840c774bfd
+msgid "1.98"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:181
+# d4bf4b22d3f9402e811d5a53c19fc137
+msgid "Added link to Roberto Pauletto's Italian translation."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:182
+# dd87e5ae8cbb49a6abadb71c1ee329b8
+msgid "27 July 2009, Add :ref:`article-text-processing` article."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:185
+# 38f2da1823114888857d439ba35a43e9
+msgid "1.97"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:185
+# ada444145b314d2aba7665eab25f0afe
+msgid "19 July 2009, :mod:`urllib2`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:188
+# 54f640231ec743afb20e2b20ffcd74ae
+msgid "1.96"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:188
+# 51c99d96f1914bbf8774b55c4d37f0a5
+msgid "12 July 2009, :ref:`article-file-access`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:193
+# cb463fe9ff0d465280220ab9baee4e41
+msgid "1.95"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:191
+# a04eb95586944d188822682265b06a82
+msgid "5 July 2009, :mod:`abc`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:192
+# e47ca070f1fb441f9d37295ba2e44963
+msgid "Rearrange packaging to install the HTML files."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:193
+# ab73cfe51cb34b3a98ce80e15deaf480
+msgid "Add ``motw`` command line app to show PyMOTW article on a given module, similar to pydoc."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:197
+# 2c73afabaaf7471a821900f5280104d8
+msgid "1.94"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:196
+# 8dba530cd8f44249b225f10a62a07cdd
+msgid "Moved ``run_script()`` from pavement.py to `sphinxcontrib-paverutils <http://pypi.python.org/pypi/sphinxcontrib-paverutils>`_ 1.1."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:197
+# 25d6e6aaa3a4447ca2e07341fb9d28af
+msgid "28 June 2009, :mod:`pyclbr`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:200
+# aa09399a669c48d89e687c8ab27b0034
+msgid "1.93"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:200
+# 5d1d8fa1ab354142a9ef66b92fd9b721
+msgid "21 Jun 2009, :mod:`robotparser`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:205
+# acbd75984d4a409985834159da51677c
+msgid "1.92"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:203
+# e66e8165d2704812bb8d45aa7741fdd1
+msgid "14 June 2009, :mod:`gettext`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:204
+# 3688e4e18f4344c9909323c733b2157a
+msgid "Added Windows info to :mod:`platform`, courtesy of Scott Lyons."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:205
+# f5547c08715249cb88ae5e3ee433e2f4
+msgid "Added process group example to :mod:`subprocess`, courtesy of Scott Leerssen."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:213
+# ded5e156fb8e487db8e959fc3ff64a58
+msgid "1.91"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:208
+# 47e2f0fe71f34ace88e1aae827553a15
+msgid "Add :ref:`article-data-persistence` article."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:209
+# 10a5cd3ee3cc4d20a2c2b1c92944541c
+msgid "Correct link to library table of contents on python.org from about page.  Thanks to Tetsuya Morimoto for pointing out the broken link."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:210
+# 47f557a1dacb483baa5c9955f7eb1938
+msgid "Add information about Tetsuya Morimoto's Japanese translation."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:211
+# 868da569729147f992be2d13999369c5
+msgid "Add link to jsonpickle on :mod:`json` article, courtesy of Sebastien Binet."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:212
+# 0b72f2d6757b41e8bf4ed6b4b280877e
+msgid "Add time-stamps to HTML output"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:213
+# 61c2be8b03ed4960b49a4a61bc5222bb
+msgid "Remove extraneous javascript file from web html template to avoid 404 errors"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:217
+# 238821fdb3464e16a82af436a321f554
+msgid "1.90"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:216
+# 028ca7dcb4804ce49f36046ac495f789
+msgid "24 May 2009, :mod:`json`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:217
+# cafc9cef3113411ead343a08645cb9f0
+msgid "updated daemon process examples in :mod:`multiprocessing`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:220
+# ca11089abf4d4711a4c3d6fd584cbc06
+msgid "1.89"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:220
+# 3e445693b1764843862167ed68406156
+msgid "28 April 2009, :mod:`multiprocessing` (part 2, communication and MapReduce example)"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:226
+# c1bbb7705609483591270c8df2d84bfd
+msgid "1.88"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:223
+# d0d9ca48f04b4b059b89140900397bc7
+msgid "19 April 2009, :mod:`multiprocessing` (part 1, basic usage)"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:224
+# d7b5393e0dde4317bbdebaeb0fb9a34b
+msgid "Upgraded to Python 2.6.2."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:225
+# d524562f4b9c4537a2709f911984177c
+msgid "Add options to blog command in pavement.py to let the user specify alternate input and output file names for the blog HTML."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:226
+# 5eda0d171e4e4ff9bd6cd5159d2c925f
+msgid "Added namedtuple example to :mod:`collections`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:229
+# b145e75d76224495b46f50f16102fcb9
+msgid "1.87.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:229
+# 930e9ad7a0534d99a28bf3e95b1de88a
+msgid "Added dialect example to :mod:`csv` to show how to parse files with ``|``-delimited fields."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:235
+# 6a953db6027d487cb527bc46af148bb1
+msgid "1.87"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:232
+# 51e0c751baad41a5a3c358921ecb5b89
+msgid "5 Apr 2009, :mod:`pipes`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:233
+# f3d19c8a77c041f0911927d6a0c8c8ae
+msgid "Converted PEP links to use ``pep`` role."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:234
+# a3336d6f5d284162a7c5ed97ca78bd3e
+msgid "Converted RFC references to use ``rfc`` role."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:235
+# 63f2000095a74655b067d0625917c32a
+msgid "Updated examples in :mod:`warnings` and :mod:`string` to work with changes in Python 2.6.1."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:241
+# fc7c1959549d4ee997142b8b34a1bfe1
+msgid "1.86.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:238
+# 6397d4ded7f745c7b39c419926dcc6a7
+msgid "Updated working environment to use Paver 1.0b1."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:239
+# eccda77283984139a8589734c44c8f00
+msgid "Corrected errors in ``*.rst`` files identified by update to new version of Paver that doesn't let cog errors slide."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:240
+# 3a78f515dbb1406780fc7d4f3e10fa99
+msgid "Added ignore_error option to run_script() in pavement.py so scripts with errors I'm expecting can be quietly ignored."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:241
+# 0cb7853932fb4d01a3e909c25efbb284
+msgid "Finished converting all articles to use cog, where appropriate."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:246
+# a1400d52227e454d991d5232be32e962
+msgid "1.86"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:244
+# ae7f58f8106b4afd881ac9be2d928aad
+msgid "14 Mar 2009, :mod:`asynchat`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:245
+# f5a163a4aec34f358722268cdc000476
+msgid "Move to bitbucket.org for DVCS hosting"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:246
+# 43eb8a65b51e41098e68421e931c4a87
+msgid "Updated description of ``uuid4()`` in :mod:`uuid` based on feedback via O'Reilly blog comment."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:251
+# 2106bb0d0c3d441caeba120d314dffa9
+msgid "1.85"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:249
+# f434d9c419c846e693935c1a297c3fa6
+msgid "1 Mar 2009, :mod:`asyncore`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:250
+#: ../../PyMOTW/history.rst:260
+# 2eb870d0175c4766a567742099f16cc0
+# fa02adf503794397b497fc75cbfe8733
+msgid "Continue converting older articles to use cog."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:251
+# 34979e22c1a6449b9c18b9469dca0cfc
+msgid "Fix subprocess examples so they work if the permissions on the \"child\" scripts haven't been changed from the default way they are installed."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:256
+# 97578babe3324537a3d40d9924f29bd2
+msgid "1.84"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:254
+# 9d0112a3b4d24289a4e83b4ff47958cb
+msgid "22 Feb 2009, :mod:`tarfile`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:255
+# 68ab843617c94a5987d4e658d7f6be13
+msgid "Updated DictWriter example in :mod:`csv` based on feedback from Trilok Khairnar."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:256
+# 985a03ce6c72411792b658bd3a88910f
+msgid "Cleaned up use of cog in a few older modules"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:260
+# e6c01b3594394c4588b7a3fa06e8c4e7
+msgid "1.83"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:259
+# cbd474cc4ac044c3891151bc8a2a4cda
+msgid "15 Feb 2009, :mod:`grp`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:265
+# a26be65861bb4ef39d164a0f827f5d89
+msgid "1.82"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:263
+# 9f8bc00fb4d34577a142a0bd9f32eb25
+msgid "8 Feb 2009, :mod:`pwd`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:264
+# 038ad20210604deaa8d48930cd60f96a
+msgid "Fix ``set_unixfrom()`` examples in :mod:`mailbox` article based on feedback from Tom Lynn."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:265
+# e2b8217179c3440daae24e5902518246
+msgid "Add this history section"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:268
+# 42f064ac994e4fe68e6217925a2802fd
+msgid "1.81"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:268
+# 697a5ed7297b4ebaa9a06c2954f86a63
+msgid "18 Jan 2009, :mod:`compileall`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:271
+# 6f21d22a881a4735bd60c20ebf04ba2d
+msgid "1.80"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:271
+# bcbe8f7ad06b42618f4b080cd7073374
+msgid "4 Jan 2009, :mod:`bz2`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:274
+# d927e9894c284caaa52c78146e683b5f
+msgid "1.79"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:274
+# 701ba9380c204b68b4a43736e9a56d9e
+msgid "28 Dec 2008, :mod:`zlib`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:277
+# cb19111e3e4f464f9557eabd588821b5
+msgid "1.78.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:277
+# db674e51bbc94c58b46e16a374028758
+msgid "Updated :mod:`gzip` examples to avoid using built-in names for local variables."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:280
+# 7e473acd69074be6bacd63a315f443b2
+msgid "1.78"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:280
+# c961aa1e76da42b6a1478e2f88f67fba
+msgid "7 Dec 2008, :mod:`gzip`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:283
+# 1fad97024d47439eaa325c8c27686a14
+msgid "1.77"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:283
+# ec4da4d484364f6c8495072ad14441b9
+msgid "30 Nov 2008, :mod:`readline` and :mod:`rlcompleter`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:286
+# 97977182691f4adca3db16b8422b8e3b
+msgid "1.76"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:286
+# 0e667a3619d04d2397806de319706a83
+msgid "9 Nov 2008, :mod:`array`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:289
+# db14db46cd1244849f142c1852febfe4
+msgid "1.75"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:289
+# e99d4c11cf7a4a34a19cf6e14d5a110f
+msgid "2 Nov 2008, :mod:`struct`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:292
+# 87ee140fb9024aeb9713468073117afb
+msgid "1.74.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:292
+# 967855a4c81744f2bb4224da7c74e683
+msgid "Update formatting of several modules to make them more consistent."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:295
+# f74fcf85801d4df7908b1f8693a66582
+msgid "1.74"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:295
+# 8d2d5c965fd14d2185f17a42a4182145
+msgid "19 Oct 2008, :mod:`smtpd`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:298
+# ff86c6e06556434e9cf6af30669274f7
+msgid "1.73"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:298
+# bb0fd183bd7d4ee18cc05de5b25bc63d
+msgid "12 Oct 2008, :mod:`trace`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:301
+# e42744c61d334386b4fcaafc4e0257b3
+msgid "1.72"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:301
+# 3c9c5d0b17634505ae7dcd04932e8c2c
+msgid "5 Oct 2008, :mod:`smtplib`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:304
+# 82445e724cdf409d81985be210c05258
+msgid "1.71"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:304
+# 80a62f2e0ee14b4c8f63fdb01131e1e0
+msgid "26 Sept 2008, :mod:`mailbox`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:307
+# a2abebdfb0ec436d818077608bd74251
+msgid "1.70.4"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:307
+# fd23939c6fd74707ad9d98ecc184a1ec
+msgid "Update formatting of several modules and fix the examples on the :mod:`difflib` page."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:310
+# 10a1412a8e0849108cdae2b55c017799
+msgid "1.70.3"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:310
+#: ../../PyMOTW/history.rst:313
+# de97d3db944349d2820b1bf1ca16e01d
+# 83b0ccd0ef1b4fa292a26eedaa38f133
+msgid "21 Sept 2008 :mod:`imaplib`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:313
+# 5f0c7231dc314c8698cec296a1621c7b
+msgid "1.70.2"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:316
+# e03bf9cadc9e45e9939cc3724293fc05
+msgid "1.70.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:316
+# 30a8ee9502d5444abb6fc4437509b203
+msgid "21 Sept 2008 :mod:`imaplib` (markup fixed)."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:319
+# 6ef36f71998c4fa989558c4477047fa0
+msgid "1.70"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:319
+# 4db7f6902f8548cabec2b4f4efbec2f5
+msgid "21 Sept 2008, :mod:`imaplib`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:322
+# 284322af8be749679f5f08388c28d065
+msgid "1.69"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:322
+# f2fe4ed1330f46e1b3d0bd3faa19113d
+msgid "14 Sept 2008, :mod:`anydbm` and related modules."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:325
+# 38e9814cd8784f0588c8fdda3104b48c
+msgid "1.68"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:325
+# ceb9b220d0a54d65814518f7b4e854ac
+msgid "Sept 12, 2008, :mod:`exceptions`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:328
+# aec4e49c66a24f53940062713571f9f5
+msgid "1.67.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:328
+# 771737b753a148f6b30339fbe30c457a
+msgid "minor changes to accommodate site redesign"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:331
+# cb333be1da99414e9e8b25dd17fb61c7
+msgid "1.67"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:331
+# 82f80c472b324da09489a7b6efe543a7
+msgid "31 Aug 2008, overing :mod:`profile`, :mod:`cProfile`, and :mod:`pstats`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:334
+# 869e80215e3a43609ac147d4bf61bed8
+msgid "1.66.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:334
+# 6d388f8a483e4a0795567f43eed1c74c
+msgid "Fix a logic bug in the code that prints the currently registered signals."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:337
+# b882c792331d4789b02a3719b28fb9d9
+msgid "1.66"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:337
+# 5a37da9b23cb4504896b2a2fc0033289
+msgid "17 Aug 2008, :mod:`signal`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:340
+# c72ad1aa2d254f628c97c535a7d53c81
+msgid "1.65"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:340
+# d5fd9dba9d32460a985e5d516bb2669f
+msgid "10 Aug 2008, adding Sphinx-generated documentation all of the modules covered so far."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:343
+# b737c1d2eac4496a897a62e217170668
+msgid "1.64"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:343
+# 0cbb3e67c93f46b1a71e2da118e51e7a
+msgid "3 Aug 2008 :mod:`webbrowser`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:346
+# 231d1a29eecc48028ece38a68041b130
+msgid "1.63"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:346
+# dfe4babe01574c1582650e1da2a89b2c
+msgid "27 July 2008, :mod:`uuid`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:349
+# 5db17c1ec0a64eb891409e0160ffacb6
+msgid "1.62"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:349
+# f421589cdead4aee869e8896c1ca13e4
+msgid "20 July 2008 :mod:`base64`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:352
+# 6b53649bd26e4cb2845a1e919b850fef
+msgid "1.61"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:352
+# 8b1ed55cab454651848260754e64df27
+msgid "6 July 2008, :mod:`xmlrpclib`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:355
+# a14d6d84ff3e4d07b86a5fcf527d5533
+msgid "1.60"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:355
+# b3751d62b7714cfc8fb186236eda4d4e
+msgid "29 June 2008, :mod:`SimpleXMLRPCServer`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:358
+# 0289e60a12c1418d8af9472dddd278c0
+msgid "1.59"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:358
+# b2502544394f4a12870106d183f094c4
+msgid "22 June 2008, :mod:`warnings`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:361
+# e30fa9844fd9484993724205dcb521b2
+msgid "1.58"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:361
+# 5397452355f046a6a5987af189333d4c
+msgid "15 June 2008, :mod:`platform`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:364
+# 11a4cb85dd24473a8771e5e0c9523de0
+msgid "1.57"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:364
+# 5b6835421e9c47a2a74da9a2c26c9824
+msgid "8 June 2008, :mod:`dircache`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:367
+# 1688a781cbe3466396bc13d58f6f867b
+msgid "1.56"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:367
+# 415ffb6d9e064e1597199d4d93665e43
+msgid "1 June 2008, :mod:`Cookie`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:370
+# 42e7c4e802cb42f8a72b18800285d6b1
+msgid "1.55"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:370
+# 8a68ceae93d342deb742a3c644ab19b4
+msgid "25 May 2008, :mod:`contextlib`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:373
+# 4faf17e3628942a1b745a4836107508d
+msgid "1.54"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:373
+# f302348a2c194c749d6832a464014dda
+msgid "18 May 2008, :mod:`traceback`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:376
+# ef999ef65687476cadf3a8153e9b5c91
+msgid "1.53"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:376
+# 782e62c4dc7a4d3fb545df66f0a9286e
+msgid "11 May 2008, :mod:`heapq`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:379
+# 5d0478791ecc4da7ad9b3e9d523d0a66
+msgid "1.52"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:379
+# 47af4cafd0de4e96adb1e4acf5dec9a3
+msgid "4 May 2008, :mod:`cmd`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:382
+# 644d0e3648394350902c22eed846e70c
+msgid "1.51"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:382
+# dbf485d03abe4541985661532d83a028
+msgid "27 Apr 2008, :mod:`functools`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:385
+# ad585b1c7feb493488895ffb67f8a770
+msgid "1.50"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:385
+# ad898953ed294503a295199d34d4f7fb
+msgid "20 Apr 2008, :mod:`filecmp`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:388
+# 14642b9b57af4fa5b2e7d06ee3a65981
+msgid "1.49"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:388
+# d68b635f990a4d6c8988e489f6bc8d29
+msgid "13 April 2008, :mod:`fnmatch`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:391
+# 591ba3390c8e4e6da2d829b87b119b01
+msgid "1.48"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:391
+# ebce5a1466c34e5ea9a719e1c704551e
+msgid "4 April 2008, :mod:`operator`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:394
+# 74047ed763044bc4b0a84816574e575c
+msgid "1.47"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:394
+# 42cd17a03ecb42cf813253d48e2223f0
+msgid "30 March 2008, :mod:`urllib`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:397
+# 6ad7f5e9808042c4ba9d3f965515556c
+msgid "1.46"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:397
+# c1125ab84540436881a54c55b321a3d2
+msgid "23 March 2008, :mod:`collections`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:400
+# 47892fb43ebe48b5ae96d240c9da39fc
+msgid "1.45"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:400
+# b1c15fc218304a968e8e847b4c214f7e
+msgid "PyCon 2008 edition for 16 Mar 2008, :mod:`datetime`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:403
+# 985bc82c2f3a4311b52ffca5c67feada
+msgid "1.44"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:403
+# 7acd28633c61492da6b26ed97e71e532
+msgid "9 Mar 2008, :mod:`time`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:406
+# c8943aec2ca2491d91aa1e4daaec5e82
+msgid "1.43"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:406
+# b545f434af5b4a0b847f7a4d769a8c68
+msgid "2 March 2008, :mod:`EasyDialogs`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:409
+# eee143fd350b4b968636668fcb32f81e
+msgid "1.42"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:409
+# 7d37720fa53a46d8a9853dfe14d18b4d
+msgid "24 Feb 2008 :mod:`imp`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:412
+# f844bf00aa3a4afa8da076fe1d05ecc5
+msgid "1.41"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:412
+# ccb5eac1001b43ab9fe95e35c7e198c8
+msgid "17 Feb 2008, :mod:`pkgutil`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:415
+# e27c6677eb2243059ce0f17b02958c9f
+msgid "1.40"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:415
+# b8ca2ab9b368498fafd5eefd6818ca32
+msgid "10 Feb 2008, :mod:`tempfile`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:418
+# 1308627da54248a8a8d42e8691309ed3
+msgid "1.39"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:418
+# 3b033fef81254f9aa87da3353a7192f0
+msgid "3 Feb 2008, :mod:`string`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:421
+# d03de4beeeea489c930523c8772ed987
+msgid "1.38"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:421
+# 37b9de9168e544d7bd6a4f3ebde48dd4
+msgid "26 Jan 2008, :mod:`os.path`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:424
+# babb2b2660ac4b7bb540588bd9f1ec4a
+msgid "1.37"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:424
+# f700f0c45be540d7a7f0f9ac11c34279
+msgid "19 Jan 2008, :mod:`hashlib`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:427
+# 17a74b51cf634f72bff3ff4876ead95c
+msgid "1.36"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:427
+# a838967718874a74978efb5172d727fe
+msgid "13 Jan 2008, :mod:`threading`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:430
+# c7250a5ff5f84eca83d3135787f0ba17
+msgid "1.35"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:430
+# 4b393dde273246e79e5f45fa2c7f4ae8
+msgid "6 Jan 2008, :mod:`weakref`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:433
+# dc25d552b4b64a139dd4313447958c5e
+msgid "1.34"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:433
+# 37e8c582af8343089a78e9a7418f779c
+msgid "30 Dec 2007, :mod:`mmap`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:436
+# a565600ebf134e8d8da1f57720cd3d44
+msgid "1.33.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:436
+# 86919b41f7024aba8f1cea40acff9255
+msgid "Correction for release 1.33 for 22 Dec 2007 the :mod:`zipimport` module."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:439
+# 460fb48dc8f743a1b098b675e28d5cd8
+msgid "1.33"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:439
+# deadb0acff2d4975ab4fe6e5d3f28ac4
+msgid "22 Dec 2007, :mod:`zipimport`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:442
+# e1192377ec0e427baa234272e9c8b1df
+msgid "1.32"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:442
+# d8137c7850f3467ea09634cfaec7a71d
+msgid "16 Dec 2007 :mod:`zipfile`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:445
+# cabbad3779974041adae80af7effcf5e
+msgid "1.31"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:445
+# 2af25e9b41434fcbb37d4dde2daddf0b
+msgid "9 Dec 2007, :mod:`BaseHTTPServer`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:448
+# f247d4dfd1e6452fab05b5a6d4f79c2e
+msgid "1.30"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:448
+# b4569f38c4a74934a1ccb18ecfa1e3b3
+msgid "Dec 2, 2007 :mod:`SocketServer`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:451
+# 02b436fd40864ecba7e4ad24fcdc6402
+msgid "1.29"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:451
+# 5a05becaefdc4bba88ead706cb2d277d
+msgid "Nov 25, 2007 :mod:`inspect`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:454
+# 683ed2c1892a4693b256dc74c5c152f4
+msgid "1.28"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:454
+# 07bf63cbc8cc4705a45ec3a44bdd770b
+msgid "Nov 15, 2007 :mod:`urlparse`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:457
+# 3f3811fe0e224920b0f24928df056a63
+msgid "1.27"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:457
+# ba50376fff2e45cca54af3795b7e7cd5
+msgid "10 Nov 2007, :mod:`pprint`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:460
+# aa84dc8a882642e09535c9aef59078dd
+msgid "1.26"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:460
+# da8700143af041a88890667831e5bded
+msgid "4 Nov 2007, :mod:`shutils`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:463
+# 6ed9db072ad34ec1a140204246aac166
+msgid "1.25"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:463
+# a83bb82da8c646e580c6a3c38c148563
+msgid "28 Oct 2007, :mod:`commands`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:466
+# d0d9475a1b0842f0944f395af8940f25
+msgid "1.24"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:466
+# cc63aa2a8a6642f28eb75f89c51d3683
+msgid "20 Oct 2007, :mod:`itertools`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:469
+# 3387d859260744098b0ddd048ee2378c
+msgid "1.23"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:469
+# 8f791543990746bc8c5f1d81863a2105
+msgid "Added another :mod:`difflib` example based on comments on that post."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:472
+# 8dbe7b49e34145f49de60b890f0d19f2
+msgid "1.22"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:472
+# 03b984e8a8e24f16861aa258c46b8262
+msgid "14 Oct 2007, :mod:`shlex`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:475
+# d4175c237a2c4c1abef377bf6d32b1dc
+msgid "1.21"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:475
+# 38bad036c3d94b1d9fe38d4274d4ad86
+msgid "7 Oct 2007, :mod:`difflib`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:478
+# da0b96c59f9140a881e43c5ab486b1b7
+msgid "1.20"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:478
+# 4bea7d64be2f439a88daf5525ee9ab0a
+msgid "30 Sept 2007, :mod:`copy`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:481
+# d3067ef1f56f4cc4bd4f4b8608f5145d
+msgid "1.19"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:481
+# df8425b0cf28426e839ce443f635649d
+msgid "25 Sept 2007, :mod:`sched`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:484
+# f97751ff0f964502853cd5a4ba134e21
+msgid "1.18"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:484
+# 661ac67acfc74018a035fc26a472b6b1
+msgid "20 September 2007, :mod:`timeit`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:487
+# a4f3f7e4641647cfab10f83ca008e8c2
+msgid "1.17"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:487
+# 1632232ae9884b2fb75898ddfc4bf4c4
+msgid "12 Sept 2007, :mod:`hmac`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:490
+# 298bc57b0452441690855ff0b5bdde5a
+msgid "1.16"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:490
+# b749ce3735d240f2afca818fce227458
+msgid "3 Sept 2007, :mod:`unittest`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:493
+# 6ef9886af70c4d97b6662712e87c37c7
+msgid "1.15"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:493
+# c8679f78ee4c4a2a8f0e47cff9b1e44a
+msgid "27 Aug, 2007 :mod:`optparse`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:496
+# 1cd98be7231f47d98194d4b328635124
+msgid "1.14"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:496
+# 84637cbdd4af420990e7c976388dc5d0
+msgid "20 Aug 2007, :mod:`csv`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:499
+# 4b91dfe9d33f40908184ddc2a7b72378
+msgid "1.13"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:499
+# 2c39748219ec47fea18f23a713aad7b3
+msgid "12 Aug 2007, :mod:`getopt`."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:502
+# bb71fc82a1f242dea40cbf0e85bf40d5
+msgid "1.12"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:502
+# 163093783e4243e3830589806f748832
+msgid "August 5, 2007, :mod:`shelve`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:505
+# 49ff1ebae3b04bacab6f13a8901bfefb
+msgid "1.11"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:505
+# 380c46f7bc2b4c5392983ee88059a978
+msgid "July 30, 2007, :mod:`glob`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:508
+# 86ab3350f45e484d9da93840d7182c82
+msgid "1.10"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:508
+# 5f8fa77a2884470391d0f0710955c8bc
+msgid "July 22, 2007, :mod:`calendar`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:511
+# 23a901cfc9024051866e137b35b04a6d
+msgid "1.9"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:511
+# cfc120b5ac1e4a17a09f731f522d7264
+msgid "July 15, 2007, :mod:`getpass`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:514
+# b43f2d24b7834a50a45e89b4f917ca20
+msgid "1.8"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:514
+# 8c5f882409ce491ea03d7efa497a5474
+msgid "July 8, 2007, :mod:`atexit`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:517
+# aaefe370ca434ef5a4a12c7346f583dd
+msgid "1.7"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:517
+# 1f865edc6a2f4c44b5adf52fb4c9dc5a
+msgid "July 1, 2007, :mod:`subprocess`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:520
+# a6645db721a74eaf974492218ca4a9e0
+msgid "1.6"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:520
+# 3b27091decf24422b5f03f889ffc5929
+msgid "June 24, 2007, :mod:`pickle`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:523
+# 4af05eecacdb4aeaa9a8a01aecf5a4ed
+msgid "1.5"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:523
+# 9aefdb95237049bb94730560d99310a0
+msgid "June 17, 2007, wrapping up the :mod:`os` module."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:526
+# 65165f3518184ec0ab48f87dfa1c3eb0
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:526
+# d32c3e7a04d64e33b35785345edddc4b
+msgid "June 10, 2007, :mod:`os` module files and directories."
+msgstr ""
+
+#: ../../PyMOTW/history.rst:529
+# 112b37b85241483697bbab1d6235bbee
+msgid "1.3"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:529
+# 474d85a015234500bb3067b3e74e060a
+msgid "June 3, 2007, continuing coverage of :mod:`os`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:532
+# 1a74cd21cfd84c6a8f2ae20415dc321e
+msgid "1.2"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:532
+# aa5a06f2836742398cade844862e9f28
+msgid "May 27, 2007, :mod:`os`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:535
+# 3373bea8f31d493f91fd3c21beaf0def
+msgid "1.1"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:535
+# e8acfe3aee334effad7624bbf68233a6
+msgid "May 20, 2007, :mod:`locale`"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:537
+# ed178cc9ad8b47d1bd61e082d979907f
+msgid "1.0"
+msgstr ""
+
+#: ../../PyMOTW/history.rst:538
+# 48966e0aeba94334b99d7394d633cf1d
+msgid "First packaged release, includes :mod:`fileinput`, :mod:`ConfigParser`, :mod:`Queue`, :mod:`StringIO`, :mod:`textwrap`, :mod:`linecache`, :mod:`bisect`, and :mod:`logging`."
+msgstr ""
+

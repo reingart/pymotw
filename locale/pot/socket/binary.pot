@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/socket/binary.rst:3
+# 8dfeb9187830462c9051b687b6f3ce0f
+msgid "Sending Binary Data"
+msgstr ""
+
+#: ../../PyMOTW/socket/binary.rst:5
+# 15c554d69d9c4fb1a903ad60d51b367e
+msgid "Sockets transmit streams of bytes.  Those bytes can contain text messages, as in the previous examples, or they can be made up of binary data that has been encoded for transmission.  To prepare binary data values for transmission, pack them into a buffer with :mod:`struct`."
+msgstr ""
+
+#: ../../PyMOTW/socket/binary.rst:11
+# 6048cca887834ba6b0cafa541c321bf5
+msgid "This client program encodes an integer, a string of two characters, and a floating point value into a sequence of bytes that can be passed to the socket for transmission."
+msgstr ""
+
+#: ../../PyMOTW/socket/binary.rst:19
+# 9dea9fd39d1943b1afacc1c3f511c9ea
+msgid "The server program uses the same :class:`Struct` specifier to unpack the bytes it receives."
+msgstr ""
+
+#: ../../PyMOTW/socket/binary.rst:26
+# ec9fcdc18c064af39c10ebab02b68d2c
+msgid "Running the client produces:"
+msgstr ""
+
+#: ../../PyMOTW/socket/binary.rst:35
+# d217020d4a0d4d5c8220871f43a64ef5
+msgid "And the server shows the values it receives:"
+msgstr ""
+
+#: ../../PyMOTW/socket/binary.rst:47
+# 6994b3de4fea4c6f8a75b9b796b7a594
+msgid "The floating point value loses some precision as it is packed and unpacked, but otherwise the data is transmitted as expected.  One thing to keep in mind is that depending on the value of the integer, it may be more efficient to convert it to text and then transmit, instead of using :mod:`struct`.  The integer ``1`` uses one byte when represented as a string, but four when packed into the structure."
+msgstr ""
+
+#: ../../PyMOTW/socket/binary.rst:56
+# e268dc431cf34ae8bfc8a9f6635fba95
+msgid ":mod:`struct`"
+msgstr ""
+
+#: ../../PyMOTW/socket/binary.rst:57
+# 0ea7d6bda8fb409787488789afe012d6
+msgid "Converting between strings and other data types."
+msgstr ""
+

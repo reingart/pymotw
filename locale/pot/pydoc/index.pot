@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pydoc/index.rst:3
+# c8d71ed8d6584482a3a557764988232b
+msgid "pydoc -- Online help for Python modules"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:8
+# 2117f3b0dd994b9a871f14c12df072c6
+msgid "Generates help for Python modules and classes from the code."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:9
+# a36cf5d8b568484c9fccde5947ff3b73
+msgid "2.1 and later"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:11
+# 91b491b21ddc4b8fa1bb3355effd83ce
+msgid "The :mod:`pydoc` module imports a Python module and uses the contents to generate help text at runtime. The output includes docstrings for any objects that have them, and all of the documentable contents of the module are described."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:17
+# da4b63043d0e401896fe92e5a0a69d5f
+msgid "Plain Text Help"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:19
+# 4eb1bf6ab5204731a314ef6c47b2a942
+msgid "Running::"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:23
+# 803c07d0751a4747bc41e8ff2243513e
+msgid "Produces plaintext help on the console, using your pager if one is configured."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:27
+# 4c95e881a1034a77b475bf3161456c84
+msgid "HTML Help"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:29
+# 40c981f3a1cd4f33905475a2e8d5ba58
+msgid "You can also cause :mod:`pydoc` to generate HTML output, either writing a static file to a local directory or starting a web server to browse documentation online."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:37
+# 004f814081844b7aa3ad780ca3048ebb
+msgid "Creates ``atexit.html`` in the current directory."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:43
+# 7b185133d1874e00b8320762725467fd
+msgid "Starts a web server listening at http://localhost:5000/. The server generates documentation as you browse through the available modules."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:47
+# 022139e9949140d68167ae821ab120b3
+msgid "Interactive Help"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:49
+# 8bcfe0294cf64b8bb746e93d05a7f5d0
+msgid "pydoc also adds a function ``help()`` to the ``__builtins__`` so you can access the same information from the Python interpreter prompt."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:71
+# 2f03055c48b34c23bd4c26f0f4debca0
+msgid "`pydoc <http://docs.python.org/library/pydoc.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:71
+# 9ed4faf9391748ff8ffd058df7899eb0
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:74
+# 05b6f348b2b54728ad04fb081e32df84
+msgid ":ref:`motw-cli`"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:74
+# 880fce89f61f45beb76a12fa60adb29f
+msgid "Accessing the Module of the Week articles from the command line."
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:76
+# 548c4d5d72744387bbf6d949772ebc99
+msgid ":ref:`motw-interactive`"
+msgstr ""
+
+#: ../../PyMOTW/pydoc/index.rst:77
+# 4954e674ef7d45998026d2e8f179befa
+msgid "Accessing the Module of the Week articles from the interactive interpreter."
+msgstr ""
+

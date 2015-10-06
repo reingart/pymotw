@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/articles/text_processing.rst:5
+# 253a452fcfe940c7adfa3dcfa4b3ac99
+msgid "Text Processing Tools"
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:7
+# 60c7b52967d9463ea89a153bc0c63d95
+msgid "The string class is the most obvious text processing tool available to Python programmers, but there are plenty of other tools in the standard library to make text manipulation simpler."
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:10
+# e33b5f14b41645c7b381230eb4cb2186
+msgid "string module"
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:12
+# 30d6a0f81de644e7834424f6b243beeb
+msgid "Old-style code will use functions from the :mod:`string` module, instead of methods of string objects.  There is an equivalent method for each function from the module, and use of the functions is deprecated for new code."
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:14
+# 041d2eedb6744389aae288ab47721713
+msgid "Newer code may use a ``string.Template`` as a simple way to parameterize strings beyond the features of the string or unicode classes.  While not as feature-rich as templates defined by many of the web frameworks or extension modules available on PyPI, ``string.Template`` is a good middle ground for user-modifiable templates where dynamic values need to be inserted into otherwise static text."
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:17
+# d1edfed1416648b29830b250899ea639
+msgid "Text Input"
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:19
+# 33a7ed8816c2469c8ce26f3e4f1d951e
+msgid "Reading from a file is easy enough, but if you're writing a line-by-line filter the :mod:`fileinput` module is even easier.  The fileinput API calls for you to iterate over the ``input()`` generator, processing each line as it is yielded.  The generator handles parsing command line arguments for file names, or falling back to reading directly from ``sys.stdin``.  The result is a flexible tool your users can run directly on a file or as part of a pipeline."
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:22
+# 9e26c234c8544ac685de0bd61fc21d67
+msgid "Text Output"
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:24
+# 1df08917c0734d7189d9be685119a8e5
+msgid "The :mod:`textwrap` module includes tools for formatting text from paragraphs by limiting the width of output, adding indentation, and inserting line breaks to wrap lines consistently."
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:27
+# 455514cfafda4cf38df7c8c0011370de
+msgid "Comparing Values"
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:29
+# 21666f52041a4fd083bb32dd6209845d
+msgid "The standard library includes two modules related to comparing text values beyond the built-in equality and sort comparison supported by string objects.  :mod:`re` provides a complete regular expression library, implemented largely in C for performance.  Regular expressions are well-suited for finding substrings within a larger data set, comparing strings against a pattern (rather than another fixed string), and mild parsing."
+msgstr ""
+
+#: ../../PyMOTW/articles/text_processing.rst:31
+# 12afe23e3d3f40dea5835f93ae0e2a0e
+msgid ":mod:`difflib`, on the other hand, shows you the actual differences between sequences of text in terms of the parts added, removed, or changed.  The output of the comparison functions in :mod:`difflib` can be used to provide more detailed feedback to user about where changes occur in two inputs, how a document has changed over time, etc."
+msgstr ""
+

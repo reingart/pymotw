@@ -1,0 +1,533 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/exceptions/index.rst:3
+# 51e56dcbf93d4cbca63bbccb6312a7ec
+msgid "exceptions -- Built-in error classes"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:8
+# 49ae95f6f84b45cf8c14b3e02bab0396
+msgid "The exceptions module defines the built-in errors used throughout the standard library and by the interpreter."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:9
+# 177e0cc758904e10a4a5d952fd62edbb
+msgid "1.5 and later"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:13
+# 288143c7f27a453d97eb716d15c2c205
+msgid "Description"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:15
+# 6261f14a5db443ab84eac24906a726ae
+msgid "In the past, Python has supported simple string messages as exceptions as well as classes.  Since 1.5, all of the standard library modules use classes for exceptions.  Starting with Python 2.5, string exceptions result in a DeprecationWarning, and support for string exceptions will be removed in the future."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:19
+# 04613287bf6a4e0f98faf6d7e9dcb3cc
+msgid "Base Classes"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:21
+# 5c41c7b336fb434faf88550ada30cd32
+msgid "The exception classes are defined in a hierarchy, described in the standard library documentation.  In addition to the obvious organizational benefits, exception inheritance is useful because related exceptions can be caught by catching their base class.  In most cases, these base classes are not intended to be raised directly."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:24
+# 7e1a2cf7f52f4cbe960987318baecb9c
+msgid "BaseException"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:26
+# d3640394a08246359a2b197305865c82
+msgid "Base class for all exceptions.  Implements logic for creating a string representation of the exception using str() from the arguments passed to the constructor."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:31
+# 93775c8dac5d4ca1a32e263c8aa16340
+msgid "Exception"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:33
+# 04ceedeaf3bf4efab148f3ffe870edd6
+msgid "Base class for exceptions that do not result in quitting the running application. All user-defined exceptions should use Exception as a base class."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:37
+# 0745c7d2f1d046aabd2e7795c6124a21
+msgid "StandardError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:39
+# 423b9ed6317744de9b9bf9ec20597a1d
+msgid "Base class for built-in exceptions used in the standard library."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:42
+# 8562f9d77f4f4cc1be3c194681680977
+msgid "ArithmeticError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:44
+# 243994b644a54f808467dcbf3290ab5c
+msgid "Base class for math-related errors."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:47
+# 4f5a65e421cd4479bd16963d1402ec91
+msgid "LookupError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:49
+# fa97d36160e74d2b95e85aa6089516be
+msgid "Base class for errors raised when something can't be found."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:52
+# 0051a54203c14a00a2d41078e6527b66
+msgid "EnvironmentError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:54
+# 41659a3a8fa64968a834b5a6606d3cd2
+msgid "Base class for errors that come from outside of Python (the operating system, filesystem, etc.)."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:59
+# ecafbf2824a348c99335ad9ffb9d62a3
+msgid "Raised Exceptions"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:64
+# 91c7c2c7838342909da93386735c779d
+msgid "AssertionError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:66
+# c06c1a81189d4b9fb2376beb45d148de
+msgid "An AssertionError is raised by a failed ``assert`` statement."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:87
+# 52c3fc5a191f41409c8bf93c7953857b
+msgid "It is also used in the :mod:`unittest` module in methods like ``failIf()``."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:120
+# 10ef0049a8f84700810adfe8332819fe
+msgid "AttributeError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:122
+# df6a90725cec49a7a8a1bac65b5c396d
+msgid "When an attribute reference or assignment fails, AttributeError is raised.  For example, when trying to reference an attribute that does not exist:"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:145
+# b6ecc889583e424cbbf14dc9362a4801
+msgid "Or when trying to modify a read-only attribute:"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:169
+# 33e993d7b6234a23a90d62c65c6ea979
+msgid "EOFError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:171
+# eb1e853ed1ad42b5b604cdd81fdcbabf
+msgid "An EOFError is raised when a built-in function like ``input()`` or ``raw_input()`` do not read any data before encountering the end of their input stream.  The file methods like ``read()`` return an empty string at the end of the file."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:191
+# 8bf76fe9a0a54ba1a0c6efa85a5ede29
+msgid "FloatingPointError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:193
+# 3a60bea95ccf4274b24033397e6e93a6
+msgid "Raised by floating point operations that result in errors, when floating point exception control (fpectl) is turned on.  Enabling :mod:`fpectl` requires an interpreter compiled with the ``--with-fpectl`` flag.  Using :mod:`fpectl` is `discouraged in the stdlib docs <http://docs.python.org/lib/module-fpectl.html>`_."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:205
+# 4b5ff38a73b7418fa6c0f8a7e3d5e698
+msgid "GeneratorExit"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:207
+# a5679656868148c88dc5963a92f8d74b
+msgid "Raised inside a generator the generator's ``close()`` method is called."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:230
+# c4ba2b3c80104cdab728bea747351889
+msgid "IOError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:232
+# cc33bc57475a40c89d84f3956a9451c4
+msgid "Raised when input or output fails, for example if a disk fills up or an input file does not exist."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:257
+# 6efc4ae2d5d143379dbe3727322f531b
+msgid "ImportError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:259
+# 426abac68f36418bb6860baf0f71a273
+msgid "Raised when a module, or member of a module, cannot be imported. There are a few conditions where an ImportError might be raised."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:262
+# 0912ae045ca74a11926942716ee2bc21
+msgid "If a module does not exist."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:283
+# 7ca8fa275aee47dab373d52ffa87890f
+msgid "2. If ``from X import Y`` is used and Y cannot be found inside the module X, an ImportError is raised."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:307
+# 9421e1a3bd4047058664d9f6b1672df4
+msgid "IndexError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:309
+# 79caca40228242cfb4714981de81e635
+msgid "An IndexError is raised when a sequence reference is out of range."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:333
+# c6b47645da094155b9503c5dabb09a3e
+msgid "KeyError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:335
+# 4367fb7fe0c3447fa867b7724c8c9542
+msgid "Similarly, a KeyError is raised when a value is not found as a key of a dictionary."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:359
+# d7149fc1ac72467cb389f6832aa17eeb
+msgid "KeyboardInterrupt"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:361
+# 597e564d54dc4dcf8e93c8df17d740d9
+msgid "A KeyboardInterrupt occurs whenever the user presses Ctrl-C (or Delete) to stop a running program.  Unlike most of the other exceptions, KeyboardInterrupt inherits directly from BaseException to avoid being caught by global exception handlers that catch Exception."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:370
+# e422761ec7a54cb69731eb50afe83491
+msgid "Pressing Ctrl-C at the prompt causes a KeyboardInterrupt exception."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:379
+# 9342e89cd8414fc69cd5c4079e2cef9e
+msgid "MemoryError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:381
+# c21b74aa16f648f9a12bb6fff8a64e2b
+msgid "If your program runs out of memory and it is possible to recover (by deleting some objects, for example), a MemoryError is raised."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:417
+# dcd0561b60cf4710bced5f34237eed6e
+msgid "NameError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:419
+# 959991e6ba994996b6a853d1e5aff427
+msgid "NameErrors are raised when your code refers to a name that does not exist in the current scope.  For example, an unqualified variable name."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:447
+# b02713e36b8d4447a1f7fefb87745e05
+msgid "NotImplementedError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:449
+# d7c3db14966a4177b78d84e78cda3a50
+msgid "User-defined base classes can raise NotImplementedError to indicate that a method or behavior needs to be defined by a subclass, simulating an *interface*."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:477
+# ee5151bb24414d949dd9b3259ab19ba9
+msgid ":mod:`abc` - Abstract base classes"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:482
+# 6a836b93191942c0be4f149728668c9a
+msgid "OSError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:484
+# 10e3003372174d6e87316e0250fb590a
+msgid "OSError serves as the error class for the :mod:`os` module, and is raised when an error comes back from an os-specific function."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:511
+# 080228b33a514172951eb957d8c53897
+msgid "OverflowError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:513
+# d815164f51904faab0d27455213199c3
+msgid "When an arithmetic operation exceeds the limits of the variable type, an OverflowError is raise.  Long integers allocate more space as values grow, so they end up raising MemoryError.  Floating point exception handling is not standardized, so floats are not checked. Regular integers are converted to long values as needed."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:557
+# 573c1d031283454b90087202c5bf2420
+msgid "ReferenceError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:559
+# 6d172901d37f48a08f32dc41b0f927b3
+msgid "When a :mod:`weakref` proxy is used to access an object that has already been garbage collected, a ReferenceError occurs."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:587
+# 993b46e6251345c39a1c4c173ca028bd
+msgid "RuntimeError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:589
+# 2b5acdc7261540899a1aa6afb29f922e
+msgid "A RuntimeError exception is used when no other more specific exception applies.  The interpreter does not raise this exception itself very often, but some user code does."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:595
+# b0c745aa28594589962f52b44e8037cc
+msgid "StopIteration"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:597
+# 24269a12d5b94b5eb1965d1a894388c6
+msgid "When an iterator is done, it's ``next()`` method raises StopIteration. This exception is not considered an error."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:625
+# 959075b6b73e4a2197b0272db3d10bbe
+msgid "SyntaxError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:627
+# 014cc12817a941e399ba8f8b505a7c5d
+msgid "A SyntaxError occurs any time the parser finds source code it does not understand.  This can be while importing a module, invoking ``exec``, or calling ``eval()``.  Attributes of the exception can be used to find exactly what part of the input text caused the exception."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:651
+# 56990d9f13b14d9292efabb42b090d68
+msgid "SystemError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:653
+# 7d03612571cd41309bd0cb5cd1664d03
+msgid "When an error occurs in the interpreter itself and there is some chance of continuing to run successfully, it raises a SystemError. SystemErrors probably indicate a bug in the interpreter and should be reported to the maintainer."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:661
+# 57b7cd68910e4d82bd536953baacaf60
+msgid "SystemExit"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:663
+# 75d3a8306ca046d785095e2e7b43d36e
+msgid "When ``sys.exit()`` is called, it raises SystemExit instead of exiting immediately.  This allows cleanup code in ``try:finally`` blocks to run and special environments (like debuggers and test frameworks) to catch the exception and avoid exiting."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:671
+# 54cff2f9a68f4ff49976b3e7403db6dd
+msgid "TypeError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:673
+# 1a982366c1944f88b402437e83eaea7d
+msgid "TypeErrors are caused by combining the wrong type of objects, or calling a function with the wrong type of object."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:697
+# 85683ccb80fa4684988396c83dcd2b63
+msgid "UnboundLocalError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:699
+# fedc46db0167483b9f046eac3e2cc4f6
+msgid "An UnboundLocalError is a type of NameError specific to local variable names."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:706
+# 020bfc70a6ba4abb84c800bbe662e66a
+msgid "The difference between the global NameError and the UnboundLocal is the way the name is used.  Because the name \"local_val\" appears on the left side of an expression, it is interpreted as a local variable name."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:727
+# 01bbaef9b8b34065b1a8cddc8dc6a01d
+msgid "UnicodeError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:729
+# 5079c02a5a8b410f9c6bb83898186d4e
+msgid ":class:`UnicodeError` is a subclass of :class:`ValueError` and is raised when a Unicode problem occurs.  There are separate subclasses for :class:`UnicodeEncodeError`, :class:`UnicodeDecodeError`, and :class:`UnicodeTranslateError`."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:737
+# 0ec3492efcf14a8b87609187fd9052e5
+msgid "ValueError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:739
+# 0d6c7ef3faa64c128e9a9a2216630128
+msgid "A ValueError is used when a function receives a value that has the right type but an invalid value."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:764
+# 2f570aa6144646869e6ab6f0bda2cad8
+msgid "ZeroDivisionError"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:766
+# 090818b968934f0eb1c691033e29fb1b
+msgid "When zero shows up in the denominator of a division operation, a ZeroDivisionError is raised."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:789
+# 7c4bfd4c01814ca3b7acdab6c40a5308
+msgid "Warning Categories"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:791
+# f2b83c59b05e4c10af42a97b8d612543
+msgid "There are also several exceptions defined for use with the :mod:`warnings` module."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:794
+# b70fa8b8ec5e4972902dc04264758be9
+msgid "Warning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:794
+# 6ca711792a574715974bd60f8ff2738c
+msgid "The base class for all warnings."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:797
+# 805438e63e184ac1acf8875ec95dc639
+msgid "UserWarning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:797
+# a50f935cc7cc4d389c7b757987fe9799
+msgid "Base class for warnings coming from user code."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:802
+# b38c2e9e94a842fd8e5b1dcfd3362a24
+msgid "DeprecationWarning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:802
+# f3f2f2d4f25844a3b71fd47ff480c6cd
+msgid "Used for features no longer being maintained."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:805
+# 380e555bcf17402785a09bd37b9a39fe
+msgid "PendingDeprecationWarning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:805
+# 13a6572ae1894377a15f8947bec66516
+msgid "Used for features that are soon going to be deprecated."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:808
+# 3a9c272a1d154cafbe572d2114ed7868
+msgid "SyntaxWarning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:808
+# 197ca7304e90431db473b91956993c7d
+msgid "Used for questionable syntax."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:813
+# 449ad81c9b5e4c8e8d6ca2c62785380c
+msgid "RuntimeWarning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:813
+# e4861e3b50fc468da3e54db00efd3747
+msgid "Used for events that happen at runtime that might cause problems."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:816
+# 1d87c868ef324648aec5967ca850d3a5
+msgid "FutureWarning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:816
+# 2464d9c93e0d488297ec28a6aef75f95
+msgid "Warning about changes to the language or library that are coming at a later time."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:819
+# 311f3916b822457d946391d6b791a94a
+msgid "ImportWarning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:819
+# 944719689c3b4a45add96d662abd72a8
+msgid "Warn about problems importing a module."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:823
+# f5f4928303c7454c836dfd2fde7001bb
+msgid "UnicodeWarning"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:822
+# 8267f34b64094d43adc8ba2585fb24d3
+msgid "Warn about problems with unicode text."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:828
+# 611806cffc654247aced049aff476225
+msgid "`exceptions <http://docs.python.org/library/exceptions.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:828
+# 32b7faa75f9047b48f412d02651a74ce
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:830
+# 65496adf3c55487595e641c2826f086f
+msgid ":mod:`warnings`"
+msgstr ""
+
+#: ../../PyMOTW/exceptions/index.rst:831
+# 7e0fe8cbd13f4db8b5a9a20dea7dc4be
+msgid "Non-error warning messages."
+msgstr ""
+

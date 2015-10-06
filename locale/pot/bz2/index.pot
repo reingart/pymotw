@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/bz2/index.rst:3
+# ce0deda774f64801b2fd3eddad4184ed
+msgid "bz2 -- bzip2 compression"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:8
+# e5ff95fdf124443d9c08f39539819d04
+msgid "bzip2 compression"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:9
+# 6b801195c26244259dea8d59a748a99c
+msgid "2.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:11
+# 2a8981470dd54672b100669292e42e9b
+msgid "The :mod:`bz2` module is an interface for the bzip2 library, used to compress data for storage or transmission.  There are three APIs provided:"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:15
+# 023fe5feb82a44358cb2912f1fba9741
+msgid "\"one shot\" compression/decompression functions for operating on a blob of data"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:16
+# a0bb991312864b8d9de8992a7b4ae479
+msgid "iterative compression/decompression objects for working with streams of data"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:17
+# bab3c69064ad4d23a93cf307d1e0c29d
+msgid "a file-like class that supports reading and writing as with an uncompressed file"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:20
+# ba55e8f2fc504437acadd97462b138cd
+msgid "One-shot Operations in Memory"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:22
+# 047100dba081435daea9b58cf51d0933
+msgid "The simplest way to work with bz2 requires holding all of the data to be compressed or decompressed in memory, and then using :func:`compress()` and :func:`decompress()`."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:52
+# a4471d9ecb67483092b1974ba7be33fa
+msgid "Notice that for short text, the compressed version can be significantly longer.  While the actual results depend on the input data, for short bits of text it is interesting to observe the compression overhead."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:81
+# 81360a47a4524dfc9fb501b7be824b9a
+msgid "Working with Streams"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:83
+# a1b3b5875167482b9bb576cc35c1b7ce
+msgid "The in-memory approach is not practical for real-world use cases, since you rarely want to hold both the entire compressed and uncompressed data sets in memory at the same time.  The alternative is to use :class:`BZ2Compressor` and :class:`BZ2Decompressor` objects to work with streams of data, so that the entire data set does not have to fit into memory."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:90
+# b5548087cc7c47788b7be1caa315c873
+msgid "The simple server below responds to requests consisting of filenames by writing a compressed version of the file to the socket used to communicate with the client.  It has some artificial chunking in place to illustrate the buffering behavior that happens when the data passed to :func:`compress()` or :func:`decompress()` doesn't result in a complete block of compressed or uncompressed output."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:99
+# fb7d67714aa24c6c9d1d40b6a3404d6b
+msgid "This implementation has obvious security implications.  Do not run it on a server on the open internet or in any environment where security might be an issue."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:231
+# 928127f7809545d0b184df09ff435e62
+msgid "Mixed Content Streams"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:233
+# 704bbe90a75c4b289c135af3bc721fc0
+msgid ":class:`BZ2Decompressor` can also be used in situations where compressed and uncompressed data is mixed together.  After decompressing all of the data, the *unused_data* attribute contains any data not used."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:257
+# 2201efb64a1f4f3698f7d3323f092832
+msgid "Writing Compressed Files"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:259
+# 64159b77aace439c884aa14a9719c64d
+msgid ":class:`BZ2File` can be used to write to and read from bzip2-compressed files using the usual methods for writing and reading data.  To write data into a compressed file, open the file with mode ``'w'``."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:283
+# 0040e666cdb14ec09a56f985af152735
+msgid "Different compression levels can be used by passing a *compresslevel* argument.  Valid values range from 1 to 9, inclusive.  Lower values are faster and result in less compression.  Higher values are slower and compress more, up to a point."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:292
+# bf5b24af91bb4cd19fa251652869a949
+msgid "The center column of numbers in the output of the script is the size in bytes of the files produced.  As you see, for this input data, the higher compression values do not always pay off in decreased storage space for the same input data.  Results will vary for other inputs."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:311
+# 76d065c1068f4d1eb7621ac8296f6528
+msgid "A :class:`BZ2File` instance also includes a :func:`writelines()` method that can be used to write a sequence of strings."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:343
+# 72d6d12166c04c08b230c92db808b15f
+msgid "Reading Compressed Files"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:345
+# 0c9ff89eaab34a4f871f480c1ad3ad76
+msgid "To read data back from previously compressed files, simply open the file with mode ``'r'``."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:352
+# a4c5c6f9dadd4998b979d1e9e9ad00d8
+msgid "This example reads the file written by ``bz2_file_write.py`` from the previous section."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:368
+# ead08ec7a05945438eaef7114a36fa1c
+msgid "While reading a file, it is also possible to seek and read only part of the data."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:375
+# af5125dded514d89b5a6e756ad474b84
+msgid "The :func:`seek()` position is relative to the *uncompressed* data, so the caller does not even need to know that the data file is compressed."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:400
+# 4a13b3e8127849ac909fcfb7ea06e94f
+msgid "`bz2 <http://docs.python.org/library/bz2.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:400
+# ee83442d35724cc8a6d99388fd26de65
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:403
+# 83780f77dacc46c4be34deeca0070432
+msgid "`bzip2.org <http://www.bzip.org/>`_"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:403
+# 14b18d9932774a56a9d5e94ca4648509
+msgid "The home page for bzip2."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:406
+# 684e441ff3df4bdda049e451b43617b0
+msgid ":mod:`zlib`"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:406
+# 542e3d5012204d1b9ea494645ed19d7e
+msgid "The zlib module for GNU zip compression."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:409
+# 22bb43ac22674ef9b539dc40bf300bbd
+msgid ":mod:`gzip`"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:409
+# 4893e15a17b04f398be7760b2f45f67c
+msgid "A file-like interface to GNU zip compressed files."
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:411
+# 7049ff92485f4c4cb2b22d7a571af9f6
+msgid ":mod:`SocketServer`"
+msgstr ""
+
+#: ../../PyMOTW/bz2/index.rst:412
+# 3e7f883974414619be5ed8493df598c5
+msgid "Base classes for creating your own network servers."
+msgstr ""
+

@@ -1,0 +1,917 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/re/index.rst:3
+# a30b5d69da1942f89b167963bfd0c7ec
+msgid "re -- Regular Expressions"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:8
+# 352ed9ad5e6f4d47b74d8cfa7dbec3a0
+msgid "Searching within and changing text using formal patterns."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:9
+# ea3bff6c029d4bffaabb2fdaa8123109
+msgid "1.5 and later"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:11
+# c49d7577f58a4ac7b8694400c4d54dd6
+msgid "*Regular expressions* are text matching patterns described with a formal syntax.  The patterns are interpreted as a set of instructions, which are then executed with a string as input to produce a matching subset or modified version of the original.  The term \"regular expressions\" is frequently shortened to as \"regex\" or \"regexp\" in conversation.  Expressions can include literal text matching, repetition, pattern-composition, branching, and other sophisticated rules.  A large number of parsing problems are easier to solve with a regular expression than by creating a special-purpose lexer and parser."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:22
+# 3b588928259341719b12e3d6964680b1
+msgid "Regular expressions are typically used in applications that involve a lot of text processing.  For example, they are commonly used as search patterns in text editing programs used by developers, including vi, emacs, and modern IDEs.  They are also an integral part of Unix command line utilities such as sed, grep, and awk.  Many programming languages include support for regular expressions in the language syntax (Perl, Ruby, Awk, and Tcl).  Other languages, such as C, C++, and Python supports regular expressions through extension libraries."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:31
+# 082e4ea7195247b6884145bd5cad6428
+msgid "There are multiple open source implementations of regular expressions, each sharing a common core syntax but with different extensions or modifications to their advanced features.  The syntax used in Python's :mod:`re` module is based on the syntax used for regular expressions in Perl, with a few Python-specific enhancements."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:39
+# eac790fcaceb43b996cebd994fe54e2e
+msgid "Although the formal definition of \"regular expression\" is limited to expressions that describe regular languages, some of the extensions supported by :mod:`re` go beyond describing regular languages.  The term \"regular expression\" is used here in a more general sense to mean any expression that can be evaluated by Python's :mod:`re` module."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:47
+# 296cffd74a7844269ac4d2a0cd523ba6
+msgid "Finding Patterns in Text"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:49
+# ae1d7b5114484a6aa2c40d4a96598385
+msgid "The most common use for :mod:`re` is to search for patterns in text. This example looks for two literal strings, ``'this'`` and ``'that'``, in a text string."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:57
+# 72fff1efbf574bf691d6cd453e232008
+msgid ":func:`search` takes the pattern and text to scan, and returns a :class:`Match` object when the pattern is found.  If the pattern is not found, :func:`search` returns ``None``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:76
+# 4d63631305324646856f7c4cfc66f69b
+msgid "The :class:`Match` object returned by :func:`search` holds information about the nature of the match, including the original input string, the regular expression used, and the location within the original string where the pattern occurs."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:85
+# 64e879fc166b4a8f83fea3700d97afdc
+msgid "The :func:`start` and :func:`end` methods give the integer indexes into the string showing where the text matched by the pattern occurs."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:103
+# 9c048a9a808948e0967396f8720aa687
+msgid "Compiling Expressions"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:105
+# 1e6ec4afab4a48e0b477af8f5365ce61
+msgid ":mod:`re` includes module-level functions for working with regular expressions as text strings, but it is usually more efficient to *compile* the expressions your program uses frequently.  The :func:`compile` function converts an expression string into a :class:`RegexObject`."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:115
+# ab6629fe948c4317a5a82f6ff3346b44
+msgid "The module-level functions maintain a cache of compiled expressions, but the size of the cache is limited and using compiled expressions directly means you can avoid the cache lookup overhead.  By pre-compiling any expressions your module uses when the module is loaded you shift the compilation work to application startup time, instead of a point where the program is responding to a user action."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:138
+# 85a318f30c694ca2b9e9d71519a7913a
+msgid "Multiple Matches"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:140
+# 86612122ee514ab2812edf7b5a398801
+msgid "So far the example patterns have all used :func:`search` to look for single instances of literal text strings.  The :func:`findall` function returns all of the substrings of the input that match the pattern without overlapping."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:149
+# 6deb1b9227194b609f132f540a53cdcc
+msgid "There are two instances of ``ab`` in the input string."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:164
+# d0bd9bbc602b4c9aab2dcd97e7077103
+msgid ":func:`finditer` returns an iterator that produces :class:`Match` instances instead of the strings returned by :func:`findall`."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:171
+# ea36c46b4a104ecfb256b07217b33b5b
+msgid "This example finds the same two occurrences of ``ab``, and the :class:`Match` instance shows where they are in the original input."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:188
+# 464bb6c0785b4d14bd8eea035e1ffe88
+msgid "Pattern Syntax"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:190
+# 7448c27767db4526a7134801ee876313
+msgid "Regular expressions support more powerful patterns than simple literal text strings.  Patterns can repeat, can be anchored to different logical locations within the input, and can be expressed in compact forms that don't require every literal character be present in the pattern.  All of these features are used by combining literal text values with *metacharacters* that are part of the regular expression pattern syntax implemented by :mod:`re`.  The following examples will use this test program to explore variations in patterns."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:203
+# b87e3eed2139433aa7a994f305744bff
+msgid "The output of :func:`test_patterns` shows the input text, including the character positions, as well as the substring range from each portion of the input that matches the pattern."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:225
+# bd8509430f704d81a85e31743d0594f4
+msgid "Repetition"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:227
+# c1e5ad4bb8f342398f77964b53b1bfee
+msgid "There are five ways to express repetition in a pattern.  A pattern followed by the metacharacter ``*`` is repeated zero or more times (allowing a pattern to repeat zero times means it does not need to appear at all to match).  Replace the ``*`` with ``+`` and the pattern must appear at least once.  Using ``?`` means the pattern appears zero or one time.  For a specific number of occurrences, use ``{m}`` after the pattern, where *m* is replaced with the number of times the pattern should repeat.  And finally, to allow a variable but limited number of repetitions, use ``{m,n}`` where *m* is the minimum number of repetitions and *n* is the maximum.  Leaving out *n* (``{m,}``) means the value appears at least *m* times, with no maximum."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:243
+# 2edbaab5ac5f48758fe353897dbc2ea9
+msgid "Notice how many more matches there are for ``ab*`` and ``ab?`` than ``ab+``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:290
+# 4c0a0836eb514616a3da7cd6b59943be
+msgid "The normal processing for a repetition instruction is to consume as much of the input as possible while matching the pattern.  This so-called *greedy* behavior may result in fewer individual matches, or the matches may include more of the input text than intended. Greediness can be turned off by following the repetition instruction with ``?``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:301
+# 8b38e304f6ce45c6bb96a2403ff66d31
+msgid "Disabling greedy consumption of the input for any of the patterns where zero occurences of ``b`` are allowed means the matched substring does not include any ``b`` characters."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:350
+# d5317a7c4bc04ba2ac6a4005c5a7f470
+msgid "Character Sets"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:352
+# 0c8d4527122544abbe38b5f1005b1737
+msgid "A *character set* is a group of characters, any one of which can match at that point in the pattern.  For example, ``[ab]`` would match either ``a`` or ``b``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:360
+# 6df116e4bce34081b7d1ebbaf1c0d356
+msgid "The greedy form of the expression, ``a[ab]+``, consumes the entire string because the first letter is ``a`` and every subsequent character is either ``a`` or ``b``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:399
+# 0a43f3c065eb4501a65394e170649c66
+msgid "A character set can also be used to exclude specific characters.  The special marker ``^`` means to look for characters not in the set following."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:407
+# f1ac43fad47944188ebd99ab11688c20
+msgid "This pattern finds all of the substrings that do not contain the characters ``-``, ``.``, or a space."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:431
+# ae0cde5bf7c144099c9750d76c7dd7ce
+msgid "As character sets grow larger, typing every character that should (or should not) match becomes tedious.  A more compact format using *character ranges* lets you define a character set to include all of the contiguous characters between a start and stop point."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:440
+# 15fbd85c86324c12ba97776eecabd871
+msgid "Here the range ``a-z`` includes the lower case ASCII letters, and the range ``A-Z`` includes the upper case ASCII letters.  The ranges can also be combined into a single character set."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:485
+# 2743b0f970d44f54bcbd2ab36cbdf23b
+msgid "As a special case of a character set the metacharacter dot, or period (``.``), indicates that the pattern should match any single character in that position."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:493
+# 42702a937363410fa878611ead8e7b6e
+msgid "Combining dot with repetition can result in very long matches, unless the non-greedy form is used."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:534
+# e529ca7779d54777b2c18ba0e3eebb06
+msgid "Escape Codes"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:536
+# b2ed7576f2714d1c94eec31d1e4fc1fd
+msgid "An even more compact representation uses escape codes for several pre-defined character sets.  The escape codes recognized by :mod:`re` are:"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:541
+#: ../../PyMOTW/re/index.rst:657
+# d077de8cc86644c1913c30279741d3ce
+# 90d9e728b5644dc59201ebe534c85954
+msgid "Code"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:541
+#: ../../PyMOTW/re/index.rst:657
+# db50bfeee1e243238a52c2a62e0a0521
+# 7c9f143d5af64d199858e9fd01756239
+msgid "Meaning"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:543
+# bca5951515bc4496a00e1d46f1c39f35
+msgid "``\\d``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:543
+# 56dc2d38f00c475f816d10f82b4843aa
+msgid "a digit"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:544
+# eda709dfb6d7441a8166100aa65b5920
+msgid "``\\D``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:544
+# 54ddf695089b466588919fea578de604
+msgid "a non-digit"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:545
+# 0828ec4a6e664fe19051eb919e072afd
+msgid "``\\s``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:545
+# 3721755e40144b16a77653b1b03c7529
+msgid "whitespace (tab, space, newline, etc.)"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:546
+# d478a23865bb410e912f27d0671a39b0
+msgid "``\\S``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:546
+# 04749c50a59b47ccb25bda8d07d71f22
+msgid "non-whitespace"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:547
+# e0cc52c85cc54a0fa66e0ef77c70eb45
+msgid "``\\w``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:547
+# 32db11fe4f764919b184329fa9845837
+msgid "alphanumeric"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:548
+# ac6fae6348904a4e994fbebf2b1bb928
+msgid "``\\W``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:548
+# 83ca951aae3a483abbd07988e8116cec
+msgid "non-alphanumeric"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:553
+# 941813c91b9f46ae816718a6f425d6c9
+msgid "Escapes are indicated by prefixing the character with a backslash (``\\``). Unfortunately, a backslash must itself be escaped in normal Python strings, and that results in expressions that are difficult to read.  Using *raw* strings, created by prefixing the literal value with ``r``, for creating regular expressions eliminates this problem and maintains readability."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:564
+# 7f62646a394a4fbe9d5e18906c6edb7a
+msgid "These sample expressions combine escape codes with repetition to find sequences of like characters in the input string."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:620
+# 631ee4abcc4d4f768be22a493fc853f7
+msgid "To match the characters that are part of the regular expression syntax, escape the characters in the search pattern."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:627
+# 22a70ca797644a98a30b7668aacf67d7
+msgid "These patterns escape the backslash and plus characters, since as metacharacters both have special meaning in a regular expression."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:650
+# 702ba6cb9b024e9e8e6e5f87ca61a5e4
+msgid "Anchoring"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:652
+# b1048eaee78b4097b4970adcf50a7c10
+msgid "In addition to describing the content of a pattern to match, you can also specify the relative location in the input text where the pattern should appear using *anchoring* instructions."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:659
+# 248f8061f4a044a7a5ab1918282713ec
+msgid "``^``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:659
+# 23b8cb3fc3874eabadde896b3964b96a
+msgid "start of string, or line"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:660
+# df4412a7a9554be2bba39ca5688eed38
+msgid "``$``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:660
+# 208444c056434189b51d267a7fcd0331
+msgid "end of string, or line"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:661
+# b001ebfdf9f4469481b90df92ce5fe8b
+msgid "``\\A``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:661
+# 7fca41498b7f4336a1e153ecffe88f3e
+msgid "start of string"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:662
+# 2da3a0270739413399f5c467dc1801b4
+msgid "``\\Z``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:662
+# f18a02ceef574b6493cfe83a0c1bf66f
+msgid "end of string"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:663
+# 9179b55847dc4e2d80d385963311c52d
+msgid "``\\b``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:663
+# 5a139ba6d9f04c76bf999227d516e8b4
+msgid "empty string at the beginning or end of a word"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:664
+# 17a484fa22664697b9bfe72e1b0998ea
+msgid "``\\B``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:664
+# 7584c7a621154e919d2de3bbd7074858
+msgid "empty string not at the beginning or end of a word"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:671
+# f14c26035be14e2485f1aac7a30eaccb
+msgid "The patterns in the example for matching words at the beginning and end of the string are different because the word at the end of the string is followed by punctuation to terminate the sentence.  The pattern ``\\w+$`` would not match, since ``.`` is not considered an alphanumeric character."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:733
+# 1157b7aa5037459c85f1e1b390ef356d
+msgid "Constraining the Search"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:735
+# d7e491fd9d544e90994194b4721112f7
+msgid "In situations where you know in advance that only a subset of the full input should be searched, you can further constrain the regular expression match by telling :mod:`re` to limit the search range.  For example, if your pattern must appear at the front of the input, then using :func:`match` instead of :func:`search` will anchor the search without having to explicitly include an anchor in the search pattern."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:746
+# 426ded65e590487dbe29ab60cd8bc498
+msgid "Since the literal text ``is`` does not appear at the start of the input text, it is not found using :func:`match`.  The sequence appears two other times in the text, though, so :func:`search` finds it."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:765
+# 8528258c189c441dbc1a072c3a9b6f81
+msgid "The :func:`search` method of a compiled regular expression accepts optional *start* and *end* position parameters to limit the search to a substring of the input."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:773
+# 53c17c6325294a5fbf40d971d84eddf2
+msgid "This example implements a less efficient form of :func:`iterall`. Each time a match is found, the end position of that match is used for the next search."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:794
+# b34b78550e9840f3b8c66fe9326e5b49
+msgid "Dissecting Matches with Groups"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:796
+# 042e19321001458c8d6eaf53482f474c
+msgid "Searching for pattern matches is the basis of the powerful capabilities provided by regular expressions.  Adding *groups* to a pattern lets you isolate parts of the matching text, expanding those capabilities to create a parser.  Groups are defined by enclosing patterns in parentheses (``(`` and ``)``)."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:806
+# 02a02dbeabe947219eba228873e4c628
+msgid "Any complete regular expression can be converted to a group and nested within a larger expression.  All of the repetition modifiers can be applied to a group as a whole, requiring the entire group pattern to repeat."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:851
+# 402ea1b831d2470c8672adf0cbb140b8
+msgid "To access the substrings matched by the individual groups within a pattern, use the :func:`groups` method of the :class:`Match` object."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:858
+# 18bcbd80e8d641d79be1c6a05c5e58fe
+msgid ":func:`Match.groups` returns a sequence of strings in the order of the group within the expression that matches the string."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:890
+# e7bcb633cd8148cebf7167f54fe74d45
+msgid "If you are using grouping to find parts of the string, but you don't need all of the parts matched by groups, you can ask for the match of only a single group with :func:`group`."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:898
+# fcf23c3364914bf8bc2758e0e10b6a59
+msgid "Group ``0`` represents the string matched by the entire expression, and sub-groups are numbered starting with ``1`` in the order their left parenthesis appears in the expression."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:918
+# b4537f3c80924d0ea4949f69e5c582c7
+msgid "Python extends the basic grouping syntax to add *named groups*.  Using names to refer to groups makes it easier to modify the pattern over time, without having to also modify the code using the match results. To set the name of a group, use the syntax ``(P?<name>pattern)``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:927
+# 6ffc14593b994030987892548b966034
+msgid "Use :func:`groupdict` to retrieve the dictionary mapping group names to substrings from the match.  Named patterns are included in the ordered sequence returned by :func:`groups`, as well."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:960
+# 870597cc29c44812be2ea70f5a630386
+msgid "An updated version of :func:`test_patterns` that shows the numbered and named groups matched by a pattern will make the following examples easier to follow."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:968
+# 221ca2f097e341f581d239e530d297c0
+msgid "Since a group is itself a complete regular expression, groups can be nested within other groups to build even more complicated expressions."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:975
+# 3031ba052587471bb9b42f5ad64b3a8f
+msgid "In this case, the group ``(a*)`` matches an empty string, so the return value from :func:`groups` includes that empty string as the matched value."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:997
+# f252115628b7471f885ac2c7a257f79a
+msgid "Groups are also useful for specifying alternative patterns.  Use ``|`` to indicate that one pattern or another should match.  Consider the placement of the ``|`` carefully, though.  The first expression in this example matches a sequence of ``a`` followed by a sequence consisting entirely of a single letter, ``a`` or ``b``.  The second pattern matches ``a`` followed by a sequence that may include *either* ``a`` or ``b``.  The patterns are similar, but the resulting matches are completely different."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1010
+# 8c2cb63db51c4c638348c8638edb6ada
+msgid "When an alternative group is not matched, but the entire pattern does match, the return value of :func:`groups` includes a ``None`` value at the point in the sequence where the alternative group should appear."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1036
+# 44ab774cdc2c46a9b9c0b75b02ecbf38
+msgid "Defining a group containing a sub-pattern is also useful in cases where the string matching the sub-pattern is not part of what you want to extract from the full text.  These groups are called *non-capturing*.  To create a non-capturing group, use the syntax ``(?:pattern)``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1046
+# fac5ba6c8c2749ac8985a4fd25ab5953
+msgid "Compare the groups returned for the capturing and non-capturing forms of a pattern that matches the same results."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1076
+# aa600c9185d44fd2a5b3cc49351e2679
+msgid "Search Options"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1078
+# e9f03cf4742c4d108fb7cb32388086d0
+msgid "You can change the way the matching engine processes an expression using option flags.  The flags can be combined using a bitwise or operation, and passed to :func:`compile`, :func:`search`, :func:`match`, and other functions that accept a pattern for searching."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1085
+# b6699077bd7e4fd7aa78d1c37ca9ac35
+msgid "Case-insensitive Matching"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1087
+# 81bcc7137de04dd5aa9af24871e9465e
+msgid ":const:`IGNORECASE` causes literal characters and character ranges in the pattern to match both upper and lower case characters."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1094
+# 3e1b40bf0b184b548b490d13d8834929
+msgid "Since the pattern includes the literal ``T``, without setting :const:`IGNORECASE` the only match is the word ``This``.  When case is ignored, ``text`` also matches."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1119
+# c088f9d09c9f4c159383eeb598c05fde
+msgid "Input with Multiple Lines"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1121
+# dca6b66cd602442b99a7bfac5c6ad88e
+msgid "There are two flags that effect how searching in multi-line input works.  The :const:`MULTILINE` flag controls how the pattern matching code processes anchoring instructions for text containing newline characters.  When multiline mode is turned on, the anchor rules for ``^`` and ``$`` apply at the beginning and end of each line, in addition to the entire string."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1132
+# 8527644556f3470ca4f1b591d1386ad5
+msgid "The pattern in the example matches the first or last word of the input.  It matches ``line.`` at the end of the string, even though there is no newline."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1159
+# 2d51688b37b14c2798930e81fb0b1ddc
+msgid ":const:`DOTALL` is the other flag related to multiline text.  Normally the dot character ``.`` matches everything in the input text except a newline character.  The flag allows dot to match newlines as well."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1167
+# 772e58498a974d5596afae95448a785d
+msgid "Without the flag, each line of the input text matches the pattern separately.  Adding the flag causes the entire string to be consumed."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1191
+# bd5172668e7546238cba3165465fcb69
+msgid "Unicode"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1193
+# 837e0b8eacb144589a445a892524c927
+msgid "Under Python 2, :class:`str` objects use the ASCII character set, and regular expression processing assumes that the pattern and input text are both ASCII.  The escape codes described earlier are defined in terms of ASCII by default.  Those assumptions mean that the pattern ``\\w+`` will match the word \"French\" but not \"Français\", since the ``ç`` is not part of the ASCII character set.  To enable Unicode matching in Python 2, add the :const:`UNICODE` flag when compiling the pattern."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1206
+# 3474b75a44e847668779cd90fdf4d322
+msgid "The other escape sequences (``\\W``, ``\\b``, ``\\B``, ``\\d``, ``\\D``, ``\\s``, and ``\\S``) are also processed differently for Unicode text. Instead of assuming the members of the character set identified by the escape sequence, the regular expression engine consults the Unicode database to find the properties of each character."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1229
+# d935665c14e64e7cae0383dcb1595d31
+msgid "Python 3 uses Unicode for all strings by default, so the flag is not necessary."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1234
+# 6b0f3c2a4fcb48649d52bd856d754c08
+msgid "Verbose Expression Syntax"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1236
+# 554f03bcefb84de2b88d804e72fd1a39
+msgid "The compact format of regular expression syntax can become a hindrance as expressions grow more complicated.  As the number of groups in your expression increases, you will have trouble keeping track of why each element is needed and how exactly the parts of the expression interact.  Using named groups helps mitigate these issues, but a better solution is to use *verbose mode* expressions, which allow you to add comments and extra whitespace."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1244
+# 7a66b1ba13cd4328ab9315f43da308f5
+msgid "A pattern to validate email addresses will illustrate how verbose mode makes working with regular expressions easier.  The first version recognizes addresses that end in one of three top-level domains, ``.com``, ``.org``, and ``.edu``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1253
+# ee3e98a158be46a7b0b7e0ef77bc96d4
+msgid "This expression is already complex.  There are several character classes, groups, and repetition expressions."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1271
+# b6b0e5cc9f1e451e8b2c4563c811aac5
+msgid "Converting the expression to a more verbose format will make it easier to extend."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1278
+# 88025cce58be475d97b8d57448a3917c
+msgid "The expression matches the same inputs, but in this extended format it is easier to read.  The comments also help identify different parts of the pattern so that it can be expanded to match more inputs."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1297
+# ecf017338b854a5abd12b9fc9d848a91
+msgid "This expanded version parses inputs that include a person's name and email address, as might appear in an email header.  The name comes first and stands on its own, and the email address follows surrounded by angle brackets (``<`` and ``>``)."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1306
+# 1512db6b34044e369f56f6b99522a325
+msgid "As with other programming languages, the ability to insert comments into verbose regular expressions helps with their maintainability. This final version includes implementation notes to future maintainers and whitespace to separate the groups from each other and highlight their nesting level."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1352
+# a498afa8f37147d89c6c5ce2756b035c
+msgid "Embedding Flags in Patterns"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1354
+# 10c40bb961b44555ab14176a5e86cdf6
+msgid "In situations where you cannot add flags when compiling an expression, such as when you are passing a pattern to a library function that will compile it later, you can embed the flags inside the expression string itself.  For example, to turn case-insensitive matching on, add ``(?i)`` to the beginning of the expression."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1364
+# c2b2c3d95d1046379fe9d2635044fcd3
+msgid "Because the options control the way the entire expression is evaluated or parsed, they should always come at the beginning of the expression."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1381
+# 586006e931f04890abf7e98cd856a019
+msgid "The abbreviations for all of the flags are:"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1384
+# d8e7258661aa4bb5be6ad6355edcf7c9
+msgid "Flag"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1384
+# 099cf9adb8b6411a961ed8a3ce8baf8e
+msgid "Abbreviation"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1386
+# a0bf3ef7345946689fb52570c779d791
+msgid ":const:`IGNORECASE`"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1386
+# 5bf1b5714e404a32a5281e3a1d7e7ca7
+msgid "``i``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1387
+# 6fc32812bac54026a1d0f9819a18cd40
+msgid ":const:`MULTILINE`"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1387
+# 6c8d650756654c45b3e76cfa36d11c0e
+msgid "``m``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1388
+# 93f3d6eba19341ad839491094b84b084
+msgid ":const:`DOTALL`"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1388
+# 36b50d25f846448683c1efe15fa532c7
+msgid "``s``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1389
+# 4645df6afa184986a51d80ddcd26efb4
+msgid ":const:`UNICODE`"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1389
+# 040cb7941c224ac1802428a81c66a9b5
+msgid "``u``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1390
+# 7853c7a7d5f6487e889b1068b2392b87
+msgid ":const:`VERBOSE`"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1390
+# d834cade5334482a8da0ad47e1cfd92f
+msgid "``x``"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1393
+# 99cb330b8b244114a99300bb60f1cc79
+msgid "Embedded flags can be combined by placing them within the same group. For example, ``(?imu)`` turns on case-insensitive matching for multiline Unicode strings."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1398
+# 8210e77211074f6aa21c52b6c10cca5c
+msgid "Looking Ahead, or Behind"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1400
+# 5c713c4757fd448dab02224969771f20
+msgid "There are many cases where it is useful to match a part of a pattern only if some other part will also match.  For example, in the email parsing expression the angle brackets were each marked as optional. Really, though, the brackets should be paired, and the expression should only match if both are present, or neither are.  This modified version of the expression uses a *positive look ahead* assertion to match the pair.  The look ahead assertion syntax is ``(?=pattern)``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1412
+# 946f869d6cac4dfcb6d76da7ca1b52fe
+msgid "There are several important changes in this version of the expression. First, the name portion is no longer optional.  That means stand-alone addresses do not match, but it also prevents improperly formatted name/address combinations from matching.  The positive look ahead rule after the \"name\" group asserts that the remainder of the string is either wrapped with a pair of angle brackets, or there is not a mismatched bracket; the brackets are either both present or neither is.  The look ahead is expressed as a group, but the match for a look ahead group does not consume any of the input text, so the rest of the pattern picks up from the same spot after the look ahead matches."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1444
+# 63e5866e31584ecd9b6c10fe65799a26
+msgid "A *negative look ahead* assertion (``(?!pattern)``) says that the pattern does not match the text following the current point.  For example, the email recognition pattern could be modified to ignore ``noreply`` mailing addresses commonly used by automated systems."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1453
+# 7f2201d2eab34f81924a2f4db7d727d8
+msgid "The address starting ``noreply`` does not match the pattern, since the look ahead assertion fails."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1471
+# 1143e8243c514d78905b1be688eee91d
+msgid "Instead of looking ahead for ``noreply`` in the username portion of the email address, the pattern can also be written using a *negative look behind* assertion after the username is matched using the syntax ``(?<!pattern)``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1480
+# 5d4a10b12eca42388891df5c0fa2f707
+msgid "Looking backwards works a little differently than looking ahead, in that the expression must use a fixed length pattern.  Repetitions are allowed, as long as there is a fixed number (no wildcards or ranges)."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1499
+# 0e3639bd4049453eb2e43158d0554b26
+msgid "A *positive look behind* assertion can be used to find text following a pattern using the syntax ``(?<=pattern)``.  For example, this expression finds Twitter handles."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1507
+# 6fcbfb8871d3446d935e7e8faabdcd4d
+msgid "The pattern matches sequences of characters that can make up a Twitter handle, as long as they are preceded by an ``@``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1527
+# c0d9784e492d4a29a7342f3c5a64d69d
+msgid "Self-referencing Expressions"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1529
+# ad50c12c5a0c4671b974c1f6e8cbe77a
+msgid "Matched values can be used in later parts of an expression.  For example, the email example can be updated to match only addresses composed of the first and last name of the person by including back-references to those groups.  The easiest way to achieve this is by referring to the previously matched group by id number, using ``\\num``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1540
+# 15ef16bd899a463195c50ec4129e48a7
+msgid "Although the syntax is simple, creating back-references by numerical id has a couple of disadvantages.  From a practical standpoint, as the expression changes, you must count the groups again and possibly update every reference.  The other disadvantage is that only 99 references can be made this way, because if the id number is three digits long it will be interpreted as an octal character value instead of a group reference.  On the other hand, if you have more than 99 groups in your expression you will have more serious maintenance challenges than not being able to refer to some of the groups in the expression."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1573
+# fd7473e61c3c403a98653cc042725a69
+msgid "Python's expression parser includes an extension that uses ``(?P=name)`` to refer to the value of a named group matched earlier in the expression."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1581
+# 7db1ff8ef0f747ceb58a1872fa34f815
+msgid "The address expression is compiled with the :const:`IGNORECASE` flag on, since proper names are normally capitalized but email addresses are not."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1607
+# 67a2a8a4101c491fb3873d830a314547
+msgid "The other mechanism for using back-references in expressions lets you choose a different pattern based on whether or not a previous group matched.  The email pattern can be corrected so that the angle brackets are required if a name is present, and not if the email address is by itself.  The syntax for testing to see if a group has matched is ``(?(id)yes-expression|no-expression)``, where *id* is the group name or number, *yes-expression* is the pattern to use if the group has a value and *no-expression* is the pattern to use otherwise."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1620
+# a517fae0ee314402b7d2a75aa9c0095d
+msgid "This version of the email address parser uses two tests.  If the ``name`` group matches, then the look ahead assertion requires both angle brackets and sets up the ``brackets`` group.  If ``name`` is not matched, the assertion requires the rest of the text not have angle brackets around it.  Later, if the ``brackets`` group is set, the actual pattern matching code consumes the brackets in the input using literal patterns, otherwise it consumes any blank space."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1653
+# c85d48b474f54a8286b97ca5f585ee23
+msgid "Modifying Strings with Patterns"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1655
+# 0929231911f44b8d8a7fef1f8dcb10ba
+msgid "In addition to searching through text, :mod:`re` also supports modifying text using regular expressions as the search mechanism, and the replacements can reference groups matched in the regex as part of the substitution text.  Use :func:`sub` to replace all occurances of a pattern with another string."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1665
+# 1d13df567d0045c2ad8888851f8474e5
+msgid "References to the text matched by the pattern can be inserted using the ``\\num`` syntax used for back-references above."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1681
+# 472a9d5ca94949bea956e11e1d73cf0f
+msgid "To use named groups in the substitution, use the syntax ``\\g<name>``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1687
+# 7d4d05d311884b418e5313154309b28f
+msgid "The ``\\g<name>`` syntax also works with numbered references, and using it eliminates any ambiguity between group numbers and surrounding literal digits."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1704
+# 736714e4c2674d86bf7bce78c8cf2bba
+msgid "Pass a value to *count* to limit the number of substitutions performed."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1711
+# 532d60637dd24a9d8a70c35df37e4db9
+msgid "Only the first substitution is made because *count* is ``1``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1726
+# faec0da55653450681c014a6e7115f3f
+msgid ":func:`subn` works just like :func:`sub` except that it returns both the modified string and the count of substitutions made."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1733
+# 980ea2ceb0344a72a2ff2193be362266
+msgid "The search pattern matches twice in the example."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1749
+# 3c53d8bb23b641a78979ee2cbf2e5b22
+msgid "Splitting with Patterns"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1751
+# 2bb00dff8834433bb0b0ddf02cf97595
+msgid ":func:`str.split` is one of the most frequently used methods for breaking apart strings to parse them.  It only supports using literal values as separators, though, and sometimes a regular expression is necessary if the input is not consistently formatted.  For example, many plain text markup languages define paragraph separators as two or more newline (``\\n``) characters.  In this case, :func:`str.split` cannot be used because of the \"or more\" part of the definition."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1759
+# 315319d9427a45fda4348ccdd73047cc
+msgid "A strategy for identifying paragraphs using :func:`findall` would use a pattern like ``(.+?)\\n{2,}``."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1766
+# ac9032a453d94ec0930a1c9810858d82
+msgid "That pattern fails for paragraphs at the end of the input text, as illustrated by the fact that \"Paragraph three.\" is not part of the output."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1785
+# 162179aa034641a8988e83cfedceeeb9
+msgid "Extending the pattern to say that a paragraph ends with two or more newlines, or the end of input, fixes the problem but makes the pattern more complicated.  Converting to :func:`re.split` instead of :func:`re.findall` handles the boundary condition automatically and keeps the pattern simple."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1795
+# 109d4206847b46bb88fd29f4b8e1c050
+msgid "The pattern argument to :func:`split` expresses the markup specification more precisely: Two or more newline characters mark a separator point between paragraphs in the input string."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1825
+# 75d4a6a4e22c4099807546487d2d581d
+msgid "Enclosing the expression in parentheses to define a group causes :func:`split` to work more like :func:`str.partition`, so it returns the separator values as well as the other parts of the string."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1833
+# 9f7cb8344c6f43a98e0c7568f55f5e70
+msgid "The output now includes each paragraph, as well as the sequence of newlines separating them."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1861
+# eeec90c3243e49f8b478457ea0d49987
+msgid "`re <http://docs.python.org/library/re.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1861
+# defd022f414a45db988bfe2351457d31
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1864
+# f9e1a526de8940218f497e892ab51dde
+msgid "`Regular Expression HOWTO <http://docs.python.org/howto/regex.html>`__"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1864
+# c1b1ffc35d2342168525c155231f3410
+msgid "Andrew Kuchling's introduction to regular expressions for Python developers."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1867
+# 4d6d953cd9994b55885e4006a1474e37
+msgid "`Kodos <http://kodos.sourceforge.net/>`_"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1867
+# c4dd19a356f34491afca36c3277ea14f
+msgid "An interactive regular expression testing tool by Phil Schwartz."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1871
+# b881535402da43cf8bd888fbc6ebd344
+msgid "`Python Regular Expression Testing Tool <http://www.pythonregex.com/>`_"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1870
+# a11a0abd25eb440da675ac6ec0eebc30
+msgid "A web-based tool for testing regular expressions created by David Naffziger at BrandVerity.com.  Inspired by Kodos."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1874
+# 07f5f266185f4484a2454322ce1e37ab
+msgid "`Wikipedia: Regular expression <http://en.wikipedia.org/wiki/Regular_expressions>`__"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1874
+# e971eb5f7e6e446fb7df5bfc66bf7d07
+msgid "General introduction to regular expression concepts and techniques."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1878
+# 809fa7cf799f4b99a1848edac2da07c5
+msgid ":mod:`locale`"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1877
+# b23d9af7ee7949f4b3a9bb3de71998c0
+msgid "Use the :mod:`locale` module to set your language configuration when working with Unicode text."
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1880
+# 4a5d0d10cece40abaae9c70c505a16a2
+msgid ":mod:`unicodedata`"
+msgstr ""
+
+#: ../../PyMOTW/re/index.rst:1881
+# 399cb08ad56343859ca4b5a49baa89f7
+msgid "Programmatic access to the Unicode character property database."
+msgstr ""
+

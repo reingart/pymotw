@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pprint/index.rst:3
+# 02890d6383b4429fabf4b91a5a858add
+msgid "pprint -- Pretty-print data structures"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:8
+# 16df8fa2eb9645a0adb87e59d0c39b96
+msgid "Pretty-print data structures"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:9
+# e643c0d0494c46b8b71a3cd486146f2a
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:11
+# e3fa0b39044541e4ab05b7503ab7f21b
+msgid ":mod:`pprint` contains a \"pretty printer\" for producing aesthetically pleasing representations of your data structures.  The formatter produces representations of data structures that can be parsed correctly by the interpreter, and are also easy for a human to read. The output is kept on a single line, if possible, and indented when split across multiple lines."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:18
+# a9771c6527f5440c96030093724908dc
+msgid "The examples below all depend on ``pprint_data.py``, which contains:"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:25
+# dcb119d37a5d4eb7b2a4df722d4ac5ee
+msgid "Printing"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:27
+# d2fac49713584bc2a705a6c391506f7b
+msgid "The simplest way to use the module is through the ``pprint()`` function. It formats your object and writes it to the data stream passed as argument (or :ref:`sys.stdout <sys-input-output>` by default)."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:62
+# 7d604df47a69495ba3c936b3c8514d83
+msgid "Formatting"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:64
+# ba566ec506b845708c097c858be42aba
+msgid "If you need to format a data structure, but do not want to write it directly to a stream (for logging purposes, for example) you can use ``pformat()`` to build a string representation that can then be passed to another function."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:96
+# da744bf08eb04c69b6e36a815c81f366
+msgid "Arbitrary Classes"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:98
+# 060fdbc6f8954d05a93cef4ee6d08e2d
+msgid "The ``PrettyPrinter`` class used by ``pprint()`` can also work with your own classes, if they define a ``__repr__()`` method."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:121
+# 1cbd4204fc554d7a81bb3e825ad45f3d
+msgid "Recursion"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:123
+# 5e6138e644944dfc9fbc34f8195ecef9
+msgid "Recursive data structures are represented with a reference to the original source of the data, with the form ``<Recursion on typename with id=number>``. For example:"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:146
+# 1b7e1fac258b424d9f657bc24591cbe2
+msgid "Limiting Nested Output"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:148
+# 4ec0b959115243d78a80177d08c8a903
+msgid "For very deep data structures, you may not want the output to include all of the details. It might be impossible to format the data properly, the formatted text might be too large to manage, or you may need all of it. In that case, the depth argument can control how far down into the nested data structure the pretty printer goes."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:172
+# 10f8e6a53e0642b5904bd6d178aa3627
+msgid "Controlling Output Width"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:174
+# e9c3a22c3dcb4c5d819637ca0b6d07eb
+msgid "The default output width for the formatted text is 80 columns. To adjust that width, use the width argument to ``pprint()``."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:182
+# 64e3d79acad04166a79df52430132125
+msgid "Notice that when the width is too low to accommodate the formatted data structure, the lines are not truncated or wrapped if that would introduce invalid syntax."
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:227
+# 36de33d054d54f16a28c9d78e1b95145
+msgid "`pprint <http://docs.python.org/lib/module-pprint.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pprint/index.rst:228
+# 03fbba3d98f84ae0bb952d6866f94fbb
+msgid "Standard library documentation for this module."
+msgstr ""
+

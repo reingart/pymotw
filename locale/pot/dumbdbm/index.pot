@@ -1,0 +1,63 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/dumbdbm/index.rst:3
+# 55a691d4136e4ab5a94aff9abe7dae24
+msgid "dumbdbm -- Portable DBM Implementation"
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:8
+# dbe86fdb18bd4b038109c258a9ea2ca0
+msgid "Last-resort backend implementation for :mod:`anydbm`."
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:9
+# 7d4807a4d8f34ea3af85c06c6ae1c155
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:11
+# 2ab82b2967384e5792f447f69d5db046
+msgid "The :mod:`dumbdbm` module is a portable fallback implementation of the DBM API when no other implementations are available.  No external dependencies are required to use :mod:`dumbdbm`, but it is slower than most other implementations."
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:13
+# a0486ae5442a4dda809f02c1ecc0d0b7
+msgid "It follows the semantics of the :mod:`anydbm` module."
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:18
+# 5fbd24ed40984875b532db0062dc6943
+msgid "`dumbdbm <http://docs.python.org/library/dumbdbm.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:18
+# ed412ca1ef8b4448996bc1f09cc296d1
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:20
+# 939c3db069a74889a7d306c248745dda
+msgid ":mod:`anydbm`"
+msgstr ""
+
+#: ../../PyMOTW/dumbdbm/index.rst:21
+# 64a054694c90488ab95bbd4f15e321ee
+msgid "The :mod:`anydbm` module."
+msgstr ""
+

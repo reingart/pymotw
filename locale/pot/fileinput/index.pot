@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/fileinput/index.rst:3
+# 92c20f2322284bd1ade5dd850a9e6c22
+msgid "fileinput -- Process lines from input streams"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:8
+# ab49e2b64e8142c599293623b6dab816
+msgid "Create command-line filter programs to process lines from input streams."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:9
+# b20f179fe76a41b0a228d497b232a01c
+msgid "1.5.2 and later"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:11
+# e48a9250055b4b3b8ec7e5776be7ced9
+msgid "The fileinput module is a framework for creating command line programs for processing text files in a filter-ish manner."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:15
+# d3e260045e1c4cc69f4be0573784327a
+msgid "Converting M3U files to RSS"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:17
+# 544373e8cfc343efa2ed98279363d6e1
+msgid "For example, the m3utorss_ app I recently wrote for my friend `Patrick <http://events.mediumloud.com/>`_ to convert some of his demo recordings into a podcastable format."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:22
+# 6bb1450d5bb7485191d6f9810113744c
+msgid "The inputs to the program are one or more m3u file listing the mp3 files to be distributed. The output is a single blob of XML that looks like an RSS feed (output is written to stdout, for simplicity). To process the input, I need to iterate over the list of filenames and:"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:27
+# d58ae9bcfa964c92ab970a6bd3f19bfe
+msgid "Open each file."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:28
+# e4043e434d944f6dbeec0431e52f3f8c
+msgid "Read each line of the file."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:29
+# 04d6fa4937eb41e695f651032475f85c
+msgid "Figure out if the line refers to an mp3 file."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:30
+# 829c5b5b5ecc42c9baa474ac16d52c26
+msgid "If it does, extract the information from the mp3 file needed for the RSS feed."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:31
+# 54836780429b4526801f0d913703699e
+msgid "Print the output."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:33
+# 639952e03e9a41f58aeedab71524a396
+msgid "I could have written all of that file handling out by hand. It isn't that complicated, and with some testing I'm sure I could even get the error handling right. But with the fileinput module, I don't need to worry about that. I just write something like:"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:41
+# 59fbb339eecb49bc97f47b18b0ac4f69
+msgid "The ``fileinput.input()`` function takes as argument a list of filenames to examine. If the list is empty, the module reads data from standard input. The function returns an iterator which returns individual lines from the text files being processed.  So, all I have to do is loop over each line, skipping blanks and comments, to find the references to mp3 files."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:48
+# a83658da8523411e85d7f6a85446cb25
+msgid "Here's the complete program:"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:54
+# a6a6ca86f7c9404db1c12b2c0ae900d5
+msgid "and its output:"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:86
+# b3f320a0d56b4511a39fb0e81cc18600
+msgid "Progress Meta-data"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:88
+# 8e27ab2904aa483ca29843b35e52659d
+msgid "In the previous example, I did not care what file or line number we are processing in the input. For other tools (grep-like searching, for example) you might. The fileinput module includes functions for accessing that information (``filename()``, ``filelineno()``, ``lineno()``, etc.)."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:98
+# 732d7dc3289049949eccf79e0c3306b5
+msgid "We can use this basic pattern matching loop to find the occurances of \"fileinput\" in the source for the examples."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:126
+# 58a034db37ed4e8bbf76362f00da9cc3
+msgid "We can also pass input to it through stdin."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:155
+# 11c9cc2207ba4d3dbdeb237a0dc6c7e9
+msgid "In-place Filtering"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:157
+# 0efcde70242f4c51b250f0bc84951157
+msgid "Another common file processing operation is to modify the contents. For example, a Unix hosts file might need to be updated if a subnet range changes."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:164
+# 4247587290f140d3a8f4b39b94cb797c
+msgid "The safe way to make the change automatically is to create a new file based on the input and then replace the original with the edited copy. fileinput supports this automatically using the *inplace* option."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:185
+# 772086010f334bf4ac290551c93fd3f4
+msgid "Although the script uses ``print``, no output is produced to stdout because fileinput maps stdout to the file being overwritten."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:191
+# 0b7f2abc64d54ae4b351bbcbf7d447c0
+msgid "Before processing begins, a backup file is created using the original name plus ``.bak``.  The backup file is removed when the input is closed."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:220
+# 1f47f8ea87fa4021817b08cd4004a8dd
+msgid "`fileinput <http://docs.python.org/library/fileinput.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:220
+# 2f2e85e4ad614cd48c7cb22a44246c45
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:223
+# c8052e35bc1e45e98f6838cf91daa561
+msgid "`Patrick Bryant <http://events.mediumloud.com/>`_"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:223
+# 82c65dbbe2504ab9ba7eaa7ce61c2090
+msgid "Atlanta-based singer/song-writer."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:227
+# f58cbdee085945769c1f2d099b0c1b5b
+msgid "m3utorss_"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:226
+# 4c2318cd304743109acaab63039723dc
+msgid "Script to convert m3u files listing MP3s to an RSS file suitable for use as a podcast feed."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:230
+# 33e067fc41934dc8afe8884a97a62471
+msgid ":ref:`xml.etree.ElementTree.creating`"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:230
+# a0968a3905c14898bcc05db789d31560
+msgid "More details of using ElementTree to produce XML."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:233
+# e22b0fff215449018913228c4c33b34f
+msgid ":ref:`article-file-access`"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:233
+# 52f609767156447eb7c0509b48dea26d
+msgid "Other modules for working with files."
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:235
+# 33e86d5078384c1aab5032642d8bbc72
+msgid ":ref:`article-text-processing`"
+msgstr ""
+
+#: ../../PyMOTW/fileinput/index.rst:236
+# ce1669e2166b4c6ab37bb014802a64e2
+msgid "Other modules for working with text."
+msgstr ""
+

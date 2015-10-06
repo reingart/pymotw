@@ -1,0 +1,458 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/math/index.rst:3
+# 6a531dc52b194cabb931989b496d0cb3
+msgid "math -- Mathematical functions"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:8
+# fdd8a46b2b32419e84d8c804de2fdeb8
+msgid "Provides functions for specialized mathematical operations."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:9
+# 44bae99735914558b4fe584c341445c1
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:11
+# b66d63dde8364f4daf1989dd88e7c51a
+msgid "The :mod:`math` module implements many of the IEEE functions that would normally be found in the native platform C libraries for complex mathematical operations using floating point values, including logarithms and trigonometric operations."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:17
+# c8b95920c2d746b9807e3e23d8e2e403
+msgid "Special Constants"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:19
+# 59ed1f8821514b7a9648a02a228b9f5c
+msgid "Many math operations depend on special constants.  :mod:`math` includes values for π (pi) and e."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:26
+# 1e2e5030c10a41bbac9e98b8466a79f5
+msgid "Both values are limited in precision only by the platform's floating point C library."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:43
+# 73283e8c92424b1f8662151f6c409d2d
+msgid "Testing for Exceptional Values"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:45
+# 5cba9ff436fc4f8c9b9d9b00d5c4f33a
+msgid "Floating point calculations can result in two types of exceptional values.  ``INF`` (\"infinity\") appears when the *double* used to hold a floating point value overflows from a value with a large absolute value."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:54
+# df48ac25d4d04ac7acb64328d3701d08
+msgid "When the exponent in this example grows large enough, the square of *x* no longer fits inside a *double*, and the value is recorded as infinite."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:82
+# d543dec151f64d7596565452852d4217
+msgid "Not all floating point overflows result in ``INF`` values, however. Calculating an exponent with floating point values, in particular, raises :ref:`OverflowError <exceptions-OverflowError>` instead of preserving the ``INF`` result."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:91
+# 21243a08bd324438a92fac6e16f4e870
+msgid "This discrepancy is caused by an implementation difference in the library used by C Python."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:108
+# 6dcfabea48e24bd4a86a0e88f72c08e5
+msgid "Division operations using infinite values are undefined.  The result of dividing a number by infinity is ``NaN`` (\"not a number\")."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:115
+# f1e280d153474c7b9e43a484783f8333
+msgid "``NaN`` does not compare as equal to any value, even itself, so to check for ``NaN`` you must use :func:`isnan`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:135
+# fdc4112fc7da4de393fd383748b7dfeb
+msgid "Converting to Integers"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:137
+# 3ae090fcf6e74138b35a4c0c580bc2b4
+msgid "The :mod:`math` module includes three functions for converting floating point values to whole numbers.  Each takes a different approach, and will be useful in different circumstances."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:141
+# 247e8f8f5f134a7fbd35dc889f5dfbf3
+msgid "The simplest is :func:`trunc`, which truncates the digits following the decimal, leaving only the significant digits making up the whole number portion of the value.  :func:`floor` converts its input to the largest preceding integer, and :func:`ceil` (ceiling) produces the largest integer following sequentially after the input value."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:151
+# 8a1cec35a54e491ea5d658daf79b7e40
+msgid ":func:`trunc` is equivalent to converting to :class:`int` directly."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:176
+# 53cb6aa012c34d2ab129e94471261234
+msgid "Alternate Representations"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:178
+# 6eeea9d6fcb04fa6809ab0d46f7ec474
+msgid ":func:`modf` takes a single floating point number and returns a tuple containing the fractional and whole number parts of the input value."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:185
+# cc4363537b004794b0a83f219141114c
+msgid "Both numbers in the return value are floats."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:204
+# 29497c1706f049bfa8f20906b3cf58c1
+msgid ":func:`frexp` returns the mantissa and exponent of a floating point number, and can be used to create a more portable representation of the value."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:212
+# 152996d21ccd4a918bdd0550ada3d3ba
+msgid ":func:`frexp` uses the formula ``x = m * 2**e``, and returns the values *m* and *e*."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:231
+# e83cb374b4264e0badef9e024410a60a
+msgid ":func:`ldexp` is the inverse of :func:`frexp`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:237
+# d882b21460b04fd1b86bf926476bb129
+msgid "Using the same formula as :func:`frexp`, :func:`ldexp` takes the mantissa and exponent values as arguments and returns a floating point number."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:259
+# b69c71d5d7ba468cb54264083d7afc77
+msgid "Positive and Negative Signs"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:261
+# afbc9b07fcf34414920f8945b547b9d3
+msgid "The absolute value of number is its value without a sign.  Use :func:`fabs` to calculate the absolute value of a floating point number."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:269
+# 36a0a669255c48a598af195d8f933075
+msgid "In practical terms, the absolute value of a :class:`float` is represented as a positive value."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:287
+# dff79146fbfc4dfe92af022842725904
+msgid "To determine the sign of a value, either to give a set of values the same sign or simply for comparison, use :func:`copysign` to set the sign of a known good value."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:295
+# a57a14ae27a54790a9ad73bf5771e4c9
+msgid "An extra function like :func:`copysign` is needed because comparing NaN and -NaN directly with other values does not work."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:319
+# 24206479e06e41c98ddfc863a07c1544
+msgid "Commonly Used Calculations"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:321
+# bfa9b3aa39384c20927bb33d032e853f
+msgid "Representing precise values in binary floating point memory is challenging.  Some values cannot be represented exactly, and the more often a value is manipulated through repeated calculations, the more likely a representation error will be introduced.  :mod:`math` includes a function for computing the sum of a series of floating point numbers using an efficient algorithm that minimize such errors."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:332
+# 4d05cb8c94c9407eb6b8b502809eec26
+msgid "Given a sequence of ten values each equal to ``0.1``, the expected value for the sum of the sequence is ``1.0``.  Since ``0.1`` cannot be represented exactly as a floating point value, however, errors are introduced into the sum unless it is calculated with :func:`fsum`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:352
+# ce6393438ed04f3691f911d5ccde5665
+msgid ":func:`factorial` is commonly used to calculate the number of permutations and combinations of a series of objects.  The factorial of a positive integer *n*, expressed ``n!``, is defined recursively as ``(n-1)! * n`` and stops with ``0! == 1``."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:361
+# cea544dd782d4294874acbbc2396ab5b
+msgid ":func:`factorial` only works with whole numbers, but does accept :class:`float` arguments as long as they can be converted to an integer without losing value."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:383
+# 39c8973c2d23415594e80ca741de231c
+msgid ":func:`gamma` is like :func:`factorial`, except it works with real numbers and the value is shifted down one (gamma is equal to ``(n - 1)!``)."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:391
+# fd9ed1be825541998bcaa0ebda038d62
+msgid "Since zero causes the start value to be negative, it is not allowed."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:411
+# cdf5a0e02e474769bf8b79376797d20e
+msgid ":func:`lgamma` returns the natural logarithm of the absolute value of Gamma for the input value."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:418
+# 4d481672385644d6abf4d203b38c1362
+msgid "Using :func:`lgamma` retains more precision than calculating the logarithm separately using the results of :func:`gamma`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:439
+# 6a743982b70b4c86a545e605c7381c1e
+msgid "The modulo operator (``%``) computes the remainder of a division expression (i.e., ``5 % 2 = 1``).  The operator built into the language works well with integers but, as with so many other floating point operations, intermediate calculations cause representational issues that result in a loss of data.  :func:`fmod` provides a more accurate implementation for floating point values."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:450
+# d1c24833bf20446bbf7c5e3e61409848
+msgid "A potentially more frequent source of confusion is the fact that the algorithm used by :mod:`fmod` for computing modulo is also different from that used by ``%``, so the sign of the result is different. mixed-sign inputs."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:472
+# c77582e1662147f8a38a37b7d3244d9c
+msgid "Exponents and Logarithms"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:474
+# 4925082f9e8d46a894ebb3f39580b680
+msgid "Exponential growth curves appear in economics, physics, and other sciences.  Python has a built-in exponentiation operator (\"``**``\"), but :func:`pow` can be useful when you need to pass a callable function as an argument."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:483
+# 093d7269ade149e2b7df54e81caa8db1
+msgid "Raising ``1`` to any power always returns ``1.0``, as does raising any value to a power of ``0.0``.  Most operations on the not-a-number value ``nan`` return ``nan``.  If the exponent is less than ``1``, :func:`pow` computes a root."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:506
+# cb18a3129c234546b02c8dfb88bf7f7a
+msgid "Since square roots (exponent of ``1/2``) are used so frequently, there is a separate function for computing them."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:513
+# 098ebc670e584cb1b156b99276c266c7
+msgid "Computing the square roots of negative numbers requires *complex numbers*, which are not handled by :mod:`math`.  Any attempt to calculate a square root of a negative value results in a :ref:`ValueError <exceptions-ValueError>`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:532
+# 53ccffdbadda4da9a357d8e25a1794a2
+msgid "The logarithm function finds *y* where ``x = b ** y``.  By default, :func:`log` computes the natural logarithm (the base is *e*).  If a second argument is provided, that value is used as the base."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:540
+# 00a370e7fdbd476886032a4064da8f98
+msgid "Logarithms where *x* is less than one yield negative results."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:556
+# a1cd7f0e1c8c434d82a3b5606ae5d3d6
+msgid "There are two variations of :func:`log`.  Given floating point representation and rounding errors the computed value produced by ``log(x, b)`` has limited accuracy, especially for some bases. :func:`log10` computes ``log(x, 10)``, using a more accurate algorithm than :func:`log`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:566
+# 7a2980b4a31d4cc0b86f5acd72e1927e
+msgid "The lines in the output with trailing ``*`` highlight the inaccurate values."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:592
+# 732a57513a1243bc839ecdf1dd2ec71a
+msgid ":func:`log1p` calculates the Newton-Mercator series (the natural logarithm of ``1+x``)."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:599
+# 9d5663fc52ac4d35be6ec0f4e7d8bbda
+msgid ":func:`log1p` is more accurate for values of *x* very close to zero because it uses an algorithm that compensates for round-off errors from the initial addition."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:618
+# 5c99dc6ff60f47c3a9b175a99d0faa0f
+msgid ":func:`exp` computes the exponential function (``e**x``)."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:624
+# ad86178d87e54f199e921d8955f6bc64
+msgid "As with other special-case functions, it uses an algorithm that produces more accurate results than the general-purpose equivalent ``math.pow(math.e, x)``."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:642
+# 5ce04d1304d04b39a54a97f2ac9f3a10
+msgid ":func:`expm1` is the inverse of :func:`log1p`, and calculates ``e**x - 1``."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:649
+# 027b8ee4736f46e99fc1b468cf44092a
+msgid "As with :func:`log1p`, small values of *x* lose precision when the subtraction is performed separately."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:667
+# 1215935539684988863a3beb1eabae60
+msgid "Angles"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:669
+# 2302094f65f14ad59ec496b90bd319af
+msgid "Although degrees are more commonly used in everyday discussions of angles, radians are the standard unit of angular measure in science and math.  A radian is the angle created by two lines intersecting at the center of a circle, with their ends on the circumference of the circle spaced one radius apart."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:675
+# 1d14a33bafd8485ebf302a51cba5f96d
+msgid "The circumference is calculated as ``2πr``, so there is a relationship between radians and π, a value that shows up frequently in trigonometric calculations.  That relationship leads to radians being used in trigonometry and calculus, because they result in more compact formulas."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:681
+# d43f763891424d25a480e6c60e47eccb
+msgid "To convert from degrees to radians, use :func:`radians`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:687
+# a831cb1fdad74cdea216739f39d9f94e
+msgid "The formula for the conversion is ``rad = deg * π / 180``."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:710
+# 53373b0650b6459b8aca5740a493086f
+msgid "To convert from radians to degrees, use :func:`degrees`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:716
+# a2378217f6b340dc9c0e65155dc69d0f
+msgid "The formula is ``deg = rad * 180 / π``."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:741
+# 7655ec278de64f60908b14ca99be87fa
+msgid "Trigonometry"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:743
+# 30aad64c30d046699c90731152374736
+msgid "Trigonometric functions relate angles in a triangle to the lengths of its sides.  They show up in formulas with periodic properties such as harmonics, circular motion, or when dealing with angles."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:749
+# deb43e5b315f44e9a3c8b6d377bfeefa
+msgid "All of the trigonometric functions in the standard library take angles expressed as radians."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:752
+# cedc18c2e9c3475897cd53fe460d7fb1
+msgid "Given an angle in a right triangle, the *sine* is the ratio of the length of the side opposite the angle to the hypotenuse (``sin A = opposite/hypotenuse``).  The *cosine* is the ratio of the length of the adjacent side to the hypotenuse (``cos A = adjacent/hypotenuse``). And the *tangent* is the ratio of the opposite side to the adjacent side (``tan A = opposite/adjacent``)."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:763
+# 43a71b32eb6444388514b938777707f0
+msgid "The tangent can also be defined as the ratio of the sine of the angle to its cosine, and since the cosine is 0 for π/2 and 3π/2 radians, the tangent is infinite."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:793
+# cd4eb8df3e724f93bb00aa3031e63fb9
+msgid "Given a point (*x*, *y*), the length of the hypotenuse for the triangle between the points [(0, 0), (*x*, 0), (*x*, *y*)] is ``(x**2 + y**2) ** 1/2``, and can be computed with :func:`hypot`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:801
+# 199f7a60d5ac4e6791b917e3f11045de
+msgid "Points on the circle always have hypotenuse == ``1``."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:822
+# c7090e3c921d4341b6834e7cf667c6dc
+msgid "The same function can be used to find the distance between two points."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:828
+# 7b388bace73a4df58c6b79a2ccd7febd
+msgid "Use the difference in the *x* and *y* values to move one endpoint to the origin, and then pass the results to :func:`hypot`."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:848
+# 0d7bd39c13ed43d5a7fb1f05e3fd56c3
+msgid ":mod:`math` also defines inverse trigonometric functions."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:854
+# fda543e515274ff593e3a384c53908d3
+msgid "``1.57`` is roughly equal to ``π/2``, or 90 degrees, the angle at which the sine is 1 and the cosine is 0."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:883
+# 757cc111afb14654bfd18f296175f633
+msgid "Hyperbolic Functions"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:885
+# 2b3e43bfbcd545e88feaf6253ec45e45
+msgid "Hyperbolic functions appear in linear differential equations and are used when working with electromagnetic fields, fluid dynamics, special relativity, and other advanced physics and mathematics."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:893
+# 447dbfa008cd4dc2971d29659976e212
+msgid "Whereas the cosine and sine functions enscribe a circle, the hyperbolic cosine and hyperbolic sine form half of a hyperbola."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:915
+# 051f82f4edf04fa7a18952bda7ffb9f3
+msgid "Inverse hyperbolic functions :func:`acosh`, :func:`asinh`, and :func:`atanh` are also available."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:919
+# 61ed4b9a6bd14e49a544c5de820c4cfb
+msgid "Special Functions"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:921
+# b305b36207be49c8b93fd12df5aa7c4e
+msgid "The Gauss Error function is used in statistics."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:927
+# dabd372dd7b74a8ca46edc0fb2464d63
+msgid "Notice that ``erf(-x) == -erf(x)``."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:953
+# 861fb26cb137487797b37025ad555123
+msgid "The complimentary error function is ``1 - erf(x)``."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:987
+# de4f61a92ded4519aa1bd15e74a2a03e
+msgid "`math <http://docs.python.org/library/math.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:987
+# a2ed4dc105534485accf24f11b843950
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:991
+# 632c7f8e42e54bcf8c736a6b69126c70
+msgid "`IEEE floating point arithmetic in Python <http://www.johndcook.com/blog/2009/07/21/ieee-arithmetic-python/>`__"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:990
+# 93a5f02f125243ada5d8734c84f16df9
+msgid "Blog post by John Cook about how special values arise and are dealt with when doing math in Python."
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:994
+# b9116a736ccb4fbf8b19fa7d78030aac
+msgid "`SciPy <http://scipy.org/>`_"
+msgstr ""
+
+#: ../../PyMOTW/math/index.rst:994
+# ac164fd1c76a4d998b4cbcd6389ac8ea
+msgid "Open source libraryes for scientific and mathematical calculations in Python."
+msgstr ""
+

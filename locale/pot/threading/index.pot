@@ -1,0 +1,358 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/threading/index.rst:3
+# 4a8d4364482b496d9887171308b26df2
+msgid "threading -- Manage concurrent threads"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:8
+# 195d44b553d849949a1838a01026d6ea
+msgid "Builds on the :mod:`thread` module to more easily manage several threads of execution."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:9
+# c7ce382c69d34f2cae424feaecbc2796
+msgid "1.5.2 and later"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:11
+# 4689c90e43184f60a9f0acc8156d8856
+msgid "The :mod:`threading` module builds on the low-level features of :mod:`thread` to make working with threads even easier and more *pythonic*. Using threads allows a program to run multiple operations concurrently in the same process space."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:17
+# e163c260afe544f1a204f73a2d5a5782
+msgid "Thread Objects"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:19
+# f43ccbcb9b5e47f1b34410a20c8ef2be
+msgid "The simplest way to use a :class:`Thread` is to instantiate it with a target function and call :func:`start()` to let it begin working."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:26
+# 61b8b5cc747f4792bb2bc22385b4661b
+msgid "The output is five lines with ``\"Worker\"`` on each:"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:38
+# 53509e550644431d910e850f2b185a26
+msgid "It useful to be able to spawn a thread and pass it arguments to tell it what work to do. This example passes a number, which the thread then prints."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:46
+# c53193fc57764063bb715b088d348909
+msgid "The integer argument is now included in the message printed by each thread:"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:61
+# 57e0c9036fab46bd99014a6ee3ba57bb
+msgid "Determining the Current Thread"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:63
+# 5f17be19e3724bc296a9800a7a78418d
+msgid "Using arguments to identify or name the thread is cumbersome, and unnecessary.  Each :class:`Thread` instance has a name with a default value that can be changed as the thread is created. Naming threads is useful in server processes with multiple service threads handling different operations."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:73
+# 9f3abd3423ee46edb5564cfefeb28696
+msgid "The debug output includes the name of the current thread on each line. The lines with ``\"Thread-1\"`` in the thread name column correspond to the unnamed thread :data:`w2`."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:94
+# c81b83bb497e4245a31a5587217f7c40
+msgid "Most programs do not use :command:`print` to debug. The :mod:`logging` module supports embedding the thread name in every log message using the formatter code ``%(threadName)s``. Including thread names in log messages makes it easier to trace those messages back to their source."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:104
+# 837c5c1ee17e4d9db6783204176db65b
+msgid ":mod:`logging` is also thread-safe, so messages from different threads are kept distinct in the output."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:125
+# 055c8ac7fb514039945cbeade62a8d59
+msgid "Daemon vs. Non-Daemon Threads"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:127
+# aa819b433e1145939e93b00500eec529
+msgid "Up to this point, the example programs have implicitly waited to exit until all threads have completed their work. Sometimes programs spawn a thread as a *daemon* that runs without blocking the main program from exiting. Using daemon threads is useful for services where there may not be an easy way to interrupt the thread or where letting the thread die in the middle of its work does not lose or corrupt data (for example, a thread that generates \"heart beats\" for a service monitoring tool). To mark a thread as a daemon, call its :func:`setDaemon()` method with a boolean argument. The default is for threads to not be daemons, so passing True turns the daemon mode on."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:142
+# 8f6b4beb87744892bbb066a87257181b
+msgid "Notice that the output does not include the ``\"Exiting\"`` message from the daemon thread, since all of the non-daemon threads (including the main thread) exit before the daemon thread wakes up from its two second sleep."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:161
+# e76fc8957d834fa4bc440b0911e4954f
+msgid "To wait until a daemon thread has completed its work, use the :func:`join()` method."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:168
+# 2b9995a8217d477ca8b0b1f040a4047e
+msgid "Waiting for the daemon thread to exit using :func:`join()` means it has a chance to produce its ``\"Exiting\"`` message."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:186
+# c89a43826d9748a3850c407e7b0d7ed6
+msgid "By default, :func:`join()` blocks indefinitely. It is also possible to pass a timeout argument (a float representing the number of seconds to wait for the thread to become inactive). If the thread does not complete within the timeout period, :func:`join()` returns anyway."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:195
+# 07dd06c9e94b4007b199772437ab3a7d
+msgid "Since the timeout passed is less than the amount of time the daemon thread sleeps, the thread is still \"alive\" after :func:`join()` returns."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:215
+# d6fd4fa199f242048da3b683222c8b18
+msgid "Enumerating All Threads"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:217
+# 98af792c051345e98ba548cc2448ffd9
+msgid "It is not necessary to retain an explicit handle to all of the daemon threads in order to ensure they have completed before exiting the main process. :func:`enumerate()` returns a list of active :class:`Thread` instances. The list includes the current thread, and since joining the current thread is not allowed (it introduces a deadlock situation), it must be skipped."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:228
+# 0648717afea5449882b1b27ce0464150
+msgid "Since the worker is sleeping for a random amount of time, the output from this program may vary. It should look something like this:"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:252
+# 91e1b811eaed472b824612295746424b
+msgid "Subclassing Thread"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:254
+# 37e9fd25e6654cf49e89424c9a6478b6
+msgid "At start-up, a :class:`Thread` does some basic initialization and then calls its :func:`run()` method, which calls the target function passed to the constructor. To create a subclass of :class:`Thread`, override :func:`run()` to do whatever is necessary."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:263
+# eaa331c35fdf4216a7e928b0a6ad204b
+msgid "The return value of :func:`run` is ignored."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:281
+# 778027b0ccb045b9a34bf0f3ee7d9cd5
+msgid "Because the *args* and *kwargs* values passed to the :class:`Thread` constructor are saved in private variables, they are not easily accessed from a subclass.  To pass arguments to a custom thread type, redefine the constructor to save the values in an instance attribute that can be seen in the subclass."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:291
+# 648272393bb842c4a9b018dba15a6ab2
+msgid ":class:`MyThreadWithArgs` uses the same API as :class:`Thread`, but another class could easily change the constructor method to take more or different arguments more directly related to the purpose of the thread, as with any other class."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:314
+# bc32595e96ca4b65a130b5f9956ff063
+msgid "Timer Threads"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:316
+# 2673bad795914dab89b546161ce390cd
+msgid "One example of a reason to subclass :class:`Thread` is provided by :class:`Timer`, also included in :mod:`threading`. A :class:`Timer` starts its work after a delay, and can be canceled at any point within that delay time period."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:325
+# 030c0add299f4a0f8a2223a710520d04
+msgid "Notice that the second timer is never run, and the first timer appears to run after the rest of the main program is done. Since it is not a daemon thread, it is joined implicitly when the main thread is done."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:346
+# a972aa6e48fc486b94b6116780b70a3b
+msgid "Signaling Between Threads"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:348
+# bdab89155eda4b559bd684efa317c331
+msgid "Although the point of using multiple threads is to spin separate operations off to run concurrently, there are times when it is important to be able to synchronize the operations in two or more threads. A simple way to communicate between threads is using :class:`Event` objects. An :class:`Event` manages an internal flag that callers can either :func:`set()` or :func:`clear()`. Other threads can :func:`wait()` for the flag to be :func:`set()`, effectively blocking progress until allowed to continue."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:361
+# 7d834e27bb6a4a7a9784407a6355fbca
+msgid "The :func:`wait` method takes an argument representing the number of seconds to wait for the event before timing out.  It returns a boolean indicating whether or not the event is set, so the caller knows why :func:`wait` returned.  The :func:`isSet` method can be used separately on the event without fear of blocking."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:367
+# 55bd4814046e4d4f97592a80eebed212
+msgid "In this example, :func:`wait_for_event_timeout` checks the event status without blocking indefinitely.  The :func:`wait_for_event` blocks on the call to :func:`wait`, which does not return until the event status changes."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:394
+# 145c43a24eef40d28ef054fe78ef4505
+msgid "Controlling Access to Resources"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:396
+# b7624f70cdfd463ea1e6c662628666e4
+msgid "In addition to synchronizing the operations of threads, it is also important to be able to control access to shared resources to prevent corruption or missed data. Python's built-in data structures (lists, dictionaries, etc.) are thread-safe as a side-effect of having atomic byte-codes for manipulating them (the GIL is not released in the middle of an update). Other data structures implemented in Python, or simpler types like integers and floats, don't have that protection. To guard against simultaneous access to an object, use a :class:`Lock` object."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:410
+# 4e76580733ba455fa80e3163135422db
+msgid "In this example, the :func:`worker()` function increments a :class:`Counter` instance, which manages a :class:`Lock` to prevent two threads from changing its internal state at the same time. If the :class:`Lock` was not used, there is a possibility of missing a change to the value attribute."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:443
+# 0625f0a3f1974bfbaa264ffa06fcd8b7
+msgid "To find out whether another thread has acquired the lock without holding up the current thread, pass False for the *blocking* argument to :func:`acquire()`. In the next example, :func:`worker()` tries to acquire the lock three separate times, and counts how many attempts it has to make to do so. In the mean time, :func:`lock_holder` cycles between holding and releasing the lock, with short pauses in each state used to simulate load."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:455
+# cfd84c6a78fd492f8d44e83b0a7ac71e
+msgid "It takes :func:`worker` more than three iterations to acquire the lock three separate times."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:489
+# c94dd2c8bf3145318afb7c1b2e6c6951
+msgid "Re-entrant Locks"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:491
+# a41d83dc978e4cd49d6ca4bd12b740d1
+msgid "Normal :class:`Lock` objects cannot be acquired more than once, even by the same thread. This can introduce undesirable side-effects if a lock is accessed by more than one function in the same call chain."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:499
+# 81adb603095342739377a663dafcc513
+msgid "In this case, since both functions are using the same global lock, and one calls the other, the second acquisition fails and would have blocked using the default arguments to :func:`acquire()`."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:516
+# c092b91d4f784ddebb174810840dcbe4
+msgid "In a situation where separate code from the same thread needs to \"re-acquire\" the lock, use an :class:`RLock` instead."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:523
+# 14f5bf48dc5e48ca82cb18624cc3b62d
+msgid "The only change to the code from the previous example was substituting :class:`RLock` for :class:`Lock`."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:540
+# 9510f0e67fa6487d9995808ffc668109
+msgid "Locks as Context Managers"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:542
+# d4c964d38c4045acbf5077ac78f1ead6
+msgid "Locks implement the context manager API and are compatible with the :command:`with` statement.  Using :command:`with` removes the need to explicitly acquire and release the lock."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:550
+# 4804cf088f7b45da82e619367541aa60
+msgid "The two functions :func:`worker_with()` and :func:`worker_no_with()` manage the lock in equivalent ways."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:567
+# 8e5e8d7c7c2542bc87c8964067a56e54
+msgid "Synchronizing Threads"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:569
+# 4799c4a5c4b64a739daa4f303468e3b5
+msgid "In addition to using :class:`Events`, another way of synchronizing threads is through using a :class:`Condition` object. Because the :class:`Condition` uses a :class:`Lock`, it can be tied to a shared resource. This allows threads to wait for the resource to be updated. In this example, the :func:`consumer()` threads :func:`wait()` for the :class:`Condition` to be set before continuing. The :func:`producer()` thread is responsible for setting the condition and notifying the other threads that they can continue."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:582
+# 0d82a7ddfa65496f921c538296f4ef65
+msgid "The threads use :command:`with` to acquire the lock associated with the :class:`Condition`. Using the :func:`acquire()` and :func:`release()` methods explicitly also works."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:604
+# aff1731146374503822dc9697d7a52ea
+msgid "Limiting Concurrent Access to Resources"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:606
+# 9e29427228db42c78499170c6a557acc
+msgid "Sometimes it is useful to allow more than one worker access to a resource at a time, while still limiting the overall number. For example, a connection pool might support a fixed number of simultaneous connections, or a network application might support a fixed number of concurrent downloads. A :class:`Semaphore` is one way to manage those connections."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:617
+# 089ba4de5fc3420aad4522718df3ea2b
+msgid "In this example, the :class:`ActivePool` class simply serves as a convenient way to track which threads are able to run at a given moment. A real resource pool would allocate a connection or some other value to the newly active thread, and reclaim the value when the thread is done. Here it is just used to hold the names of the active threads to show that only five are running concurrently."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:648
+# bac36dde8ef1486ea2b3bec137b77cb7
+msgid "Thread-specific Data"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:650
+# 45bb9940a1a84f01bebe4c7b0d8a5148
+msgid "While some resources need to be locked so multiple threads can use them, others need to be protected so that they are hidden from view in threads that do not \"own\" them. The :func:`local()` function creates an object capable of hiding values from view in separate threads."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:659
+# da0a5b817322454ea7c71092b0a7e8cf
+msgid "Notice that ``local_data.value`` is not present for any thread until it is set in that thread."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:679
+# 9b0b98a25cff4bcfa3b466ce7cb21db9
+msgid "To initialize the settings so all threads start with the same value, use a subclass and set the attributes in :func:`__init__`."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:686
+# e7f0140ab2d3432f9eb41e2717f72504
+msgid ":func:`__init__` is invoked on the same object (note the :func:`id` value), once in each thread."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:711
+# 82d7c2e1cad64a5896e1557e913fc3c0
+msgid "`threading <http://docs.python.org/lib/module-threading.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:711
+# dcefd1b149b74501866ffa1ec34452a9
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:714
+# 0f8cfcf83abe432fa198e0c377930a35
+msgid ":mod:`thread`"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:714
+# 909dfeb54b514d50ae8e6f9c26ee9d4b
+msgid "Lower level thread API."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:717
+# f6e94021908a47d2b618e0b84b650b36
+msgid ":mod:`Queue`"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:717
+# 46208111100c4937aad56af8e127a403
+msgid "Thread-safe Queue, useful for passing messages between threads."
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:719
+# bf0e06d9132946d1ab807ec0eee58863
+msgid ":mod:`multiprocessing`"
+msgstr ""
+
+#: ../../PyMOTW/threading/index.rst:720
+# 959479dfae0f408bb05e75065e1473bd
+msgid "An API for working with processes that mirrors the :mod:`threading` API."
+msgstr ""
+

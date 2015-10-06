@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/struct/index.rst:3
+# 8dfec011b21a4c689481ec6868813c8f
+msgid "struct -- Working with Binary Data"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:8
+# 497ef485ac244f1994a16b0f400f17ad
+msgid "Convert between strings and binary data."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:9
+# 6a2249f7edc14edd9c14f80c47b606db
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:11
+# 967414be5c3c4661be40ed360de89bd2
+msgid "The :mod:`struct` module includes functions for converting between strings of bytes and native Python data types such as numbers and strings."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:16
+# ed11e6d9ee5843a490b450f04c461128
+msgid "Functions vs. Struct Class"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:18
+# de6c9e35cd344cfa884f58136c5be92a
+msgid "There are a set of module-level functions for working with structured values, and there is also the :class:`Struct` class (new in Python 2.5).  Format specifiers are converted from their string format to a compiled representation, similar to the way regular expressions are. The conversion takes some resources, so it is typically more efficient to do it once when creating a :class:`Struct` instance and call methods on the instance instead of using the module-level functions. All of the examples below use the :class:`Struct` class."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:28
+# db935bbc791847c28e8302c81bdc5e02
+msgid "Packing and Unpacking"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:30
+# 895dfb8e190344269d0805d6389b2923
+msgid "Structs support *packing* data into strings, and *unpacking* data from strings using format specifiers made up of characters representing the type of the data and optional count and endian-ness indicators.  For complete details, refer to `the standard library documentation <http://docs.python.org/library/struct.html>`__."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:36
+# e13f6c1ca98d45c88a42d7eee9e374cc
+msgid "In this example, the format specifier calls for an integer or long value, a two character string, and a floating point number.  The spaces between the format specifiers are included here for clarity, and are ignored when the format is compiled."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:45
+# bf83a6f1f0dd478594928a915841ba50
+msgid "The example converts the packed value to a sequence of hex bytes for printing with ``binascii.hexlify()``, since some of the characters are nulls."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:64
+# 09f637edd0ee4890988a13d7f9d3ee62
+msgid "If we pass the packed value to :func:`unpack`, we get basically the same values back (note the discrepancy in the floating point value)."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:85
+# a7e60d5bffb142c6822fde81f70ed5f2
+msgid "Endianness"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:87
+# 7d5145c953cd4def94b15ff3c9320ea6
+msgid "By default values are encoded using the native C library notion of \"endianness\".  It is easy to override that choice by providing an explicit endianness directive in the format string."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:133
+# 5a006f3f260f4fc2b330ed9a56393844
+msgid "Buffers"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:135
+# 2d18b5daf4044c5993c751ef668470eb
+msgid "Working with binary packed data is typically reserved for highly performance sensitive situations or passing data into and out of extension modules.  In such situations, you can optimize by avoiding the overhead of allocating a new buffer for each packed structure. The :meth:`pack_into` and :meth:`unpack_from` methods support writing to pre-allocated buffers directly."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:146
+# e0c3704149f14b9ca1e1974008b80b07
+msgid "The *size* attribute of the :class:`Struct` tells us how big the buffer needs to be."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:175
+# a57371bb0c314bb9a217d48728e432ed
+msgid "`struct <http://docs.python.org/library/struct.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:175
+# 3b0a648cc81244ec90f371f35f053a04
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:178
+# 35e985706061414aa659be2aad86201a
+msgid ":mod:`array`"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:178
+# eda4ccdd799244509e5f34f566ef1986
+msgid "The array module, for working with sequences of fixed-type values."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:181
+# 8c76602c19ff4c1bb8e67d748beac49c
+msgid ":mod:`binascii`"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:181
+# 975d9d319eb443049b82163deb13e80e
+msgid "The binascii module, for producing ASCII representations of binary data."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:184
+# 229a8c241c5b4239852efc7b4531dbf8
+msgid "`WikiPedia: Endianness <http://en.wikipedia.org/wiki/Endianness>`_"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:184
+# fe57bbd14f214c7aa01cacae0e341545
+msgid "Explanation of byte order and endianness in encoding."
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:186
+# 9fcb9ca6c7cc40a480b0c4758e3e2e81
+msgid ":ref:`article-data-structures`"
+msgstr ""
+
+#: ../../PyMOTW/struct/index.rst:187
+# a0b7d3bccc08495aa7e200fc7bf62dd8
+msgid "More tools for working with data structures."
+msgstr ""
+

@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/getopt/index.rst:3
+# 6f7ee4d178de462c8ae7ffc723fbf1aa
+msgid "getopt -- Command line option parsing"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:8
+# 151fcbcb11a74569b4bcf79aaa32a951
+msgid "Command line option parsing"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:9
+# f2b379a063ac4d6c944957e30a1d66f8
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:11
+# 06fb62a6d98447f5bf622227be6330c0
+msgid "The getopt module is the *old-school* command line option parser that supports the conventions established by the Unix function ``getopt()``. It parses an argument sequence, such as ``sys.argv`` and returns a sequence of (option, argument) pairs and a sequence of non-option arguments."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:17
+# f38987ba55c34741a57c80ae706e6540
+msgid "Supported option syntax includes:"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:30
+# 4b87026b63ba4411a04ca42cbdd1fc60
+msgid "Function Arguments"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:32
+# 048f9ade0c394f86bbc98fcff4ddedc2
+msgid "The getopt function takes three arguments:"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:34
+# 8b0566d78f1b4036beadc1e96b5282fa
+msgid "The first argument is the sequence of arguments to be parsed. This usually comes from ``sys.argv[1:]`` (ignoring the program name in ``sys.arg[0]``)."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:38
+# 53e1d5775e954f9593be2e20c8d0444f
+msgid "The second argument is the option definition string for single character options. If one of the options requires an argument, its letter is followed by a colon."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:42
+# 98789b16a39841f4bd9f02663a352f28
+msgid "The third argument, if used, should be a sequence of the long-style option names. Long style options can be more than a single character, such as ``--noarg`` or ``--witharg``. The option names in the sequence should not include the ``--`` prefix. If any long option requires an argument, its name should have a suffix of ``=``."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:48
+# 82dcdecfe2884fc9ba1f98bd3d525943
+msgid "Short and long form options can be combined in a single call."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:51
+# 8c9308097848454cbc15d8bc775316f1
+msgid "Short Form Options"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:53
+# 8afa885bd7564c3f908479dbffc09508
+msgid "If a program wants to take 2 options, ``-a``, and ``-b`` with the b option requiring an argument, the value should be ``\"ab:\"``."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:76
+# abff71ad8a154e1085b3c13edf168876
+msgid "Long Form Options"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:78
+# ba94e8501e2942c8859894135e2211a9
+msgid "If a program wants to take 2 options, ``--noarg`` and ``--witharg`` the sequence should be ``[ 'noarg', 'witharg=' ]``."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:101
+# 006bd927e2814a369e1894476b77aad4
+msgid "Example"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:103
+# 4c58e160c99f47fdbd0e67d76b0b0c92
+msgid "Below is a more complete example program which takes 5 options: ``-o``, ``-v``, ``--output``, ``--verbose``, and ``--version``. The ``-o``, ``--output``, and ``--version`` options each require an argument."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:112
+# ccf872cb2b4d4a64b166b00f69289d43
+msgid "The program can be called in a variety of ways."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:131
+# 6cd5c0bfde0c401eb961e6cb527b4300
+msgid "A single letter option can be a separate from its argument:"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:150
+# ea6aaad221844c7eb1e8219a05c929c2
+msgid "or combined:"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:169
+# deeb8819c7134f31b78cd8ffafc27d88
+msgid "A long form option can similarly be separate:"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:188
+# 170fb6e6ae9a416498c585b30f35f671
+msgid "or combined, with ``=``:"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:209
+# 493b91be194443d4a165ded6d417bbe4
+msgid "Abbreviating Long Form Options"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:211
+# 43afb94b724f497b9e25e0f7fda8d43f
+msgid "The long form option does not have to be spelled out entirely, so long as a unique prefix is provided:"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:231
+# 3ddd3e1c1a3c4a87b33bd3518466b309
+msgid "If a unique prefix is not provided, an exception is raised."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:246
+# 7009f74752464017bf60f5e3081b672d
+msgid "Option processing stops as soon as the first non-option argument is encountered."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:268
+# 2a6311f928ce49558ec32b57997720a7
+msgid "GNU-style Option Parsing"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:270
+# 7190f7afc8b7440184db9fab347f126e
+msgid "New in Python 2.3, an additional function ``gnu_getopt()`` was added. It allows option and non-option arguments to be mixed on the command line in any order."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:278
+# c1acf0ac9984438f856efd32eaace4e0
+msgid "After changing the call in the previous example, the difference becomes clear:"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:299
+# 3c289a4d52574787821d5e6131681c5d
+msgid "Special Case: ``--``"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:301
+# 099f92a5743c4dc2ae3e4666d5c227da
+msgid "If ``getopt`` encounters ``--`` in the input arguments, it stops processing the remaining arguments as options."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:324
+# b07af2cb7ca34cdea3fe6c0cc6cd436c
+msgid "`getopt <http://docs.python.org/library/getopt.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:324
+# a581e8f7060c4ba8a85aaf2945c72e35
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:326
+# 3b2d9b9a274f42a0aae5a56d69124933
+msgid ":mod:`optparse`"
+msgstr ""
+
+#: ../../PyMOTW/getopt/index.rst:327
+# 0c0111372c124bd78fa0f2b9b1214045
+msgid "The :mod:`optparse` module."
+msgstr ""
+

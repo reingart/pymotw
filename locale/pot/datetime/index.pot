@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/datetime/index.rst:3
+# 1ed0b3ee7a3244d68eba8bf38581d1da
+msgid "datetime -- Date/time value manipulation"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:8
+# 5249877db2344ab98883dbbab0614a41
+msgid "The datetime module includes functions and classes for doing date and time parsing, formatting, and arithmetic."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:9
+# e1cb967693564dfdb9513c59918cdad0
+msgid "2.3 and later"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:11
+# e3fe97709da743cd97eb3bcfac2c359a
+msgid ":mod:`datetime` contains functions and classes for working with dates and times, separatley and together."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:15
+# ccdf2f6d5b8a40cfb170385184b3e117
+msgid "Times"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:17
+# 6a484d77bdf54292a0d8e83c00075bca
+msgid "Time values are represented with the :class:`time` class. Times have attributes for hour, minute, second, and microsecond. They can also include time zone information. The arguments to initialize a :class:`time` instance are optional, but the default of ``0`` is unlikely to be what you want."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:44
+# d50b7e5046db4b1c95e6f2a0c607a6f3
+msgid "A time instance only holds values of time, and not a date associated with the time."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:51
+# d3737f0b7cce4897a8c5bdc8f5a02eaa
+msgid "The *min* and *max* class attributes reflect the valid range of times in a single day."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:68
+# 133e8f64012440a991077b8f176d07f6
+msgid "The resolution for time is limited to whole microseconds."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:74
+# 54093ac1782842b7add41679354e3497
+msgid "In fact, using floating point numbers for the microsecond argument generates a :ref:`TypeError <exceptions-TypeError>`."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:94
+# ad6e9e67c8814e1aa2f0e34047fa5dcd
+msgid "Dates"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:96
+# 350a1d6189724e1c958aea62f6c5589d
+msgid "Calendar date values are represented with the :class:`date` class. Instances have attributes for year, month, and day. It is easy to create a date representing today's date using the :func:`today()` class method."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:105
+# 223a6ca5b35f4dccb8056f5efd343c47
+msgid "This example prints the current date in several formats:"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:133
+# d02666c74ee54bddb52e8bf3bf995aef
+msgid "There are also class methods for creating instances from integers (using proleptic Gregorian ordinal values, which starts counting from Jan. 1 of the year 1) or POSIX timestamp values."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:141
+# efbbfe21dce44da18accd34f04c0659e
+msgid "This example illustrates the different value types used by :func:`fromordinal()` and :func:`fromtimestamp()`."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:159
+# ff1d81bfb70b44c683d449c2581da7eb
+msgid "As with :class:`time`, the range of date values supported can be determined using the *min* and *max* attributes."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:166
+# 2b3d3975335e4bd3a944cd89c285f280
+msgid "The resolution for dates is whole days."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:182
+# 732fe069e1a9427cadd13cbc48c2f754
+msgid "Another way to create new date instances uses the :func:`replace()` method of an existing date. For example, you can change the year, leaving the day and month alone."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:204
+# 010ea051f19947a5ab492452b891a093
+msgid "timedeltas"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:206
+# 76d96347e80048fcb4439f6d53695df3
+msgid "Using :func:`replace()` is not the only way to calculate future/past dates. You can use :mod:`datetime` to perform basic arithmetic on date values via the :class:`timedelta` class. Subtracting dates produces a :class:`timedelta`, and a :class:`timedelta` can be added or subtracted from a date to produce another date. The internal values for a :class:`timedelta` are stored in days, seconds, and microseconds."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:218
+# 859f63f048d7417e8c3cc9769f367634
+msgid "Intermediate level values passed to the constructor are converted into days, seconds, and microseconds."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:241
+# d9debff7f20f4433b2efed0fc3ddbb09
+msgid "Date Arithmetic"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:243
+# 8c1d08f2714d40018796f7fc5285a2fc
+msgid "Date math uses the standard arithmetic operators. This example with date objects illustrates using :class:`timedelta` objects to compute new dates, and subtracting date instances to produce timedeltas (including a negative delta value)."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:271
+# c065b10a8afe43bfa18ac4cf36ab31d1
+msgid "Comparing Values"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:273
+# 545157b90d11458a92145ac08cd9f028
+msgid "Both date and time values can be compared using the standard operators to determine which is earlier or later."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:301
+# 31762447f06e4da0bd0e937a8c3149ce
+msgid "Combining Dates and Times"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:303
+# 731094dd63984f8b94ba6109420201ab
+msgid "Use the :class:`datetime` class to hold values consisting of both date and time components. As with :class:`date`, there are several convenient class methods to make creating :class:`datetime` instances from other common values."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:312
+# 7948a7f602d74e64b613a3c76a3773d7
+msgid "As you might expect, the :class:`datetime` instance has all of the attributes of both a date and a time object."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:337
+# 8e42fee94501414fbc2965b89f923243
+msgid "Just as with date, datetime provides convenient class methods for creating new instances. It also includes :func:`fromordinal()` and :func:`fromtimestamp()`. In addition, :func:`combine()` can be useful if you already have a date instance and time instance and want to create a datetime."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:362
+# b4d2451b11cd4aa18ec228dd661d4000
+msgid "Formatting and Parsing"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:364
+# be177cb655a04919aa609c298a652606
+msgid "The default string representation of a datetime object uses the `ISO 8601`_ format (``YYYY-MM-DDTHH:MM:SS.mmmmmm``). Alternate formats can be generated using :func:`strftime()`. Similarly, if your input data includes timestamp values parsable with :func:`time.strptime()`, then :func:`datetime.strptime()` is a convenient way to convert them to datetime instances."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:390
+# 1c904f31ba30483ca6b5a59da31edaf4
+msgid "Time Zones"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:392
+# bb54edf1b1654aa0ba23541061a6ca88
+msgid "Within :mod:`datetime`, time zones are represented by subclasses of :class:`tzinfo`. Since :class:`tzinfo` is an abstract base class, you need to define a subclass and provide appropriate implementations for a few methods to make it useful. Unfortunately, :mod:`datetime` does not include any actual implementations ready to be used, although the documentation does provide a few sample implementations. Refer to the standard library documentation page for examples using fixed offsets as well as a DST-aware class and more details about creating your own class.  pytz_ is also a good source for time zone implementation details."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:406
+# 787339cdc29c4d6686946ef2fde9eb74
+msgid "`datetime <http://docs.python.org/lib/module-datetime.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:406
+# 951b54cfb54441448ef874e853e51b2f
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:409
+# 9bcaf199d0cf4f63b4687f215e7b446b
+msgid ":mod:`calendar`"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:409
+# 42c0f63cace94aceb5ac16dcd097aede
+msgid "The :mod:`calendar` module."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:412
+# ae6af835914c43a1a0f522b147081995
+msgid ":mod:`time`"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:412
+# 74161e9560134d45be33276baba8a40b
+msgid "The :mod:`time` module."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:415
+# e9420152d3d848759a03eb2bd9a99f37
+msgid "`dateutil <http://labix.org/python-dateutil>`_"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:415
+# e08f22fa799646a0b41a1568a7ed6111
+msgid "dateutil from Labix extends the datetime module with additional features."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:418
+# f2a54ce0a79840f5b84896be744db711
+msgid "`WikiPedia: Proleptic Gregorian calendar <http://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar>`_"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:418
+# dae6761de74e4cd991f3b2c67ce885bb
+msgid "A description of the Gregorian calendar system."
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:421
+# c87c754c8d0a4bcd9f62a43ec56218d5
+msgid "pytz_"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:421
+# f089c3163d9e4771a49c4d5f16e9a0cd
+msgid "World Time Zone database"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:423
+# 103d143cda1d4a9db3714b27c97eb6c9
+msgid "`ISO 8601`_"
+msgstr ""
+
+#: ../../PyMOTW/datetime/index.rst:424
+# 2bbff80a0d7a4283be11ae37d63f3248
+msgid "The standard for numeric representation of Dates and Time"
+msgstr ""
+

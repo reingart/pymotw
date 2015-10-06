@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/rlcompleter/index.rst:3
+# 57fb1bfb7d38404d84a70339ec47e6cc
+msgid "rlcompleter -- Adds tab-completion to the interactive interpreter"
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:8
+# c0e0f828a4c4464fabdc6b097dca068d
+msgid "Adds tab-completion to the interactive interpreter"
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:9
+# be1edaaa9be246d1a6bc605ec744c0d7
+msgid "1.5 and later"
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:11
+# 7a56e335c6cf4caf8458ee62c65a02d1
+msgid ":mod:`rlcompleter` adds tab-completion for Python symbols to the interactive interpreter.  Importing the module causes it to configure a completer function for :mod:`readline`.  The only other step required is to configure the tab key to trigger the completer.  All of this can be done in a `PYTHONSTARTUP <http://docs.python.org/using/cmdline.html#envvar-PYTHONSTARTUP>`_ file so that it runs each time the interactive interpreter starts."
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:19
+# d1a74956c92d4e0fb7314206461f0f47
+msgid "For example, create a file ``~/.pythonrc`` containing:"
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:25
+# e0e5272818ac4c30bf6b34ab87e8e392
+msgid "Then set ``PYTHONSTARTUP`` to ``\"~/.pythonrc\"``.  When you start the interactive interpreter, tab completion for names from the contents of modules or attributes of objects is activated."
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:32
+# 23ba6e0775f14e33bcfd8f3b14df5703
+msgid "`rlcompleter <http://docs.python.org/library/rlcompleter.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:32
+# 209dbef97c6b472da6672032e09a7693
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:34
+# 4ebc6f1bf98f47878e913d23a1e3824a
+msgid ":mod:`readline`"
+msgstr ""
+
+#: ../../PyMOTW/rlcompleter/index.rst:35
+# 050664687f8f41e4af3f1809f3143eaf
+msgid "The readline module."
+msgstr ""
+

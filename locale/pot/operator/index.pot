@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/operator/index.rst:3
+# cccae9ae69f9440bae5e4c9266459f39
+msgid "operator -- Functional interface to built-in operators"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:8
+# 795c75748ee4464186c7f05a1dbe3317
+msgid "Functional interface to built-in operators."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:9
+# 9f5d401c99db4eebb9acdf6daba7c613
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:11
+# 9080343dd793476092f751e0fa6b3844
+msgid "Functional programming using iterators occasionally requires creating small functions for simple expressions. Sometimes these can be expressed as lambda functions, but some operations do not need to be implemented with custom functions at all. The :mod:`operator` module defines functions that correspond to built-in operations for arithmetic and comparison, as well as sequence and dictionary operations."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:20
+# 16881a0876aa4d08b81a10c9442aac8b
+msgid "Logical Operations"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:22
+# be1ca6775e844629a60aa9a44c09f549
+msgid "There are functions for determining the boolean equivalent for a value, negating that to create the opposite boolean value, and comparing objects to see if they are identical."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:30
+# 1eca7f8ed3164383bbe5456de6a9e755
+msgid ":func:`not_` includes the trailing underscore because :command:`not` is a Python keyword.  :func:`truth` applies the same logic used when testing an expression in an :command:`if` statement.  :func:`is_` implements the same check used by the :command:`is` keyword, and :func:`is_not` does the same test and returns the opposite answer."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:56
+# 2420b71877474474bb225a2551e9da6d
+msgid "Comparison Operators"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:58
+# e9626bbb5b6c4a2f99c5759ae3f0759f
+msgid "All of the rich comparison operators are supported."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:64
+# b1e552e08d4b420b9ea0ad1c0724cf64
+msgid "The functions are equivalent to the expression syntax using ``<``, ``<=``, ``==``, ``>=``, and ``>``."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:88
+# 6cd4898857b9402285a3461424afd595
+msgid "Arithmetic Operators"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:90
+# 4874288636af4939ac922cb124cbc611
+msgid "The arithmetic operators for manipulating numerical values are also supported."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:98
+# 69f56893ee9b4a9b8d46bf571964d9ab
+msgid "There are two separate division operators: :func:`floordiv` (integer division as implemented in Python before version 3.0) and :func:`truediv` (floating point division)."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:148
+# 18ffdc9b7d9b4a85bb1aa9f7ea88ffc6
+msgid "Sequence Operators"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:150
+# c8118fc6d9f64c30ad4df23ff83e2c2a
+msgid "The operators for working with sequences can be divided into four groups for building up sequences, searching for items, accessing contents, and removing items from sequences."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:158
+# 9a19881499534879a47f3c9e04ee1a72
+msgid "Some of these operations, such as :func:`setitem` and :func:`delitem`, modify the sequence in place and do not return a value."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:198
+# ad53a01a3ffd4c52b64f2a80e3dad00c
+msgid "In-place Operators"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:200
+# 2f8295eaaece402bbf89985ccfd43fa3
+msgid "In addition to the standard operators, many types of objects support \"in-place\" modification through special operators such as ``+=``. There are equivalent functions for in-place modifications, too:"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:208
+# 5d05526afd1e4b208c7e9d1c277e7bea
+msgid "These examples only demonstrate a few of the functions. Refer to the stdlib documentation for complete details."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:232
+# 367932953666447d95b355bba66ec2a9
+msgid "Attribute and Item \"Getters\""
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:234
+# 2c310a9d99fb429787075acc94994227
+msgid "One of the most unusual features of the :mod:`operator` module is the concept of *getters*. These are callable objects constructed at runtime to retrieve attributes of objects or contents from sequences. Getters are especially useful when working with iterators or generator sequences, where they are intended to incur less overhead than a lambda or Python function."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:245
+# bcd17638eaea48ce9826c5b393a64617
+msgid "Attribute getters work like ``lambda x, n='attrname': getattr(x, n)``:"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:262
+# 81ea4ca3bfec46ebbf4e14c7e1f312ae
+msgid "While item getters work like ``lambda x, y=5: x[y]``:"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:268
+# bfb053af66f1466ab9604b82b1a0244f
+msgid "Item getters work with mappings as well as sequences."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:291
+# bbd4a088c0214aaba2f4ec064dea8b92
+msgid "Combining Operators and Custom Classes"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:293
+# 917ae50a193c476fb0e31e02c3f6b3c2
+msgid "The functions in the :mod:`operator` module work via the standard Python interfaces for their operations, so they work with user-defined classes as well as the built-in types."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:301
+# d54c099e457e4472958e40035dfc75b8
+msgid "Refer to the Python reference guide for a complete list of the special methods used by each operator."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:325
+# cb081ce9df454f48817f12c32abb1f09
+msgid "Type Checking"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:327
+# 2e11ef6b246043f4a592f346998c0d7e
+msgid "Besides the actual operators, there are functions for testing API compliance for mapping, number, and sequence types."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:334
+# d8492f2dc6ca4b5db246236d3cf8e72b
+msgid "The tests are not perfect, since the interfaces are not strictly defined, but they do provide some idea of what is supported."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:354
+# 14990b0ca687497aa907aa02613ed21d
+msgid ":mod:`abc` includes :ref:`abstract base classes <abc-collection-types>` that define the APIs for collection types."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:361
+# e191ad995f0543a7aaca7c0f073b4f80
+msgid "`operator <http://docs.python.org/lib/module-operator.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:361
+# 6f4fd4f4590a4311ac676df4edefedfd
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:366
+# 31a05efab7b745778a21c398aa0e8b09
+msgid ":mod:`functools`"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:364
+# 22cb62eaf36a4382be96fa982616785f
+msgid "Functional programming tools, including the :func:`total_ordering` decorator for adding rich comparison methods to a class."
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:368
+# e7356d41a3174024858470b7ab4c5b50
+msgid ":mod:`itertools`"
+msgstr ""
+
+#: ../../PyMOTW/operator/index.rst:369
+# 50b5bd869ee343d88e29bb7d8f1a20c9
+msgid "Iterator operations."
+msgstr ""
+

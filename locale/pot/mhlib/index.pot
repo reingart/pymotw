@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/mhlib/index.rst:3
+# bd169d0788c54e96993ba56b1fe1088d
+msgid "mhlib -- Work with MH mailboxes"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:8
+# a11c2fbdd0954005a82206525d3bd33d
+msgid "Manipulate the contents of MH mailboxes."
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:9
+# 22f9685212ea4a19b1518f02af27fda5
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:12
+# d985fb8f1e78482fa08a4b63ea9adb4d
+msgid "This module is superseded by :mod:`mailbox`."
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:17
+# b370ad0821af491186b7124599072982
+msgid "`mhlib <http://docs.python.org/lib/module-mhlib.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:17
+# e59b19e7f4fd444c89fc71410614ded9
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:20
+# bac123d3d2c546bba36a001a4f7f485f
+msgid ":mod:`email`"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:20
+# 47a7af3701294674975a167c939017e9
+msgid "The email module."
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:22
+# 5e1d0ee5dd9d49758f12ebaeeca0ec2e
+msgid ":mod:`mailbox`"
+msgstr ""
+
+#: ../../PyMOTW/mhlib/index.rst:23
+# b62d1ddcde944f14bd029dc794f13832
+msgid "The mailbox module."
+msgstr ""
+

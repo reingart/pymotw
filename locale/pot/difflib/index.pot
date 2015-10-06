@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/difflib/index.rst:3
+# 7b2ffd1b6db1479a8c15d0906fbf4b61
+msgid "difflib -- Compare sequences"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:8
+# 7487f7e299304472915097e6aa6527a5
+msgid "Compare sequences, especially lines of text."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:9
+# c828181520a548feafbbaa969361ca4c
+msgid "2.1 and later"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:11
+# f2739eacf35147b9b069011fa0211bc0
+msgid "The :mod:`difflib` module contains tools for computing and working with differences between sequences.  It is especially useful for comparing text, and includes functions that produce reports using several common difference formats."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:16
+# e22ca956aa4e412d92f21618f9786a4a
+msgid "The examples below will all use this common test data in the ``difflib_data.py`` module:"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:24
+# 402907c6f81f4dffa68be2a544966662
+msgid "Comparing Bodies of Text"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:26
+# a956211efdac4b088b226815d05e0d59
+msgid "The :class:`Differ` class works on sequences of text lines and produces human-readable *deltas*, or change instructions, including differences within individual lines."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:30
+# 51a11bc6fef64d2d8046f625ac8c226e
+msgid "The default output produced by :class:`Differ` is similar to the :command:`diff` command line tool is simple with the :class:`Differ` class.  It includes the original input values from both lists, including common values, and markup data to indicate what changes were made."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:36
+# 3efe1ce8a2ae49dc944ff576a8f48feb
+msgid "Lines prefixed with ``-`` indicate that they were in the first sequence, but not the second."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:38
+# 50c3d2605e734952aa423fb47bada4e4
+msgid "Lines prefixed with ``+`` were in the second sequence, but not the first."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:40
+# aebc8979b8434f359a8b6dc84d76956f
+msgid "If a line has an incremental difference between versions, an extra line prefixed with ``?`` is used to highlight the change within the new version."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:43
+# 046cfcd011244b549a0b30a6a3587b33
+msgid "If a line has not changed, it is printed with an extra blank space on the left column so that it it lines up with the other lines that may have differences."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:47
+# 5a061ac31764487194713bb7be9e4589
+msgid "To compare text, break it up into a sequence of individual lines and pass the sequences to :func:`compare`."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:54
+# 0ed4029cc5c140209e13736dfe2952af
+msgid "The beginning of both text segments in the sample data is the same, so the first line is printed without any extra annotation."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:61
+# 8e3f258fb646487ab8d886af694eaff5
+msgid "The second line of the data has been changed to include a comma in the modified text. Both versions of the line are printed, with the extra information on line 4 showing the column where the text was modified, including the fact that the ``,`` character was added."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:73
+# ffce75bd2f1f4e02a5f962c9b45d55ac
+msgid "Lines 6-9 of the output shows where an extra space was removed."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:82
+# f262db1f114f46629b13ee3459e3ff8e
+msgid "Next a more complex change was made, replacing several words in a phrase."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:93
+# 1dd738c1aa3a487c86d3e721e04f07fe
+msgid "The last sentence in the paragraph was changed significantly, so the difference is represented by simply removing the old version and adding the new (lines 20-23)."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:108
+# eed0b5856ac04ef69ddfdf74841e076e
+msgid "The :func:`ndiff` function produces essentially the same output."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:114
+# 3cfe7c3bcf864f22a667dcbb920b77b9
+msgid "The processing is specifically tailored for working with text data and eliminating \"noise\" in the input."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:153
+# d1f0488d51df4f8ab32a9e8a4f59a083
+msgid "Other Output Formats"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:155
+# 35fbe7756ae4418abea9e123c99bc6c3
+msgid "While the :class:`Differ` class shows all of the input lines, a *unified diff* only includes modified lines and a bit of context. In Python 2.3, the :func:`unified_diff` function was added to produce this sort of output:"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:164
+# 57b152d16a6d4eb38a3ec9b9f7a81f70
+msgid "The output should look familiar to users of subversion or other version control tools:"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:197
+# 9319b924a7244dc09858fe9941a86b13
+msgid "Using :func:`context_diff` produces similar readable output:"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:238
+# c9ddf864aed84112b5cdb5763a47dd8f
+msgid "HTML Output"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:240
+# 66719c483d12401fbf7e6428250f9e31
+msgid ":class:`HtmlDiff` produces HTML output with the same information as :class:`Diff`."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:247
+# d5cfd62c8a8f49cd9b8568db086be8a1
+msgid "This example uses :func:`make_table`, which only returns the :const:`table` tag containing the difference information.  The :func:`make_file` method produces a fully-formed HTML file as output."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:253
+# 1d5f07bf5e4d45b2af24aaddf5a3437b
+msgid "The output is not included here because it is very verbose."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:257
+# 626a0d25840f4b2fb7e045d28c2c3707
+msgid "Junk Data"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:259
+# e5adee13faae41609e4a0c7a45ad5bb7
+msgid "All of the functions that produce difference sequences accept arguments to indicate which lines should be ignored, and which characters within a line should be ignored. These parameters can be used to skip over markup or whitespace changes in two versions of a file, for example."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:269
+# c5c564622d104cf2b5021e5bf40d375a
+msgid "The default for :class:`Differ` is to not ignore any lines or characters explicitly, but to rely on the ability of :class:`SequenceMatcher` to detect noise. The default for :func:`ndiff` is to ignore space and tab characters."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:303
+# fd047db58a894bb2a69ab4aedc97ef3d
+msgid "Comparing Arbitrary Types"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:305
+# 59db682be3a0420d9a91b41d403ec6bc
+msgid "The :class:`SequenceMatcher` class compares two sequences of any types, as long as the values are hashable. It uses an algorithm to identify the longest contiguous matching blocks from the sequences, eliminating \"junk\" values that do not contribute to the real data."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:314
+# ed6e16f22a5747a0941a0982de6f9bed
+msgid "This example compares two lists of integers and uses :func:`get_opcodes` to derive the instructions for converting the original list into the newer version.  The modifications are applied in reverse order so that the list indexes remain accurate after items are added and removed."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:347
+# 55bb35993c294b2297b3cd873783fc85
+msgid ":class:`SequenceMatcher` works with custom classes, as well as built-in types, as long as they are hashable."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:353
+# bf951bc0a5f949ff85bc76b495bc1f3b
+msgid "`difflib <http://docs.python.org/library/difflib.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:353
+# 93ecd27b2eb243d9bc3f960d0339fa2e
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:356
+# 65083db51af54a8086760f1933064f5d
+msgid "`Pattern Matching: The Gestalt Approach <http://www.ddj.com/documents/s=1103/ddj8807c/>`_"
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:356
+# c797ff246f474049ae7424e35ec4778f
+msgid "Discussion of a similar algorithm by John W. Ratcliff and D. E. Metzener published in Dr. Dobb’s Journal in July, 1988."
+msgstr ""
+
+#: ../../PyMOTW/difflib/index.rst:358
+# dceed0737cb34a0789a711d7f29b7eb2
+msgid ":ref:`article-text-processing`"
+msgstr ""
+

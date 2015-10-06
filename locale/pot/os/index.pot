@@ -1,0 +1,563 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/os/index.rst:3
+# a237a67153484d4da5e66486ca2770e1
+msgid "os -- Portable access to operating system specific features."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:8
+# 3360cf924ac3411c88ff670ecacecabc
+msgid "Portable access to operating system specific features."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:9
+# c716f6aeff21432f9da466330069c02c
+msgid "1.4 (or earlier)"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:11
+# 9ba684df90c443839938acd2112c433e
+msgid "The :mod:`os` module provides a wrapper for platform specific modules such as :mod:`posix`, :mod:`nt`, and :mod:`mac`. The API for functions available on all platform should be the same, so using the :mod:`os` module offers some measure of portability. Not all functions are available on all platforms, however. Many of the process management functions described in this summary are not available for Windows."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:18
+# d4010692f7cf404dad63f6bcb5804094
+msgid "The Python documentation for the :mod:`os` module is subtitled \"Miscellaneous operating system interfaces\". The module consists mostly of functions for creating and managing running processes or filesystem content (files and directories), with a few other bits of functionality thrown in besides."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:26
+# 6c702e0616a740dca3a459f1af909746
+msgid "Some of the example code below will only work on Unix-like operating systems."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:30
+# 5e86c62edcaa42cf884e29759aa37283
+msgid "Process Owner"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:32
+# b08bebc74f5e4802b02a5c0af35d2538
+msgid "The first set of functions to cover are used for determining and changing the process owner ids. These are mostly useful to authors of daemons or special system programs which need to change permission level rather than running as ``root``. This section does not try to explain all of the intricate details of Unix security, process owners, etc. See the References list below for more details."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:39
+# dd7bc0fe419f4373a14dbcb62d610705
+msgid "This first script shows the real and effective user and group information for a process, and then changes the effective values. This is similar to what a daemon would need to do when it starts as root during a system boot, to lower the privilege level and run as a different user."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:47
+# 85be92efab31424f82851a2391ea05e7
+msgid "Before running the example, change the :data:`TEST_GID` and :data:`TEST_UID` values to match a real user."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:54
+# 6f6db569659240ec964afc16c8d1bbcf
+msgid "When run as user with id of 527 and group 501 on OS X, this output is produced:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:75
+# 31f419e0aa934eaaafd38808ab0f5610
+msgid "Notice that the values do not change. When not running as root, processes cannot change their effective owner values. Any attempt to set the effective user id or group id to anything other than that of the current user causes an :ref:`OSError <exceptions-OSError>`."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:80
+# 4973ab2d73ee43749d7e16eed89236f1
+msgid "Running the same script using :command:`sudo` so that it starts out with root privileges is a different story."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:110
+# d0a66ccfc8aa45b2ba645c352537d0d8
+msgid "In this case, since it starts as root, it can change the effective user and group for the process. Once the effective UID is changed, the process is limited to the permissions of that user. Since non-root users cannot change their effective group, the program needs to change the group before changing the user."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:116
+# 3a2ac94d299a47f296ff64cbb5fb051a
+msgid "Besides finding and changing the process owner, there are functions for determining the current and parent process id, finding and changing the process group and session ids, as well as finding the controlling terminal id. These can be useful for sending signals between processes or for complex applications such as writing a command line shell."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:123
+# f75e0dc86afc4d7bb7ecf42abb839bec
+msgid "Process Environment"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:125
+# f0c6d06752b34e2ba43f34a46f22ba5c
+msgid "Another feature of the operating system exposed to a program though the :mod:`os` module is the environment. Variables set in the environment are visible as strings that can be read through :data:`os.environ` or :func:`getenv()`. Environment variables are commonly used for configuration values such as search paths, file locations, and debug flags. This example shows how to retrieve an environment variable, and pass a value through to a child process."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:138
+# 8b6775d65abf4cc9a26e827cf9c3c7f3
+msgid "The :data:`os.environ` object follows the standard Python mapping API for retrieving and setting values. Changes to :data:`os.environ` are exported for child processes."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:166
+# 22e20ac4831945919314a8508d32f563
+msgid "Process Working Directory"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:168
+# 63e8bbfdbf624f38a1077f0891e595d5
+msgid "Operating systems with hierarchical filesystems have a concept of the *current working directory* -- the directory on the filesystem the process uses as the starting location when files are accessed with relative paths.  The current working directory can be retrieved with :func:`getcwd` and changed with :func:`chdir`."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:178
+# 3af7ff28ecbb4a588411ca4a39dfafd5
+msgid ":const:`os.curdir` and :const:`os.pardir` are used to refer to the current and parent directories in a portable manner. The output should not be surprising:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:198
+# 4e8d8dcf78274d62b433303a2bdf16ac
+msgid "Pipes"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:200
+# c3ebe17406ef481c88f0602f2925442a
+msgid "The :mod:`os` module provides several functions for managing the I/O of child processes using *pipes*. The functions all work essentially the same way, but return different file handles depending on the type of input or output desired. For the most part, these functions are made obsolete by the :mod:`subprocess` module (added in Python 2.4), but there is a good chance legacy code uses them."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:207
+# 589004779ef0412eaa2ebeca31407b40
+msgid "The most commonly used pipe function is :func:`popen()`. It creates a new process running the command given and attaches a single stream to the input or output of that process, depending on the *mode* argument. While :func:`popen` functions work on Windows, some of these examples assume a Unix-like shell."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:217
+# 8ce53d4af4cf4303936ac8b0483339cc
+msgid "The descriptions of the streams also assume Unix-like terminology:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:219
+# f9e5e84371cf42e0bb3e7cd4a4c0cf98
+msgid "stdin - The \"standard input\" stream for a process (file descriptor 0) is readable by the process. This is usually where terminal input goes."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:222
+# 2cdf4aa6bcdc4bfca076dff19cca3114
+msgid "stdout - The \"standard output\" stream for a process (file descriptor 1) is writable by the process, and is used for displaying regular output to the user."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:226
+# d4214b69b7d64602ac8648868fa46178
+msgid "stderr - The \"standard error\" stream for a process (file descriptor 2) is writable by the process, and is used for conveying error messages."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:245
+# a9f26f7dfbc2420bac791a49c667a34d
+msgid "The caller can only read from or write to the streams associated with the child process, which limits the usefulness. The other :func:`popen` variants provide additional streams so it is possible to work with stdin, stdout, and stderr as needed."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:250
+# 7a9fa5d6f31f4903bcfdf6a97fd3fbb5
+msgid "For example, :func:`popen2()` returns a write-only stream attached to stdin of the child process, and a read-only stream attached to its stdout."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:259
+# 2f491e3a3dc046e8a914ebf24206da83
+msgid "This simplistic example illustrates bi-directional communication. The value written to stdin is read by ``cat`` (because of the ``'-'`` argument), then written back to stdout. A more complicated process could pass other types of messages back and forth through the pipe; even serialized objects."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:278
+# fbd3eabb70224a64836ba752b07b6f82
+msgid "In most cases, it is desirable to have access to both stdout and stderr. The stdout stream is used for message passing and the stderr stream is used for errors, so reading from it separately reduces the complexity for parsing any error messages. The :func:`popen3()` function returns three open streams tied to stdin, stdout, and stderr of the new process."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:289
+# 276e4022d6014467b281c6c84a24fe67
+msgid "Notice that the program has to read from and close both stdout and stderr *separately*. There are some related to flow control and sequencing when dealing with I/O for multiple processes. The I/O is buffered, and if the caller expects to be able to read all of the data from a stream then the child process must close that stream to indicate the end-of-file. For more information on these issues, refer to the `Flow Control Issues <http://docs.python.org/library/popen2.html#popen2-flow-control>`__ section of the Python library documentation."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:313
+# a677cf2858724a6b8b81e55c27dd4ac7
+msgid "And finally, :func:`popen4()` returns 2 streams, stdin and a merged stdout/stderr.  This is useful when the results of the command need to be logged, but not parsed directly."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:321
+# 73f60fb3bfb74c5c9dba297ada135e1a
+msgid "All of the messages written to both stdout and stderr are read together."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:337
+# ec2960a139074710baf4c4cfa69817e6
+msgid "Besides accepting a single string command to be given to the shell for parsing, :func:`popen2()`, :func:`popen3()`, and :func:`popen4()` also accept a sequence of strings (command, followed by arguments)."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:345
+# 4218834f8de64332972ba6b0c82be541
+msgid "In this case, the arguments are not processed by the shell."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:362
+# 378278e8bc504f1daf5a878c8b743def
+msgid "File Descriptors"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:364
+# dc15c06deac449d8b53ea1b77a45833b
+msgid ":mod:`os` includes the standard set of functions for working with low-level *file descriptors* (integers representing open files owned by the current process). This is a lower-level API than is provided by :class:`file` objects. They are not covered here because it is generally easier to work directly with :class:`file` objects. Refer to the library documentation for details."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:372
+# 465a96b52c4f41e6b6a0a25b985a909a
+msgid "Filesystem Permissions"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:374
+# bb68c1b821274048ba399451abadf144
+msgid "The function :func:`access()` can be used to test the access rights a process has for a file."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:381
+# a61a200ca46c469594114da78f758dbd
+msgid "The results will vary depending on how the example code is installed, but it will look something like this:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:401
+# c872e4ea0f7b4b6dad4b5068024e27ca
+msgid "The library documentation for :func:`access()` includes two special warnings. First, there isn't much sense in calling :func:`access()` to test whether a file can be opened before actually calling :func:`open()` on it. There is a small, but real, window of time between the two calls during which the permissions on the file could change. The other warning applies mostly to networked filesystems that extend the POSIX permission semantics. Some filesystem types may respond to the POSIX call that a process has permission to access a file, then report a failure when the attempt is made using :func:`open()` for some reason not tested via the POSIX call. All in all, it is better to call :func:`open()` with the required mode and catch the :ref:`IOError <exceptions-IOError>` raised if there is a problem."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:415
+# 8a7a62ebbdcd47e597a53f71bd56fc4f
+msgid "More detailed information about the file can be accessed using :func:`stat()` or :func:`lstat()` (for checking the status of something that might be a symbolic link)."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:423
+# dd370dda58624b91a4aa58a68338f684
+msgid "Once again, the output will vary depending on how the example code was installed. Try passing different filenames on the command line to ``os_stat.py``."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:445
+# 1a66f97d774d4b65a62f8e3ab930c2be
+msgid "On Unix-like systems, file permissions can be changed using :func:`chmod()`, passing the mode as an integer. Mode values can be constructed using constants defined in the :mod:`stat` module.  This example toggles the user's execute permission bit:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:455
+# bf7c3708a2d04c0897a08cd35be80fbe
+msgid "The script assumes it has the permissions necessary to modify the mode of the file when run."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:473
+# a28c8dbb762c4db7b7e219a125cae5d9
+msgid "Directories"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:475
+# e08d031e1ff047caa10d36046e6d9b72
+msgid "There are several functions for working with directories on the filesystem, including creating, listing contents, and removing them."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:482
+# 911a06985835425caba49052ae157753
+msgid "There are two sets of functions for creating and deleting directories. When creating a new directory with :func:`mkdir()`, all of the parent directories must already exist. When removing a directory with :func:`rmdir()`, only the leaf directory (the last part of the path) is actually removed. In contrast, :func:`makedirs()` and :func:`removedirs()` operate on all of the nodes in the path.  :func:`makedirs()` will create any parts of the path which do not exist, and :func:`removedirs()` will remove all of the parent directories (assuming it can)."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:510
+# 8f5eced3448345da942a996659b46d57
+msgid "Symbolic Links"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:512
+# e2c2a28d0c03418f9b2ab14e97837c82
+msgid "For platforms and filesystems that support them, there are functions for working with symlinks."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:520
+# 9d251de7781643b791b690dd6b6bbc4c
+msgid "Although :mod:`os` includes :func:`tempnam()` for creating temporary filenames, it is not as secure as the :mod:`tempfile` module and produces a :ref:`RuntimeWarning <exceptions-RuntimeWarning>` message when it is used. In general it is better to use :mod:`tempfile`, as in this example."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:542
+# 561733ef9c514cdfb8bead99591de5ee
+msgid "Walking a Directory Tree"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:544
+# e1212a9969b547bb9e778895e3c1cd7f
+msgid "The function :func:`walk()` traverses a directory recursively and for each directory generates a tuple containing the directory path, any immediate sub-directories of that path, and the names of any files in that directory."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:553
+# 1eb793be9c8a48e1972c7245670d31bc
+msgid "This example shows a recursive directory listing."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:600
+# 7b1c1b3e3445465c8243887e2dfeb543
+msgid "Running External Commands"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:604
+# 5f17619ad92f461f8751b59545c80d9b
+msgid "Many of these functions for working with processes have limited portability. For a more consistent way to work with processes in a platform independent manner, see the :mod:`subprocess` module instead."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:609
+# ff58c6e3582d48069e25d4cc89622694
+msgid "The simplest way to run a separate command, without interacting with it at all, is :func:`system()`. It takes a single string which is the command line to be executed by a sub-process running a shell."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:617
+# 8eaf7444d70e417dbba94044cf82ea89
+msgid "The return value of :func:`system` is the exit value of the shell running the program packed into a 16 bit number, with the high byte the exit status and the low byte the signal number that caused the process to die, or zero."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:635
+# 1df1e379298146fa8cb01dfc5f9de493
+msgid "Since the command is passed directly to the shell for processing, it can even include shell syntax such as globbing or environment variables:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:655
+# d96442ef592c4e12a37d65d0b91f0043
+msgid "Unless the command is explicitly run in the background, the call to :func:`system()` blocks until it is complete. Standard input, output, and error from the child process are tied to the appropriate streams owned by the caller by default, but can be redirected using shell syntax."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:666
+# 2a7f10ba7b534128956e883a6a19b919
+msgid "This is getting into shell trickery, though, and there are better ways to accomplish the same thing."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:687
+# a99c599d5a3e47ce9f97e4c749cbfa2f
+msgid "Creating Processes with os.fork()"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:689
+# 074bc2ddf6df416c97b39cb24fec3dae
+msgid "The POSIX functions :func:`fork()` and :func:`exec*()` (available under Mac OS X, Linux, and other UNIX variants) are exposed via the :mod:`os` module. Entire books have been written about reliably using these functions, so check the library or bookstore for more details than are presented here."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:695
+# 2d1b0e13d08642a284f4242063bd2379
+msgid "To create a new process as a clone of the current process, use :func:`fork()`:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:702
+# abf5c21b844c4e03be34c6220b06edbd
+msgid "The output will vary based on the state of the system each time the example is run, but it will look something like:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:718
+# 74138c8859d0451faaa2fbcad8791b73
+msgid "After the fork, there are two processes running the same code. For a program to tell which one it is in, it needs to check the return value of :func:`fork()`. If the value is ``0``, the current process is the child.  If it is not ``0``, the program is running in the parent process and the return value is the process id of the child process."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:724
+# 793b994478404a1892c4c9a282695262
+msgid "From the parent process, it is possible to send the child signals. This is a bit more complicated to set up, and uses the :mod:`signal` module. First, define a signal handler to be invoked when the signal is received."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:732
+# 9c21dc132c454c4cbd50408a72d3e000
+msgid "Then :func:`fork`, and in the parent pause a short amount of time before sending a :const:`USR1` signal using :func:`kill()`. The short pause gives the child process time to set up the signal handler."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:739
+# 3e7c87b1ba364b069bc5895e7e5c4839
+msgid "In the child, set up the signal handler and go to sleep for a while to give the parent time to send the signal:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:746
+# 5b4697e4e87d456d856b519885053a4c
+msgid "A real application, wouldn't need (or want) to call :func:`sleep()`."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:767
+# c404dde3ba8d47ec96d56edcbc58cea0
+msgid "A simple way to handle separate behavior in the child process is to check the return value of :func:`fork()` and branch. More complex behavior may call for more code separation than a simple branch. In other cases, there may be an existing program that needs to be wrapped. For both of these situations, the :func:`exec*()` series of functions can be used to run another program."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:778
+# a3e720ef7f3e4f619628de189ae29327
+msgid "When a program is \"execed\", the code from that program replaces the code from the existing process."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:794
+# 4e9e231f027c4b40aa77ff2ba99ed79e
+msgid "There are many variations of :func:`exec*()`, depending on the form in which the arguments are available, whether the path and environment of the parent process should be be copied to the child, etc. Refer to the library documentation for complete details."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:799
+# 3f0c5acc6ac84bcea55c16d41d414682
+msgid "For all variations, the first argument is a path or filename and the remaining arguments control how that program runs. They are either passed as command line arguments or override the process \"environment\" (see :data:`os.environ` and :data:`os.getenv`)."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:805
+# 3314dcd898a24add80ae9ae293de36de
+msgid "Waiting for a Child"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:807
+# e613d270d59d4a2b99e0b3e58fad4ca2
+msgid "Many computationally intensive programs use multiple processes to work around the threading limitations of Python and the Global Interpreter Lock. When starting several processes to run separate tasks, the master will need to wait for one or more of them to finish before starting new ones, to avoid overloading the server. There are a few different ways to do that using :func:`wait()` and related functions."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:814
+# 284df5a83c264fafaa58acb30a752742
+msgid "When it does not matter which child process might exit first, use :func:`wait()`.  It returns as soon as any child process exits."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:822
+# b8aa78e5ff5249f29896818336a31f57
+msgid "The return value from :func:`wait()` is a tuple containing the process id and exit status (\"a 16-bit number, whose low byte is the signal number that killed the process, and whose high byte is the exit status\")."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:851
+# 614b0a5cbdf24d68a28fc06e9f89ccf2
+msgid "To wait for a specific process, use :func:`waitpid()`."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:857
+# 3a2dc558fab847f78b821eba095540db
+msgid "Pass the process id of the target process, and :func:`waitpid` blocks until that process exits."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:884
+# debd9e374eb347a78da113112b7295bb
+msgid ":func:`wait3()` and :func:`wait4()` work in a similar manner, but return more detailed information about the child process with the pid, exit status, and resource usage."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:889
+# 0e790969200240aa966d2ab53875dd56
+msgid "Spawn"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:891
+# 5d1b14d89be443fba38026c9c46b2dfb
+msgid "As a convenience, the :func:`spawn*()` family of functions handles the :func:`fork()` and :func:`exec*()` in one statement:"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:898
+# c777cdefb9a14548b7c338e109d91ccf
+msgid "The first argument is a mode indicating whether or not to wait for the process to finish before returning.  This example waits.  Use :const:`P_NOWAIT` to let the other process start, but then resume in the current process."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:919
+# 801d512a847b463ebd094a3369c5566c
+msgid "`os <http://docs.python.org/lib/module-os.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:919
+# 0aa29605443a40ef97b5bc85c08d9319
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:922
+# 2c86fb46732b45f4b8a28106a2250326
+msgid ":mod:`subprocess`"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:922
+# 88220cd7f30c4303b9ca707b2fd2b438
+msgid "The subprocess module supersedes os.popen()."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:926
+# 3574304eece543fba1e97b83bba0fbb3
+msgid ":mod:`multiprocessing`"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:925
+# 1acf5f616fe84d84872fe4e13e0f5a06
+msgid "The multiprocessing module makes working with extra processes easier than doing all of the work yourself."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:929
+# 60aaeeafe32549babfa26006fad49126
+msgid ":mod:`tempfile`"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:929
+# 96a57551a8c04168a262c480c34fcf99
+msgid "The tempfile module for working with temporary files."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:934
+# b22dbd30ad4f45658a26239fe39f08a5
+msgid "*Unix Manual Page Introduction*"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:932
+# 4db2e0ecabeb431c9edcbcf44c28ef7a
+msgid "Includes definitions of real and effective ids, etc."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:934
+# c4be7c18b2e84f9da75cd56f26502d50
+msgid "http://www.scit.wlv.ac.uk/cgi-bin/mansec?2+intro"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:939
+# 9355988b003c4f14baed63cb216506cc
+msgid "*Speaking UNIX, Part 8.*"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:937
+# c8107c476bda4abba898c2fe53d9af0a
+msgid "Learn how UNIX multitasks."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:939
+# 278eea35937c43188dae137d7d8e1636
+msgid "http://www.ibm.com/developerworks/aix/library/au-speakingunix8/index.html"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:944
+# 315ff6c82b164e25b27563c9ef5e6b87
+msgid "*Unix Concepts*"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:942
+# e758a8839ced434d95daebd1c3ba9adf
+msgid "For more discussion of stdin, stdout, and stderr."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:944
+# fa0753b5fcd6457ebd3e16f7e832af2b
+msgid "http://www.linuxhq.com/guides/LUG/node67.html"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:949
+# cb58726557fe46d3b291546ab1ab55f2
+msgid "*Delve into Unix Process Creation*"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:947
+# fd1c8e4953d147669a919bc9eda72150
+msgid "Explains the life cycle of a UNIX process."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:949
+# 455832be165e4f4ca26e59fcf70285dc
+msgid "http://www.ibm.com/developerworks/aix/library/au-unixprocess.html"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:953
+# 761e64bd19494447a182005040e4277c
+msgid "`Advanced Programming in the UNIX(R) Environment <http://www.amazon.com/Programming-Environment-Addison-Wesley-Professional-Computing/dp/0201433079/ref=pd_bbs_3/002-2842372-4768037?ie=UTF8&s=books&amp;qid=1182098757&sr=8-3>`_"
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:952
+# 4e9b6885bf4c40108002f53a9d7f69e4
+msgid "Covers working with multiple processes, such as handling signals, closing duplicated file descriptors, etc."
+msgstr ""
+
+#: ../../PyMOTW/os/index.rst:955
+# d98767dd533f4de79ea58a6c7e7b0113
+msgid ":ref:`article-file-access`"
+msgstr ""
+

@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/glob/index.rst:3
+# 3e29431aaea14f81a4dea6d313b29ad9
+msgid "glob -- Filename pattern matching"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:8
+# e16024bf714949389ed99e07c890cf32
+msgid "Use Unix shell rules to fine filenames matching a pattern."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:9
+# 1916f2474a91432faa8548ff13e4ca50
+msgid "1.4"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:11
+# e87f854f763340ee8a461a0e75cfcc0c
+msgid "Even though the glob API is very simple, the module packs a lot of power. It is useful in any situation where your program needs to look for a list of files on the filesystem with names matching a pattern. If you need a list of filenames that all have a certain extension, prefix, or any common string in the middle, use :mod:`glob` instead of writing code to scan the directory contents yourself."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:18
+# 2f97e9e24bd04295a26810505ed5eeec
+msgid "The pattern rules for glob are not regular expressions. Instead, they follow standard Unix path expansion rules. There are only a few special characters: two different wild-cards, and character ranges are supported. The patterns rules are applied to segments of the filename (stopping at the path separator, ``/``). Paths in the pattern can be relative or absolute. Shell variable names and tilde (``~``) are not expanded."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:27
+# 7d690a5d37334f1b8f1d2914c3bf563a
+msgid "Example Data"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:29
+# 615a02fffa0b4eb7b7745cdbc48ceeac
+msgid "The examples below assume the following test files are present in the current working directory:"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:56
+# 140ad2cba2224ca0961381eda3677a20
+msgid "Use ``glob_maketestdata.py`` in the sample code to create these files if you want to run the examples."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:60
+# 93f403816d484ccc9a03c615852e0822
+msgid "Wildcards"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:62
+# dbc764e0c48b49129d5637abd3045e1c
+msgid "An asterisk (``*``) matches zero or more characters in a segment of a name. For example, ``dir/*``."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:69
+# 2a892be3a6a648699ed7c4adf03da5f8
+msgid "The pattern matches every pathname (file or directory) in the directory dir, without recursing further into subdirectories."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:89
+# a014381133bd4f0bbf888fb9066e35a0
+msgid "To list files in a subdirectory, you must include the subdirectory in the pattern:"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:96
+# 1730a95183f947bbb0008007da52de11
+msgid "The first case above lists the subdirectory name explicitly, while the second case depends on a wildcard to find the directory."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:114
+# 8df731fd518c41cd849bd1dec84ac719
+msgid "The results, in this case, are the same. If there was another subdirectory, the wildcard would match both subdirectories and include the filenames from both."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:119
+# 39d4d893955d443ab4b7e531dd0c3683
+msgid "Single Character Wildcard"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:121
+# dd564ad12023499cbe250974818c2fc9
+msgid "The other wildcard character supported is the question mark (``?``). It matches any single character in that position in the name. For example,"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:129
+# 354526c2e799433b912ae701cac8b592
+msgid "Matches all of the filenames which begin with \"file\", have one more character of any type, then end with \".txt\"."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:149
+# 45962dd4f072421796b2c51bdd70321b
+msgid "Character Ranges"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:151
+# 35f528122ceb4c9485487053550c4ebc
+msgid "When you need to match a specific character, use a character range instead of a question mark. For example, to find all of the files which have a digit in the name before the extension:"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:159
+# 939ceaeedb594442bba2c4f07987519c
+msgid "The character range ``[0-9]`` matches any single digit. The range is ordered based on the character code for each letter/digit, and the dash indicates an unbroken range of sequential characters. The same range value could be written ``[0123456789]``."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:181
+# 33785f189c9e496bbfcbe20a5cd5e5fd
+msgid "`glob <http://docs.python.org/library/glob.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:181
+# e9edcd493a9d4ac4bc533d23cd42abd9
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:184
+# d46f478ce0854803a70b2d7ff2ba9c8a
+msgid "`Pattern Matching Notation <http://www.opengroup.org/onlinepubs/000095399/utilities/xcu_chap02.html#tag_02_13>`_"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:184
+# 17160a4c0ce247a48f34a27046bc30b2
+msgid "An explanation of globbing from The Open Group's Shell Command Language specification."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:187
+# 2dfba0fd04cf496a841cd77e72079673
+msgid ":mod:`fnmatch`"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:187
+# d77c6823542546e8a6e352e73276ba86
+msgid "Filename matching implementation."
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:189
+# 29ff6bbaa1b649d7b75e3fc35b1ff7a3
+msgid ":ref:`article-file-access`"
+msgstr ""
+
+#: ../../PyMOTW/glob/index.rst:190
+# 5e6d99503e8e4ea590751c373621448f
+msgid "Other tools for working with files."
+msgstr ""
+

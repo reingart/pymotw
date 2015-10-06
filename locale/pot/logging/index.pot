@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/logging/index.rst:3
+# 5db5624202694ab29530e7e918197df9
+msgid "logging -- Report status, error, and informational messages."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:8
+# bbc0a4eb3ab3421d8e4f86571ae49abe
+msgid "Report status, error, and informational messages."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:9
+# 5b926f7a50c148798d45cef8eb6a111d
+msgid "2.3"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:11
+# dc40ba65905d47189fb6d95e9bd53382
+msgid "The :mod:`logging` module defines a standard API for reporting errors and status information from applications and libraries. The key benefit of having the logging API provided by a standard library module is that all Python modules can participate in logging, so an application's log can include messages from third-party modules."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:18
+# 7f2db910685f4d1a9b7230ee6f14e8a0
+msgid "Logging in Applications"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:20
+# 38106863d3544f53beb065c0c83ac4d5
+msgid "There are two perspectives for examining logging.  Application developers set up the :mod:`logging` module, directing the messages to appropriate output channels.  It is possible to log messages with different verbosity levels or to different destinations. Handlers for writing log messages to files, HTTP GET/POST locations, email via SMTP, generic sockets, or OS-specific logging mechanisms are all included, and it is possible to create custom log destination classes for special requirements not handled by any of the built-in classes."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:30
+# 5f3cce576410461999b8a65be0b423f5
+msgid "Logging to a File"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:32
+# 226f4c6dc907466eb41f4334669d31cd
+msgid "Most applications are probably going to want to log to a file. Use the :func:`basicConfig()` function to set up the default handler so that debug messages are written to a file."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:40
+# c3146ee40d59437b9f031b23f856f3e6
+msgid "After running the script, the log message is written to ``logging_example.out``:"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:61
+# 2079991b480c465b8fa77a3065d0d705
+msgid "Rotating Log Files"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:63
+# 7c0bc42ec3464e5e88b653aed9c57758
+msgid "Running the script repeatedly causes more messages to be appended to the file. To create a new file each time the program runs, pass a ``filemode`` argument to :func:`basicConfig()` with a value of ``'w'``. Rather than managing the creation of files this way, though, it is simpler to use a :class:`RotatingFileHandler`:"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:73
+# d491362e56fa4600ac7342d0724ca9f8
+msgid "The result should be six separate files, each with part of the log history for the application:"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:95
+# 249217fa10e24ab080e9ef9529efb739
+msgid "The most current file is always ``logging_rotatingfile_example.out``, and each time it reaches the size limit it is renamed with the suffix ``.1``. Each of the existing backup files is renamed to increment the suffix (``.1`` becomes ``.2``, etc.) and the ``.5`` file is erased."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:102
+# 69b7720551de4dba8fe179751fde3ddf
+msgid "Obviously this example sets the log length much much too small as an extreme example. Set *maxBytes* to a more appropriate value in a real program."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:107
+# f40f4a9ed3f34bd786db56ef9b6547f8
+msgid "Verbosity Levels"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:109
+# a4588d12547946a2ac10e54ec05bd172
+msgid "Another useful feature of the :mod:`logging` API is the ability to produce different messages at different log levels. This code to be instrumented with debug messages, for example, while setting the log level down so that those debug messages are not written on a production system."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:116
+# ad896363dbaf411992ca76db789b857f
+msgid "Level"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:116
+# db02cdd093ea4d209871e50c7af284e9
+msgid "Value"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:118
+# f58bf5d189f342db8e55c871219ba564
+msgid "CRITICAL"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:118
+# d687ae41112c4691b9fab899b1d4ca8b
+msgid "50"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:119
+# 0648cace96c54c3bb6eb1ae8983e6733
+msgid "ERROR"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:119
+# 6264602c2bc542a78b487cd7b5439158
+msgid "40"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:120
+# 7a1159e67bc0444298571f0c53221a52
+msgid "WARNING"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:120
+# 05e42b06eb03494db26ec572dabf6704
+msgid "30"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:121
+# 9a762cb2dba84cf8866671ee6a8f4b48
+msgid "INFO"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:121
+# 3fab2dbc57214da892a8d18c221da5fe
+msgid "20"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:122
+# 83026cece78045f8838b72778cbf0b97
+msgid "DEBUG"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:122
+# a37915eab92848fa89ff8fbb3475a2fb
+msgid "10"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:123
+# 97ec6185b5bb4edb97e0430012ac2c09
+msgid "UNSET"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:123
+# 34e88d84effd44cdb8fae89dafad7120
+msgid "0"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:126
+# 0383b856f86b4db49b7c49d4d211628d
+msgid "The logger, handler, and log message call each specify a level. The log message is only emitted if the handler and logger are configured to emit messages of that level or higher. For example, if a message is :const:`CRITICAL`, and the logger is set to :const:`ERROR`, the message is emitted (50 > 40). If a message is a :const:`WARNING`, and the logger is set to produce only messages set to :const:`ERROR`, the message is not emitted (30 < 40)."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:138
+# 8203b358ef5b4a4eab36b657d4e160cf
+msgid "Run the script with an argument like 'debug' or 'warning' to see which messages show up at different levels:"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:166
+# 676bc0d7438b4a72b26031c4a3ace3cf
+msgid "Logging in Libraries"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:168
+# b552ab9638e94151818677036b01d179
+msgid "Developers of libraries, rather than applications, should also use :mod:`logging`.  For them, there is even less work to do.  Simply create a logger instance for each context, using an appropriate name, and then log messages using the stanard levels.  As long as a library uses the logging API with consistent naming and level selections, the application can be configured to show or hide messages from the library, as desired."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:177
+# ad005f6e42704fc3a95da60ccc2c81ca
+msgid "Naming Logger Instances"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:179
+# 9ae5039156624e79a8aaa26a37f54238
+msgid "All of the previous log messages all have 'root' embedded in them. The :mod:`logging` module supports a hierarchy of loggers with different names. An easy way to tell where a specific log message comes from is to use a separate logger object for each module. Every new logger inherits the configuration of its parent, and log messages sent to a logger include the name of that logger. Optionally, each logger can be configured differently, so that messages from different modules are handled in different ways. Below is an example of how to log from different modules so it is easy to trace the source of the message:"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:193
+# c96b977f905e4b40ab360ceae5c0de64
+msgid "And the output:"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:208
+# 168a1f29f2d34e37b4c7d4f7a5e29ff6
+msgid "There are many, many, more options for configuring logging, including different log message formatting options, having messages delivered to multiple destinations, and changing the configuration of a long-running application on the fly using a socket interface. All of these options are covered in depth in the library module documentation."
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:217
+# 2e8cf59234db4e9e85bee2300bea669a
+msgid "`logging <http://docs.python.org/library/logging.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/logging/index.rst:218
+# 1809981073824238adc8b7638c99f2bb
+msgid "The standard library documentation for this module."
+msgstr ""
+

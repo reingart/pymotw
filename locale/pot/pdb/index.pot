@@ -1,0 +1,588 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pdb/index.rst:3
+# 13223988c3074842a7d74e32b48a653d
+msgid "pdb -- Interactive Debugger"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:8
+# 610200d98a76446e9aae7dd7a8566474
+msgid "Python's Interactive Debugger"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:9
+# 5f5ffccb044544a38b36ea5421e84f17
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:11
+# 35cc9f1e714840d7985e7791936f9c6c
+msgid ":mod:`pdb` implements an interactive debugging environment for Python programs.  It includes features to let you pause your program, look at the values of variables, and watch program execution step-by-step, so you can understand what your program actually does and find bugs in the logic."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:18
+# a1589b00f7c240a08cae6f87e9b1218b
+msgid "Starting the Debugger"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:20
+# 6e5a8049fbd947d392e53c0c336626cc
+msgid "The first step to using :mod:`pdb` is causing the interpreter to enter the debugger when you want it to.  There are a few different ways to do that, depending on your starting conditions and what you need to debug."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:26
+# 07304c99364c4787ace5579d573617fd
+msgid "From the Command Line"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:28
+# 90ee5c014a1e4d3ab328964c2ffd5327
+msgid "The most straightforward way to use the debugger is to run it from the command line, giving it your own program as input so it knows what to run."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:35
+# c1308f6009d2402884e2c0aef142c748
+msgid "Running the debugger from the command line causes it to load your source file and stop execution on the first statement it finds.  In this case, it stops before evaluating the definition of the class :class:`MyObj` on line 7."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:49
+# b0b1ea384cee47cdb86339bb6d1a70f3
+msgid "Normally :mod:`pdb` includes the full path to each module in the output when printing a filename.  In order to maintain clear examples, the sample output in this section replaces the path with ``...``."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:55
+# cc075a457f144848b735af582a68a8ce
+msgid "Within the Interpreter"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:57
+# 1483116bb87540ca81cbb019c569fc05
+msgid "Many Python developers work with the interactive interpreter while developing early versions of modules because it lets them experiment more iteratively without the save/run/repeat cycle needed when creating standalone scripts.  To run the debugger from within an interactive interpreter, use :func:`run` or :func:`runeval`."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:75
+# 562b6c0421e342a8a3b7fc3ca48dd720
+msgid "The argument to :func:`run` is a string expression that can be evaluated by the Python interpreter.  The debugger will parse it, then pause execution just before the first expression evaluates.  You can use the debugger commands described below to navigate and control the execution."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:82
+# 2a81dfddaaab4df5bd33377e6c24928e
+msgid "From Within Your Program"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:84
+# 5102d7939f604ce19f44a16b5b00d19f
+msgid "Both of the previous examples assume you want to start the debugger at the beginning of your program.  For a long-running process where the problem appears much later in the program execution, it will be more convenient to start the debugger from inside your program using :func:`set_trace`."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:93
+# 8bed04fc1c1a4dfebc55b727bcd4e023
+msgid "Line 16 of the sample script triggers the debugger at that point in execution."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:103
+# c107913b19054ed385fe2991ab7740b5
+msgid ":func:`set_trace` is just a Python function, so you can call it at any point in your program.  This lets you enter the debugger based on conditions inside your program, including from an exception handler or via a specific branch of a control statement."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:109
+# 752bbd93fbe64f649e097fca932da7f7
+msgid "After a Failure"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:111
+# 0a5e5d64dbcd40d7a95bf818fff9011e
+msgid "Debugging a failure after a program terminates is called *post-mortem* debugging.  :mod:`pdb` supports post-mortem debugging through the :func:`pm` and :func:`post_mortem` functions."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:118
+# a031f0dacb1f4a50bd815615a9aff1fd
+msgid "Here the incorrect attribute name on line 13 triggers an :ref:`AttributeError <exceptions-AttributeError>` exception, causing execution to stop. :func:`pm` looks for the active traceback and starts the debugger at the point in the call stack where the exception occurred."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:145
+# 9f224a0e83ef4d1d818078ce29515ac5
+msgid "Controlling the Debugger"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:147
+# 005e5f89809f41598fcbedf378f3d9bd
+msgid "You interact with the debugger using a small command language that lets you move around the call stack, examine and change the values of variables, and control how the debugger executes your program.  The interactive debugger uses :mod:`readline` to accept commands. Entering a blank line re-runs the previous command again, unless it was a :command:`list` operation."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:155
+# 82c98f578ee34e338381d4fe4917eeba
+msgid "Navigating the Execution Stack"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:157
+# 4518d1c24ce346e998acc8b0953e2d22
+msgid "At any point while the debugger is running you can use :command:`where` (abbreviated :command:`w`) to find out exactly what line is being executed and where on the call stack you are.  In this case, the module ``pdb_set_trace.py`` line 17 in the :func:`go` method."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:174
+# 450da7f17b724164bac5d9f103b67f7d
+msgid "To add more context around the current location, use :command:`list` (:command:`l`)."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:193
+# 93e86fb06dd642629261e44b66189efb
+msgid "The default is to list 11 lines around the current line (five before and five after).  Using :command:`list` with a single numerical argument lists 11 lines around that line instead of the current line."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:212
+# e01874d727e6445480509bb9a4aa0957
+msgid "If :command:`list` receives two arguments, it interprets them as the first and last lines to include in its output."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:234
+# f20a4697c1684f62b51dcb81d113ea07
+msgid "Move between frames within the current call stack using :command:`up` and down.  :command:`up` (abbreviated :command:`u`) moves towards older frames on the stack.  :command:`down` (abbreviated :command:`d`) moves towards newer frames."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:249
+# 36cbf431b9f14182bcd4dd14a79f3aaf
+msgid "Each time you move up or down the debugger prints the current location in the same format as produced by :command:`where`."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:253
+# 24b178e38dcb442c9bf8813ca80a8078
+msgid "Examining Variables on the Stack"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:255
+# c9d3bb5ce51f491496bc3cd597b98b09
+msgid "Each frame on the stack maintains a set of variables, including values local to the function being executed and global state information. :mod:`pdb` provides several ways to examine the contents of those variables."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:263
+# 393bf37b1fe1413e8733de904c83769c
+msgid "The :command:`args` command (abbreviated :command:`a`) prints all of the arguments to the function active in the current frame.  This example also uses a recursive function to show what a deeper stack looks like when printed by :command:`where`."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:303
+# ec51d4e8dbc04446928d7d19170558ca
+msgid "The :command:`p` command evaluates an expression given as argument and prints the result.  You can also use Python's ``print`` statement, but that is passed through to the interpreter to be executed rather than running as a command in the debugger."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:316
+# 36434d61be8f4cba8fd8d9c4fa7f9690
+msgid "Similarly, prefixing an expression with :command:`!` passes it to the Python interpreter to be evaluated.  You can use this feature to execute arbitrary Python statements, including modifying variables. This example changes the value of *output* before letting the debugger continue running the program.  The next statement after the call to :func:`set_trace` prints the value of *output*, showing the modified value."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:338
+# 183c74c0ae4242e995795f1501dea2dc
+msgid "For more complicated values such as nested or large data structures, use :command:`pp` to \"pretty print\" them.  This program reads several lines of text from a file."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:345
+# 09d8a795746c4acbb29738d985064bd0
+msgid "Printing the variable ``lines`` with :command:`p` results in output that is difficult to read because it wraps awkwardly.  :command:`pp` uses :mod:`pprint` to format the value for clean printing."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:369
+# f54b16c629ac4d9e87a172849d09ac7d
+msgid "Stepping Through Your Program"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:371
+# eacbaa8f30ba4fa9887dbe7c591cd5fb
+msgid "In addition to navigating up and down the call stack when the program is paused, you can also step through execution of the program past the point where it enters the debugger."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:378
+# 82fb11745b244f1d9d0aeb42c18e94ac
+msgid "Use :command:`step` to execute the current line and then stop at the next execution point -- either the first statement inside a function being called or the next line of the current function."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:388
+# 09b45d35043742048912412acde32a69
+msgid "The interpreter pauses at the call to :func:`set_trace` and gives control to the debugger.  The first step causes the execution to enter :func:`f`."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:400
+# 99e4d17836e5445badf425dde50740b4
+msgid "One more step moves execution to the first line of :func:`f` and starts the loop."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:409
+# 41c0709322e2446687cbb165ccf7cf01
+msgid "Stepping again moves to the first line inside the loop where ``j`` is defined."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:420
+# a7ff155225ab4d30ba1b5afd6b24e528
+msgid "The value of ``i`` is ``0``, so after one more step the value of ``j`` should also be ``0``."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:434
+# f12815abfef842778bde468f7949100d
+msgid "Stepping one line at a time like this can become tedious if there is a lot of code to cover before the point where the error occurs, or if the same function is called repeatedly."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:441
+# 67f4fa1302c647f8a83ed8c008d4c4fa
+msgid "In this example, there is nothing wrong with :func:`calc`, so stepping through it each time it is called in the loop in :func:`f` obscures the useful output by showing all of the lines of :func:`calc` as they are executed."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:490
+# 07f49887723c4d099da1f8a95a5e3785
+msgid "The :command:`next` command is like step, but does not enter functions called from the statement being executed.  In effect, it steps all the way through the function call to the next statement in the current function in a single operation."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:509
+# 6bc526cd11af41d1872981f81b85869d
+msgid "The :command:`until` command is like :command:`next`, except it explicitly continues until execution reaches a line in the same function with a line number higher than the current value.  That means, for example, that :command:`until` can be used to step past the end of a loop."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:548
+# 90737013293b450b8cb083fde814122d
+msgid "Before :command:`until` was run, the current line was 16, the last line of the loop.  After :command:`until` ran, execution was on line 17, and the loop had been exhausted."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:552
+# 8e1040874cb74cc3a8ffb983f77edfcb
+msgid ":command:`return` is another short-cut for bypassing parts of a function.  It continues executing until the function is about to execute a ``return`` statement, and then it pauses.  This gives you time to look at the return value before the function returns."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:584
+# d94e4cd433ce49f9a709f29cc9040a94
+msgid "Breakpoints"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:586
+# 8e3deb0ab7dd423fbab18a073a4ac266
+msgid "As programs grow even longer, even using :command:`next` and :command:`until` will become slow and cumbersome.  Instead of stepping through the program by hand, a better solution is to let it run normally until it reaches a point where you want the debugger to interrupt it.  You could use :func:`set_trace` to start the debugger, but that only works if there is only one point you want to pause the program.  It is more convenient to run the program through the debugger, but tell the debugger where to stop in advance using *breakpoints*.  The debugger monitors your program, and when it reaches the location described by a breakpoint the program is paused before the line is executed."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:601
+# 9be80e45af88470c97e4dc422940809f
+msgid "There are several options to the :command:`break` command used for setting break points.  You can specify the line number, file, and function where processing should pause.  To set a breakpoint on a specific line of the current file, use ``break lineno``:"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:624
+# 022d820ff7734cd096aa50bbc85e32b0
+msgid "The command :command:`continue` tells the debugger to keep running your program until the next breakpoint.  In this case, it runs through the first iteration of the ``for`` loop in :func:`f` and stops inside :func:`calc` during the second iteration."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:629
+# 6a73fa80cbf74fd08a6822686bcb4bcf
+msgid "Breakpoints can also be set to the first line of a function by specifying the function name instead of a line number.  This example shows what happens if a breakpoint is added for the :func:`calc` function."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:657
+# 90d003784f5f468abfa9e02861096f43
+msgid "To specify a breakpoint in another file, prefix the line or function argument with a filename."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:663
+# 6f11c1c3260a4f62900c8ffabd86812e
+msgid "Here a breakpoint is set for line 11 of ``pdb_break.py`` after starting the main program ``pdb_break_remote.py``."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:684
+# a5406f8eaca64c3eab8375ad00cbc4c3
+msgid "The filename can be a full path to the source file, or a relative path to a file available on ``sys.path``."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:687
+# e20e954083ea41e98b299c050a7c2b6a
+msgid "To list the breakpoints currently set, use :command:`break` without any arguments.  The output includes the file and line number of each break point, as well as information about how many times it has been encountered."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:727
+# f07edf57750a4048a08c552fd39fcd9e
+msgid "Managing Breakpoints"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:729
+# 954917130eea4717ab21cc68458162aa
+msgid "As each new breakpoint is added, it is assigned a numerical identifier.  These ID numbers are used to enable, disable, and remove the breakpoints interactively."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:733
+# 02a1881496c64a9ca7411073e43a9828
+msgid "Turning off a breakpoint with :command:`disable` tells the debugger not to stop when that line is reached.  The breakpoint is remembered, but ignored."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:770
+# c668e4b4626346d4b515f6fdd04ae66c
+msgid "The debugging session below sets two breakpoints in the program, then disables one.  The program is run until the remaining breakpoint is encountered, and then the other breakpoint is turned back on with :command:`enable` before execution continues."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:849
+# 87a184d8b3024a5588ccd59024a71226
+msgid "The lines prefixed with ``B`` in the output from :command:`list` show where the breakpoints are set in the program (lines 9 and 18)."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:852
+# 8740297881444cfd972705a55aa3eba6
+msgid "Use :command:`clear` to delete a breakpoint entirely."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:884
+# be7304c4f21f4bbcb5c60b959c7b0368
+msgid "The other breakpoints retain their original identifiers and are not renumbered."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:888
+# 220c210688fd4d9b99c528cd2ebccd45
+msgid "Temporary Breakpoints"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:890
+# d0374d95e9564bf68035886da2d0a854
+msgid "A temporary breakpoint is automatically cleared the first time program execution hits it.  Using a temporary breakpoint lets you reach a particular spot in the program flow quickly, just as with a regular breakpoint, but since it is cleared immediately it does not interfere with subsequent progress if that part of the program is run repeatedly."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:933
+# 6003d6a581534ed3912da856798ca30d
+msgid "After the program reaches line 11 the first time, the breakpoint is removed and execution does not stop again until the program finishes."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:937
+# b2a33cf025304904b9f981dfcbee13d5
+msgid "Conditional Breakpoints"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:939
+# 03e51f99538e41a591a7444ad5de729f
+msgid "Rules can be applied to breakpoints so that execution only stops when the conditions are met.  Using conditional breakpoints gives you finer control over how the debugger pauses your program than manually enabling and disabling breakpoints yourself."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:944
+# 82d971e99d7e4418a345bbe36e816909
+msgid "Conditional breakpoints can be set in two ways.  The first is to specify the condition when the breakpoint is set using :command:`break`."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:970
+# a2814eed09614c3bad426258895373b2
+msgid "The condition argument must be an expression using values visible in the stack frame where the breakpoint is defined.  If the expression evaluates as true, execution stops at the breakpoint."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:974
+# 21aa65bab3124d9283aa513b02a87cc7
+msgid "A condition can also be applied to an existing breakpoint using the :command:`condition` command.  The arguments are the breakpoint ID and the expression."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1000
+# cf0036c0d28449ec85b41c1764e4e784
+msgid "Ignoring Breakpoints"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1002
+# 234be008dd36436e895ebdce9e8bb31f
+msgid "Programs with a lot of looping or recursive calls to the same function are often easier to debug by \"skipping ahead\" in the execution, instead of watching every call or breakpoint.  The :command:`ignore` command tells the debugger to pass over a breakpoint without stopping. Each time processing encounteres the breakpoint, it decrements the ignore counter.  When the counter is zero, the breakpoint is re-activated."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1053
+# 193881c6b421465e8dcedadedbb68fdc
+msgid "Explicitly resetting the ignore count to zero re-enables the breakpoint immediately."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1080
+# 563a3ef20eb94a3ab6c38ccb8638229f
+msgid "Triggering Actions on a Breakpoint"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1082
+# a004ac8c3eaf48b79998d062d8a56557
+msgid "In addition to the purely interactive mode, :mod:`pdb` supports basic scripting.  Using :command:`commands`, you can define a series of interpreter commands, including Python statements, to be executed when a specific breakpoint is encountered.  After running :command:`commands` with the breakpoint number as argument, the debugger prompt changes to ``(com)``.  Enter commands one a time, and finish the list with ``end`` to save the script and return to the main debugger prompt."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1124
+# 8322c32f8bd7417c9f605cb8069698b5
+msgid "This feature is especially useful for debugging code that uses a lot of data structures or variables, since you can have the debugger print out all of the values automatically, instead of doing it manually each time the breakpoint is encountered."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1130
+# 13e77b8d71b648798b3769f4df691f31
+msgid "Changing Execution Flow"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1132
+# f5299277cf77466ab6aee018e5d8ba89
+msgid "The :command:`jump` command lets you alter the flow of your program at runtime, without modifying the code.  You can skip forwards to avoid running some code, or backwards to run it again.  This sample program generates a list of numbers."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1140
+# 15e3ad82c6124ba39a50bf668d27e0d4
+msgid "When run without interference the output is a sequence of increasing numbers divisible by ``5``."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1156
+# 7a3bda3aeb9545bab99f5f16633cd21f
+msgid "Jump Ahead"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1158
+# 617a914b0bac49d39a48a413b6476218
+msgid "Jumping ahead moves the point of execution past the current location without evaluating any of the statements in between.  By skipping over line 13 in the example below, the value of ``j`` is not incremented and all of the subsequent values that depend on it are a little smaller."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1208
+# 733182554087482fbc0bc256335d2da8
+msgid "Jump Back"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1210
+# 069e64c7b7d140ea8d2d5dbeafb34eea
+msgid "Jumps can also move the program execution to a statement that has already been executed, to run it again.  Here, the value of ``j`` is incremented an extra time, so the numbers in the result sequence are all larger than they would otherwise be."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1252
+# d53867e9a01046e68b0358a6ea6a6235
+msgid "Illegal Jumps"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1254
+# 587c0710f9e74914bf83d5d02857a173
+msgid "Jumping in and out of certain flow control statements is dangerous or undefined, and therefore prevented by the debugger."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1260
+# b108df568fad4674870b09b4b5e21f83
+msgid "You can jump into a function, but if you do the arguments are not defined and the code is unlikely to work."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1282
+# 7729ce2f5efb40e98caf95827abe600c
+msgid "You cannot jump into the middle of a block such as a ``for`` loop or ``try:except`` statement."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1302
+# ec197e7e88614ba8bc4a99c3e3388c84
+msgid "The code in a ``finally`` block must all be executed, so you cannot jump out of the block."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1323
+# bc49e15fcc19482caa7d29776bfc9e39
+msgid "And the most basic restriction is that jumping is constrained to the bottom frame on the call stack.  If you move up the stack to examine variables, you cannot change the execution flow at that point."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1359
+# 9578f43816454beab14cb972d2d23449
+msgid "Restarting Your Program"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1361
+# f6c342d3b554400db09b868f57ab529d
+msgid "When the debugger reaches the end of your program, it automatically starts it over, but you can also restart it explicitly without leaving the debugger and losing your breakpoints or other settings."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1368
+# 62904afbe48b485dad12596c8da2de75
+msgid "Running the above program to completion within the debugger prints the name of the script file, since no other arguments were given on the command line."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1386
+# dff779e1402c459faebaf7e6cfe73f0c
+msgid "The program can be restarted using :command:`run`.  Arguments passed to :command:`run` are parsed with :mod:`shlex` and passed to the program as though they were command line arguments, so you can restart the program with different settings."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1407
+# 8c4e365d2b8d415f8ca31d856ae8783a
+msgid ":command:`run` can also be used at any other point in processing to restart the program."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1432
+# c8671655e34846c99b9a83166b768539
+msgid "Customizing the Debugger with Aliases"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1434
+# bf9bde2ff4ef4b28acce51d5d15f3d5c
+msgid "You can avoid typing complex commands repeatedly by using :command:`alias` to define a shortcut.  Alias expansion is applied to the first word of each command.  The body of the alias can consist of any command that is legal to type at the debugger prompt, including other debugger commands and pure Python expressions.  Recursion is allowed in alias definitions, so one alias can even invoke another."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1461
+# 04760d6c6d424602ad7c8978d2ac49df
+msgid "Running :command:`alias` without any arguments shows the list of defined aliases.  A single argument is assumed to be the name of an alias, and its definition is printed."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1474
+# 49644f6c3cd14e9bb297e4d984124d86
+msgid "Arguments to the alias are referenced using ``%n`` where *n* is replaced with a number indicating the position of the argument, starting with ``1``.  To consume all of the arguments, use ``%*``."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1493
+# 85299acd27cb4fc1a64a665d9ebce44e
+msgid "Clear the definition of an alias with :command:`unalias`."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1506
+# 639bda8f4df949c4ad8a84abc8e8d8dc
+msgid "Saving Configuration Settings"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1508
+# 45e4f6c1b6fb461abc57ed386311f3bd
+msgid "Debugging a program involves a lot of repetition; running the code, observing the output, adjusting the code or inputs, and running it again.  :mod:`pdb` attempts to cut down on the amount of repetition you need to use to control the debugging experience, to let you concentrate on your code instead of the debugger.  To help reduce the number of times you issue the same commands to the debugger, :mod:`pdb` lets you save configuration using text files read and interpreted on startup."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1517
+# 071798340a7d4da69db3c58ce298c2a8
+msgid "The file ``~/.pdbrc`` is read first, allowing you to set global personal preferences for all of your debugging sessions.  Then ``./.pdbrc`` is read from the current working directory, so you can set local preferences for a particular project."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1550
+# f0879f1b7aab4940815c426a970e50b4
+msgid "Any configuration commands that can be typed at the debugger prompt can be saved in one of the startup files, but most commands that control the execution (:command:`continue`, :command:`jump`, etc.) cannot.  The exception is :command:`run`, which means you can set the command line arguments for a debugging session in ``./.pdbrc`` so they are consistent across several runs."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1560
+# 329b0cb201cd45efa5a19bff22d3b0a3
+msgid "`pdb <http://docs.python.org/library/pdb.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1560
+# 985608eef2a646778a6f30faeb4da97a
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1563
+# 5ea3264fd8274576927c8ee0e49c39c0
+msgid ":mod:`readline`"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1563
+# 7546eebf1daa4fe2a8b28b87130ae646
+msgid "Interactive prompt editing library."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1566
+# dc49e83f31624418b642e68498c9b902
+msgid ":mod:`cmd`"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1566
+# 2129f4a8be7e4c239f6d3a447dcc0c2c
+msgid "Build interactive programs."
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1568
+# c7caa2fef60b4cc793261fb8e1411cb7
+msgid ":mod:`shlex`"
+msgstr ""
+
+#: ../../PyMOTW/pdb/index.rst:1569
+# 456f5791b5d548e3b59205eb88ef5327
+msgid "Shell command line parsing."
+msgstr ""
+

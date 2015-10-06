@@ -1,0 +1,238 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/smtpd/index.rst:3
+# 467ce9c1e58d436fa67bb3535c19d0c2
+msgid "smtpd -- Sample SMTP Servers"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:8
+# 10956fc954744ff79c4c5c33969b351d
+msgid "Includes classes for implementing SMTP servers."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:9
+# 4cbc6d6e35c14e82b2a7697d527dca05
+msgid "2.1 and later"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:11
+# 4676b4d2822e49bdbe9de87ebfeb9bb6
+msgid "The :mod:`smtpd` module includes classes for building simple mail transport protocol servers.  It is the server-side of the protocol used by :mod:`smtplib`."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:17
+# 2e54697a7f7a4f429e50eacd9fdf1e84
+msgid "SMTPServer"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:19
+# 3da879c2e2d240d9ae862c857b297592
+msgid "The base class for all of the provided example servers is :class:`SMTPServer`.  It handles communicating with the client, receiving the data, and provides a convenient hook to override to handle the message once it is fully available."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:24
+# fc47f6d40bc94c6b99c3eeafabaeb190
+msgid "The constructor arguments are the local address to listen for connections and the remote address for proxying.  The method :func:`process_message()` is provided as a hook to be overridden by your derived class.  It is called when the message is completely received, and given these arguments:"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:30
+# 14d4bc480cac4b6385dbbd192491fc01
+msgid "peer"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:32
+# 89ee83aa0b484f94b0069d47d7123d1a
+msgid "The client's address, a tuple containing IP and incoming port."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:34
+# 25946c60699f4742b969567bfc1d5c80
+msgid "mailfrom"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:36
+# 865c95bca6ee4dc58e21350b5d87e431
+msgid "The \"from\" information out of the message envelope, given to the server by the client when the message is delivered.  This does not necessarily match the ``From`` header in all cases."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:40
+# d65725bade004e76830f3688865f16ab
+msgid "rcpttos"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:42
+# 0547b3302d644c38b2ed66157daf001d
+msgid "The list of recipients from the message envelope.  Again, this does not always match the ``To`` header, especially if someone is blind carbon copied."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:46
+# 450db48d76294184b100e16aed8c56fd
+msgid "data"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:48
+# eb76086afd5c40439f0fbddc6d0bfffd
+msgid "The full :rfc:`2822` message body."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:50
+# 0b5f1b100f234a9992472af35507db57
+msgid "Since the default implementation of :func:`process_message()` raises :ref:`NotImplementedError <exceptions-NotImplementedError>`, to demonstrate using :class:`SMTPServer` we need to create a subclass and provide a useful implementation.  This first example defines a server that prints information about the messages it receives."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:60
+# 81e2f76f286d4a0289d09dd71a1c36b8
+msgid ":class:`SMTPServer` uses :mod:`asyncore`, so to run the server we call ``asyncore.loop()``."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:63
+# c525a5f5da6a4454a7d15972bfc3f3cb
+msgid "Now, we need a client to send data.  By adapting one of the examples from the :mod:`smtplib` page, we can set up a client to send data to our test server running locally on port 1025."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:71
+# e38380b3fbdb4ecfa0e053c67732ecdc
+msgid "Now if we run ``smtpd_custom.py`` in one terminal, and ``smtpd_senddata.py`` in another, we should see:"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:101
+# 3b2d5bd1159347c89c1377f64065900f
+msgid "and"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:111
+# 13a35a76425a48beb89169f0d121fbc7
+msgid "The port number for the incoming message will vary each time.  Notice that the *rcpttos* argument is a list of values and *mailfrom* is a single string."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:117
+# b5dfe6842adb4e0b9f7ab9241e913b48
+msgid "To stop the server, press ``Ctrl-C``."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:121
+# dd4864ba2dde4c4dad8a466d5966b01a
+msgid "DebuggingServer"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:123
+# 314788ae31a945f68d1697fea039e148
+msgid "The example above shows the arguments to :func:`process_message()`, but :mod:`smtpd` also includes a server specifically designed for more complete debugging, called :class:`DebuggingServer`.  It prints the entire incoming message to stdout and then stops processing (it does not proxy the message to a real mail server)."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:133
+# 925cf317fdf0401ba0c699cac87d3591
+msgid "Using the ``smtpd_senddata.py`` client program from above, the output of the :class:`DebuggingServer` is:"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:152
+# 49f09779a30a4b2a9697030862579650
+msgid "PureProxy"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:154
+# 4bbc713f7af440f183e01a65dcafda89
+msgid "The :class:`PureProxy` class implements a straightforward proxy server.  Incoming messages are forwarded upstream to the server given as argument to the constructor."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:160
+# 6a5a7e6a7ce54b81980a0785a9395534
+msgid "The stdlib docs say, \"running this has a good chance to make you into an open relay, so please be careful.\""
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:163
+# 7f025e8ed23e4c228e1deefacbf86cca
+msgid "Setting up the proxy server is just as easy as the debug server:"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:169
+# 2c3a0b90ce7a469c97d5ad51005d6b81
+msgid "It prints no output, though, so to verify that it is working we need to look at the mail server logs."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:178
+# a85e1397c6b74d2d9ed3bbe387ec7737
+msgid "MailmanProxy"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:180
+# 61f21a3aa90940f68ce06ebd68204324
+msgid ":mod:`smtpd` also includes a special proxy that acts as a front-end for Mailman_.  If the local Mailman configuration recognizes the address, it is handled directly.  Otherwise the message is delivered to the proxy."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:189
+# 367093d7cf6249fd8f06b80a6d4d4a53
+msgid "`smtpd <http://docs.python.org/lib/module-smtpd.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:189
+# 414b5242c70143adbbfa1c41351e5820
+msgid "Standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:192
+# d4988023ef5246caa7380891cf4a6bc5
+msgid ":mod:`smtplib`"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:192
+# 581efc91421a4bc1af97d3d72df78fdf
+msgid "Provides a client interface."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:195
+# 4affe18052494774a52282792da0aba9
+msgid ":mod:`email`"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:195
+# cf3817766e264d298c2523ad00e78f36
+msgid "Parses email messages."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:198
+# 6d5a07a1d43245949d836517ca9e82dd
+msgid ":mod:`asyncore`"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:198
+# b801b526563f474188b8cadffd5e0c7b
+msgid "Base module for writing asynchronous servers."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:201
+# 83e1b99165b94cacabdc15a272123774
+msgid ":rfc:`2822`"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:201
+# c64172d4da3c4196bd650f962425fa3d
+msgid "Defines the email message format."
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:203
+# 51ef78c22a9b430f85d0af7541dcd7b1
+msgid "`GNU Mailman mailing list software <http://www.gnu.org/software/mailman/index.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/smtpd/index.rst:204
+# 3d2ee11b5a32457bb891a089e1a18eb6
+msgid "An excellent example of Python software that works with email messages."
+msgstr ""
+

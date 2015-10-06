@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sys/threads.rst:5
+# eef200791fd844879082a576b4d22a32
+msgid "Low-level Thread Support"
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:7
+# fd3741dd4dd7480382352185927e79c8
+msgid ":mod:`sys` includes low-level functions for controlling and debugging thread behavior."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:11
+# 879f95bf188c44379adeb3e978010a98
+msgid "Check Interval"
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:13
+# 43d34c23e57944268480d16a7e6cb52b
+msgid "Python 2 uses a form of cooperative multitasking in its thread implementation.  At a fixed interval, bytecode execution is paused and the interpreter checks if any signal handlers need to be executed. During the same interval check, the global interpreter lock is also released by the current thread and then reacquired, giving other threads an opportunity to take over execution by grabbing the lock first."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:21
+# 55d1bff97c3a483390c97f05736dea5d
+msgid "The default check interval is 100 bytecodes and the current value can always be retrieved with :func:`sys.getcheckinterval`.  Changing the interval with :func:`sys.setcheckinterval` may have an impact on the performance of an application, depending on the nature of the operations being performed."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:31
+# 92142241a24340398ab619eafccee48b
+msgid "When the check interval is smaller than the number of bytecodes in a thread, the interpreter may give another thread control so that it runs for a while.  This is illustrated in the first set of output where the check interval is set to 100 (the default) and 1000 extra loop iterations are performed for each step through the ``i`` loop."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:37
+# 6336a8640d2a401e8cd0477e981d71e8
+msgid "On the other hand, when the check interval is *greater* than the number of bytecodes being executed by a thread that doesn't release control for another reason, the thread will finish its work before the interval comes up.  This is illustrated by the order of the name values in the queue in the second example."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:83
+# 4bc0a586a2464780b95caa21ae4f8d08
+msgid "Modifying the check interval is not as clearly useful as it might seem.  Many other factors may control the context switching behavior of Python's threads.  For example, if a thread performs I/O, it releases the GIL and may therefore allow another thread to take over execution."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:93
+# a45cc31cf83a49d48822e0df354c80f3
+msgid "This example is modified from the first so that the thread prints directly to :const:`sys.stdout` instead of appending to a queue.  The output is much less predictable."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:140
+# d76f9c39909148798ad800f0d50a2393
+msgid ":mod:`dis`"
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:140
+# 875ee8e806784760a7e13e3c16a7b1f7
+msgid "Disassembling your Python code with the dis module is one way to count bytecodes."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:145
+# 69075100f71240bc822b74cf2b1270da
+msgid "Debugging"
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:147
+# f44bea6211124afc80c8a4c336bac1e3
+msgid "Identifying deadlocks can be on of the most difficult aspects of working with threads.  :func:`sys._current_frames` can help by showing exactly where a thread is stopped."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:154
+# df445001b41f4a4eb33f133aefe0d153
+msgid "The dictionary returned by :func:`sys._current_frames` is keyed on the thread identifier, rather than its name.  A little work is needed to map those identifiers back to the thread object."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:158
+# cf6f690fd26d48a2aa3420616b628fd9
+msgid "Since **Thread-1** does not sleep, it finishes before its status is checked.  Since it is no longer active, it does not appear in the output.  **Thread-2** acquires the lock *blocker*, then sleeps for a short period.  Meanwhile **Thread-3** tries to acquire *blocker* but cannot because **Thread-2** already has it."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:185
+# 3aaa0c134404439d997be909519b38c5
+msgid ":mod:`threading`"
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:185
+# bbb0375a7f4c42d1887d4ec1f72bd743
+msgid "The threading module includes classes for creating Python threads."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:188
+# a3843cea70644a6f9aaf346e07dcc485
+msgid ":mod:`Queue`"
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:188
+# f6ea788386fb4831989ec2ca346cf86b
+msgid "The Queue module provides a thread-safe implementation of a FIFO data structure."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:191
+# 8714079088cb4700940ebb12c1c98a56
+msgid "`Python Threads and the Global Interpreter Lock <http://jessenoller.com/2009/02/01/python-threads-and-the-global-interpreter-lock/>`_"
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:191
+# 3b3d24c310ea424a9d8845d4aa8ad218
+msgid "Jesse Noller's article from the December 2007 issue of Python Magazine."
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:193
+# ca00be281e564c5c889e3b07d627d0c4
+msgid "`Inside the Python GIL <http://www.dabeaz.com/python/GIL.pdf>`_"
+msgstr ""
+
+#: ../../PyMOTW/sys/threads.rst:194
+# 90ad29681da94cde92295415f0986ff9
+msgid "Presentation by David Beazley describing thread implementation and performance issues, including how the check interval and GIL are related."
+msgstr ""
+

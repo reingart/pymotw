@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/base64/index.rst:3
+# 368ee36cce29462fb2ac0994ff296ef5
+msgid "base64 -- Encode binary data into ASCII characters"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:8
+# d4a53870365f454ca4bb2421f01f7b2d
+msgid "The base64 module contains functions for translating binary data into a subset of ASCII suitable for transmission using plaintext protocols."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:9
+# f7dbed059ed54019addf1fac8bd20eb1
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:11
+# 52f7fd06560c44448c299967f4451686
+msgid "The base64, base32, and base16 encodings convert 8 bit bytes to values with 6, 5, or 4 bits of useful data per byte, allowing non-ASCII bytes to be encoded as ASCII characters for transmission over protocols that require plain ASCII, such as SMTP.  The *base* values correspond to the length of the alphabet used in each encoding.  There are also URL-safe variations of the original encodings that use slightly different results."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:14
+# 4ca4c9b54dd34b62a05cbf3638d65af8
+msgid "Base 64 Encoding"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:16
+# f0ee9631d8e941b085318ca15de70362
+msgid "A basic example of encoding some text looks like this:"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:22
+# 9ab936d43ef6449c97250acf61a12049
+msgid "The output shows the 558 bytes of the original source expand to 744 bytes after being encoded."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:25
+# 931fe260526b40cd875ad4b96b01a811
+msgid "There are no carriage returns in the output produced by the library, so I have broken the encoded data up artificially to make it fit better on the page."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:45
+# b8e57aa17be64e2ab347ccc67f5f95c8
+msgid "Base 64 Decoding"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:47
+# 5a4e246ff5c7448286c57ea1855bb5c3
+msgid "The encoded string can be converted back to the original form by taking 4 bytes and converting them to the original 3, using a reverse lookup.  The ``b64decode()`` function does that for you."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:53
+# 1a9acfae03e84daf8ba982644da51f63
+msgid "The encoding process looks at each sequence of 24 bits in the input (3 bytes) and encodes those same 24 bits spread over 4 bytes in the output.  The last two characters, the ``==``, are padding because the number of bits in the original string was not evenly divisible by 24 in this example."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:70
+# e50d265d13684cedb5bd053f01ebb076
+msgid "URL-safe Variations"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:72
+# 9812cead25264489a5d5de60cff09b0f
+msgid "Because the default base64 alphabet may use ``+`` and ``/``, and those two characters are used in URLs, it became necessary to specify an alternate encoding with substitutes for those characters.  The ``+`` is replaced with a ``-``, and ``/`` is replaced with underscore (``_``).  Otherwise, the alphabet is the same."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:99
+# 9b2536bfd35e4d479303e93fe2a00c37
+msgid "Other Encodings"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:101
+# ff2bdf7dca0044c0b103335899858d92
+msgid "Besides base 64, the module provides functions for working with base 32 and base 16 (hex) encoded data."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:121
+# 03c059c41a294a91aff3a68c9028b6cc
+msgid "The base 16 functions work with the hexadecimal alphabet."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:144
+# 16bf4442805a4f0db22870249801ea6e
+msgid "`base64 <http://docs.python.org/library/base64.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:144
+# 8752114f5d31471c8aaffc52c3805aea
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:146
+# e8b3df8dd18645ee9c63c01c9514ac70
+msgid ":rfc:`3548`"
+msgstr ""
+
+#: ../../PyMOTW/base64/index.rst:147
+# c78c80e6763a49f6bc2fa6f1d21f252a
+msgid "The Base16, Base32, and Base64 Data Encodings"
+msgstr ""
+

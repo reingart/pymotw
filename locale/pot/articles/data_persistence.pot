@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/articles/data_persistence.rst:5
+# 0aa7c68ce24a496483f6d89b49afd6fe
+msgid "Data Persistence and Exchange"
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:7
+# 3821eb42e6da41a7aacae9333d442ecf
+msgid "Python provides several modules for storing data.  There are basically two aspects to persistence: converting the in-memory object back and forth into a format for saving it, and working with the storage of the converted data."
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:11
+# 9bab78bab06b4097843f52b5d594287b
+msgid "Serializing Objects"
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:13
+# 9ccf5392ff594ceb9f5790d688847f50
+msgid "Python includes two modules capable of converting objects into a transmittable or storable format (*serializing*): :mod:`pickle` and :mod:`json`.  It is most common to use :mod:`pickle`, since there is a fast C implementation and it is integrated with some of the other standard library modules that actually store the serialized data, such as :mod:`shelve`.  Web-based applications may want to examine :mod:`json`, however, since it integrates better with some of the existing web service storage applications."
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:17
+# 30443d71a34d42ecbdf809e179a7564a
+msgid "Storing Serialized Objects"
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:19
+# 3f34c0fb57f342c288bd5804da09e18f
+msgid "Once the in-memory object is converted to a storable format, the next step is to decide how to store the data.  A simple flat-file with serialized objects written one after the other works for data that does not need to be indexed in any way.  But Python includes a collection of modules for storing key-value pairs in a simple database using one of the DBM format variants."
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:21
+# c911cc316ea74ed8b7a57ed503a1caef
+msgid "The simplest interface to take advantage of the DBM format is provided by :mod:`shelve`.  Simply open the shelve file, and access it through a dictionary-like API.  Objects saved to the shelve are automatically pickled and saved without any extra work on your part."
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:23
+# 9b918075ddc4450ca067fbfbf2309921
+msgid "One drawback of shelve is that with the default interface you can't guarantee which DBM format will be used.  That won't matter if your application doesn't need to share the database files between hosts with different libraries, but if that is needed you can use one of the classes in the module to ensure a specific format is selected (:ref:`shelve-shelf-types`)."
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:25
+# 946b8d75b1654e0e8f8fd2df2c0b4055
+msgid "If you're going to be passing a lot of data around via JSON anyway, using :mod:`json` and :mod:`anydbm` can provide another persistence mechanism.  Since the DBM database keys and values must be strings, however, the objects won't be automatically re-created when you access the value in the database."
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:29
+# 52d472578e9d45e588040d109729ff50
+msgid "Relational Databases"
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:31
+# 4fee89143da14788a5b3063531f9d61e
+msgid "The excellent :mod:`sqlite3` in-process relational database is available with most Python distributions.  It stores its database in memory or in a local file, and all access is from within the same process, so there is no network lag.  The compact nature of :mod:`sqlite3` makes it especially well suited for embedding in desktop applications or development versions of web apps."
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:33
+# fc9dabf416e04832a8e2884bb17afedb
+msgid "All access to the database is through the Python DBI 2.0 API, by default, as no object relational mapper (ORM) is included.  The most popular general purpose ORM is `SQLAlchemy <http://www.sqlalchemy.org/>`_, but others such as Django's native ORM layer also support SQLite.  SQLAlchemy is easy to install and set up, but if your objects aren't very complicated and you are worried about overhead, you may want to use the DBI interface directly."
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:37
+# d0a06297062b41fab17cc423d3a85e1e
+msgid "Data Exchange Through Standard Formats"
+msgstr ""
+
+#: ../../PyMOTW/articles/data_persistence.rst:39
+# faf801c517474b98ae7b3c551803ebc6
+msgid "Although not usually considered a true persistence format :mod:`csv`, or comma-separated-value, files can be an effective way to migrate data between applications.  Most spreadsheet programs and databases support both export and import using CSV, so dumping data to a CSV file is frequently the simplest way to move data out of your application and into an analysis tool."
+msgstr ""
+

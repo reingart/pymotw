@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/sys/exceptions.rst:5
+# bf32ec629049479daba855586e3f5096
+msgid "Exception Handling"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:7
+# b00e6e2c01f44f0a806028e2a6c54478
+msgid ":mod:`sys` includes features for trapping and working with exceptions."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:10
+# de0b0a4a3f104e91bfe5443621325633
+msgid "Unhandled Exceptions"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:12
+# abab045dcc594a9f952806c99873f772
+msgid "Many applications are structured with a main loop that wraps execution in a global exception handler to trap errors not handled at a lower level.  Another way to achieve the same thing is by setting the :data:`sys.excepthook` to a function that takes three arguments (error type, error value, and traceback) and let it deal with unhandled errors."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:23
+# ce3a5ed60dbc4d62a01465619c7bd68c
+msgid "Since there is no :command:`try:except` block around the line where the exception is raised the following :command:`print` statement is not run, even though the except hook is set."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:41
+# 07cc8905be8047f080ee1108185102a9
+msgid "Current Exception"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:43
+# ce2888d3b2784cb38a3253c98800a151
+msgid "There are times when an explicit exception handler is preferred, either for code clarity or to avoid conflicts with libraries that try to install their own excepthook.  In these cases you may want to write a common handler function, but avoid passing the exception object to it explicitly.  You can get the current exception for a thread by calling :func:`exc_info`."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:50
+# 9784277e788b4a86b2df6f85d79824dc
+msgid "The return value of :func:`exc_info` is a three member tuple containing the exception class, an exception instance, and a traceback.  Using :func:`exc_info` is preferred over the old form (with :const:`exc_type`, :const:`exc_value`, and :const:`exc_traceback`) because it is thread-safe."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:60
+# 6e7dc67b7afd4b9b9d3417b21871c136
+msgid "This example avoids introducing a circular reference between the traceback object and a local variable in the current frame by ignoring that part of the return value from :func:`exc_info`.  If the traceback is needed (e.g., so it can be logged), explicitly delete the local variable (using :command:`del`) to avoid cycles."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:80
+# ed560d39d1cc43929e64e477d2334229
+msgid "Previous Interactive Exception"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:82
+# 67365b43b81d45f7a4f57a27527eb203
+msgid "In the interactive interpreter, there is only one thread of interaction.  Unhandled exceptions in that thread are saved to three variables in :mod:`sys` (:const:`last_type`, :const:`last_value`, and :const:`last_traceback`) to make it easy to retrieve them for debugging.  Using the post-mortem debugger in :mod:`pdb` avoids any need to use the values directly."
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:115
+# 6cb33cc0268345c7a4ecbdc8d91ddf2c
+msgid ":mod:`exceptions`"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:115
+# ab526053832a477585cbed93746389a2
+msgid "Built-in errors"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:118
+# 889c44bf37f94a63b79fb8b5750fd67c
+msgid ":mod:`pdb`"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:118
+# f4735213508645729fc189035afd068c
+msgid "Python debugger"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:120
+# f4b8f57e0d1d477ab456511f7ce2b443
+msgid ":mod:`traceback`"
+msgstr ""
+
+#: ../../PyMOTW/sys/exceptions.rst:121
+# 35f97c6719c740168b1b0e77e2526086
+msgid "Module for working with tracebacks."
+msgstr ""
+

@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/inspect/index.rst:3
+# 64c5b1f85c50419cbfcaa53fd111fa3e
+msgid "inspect -- Inspect live objects"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:9
+# 31aaf29560bc4caa97c0225f615379dc
+msgid "The inspect module provides functions for introspecting on live objects and their source code."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:11
+# fe582208ee87413a989eae89da3c0240
+msgid "added in 2.1, with updates in 2.3 and 2.5"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:13
+# e905be9ea06b4446b83b77c38efcdf7e
+msgid "The :mod:`inspect` module provides functions for learning about live objects, including modules, classes, instances, functions, and methods. You can use functions in this module to retrieve the original source code for a function, look at the arguments to a method on the stack, and extract the sort of information useful for producing library documentation for your source code.  My own `CommandLineApp`_ module uses inspect to determine the valid options to a command line program, as well as any arguments and their names so command line programs are self-documenting and the help text is generated automatically."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:25
+# 7e299f317465457f8a8910191ce04ebd
+msgid "Module Information"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:27
+# f002a66dbaf445e39f3fb1352b9a6e72
+msgid "The first kind of introspection supported lets you probe live objects to learn about them. For example, it is possible to discover the classes and functions in a module, the methods of a class, etc. Let's start with the module-level details and work our way down to the function level."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:33
+# 9f438509b16b49a88a7901b96673d646
+msgid "To determine how the interpreter will treat and load a file as a module, use :func:`getmoduleinfo()`. Pass a filename as the only argument, and the return value is a tuple including the module base name, the suffix of the file, the mode that will be used for reading the file, and the module type as defined in the :mod:`imp` module. It is important to note that the function looks only at the file's name, and does not actually check if the file exists or try to read the file."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:46
+# 698b33549cf84771b0c8362edbe082db
+msgid "Here are a few sample runs:"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:78
+# 0feda23f5b0f48ad8252f1940bc58d0d
+msgid "Example Module"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:80
+# e48ed55701034faa9534c6092b7753a5
+msgid "The rest of the examples for this tutorial use a single example file source file, found in ``PyMOTW/inspect/example.py`` and which is included below.  The file is also available as part of the source distribution associated with this series of articles."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:90
+# b0de1e61e26844f4bb3bb37a97dc1042
+msgid "Modules"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:92
+# 764cb2206744496aa77d6889766ae335
+msgid "It is possible to probe live objects to determine their components using :func:`getmembers()`. The arguments to :func:`getmembers()` are an object to scan (a module, class, or instance) and an optional predicate function that is used to filter the objects returned. The return value is a list of tuples with 2 values: the name of the member, and the type of the member. The inspect module includes several such predicate functions with names like :func:`ismodule()`, :func:`isclass()`, etc.  You can provide your own predicate function as well."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:102
+# 348945e182f44856b58838634b308cce
+msgid "The types of members that might be returned depend on the type of object scanned. Modules can contain classes and functions; classes can contain methods and attributes; and so on."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:110
+# f02a0d67e15143e59f3f6e34fa14e1fb
+msgid "This sample prints the members of the example module. Modules have a set of ``__builtins__``, which are ignored in the output for this example because they are not actually part of the module and the list is long."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:129
+# 729f4ac5c98541fba64549faef976d42
+msgid "The predicate argument can be used to filter the types of objects returned."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:135
+# 7946e08dbab0487eb96d9884dca3d6a0
+msgid "Notice that only classes are included in the output, now:"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:152
+# 3e33d8ef1de34a3d8bd958aa7065da20
+msgid "Classes"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:154
+# e2b1c084fd904adeaed6e0134ec54d86
+msgid "Classes are scanned using :func:`getmembers()` in the same way as modules, though the types of members are different."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:161
+# 7869a7c7383744ae8c29d65960b3a3bc
+msgid "Since no filtering is applied, the output shows the attributes, methods, slots, and other members of the class:"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:186
+# af553504586d413a8fe9ff79ed47fec3
+msgid "To find the methods of a class, use the :func:`ismethod()` predicate:"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:206
+# fc8e1e3db0504e0fad07eebadd727beb
+msgid "If we look at class B, we see the over-ride for :func:`get_name()` as well as the new method, and the inherited :func:`__init__()` method implented in A."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:214
+# 003f04b2da274bc4a44c5b11ff8ea026
+msgid "Notice that even though :func:`__init__()` is inherited from :class:`A`, it is identified as a method of :class:`B`."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:233
+# 1d52dbea364d420081930d09d32abe84
+msgid "Documentation Strings"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:235
+# 492b0fdcbc174918bf694c749f02359c
+msgid "The docstring for an object can be retrieved with :func:`getdoc()`. The return value is the ``__doc__`` attribute with tabs expanded to spaces and with indentation made uniform."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:243
+# ec338f978062451c8f914c854a46131d
+msgid "Notice the difference in indentation on the second line of the doctring:"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:265
+# 61d12aa6cac74c0db7bae397416a873c
+msgid "In addition to the actual docstring, it is possible to retrieve the comments from the source file where an object is implemented, if the source is available. The :func:`getcomments()` function looks at the source of the object and finds comments on lines preceding the implementation."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:275
+# 1849d361089d49529bbd81518b040ebc
+msgid "The lines returned include the comment prefix, but any whitespace prefix is stripped off."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:291
+# 5ca403faf2a14f8b8a86a8f236c374bf
+msgid "When a module is passed to :func:`getcomments()`, the return value is always the first comment in the module."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:298
+# 3335c3a541c5401ab4c73c363a3750af
+msgid "Notice that contiguous lines from the example file are included as a single comment, but as soon as a blank line appears the comment is stopped."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:316
+# 7ca67075e3784dfdb81ad31a8b0371e2
+msgid "Retrieving Source"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:318
+# dcb1cfb73c694155b3a8f4b43cfa9ec6
+msgid "If the ``.py`` file is available for a module, the original source code for the class or method can be retrieved using :func:`getsource()` and :func:`getsourcelines()`."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:326
+# 89e1866354d140d8a780cbc293a8a01a
+msgid "The original indent level is retained in this case."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:343
+# 553b70db3c554df78a242372e3ed69d6
+msgid "When a class is passed in, all of the methods for the class are included in the output."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:370
+# e70bc5aca86d406eab6ab2ccf9aa424e
+msgid "If you need the lines of source split up, it can be easier to use :func:`getsourcelines()` instead of :func:`getsource()`. The return value from :func:`getsourcelines()` is a tuple containing a list of strings (the lines from the source file), and a starting line number in the file where the source appears."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:395
+# 2edb5451f5f649c1afb9035e41c29d6f
+msgid "If the source file is not available, :func:`getsource()` and :func:`getsourcelines()` raise an :ref:`IOError <exceptions-IOError>`."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:399
+# 5887a0bbdc114a74a41ee00d72d19344
+msgid "Method and Function Arguments"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:401
+# 8346758cf1c54978a3e794baacc84ca8
+msgid "In addition to the documentation for a function or method, it is possible to ask for a complete specification of the arguments the callable takes, including default values. The :func:`getargspec()` function returns a tuple containing the list of positional argument names, the name of any variable positional arguments (e.g., ``*args``), the names of any variable named arguments (e.g., ``**kwds``), and default values for the arguments. If there are default values, they match up with the end of the positional argument list."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:415
+# 0263b9fb05724c4b9ab42b94b2e3ee66
+msgid "Note that the first argument, *arg1*, does not have a default value. The single default therefore is matched up with *arg2*."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:436
+# 240c68e05fd14834a3b3f15439863de2
+msgid "Class Hierarchies"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:438
+# 28942c99a69b4e589a1bada484a18462
+msgid ":mod:`inspect` includes two methods for working directly with class hierarchies. The first, :func:`getclasstree()`, creates a tree-like data structure using nested lists and tuples based on the classes it is given and their base classes. Each element in the list returned is either a tuple with a class and its base classes, or another list containing tuples for subclasses."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:457
+# be890e5133fc490d99f31ec89deea6cf
+msgid "The output from this example is the \"tree\" of inheritance for the A, B, C, and D classes. Note that D appears twice, since it inherits from both C and A."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:478
+# 5d3d6d27a1734157a5595f170bdae7ff
+msgid "If we call :func:`getclasstree()` with ``unique=True``, the output is different."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:485
+# 002b2cc454414f22ab3a155f9803b15c
+msgid "This time, D only appears in the output once:"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:505
+# 7b5c5b2a18394723a1bc2a79e30ad3b2
+msgid "Method Resolution Order"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:507
+# f0d683cfe88445349dd4e6d463b5f8d3
+msgid "The other function for working with class hierarchies is :func:`getmro()`, which returns a tuple of classes in the order they should be scanned when resolving an attribute that might be inherited from a base class. Each class in the sequence appears only once."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:516
+# 7ab221effc454594b903b4d722494f26
+msgid "This output demonstrates the \"depth-first\" nature of the MRO_ search. For B_First, A also comes before C in the search order, because B is derived from A."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:546
+# dfb07be871784eb0a1f60ab86105679b
+msgid "The Stack and Frames"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:548
+# 85b35900858a4e7ba69cf9fce2081845
+msgid "In addition to introspection of code objects, :mod:`inspect` includes functions for inspecting the runtime environment while a program is running. Most of these functions work with the call stack, and operate on \"call frames\". Each frame record in the stack is a 6 element tuple containing the frame object, the filename where the code exists, the line number in that file for the current line being run, the function name being called, a list of lines of context from the source file, and the index into that list of the current line. Typically such information is used to build tracebacks when exceptions are raised. It can also be useful when debugging programs, since the stack frames can be interrogated to discover the argument values passed into the functions."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:561
+# 620f67158f484cc387091061cd717dd4
+msgid ":func:`currentframe()` returns the frame at the top of the stack (for the current function). :func:`getargvalues()` returns a tuple with argument names, the names of the variable arguments, and a dictionary with local values from the frame. By combining them, we can see the arguments to functions and local variables at different points in the call stack."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:572
+# fae2859bb6bc4ee79231f8d8c08d173b
+msgid "The value for ``local_variable`` is included in the frame's local variables even though it is not an argument to the function."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:590
+# 5a970196cf9b4d19acdc73c5b221ac91
+msgid "Using :func:`stack()`, it is also possible to access all of the stack frames from the current frame to the first caller. This example is similar to the one above, except it waits until reaching the end of the recursion to print the stack information."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:599
+# 6f4018464dcc4feebcfe223e21aea701
+msgid "The last part of the output represents the main program, outside of the recurse function."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:633
+# d7b09f9f0e504e5eba158f9479425ad1
+msgid "There are other functions for building lists of frames in different contexts, such as when an exception is being processed. See the documentation for :func:`trace()`, :func:`getouterframes()`, and :func:`getinnerframes()` for more details."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:642
+# 861aa482f8b8448cbb168f60f226ed53
+msgid "`inspect <http://docs.python.org/library/inspect.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:642
+# 8b9799613b9b419aa1d94c85107830c0
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:647
+# 9488f29f910f4cbea763f6112b7e7e35
+msgid "`CommandLineApp`_"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:645
+# 79adf6a4179e41219221d3dce9b79fb6
+msgid "Base class for object-oriented command line applications"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:650
+# 9eb36afb40a14e2b8a9051642450b68f
+msgid "`Python 2.3 Method Resolution Order <http://www.python.org/download/releases/2.3/mro/>`__"
+msgstr ""
+
+#: ../../PyMOTW/inspect/index.rst:650
+# 147e069afc3541ae9473fb8381b1593e
+msgid "Documentation for the C3 Method Resolution order used by Python 2.3 and later."
+msgstr ""
+

@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/gdbm/index.rst:3
+# 2575b096992c4e6f950002c62910adf5
+msgid "gdbm -- GNU's version of the dbm library"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:8
+# 415d935c346b4b73b663bee9be6377e0
+msgid "GNU's version of the dbm library"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:9
+# 62a5630ad4c343bbb295c848ad6c9791
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:11
+# 4be11d55d6ec4916871d70c2a18ccb81
+msgid ":mod:`gdbm` is GNU's updated version of the :mod:`dbm` library.  It follows the same semantics as the other DBM implementations described under :mod:`anydbm`, with a few changes to the *flags* supported by ``open()``."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:13
+# 0ab7e78158c6459b9fef6fb96e9174bf
+msgid "Besides the standard ``'r'``, ``'w'``, ``'c'``, and ``'n'`` flags, ``gdbm.open()`` supports:"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:15
+# 453727a7cefd4374ad20f34dfd25f9bc
+msgid "``'f'`` to open the database in *fast* mode. In fast mode, writes to the database are not synchronized."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:16
+# 2232582656ad4363b1c1e11086e938d1
+msgid "``'s'`` to open the database in *synchronized* mode. Changes to the database are written to the file as they are made, rather than being delayed until the database is closed or synced explicitly."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:17
+# 40d4b3f432a6433f8f7ccc5c8442d635
+msgid "``'u'`` to open the database unlocked."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:23
+# 6af090b665ff437cb7bf18eaa2bfd00d
+msgid "`gdbm <http://docs.python.org/library/gdbm.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:23
+# ea1822dab4aa44c686bac2e9adbe1784
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:26
+# 8c053ff5e367472f95c6ba63d6c06b53
+msgid ":mod:`dbm`"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:26
+# f5fafa407dbd4124a1bd6fc489c55594
+msgid "The :mod:`dbm` module."
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:28
+# e682bc3a6ef64bbb9e247b8aaa4639cd
+msgid ":mod:`anydbm`"
+msgstr ""
+
+#: ../../PyMOTW/gdbm/index.rst:29
+# fd9ff6543cf7477ca9320fa52b5f5813
+msgid "The :mod:`anydbm` module."
+msgstr ""
+

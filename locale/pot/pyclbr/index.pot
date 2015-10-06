@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/pyclbr/index.rst:3
+# bff36d3bb6fe40f1ad190aa9fbf4a9d9
+msgid "pyclbr -- Python class browser support"
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:8
+# 4f910eebe29745fbb954da971fe9795d
+msgid "Implements an API suitable for use in a source code editor for making a class browser."
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:9
+# 9901c5d481074777885b513f6266cd23
+msgid "1.4 and later"
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:11
+# 26e9fa59e1b846a4b7314890c5d21998
+msgid ":mod:`pyclbr` can scan Python source to find classes and stand-alone functions.  The information about class, method, and function names and line numbers is gathered using :mod:`tokenize` *without* importing the code."
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:13
+# cdab268e37d84878813677bfaaa9778b
+msgid "The examples below use this source file as input:"
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:21
+# 99fd2dc9e8dd4063827b05d66835e5e6
+msgid "Scanning for Classes"
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:23
+# 92b2d1767c5e4ec4b24d56b1328c6913
+msgid "There are two public functions exposed by :mod:`pyclbr`.  ``readmodule()`` takes the name of the module as argument returns a mapping of class names to ``Class`` objects containing the meta-data about the class source."
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:29
+# db85b977f8a84910b0d863930d25f2b6
+msgid "The meta-data for the class includes the file and line number where it is defined, as well as the names of super classes.  The methods of the class are saved as a mapping between method name and line number.  The output below shows the classes and methods listed in order based on their line number in the source file."
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:67
+# 3292eb47c6254ec6956649b2a93bbcb0
+msgid "Scanning for Functions"
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:69
+# 51c3d221ab61422f844b6c5e186221e7
+msgid "The other public function in :mod:`pyclbr` is ``readmodule_ex()``.  It does everything that ``readmodule()`` does, and adds functions to the result set."
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:75
+# 527d5fd65a07486dae2b371b152eb5d0
+msgid "Each ``Function`` object has properties much like the ``Class`` object."
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:94
+# 4d808d3908914440810a88460b740f54
+msgid "`pyclbr <http://docs.python.org/library/pyclbr.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:94
+# 6eb08a82a748487c8772bf98196c8451
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:97
+# 0880fe9dd1d543d884e3d0f008d6fd8c
+msgid ":mod:`inspect`"
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:97
+# 0db0520193d0458585c626e88b2cd48b
+msgid "The inspect module can discover more meta-data about classes and functions, but requires importing the code."
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:99
+# 6c1170cc5f234faeaad0fc53567f7eba
+msgid ":mod:`tokenize`"
+msgstr ""
+
+#: ../../PyMOTW/pyclbr/index.rst:100
+# f699936a079e43f180c45f794470ca60
+msgid "The tokenize module parses Python source code into tokens."
+msgstr ""
+

@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) Doug Hellmann
+# This file is distributed under the same license as the Python Module of the Week package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Python Module of the Week 2.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-06 02:58-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../PyMOTW/getpass/index.rst:5
+# 5dc34df3f094446bae774b7986ad415b
+msgid "getpass -- Prompt the user for a password without echoing."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:10
+# 69ba5090941041f283f36ed342678ae1
+msgid "Prompt the user for a value, usually a password, without echoing what they type to the console."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:11
+# 8d8b9884c43c47569e239793d916d475
+msgid "1.5.2"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:13
+# 1292a42769844a119b1041d110cf636d
+msgid "Many programs that interact with the user via the terminal need to ask the user for password values without showing what the user types on the screen.  The :mod:`getpass` module provides a portable way to handle such password prompts securely."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:19
+# 9ca0563e09ea469390d352c6393a90fc
+msgid "Example"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:21
+# fda2c40534fa49de935f07311e467cfa
+msgid "The :func:`getpass()` function prints a prompt then reads input from the user until they press return. The input is passed back as a string to the caller."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:29
+# 0ae46e1918a04ccbad9116e792ec8176
+msgid "The default prompt, if none is specified by the caller, is \"``Password:``\"."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:38
+# d1a3ed46678e4285ad2ece8cef0a698e
+msgid "The prompt can be changed to any value your program needs."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:44
+# f5ed7a09dec34e5ba5478efafc3cbd73
+msgid "I don't recommend such an insecure authentication scheme, but it illustrates the point."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:56
+# 43a3dc857c0a49af9668ace3acfd3ac5
+msgid "By default, :func:`getpass()` uses stdout to print the prompt string. For a program which may produce useful output on :ref:`sys.stdout <sys-input-output>`, it is frequently better to send the prompt to another stream such as :ref:`sys.stderr <sys-input-output>`."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:66
+# ae4d5613ce5f4d319fd07ea6ef9c6346
+msgid "This way standard output can be redirected (to a pipe or file) without seeing the password prompt. The value entered by the user is still not echoed back to the screen."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:76
+# b0bc5aa3252a42d088308679a2c130cc
+msgid "Using getpass Without a Terminal"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:78
+# 0813712d746148af97d544ff5f5a63b1
+msgid "Under Unix, :func:`getpass()` always requires a tty it can control via termios, so echo can be disabled. This means values will not be read from a non-terminal stream redirected to standard input."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:92
+# 45c5d229331f463d85b16b147b55750b
+msgid "It is up to the caller to detect when the input stream is not a tty and use an alternate method for reading in that case."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:99
+# 2bfeccdc8c7547df9b5ede4003be9e8b
+msgid "With a tty:"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:107
+# 1133c48a8a9a440cb05a58621d6605c3
+msgid "Without a tty:"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:118
+# 33b3a45039004a0a9c62c22517b06427
+msgid "`getpass <http://docs.python.org/library/getpass.html>`_"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:118
+# bec0c2e034624b77b3082eb8f2236a0d
+msgid "The standard library documentation for this module."
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:120
+# cf1bd3b094ba46af8f587417c5c60e9b
+msgid ":mod:`readline`"
+msgstr ""
+
+#: ../../PyMOTW/getpass/index.rst:121
+# 995fe41166724237af856f7d504fd0c1
+msgid "Interactive prompt library."
+msgstr ""
+

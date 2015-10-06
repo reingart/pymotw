@@ -120,6 +120,14 @@ options(
         builder='text',
     ),
 
+    gettext = Bunch(
+        builddir='locale/pot',
+        outdir='locale/pot',
+        templates='pkg',
+        builder='gettext',
+        doctrees='gettext/doctrees',
+    ),
+
     website=Bunch(
         templates = 'web',
         builddir = 'web',
@@ -310,6 +318,18 @@ def text(options):
         raise RuntimeError('Could not find sphinxcontrib.paverutils, will not be able to build text output.')
     paverutils.run_sphinx(options, 'text')
     return
+
+@task
+def gettext(options):
+    "Collect all translatable strings from rst input."
+    # Clean and recreate output directory
+    remake_directories(options.gettext.outdir)
+    set_templates(options.gettext.templates)
+    if paverutils is None:
+        raise RuntimeError('Could not find sphinxcontrib.paverutils, will not be able to build text output.')
+    paverutils.run_sphinx(options, "gettext")
+    return
+
 
 @task
 @needs(['generate_setup', 

@@ -1,5 +1,5 @@
-pavement==1.1.1
-#cogapp included in that version of pavement TODO: upgrade
-sphinxcontrib-paverutils
+paver==1.1.1
+#cogapp included in that version of paver TODO: upgrade
+sphinxcontrib-paverutils==1.5
 sphinx-intl
-
+## install texlive-lang-spanish to avoid sphinx package babel error "you haven't specified a language option"

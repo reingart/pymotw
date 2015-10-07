@@ -67,8 +67,8 @@ platform-specific values described above.
 
 	$ python site_user_base.py
 	
-	Base: /Users/dhellmann/.local
-	Site: /Users/dhellmann/.local/lib/python2.7/site-packages
+	Base: /home/reingart/.local
+	Site: /home/reingart/.local/lib/python2.7/site-packages
 
 .. {{{end}}}
 
@@ -83,25 +83,29 @@ will give you the name of the directory whether or not it exists, but
 it is only added to the import path when it does.
 
 .. {{{cog
-.. cog.out(run_script(cog.inFile, '-m site --user-base'))
-.. cog.out(run_script(cog.inFile, '-m site --user-site', include_prefix=False))
-.. cog.out(run_script(cog.inFile, 'PYTHONUSERBASE=/tmp/$USER python -m site --user-base', interpreter=None, include_prefix=False))
-.. cog.out(run_script(cog.inFile, 'PYTHONUSERBASE=/tmp/$USER python -m site --user-site', interpreter=None, include_prefix=False))
+.. cog.out(run_script(cog.inFile, '-m site --user-base', ignore_error=True))
+.. cog.out(run_script(cog.inFile, '-m site --user-site', include_prefix=False, ignore_error=True))
+.. cog.out(run_script(cog.inFile, 'PYTHONUSERBASE=/tmp/$USER python -m site --user-base', interpreter=None, include_prefix=False, ignore_error=True))
+.. cog.out(run_script(cog.inFile, 'PYTHONUSERBASE=/tmp/$USER python -m site --user-site', interpreter=None, include_prefix=False, ignore_error=True))
 .. }}}
 
 ::
 
 	$ python -m site --user-base
 	
+	/home/reingart/.local
 
 	$ python -m site --user-site
 	
+	/home/reingart/.local/lib/python2.7/site-packages
 
 	$ PYTHONUSERBASE=/tmp/$USER python -m site --user-base
 	
+	/tmp/reingart
 
 	$ PYTHONUSERBASE=/tmp/$USER python -m site --user-site
 	
+	/tmp/reingart/lib/python2.7/site-packages
 
 .. {{{end}}}
 
@@ -127,8 +131,8 @@ with :option:`-s`.
 
 	$ python site_enable_user_site.py
 	
-	Flag   : True
-	Meaning: Enabled
+	Flag   : False
+	Meaning: Disabled by command-line option
 
 	$ python -s site_enable_user_site.py
 	
@@ -189,7 +193,7 @@ the script can import :mod:`mymodule` without issue.
 	Could not import mymodule: No module named mymodule
 	
 	New paths:
-	   /Users/dhellmann/Documents/PyMOTW/src/PyMOTW/site/with_modules
+	./with_modules
 	
 	Loaded mymodule from with_modules/mymodule.py
 
@@ -217,8 +221,8 @@ the module is not in that directory.
 	Could not import mymodule: No module named mymodule
 	
 	New paths:
-	   /Users/dhellmann/Documents/PyMOTW/src/PyMOTW/site/with_pth
-	   /Users/dhellmann/Documents/PyMOTW/src/PyMOTW/site/with_pth/subdir
+	./with_pth
+	./with_pth/subdir
 	
 	Loaded mymodule from with_pth/subdir/mymodule.py
 
@@ -267,9 +271,9 @@ because ``a.pth`` is read before ``b.pth``.
 	Could not import mymodule: No module named mymodule
 	
 	New paths:
-	   /Users/dhellmann/Documents/PyMOTW/src/PyMOTW/site/with_multiple_pth
-	   /Users/dhellmann/Documents/PyMOTW/src/PyMOTW/site/with_multiple_pth/from_a
-	   /Users/dhellmann/Documents/PyMOTW/src/PyMOTW/site/with_multiple_pth/from_b
+	./with_multiple_pth
+	./with_multiple_pth/from_a
+	./with_multiple_pth/from_b
 	
 	Loaded mymodule from with_multiple_pth/from_a/mymodule.py
 
@@ -324,9 +328,9 @@ explicitly to ensure the module is picked up.
 	mize.py
 	
 	Loading sitecustomize.py
-	Adding new path /opt/python/2.7/Darwin-11.4.2-x86_64-i386-64bit
+	Adding new path /opt/python/2.7/Linux-3.13.0-65-generic-x86_64-with-Ubuntu-14.04-trusty
 	Running main program
-	End of path: /opt/python/2.7/Darwin-11.4.2-x86_64-i386-64bit
+	End of path: /opt/python/2.7/Linux-3.13.0-65-generic-x86_64-with-Ubuntu-14.04-trusty
 
 .. {{{end}}}
 
@@ -374,10 +378,8 @@ explicitly to ensure the module is picked up.
 	$ PYTHONPATH=with_usercustomize python with_usercustomize/site_usercusto\
 	mize.py
 	
-	Loading usercustomize.py
-	Adding new path /Users/dhellmann/python/2.7/Darwin-11.4.2-x86_64-i386-64bit
 	Running main program
-	End of path: /Users/dhellmann/python/2.7/Darwin-11.4.2-x86_64-i386-64bit
+	End of path: /home/reingart/pymotw/venv/lib/python2.7/site-packages
 
 .. {{{end}}}
 
@@ -395,7 +397,7 @@ elsewhere.
 	stomize.py
 	
 	Running main program
-	End of path: /Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages
+	End of path: /home/reingart/pymotw/venv/lib/python2.7/site-packages
 
 .. {{{end}}}
 

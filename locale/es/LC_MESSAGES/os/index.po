@@ -15,7 +15,7 @@ msgstr ""
 
 #: ../../PyMOTW/os/index.rst:3
 msgid "os -- Portable access to operating system specific features."
-msgstr ""
+msgstr "os -- Acceso portable a caracterícas específicas del sistema operativo."
 
 #: ../../PyMOTW/os/index.rst:8
 msgid "Portable access to operating system specific features."

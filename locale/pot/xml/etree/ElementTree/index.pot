@@ -3,81 +3,96 @@
 # This file is distributed under the same license as the Python Module of the Week package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python Module of the Week 2.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-06 02:58-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-10-10 11:11-0300\n"
+"Last-Translator: Federico Wagner <federico.wagner@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: es\n"
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:3
 # 2cbb64f6730a49a28ca9b8f19a43d151
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:3
 msgid "xml.etree.ElementTree -- XML Manipulation API"
-msgstr ""
+msgstr "xml.etree.ElemenTree - API de Manipulación de XML"
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:8
 # 5c32eddd8c8a421f90290b88093f5446
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:8
 msgid "Generate and parse XML documents"
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:9
 # a90af37d78ba42bfa159885334d6e2df
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:9
 msgid "2.5 and later"
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:11
 # 4c88f2d125b243aaaa027fccf97c06ab
-msgid "The ElementTree library was contributed to the standard library by Fredrick Lundh.  It includes tools for parsing XML using event-based and document-based APIs, searching parsed documents with XPath expressions, and creating new or modifying existing documents."
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:11
+msgid ""
+"The ElementTree library was contributed to the standard library by Fredrick "
+"Lundh.  It includes tools for parsing XML using event-based and document-"
+"based APIs, searching parsed documents with XPath expressions, and creating "
+"new or modifying existing documents."
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:18
 # f8b2e3dd30954d95b4e512cc76257ebc
-msgid "All of the examples in this section use the Python implementation of ElementTree for simplicity, but there is also a C implementation in :mod:`xml.etree.cElementTree`."
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:18
+msgid ""
+"All of the examples in this section use the Python implementation of "
+"ElementTree for simplicity, but there is also a C implementation in :mod:"
+"`xml.etree.cElementTree`."
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:31
 # 3b926ccec6c74b5886ca8ee1027c957e
-msgid "`xml.etree.ElementTree <http://docs.python.org/library/xml.etree.elementtree.html>`_"
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:31
+msgid ""
+"`xml.etree.ElementTree <http://docs.python.org/library/xml.etree.elementtree."
+"html>`_"
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:31
 # fe29c27392cc40e4947c75d9b9c3b82a
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:31
 msgid "The standard library documentation for this module."
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:35
 # 15f4897eaaf744458d826b5109fc73ec
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:35
 msgid "`ElementTree Overview <http://effbot.org/zone/element-index.htm>`_"
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:34
 # ea853a9e22ed4e3aa9e85c436c6047d6
-msgid "Fredrick Lundh's original documentation and links to the development versions of the ElementTree library."
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:34
+msgid ""
+"Fredrick Lundh's original documentation and links to the development "
+"versions of the ElementTree library."
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:38
 # 15ff5e03e7964a1292941d694753cbc8
-msgid "`Process XML in Python with ElementTree <http://www.ibm.com/developerworks/library/x-matters28/>`_"
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:38
+msgid ""
+"`Process XML in Python with ElementTree <http://www.ibm.com/developerworks/"
+"library/x-matters28/>`_"
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:38
 # 6fea83ffead6474ba9848456213aeec2
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:38
 msgid "IBM DeveloperWorks article by David Mertz."
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:40
 # e7d26a12f44642d3bee06b8f1ef2c16c
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:40
 msgid "`lxml.etree <http://codespeak.net/lxml/>`_"
 msgstr ""
 
-#: ../../PyMOTW/xml/etree/ElementTree/index.rst:41
 # 1b7680ffc1e549939cd2bc9e482b7956
-msgid "A separate implementation of the ElementTree API based on libxml2 with more complete XPath support."
+#: ../../PyMOTW/xml/etree/ElementTree/index.rst:41
+msgid ""
+"A separate implementation of the ElementTree API based on libxml2 with more "
+"complete XPath support."
 msgstr ""
-

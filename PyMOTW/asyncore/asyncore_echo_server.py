@@ -70,7 +70,7 @@ class EchoHandler(asyncore.dispatcher):
         sent = self.send(data[:self.chunk_size])
         if sent < len(data):
             remaining = data[sent:]
-            self.data.to_write.append(remaining)
+            self.data_to_write.append(remaining)
         self.logger.debug('handle_write() -> (%d) %r',
                           sent, data[:sent])
         if not self.writable():
